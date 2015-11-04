@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>ossec.conf: Rootcheck options &mdash; OSSEC</title>
+    
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/parallax.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '2.8.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="top" title="OSSEC" href="../../index.html" />
+  
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  
+  
+  <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+  
+  <style type="text/css">
+    ul.ablog-archive {list-style: none; overflow: auto; margin-left: 0px}
+    ul.ablog-archive li {float: left; margin-right: 5px; font-size: 80%}
+  </style>
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html"><img src="../../_static/ossec_logo_bare_small.png">
+          OSSEC</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="../../about.html">About <i class="fa fa-info-circle"></i></a></li>
+                <li><a href="../../blog.html">Blog <i class="fa fa-archive"></i></a></li>
+                <li><a href="../">Documentaton <i class="fa fa-book"></i></a></li>
+                <li><a href="../../downloads.html">Downloads <i class="fa fa-download"></i></a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"></ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="section" id="ossec-conf-rootcheck-options">
+<span id="ossec-config-rootcheck"></span><h1>ossec.conf: Rootcheck options<a class="headerlink" href="#ossec-conf-rootcheck-options" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="supported-types">
+<h3>Supported types<a class="headerlink" href="#supported-types" title="Permalink to this headline">¶</a></h3>
+<p>rootcheck options are available in the the following installation types:</p>
+<ul class="simple">
+<li>server</li>
+<li>local</li>
+<li>agent</li>
+</ul>
+</div>
+<div class="section" id="location">
+<h3>Location<a class="headerlink" href="#location" title="Permalink to this headline">¶</a></h3>
+<p>All rootcheck options must be configured in the /var/ossec/etc/ossec.conf or
+/var/ossec/etc/shared/agents.conf and used within the &lt;ossec_config&gt; tag.</p>
+<p>XML excerpt to show location if part of ossec.conf:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;ossec_config&gt;</span>
+    <span class="nt">&lt;rootcheck&gt;</span>
+        <span class="c">&lt;!--</span>
+<span class="c">        rootcheck options here</span>
+<span class="c">        --&gt;</span>
+    <span class="nt">&lt;/rootcheck&gt;</span>
+<span class="nt">&lt;/ossec_config&gt;</span>
+</pre></div>
+</div>
+<p>XML excerpt to the Location if part of agent.conf</p>
+<div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;agent_config&gt;</span>
+    <span class="nt">&lt;rootcheck&gt;</span>
+        <span class="c">&lt;!--</span>
+<span class="c">        rootcheck options here</span>
+<span class="c">        --&gt;</span>
+    <span class="nt">&lt;/rootcheck&gt;</span>
+<span class="nt">&lt;/agent_config&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<dl class="element">
+<dt id="element-base_directory">
+<tt class="descname">base_directory</tt><a class="headerlink" href="#element-base_directory" title="Permalink to this definition">¶</a></dt>
+<dd><p>The base directory that will be appended to the following options:</p>
+<ul class="simple">
+<li>rootkit_files</li>
+<li>rootkit_trojans</li>
+<li>windows_malware</li>
+<li>windows_audit</li>
+<li>windows_apps</li>
+<li>systems_audit</li>
+</ul>
+<p><strong>Allowed:</strong> Path to a directory
+<strong>Default:</strong> /var/ossec</p>
+</dd></dl>
+
+<dl class="element">
+<dt id="element-rootkit_files">
+<tt class="descname">rootkit_files</tt><a class="headerlink" href="#element-rootkit_files" title="Permalink to this definition">¶</a></dt>
+<dd><p>This option can be used to change the location of the rootkit files database.</p>
+<p><strong>Allowed:</strong> A file with the rootkit files signatures</p>
+<p><strong>Default:</strong> /etc/shared/rootkit_files.txt</p>
+</dd></dl>
+
+<dl class="element">
+<dt id="element-rootkit_trojans">
+<tt class="descname">rootkit_trojans</tt><a class="headerlink" href="#element-rootkit_trojans" title="Permalink to this definition">¶</a></dt>
+<dd><p>This option can be used to change the location of the rootkit trojans database.</p>
+<p><strong>Default:</strong> /etc/shared/rootkit_trojans.txt</p>
+<p><strong>Allowed:</strong> A file with the trojans signatures</p>
+</dd></dl>
+
+<dl class="element">
+<dt id="element-windows_audit">
+<tt class="descname">windows_audit</tt><a class="headerlink" href="#element-windows_audit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="element">
+<dt id="element-system_audit">
+<tt class="descname">system_audit</tt><a class="headerlink" href="#element-system_audit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="element">
+<dt id="element-windows_apps">
+<tt class="descname">windows_apps</tt><a class="headerlink" href="#element-windows_apps" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="element">
+<dt id="element-windows_malware">
+<tt class="descname">windows_malware</tt><a class="headerlink" href="#element-windows_malware" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="element">
+<dt id="element-scanall">
+<tt class="descname">scanall</tt><a class="headerlink" href="#element-scanall" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tells rootcheck to scan the whole system (may lead to some false positives).</p>
+<p><strong>Default:</strong> no</p>
+<p><strong>Allowed:</strong> yes/no</p>
+</dd></dl>
+
+<dl class="element">
+<dt id="element-frequency">
+<tt class="descname">frequency</tt><a class="headerlink" href="#element-frequency" title="Permalink to this definition">¶</a></dt>
+<dd><p>Frequency that the rootcheck is going to be executed (in seconds).</p>
+<p><strong>Defaults:</strong> 36000 (10 hours)</p>
+<p><strong>Allowed:</strong> Time (in seconds)</p>
+</dd></dl>
+
+<dl class="element">
+<dt id="element-disabled">
+<tt class="descname">disabled</tt><a class="headerlink" href="#element-disabled" title="Permalink to this definition">¶</a></dt>
+<dd><p>Disables the execution of rootcheck.</p>
+<p><strong>Default:</strong> no</p>
+<p><strong>Allowed:</strong> yes/no</p>
+</dd></dl>
+
+<dl class="element">
+<dt id="element-check_dev">
+<tt class="descname">check_dev</tt><a class="headerlink" href="#element-check_dev" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Enable or disable the checking of something</strong></p>
+<p><strong>Default:</strong> yes</p>
+<p><strong>Allowed:</strong> yes or no</p>
+</dd></dl>
+
+<dl class="element">
+<dt id="element-check_files">
+<tt class="descname">check_files</tt><a class="headerlink" href="#element-check_files" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Enable or disable the checking of something</strong></p>
+<p><strong>Default:</strong> yes</p>
+<p><strong>Allowed:</strong> yes or no</p>
+</dd></dl>
+
+<dl class="element">
+<dt id="element-check_if">
+<tt class="descname">check_if</tt><a class="headerlink" href="#element-check_if" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Enable or disable the checking of something</strong></p>
+<p><strong>Default:</strong> yes</p>
+<p><strong>Allowed:</strong> yes or no</p>
+</dd></dl>
+
+<dl class="element">
+<dt id="element-check_pids">
+<tt class="descname">check_pids</tt><a class="headerlink" href="#element-check_pids" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Enable or disable the checking of something</strong></p>
+<p><strong>Default:</strong> yes</p>
+<p><strong>Allowed:</strong> yes or no</p>
+</dd></dl>
+
+<dl class="element">
+<dt id="element-check_policy">
+<tt class="descname">check_policy</tt><a class="headerlink" href="#element-check_policy" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Enable or disable the checking of something</strong></p>
+<p><strong>Default:</strong> yes</p>
+<p><strong>Allowed:</strong> yes or no</p>
+</dd></dl>
+
+<dl class="element">
+<dt id="element-check_ports">
+<tt class="descname">check_ports</tt><a class="headerlink" href="#element-check_ports" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enable or disable the checking of network ports.</p>
+<p><strong>Default:</strong> yes</p>
+<p><strong>Allowed:</strong> yes or no</p>
+</dd></dl>
+
+<dl class="element">
+<dt id="element-check_sys">
+<tt class="descname">check_sys</tt><a class="headerlink" href="#element-check_sys" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Enable or disable the checking of something</strong></p>
+<p><strong>Default:</strong> yes</p>
+<p><strong>Allowed:</strong> yes or no</p>
+</dd></dl>
+
+<dl class="element">
+<dt id="element-check_trojans">
+<tt class="descname">check_trojans</tt><a class="headerlink" href="#element-check_trojans" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enable or disable the checking of trojans.</p>
+<p><strong>Default:</strong> yes</p>
+<p><strong>Allowed:</strong> yes or no</p>
+</dd></dl>
+
+<dl class="element">
+<dt id="element-check_unixaudit">
+<tt class="descname">check_unixaudit</tt><a class="headerlink" href="#element-check_unixaudit" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Enable or disable the checking of something</strong></p>
+<p><strong>Default:</strong> yes</p>
+<p><strong>Allowed:</strong> yes or no</p>
+</dd></dl>
+
+<dl class="element">
+<dt id="element-check_winapps">
+<tt class="descname">check_winapps</tt><a class="headerlink" href="#element-check_winapps" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Enable or disable the checking of something</strong></p>
+<p><strong>Default:</strong> yes</p>
+<p><strong>Allowed:</strong> yes or no</p>
+</dd></dl>
+
+<dl class="element">
+<dt id="element-check_winaudit">
+<tt class="descname">check_winaudit</tt><a class="headerlink" href="#element-check_winaudit" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Enable or disable the checking of something</strong></p>
+<p><strong>Default:</strong> 1</p>
+<p><strong>Allowed:</strong> 1 or 0</p>
+</dd></dl>
+
+<dl class="element">
+<dt id="element-check_winmalware">
+<tt class="descname">check_winmalware</tt><a class="headerlink" href="#element-check_winmalware" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enable or disable the checking of Windows malware.</p>
+<p><strong>Default:</strong> yes</p>
+<p><strong>Allowed:</strong> yes or no</p>
+</dd></dl>
+
+<dl class="element">
+<dt id="element-skip_nfs">
+<tt class="descname">skip_nfs</tt><a class="headerlink" href="#element-skip_nfs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Specifies if rootcheck should scan network mounted filesystems.  Works on Linux and FreeBSD.  Currently skip_nfs will abort checks running against CIFS or NFS mounts.</p>
+<p><strong>Default:</strong> no</p>
+<p><strong>Allowed:</strong> yes/no</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This option was added in OSSEC 2.9.</p>
+</div>
+</dd></dl>
+
+</div>
+</div>
+
+  <div class="section">
+  
+  
+  </div>
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2010-2015, OSSEC Project Team - OSSEC trademark and domain owned by Trend Micro, Inc. - Home page images courtesy of Pixbay.com.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

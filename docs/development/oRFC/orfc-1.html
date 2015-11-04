@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>oRFC: 1 The Collective Code Construction Contract (C4) &mdash; OSSEC</title>
+    
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/parallax.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '2.8.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-sphinx.js"></script>
+    <link rel="author" title="About these documents" href="../../../about.html" />
+    <link rel="top" title="OSSEC" href="../../../index.html" />
+  
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  
+  
+  <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+  
+  <style type="text/css">
+    ul.ablog-archive {list-style: none; overflow: auto; margin-left: 0px}
+    ul.ablog-archive li {float: left; margin-right: 5px; font-size: 80%}
+  </style>
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../../index.html"><img src="../../../_static/ossec_logo_bare_small.png">
+          OSSEC</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="../../../about.html">About <i class="fa fa-info-circle"></i></a></li>
+                <li><a href="../../../blog.html">Blog <i class="fa fa-archive"></i></a></li>
+                <li><a href="../../">Documentaton <i class="fa fa-book"></i></a></li>
+                <li><a href="../../../downloads.html">Downloads <i class="fa fa-download"></i></a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"></ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="section" id="orfc-1-the-collective-code-construction-contract-c4">
+<h1>oRFC: 1 The Collective Code Construction Contract (C4)<a class="headerlink" href="#orfc-1-the-collective-code-construction-contract-c4" title="Permalink to this headline">¶</a></h1>
+<p>The Collective Code Construction Contract (C4) is an evolution of the
+github.com <a class="reference external" href="http://help.github.com/send-pull-requests/">Fork + Pull Model</a>,
+aimed at providing an optimal collaboration model for free software
+projects. This is revision 1 of the C4 specification.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="19%" />
+<col width="81%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>Name</td>
+<td>C4.1</td>
+</tr>
+<tr class="row-even"><td>Editor</td>
+<td>Jeremy Rossi &lt;jeremy at jeremyrossi dot com&gt;</td>
+</tr>
+<tr class="row-odd"><td>State</td>
+<td>Accepted</td>
+</tr>
+<tr class="row-even"><td>Origin</td>
+<td><a class="reference external" href="http://rfc.zeromq.org/spec:22">http://rfc.zeromq.org/spec:22</a></td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="language">
+<h2>Language<a class="headerlink" href="#language" title="Permalink to this headline">¶</a></h2>
+<p>The key words &#8220;MUST&#8221;, &#8220;MUST NOT&#8221;, &#8220;REQUIRED&#8221;, &#8220;SHALL&#8221;, &#8220;SHALL NOT&#8221;,
+&#8220;SHOULD&#8221;, &#8220;SHOULD NOT&#8221;, &#8220;RECOMMENDED&#8221;,  &#8220;MAY&#8221;, and &#8220;OPTIONAL&#8221; in this
+document are to be interpreted as described in RFC 2119[#f1]_.</p>
+</div>
+<div class="section" id="goals">
+<h2>Goals<a class="headerlink" href="#goals" title="Permalink to this headline">¶</a></h2>
+<p>C4 is meant to provide a reusable optimal collaboration model for
+open source software projects. It has these specific goals:</p>
+<ul class="simple">
+<li>To maximize the scale of the community around a project, by
+reducing the friction for new Contributors and creating a scaled
+participation model with strong positive feedbacks;</li>
+<li>To relieve dependencies on key individuals by separating different
+skill sets so that there is a larger pool of competence in
+any required domain;</li>
+<li>To allow the project to develop faster and more accurately, by
+increasing the diversity of the decision making process;</li>
+<li>To support the natural life cycle of project versions from experimental
+through to stable, by allowing safe experimentation, rapid failure,
+and isolation of stable code;</li>
+<li>To reduce the internal complexity of project repositories, thus
+making it easier for Contributors to participate and reducing
+the scope for error;</li>
+<li>To enforce collective ownership of the project, which increases
+economic incentive to Contributors and reduces the risk of hijack
+by hostile entities.</li>
+</ul>
+</div>
+<div class="section" id="design">
+<h2>Design<a class="headerlink" href="#design" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="preliminaries">
+<h3>Preliminaries<a class="headerlink" href="#preliminaries" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>The project SHALL use the git distributed revision control system.</li>
+<li>The project SHALL be hosted on github.com or equivalent, herein
+called the &#8220;Platform&#8221;.</li>
+<li>The project SHALL use the Platform issue tracker.</li>
+<li>The project SHOULD have clearly documented guidelines for code
+style.</li>
+<li>A &#8220;Contributor&#8221; is a person who wishes to provide a patch, being a
+set of commits that solve some clearly identified problem.</li>
+<li>A &#8220;Maintainer&#8221; is a person who merge patches to the project.
+Maintainers are not developers; their job is to enforce process.</li>
+<li>Contributors SHALL NOT have commit access to the repository unless
+they are also Maintainers.</li>
+<li>Maintainers SHALL have commit access to the repository.</li>
+<li>Everyone, without distinction or discrimination, SHALL have an
+equal right to become a Contributor under the terms of this contract.</li>
+</ul>
+</div>
+<div class="section" id="licensing-and-ownership">
+<h3>Licensing and Ownership<a class="headerlink" href="#licensing-and-ownership" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>The project SHALL use the GPLv2 or a variant thereof (LGPL, AGPL).</li>
+<li>All contributions to the project source code (&#8220;patches&#8221;) SHALL
+use the same license as the project.</li>
+<li>All patches are owned by their authors. There SHALL NOT be any
+copyright assignment process.</li>
+<li>The copyrights in the project SHALL be owned collectively by all
+its Contributors.</li>
+<li>Each Contributor SHALL be responsible for identifying themselves
+in the project Contributor list.</li>
+</ul>
+</div>
+<div class="section" id="patch-requirements">
+<h3>Patch Requirements<a class="headerlink" href="#patch-requirements" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Maintainers and Contributors MUST have a Platform account and
+SHOULD use their real names or a well-known alias.</li>
+<li>A patch SHOULD be a minimal and accurate answer to exactly one
+identified and agreed problem.</li>
+<li>A patch MUST adhere to the code style guidelines of the project
+if these are defined.</li>
+<li>A patch MUST adhere to the &#8220;Evolution of Public Contracts&#8221;
+guidelines defined below.</li>
+<li>A patch SHALL NOT include non-trivial code from other
+projects unless the Contributor is the original author of that code.</li>
+<li>A patch MUST compile cleanly and pass project self-tests on
+at least the principle target platform.</li>
+<li>A patch commit message SHOULD consist of a single short (less than
+50 character) line summarizing the change, optionally followed by
+a blank line and then a more thorough description.</li>
+<li>A &#8220;Correct Patch&#8221; is one that satisfies the above requirements.</li>
+</ul>
+</div>
+<div class="section" id="development-process">
+<h3>Development Process<a class="headerlink" href="#development-process" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Change on the project SHALL be governed by the pattern of accurately
+identifying problems and applying minimal, accurate solutions to
+these problems.</li>
+<li>To initiate changes, a user SHOULD log an issue on the project
+Platform issue tracker.</li>
+<li>The user SHOULD write the issue by describing the problem they
+face or observe.</li>
+<li>The user SHOULD seek consensus on the accuracy of their observation,
+and the value of solving the problem.</li>
+<li>Users SHALL NOT log feature requests, ideas, suggestions, or any
+solutions to problems that are not explicitly documented and provable.</li>
+<li>Thus, the release history of the project SHALL be a list of
+meaningful issues logged and solved.</li>
+<li>To work on an issue, a Contributor SHALL fork the project repository
+and then work on their forked repository.</li>
+<li>To submit a patch, a Contributor SHALL create a Platform pull request
+back to the project.</li>
+<li>A Contributor SHALL NOT commit changes directly to the project.</li>
+<li>To discuss a patch, people MAY comment on the Platform pull request,
+on the commit, or elsewhere.</li>
+<li>To accept or reject a patch, a Maintainer SHALL use the Platform
+interface.</li>
+<li>Maintainers SHALL NOT accept their own patches.</li>
+<li>Maintainers SHALL NOT make value judgments on correct patches.</li>
+<li>Maintainers SHALL merge correct patches rapidly.</li>
+<li>The Contributor MAY tag an issue as &#8220;Ready&#8221; after making a pull request
+for the issue.</li>
+<li>The user who created an issue SHOULD close the issue after checking
+the patch is successful.</li>
+<li>Maintainers SHOULD ask for improvements to incorrect patches and
+SHOULD reject incorrect patches if the Contributor does not respond
+constructively.</li>
+<li>Any Contributor who has value judgments on a correct patch SHOULD
+express these via their own patches.</li>
+<li>Maintainers MAY commit changes to non-source documentation directly
+to the project.</li>
+</ul>
+</div>
+<div class="section" id="creating-stable-releases">
+<h3>Creating Stable Releases<a class="headerlink" href="#creating-stable-releases" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>The project SHALL have one branch (&#8220;master&#8221;) that always holds the
+latest in-progress version and SHOULD always build.</li>
+<li>The project SHALL NOT use topic branches for any reason. Personal
+forks MAY use topic branches.</li>
+<li>To make a stable release someone SHALL fork the repository by copying
+it and thus become maintainer of this repository.</li>
+<li>Forking a project for stabilization MAY be done unilaterally and
+without agreement of project maintainers.</li>
+<li>A stabilization project SHOULD be maintained by the same process as
+the main project.</li>
+<li>A patch to a stabilization project declared &#8220;stable&#8221; SHALL be
+accompanied by a reproducible test case.</li>
+</ul>
+</div>
+<div class="section" id="evolution-of-public-contracts">
+<h3>Evolution of Public Contracts<a class="headerlink" href="#evolution-of-public-contracts" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>All Public Contracts (APIs or protocols) SHOULD be documented.</li>
+<li>All Public Contracts SHOULD have space for extensibility and
+experimentation.</li>
+<li>A patch that modifies a stable Public Contract SHOULD not break
+existing applications unless there is overriding consensus on the
+value of doing this.</li>
+<li>A patch that introduces new features to a Public Contract SHOULD
+do so using new names.</li>
+<li>Old names SHOULD be deprecated in a systematic fashion by marking
+new names as &#8220;experimental&#8221; until they are stable, then marking the
+old names as &#8220;deprecated&#8221;.</li>
+<li>When sufficient time has passed, old deprecated names SHOULD be
+marked &#8220;legacy&#8221; and eventually removed.</li>
+<li>Old names SHALL NOT be reused by new features.</li>
+<li>When old names are removed, their implementations MUST provoke an
+exception (assertion) if used by applications.</li>
+</ul>
+</div>
+<div class="section" id="project-administration">
+<h3>Project Administration<a class="headerlink" href="#project-administration" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>The project founders SHALL act as Administrators to manage the set
+of project Maintainers.</li>
+<li>The Administrators SHALL ensure their own succession over time by
+promoting the most effective Maintainers.</li>
+<li>A new Contributor who makes a correct patch SHALL be invited to
+become a Maintainer.</li>
+<li>Administrators MAY remove Maintainers who are inactive for an extended
+period of time, or who repeatedly fail to apply this process accurately.</li>
+</ul>
+</div>
+<div class="section" id="further-reading">
+<h3>Further Reading<a class="headerlink" href="#further-reading" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference external" href="http://en.wikipedia.org/wiki/Chris_Argyris">Argyris&#8217; Models 1 and 2</a> -
+the goals of C4.1 are consistent with Argyris&#8217; Model 2.</li>
+<li><a class="reference external" href="http://en.wikipedia.org/wiki/Toyota_Kata">Toyota Kata</a> - covering the
+Improvement Kata (fixing problems one at a time) and the Coaching Kata
+(helping others to learn the Improvement Kata).</li>
+</ul>
+</div>
+</div>
+<div class="section" id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<table class="docutils footnote" frame="void" id="f1" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[1]</td><td>&#8220;Key words for use in RFCs to Indicate Requirement Levels&#8221; - <a class="reference external" href="http://tools.ietf.org/html/rfc2119">http://tools.ietf.org/html/rfc2119</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="f2" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[2]</td><td>&#8220;Definition of a Free and Open Standard&#8221; - <a class="reference external" href="http://www.digistan.org/open-standard:definition">http://www.digistan.org/open-standard:definition</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="f3" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[3]</td><td>&#8220;Consensus Oriented Specification System&#8221; - <a class="reference external" href="http://www.digistan.org/spec:1/COSS">http://www.digistan.org/spec:1/COSS</a></td></tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="license">
+<h2>License<a class="headerlink" href="#license" title="Permalink to this headline">¶</a></h2>
+<p>Original content licensed under the Creative Commons Attribution-Share Alike 3.0 License.
+(c) Copyright (c) 2007-2011 iMatix Corporation and Contributors.</p>
+</div>
+</div>
+
+  <div class="section">
+  
+  
+  </div>
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2010-2015, OSSEC Project Team - OSSEC trademark and domain owned by Trend Micro, Inc. - Home page images courtesy of Pixbay.com.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

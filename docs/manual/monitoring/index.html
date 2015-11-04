@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Log monitoring/analysis &mdash; OSSEC</title>
+    
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/parallax.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '2.8.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-sphinx.js"></script>
+    <link rel="author" title="About these documents" href="../../../about.html" />
+    <link rel="top" title="OSSEC" href="../../../index.html" />
+  
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  
+  
+  <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+  
+  <style type="text/css">
+    ul.ablog-archive {list-style: none; overflow: auto; margin-left: 0px}
+    ul.ablog-archive li {float: left; margin-right: 5px; font-size: 80%}
+  </style>
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../../index.html"><img src="../../../_static/ossec_logo_bare_small.png">
+          OSSEC</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="../../../about.html">About <i class="fa fa-info-circle"></i></a></li>
+                <li><a href="../../../blog.html">Blog <i class="fa fa-archive"></i></a></li>
+                <li><a href="../../">Documentaton <i class="fa fa-book"></i></a></li>
+                <li><a href="../../../downloads.html">Downloads <i class="fa fa-download"></i></a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"></ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="section" id="log-monitoring-analysis">
+<h1>Log monitoring/analysis<a class="headerlink" href="#log-monitoring-analysis" title="Permalink to this headline">¶</a></h1>
+<p>Log Analysis (or log inspection) is done inside OSSEC by the logcollector and
+analysisd processes. The first one collects the events and the second one
+analyzes (decodes, filters and classifies) them.</p>
+<p>It is done in real time, so as soon as an event is written OSSEC will process
+them. OSSEC can read events from internal log files, from the Windows event
+log and also receive them directly via remote syslog.</p>
+<div class="section" id="what-is-log-analysis">
+<h2>What is log analysis?<a class="headerlink" href="#what-is-log-analysis" title="Permalink to this headline">¶</a></h2>
+<p>Inside OSSEC we call log analysis a LIDS, or log-based intrusion detection. The
+goal is to detect attacks, misuse or system errors using the logs.</p>
+<p>LIDS - Log-based intrusion detection or security log analysis are the processes
+or techniques used to detect attacks on a specific network, system or application
+using logs as the primary source of information. It is also very useful to detect
+software misuse, policy violations and other forms of inappropriate activities.</p>
+</div>
+<div class="section" id="quick-facts">
+<h2>Quick Facts<a class="headerlink" href="#quick-facts" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>How often are logs monitored?<ul>
+<li>In real time.</li>
+</ul>
+</li>
+<li>Where are the events analyzed?<ul>
+<li>In the manager.</li>
+</ul>
+</li>
+<li>How long are they stored?<ul>
+<li>For as long as your policy dictates (it is user configurable).</li>
+</ul>
+</li>
+<li>Where does this help me with compliance?<ul>
+<li>(PCI DSS, etc) It helps with the whole section 10 (log monitoring) of PCI.</li>
+</ul>
+</li>
+<li>How much CPU does it use?<ul>
+<li>On the agent, it uses very little CPU/memory since it just read the events and forwards them to the manager.</li>
+<li>On the manager, it depends on the number of events per second (EPS).</li>
+</ul>
+</li>
+<li>How does it deal with false positives?<ul>
+<li>False positives can be eliminated using local rules.</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="configuration-options">
+<h2>Configuration Options<a class="headerlink" href="#configuration-options" title="Permalink to this headline">¶</a></h2>
+<p>These options should be specified locally in each agent&#8217;s ossec.conf file or the
+share agent.conf. Inside the <tt class="docutils literal"><span class="pre">&lt;localfile&gt;</span></tt> element, you can have the following
+options.</p>
+<dl class="element">
+<dt id="element-localfile">
+<tt class="descname">localfile</tt><a class="headerlink" href="#element-localfile" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="element">
+<dt id="element-location">
+<tt class="descname">location</tt><a class="headerlink" href="#element-location" title="Permalink to this definition">¶</a></dt>
+<dd><p>Specify the location of the log to be read. strftime formats may be used for log file names.
+For instance, a log file named <tt class="docutils literal"><span class="pre">file.log-2011-01-22</span></tt> could be referenced with <tt class="docutils literal"><span class="pre">file.log-%Y-%m-%d</span></tt>.
+Wildcards may be used on non-Windows systems. When wildcards are used, the log files must exist at the time <tt class="docutils literal"><span class="pre">ossec-logcollector</span></tt> is started.
+It will not automatically begin monitoring new log files. <tt class="docutils literal"><span class="pre">strftime</span></tt> and wildcards cannot be used on the same entry.</p>
+<p><strong>Default:</strong> Multiple (eg /var/log/messages)</p>
+<p><strong>Allowed:</strong> Any log file</p>
+</dd></dl>
+
+<dl class="element">
+<dt id="element-log_format">
+<tt class="descname">log_format</tt><a class="headerlink" href="#element-log_format" title="Permalink to this definition">¶</a></dt>
+<dd><p>The format of the log being read.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If the log has one entry per line, use syslog.</p>
+</div>
+<p><strong>Default:</strong> syslog</p>
+<p><strong>Allowed:</strong></p>
+<blockquote>
+<div><ul id="logformat-syslog">
+<li><dl class="first docutils">
+<dt>syslog</dt>
+<dd><p class="first last">This format is for plain text files in a syslog-like format. It can also be used when there is no support for the logging format, and the logs are single line messages.</p>
+</dd>
+</dl>
+</li>
+</ul>
+<ul id="logformat-snort-full">
+<li><dl class="first docutils">
+<dt>snort-full</dt>
+<dd><p class="first last">This is used for Snort&#8217;s full output format.</p>
+</dd>
+</dl>
+</li>
+</ul>
+<ul id="logformat-snort-fast">
+<li><dl class="first docutils">
+<dt>snort-fast</dt>
+<dd><p class="first last">This is used for Snort&#8217;s fast output format.</p>
+</dd>
+</dl>
+</li>
+</ul>
+<ul class="simple" id="logformat-squid">
+<li>squid</li>
+</ul>
+<ul class="simple" id="logformat-iis">
+<li>iis</li>
+</ul>
+<ul id="logformat-eventlog">
+<li><dl class="first docutils">
+<dt>eventlog</dt>
+<dd><p class="first last">This is used for Microsoft Windows eventlog format.</p>
+</dd>
+</dl>
+</li>
+</ul>
+<ul id="logformat-eventchannel">
+<li><dl class="first docutils">
+<dt>eventchannel</dt>
+<dd><p class="first last">This is used for Microsoft Windows eventlogs, using the new EventApi. This allows OSSEC to monitor both standard &#8220;Windows&#8221; eventlogs and more recent &#8220;Application and Services&#8221; logs. This support was added in 2.8.</p>
+</dd>
+</dl>
+</li>
+</ul>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last"><tt class="docutils literal"><span class="pre">eventchannel</span></tt> cannot be used on Windows systems older than Vista.</p>
+</div>
+<ul id="logformat-mysql">
+<li><dl class="first docutils">
+<dt>mysql_log</dt>
+<dd><p class="first last">This is used for <a class="reference external" href="http://dev.mysql.com/">MySQL</a> logs. It does not support multi-line logs.</p>
+</dd>
+</dl>
+</li>
+</ul>
+<ul id="logformat-postgresql">
+<li><dl class="first docutils">
+<dt>postgresql_log</dt>
+<dd><p class="first last">This is used for <a class="reference external" href="http://www.postgresql.org">PostgreSQL</a> logs. It does not support multi-line logs.</p>
+</dd>
+</dl>
+</li>
+</ul>
+<ul id="logformat-nmapg">
+<li><dl class="first docutils">
+<dt>nmapg</dt>
+<dd><p class="first last">This is used for monitoring files conforming to the grepable output from <a class="reference external" href="http://nmap.org">nmap</a>.</p>
+</dd>
+</dl>
+</li>
+</ul>
+<ul id="logformat-apache">
+<li><p class="first">apache</p>
+<blockquote>
+<div><p>This format is for apache&#8217;s default log format.</p>
+<p><strong>Example:</strong></p>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">[Wed Jun  9 23:32:26 2010] [error] [client 192.168.1.100] File does not exist: /htdocs/favicon.ico</span>
+</pre></div>
+</div>
+<p><strong>Example:</strong></p>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">192.168.1.100 - - [21/Jan/2010:08:31:09 -0500] &quot;GET / HTTP/1.0&quot; 200 2212</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ul>
+<ul id="logformat-command">
+<li><dl class="first docutils">
+<dt>command</dt>
+<dd><p class="first last">This format will be the output from the command (as run by root) defined by <a class="reference internal" href="#command">command</a>. Each line of output will be treated as a separate log.</p>
+</dd>
+</dl>
+</li>
+</ul>
+<ul id="full-command">
+<li><dl class="first docutils">
+<dt>full_command</dt>
+<dd><p class="first last">This format will be the output from the command (as run by root) defined by <a class="reference internal" href="#command">command</a>. The entire output will be treated as a single log.</p>
+</dd>
+</dl>
+</li>
+</ul>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last"><tt class="docutils literal"><span class="pre">command</span></tt> and <tt class="docutils literal"><span class="pre">full_command</span></tt> cannot be used in the agent.conf, and must be configured in each system&#8217;s ossec.conf.</p>
+</div>
+<ul class="simple" id="logformat-djb">
+<li>djb-multilog</li>
+</ul>
+<ul id="logformat-multi-line">
+<li><dl class="first docutils">
+<dt>multi-line</dt>
+<dd><p class="first">This option will allow applications that log multiple lines per event to be monitored. This format requires the number of lines to be consistent.
+<tt class="docutils literal"><span class="pre">multi-line:</span></tt> is followed by the number of lines in each log entry. Each line will be combined with the previous lines until all lines are gathered.
+There may be multiple timestamps in a finalized event.</p>
+<p><strong>Allowed:</strong> &lt;log_format&gt;multi-line: NUMBER&lt;/log_format&gt;</p>
+<dl class="last docutils">
+<dt><strong>Example:</strong></dt>
+<dd><p class="first">Log messages:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">Aug  9 14:22:47 hostname log line one</span>
+<span class="go">Aug  9 14:22:47 hostname log line two</span>
+<span class="go">Aug  9 14:22:47 hostname log line three</span>
+<span class="go">Aug  9 14:22:47 hostname log line four</span>
+<span class="go">Aug  9 14:22:47 hostname log line five</span>
+</pre></div>
+</div>
+<p>Log message as analyzed by <a href="#id1"><span class="problematic" id="id2">ossec-analysisd_</span></a>:</p>
+<div class="last highlight-console"><div class="highlight"><pre><span class="go">Aug  9 14:22:47 hostname log line one Aug  9 14:22:47 hostname log line two Aug  9 14:22:47 hostname log line three Aug  9 14:22:47 hostname log line four Aug  9 14:22:47 hostname log line five</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+<span class="target" id="command"></span><dl class="element">
+<dt id="element-command">
+<tt class="descname">command</tt><a class="headerlink" href="#element-command" title="Permalink to this definition">¶</a></dt>
+<dd><p>The command to be run. All output from this command will be read as one or more log messages depending on whether command or <a class="reference internal" href="#full-command">full_command</a> is used.</p>
+<p><strong>Allowed:</strong> Any commandline and arguments.</p>
+</dd></dl>
+
+<span class="target" id="command-alias"></span><dl class="element">
+<dt id="element-alias">
+<tt class="descname">alias</tt><a class="headerlink" href="#element-alias" title="Permalink to this definition">¶</a></dt>
+<dd><p>An alias to identify the command. This will replace the command in the log message.</p>
+<p>For example <tt class="docutils literal"><span class="pre">&lt;alias&gt;usb-check&lt;/alias&gt;</span></tt> would replace:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">ossec: output: &#39;reg QUERY HKLM\SYSTEM\CurrentControlSet\Enum\USBSTOR&#39;:</span>
+</pre></div>
+</div>
+<p>with:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">ossec: output: &#39;usb-check&#39;:</span>
+</pre></div>
+</div>
+<p><strong>Allowed:</strong> Any string.</p>
+</dd></dl>
+
+<span class="target" id="command-frequency"></span><dl class="element">
+<dt id="element-frequency">
+<tt class="descname">frequency</tt><a class="headerlink" href="#element-frequency" title="Permalink to this definition">¶</a></dt>
+<dd><p>The minimum time in seconds between command runs. The command will probably not run every <tt class="docutils literal"><span class="pre">frequency</span></tt> seconds exactly, but the time between runs will not be shorter than this setting. This is used with <a class="reference internal" href="#command">command</a> and <a class="reference internal" href="#full-command">full_command</a>.</p>
+<p><strong>Allowed:</strong> Time in seconds.</p>
+</dd></dl>
+
+<span class="target" id="check-diff"></span><dl class="element">
+<dt id="element-check_diff">
+<tt class="descname">check_diff</tt><a class="headerlink" href="#element-check_diff" title="Permalink to this definition">¶</a></dt>
+<dd><p>The output from an event will be stored in an internal database. Every time the same event is received, the output is compared to the previous output. If the output has changed an alert will be generated.</p>
+</dd></dl>
+
+<span class="target" id="only-future-events"></span><dl class="element">
+<dt id="element-only-future-events">
+<tt class="descname">only-future-events</tt><a class="headerlink" href="#element-only-future-events" title="Permalink to this definition">¶</a></dt>
+<dd><p>Only used with the <tt class="docutils literal"><span class="pre">eventchannel</span></tt> log format. By default, when OSSEC starts the eventchannel log format will read all events that ossec-logcollector missed since it was last stopped.
+It is possible to set <tt class="docutils literal"><span class="pre">only-future-events</span></tt> to <tt class="docutils literal"><span class="pre">yes</span></tt> in order to prevent this behaviour. When set to <tt class="docutils literal"><span class="pre">yes</span></tt>, OSSEC will only receive events that occured after the start of logcollector.</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">&lt;localfile&gt;</span>
+<span class="go">  &lt;location&gt;System&lt;/location&gt;</span>
+<span class="go">  &lt;log_format&gt;eventchannel&lt;/log_format&gt;</span>
+<span class="go">  &lt;only-future-events&gt;yes&lt;/only-future-events&gt;</span>
+<span class="go">&lt;/localfile&gt;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<span class="target" id="query"></span><dl class="element">
+<dt id="element-query">
+<tt class="descname">query</tt><a class="headerlink" href="#element-query" title="Permalink to this definition">¶</a></dt>
+<dd><p>Only used with the <tt class="docutils literal"><span class="pre">eventchannel</span></tt> log format. It is possible to specify an XPATH query following the event schema (see <a class="reference external" href="http://msdn.microsoft.com/en-us/library/windows/desktop/aa385201%28v=vs.85%29.aspx">Microsoft&#8217;s documentation</a>) in order to filter the events that OSSEC will process.</p>
+<p>For example, the following configuration will only process events with an ID of 7040:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">&lt;localfile&gt;</span>
+<span class="go">  &lt;location&gt;System&lt;/location&gt;</span>
+<span class="go">  &lt;log_format&gt;eventchannel&lt;/log_format&gt;</span>
+<span class="go">  &lt;query&gt;Event/System[EventID=7040]&lt;/query&gt;</span>
+<span class="go">&lt;/localfile&gt;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="monitoring-logs">
+<h2>Monitoring logs<a class="headerlink" href="#monitoring-logs" title="Permalink to this headline">¶</a></h2>
+<p>With in OSSEC their is two major methods for monitoring logs: file and process.  Each
+method has it&#8217;s own page and examples.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="process-monitoring.html">Process Monitoring</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="process-monitoring.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="process-monitoring.html#configuration-examples">Configuration examples</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="process-monitoring.html#disk-space-utilization-df-h-example">Disk space utilization (df -h) example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="process-monitoring.html#load-average-uptime-example">Load average (uptime) Example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="process-monitoring.html#alerting-when-output-of-a-command-changes">Alerting when output of a command changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="process-monitoring.html#detecting-usb-storage-usage">Detecting USB Storage Usage</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="file-log-monitoring.html">File Monitoring</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file-log-monitoring.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file-log-monitoring.html#configuration">Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file-log-monitoring.html#configuration-examples">Configuration examples</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="file-log-monitoring.html#simple-example">Simple example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="file-log-monitoring.html#windows-eventlog-example">Windows EventLog Example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="file-log-monitoring.html#windows-eventchannel-example">Windows EventChannel Example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="file-log-monitoring.html#multiple-files-example">Multiple Files Example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="file-log-monitoring.html#date-based-example">Date Based Example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="file-log-monitoring.html#iis-logs-example">IIS Logs Example</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+  <div class="section">
+  
+  
+  </div>
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2010-2015, OSSEC Project Team - OSSEC trademark and domain owned by Trend Micro, Inc. - Home page images courtesy of Pixbay.com.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>oRFC: 2 Coding Style Guide &mdash; OSSEC</title>
+    
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/parallax.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '2.8.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-sphinx.js"></script>
+    <link rel="author" title="About these documents" href="../../../about.html" />
+    <link rel="top" title="OSSEC" href="../../../index.html" />
+  
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  
+  
+  <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+  
+  <style type="text/css">
+    ul.ablog-archive {list-style: none; overflow: auto; margin-left: 0px}
+    ul.ablog-archive li {float: left; margin-right: 5px; font-size: 80%}
+  </style>
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../../index.html"><img src="../../../_static/ossec_logo_bare_small.png">
+          OSSEC</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="../../../about.html">About <i class="fa fa-info-circle"></i></a></li>
+                <li><a href="../../../blog.html">Blog <i class="fa fa-archive"></i></a></li>
+                <li><a href="../../">Documentaton <i class="fa fa-book"></i></a></li>
+                <li><a href="../../../downloads.html">Downloads <i class="fa fa-download"></i></a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"></ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="section" id="orfc-2-coding-style-guide">
+<h1>oRFC: 2 Coding Style Guide<a class="headerlink" href="#orfc-2-coding-style-guide" title="Permalink to this headline">¶</a></h1>
+<p>OSSEC Coding Style Guide</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="16%" />
+<col width="84%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>Name</td>
+<td>OSSEC Style Guide</td>
+</tr>
+<tr class="row-even"><td>Editor</td>
+<td><ul class="first last simple">
+<li>Jeremy Rossi &lt;jeremy at jeremyrossi dot com&gt;</li>
+<li>Christian Göttsche &lt;cgzones at googlemail dot com&gt;</li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td>State</td>
+<td>Draft</td>
+</tr>
+<tr class="row-even"><td>Origin</td>
+<td><ul class="first last simple">
+<li><a class="reference external" href="http://zeromq.org/docs:style">http://zeromq.org/docs:style</a></li>
+<li><a class="reference external" href="https://www.kernel.org/doc/Documentation/CodingStyle">https://www.kernel.org/doc/Documentation/CodingStyle</a></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="language">
+<h2>Language<a class="headerlink" href="#language" title="Permalink to this headline">¶</a></h2>
+<p>The key words &#8220;MUST&#8221;, &#8220;MUST NOT&#8221;, &#8220;REQUIRED&#8221;, &#8220;SHALL&#8221;, &#8220;SHALL NOT&#8221;,
+&#8220;SHOULD&#8221;, &#8220;SHOULD NOT&#8221;, &#8220;RECOMMENDED&#8221;,  &#8220;MAY&#8221;, and &#8220;OPTIONAL&#8221; in this
+document are to be interpreted as described in RFC 2119 <a class="footnote-reference" href="#id2" id="id1">[1]</a>.</p>
+</div>
+<div class="section" id="goals">
+<h2>Goals<a class="headerlink" href="#goals" title="Permalink to this headline">¶</a></h2>
+<p>The OSSEC Style Guide is meant to provide framework and guide of formating
+code contributer to OSSEC.  The overall goals are:</p>
+<ul class="simple">
+<li>Maximize Readability of code in OSSEC;</li>
+<li>Reduction in the number of bugs by removing ambiguity in code and logic flow;</li>
+<li>Be as minimally invasive as possible while achieving the stated goals;</li>
+<li>Trust the contributor.</li>
+</ul>
+</div>
+<div class="section" id="code-style">
+<h2>Code Style<a class="headerlink" href="#code-style" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="formatter">
+<h3>Formatter<a class="headerlink" href="#formatter" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference external" href="http://astyle.sourceforge.net/">Artistic Style</a> should be used to format the source code.</li>
+<li>Every code style should be achieved by a astyle command argument.</li>
+</ul>
+</div>
+<div class="section" id="indentation">
+<h3>Indentation<a class="headerlink" href="#indentation" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>4 spaces shall be used per indentation level. <em>&#8211;indent=spaces=4</em></li>
+<li>Switch and case blocks shall be indented. <em>&#8211;indent-switches</em></li>
+<li>Preprocessor conditional statements shall be indeted to the same level as the source code. <em>&#8211;indent-preproc-cond</em></li>
+</ul>
+</div>
+<div class="section" id="file-endings">
+<h3>File endings<a class="headerlink" href="#file-endings" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Every files shall end with a newline.</li>
+<li>Every files shall have linux like line endings (\n). <em>&#8211;lineend=linux</em></li>
+</ul>
+</div>
+<div class="section" id="breaking-long-lines-and-strings">
+<h3>Breaking long lines and strings<a class="headerlink" href="#breaking-long-lines-and-strings" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="placing-braces-and-spaces">
+<h3>Placing Braces and Spaces<a class="headerlink" href="#placing-braces-and-spaces" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Braces shall be placed accoriding to the stroustrup style. <em>&#8211;style=stroustrup</em></li>
+<li>Operators shall be padded by a space. <em>&#8211;pad-oper</em></li>
+<li>Every branch of conditional statements shall be surrounded by brackets. <em>&#8211;add-brackets</em></li>
+<li>Pointer and reference operators shall be attached to the variable name. <em>&#8211;align-pointer=name</em></li>
+</ul>
+</div>
+<div class="section" id="typedefs-struct">
+<h3>Typedefs &amp; Struct<a class="headerlink" href="#typedefs-struct" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="naming">
+<h3>Naming<a class="headerlink" href="#naming" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Variables</li>
+<li>Functions</li>
+<li>Typedefs</li>
+<li>Structs</li>
+</ul>
+</div>
+</div>
+<div class="section" id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<table class="docutils footnote" frame="void" id="id2" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>&#8220;Key words for use in RFCs to Indicate Requirement Levels&#8221; - <a class="reference external" href="http://tools.ietf.org/html/rfc2119">http://tools.ietf.org/html/rfc2119</a></td></tr>
+</tbody>
+</table>
+</div>
+</div>
+
+  <div class="section">
+  
+  
+  </div>
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2010-2015, OSSEC Project Team - OSSEC trademark and domain owned by Trend Micro, Inc. - Home page images courtesy of Pixbay.com.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

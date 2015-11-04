@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Process Monitoring &mdash; OSSEC</title>
+    
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/parallax.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '2.8.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-sphinx.js"></script>
+    <link rel="author" title="About these documents" href="../../../about.html" />
+    <link rel="top" title="OSSEC" href="../../../index.html" />
+  
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  
+  
+  <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+  
+  <style type="text/css">
+    ul.ablog-archive {list-style: none; overflow: auto; margin-left: 0px}
+    ul.ablog-archive li {float: left; margin-right: 5px; font-size: 80%}
+  </style>
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../../index.html"><img src="../../../_static/ossec_logo_bare_small.png">
+          OSSEC</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="../../../about.html">About <i class="fa fa-info-circle"></i></a></li>
+                <li><a href="../../../blog.html">Blog <i class="fa fa-archive"></i></a></li>
+                <li><a href="../../">Documentaton <i class="fa fa-book"></i></a></li>
+                <li><a href="../../../downloads.html">Downloads <i class="fa fa-download"></i></a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"></ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="section" id="process-monitoring">
+<span id="manual-procmon"></span><h1>Process Monitoring<a class="headerlink" href="#process-monitoring" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>We love logs. Inside OSSEC we treat everything as if it is a log and parse it
+appropriately with our rules. However, some information is not available in log
+files but we still want to monitor it. To solve that gap, we added the ability
+to monitor the output of commands via OSSEC, and treat the output of those commands just like they were log files.</p>
+</div>
+<div class="section" id="configuration-examples">
+<h2>Configuration examples<a class="headerlink" href="#configuration-examples" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="disk-space-utilization-df-h-example">
+<h3>Disk space utilization (df -h) example<a class="headerlink" href="#disk-space-utilization-df-h-example" title="Permalink to this headline">¶</a></h3>
+<p>For example, if you wanted to monitor the disk space utilization, you would need
+to setup a cron job to dump the output of <tt class="docutils literal"><span class="pre">df</span> <span class="pre">-h</span></tt> to a log file (maybe
+/var/log/df.log) and configure OSSEC to look at it.</p>
+<p>As of OSSEC version 2.3 you can monitor commands directly in OSSEC
+following configuration (in /var/ossec/etc/ossec.conf):</p>
+<div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;localfile&gt;</span>
+    <span class="nt">&lt;log_format&gt;</span>command<span class="nt">&lt;/log_format&gt;</span>
+    <span class="nt">&lt;command&gt;</span>df -h<span class="nt">&lt;/command&gt;</span>
+<span class="nt">&lt;/localfile&gt;</span>
+</pre></div>
+</div>
+<p>Since we already have a sample rule for df -h included with OSSEC you would see
+the following when any partition reached 100%:</p>
+<div class="highlight-python"><div class="highlight"><pre>** Alert 1257451341.28290: mail - ossec,low_diskspace,
+2009 Nov 05 16:02:21 (home-ubuntu) 192.168.0.0-&gt;df -h
+
+Rule: 531 (level 7) -&gt; &quot;Partition usage reached 100% (disk space monitor).&quot;
+Src IP: (none)
+User: (none)
+ossec: output: &#39;df -h&#39;: /dev/sdb1 24G 12G 11G 100% /var/backup
+</pre></div>
+</div>
+</div>
+<div class="section" id="load-average-uptime-example">
+<h3>Load average (uptime) Example<a class="headerlink" href="#load-average-uptime-example" title="Permalink to this headline">¶</a></h3>
+<p>Another example, if you want to monitor the load average, you can configure
+OSSEC to monitor the &#8220;uptime&#8221; command and alert when it is higher than 2, for
+example:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;localfile&gt;</span>
+    <span class="nt">&lt;log_format&gt;</span>command<span class="nt">&lt;/log_format&gt;</span>
+    <span class="nt">&lt;command&gt;</span>uptime<span class="nt">&lt;/command&gt;</span>
+<span class="nt">&lt;/localfile&gt;</span>
+</pre></div>
+</div>
+<p>And in the rule (in /var/ossec/rules/local_rules.xml):</p>
+<div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;rule</span> <span class="na">id=</span><span class="s">&quot;100101&quot;</span> <span class="na">level=</span><span class="s">&quot;7&quot;</span> <span class="na">ignore=</span><span class="s">&quot;7200&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;if_sid&gt;</span>530<span class="nt">&lt;/if_sid&gt;</span>
+    <span class="nt">&lt;match&gt;</span>ossec: output: &#39;uptime&#39;: <span class="nt">&lt;/match&gt;</span>
+    <span class="nt">&lt;regex&gt;</span>load averages: 2.<span class="nt">&lt;/regex&gt;</span>
+    <span class="nt">&lt;description&gt;</span>Load average reached 2..<span class="nt">&lt;/description&gt;</span>
+<span class="nt">&lt;/rule&gt;</span>
+</pre></div>
+</div>
+<p>There are lots of possibilities with this feature. If you have ideas for commands to
+monitor and rules, please comment.</p>
+</div>
+<div class="section" id="alerting-when-output-of-a-command-changes">
+<h3>Alerting when output of a command changes<a class="headerlink" href="#alerting-when-output-of-a-command-changes" title="Permalink to this headline">¶</a></h3>
+<p>If you want to create alerts when a log or the output of a command changes, take
+a look at the new &lt;check_diff /&gt; option in the rules (available on the latest
+snapshot).</p>
+<p>To demonstrate with an example, we will create a rule to alert when there is
+a new port open in listening mode on our server.</p>
+<p>First, we configure OSSEC to run the <tt class="docutils literal"><span class="pre">netstat</span> <span class="pre">-tan</span> <span class="pre">|grep</span> <span class="pre">LISTEN</span></tt> command
+by adding the following to ossec.conf:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;localfile&gt;</span>
+    <span class="nt">&lt;log_format&gt;</span>full_command<span class="nt">&lt;/log_format&gt;</span>
+    <span class="nt">&lt;command&gt;</span>netstat -tan |grep LISTEN|grep -v 127.0.0.1<span class="nt">&lt;/command&gt;</span>
+<span class="nt">&lt;/localfile&gt;</span>
+</pre></div>
+</div>
+<p>After that, I add a rule to alert when its output changes:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;rule</span> <span class="na">id=</span><span class="s">&quot;140123&quot;</span> <span class="na">level=</span><span class="s">&quot;7&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;if_sid&gt;</span>530<span class="nt">&lt;/if_sid&gt;</span>
+    <span class="nt">&lt;match&gt;</span>ossec: output: &#39;netstat -tan |grep LISTEN<span class="nt">&lt;/match&gt;</span>
+    <span class="nt">&lt;check_diff</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;description&gt;</span>Listened ports have changed.<span class="nt">&lt;/description&gt;</span>
+<span class="nt">&lt;/rule&gt;</span>
+</pre></div>
+</div>
+<p>Note that we use the <tt class="docutils literal"><span class="pre">&lt;check_diff</span> <span class="pre">/&gt;</span></tt> option. The first time it receives the
+event, it will store in an internal database. Every time it receives the same
+event, it will compare against what we have store and only alert if the output
+changes.</p>
+<p>In our example, after configuring OSSEC, I started netcat to listen on port
+23456 and that’s the alert I got:</p>
+<div class="highlight-python"><div class="highlight"><pre>OSSEC HIDS Notification.
+2010 Mar 11 19:56:30
+
+Received From: XYZ-&gt;netstat -tan |grep LISTEN|grep -v 127.0.0.1
+Rule: 140123 fired (level 7) -&gt; &quot;Listened ports have changed.&quot;
+Portion of the log(s):
+
+ossec: output: &#39;netstat -tan |grep LISTEN|grep -v 127.0.0.1&#39;:
+tcp4       0      0 *.23456           *.*               LISTEN
+tcp4       0      0 *.3306            *.*               LISTEN
+tcp4       0      0 *.25              *.*               LISTEN
+Previous output:
+ossec: output: &#39;netstat -tan |grep LISTEN|grep -v 127.0.0.1&#39;:
+tcp4       0      0 *.3306            *.*               LISTEN
+tcp4       0      0 *.25              *.*               LISTEN
+</pre></div>
+</div>
+</div>
+<div class="section" id="detecting-usb-storage-usage">
+<h3>Detecting USB Storage Usage<a class="headerlink" href="#detecting-usb-storage-usage" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="http://blog.rootshell.be/2010/03/15/detecting-usb-storage-usage-with-ossec/">Xavier Mertens</a> wrote a very interesting article on Detecting USB Storage Usage with
+OSSEC. He used our policy auditing module for that, but I think USB monitoring
+can be done in a much easier way with our new <a class="reference internal" href="../../syntax/head_rules.html#element-check_diff"><tt class="xref std std-xml docutils literal"><span class="pre">check_diff</span></tt></a> feature.</p>
+<p>To get started, first configure your Windows agents to monitor the USBSTOR
+registry entry using the reg command:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;agent_config</span> <span class="na">os=</span><span class="s">&quot;windows&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;localfile&gt;</span>
+        <span class="nt">&lt;log_format&gt;</span>full_command<span class="nt">&lt;/log_format&gt;</span>
+        <span class="nt">&lt;command&gt;</span>reg QUERY HKLM\SYSTEM\CurrentControlSet\Enum\USBSTOR<span class="nt">&lt;/command&gt;</span>
+    <span class="nt">&lt;/localfile&gt;</span>
+<span class="nt">&lt;/agent_config&gt;</span>
+</pre></div>
+</div>
+<p>Next create a local rule for that command:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;rule</span> <span class="na">id=</span><span class="s">&quot;140125&quot;</span> <span class="na">level=</span><span class="s">&quot;7&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;if_sid&gt;</span>530<span class="nt">&lt;/if_sid&gt;</span>
+    <span class="nt">&lt;match&gt;</span>ossec: output: &#39;reg QUERY<span class="nt">&lt;/match&gt;</span>
+    <span class="nt">&lt;check_diff</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;description&gt;</span>New USB device connected<span class="nt">&lt;/description&gt;</span>
+<span class="nt">&lt;/rule&gt;</span>
+</pre></div>
+</div>
+<p>Now after a few minutes you will see a directory at
+<tt class="docutils literal"><span class="pre">/var/ossec/queue/diff/[agent_name]/[rule_id]</span></tt> with the current snapshot of this
+command. Once someone adds a new USB device you will get this alert:</p>
+<div class="highlight-python"><div class="highlight"><pre>** Alert 1268687754.35062: mail  - local,syslog,
+2010 Mar 15 18:15:54 (xx-netbook) any-&gt;reg QUERY HKLMSYSTEMCurrentControlSetEnumUSBSTOR
+Rule: 140125 (level 7) -&gt; &#39;New USB device connected&#39;
+Src IP: (none)
+User: (none)
+ossec: output: &#39;reg QUERY HKLMSYSTEMCurrentControlSetEnumUSBSTOR&#39;:! REG.EXE VERSION 3.0
+
+HKEY_LOCAL_MACHINESYSTEMCurrentControlSetEnumUSBSTOR
+HKEY_LOCAL_MACHINESYSTEMCurrentControlSetEnumUSBSTORDisk&amp;Ven_&amp;Prod_USB_Flash_Memory&amp;Rev_5.00
+HKEY_LOCAL_MACHINESYSTEMCurrentControlSetEnumUSBSTORDisk&amp;Ven_Generic&amp;Prod_Flash_Disk&amp;Rev_8.0
+HKEY_LOCAL_MACHINESYSTEMCurrentControlSetEnumUSBSTORDisk&amp;Ven_Hitachi&amp;Prod_HTS543225L9A300&amp;Rev_
+HKEY_LOCAL_MACHINESYSTEMCurrentControlSetEnumUSBSTORDisk&amp;Ven_LEXAR&amp;Prod_JD_FIREFLY&amp;Rev_1100
+HKEY_LOCAL_MACHINESYSTEMCurrentControlSetEnumUSBSTORDisk&amp;Ven_SAMSUNG&amp;Prod_HM160JC&amp;Rev_0000
+HKEY_LOCAL_MACHINESYSTEMCurrentControlSetEnumUSBSTORDisk&amp;Ven_Sony&amp;Prod_DSC&amp;Rev_1.00
+HKEY_LOCAL_MACHINESYSTEMCurrentControlSetEnumUSBSTORDisk&amp;Ven_TomTom&amp;Prod_ONE_XXL_IQ_Rts
+HKEY_LOCAL_MACHINESYSTEMCurrentControlSetEnumUSBSTORDisk&amp;Ven_USB_2.0&amp;Prod_USB_Flash_Drive&amp;Rev_0.00
+
+Previous output:
+
+ossec: output: &#39;reg QUERY HKLMSYSTEMCurrentControlSetEnumUSBSTOR&#39;:
+! REG.EXE VERSION 3.0
+HKEY_LOCAL_MACHINESYSTEMCurrentControlSetEnumUSBSTOR
+HKEY_LOCAL_MACHINESYSTEMCurrentControlSetEnumUSBSTORDisk&amp;Ven_&amp;Prod_USB_Flash_Memory&amp;Rev_5.00
+HKEY_LOCAL_MACHINESYSTEMCurrentControlSetEnumUSBSTORDisk&amp;Ven_Generic&amp;Prod_Flash_Disk&amp;Rev_8.07
+HKEY_LOCAL_MACHINESYSTEMCurrentControlSetEnumUSBSTORDisk&amp;Ven_Hitachi&amp;Prod_HTS543225L9A300&amp;Rev_
+HKEY_LOCAL_ACHINESYSTEMCurrentControlSetEnumUSBSTORDisk&amp;Ven_SAMSUNG&amp;Prod_HM160JC&amp;Rev_0000
+HKEY_LOCAL_MACHINESYSTEMCurrentControlSetEnumUSBSTORDisk&amp;Ven_Sony&amp;Prod_DSC&amp;Rev_1.00
+HKEY_LOCAL_MACHINESYSTEMCurrentControlSetEnumUSBSTORDisk&amp;Ven_TomTom&amp;Prod_ONE_XXL_IQ_Rts
+HKEY_LOCAL_MACHINESYSTEMCurrentControlSetEnumUSBSTORDisk&amp;Ven_USB_2.0&amp;Prod_USB_Flash_Drive&amp;Rev_0.00
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+  <div class="section">
+  
+  
+  </div>
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2010-2015, OSSEC Project Team - OSSEC trademark and domain owned by Trend Micro, Inc. - Home page images courtesy of Pixbay.com.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

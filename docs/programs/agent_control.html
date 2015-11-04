@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>agent_control &mdash; OSSEC</title>
+    
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/parallax.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '2.8.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="top" title="OSSEC" href="../../index.html" />
+  
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  
+  
+  <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+  
+  <style type="text/css">
+    ul.ablog-archive {list-style: none; overflow: auto; margin-left: 0px}
+    ul.ablog-archive li {float: left; margin-right: 5px; font-size: 80%}
+  </style>
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html"><img src="../../_static/ossec_logo_bare_small.png">
+          OSSEC</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="../../about.html">About <i class="fa fa-info-circle"></i></a></li>
+                <li><a href="../../blog.html">Blog <i class="fa fa-archive"></i></a></li>
+                <li><a href="../">Documentaton <i class="fa fa-book"></i></a></li>
+                <li><a href="../../downloads.html">Downloads <i class="fa fa-download"></i></a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"></ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="section" id="agent-control">
+<span id="id1"></span><h1>agent_control<a class="headerlink" href="#agent-control" title="Permalink to this headline">¶</a></h1>
+<p>The agent_control tool allows you to query and get information from any agent you have configured
+on your server and it also allows you to restart (run now) the syscheck/rootcheck scan on any agent.</p>
+<p>Enabling <a class="reference external" href="../manual/ar/index.html">active response</a> will be necessary to start scans remotely and possibly other functions.</p>
+<div class="section" id="agent-control-argument-options">
+<h2>agent_control argument options<a class="headerlink" href="#agent-control-argument-options" title="Permalink to this headline">¶</a></h2>
+<dl class="option">
+<dt id="cmdoption-agent_control-h">
+<tt class="descname">-h</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-agent_control-h" title="Permalink to this definition">¶</a></dt>
+<dd><p>Display the help message</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-agent_control-l">
+<tt class="descname">-l</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-agent_control-l" title="Permalink to this definition">¶</a></dt>
+<dd><p>List available (active or not) agents</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-agent_control-lc">
+<tt class="descname">-lc</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-agent_control-lc" title="Permalink to this definition">¶</a></dt>
+<dd><p>List active agents</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-agent_control-i">
+<tt class="descname">-i</tt><tt class="descclassname"> &lt;agent_id&gt;</tt><a class="headerlink" href="#cmdoption-agent_control-i" title="Permalink to this definition">¶</a></dt>
+<dd><p>Extracts information from an agent</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-agent_control-R">
+<tt class="descname">-R</tt><tt class="descclassname"> &lt;agent_id&gt;</tt><a class="headerlink" href="#cmdoption-agent_control-R" title="Permalink to this definition">¶</a></dt>
+<dd><p>Restarts the OSSEC processes on the agent</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Requires active response to be enabled.</p>
+</div>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-agent_control-r">
+<tt class="descname">-r</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-agent_control-r" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run the integrity/rootcheck checking on agents.  Must be utilized
+with <a class="reference internal" href="#cmdoption-agent_control-a"><em class="xref std std-option">agent_control -a</em></a> or <a class="reference internal" href="#cmdoption-agent_control-u"><em class="xref std std-option">agent_control -u</em></a></p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Requires active response to be enabled.</p>
+</div>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-agent_control-a">
+<tt class="descname">-a</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-agent_control-a" title="Permalink to this definition">¶</a></dt>
+<dd><p>Utilizes all agents.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-agent_control-u">
+<tt class="descname">-u</tt><tt class="descclassname"> &lt;agent_id&gt;</tt><a class="headerlink" href="#cmdoption-agent_control-u" title="Permalink to this definition">¶</a></dt>
+<dd><p>&lt;agent_id&gt; that will perform the requested action.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="agent-control-example-usage">
+<h2>agent_control example usage<a class="headerlink" href="#agent-control-example-usage" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="example-1-listing-all-active-agents">
+<h3>Example 1: Listing all active agents<a class="headerlink" href="#example-1-listing-all-active-agents" title="Permalink to this headline">¶</a></h3>
+<p>The first interesting argument is <a class="reference internal" href="#cmdoption-agent_control-lc"><em class="xref std std-option">agent_control -lc</em></a>, to list the connected (active agents). To list
+all of them, use <a class="reference internal" href="#cmdoption-agent_control-l"><em class="xref std std-option">agent_control -l</em></a> only.</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">#</span> /var/ossec/bin/agent_control -lc
+<span class="go">OSSEC HIDS agent_control. List of available agents:</span>
+<span class="go">ID: 000, Name: enigma.ossec.net (server), IP: 127.0.0.1, Active/Local</span>
+<span class="go">ID: 002, Name: winhome, IP: 192.168.2.190, Active</span>
+<span class="go">ID: 005, Name: jul, IP: 192.168.2.0/24, Active</span>
+<span class="go">ID: 165, Name: esqueleto2, IP: 192.168.2.99, Active</span>
+<span class="go">ID: 174, Name: lili3win, IP: 192.168.2.0/24, Active</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="example-2-querying-information-from-agent-002">
+<h3>Example 2: Querying information from agent 002<a class="headerlink" href="#example-2-querying-information-from-agent-002" title="Permalink to this headline">¶</a></h3>
+<p>To query an agent, just use the <a class="reference internal" href="#cmdoption-agent_control-i"><em class="xref std std-option">agent_control -i</em></a> option followed by the agent id.</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">#</span> /var/ossec/bin/agent_control -i 002
+
+<span class="go">OSSEC HIDS agent_control. Agent information:</span>
+<span class="go">Agent ID: 002</span>
+<span class="go">Agent Name: winhome</span>
+<span class="go">IP address: 192.168.2.190</span>
+<span class="go">Status: Active</span>
+
+<span class="go">Operating system: Microsoft Windows XP Professional (Build 2600)</span>
+<span class="go">Client version: OSSEC HIDS v1.5-SNP-080412</span>
+<span class="go">Last keep alive: Fri Apr 25 14:33:03 2008</span>
+
+<span class="go">Syscheck last started at: Fri Apr 25 05:07:13 2008</span>
+<span class="go">Rootcheck last started at: Fri Apr 25 09:04:12 2008</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="example-3-executing-syscheck-and-rootcheck-scan-immediately">
+<h3>Example 3: Executing syscheck and rootcheck scan immediately<a class="headerlink" href="#example-3-executing-syscheck-and-rootcheck-scan-immediately" title="Permalink to this headline">¶</a></h3>
+<p>To execute the syscheck/rootcheck scan immediately, use the <a class="reference internal" href="#cmdoption-agent_control-r"><em class="xref std std-option">agent_control -r</em></a>
+option followed by the <a class="reference internal" href="#cmdoption-agent_control-u"><em class="xref std std-option">agent_control -u</em></a> with the agent id.</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">#</span> /var/ossec/bin/agent_control -r -u 000
+
+<span class="go">OSSEC HIDS agent_control: Restarting Syscheck/Rootcheck locally.</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+  <div class="section">
+  
+  
+  </div>
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2010-2015, OSSEC Project Team - OSSEC trademark and domain owned by Trend Micro, Inc. - Home page images courtesy of Pixbay.com.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

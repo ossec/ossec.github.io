@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Microsoft FTPD examples &mdash; OSSEC</title>
+    
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/parallax.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '2.8.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-sphinx.js"></script>
+    <link rel="author" title="About these documents" href="../../../about.html" />
+    <link rel="top" title="OSSEC" href="../../../index.html" />
+  
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  
+  
+  <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+  
+  <style type="text/css">
+    ul.ablog-archive {list-style: none; overflow: auto; margin-left: 0px}
+    ul.ablog-archive li {float: left; margin-right: 5px; font-size: 80%}
+  </style>
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../../index.html"><img src="../../../_static/ossec_logo_bare_small.png">
+          OSSEC</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="../../../about.html">About <i class="fa fa-info-circle"></i></a></li>
+                <li><a href="../../../blog.html">Blog <i class="fa fa-archive"></i></a></li>
+                <li><a href="../../">Documentaton <i class="fa fa-book"></i></a></li>
+                <li><a href="../../../downloads.html">Downloads <i class="fa fa-download"></i></a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"></ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="section" id="microsoft-ftpd-examples">
+<h1>Microsoft FTPD examples<a class="headerlink" href="#microsoft-ftpd-examples" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="sample-1">
+<h2>Sample 1:<a class="headerlink" href="#sample-1" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">14:03:19 192.168.2.187 [62]USER Administrator 331 0</span>
+<span class="go">14:03:19 192.168.2.187 [62]PASS - 530 1326</span>
+<span class="go">14:03:19 192.168.2.187 [62]USER Administrator 331 0</span>
+<span class="go">14:03:19 192.168.2.187 [62]PASS - 530 1326</span>
+<span class="go">14:03:19 192.168.2.187 [62]USER Administrator 331 0</span>
+<span class="go">14:03:20 192.168.2.187 [62]PASS - 530 1326</span>
+<span class="go">14:03:20 192.168.2.187 [62]USER Administrator 331 0</span>
+<span class="go">14:03:20 192.168.2.187 [62]PASS - 530 1326</span>
+<span class="go">14:03:20 192.168.2.187 [62]USER Administrator 331 0</span>
+<span class="go">14:03:20 192.168.2.187 [62]PASS - 530 1326</span>
+<span class="go">14:03:21 192.168.2.187 [62]USER Administrator 331 0</span>
+<span class="go">14:03:21 192.168.2.187 [62]PASS - 530 1326</span>
+<span class="go">14:37:52 10.1.2.35 [63]USER username 331 0</span>
+<span class="go">14:37:52 10.1.2.35 [63]PASS - 230 0</span>
+<span class="go">14:37:52 10.1.2.35 [63]CWD /dir 250 0</span>
+<span class="go">14:37:52 10.1.2.35 [63]CWD /dir/_mm 550 2</span>
+<span class="go">14:37:52 10.1.2.35 [63]CWD /dir/_notes 250 0</span>
+<span class="go">14:37:54 10.1.2.35 [63]CWD / 250 0</span>
+<span class="go">14:37:54 10.1.2.35 [63]MKD /dir/XYIZNWSK 257 0</span>
+<span class="go">14:37:54 10.1.2.35 [63]CWD /dir 250 0</span>
+<span class="go">14:37:54 10.1.2.35 [63]CWD / 250 0</span>
+<span class="go">14:37:54 10.1.2.35 [63]RMD /dir/XYIZNWSK 250 0</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="sample-2">
+<h2>Sample 2:<a class="headerlink" href="#sample-2" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">12:48:44 x.x.180.116 [11]USER anonymous 331 0</span>
+<span class="go">12:48:44 x.x.180.116 [11]PASS IEUser@ 530 1326</span>
+<span class="go">12:48:44 x.x.180.116 [12]USER administrator 331 0</span>
+<span class="go">12:48:44 x.x.180.116 [12]PASS - 530 1326</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="sample-3">
+<h2>Sample 3:<a class="headerlink" href="#sample-3" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">#</span>Software: Microsoft Internet Information Services 5.0
+<span class="gp">#</span>Version: 1.0
+<span class="gp">#</span>Date: 2006-09-23 17:49:32
+<span class="gp">#</span>Fields: <span class="nb">time </span>c-ip cs-username s-sitename s-computername s-ip s-port cs-method cs-uri-stem cs-uri-query sc-status sc-win32-status sc-bytes cs-bytes <span class="nb">time</span>-taken cs-version cs-host cs<span class="o">(</span>User-Agent<span class="o">)</span> cs<span class="o">(</span>Cookie<span class="o">)</span> cs<span class="o">(</span>Referer<span class="o">)</span>
+<span class="go">17:57:59 192.168.3.64 Administrator MSFTPSVC1 HAIJO2 192.168.1.12 21 [144]USER Administrator - 331 0 0 0 0 FTP - - - -</span>
+<span class="go">17:57:59 192.168.3.64 Administrator MSFTPSVC1 HAIJO2 192.168.1.12 21 [144]PASS - - 230 0 0 0 16 FTP - - - -</span>
+<span class="go">17:58:11 192.168.3.64 Administrator MSFTPSVC1 HAIJO2 192.168.1.12 21 [144]sent /wwwroot/winkel/weekrapport.asp - 226 0 0 0 0 FTP - - - -</span>
+<span class="go">17:58:11 192.168.3.64 Administrator MSFTPSVC1 HAIJO2 192.168.1.12 21 [144]sent /wwwroot/winkel/weekrapport.asp - 226 0 0 0 0 FTP - - - -</span>
+<span class="go">17:58:11 192.168.3.64 Administrator MSFTPSVC1 HAIJO2 192.168.1.12 21 [144]sent /wwwroot/winkel/weekrapport.asp - 226 0 14903 0 250 FTP - - - -</span>
+<span class="go">17:58:32 192.168.3.64 Administrator MSFTPSVC1 HAIJO2 192.168.1.12 21 [144]created weekrapport.asp - 226 0 0 14874 610 FTP - - - -</span>
+<span class="go">17:58:42 192.168.3.64 Administrator MSFTPSVC1 HAIJO2 192.168.1.12 21 [144]sent /wwwroot/develop/weekrapport.asp - 226 0 0 0 0 FTP - - - -</span>
+<span class="go">17:58:42 192.168.3.64 Administrator MSFTPSVC1 HAIJO2 192.168.1.12 21 [144]sent /wwwroot/develop/weekrapport.asp - 226 0 0 0 0 FTP - - - -</span>
+<span class="go">17:58:42 192.168.3.64 Administrator MSFTPSVC1 HAIJO2 192.168.1.12 21 [144]sent /wwwroot/develop/weekrapport.asp - 226 0 14903 0 547 FTP - - - -</span>
+<span class="go">17:58:49 192.168.3.64 Administrator MSFTPSVC1 HAIJO2 192.168.1.12 21 [144]created weekrapport.asp - 226 0 0 14874 594 FTP - - - -</span>
+<span class="go">17:58:57 192.168.3.64 Administrator MSFTPSVC1 HAIJO2 192.168.1.12 21 [144]QUIT - - 250 0 0 0 0 FTP - - - -</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="sample-4">
+<h2>Sample 4:<a class="headerlink" href="#sample-4" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">2004-12-30 11:24:41 203.115.228.178 ftp MSFTPSVC1 MULTIMEDIA 192.168.0.203 21 [12]USER ftp - 331 0 FTP - - - -</span>
+
+<span class="go">2004-12-30 11:24:41 203.115.228.178 - MSFTPSVC1 MULTIMEDIA 192.168.0.203 21 [12]PASS ftp@ftp.net - 530 1326 FTP - -</span>
+
+<span class="go">2004-12-30 11:24:43 203.115.228.178 anyone MSFTPSVC1 MULTIMEDIA 192.168.0.203 21 [13]USER anyone - 331 0 FTP - - - -</span>
+
+<span class="go">2004-12-30 11:24:43 203.115.228.178 - MSFTPSVC1 MULTIMEDIA 192.168.0.203 21 [13]PASS - - 530 1326 FTP - - - -</span>
+
+<span class="go">2004-12-30 11:24:44 203.115.228.178 root MSFTPSVC1 MULTIMEDIA 192.168.0.203 21 [14]USER root - 331 0 FTP - - - -</span>
+
+<span class="go">2004-12-30 11:24:44 203.115.228.178 admin MSFTPSVC1 MULTIMEDIA 192.168.0.203 21 [15]USER admin - 331 0 FTP - - - -</span>
+
+<span class="go">2004-12-30 11:24:44 203.115.228.178 - MSFTPSVC1 MULTIMEDIA 192.168.0.203 21 [14]PASS - - 530 1326 FTP - - - -</span>
+
+<span class="go">2004-12-30 11:24:44 203.115.228.178 webmaster MSFTPSVC1 MULTIMEDIA 192.168.0.203 21 [16]USER webmaster - 331 0 FTP</span>
+
+<span class="go">2004-12-30 11:24:44 203.115.228.178 - MSFTPSVC1 MULTIMEDIA 192.168.0.203 21 [15]PASS - - 530 1326 FTP - - - -</span>
+
+<span class="go">2004-12-30 11:24:44 203.115.228.178 user MSFTPSVC1 MULTIMEDIA 192.168.0.203 21 [17]USER user - 331 0 FTP - - - -</span>
+
+<span class="go">2004-12-30 11:24:44 203.115.228.178 - MSFTPSVC1 MULTIMEDIA 192.168.0.203 21 [16]PASS - - 530 1326 FTP - - - -</span>
+
+<span class="go">2004-12-30 11:24:44 203.115.228.178 test MSFTPSVC1 MULTIMEDIA 192.168.0.203 21 [18]USER test - 331 0 FTP - - - -</span>
+
+<span class="go">2004-12-30 11:24:44 203.115.228.178 - MSFTPSVC1 MULTIMEDIA 192.168.0.203 21 [17]PASS - - 530 1326 FTP - - - -</span>
+
+<span class="go">2004-12-30 11:24:45 203.115.228.178 web MSFTPSVC1 MULTIMEDIA 192.168.0.203 21 [19]USER web - 331 0 FTP - - - -</span>
+
+<span class="go">2004-12-30 11:24:45 203.115.228.178 - MSFTPSVC1 MULTIMEDIA 192.168.0.203 21 [18]PASS - - 530 1326 FTP - - - -</span>
+
+<span class="go">2004-12-30 11:24:45 203.115.228.178 www MSFTPSVC1 MULTIMEDIA 192.168.0.203 21 [20]USER www - 331 0 FTP - - - -</span>
+
+<span class="go">2004-12-30 11:24:45 203.115.228.178 - MSFTPSVC1 MULTIMEDIA 192.168.0.203 21 [19]PASS - - 530 1326 FTP - - - -</span>
+
+<span class="go">2004-12-30 11:24:45 203.115.228.178 administrator MSFTPSVC1 MULTIMEDIA 192.168.0.203 21 [22]USER administrator - 331</span>
+
+<span class="go">2004-12-30 11:24:45 203.115.228.178 - MSFTPSVC1 MULTIMEDIA 192.168.0.203 21 [21]PASS - - 530 1326 FTP - - - -</span>
+
+<span class="go">2004-12-30 11:24:45 203.115.228.178 sybase MSFTPSVC1 MULTIMEDIA 192.168.0.203 21 [25]USER sybase - 331 0 FTP - - - -</span>
+
+<span class="go">2004-12-30 11:24:45 203.115.228.178 - MSFTPSVC1 MULTIMEDIA 192.168.0.203 21 [23]PASS - - 530 1326 FTP - - - -</span>
+
+<span class="go">2004-12-30 11:24:45 203.115.228.178 - MSFTPSVC1 MULTIMEDIA 192.168.0.203 21 [24]PASS - - 530 1326 FTP - - - -</span>
+
+<span class="go">2004-12-30 11:24:45 203.115.228.178 user MSFTPSVC1 MULTIMEDIA 192.168.0.203 21 [27]USER user - 331 0 FTP - - - -</span>
+
+<span class="go">2004-12-30 11:24:45 203.115.228.178 webmaster MSFTPSVC1 MULTIMEDIA 192.168.0.203 21 [26]USER webmaster - 331 0 FTP -</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="sample-5">
+<h2>Sample 5:<a class="headerlink" href="#sample-5" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">13:15:45 172.28.129.116 [51]USER xxxxx 331 0</span>
+<span class="go">13:15:46 172.28.129.116 [51]PASS - 230 0</span>
+<span class="go">13:15:56 172.28.129.116 [51]MKD 20051103 257 0</span>
+<span class="go">13:15:57 172.28.129.116 [51]CWD 20051103 250 0</span>
+<span class="go">13:17:19 172.28.129.116 [51]created /filename 226 0</span>
+<span class="go">13:18:44 172.28.129.116 [51]QUIT - 226 0</span>
+<span class="go">13:39:13 160.164.22.7 [52]USER anonymous 331 0</span>
+<span class="go">13:39:13 160.164.22.7 [52]PASS opss 530 1326</span>
+<span class="go">13:39:13 160.164.22.7 [52]QUIT - 530 0</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+  <div class="section">
+  
+  
+  </div>
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2010-2015, OSSEC Project Team - OSSEC trademark and domain owned by Trend Micro, Inc. - Home page images courtesy of Pixbay.com.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Rule Groups &mdash; OSSEC</title>
+    
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/parallax.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '2.8.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-sphinx.js"></script>
+    <link rel="author" title="About these documents" href="../../../about.html" />
+    <link rel="top" title="OSSEC" href="../../../index.html" />
+  
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  
+  
+  <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+  
+  <style type="text/css">
+    ul.ablog-archive {list-style: none; overflow: auto; margin-left: 0px}
+    ul.ablog-archive li {float: left; margin-right: 5px; font-size: 80%}
+  </style>
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../../index.html"><img src="../../../_static/ossec_logo_bare_small.png">
+          OSSEC</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="../../../about.html">About <i class="fa fa-info-circle"></i></a></li>
+                <li><a href="../../../blog.html">Blog <i class="fa fa-archive"></i></a></li>
+                <li><a href="../../">Documentaton <i class="fa fa-book"></i></a></li>
+                <li><a href="../../../downloads.html">Downloads <i class="fa fa-download"></i></a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"></ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="section" id="rule-groups">
+<h1>Rule Groups<a class="headerlink" href="#rule-groups" title="Permalink to this headline">¶</a></h1>
+<p>We can specify groups for specific rules. It&#8217;s used for active response reasons and for correlation.</p>
+<p>We currently use the following groups:</p>
+<div class="section" id="reconnaissance">
+<h2>Reconnaissance<a class="headerlink" href="#reconnaissance" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Connection Attempt - connection_attempt</li>
+<li>Web scan - web_scan</li>
+<li>Generic scan - recon</li>
+</ul>
+</div>
+<div class="section" id="authentication-control">
+<h2>Authentication Control<a class="headerlink" href="#authentication-control" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Success - authentication_success</li>
+<li>Failure - authentication_failed</li>
+<li>Invalid - invalid_login</li>
+<li>Login denied - login_denied</li>
+<li>Multiple failures - authentication_failures</li>
+<li>User account added/changed/removed - adduser|account_changed</li>
+</ul>
+</div>
+<div class="section" id="attack-misuse">
+<h2>Attack/Misuse<a class="headerlink" href="#attack-misuse" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Worm (Non targeted attack) - automatic_attack</li>
+<li>Exploit pattern - exploit_attempt</li>
+<li>Invalid access - invalid_access</li>
+<li>Spam - spam</li>
+<li>Multiple Spams - multiple_spam</li>
+<li>SQL Injection - sql_injection</li>
+<li>Generic Attack - attack</li>
+<li>Rootkit detection - rootcheck</li>
+<li>Virus detected - virus</li>
+</ul>
+</div>
+<div class="section" id="access-control">
+<h2>Access Control<a class="headerlink" href="#access-control" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Access denied - access_denied</li>
+<li>Access allowed -access_allowed</li>
+<li>Access to Inexistent resource - unknown_resource</li>
+<li>Firewall Drop - firewall_drop</li>
+<li>Multiple firewall drops - multiple_drops</li>
+<li>Client mis-configuration - client_misconfig</li>
+<li>Client error - client_error</li>
+</ul>
+</div>
+<div class="section" id="network-control">
+<h2>Network Control<a class="headerlink" href="#network-control" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>New host detected - new_host</li>
+<li>Possible ARP spoof - ip_spoof</li>
+</ul>
+</div>
+<div class="section" id="system-monitor">
+<h2>System Monitor<a class="headerlink" href="#system-monitor" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Service start - service_start</li>
+<li>Service availability in Risk - service_availability</li>
+<li>System error - system_error</li>
+<li>Shutdown - system_shutdown</li>
+<li>Logs removed - logs_cleared</li>
+<li>Invalid request  - invalid_request</li>
+<li>Promiscuous mode detected - promisc</li>
+<li>Policy changed - policy_changed</li>
+<li>Configuration changed - config_changed</li>
+<li>Integrity Checking - syscheck</li>
+<li>Low disk space - low_diskspace</li>
+<li>Time changed - time_changed</li>
+</ul>
+</div>
+<div class="section" id="policy-violation">
+<h2>Policy Violation<a class="headerlink" href="#policy-violation" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Login time - login_time</li>
+<li>Login day  - login_day</li>
+</ul>
+</div>
+</div>
+
+  <div class="section">
+  
+  
+  </div>
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2010-2015, OSSEC Project Team - OSSEC trademark and domain owned by Trend Micro, Inc. - Home page images courtesy of Pixbay.com.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

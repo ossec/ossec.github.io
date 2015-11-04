@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>All Posts &mdash; OSSEC</title>
+    
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="_static/parallax.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '2.8.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="top" title="OSSEC" href="index.html" />
+  
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  
+  
+  <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+  
+  <style type="text/css">
+    ul.ablog-archive {list-style: none; overflow: auto; margin-left: 0px}
+    ul.ablog-archive li {float: left; margin-right: 5px; font-size: 80%}
+  </style>
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html"><img src="_static/ossec_logo_bare_small.png">
+          OSSEC</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="about.html">About <i class="fa fa-info-circle"></i></a></li>
+                <li><a href="#">Blog <i class="fa fa-archive"></i></a></li>
+                <li><a href="docs/">Documentaton <i class="fa fa-book"></i></a></li>
+                <li><a href="downloads.html">Downloads <i class="fa fa-download"></i></a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"></ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary">
+<ul class="nav nav-list">
+  <li> 
+    <a class="reference internal nav-header" href="#">Recent Posts</a>
+    <ul class="nav nav-list">
+      
+      
+      <li><a class="reference internal" href="blog/posts/2015-06-11-cve-2015-3222-fix.markdown.html">Jun 11 - CVE-2015-3222 Vulnerability Fixed in OSSEC 2.8.2</a></li>
+      
+      <li><a class="reference internal" href="blog/posts/2014-10-09-ossec-ova-2_8_1.markdown.html">Oct 09 - OSSEC Virtual Appliance 2.8.1 Available</a></li>
+      
+      <li><a class="reference internal" href="blog/posts/2014-10-09-ossec-con-2014-recap.markdown.html">Oct 09 - OSSEC CON 2014 Recap</a></li>
+      
+      <li><a class="reference internal" href="blog/posts/2014-09-09-cve-2014-5284-fix.markdown.html">Oct 09 - CVE-2014-5284 Vulnerability Fixed in OSSEC 2.8.1</a></li>
+      
+      <li><a class="reference internal" href="blog/posts/2014-06-04-2_8-release.markdown.html">Jun 04 - OSSEC 2.8 Released</a></li>
+      
+    </ul>
+  </li>
+</ul>
+
+<ul class="nav nav-list">
+  <li>
+    <a href="blog/category.html">Categories</a>
+    <ul class="nav nav-list">
+    
+      
+      <li><a class="reference internal" href="blog/category/announcements.html">Announcements (6)</a></li>
+      
+    
+      
+      <li><a class="reference internal" href="blog/category/anouncements.html">Anouncements (1)</a></li>
+      
+    
+      
+      <li><a class="reference internal" href="blog/category/integrations.html">Integrations (2)</a></li>
+      
+    
+      
+      <li><a class="reference internal" href="blog/category/releases.html">Releases (4)</a></li>
+      
+    
+    </ul>
+  </li>
+</ul>
+
+<ul class="nav nav-list">
+  <li>
+    <a href="blog/archive.html">Archives</a>
+    <ul>
+    
+      
+      <li><a href="blog/2015.html"><i class="fa fa-folder"></i> 2015 (1)</a></li>
+      
+    
+      
+      <li><a href="blog/2014.html"><i class="fa fa-folder"></i> 2014 (10)</a></li>
+      
+    
+      
+      <li><a href="blog/2013.html"><i class="fa fa-folder"></i> 2013 (1)</a></li>
+      
+    
+    </ul>
+  </li>
+</ul>
+
+<form action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+        </div>
+      </div>
+    <div class="col-md-9">
+      
+  <div class="section">
+
+    <h1>
+      
+      All
+      
+      Posts
+      
+    </h1>
+    
+    
+
+    <div class="section">
+      <h2><a href="blog/posts/2015-06-11-cve-2015-3222-fix.markdown.html">CVE-2015-3222 Vulnerability Fixed in OSSEC 2.8.2</a></h2>
+
+      <ul class="ablog-archive">
+      <li>
+      <i class="fa fa-calendar"></i>
+        Jun 11, 2015
+      
+      </li>
+        
+
+  
+  <li>
+    
+      
+      <i class="fa-fw fa fa-user"></i><a href="blog/author/vic-hargrave.html">Vic Hargrave</a>
+      
+    </li>
+  
+
+  
+
+  
+
+  
+  <li>
+    
+      
+      <i class="fa-fw fa fa-folder-open"></i><a href="blog/category/releases.html">Releases</a>
+      
+    </li>
+  
+
+  
+  <li><i class="fa-fw fa fa-tags"></i>
+      
+    
+      
+      <a href="blog/tag/ossec.html">ossec</a>,
+      
+    
+      
+      <a href="blog/tag/security.html">security</a>,
+      
+    
+      
+      <a href="blog/tag/cve.html">cve</a>
+      
+    </li>
+  
+  </ul>
+      <p>The CVE-2015-3222 vulnerability, which allows for root escalation via syscheck
+has been fixed in OSSEC 2.8.2. Full details of the issue can be found on the
+OSSEC Github repository –
+<a class="reference external" href="https://github.com/ossec/ossec-hids/releases/tag/2.8.2">https://github.com/ossec/ossec-hids/releases/tag/2.8.2</a>.</p>
+
+      <p><a href="blog/posts/2015-06-11-cve-2015-3222-fix.markdown.html">Read more ...</a></p>
+      <hr>
+    </div>
+    
+
+    <div class="section">
+      <h2><a href="blog/posts/2014-10-09-ossec-ova-2_8_1.markdown.html">OSSEC Virtual Appliance 2.8.1 Available</a></h2>
+
+      <ul class="ablog-archive">
+      <li>
+      <i class="fa fa-calendar"></i>
+        Oct 09, 2014
+      
+      </li>
+        
+
+  
+  <li>
+    
+      
+      <i class="fa-fw fa fa-user"></i><a href="blog/author/vic-hargrave.html">Vic Hargrave</a>
+      
+    </li>
+  
+
+  
+
+  
+
+  
+  <li>
+    
+      
+      <i class="fa-fw fa fa-folder-open"></i><a href="blog/category/integrations.html">Integrations</a>
+      
+    
+      
+      <i class="fa-fw fa fa-folder-open"></i><a href="blog/category/announcements.html">Announcements</a>
+      
+    </li>
+  
+
+  
+  <li><i class="fa-fw fa fa-tags"></i>
+      
+    
+      
+      <a href="blog/tag/ossec.html">ossec</a>,
+      
+    
+      
+      <a href="blog/tag/ova.html">ova</a>,
+      
+    
+      
+      <a href="blog/tag/elasticsearch.html">elasticsearch</a>
+      
+    </li>
+  
+  </ul>
+      <p>I have updated the OSSEC Virtual Appliance to include OSSEC 2.8.1 and
+Elasticsearch-Logstash-Kibana (ELK) log management and the ElasticHQ
+system to handle ELK monitoring. It is a single gzipped OVA that can be
+easily imported into VirtualBox or any other virtualization system that
+supports OVA files.</p>
+
+      <p><a href="blog/posts/2014-10-09-ossec-ova-2_8_1.markdown.html">Read more ...</a></p>
+      <hr>
+    </div>
+    
+
+    <div class="section">
+      <h2><a href="blog/posts/2014-10-09-ossec-con-2014-recap.markdown.html">OSSEC CON 2014 Recap</a></h2>
+
+      <ul class="ablog-archive">
+      <li>
+      <i class="fa fa-calendar"></i>
+        Oct 09, 2014
+      
+      </li>
+        
+
+  
+  <li>
+    
+      
+      <i class="fa-fw fa fa-user"></i><a href="blog/author/vic-hargrave.html">Vic Hargrave</a>
+      
+    </li>
+  
+
+  
+
+  
+
+  
+  <li>
+    
+      
+      <i class="fa-fw fa fa-folder-open"></i><a href="blog/category/announcements.html">Announcements</a>
+      
+    </li>
+  
+
+  
+  <li><i class="fa-fw fa fa-tags"></i>
+      
+    
+      
+      <a href="blog/tag/ossec.html">ossec</a>,
+      
+    
+      
+      <a href="blog/tag/osssecon.html">osssecon</a>,
+      
+    
+      
+      <a href="blog/tag/conf.html">conf</a>,
+      
+    
+      
+      <a href="blog/tag/aleinvault.html">aleinvault</a>,
+      
+    
+      
+      <a href="blog/tag/atomicorp.html">atomicorp</a>
+      
+    </li>
+  
+  </ul>
+      <p>OSSEC CON 2014 was held in Cork Ireland this year to promote OSSEC in
+EMEA where we have many users. This year we had several members of the
+current OSSEC Team speak to our audience.</p>
+
+      <p><a href="blog/posts/2014-10-09-ossec-con-2014-recap.markdown.html">Read more ...</a></p>
+      <hr>
+    </div>
+    
+
+    <div class="section">
+      <h2><a href="blog/posts/2014-09-09-cve-2014-5284-fix.markdown.html">CVE-2014-5284 Vulnerability Fixed in OSSEC 2.8.1</a></h2>
+
+      <ul class="ablog-archive">
+      <li>
+      <i class="fa fa-calendar"></i>
+        Oct 09, 2014
+      
+      </li>
+        
+
+  
+  <li>
+    
+      
+      <i class="fa-fw fa fa-user"></i><a href="blog/author/vic-hargrave.html">Vic Hargrave</a>
+      
+    </li>
+  
+
+  
+
+  
+
+  
+  <li>
+    
+      
+      <i class="fa-fw fa fa-folder-open"></i><a href="blog/category/releases.html">Releases</a>
+      
+    </li>
+  
+
+  
+  <li><i class="fa-fw fa fa-tags"></i>
+      
+    
+      
+      <a href="blog/tag/ossec.html">ossec</a>,
+      
+    
+      
+      <a href="blog/tag/security.html">security</a>,
+      
+    
+      
+      <a href="blog/tag/cve.html">cve</a>
+      
+    </li>
+  
+  </ul>
+      <p>OSSEC 2.8.1 has been released to address the security issue identified
+by Jeff Petersen of Roka Security LLC. Full details of the issue can be
+found on the OSSEC Github repository –
+<a class="reference external" href="https://github.com/ossec/ossec-hids/releases/tag/2.8.1">https://github.com/ossec/ossec-hids/releases/tag/2.8.1</a>.</p>
+
+      <p><a href="blog/posts/2014-09-09-cve-2014-5284-fix.markdown.html">Read more ...</a></p>
+      <hr>
+    </div>
+    
+
+    <div class="section">
+      <h2><a href="blog/posts/2014-06-04-2_8-release.markdown.html">OSSEC 2.8 Released</a></h2>
+
+      <ul class="ablog-archive">
+      <li>
+      <i class="fa fa-calendar"></i>
+        Jun 04, 2014
+      
+      </li>
+        
+
+  
+  <li>
+    
+      
+      <i class="fa-fw fa fa-user"></i><a href="blog/author/vic-hargrave.html">Vic Hargrave</a>
+      
+    </li>
+  
+
+  
+
+  
+
+  
+  <li>
+    
+      
+      <i class="fa-fw fa fa-folder-open"></i><a href="blog/category/releases.html">Releases</a>
+      
+    </li>
+  
+
+  
+  <li><i class="fa-fw fa fa-tags"></i>
+      
+    
+      
+      <a href="blog/tag/ossec.html">ossec</a>,
+      
+    
+      
+      <a href="blog/tag/support.html">support</a>
+      
+    </li>
+  
+  </ul>
+      
+      <p><a href="blog/posts/2014-06-04-2_8-release.markdown.html">Read more ...</a></p>
+      <hr>
+    </div>
+    
+
+    <div class="section">
+      <h2><a href="blog/posts/2014-05-12-OSSEC-Commercial-Support-Contracts.markdown.html">OSSEC Commercial Support Contracts</a></h2>
+
+      <ul class="ablog-archive">
+      <li>
+      <i class="fa fa-calendar"></i>
+        May 12, 2014
+      
+      </li>
+        
+
+  
+  <li>
+    
+      
+      <i class="fa-fw fa fa-user"></i><a href="blog/author/vic-hargrave.html">Vic Hargrave</a>
+      
+    </li>
+  
+
+  
+
+  
+
+  
+  <li>
+    
+      
+      <i class="fa-fw fa fa-folder-open"></i><a href="blog/category/announcements.html">Announcements</a>
+      
+    </li>
+  
+
+  
+  <li><i class="fa-fw fa fa-tags"></i>
+      
+    
+      
+      <a href="blog/tag/ossec.html">ossec</a>,
+      
+    
+      
+      <a href="blog/tag/support.html">support</a>
+      
+    </li>
+  
+  </ul>
+      <p>OSSEC Commercial Support contracts will no longer be available directly
+from Trend Micro as of March 2014; however all existing agreements will
+continue to be fully supported until the end of their respective terms.</p>
+
+      <p><a href="blog/posts/2014-05-12-OSSEC-Commercial-Support-Contracts.markdown.html">Read more ...</a></p>
+      <hr>
+    </div>
+    
+
+    <div class="section">
+      <h2><a href="blog/posts/2013-09-20-OSSEC-2.7.1-Released.html">OSSEC 2.7.1 Released</a></h2>
+
+      <ul class="ablog-archive">
+      <li>
+      <i class="fa fa-calendar"></i>
+        Apr 15, 2014
+      
+      </li>
+        
+
+  
+  <li>
+    
+      
+      <i class="fa-fw fa fa-user"></i><a href="blog/author/vic-hargrave.html">Vic Hargrave</a>
+      
+    </li>
+  
+
+  
+
+  
+
+  
+  <li>
+    
+      
+      <i class="fa-fw fa fa-folder-open"></i><a href="blog/category/releases.html">Releases</a>
+      
+    </li>
+  
+
+  
+  <li><i class="fa-fw fa fa-tag"></i>
+    
+      
+      <a href="blog/tag/minor.html">minor</a>
+      
+    </li>
+  
+  </ul>
+      <p>OSSEC 2.7.1 has been released and posted on our <a class="reference external" href="../../download">download
+page</a>. You can check the <a class="reference external" href="/release-notes/ossec-hids-2.7.1-release-note.txt">release
+notes</a> to find out
+what has been updated in this release.</p>
+
+      <p><a href="blog/posts/2013-09-20-OSSEC-2.7.1-Released.html">Read more ...</a></p>
+      <hr>
+    </div>
+    
+
+    <div class="section">
+      <h2><a href="blog/posts/2014-04-29-OSSEC-2.8-Beta-1-is-Available.markdown.html">OSSEC 2.8 Beta-1 is Available</a></h2>
+
+      <ul class="ablog-archive">
+      <li>
+      <i class="fa fa-calendar"></i>
+        Mar 29, 2014
+      
+      </li>
+        
+
+  
+  <li>
+    
+      
+      <i class="fa-fw fa fa-user"></i><a href="blog/author/vic-hargrave.html">Vic Hargrave</a>
+      
+    </li>
+  
+
+  
+
+  
+
+  
+  <li>
+    
+      
+      <i class="fa-fw fa fa-folder-open"></i><a href="blog/category/announcements.html">Announcements</a>
+      
+    </li>
+  
+
+  
+  <li><i class="fa-fw fa fa-tags"></i>
+      
+    
+      
+      <a href="blog/tag/beta.html">beta</a>,
+      
+    
+      
+      <a href="blog/tag/ossec.html">ossec</a>
+      
+    </li>
+  
+  </ul>
+      <p>The OSSEC developers have been hard at work on version 2.8 and we have
+made Beta-1 packages available for testing. See the
+<a class="reference external" href="../..//downloads.html/">Downloads</a> page. Helps us with the testing and fine
+tuning of this preliminary release.</p>
+
+      <p><a href="blog/posts/2014-04-29-OSSEC-2.8-Beta-1-is-Available.markdown.html">Read more ...</a></p>
+      <hr>
+    </div>
+    
+
+    <div class="section">
+      <h2><a href="blog/posts/2014-04-09-cve-2014-0160-heartbleed.markdown.html">CVE-2014-0160 (Heartbleed bug) Advisory for OSSEC</a></h2>
+
+      <ul class="ablog-archive">
+      <li>
+      <i class="fa fa-calendar"></i>
+        Mar 09, 2014
+      
+      </li>
+        
+
+  
+  <li>
+    
+      
+      <i class="fa-fw fa fa-user"></i><a href="blog/author/vic-hargrave.html">Vic Hargrave</a>
+      
+    </li>
+  
+
+  
+
+  
+
+  
+  <li>
+    
+      
+      <i class="fa-fw fa fa-folder-open"></i><a href="blog/category/announcements.html">Announcements</a>
+      
+    </li>
+  
+
+  
+  <li><i class="fa-fw fa fa-tags"></i>
+      
+    
+      
+      <a href="blog/tag/security.html">security</a>,
+      
+    
+      
+      <a href="blog/tag/cve.html">cve</a>,
+      
+    
+      
+      <a href="blog/tag/update.html">update</a>
+      
+    </li>
+  
+  </ul>
+      <p>The recently disclosed CVE-2014-0160 vulnerability – heartbleed read
+overrun – in OpenSSL may impact OSSEC installations where OSSEC was
+deployed with OpenSSL support, either when built from source or
+installed from RPMs. In particular this issue leaves ossec-authd open to
+attack.</p>
+
+      <p><a href="blog/posts/2014-04-09-cve-2014-0160-heartbleed.markdown.html">Read more ...</a></p>
+      <hr>
+    </div>
+    
+
+    <div class="section">
+      <h2><a href="blog/posts/2014-04-08-Debian-Packages-Now-Available.markdown.html">Debian Packages Now Available</a></h2>
+
+      <ul class="ablog-archive">
+      <li>
+      <i class="fa fa-calendar"></i>
+        Mar 04, 2014
+      
+      </li>
+        
+
+  
+  <li>
+    
+      
+      <i class="fa-fw fa fa-user"></i><a href="blog/author/vic-hargrave.html">Vic Hargrave</a>
+      
+    </li>
+  
+
+  
+
+  
+
+  
+  <li>
+    
+      
+      <i class="fa-fw fa fa-folder-open"></i><a href="blog/category/announcements.html">Announcements</a>
+      
+    </li>
+  
+
+  
+  <li><i class="fa-fw fa fa-tags"></i>
+      
+    
+      
+      <a href="blog/tag/debian.html">debian</a>,
+      
+    
+      
+      <a href="blog/tag/deb.html">deb</a>
+      
+    </li>
+  
+  </ul>
+      <p>Our friends at <a class="reference external" href="http://www.alienvault.com/">AlienVault</a> have created
+and now host Debian packages of OSSEC for Ubuntu Wheezy, Jessie and Sid.
+See the <a class="reference external" href="../../downloads.html/">Downloads</a> page for the links to the packages
+and AlienVault&#8217;s respositories. Thanks to OSSEC Project team member
+Santiago Gonzalez for taking the time to create these packages and
+AlientVault for hosting them</p>
+
+      <p><a href="blog/posts/2014-04-08-Debian-Packages-Now-Available.markdown.html">Read more ...</a></p>
+      <hr>
+    </div>
+    
+
+    <div class="section">
+      <h2><a href="blog/posts/2014-01-28-OSSEC-Moving-to-Github.markdown.html">OSSEC Moving to Github</a></h2>
+
+      <ul class="ablog-archive">
+      <li>
+      <i class="fa fa-calendar"></i>
+        Jan 01, 2014
+      
+      </li>
+        
+
+  
+  <li>
+    
+      
+      <i class="fa-fw fa fa-user"></i><a href="blog/author/vic-hargrave.html">Vic Hargrave</a>
+      
+    </li>
+  
+
+  
+
+  
+
+  
+  <li>
+    
+      
+      <i class="fa-fw fa fa-folder-open"></i><a href="blog/category/anouncements.html">Anouncements</a>
+      
+    </li>
+  
+
+  
+  <li><i class="fa-fw fa fa-tags"></i>
+      
+    
+      
+      <a href="blog/tag/git.html">git</a>,
+      
+    
+      
+      <a href="blog/tag/hg.html">hg</a>,
+      
+    
+      
+      <a href="blog/tag/development.html">development</a>
+      
+    </li>
+  
+  </ul>
+      <p>OSSEC is moving from bitbucket to github, and in the process moving to a
+new method for accepting contributions. This is an exciting change that
+we feel will help push OSSEC forward in 2014 and further into the
+future.</p>
+
+      <p><a href="blog/posts/2014-01-28-OSSEC-Moving-to-Github.markdown.html">Read more ...</a></p>
+      <hr>
+    </div>
+    
+
+    <div class="section">
+      <h2><a href="blog/posts/2013-12-15-OSSEC-Log-Management-with-Elasticsearch.markdown.html">OSSEC Log Management with Elasticsearch</a></h2>
+
+      <ul class="ablog-archive">
+      <li>
+      <i class="fa fa-calendar"></i>
+        Oct 15, 2013
+      
+      </li>
+        
+
+  
+  <li>
+    
+      
+      <i class="fa-fw fa fa-user"></i><a href="blog/author/vic-hargrave.html">Vic Hargrave</a>
+      
+    </li>
+  
+
+  
+
+  
+
+  
+  <li>
+    
+      
+      <i class="fa-fw fa fa-folder-open"></i><a href="blog/category/integrations.html">Integrations</a>
+      
+    </li>
+  
+
+  
+  <li><i class="fa-fw fa fa-tag"></i>
+    
+      
+      <a href="blog/tag/siem.html">siem</a>
+      
+    </li>
+  
+  </ul>
+      <p>Among the many useful features of OSSEC is its capability to send alerts
+to any system that can consume syslog data. This makes it easy to
+combine OSSEC with a number of 3rd party SIEMs to store, search and
+visualize security events. <a class="reference external" href="http://apps.splunk.com/app/300/">Splunk for
+OSSEC</a> is one such system that works
+on top of the Splunk platform.</p>
+
+      <p><a href="blog/posts/2013-12-15-OSSEC-Log-Management-with-Elasticsearch.markdown.html">Read more ...</a></p>
+      <hr>
+    </div>
+    
+    
+  </div>
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2010-2015, OSSEC Project Team - OSSEC trademark and domain owned by Trend Micro, Inc. - Home page images courtesy of Pixbay.com.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

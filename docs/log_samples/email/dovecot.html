@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Dovecot log samples &mdash; OSSEC</title>
+    
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/parallax.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '2.8.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-sphinx.js"></script>
+    <link rel="author" title="About these documents" href="../../../about.html" />
+    <link rel="top" title="OSSEC" href="../../../index.html" />
+  
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  
+  
+  <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+  
+  <style type="text/css">
+    ul.ablog-archive {list-style: none; overflow: auto; margin-left: 0px}
+    ul.ablog-archive li {float: left; margin-right: 5px; font-size: 80%}
+  </style>
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../../index.html"><img src="../../../_static/ossec_logo_bare_small.png">
+          OSSEC</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="../../../about.html">About <i class="fa fa-info-circle"></i></a></li>
+                <li><a href="../../../blog.html">Blog <i class="fa fa-archive"></i></a></li>
+                <li><a href="../../">Documentaton <i class="fa fa-book"></i></a></li>
+                <li><a href="../../../downloads.html">Downloads <i class="fa fa-download"></i></a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"></ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="section" id="dovecot-log-samples">
+<h1>Dovecot log samples<a class="headerlink" href="#dovecot-log-samples" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="imap">
+<h2>IMAP:<a class="headerlink" href="#imap" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="login">
+<h2>Login:<a class="headerlink" href="#login" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">Oct 18 14:23:37 host dovecot: imap-login: Login: user=&lt;uuuuu&gt;, method=PLAIN, rip=y.y.y.y, lip=x.x.x.x, TLS</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="error-time-change">
+<h2>Error time change:<a class="headerlink" href="#error-time-change" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">Oct 19 05:55:18 host dovecot: imap-login: Time just moved backwards by 3 seconds. I&#39;ll sleep now until we&#39;re back in present. http://wiki.dovecot.org/TimeMovedBackwards</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="logout-connection-close">
+<h2>Logout/Connection close:<a class="headerlink" href="#logout-connection-close" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">Oct 19 14:14:38 host dovecot: imap-login: Disconnected: rip=y.y.y.y, lip=x.x.x.x, TLS handshake</span>
+<span class="go">Oct 19 14:14:38 host dovecot: imap-login: Disconnected: rip=y.y.y.y, lip=x.x.x.x, TLS</span>
+<span class="go">Oct 19 14:14:49 host dovecot: imap-login: Disconnected: rip=y.y.y.y, lip=x.x.x.x</span>
+<span class="go">Oct 21 03:33:37 host dovecot: IMAP(uuuuu): Disconnected for inactivity</span>
+<span class="go">Oct 21 01:20:28 host dovecot: IMAP(uuuuu): Connection closed</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="error-auth">
+<h2>Error auth:<a class="headerlink" href="#error-auth" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">Oct 19 14:16:51 host dovecot: imap-login: Aborted login (1 authentication attempts): user=&lt;uuuuu&gt;, method=PLAIN, rip=y.y.y.y, lip=x.x.x.x</span>
+<span class="go">Oct 19 14:17:22 host dovecot: imap-login: Aborted login (0 authentication attempts): rip=y.y.y.y, lip=x.x.x.x, TLS</span>
+<span class="go">Oct 19 14:16:53 host dovecot: imap-login: Aborted login (tried to use disabled plaintext authentication): method=PLAIN, rip=y.y.y.y, lip=x.x.x.x</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="attacks">
+<h2>Attacks:<a class="headerlink" href="#attacks" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">Oct 19 14:18:15 host dovecot: imap-login: Disconnected: method=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX..., rip=y.y.y.y, lip=y.y.y.y, TLS</span>
+<span class="go">Oct 19 14:18:15 host dovecot: imap-login: Disconnected: method=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX..., rip=y.y.y.y, lip=y.y.y.y</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="pop3">
+<h2>POP3:<a class="headerlink" href="#pop3" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="id1">
+<h2>Login:<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">Oct 18 17:54:03 host dovecot: pop3-login: Login: user=&lt;uuuuu&gt;, method=PLAIN, rip=y.y.y.y, lip=x.x.x.x, TLS</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>Logout/Connection close:<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">Oct 18 17:54:07 host dovecot: POP3(uuuuu): Disconnected: Logged out top=0/0, retr=1/10014, del=1/8, size=55676</span>
+<span class="go">Oct 19 14:15:29 host dovecot: pop3-login: Disconnected: rip=y.y.y.y, lip=x.x.x.x</span>
+<span class="go">Oct 19 14:15:29 host dovecot: pop3-login: Disconnected: rip=y.y.y.y, lip=x.x.x.x, TLS handshake</span>
+<span class="go">Oct 19 14:15:29 host dovecot: pop3-login: Disconnected: rip=y.y.y.y, lip=x.x.x.x, TLS</span>
+<span class="go">Oct 21 19:58:22 host dovecot: pop3-login: Disconnected: method=PLAIN, rip=y.y.y.y, lip=x.x.x.x, TLS</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>Error time change:<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">Oct 19 05:55:18 host dovecot: pop3-login: Time just moved backwards by 3 seconds. I&#39;ll sleep now until we&#39;re back in present. http://wiki.dovecot.org/TimeMovedBackwards</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>Error auth:<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">Oct 19 14:16:53 host dovecot: pop3-login: Aborted login (tried to use disabled plaintext authentication): rip=y.y.y.y, lip=x.x.x.x, TLS</span>
+<span class="go">Oct 19 14:16:55 host dovecot: pop3-login: Aborted login (1 authentication attempts): user=&lt;uuuuu&gt;, method=PLAIN, rip=y.y.y.y, lip=x.x.x.x, TLS</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="auth">
+<h2>AUTH:<a class="headerlink" href="#auth" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="id5">
+<h2>Error time change:<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">Oct 19 05:55:18 host dovecot: auth(default): Time just moved backwards by 2 seconds. I&#39;ll sleep now until we&#39;re back in present. http://wiki.dovecot.org/TimeMovedBackwards</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="errors">
+<h2>Errors:<a class="headerlink" href="#errors" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">Oct 19 14:37:40 host dovecot: auth(default): LDAP: ldap_result() failed: Can&#39;t contact LDAP server</span>
+<span class="go">Oct 19 14:37:40 host dovecot: auth(default): io_loop_handle_remove: epoll_ctl(2, 9): Bad file descriptor</span>
+<span class="go">Oct 19 14:37:40 host dovecot: auth(default): LDAP: Can&#39;t connect to server: ldap://127.0.0.1</span>
+<span class="go">Oct 21 10:25:03 host dovecot: auth(default): ldap(uuuuu,y.y.y.y): ldap_search((&amp;(objectClass=CourierMailAccount)(uid=uuuuu))) failed: Invalid DN syntax</span>
+<span class="go">Oct 21 10:25:03 host dovecot: auth(default): ldap(uuuuu,y.y.y.y): ldap_search((&amp;(objectClass=CourierMailAccount)(uid=uuuu))) failed: No such object</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="others">
+<h2>OTHERS:<a class="headerlink" href="#others" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">Oct 19 14:33:55 host dovecot: Killed with signal 15</span>
+<span class="go">Oct 19 14:33:55 host dovecot: Dovecot v1.0.10 starting up</span>
+<span class="go">Oct 21 10:04:18 host dovecot: ssl-build-param: SSL parameters regeneration completed</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+  <div class="section">
+  
+  
+  </div>
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2010-2015, OSSEC Project Team - OSSEC trademark and domain owned by Trend Micro, Inc. - Home page images courtesy of Pixbay.com.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

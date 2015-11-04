@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Testing OSSEC rules/decoders &mdash; OSSEC</title>
+    
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/parallax.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '2.8.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-sphinx.js"></script>
+    <link rel="author" title="About these documents" href="../../../about.html" />
+    <link rel="top" title="OSSEC" href="../../../index.html" />
+  
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  
+  
+  <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+  
+  <style type="text/css">
+    ul.ablog-archive {list-style: none; overflow: auto; margin-left: 0px}
+    ul.ablog-archive li {float: left; margin-right: 5px; font-size: 80%}
+  </style>
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../../index.html"><img src="../../../_static/ossec_logo_bare_small.png">
+          OSSEC</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="../../../about.html">About <i class="fa fa-info-circle"></i></a></li>
+                <li><a href="../../../blog.html">Blog <i class="fa fa-archive"></i></a></li>
+                <li><a href="../../">Documentaton <i class="fa fa-book"></i></a></li>
+                <li><a href="../../../downloads.html">Downloads <i class="fa fa-download"></i></a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"></ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="section" id="testing-ossec-rules-decoders">
+<h1>Testing OSSEC rules/decoders<a class="headerlink" href="#testing-ossec-rules-decoders" title="Permalink to this headline">¶</a></h1>
+<p>The first problem most people have when troubleshooting OSSEC or trying to write new
+rules and decoders is how to test them. In the past, this would require
+manually restarting OSSEC or creating a testing installation. As of
+version 1.6, there is a tool to simplify this task (ossec-logtest).</p>
+<div class="section" id="testing-using-ossec-logtest">
+<h2>Testing using ossec-logtest<a class="headerlink" href="#testing-using-ossec-logtest" title="Permalink to this headline">¶</a></h2>
+<p>The tool <a class="reference internal" href="../../programs/ossec-logtest.html#ossec-logtest"><em>ossec-logtest</em></a> is installed into <tt class="docutils literal"><span class="pre">/var/ossec/bin</span></tt>.
+It will read the current rules and decoder (from <tt class="docutils literal"><span class="pre">/var/ossec</span></tt> ) and accept
+log input from stdin:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">#</span> /var/ossec/bin/ossec-logtest
+<span class="go">2008/07/04 09:57:28 ossec-testrule: INFO: Started (pid: 12683).</span>
+<span class="go">ossec-testrule: Type one log per line.</span>
+
+<span class="go">Jul 4 09:42:16 enigma sshd[11990]: Accepted password for dcid from 192.168.2.10 port 35259 ssh2</span>
+
+<span class="go">**Phase 1: Completed pre-decoding.</span>
+<span class="go">full event: &quot;Jul 4 09:42:16 enigma sshd[11990]: Accepted password for dcid from 192.168.2.10 port 35259 ssh2&quot;</span>
+<span class="go">hostname: &quot;enigma&quot;</span>
+<span class="go">program_name: &quot;sshd&quot;</span>
+<span class="go">log: &quot;accepted password for dcid from 192.168.2.10 port 35259 ssh2&quot;</span>
+
+<span class="go">**Phase 2: Completed decoding.</span>
+<span class="go">decoder: ’sshd’</span>
+<span class="go">dstuser: ‘dcid’</span>
+<span class="go">srcip: ‘192.168.2.10′</span>
+
+<span class="go">**Phase 3: Completed filtering (rules).</span>
+<span class="go">Rule id: ‘10100′</span>
+<span class="go">Level: ‘4′</span>
+<span class="go">Description: ‘First time user logged in.’</span>
+<span class="go">**Alert to be generated.</span>
+</pre></div>
+</div>
+<p>In the above example, we provided an authentication success log and
+ossec-logtest showed us how it would be decoded, what information was extracted
+and which rule fired. In the next example, we can see how it would extract a
+user logoff message from Windows:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">#</span> /var/ossec/bin/ossec-logtest
+<span class="go">2008/07/04 09:57:28 ossec-testrule: INFO: Started (pid: 12683).</span>
+<span class="go">ossec-testrule: Type one log per line.</span>
+
+<span class="go">WinEvtLog: Security: AUDIT_SUCCESS(538): Security: lac: OSSEC-HM: OSSEC-HM: User Logoff: User Name: lac Domain: OSSEC-HM Logon ID: (0×0,0xF784D5) Logon Type: 2</span>
+
+<span class="go">**Phase 1: Completed pre-decoding.</span>
+<span class="go">full event: ‘WinEvtLog: Security: AUDIT_SUCCESS(538): Security: lac: OSSEC-HM: OSSEC-HM: User Logoff: User Name: lac Domain: OSSEC-HM Logon ID: (0×0,0xF784D5) Logon Type: 2′</span>
+<span class="go">hostname: ‘enigma’</span>
+<span class="go">program_name: ‘(null)’</span>
+<span class="go">log: ‘WinEvtLog: Security: AUDIT_SUCCESS(538): Security: lac: OSSEC-HM: OSSEC-HM: User Logoff: User Name: lac Domain: OSSEC-HM Logon ID: (0×0,0xF784D5) Logon Type: 2′</span>
+
+<span class="go">**Phase 2: Completed decoding.</span>
+<span class="go">decoder: ‘windows’</span>
+<span class="go">status: ‘AUDIT_SUCCESS’</span>
+<span class="go">id: ‘538′</span>
+<span class="go">extra_data: ‘Security’</span>
+<span class="go">dstuser: ‘lac’</span>
+<span class="go">system_name: ‘OSSEC-HM’</span>
+
+<span class="go">**Phase 3: Completed filtering (rules).</span>
+<span class="go">Rule id: ‘18149′</span>
+<span class="go">Level: ‘3′</span>
+<span class="go">Description: ‘Windows User Logoff.’</span>
+<span class="go">**Alert to be generated.</span>
+</pre></div>
+</div>
+<p>In addition to the information above, <em class="xref std std-ref">ossec-logtest -f</em> can be used
+to follow the log through the rule path:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">#</span> /var/ossec/bin/ossec-logtest -f
+<span class="go">2008/07/04 10:05:43 ossec-testrule: INFO: Started (pid: 23007).</span>
+<span class="go">ossec-testrule: Type one log per line.</span>
+
+<span class="go">Jul 4 10:05:30 enigma sshd[27588]: Failed password for invalid user test2 from 127.0.0.1 port 19130 ssh2</span>
+
+<span class="go">**Phase 1: Completed pre-decoding.</span>
+<span class="go">full event: ‘Jul 4 10:05:30 enigma sshd[27588]: Failed password for invalid user test2 from 127.0.0.1 port 19130 ssh2′</span>
+<span class="go">hostname: ‘enigma’</span>
+<span class="go">program_name: ’sshd’</span>
+<span class="go">log: ‘Failed password for invalid user test2 from 127.0.0.1 port 19130 ssh2′</span>
+
+<span class="go">**Phase 2: Completed decoding.</span>
+<span class="go">decoder: ’sshd’</span>
+<span class="go">srcip: ‘127.0.0.1′</span>
+
+<span class="go">**Rule debugging:</span>
+<span class="go">Trying rule: 1 - Generic template for all syslog rules.</span>
+<span class="go">*Rule 1 matched.</span>
+<span class="go">*Trying child rules.</span>
+<span class="go">Trying rule: 5500 - Grouping of the pam_unix rules.</span>
+<span class="go">Trying rule: 5700 - SSHD messages grouped.</span>
+<span class="go">*Rule 5700 matched.</span>
+<span class="go">*Trying child rules.</span>
+<span class="go">Trying rule: 5709 - Useless SSHD message without an user/ip.</span>
+<span class="go">Trying rule: 5711 - Useless SSHD message without a user/ip.</span>
+<span class="go">Trying rule: 5707 - OpenSSH challenge-response exploit.</span>
+<span class="go">Trying rule: 5701 - Possible attack on the ssh server (or version gathering).</span>
+<span class="go">Trying rule: 5706 - SSH insecure connection attempt (scan).</span>
+<span class="go">Trying rule: 5713 - Corrupted bytes on SSHD.</span>
+<span class="go">Trying rule: 5702 - Reverse lookup error (bad ISP or attack).</span>
+<span class="go">Trying rule: 5710 - Attempt to login using a non-existent user</span>
+<span class="go">*Rule 5710 matched.</span>
+<span class="go">*Trying child rules.</span>
+<span class="go">Trying rule: 5712 - SSHD brute force trying to get access to the system.</span>
+
+<span class="go">**Phase 3: Completed filtering (rules).</span>
+<span class="go">Rule id: ‘5710′</span>
+<span class="go">Level: ‘5′</span>
+<span class="go">Description: ‘Attempt to login using a non-existent user’</span>
+<span class="go">**Alert to be generated.</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+  <div class="section">
+  
+  
+  </div>
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2010-2015, OSSEC Project Team - OSSEC trademark and domain owned by Trend Micro, Inc. - Home page images courtesy of Pixbay.com.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

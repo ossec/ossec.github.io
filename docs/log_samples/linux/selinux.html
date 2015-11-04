@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>&lt;no title&gt; &mdash; OSSEC</title>
+    
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/parallax.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '2.8.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-sphinx.js"></script>
+    <link rel="author" title="About these documents" href="../../../about.html" />
+    <link rel="top" title="OSSEC" href="../../../index.html" />
+  
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  
+  
+  <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+  
+  <style type="text/css">
+    ul.ablog-archive {list-style: none; overflow: auto; margin-left: 0px}
+    ul.ablog-archive li {float: left; margin-right: 5px; font-size: 80%}
+  </style>
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../../index.html"><img src="../../../_static/ossec_logo_bare_small.png">
+          OSSEC</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="../../../about.html">About <i class="fa fa-info-circle"></i></a></li>
+                <li><a href="../../../blog.html">Blog <i class="fa fa-archive"></i></a></li>
+                <li><a href="../../">Documentaton <i class="fa fa-book"></i></a></li>
+                <li><a href="../../../downloads.html">Downloads <i class="fa fa-download"></i></a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"></ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <p>I enabled SELinux on my Kubuntu workstation and almost immediately received notifications from OSSEC. It has been a while since I reviewed the [<a class="reference external" href="http://www.centos.org/docs/4/html/rhel-selg-en-4/">http://www.centos.org/docs/4/html/rhel-selg-en-4/</a> RHEL SELinux documentation] that explains these log entries from /var/log/messages. There&#8217;s a very real possibility that I did not set SELinux up properly, it is not very well supported by Ubuntu at the moment. I may change this entry after I re-review the SELinux docs.</p>
+<p>Anyway, here&#8217;s something to chew on FWIW ...</p>
+<hr class="docutils" />
+<div class="highlight-console"><div class="highlight"><pre><span class="go">Feb 20 16:57:43 localhost kernel: [17180270.076000] audit(1172015863.889:2): avc:  denied  { append } for  pid=5621 comm=&quot;syslogd&quot; name=&quot;syslog&quot; dev=sda6 ino=2101168 scontext=system_u:system_r:kernel_t tcontext=system_u:object_r:file_t tclass=file</span>
+<span class="go">Feb 20 16:57:43 localhost kernel: [17180270.076000] audit(1172015863.889:3): avc:  denied  { write } for  pid=5621 comm=&quot;syslogd&quot; name=&quot;psadfifo&quot; dev=sda6 ino=1466559 scontext=system_u:system_r:kernel_t tcontext=system_u:object_r:file_t tclass=fifo_file</span>
+<span class="go">Feb 20 16:57:43 localhost kernel: [17180270.076000] audit(1172015863.889:4): avc:  denied  { read } for  pid=6140 comm=&quot;kmsgsd&quot; name=&quot;psadfifo&quot; dev=sda6 ino=1466559 scontext=system_u:system_r:kernel_t tcontext=system_u:object_r:file_t tclass=fifo_file</span>
+<span class="go">Feb 20 16:57:43 localhost kernel: [17180270.100000] audit(1172015863.913:5): avc:  denied  { write } for  pid=5653 comm=&quot;dd&quot; name=&quot;kmsg&quot; dev=tmpfs ino=13022 scontext=system_u:system_r:kernel_t tcontext=system_u:object_r:tmpfs_t tclass=fifo_file</span>
+<span class="go">Feb 20 16:57:43 localhost kernel: [17180270.100000] audit(1172015863.913:6): avc:  denied  { read } for  pid=5655 comm=&quot;klogd&quot; name=&quot;kmsg&quot; dev=tmpfs ino=13022 scontext=system_u:system_r:kernel_t tcontext=system_u:object_r:tmpfs_t tclass=fifo_file</span>
+<span class="go">Feb 20 16:57:43 localhost kernel: [17180270.128000] inode_doinit_with_dentry:  no dentry for dev=sda7 ino=492342</span>
+<span class="go">Feb 20 16:57:44 localhost kernel: [17180270.404000] audit(1172015864.217:7): avc:  denied  { read } for  pid=5653 comm=&quot;dd&quot; name=&quot;kmsg&quot; dev=proc ino=-268435446 scontext=system_u:system_r:kernel_t tcontext=system_u:object_r:proc_kmsg_t tclass=file</span>
+<span class="go">Feb 20 16:57:44 localhost kernel: [17180270.424000] audit(1172015864.237:9): avc:  denied  { write } for  pid=5653 comm=&quot;dd&quot; name=&quot;kmsg&quot; dev=tmpfs ino=13022 scontext=system_u:system_r:kernel_t tcontext=system_u:object_r:tmpfs_t tclass=fifo_file</span>
+<span class="go">Feb 20 16:57:44 localhost kernel: [17180270.424000] audit(1172015864.237:10): avc:  denied  { read } for  pid=5653 comm=&quot;dd&quot; name=&quot;kmsg&quot; dev=proc ino=-268435446 scontext=system_u:system_r:kernel_t tcontext=system_u:object_r:proc_kmsg_t tclass=file</span>
+<span class="go">Feb 20 16:57:44 localhost kernel: [17180270.424000] audit(1172015864.237:11): avc:  denied  { syslog_mod } for  pid=5653 comm=&quot;dd&quot; scontext=system_u:system_r:kernel_t tcontext=system_u:system_r:kernel_t tclass=system</span>
+<span class="go">Feb 20 16:57:44 localhost kernel: [17180270.424000] audit(1172015864.237:12): avc:  denied  { append } for  pid=5621 comm=&quot;syslogd&quot; name=&quot;syslog&quot; dev=sda6 ino=2101168 scontext=system_u:system_r:kernel_t tcontext=system_u:object_r:file_t tclass=file</span>
+<span class="go">Feb 20 16:57:44 localhost kernel: [17180270.424000] audit(1172015864.237:13): avc:  denied  { write } for  pid=5621 comm=&quot;syslogd&quot; name=&quot;psadfifo&quot; dev=sda6 ino=1466559 scontext=system_u:system_r:kernel_t tcontext=system_u:object_r:file_t tclass=fifo_file</span>
+<span class="go">Feb 20 16:57:44 localhost kernel: [17180270.424000] audit(1172015864.237:14): avc:  denied  { read } for  pid=5655 comm=&quot;klogd&quot; name=&quot;kmsg&quot; dev=tmpfs ino=13022 scontext=system_u:system_r:kernel_t tcontext=system_u:object_r:tmpfs_t tclass=fifo_file</span>
+<span class="go">Feb 20 16:57:44 localhost kernel: [17180270.424000] audit(1172015864.237:15): avc:  denied  { read } for  pid=6140 comm=&quot;kmsgsd&quot; name=&quot;psadfifo&quot; dev=sda6 ino=1466559 scontext=system_u:system_r:kernel_t tcontext=system_u:object_r:file_t tclass=fifo_file</span>
+<span class="go">Feb 20 16:57:44 localhost kernel: [17180270.428000] audit(1172015864.241:16): avc:  denied  { read } for  pid=12161 comm=&quot;make&quot; name=&quot;touch&quot; dev=sda7 ino=2065483 scontext=system_u:system_r:kernel_t tcontext=system_u:object_r:file_t tclass=lnk_file</span>
+<span class="go">Feb 20 16:57:44 localhost kernel: [17180270.428000] audit(1172015864.241:17): avc:  denied  { create } for  pid=12161 comm=&quot;touch&quot; name=&quot;load&quot; scontext=system_u:system_r:kernel_t tcontext=system_u:object_r:file_t tclass=file</span>
+<span class="go">Feb 20 16:57:44 localhost kernel: [17180270.432000] audit(1172015864.245:18): avc:  denied  { write } for  pid=12161 comm=&quot;touch&quot; name=&quot;load&quot; dev=sda7 ino=2773152 scontext=system_u:system_r:kernel_t tcontext=system_u:object_r:file_t tclass=file</span>
+<span class="go">Feb 20 16:57:44 localhost kernel: [17180270.536000] audit(1172015864.349:19): avc:  denied  { search } for  pid=5929 comm=&quot;hald-addon-stor&quot; name=&quot;/&quot; dev=tmpfs ino=1286 scontext=system_u:system_r:kernel_t tcontext=system_u:object_r:tmpfs_t tclass=dir</span>
+<span class="go">Feb 20 16:57:44 localhost kernel: [17180270.536000] audit(1172015864.349:20): avc:  denied  { read } for  pid=5929 comm=&quot;hald-addon-stor&quot; name=&quot;hdd&quot; dev=tmpfs ino=5926 scontext=system_u:system_r:kernel_t tcontext=system_u:object_r:tmpfs_t tclass=blk_file</span>
+<span class="go">Feb 20 16:57:44 localhost kernel: [17180270.540000] audit(1172015864.353:21): avc:  denied  { ioctl } for  pid=5929 comm=&quot;hald-addon-stor&quot; name=&quot;hdd&quot; dev=tmpfs ino=5926 scontext=system_u:system_r:kernel_t tcontext=system_u:object_r:tmpfs_t tclass=blk_file</span>
+<span class="go">Feb 20 16:57:44 localhost kernel: [17180270.600000] audit(1172015864.413:22): avc:  denied  { write } for  pid=12162 comm=&quot;make&quot; name=&quot;2&quot; dev=devpts ino=4 scontext=system_u:system_r:kernel_t tcontext=system_u:object_r:devpts_t tclass=chr_file</span>
+<span class="go">Feb 20 16:57:44 localhost kernel: [17180270.600000] audit(1172015864.413:23): avc:  denied  { read } for  pid=7441 comm=&quot;screen&quot; name=&quot;ptmx&quot; dev=tmpfs ino=2332 scontext=system_u:system_r:kernel_t tcontext=system_u:object_r:tmpfs_t tclass=chr_file</span>
+<span class="go">Feb 20 16:57:44 localhost kernel: [17180270.600000] audit(1172015864.413:24): avc:  denied  { write } for  pid=7439 comm=&quot;konsole&quot; name=&quot;konsoleWhxySb.tmp&quot; dev=sda7 ino=2704183 scontext=system_u:system_r:kernel_t tcontext=system_u:object_r:unlabeled_t tclass=file</span>
+<span class="go">Feb 20 16:57:44 localhost kernel: [17180270.984000] audit(1172015864.797:25): avc:  denied  { rename } for  pid=11026 comm=&quot;dpkg&quot; name=&quot;tmp.i&quot; dev=sda6 ino=1434551 scontext=system_u:system_r:kernel_t tcontext=system_u:object_r:file_t tclass=file</span>
+<span class="go">Feb 20 16:57:43 localhost kernel: [17180270.076000] audit(1172015863.889:2): avc:  denied  { append } for  pid=5621 comm=&quot;syslogd&quot; name=&quot;syslog&quot; dev=sda6 ino=2101168 scontext=system_u:system_r:kernel_t tcontext=system_u:object_r:file_t tclass=file</span>
+<span class="go">Feb 20 16:57:43 localhost kernel: [17180270.076000] audit(1172015863.889:3): avc:  denied  { write } for  pid=5621 comm=&quot;syslogd&quot; name=&quot;psadfifo&quot; dev=sda6 ino=1466559 scontext=system_u:system_r:kernel_t tcontext=system_u:object_r:file_t tclass=fifo_file</span>
+<span class="go">Feb 20 16:57:43 localhost kernel: [17180270.076000] audit(1172015863.889:4): avc:  denied  { read } for  pid=6140 comm=&quot;kmsgsd&quot; name=&quot;psadfifo&quot; dev=sda6 ino=1466559 scontext=system_u:system_r:kernel_t tcontext=system_u:object_r:file_t tclass=fifo_file</span>
+<span class="go">Feb 20 16:57:43 localhost kernel: [17180270.100000] audit(1172015863.913:5): avc:  denied  { write } for  pid=5653 comm=&quot;dd&quot; name=&quot;kmsg&quot; dev=tmpfs ino=13022 scontext=system_u:system_r:kernel_t tcontext=system_u:object_r:tmpfs_t tclass=fifo_file</span>
+<span class="go">Feb 20 16:57:43 localhost kernel: [17180270.100000] audit(1172015863.913:6): avc:  denied  { read } for  pid=5655 comm=&quot;klogd&quot; name=&quot;kmsg&quot; dev=tmpfs ino=13022 scontext=system_u:system_r:kernel_t tcontext=system_u:object_r:tmpfs_t tclass=fifo_file</span>
+<span class="go">Feb 20 16:57:44 localhost kernel: [17180270.404000] audit(1172015864.217:7): avc:  denied  { read } for  pid=5653 comm=&quot;dd&quot; name=&quot;kmsg&quot; dev=proc ino=-268435446 scontext=system_u:system_r:kernel_t tcontext=system_u:object_r:proc_kmsg_t tclass=file</span>
+<span class="go">Feb 20 16:57:44 localhost kernel: [17180270.424000] audit(1172015864.237:9): avc:  denied  { write } for  pid=5653 comm=&quot;dd&quot; name=&quot;kmsg&quot; dev=tmpfs ino=13022 scontext=system_u:system_r:kernel_t tcontext=system_u:object_r:tmpfs_t tclass=fifo_file</span>
+<span class="go">Feb 20 16:57:44 localhost kernel: [17180270.424000] audit(1172015864.237:10): avc:  denied  { read } for  pid=5653 comm=&quot;dd&quot; name=&quot;kmsg&quot; dev=proc ino=-268435446 scontext=system_u:system_r:kernel_t tcontext=system_u:object_r:proc_kmsg_t tclass=file</span>
+<span class="go">Feb 20 16:57:44 localhost kernel: [17180270.424000] audit(1172015864.237:11): avc:  denied  { syslog_mod } for  pid=5653 comm=&quot;dd&quot; scontext=system_u:system_r:kernel_t tcontext=system_u:system_r:kernel_t tclass=system</span>
+<span class="go">Feb 20 16:57:44 localhost kernel: [17180270.424000] audit(1172015864.237:12): avc:  denied  { append } for  pid=5621 comm=&quot;syslogd&quot; name=&quot;syslog&quot; dev=sda6 ino=2101168 scontext=system_u:system_r:kernel_t tcontext=system_u:object_r:file_t tclass=file</span>
+<span class="go">Feb 20 16:57:44 localhost kernel: [17180270.424000] audit(1172015864.237:13): avc:  denied  { write } for  pid=5621 comm=&quot;syslogd&quot; name=&quot;psadfifo&quot; dev=sda6 ino=1466559 scontext=system_u:system_r:kernel_t tcontext=system_u:object_r:file_t tclass=fifo_file</span>
+<span class="go">Feb 20 16:57:44 localhost kernel: [17180270.424000] audit(1172015864.237:14): avc:  denied  { read } for  pid=5655 comm=&quot;klogd&quot; name=&quot;kmsg&quot; dev=tmpfs ino=13022 scontext=system_u:system_r:kernel_t tcontext=system_u:object_r:tmpfs_t tclass=fifo_file</span>
+<span class="go">Feb 20 16:57:44 localhost kernel: [17180270.424000] audit(1172015864.237:15): avc:  denied  { read } for  pid=6140 comm=&quot;kmsgsd&quot; name=&quot;psadfifo&quot; dev=sda6 ino=1466559 scontext=system_u:system_r:kernel_t tcontext=system_u:object_r:file_t tclass=fifo_file</span>
+<span class="go">Feb 20 16:57:44 localhost kernel: [17180270.428000] audit(1172015864.241:16): avc:  denied  { read } for  pid=12161 comm=&quot;make&quot; name=&quot;touch&quot; dev=sda7 ino=2065483 scontext=system_u:system_r:kernel_t tcontext=system_u:object_r:file_t tclass=lnk_file</span>
+<span class="go">Feb 20 16:57:44 localhost kernel: [17180270.428000] audit(1172015864.241:17): avc:  denied  { create } for  pid=12161 comm=&quot;touch&quot; name=&quot;load&quot; scontext=system_u:system_r:kernel_t tcontext=system_u:object_r:file_t tclass=file</span>
+<span class="go">Feb 20 16:57:44 localhost kernel: [17180270.432000] audit(1172015864.245:18): avc:  denied  { write } for  pid=12161 comm=&quot;touch&quot; name=&quot;load&quot; dev=sda7 ino=2773152 scontext=system_u:system_r:kernel_t tcontext=system_u:object_r:file_t tclass=file</span>
+<span class="go">Feb 20 16:57:44 localhost kernel: [17180270.536000] audit(1172015864.349:19): avc:  denied  { search } for  pid=5929 comm=&quot;hald-addon-stor&quot; name=&quot;/&quot; dev=tmpfs ino=1286 scontext=system_u:system_r:kernel_t tcontext=system_u:object_r:tmpfs_t tclass=dir</span>
+<span class="go">Feb 20 16:57:44 localhost kernel: [17180270.536000] audit(1172015864.349:20): avc:  denied  { read } for  pid=5929 comm=&quot;hald-addon-stor&quot; name=&quot;hdd&quot; dev=tmpfs ino=5926 scontext=system_u:system_r:kernel_t tcontext=system_u:object_r:tmpfs_t tclass=blk_file</span>
+<span class="go">Feb 20 16:57:44 localhost kernel: [17180270.540000] audit(1172015864.353:21): avc:  denied  { ioctl } for  pid=5929 comm=&quot;hald-addon-stor&quot; name=&quot;hdd&quot; dev=tmpfs ino=5926 scontext=system_u:system_r:kernel_t tcontext=system_u:object_r:tmpfs_t tclass=blk_file</span>
+<span class="go">Feb 20 16:57:44 localhost kernel: [17180270.600000] audit(1172015864.413:22): avc:  denied  { write } for  pid=12162 comm=&quot;make&quot; name=&quot;2&quot; dev=devpts ino=4 scontext=system_u:system_r:kernel_t tcontext=system_u:object_r:devpts_t tclass=chr_file</span>
+<span class="go">Feb 20 16:57:44 localhost kernel: [17180270.600000] audit(1172015864.413:23): avc:  denied  { read } for  pid=7441 comm=&quot;screen&quot; name=&quot;ptmx&quot; dev=tmpfs ino=2332 scontext=system_u:system_r:kernel_t tcontext=system_u:object_r:tmpfs_t tclass=chr_file</span>
+<span class="go">Feb 20 16:57:44 localhost kernel: [17180270.600000] audit(1172015864.413:24): avc:  denied  { write } for  pid=7439 comm=&quot;konsole&quot; name=&quot;konsoleWhxySb.tmp&quot; dev=sda7 ino=2704183 scontext=system_u:system_r:kernel_t tcontext=system_u:object_r:unlabeled_t tclass=file</span>
+<span class="go">Feb 20 16:57:44 localhost kernel: [17180270.984000] audit(1172015864.797:25): avc:  denied  { rename } for  pid=11026 comm=&quot;dpkg&quot; name=&quot;tmp.i&quot; dev=sda6 ino=1434551 scontext=system_u:system_r:kernel_t tcontext=system_u:object_r:file_t tclass=file</span>
+<span class="go">Feb 20 16:57:45 localhost kernel: [17180271.728000] audit(1172015865.541:26): avc:  denied  { unlink } for  pid=11026 comm=&quot;dpkg&quot; name=&quot;status-old&quot; dev=sda6 ino=1435199 scontext=system_u:system_r:kernel_t tcontext=system_u:object_r:file_t tclass=file</span>
+<span class="go">Feb 20 16:57:45 localhost kernel: [17180271.728000] audit(1172015865.541:27): avc:  denied  { link } for  pid=11026 comm=&quot;dpkg&quot; name=&quot;status&quot; dev=sda6 ino=1436723 scontext=system_u:system_r:kernel_t tcontext=system_u:object_r:file_t tclass=file</span>
+<span class="go">Feb 20 16:57:45 localhost kernel: [17180272.040000] audit(1172015865.853:28): avc:  denied  { getattr } for  pid=10911 comm=&quot;dselect&quot; name=&quot;2&quot; dev=devpts ino=4 scontext=system_u:system_r:kernel_t tcontext=system_u:object_r:devpts_t tclass=chr_file</span>
+<span class="go">Feb 20 16:57:45 localhost kernel: [17180272.040000] audit(1172015865.853:29): avc:  denied  { read } for  pid=10911 comm=&quot;dselect&quot; name=&quot;2&quot; dev=devpts ino=4 scontext=system_u:system_r:kernel_t tcontext=system_u:object_r:devpts_t tclass=chr_file</span>
+<span class="go">Feb 20 16:57:46 localhost kernel: [17180272.808000] audit(1172015866.621:30): avc:  denied  { read } for  pid=6031 comm=&quot;ossec-syscheckd&quot; name=&quot;syschecklocal.db-11720152306028.tmp&quot; dev=sda7 ino=2261816 scontext=system_u:system_r:kernel_t tcontext=system_u:object_r:unlabeled_t tclass=file</span>
+<span class="go">Feb 20 16:57:46 localhost kernel: [17180272.948000] audit(1172015866.761:31): avc:  denied  { write } for  pid=7439 comm=&quot;konsole&quot; name=&quot;ptmx&quot; dev=tmpfs ino=2332 scontext=system_u:system_r:kernel_t tcontext=system_u:object_r:tmpfs_t tclass=chr_file</span>
+<span class="go">Feb 20 16:57:46 localhost kernel: [17180272.948000] audit(1172015866.761:32): avc:  denied  { ioctl } for  pid=10911 comm=&quot;dselect&quot; name=&quot;2&quot; dev=devpts ino=4 scontext=system_u:system_r:kernel_t tcontext=system_u:object_r:devpts_t tclass=chr_file</span>
+<span class="go">Feb 20 16:57:45 localhost kernel: [17180271.728000] audit(1172015865.541:26): avc:  denied  { unlink } for  pid=11026 comm=&quot;dpkg&quot; name=&quot;status-old&quot; dev=sda6 ino=1435199 scontext=system_u:system_r:kernel_t tcontext=system_u:object_r:file_t tclass=file</span>
+<span class="go">Feb 20 16:57:45 localhost kernel: [17180271.728000] audit(1172015865.541:27): avc:  denied  { link } for  pid=11026 comm=&quot;dpkg&quot; name=&quot;status&quot; dev=sda6 ino=1436723 scontext=system_u:system_r:kernel_t tcontext=system_u:object_r:file_t tclass=file</span>
+<span class="go">Feb 20 16:57:45 localhost kernel: [17180272.040000] audit(1172015865.853:28): avc:  denied  { getattr } for  pid=10911 comm=&quot;dselect&quot; name=&quot;2&quot; dev=devpts ino=4 scontext=system_u:system_r:kernel_t tcontext=system_u:object_r:devpts_t tclass=chr_file</span>
+<span class="go">Feb 20 16:57:45 localhost kernel: [17180272.040000] audit(1172015865.853:29): avc:  denied  { read } for  pid=10911 comm=&quot;dselect&quot; name=&quot;2&quot; dev=devpts ino=4 scontext=system_u:system_r:kernel_t tcontext=system_u:object_r:devpts_t tclass=chr_file</span>
+<span class="go">Feb 20 16:57:46 localhost kernel: [17180272.808000] audit(1172015866.621:30): avc:  denied  { read } for  pid=6031 comm=&quot;ossec-syscheckd&quot; name=&quot;syschecklocal.db-11720152306028.tmp&quot; dev=sda7 ino=2261816 scontext=system_u:system_r:kernel_t tcontext=system_u:object_r:unlabeled_t tclass=file</span>
+<span class="go">Feb 20 16:57:46 localhost kernel: [17180272.948000] audit(1172015866.761:31): avc:  denied  { write } for  pid=7439 comm=&quot;konsole&quot; name=&quot;ptmx&quot; dev=tmpfs ino=2332 scontext=system_u:system_r:kernel_t tcontext=system_u:object_r:tmpfs_t tclass=chr_file</span>
+<span class="go">Feb 20 16:57:46 localhost kernel: [17180272.948000] audit(1172015866.761:32): avc:  denied  { ioctl } for  pid=10911 comm=&quot;dselect&quot; name=&quot;2&quot; dev=devpts ino=4 scontext=system_u:system_r:kernel_t tcontext=system_u:object_r:devpts_t tclass=chr_file</span>
+<span class="go">Feb 20 16:57:47 localhost kernel: [17180273.536000] audit(1172015867.349:33): avc:  denied  { search } for  pid=12167 comm=&quot;install&quot; name=&quot;/&quot; dev=devpts ino=1 scontext=system_u:system_r:kernel_t tcontext=system_u:object_r:devpts_t tclass=dir</span>
+<span class="go">Feb 20 16:57:47 localhost kernel: [17180273.560000] audit(1172015867.373:34): avc:  denied  { setattr } for  pid=12169 comm=&quot;apt-get&quot; name=&quot;pkgcache.bin&quot; dev=sda6 ino=895850 scontext=system_u:system_r:kernel_t tcontext=system_u:object_r:file_t tclass=file</span>
+<span class="go">Feb 20 16:57:48 localhost kernel: [17180274.768000] audit(1172015868.581:35): avc:  denied  { read } for  pid=6142 comm=&quot;psadwatchd&quot; name=&quot;psad.pid&quot; dev=tmpfs ino=15493 scontext=system_u:system_r:kernel_t tcontext=system_u:object_r:tmpfs_t tclass=file</span>
+<span class="go">Feb 20 16:57:48 localhost kernel: [17180274.768000] audit(1172015868.581:36): avc:  denied  { getattr } for  pid=6142 comm=&quot;psadwatchd&quot; name=&quot;psad.pid&quot; dev=tmpfs ino=15493 scontext=system_u:system_r:kernel_t tcontext=system_u:object_r:tmpfs_t tclass=file</span>
+<span class="go">Feb 20 16:57:47 localhost kernel: [17180273.536000] audit(1172015867.349:33): avc:  denied  { search } for  pid=12167 comm=&quot;install&quot; name=&quot;/&quot; dev=devpts ino=1 scontext=system_u:system_r:kernel_t tcontext=system_u:object_r:devpts_t tclass=dir</span>
+<span class="go">Feb 20 16:57:47 localhost kernel: [17180273.560000] audit(1172015867.373:34): avc:  denied  { setattr } for  pid=12169 comm=&quot;apt-get&quot; name=&quot;pkgcache.bin&quot; dev=sda6 ino=895850 scontext=system_u:system_r:kernel_t tcontext=system_u:object_r:file_t tclass=file</span>
+<span class="go">Feb 20 16:57:48 localhost kernel: [17180274.768000] audit(1172015868.581:35): avc:  denied  { read } for  pid=6142 comm=&quot;psadwatchd&quot; name=&quot;psad.pid&quot; dev=tmpfs ino=15493 scontext=system_u:system_r:kernel_t tcontext=system_u:object_r:tmpfs_t tclass=file</span>
+<span class="go">Feb 20 16:57:48 localhost kernel: [17180274.768000] audit(1172015868.581:36): avc:  denied  { getattr } for  pid=6142 comm=&quot;psadwatchd&quot; name=&quot;psad.pid&quot; dev=tmpfs ino=15493 scontext=system_u:system_r:kernel_t tcontext=system_u:object_r:tmpfs_t tclass=file</span>
+</pre></div>
+</div>
+
+  <div class="section">
+  
+  
+  </div>
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2010-2015, OSSEC Project Team - OSSEC trademark and domain owned by Trend Micro, Inc. - Home page images courtesy of Pixbay.com.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>ossec-authd &mdash; OSSEC</title>
+    
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/parallax.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '2.8.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="top" title="OSSEC" href="../../index.html" />
+  
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  
+  
+  <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+  
+  <style type="text/css">
+    ul.ablog-archive {list-style: none; overflow: auto; margin-left: 0px}
+    ul.ablog-archive li {float: left; margin-right: 5px; font-size: 80%}
+  </style>
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html"><img src="../../_static/ossec_logo_bare_small.png">
+          OSSEC</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="../../about.html">About <i class="fa fa-info-circle"></i></a></li>
+                <li><a href="../../blog.html">Blog <i class="fa fa-archive"></i></a></li>
+                <li><a href="../">Documentaton <i class="fa fa-book"></i></a></li>
+                <li><a href="../../downloads.html">Downloads <i class="fa fa-download"></i></a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"></ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="section" id="ossec-authd">
+<span id="id1"></span><h1>ossec-authd<a class="headerlink" href="#ossec-authd" title="Permalink to this headline">¶</a></h1>
+<p>The ossec-authd daemon will automatically add an agent to an OSSEC manager and provide the key to the agent.
+The <a class="reference internal" href="agent-auth.html#agent-auth"><em>agent-auth</em></a> application is the client application used with ossec-authd.
+<cite>ossec-authd</cite> will create an agent with an ip address of <cite>any</cite> instead of using its actual IP.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">By default there is no authentication or authorization involved in this transaction, so it is recommended that
+this daemon only be run when a new agent is being added.</p>
+</div>
+<div class="section" id="ossec-authd-argument-options">
+<h2>ossec-authd argument options<a class="headerlink" href="#ossec-authd-argument-options" title="Permalink to this headline">¶</a></h2>
+<dl class="option">
+<dt id="cmdoption-ossec-authd-D">
+<tt class="descname">-D</tt><tt class="descclassname"> &lt;dir&gt;</tt><a class="headerlink" href="#cmdoption-ossec-authd-D" title="Permalink to this definition">¶</a></dt>
+<dd><p>chroot to <tt class="docutils literal"><span class="pre">&lt;dir&gt;</span></tt>.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-ossec-authd-d">
+<tt class="descname">-d</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-ossec-authd-d" title="Permalink to this definition">¶</a></dt>
+<dd><p>Execute ossec-authd in debug mode. This option can be used multiple times to increase the verbosity of the debug messages.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-ossec-authd-g">
+<tt class="descname">-g</tt><tt class="descclassname"> &lt;group&gt;</tt><a class="headerlink" href="#cmdoption-ossec-authd-g" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run as <tt class="docutils literal"><span class="pre">group</span></tt>.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-ossec-authd-h">
+<tt class="descname">-h</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-ossec-authd-h" title="Permalink to this definition">¶</a></dt>
+<dd><p>Display a help message.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-ossec-authd-i">
+<tt class="descname">-i</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-ossec-authd-i" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add agents with a specific IP address instead of using <tt class="docutils literal"><span class="pre">any</span></tt>.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-ossec-authd-k">
+<tt class="descname">-k</tt><tt class="descclassname"> &lt;path&gt;</tt><a class="headerlink" href="#cmdoption-ossec-authd-k" title="Permalink to this definition">¶</a></dt>
+<dd><p>Full path to the server key.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-ossec-authd-p">
+<tt class="descname">-p</tt><tt class="descclassname"> &lt;port&gt;</tt><a class="headerlink" href="#cmdoption-ossec-authd-p" title="Permalink to this definition">¶</a></dt>
+<dd><p>Listen on port.</p>
+<p><strong>Default</strong> 1515</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-ossec-authd-t">
+<tt class="descname">-t</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-ossec-authd-t" title="Permalink to this definition">¶</a></dt>
+<dd><p>Test the configuration.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-ossec-authd-V">
+<tt class="descname">-V</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-ossec-authd-V" title="Permalink to this definition">¶</a></dt>
+<dd><p>Display OSSEC Version and license information.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-ossec-authd-v">
+<tt class="descname">-v</tt><tt class="descclassname"> &lt;path&gt;</tt><a class="headerlink" href="#cmdoption-ossec-authd-v" title="Permalink to this definition">¶</a></dt>
+<dd><p>Full path to the CA certificate used to verify the clients.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This option was added after 2.8.1.</p>
+</div>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-ossec-authd-x">
+<tt class="descname">-x</tt><tt class="descclassname"> &lt;path&gt;</tt><a class="headerlink" href="#cmdoption-ossec-authd-x" title="Permalink to this definition">¶</a></dt>
+<dd><p>Full path to the server certificate.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This option was added after 2.8.1.</p>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="creating-ssl-keys">
+<h2>Creating SSL keys<a class="headerlink" href="#creating-ssl-keys" title="Permalink to this headline">¶</a></h2>
+<p><tt class="docutils literal"><span class="pre">ossec-authd</span></tt> requires SSL keys to run. This process will create the necessary keys in <tt class="docutils literal"><span class="pre">/var/ossec/etc</span></tt> and allow <tt class="docutils literal"><span class="pre">ossec-authd</span></tt> to start:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">#</span> openssl genrsa -out /var/ossec/etc/sslmanager.key 2048
+<span class="gp">#</span> openssl req -new -x509 -key /var/ossec/etc/sslmanager.key -out /var/ossec/etc/sslmanager.cert -days 365
+</pre></div>
+</div>
+<p>Without the key <tt class="docutils literal"><span class="pre">ossec-authd</span></tt> will give the following error:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">[user@ossec-manager] :; sudo /var/ossec/bin/ossec-authd</span>
+<span class="go">2012/04/18 11:05:01 ossec-authd: INFO: Started (pid: 20669).</span>
+<span class="go">2012/04/18 11:05:01 ossec-authd: ERROR: Unable to read certificate file (not found): /var/ossec/etc/sslmanager.cert</span>
+<span class="go">2012/04/18 11:05:01 ossec-authd: ERROR: SSL error. Exiting.</span>
+</pre></div>
+</div>
+<p>If the default locations of /var/ossec/etc/sslmanager.cert and /var/ossec/etc/sslmanager.key are not suitable then the
+-x and -k options can be used to specify alternative locations.</p>
+</div>
+<div class="section" id="optional-client-authentication">
+<span id="id2"></span><h2>Optional Client Authentication<a class="headerlink" href="#optional-client-authentication" title="Permalink to this headline">¶</a></h2>
+<p><tt class="docutils literal"><span class="pre">ossec-authd</span></tt> can verify that connecting agents present a valid X.509 certificate when requesting a key. This is optional
+and is only useful if hosts in your environment are assigned certificates when they&#8217;re provisioned (or at some point before
+being added to OSSEC). If agent certificate verification is desired then the relevant CA certificate must be loaded with the
+-v option. This will cause <tt class="docutils literal"><span class="pre">ossec-authd</span></tt> to verify that agents present a valid certificate when requesting a key. If an
+agent does not present a certificate or presents an invalid certificate then the agent will not be allocated a key.</p>
+<p>A certificate presented by an agent may be found to be invalid for the following reasons:</p>
+<ul class="simple">
+<li>It was not signed by the specified CA.</li>
+<li>It is expired.</li>
+</ul>
+</div>
+<div class="section" id="ossec-authd-example-usage">
+<h2>ossec-authd example usage<a class="headerlink" href="#ossec-authd-example-usage" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="example-running-ossec-authd">
+<h3>Example: Running ossec-authd<a class="headerlink" href="#example-running-ossec-authd" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">#</span> /var/ossec/bin/ossec-authd -p <span class="m">1515</span> &gt;/dev/null 2&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="p">&amp;</span>
+</pre></div>
+</div>
+<p>And the logs when an agent is added:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">2011/01/19 15:04:40 ossec-authd: INFO: New connection from 192.168.10.5</span>
+<span class="go">2011/01/19 15:04:41 ossec-authd: INFO: Received request for a new agent (example-agent) from: 192.168.10.5</span>
+<span class="go">2011/01/19 15:04:41 ossec-authd: INFO: Agent key generated for example-agent (requested by 192.168.10.5)</span>
+<span class="go">2011/01/19 15:04:41 ossec-authd: INFO: Agent key created for example-agent (requested by 192.168.10.5)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="example-running-ossec-authd-with-client-authentication">
+<h3>Example: Running ossec-authd with client authentication<a class="headerlink" href="#example-running-ossec-authd-with-client-authentication" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">#</span> /var/ossec/bin/ossec-authd -v /var/ossec/etc/CA.cert -d
+</pre></div>
+</div>
+<p>If debug output is enabled then &#8220;Peer verification requested&#8221; will be displayed when starting.</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">2014/06/07 17:04:56 ossec-authd: DEBUG: Starting ...</span>
+<span class="go">2014/06/07 17:04:56 ossec-authd: INFO: Started (pid: 2043).</span>
+<span class="go">2014/06/07 17:04:56 ossec-authd: DEBUG: Peer verification requested.</span>
+<span class="go">2014/06/07 17:04:56 ossec-authd: DEBUG: Returning CTX for server.</span>
+<span class="go">2014/06/07 17:04:56 ossec-authd: DEBUG: Going into listening mode.</span>
+<span class="go">2014/06/07 17:04:58 ossec-authd: INFO: New connection from 192.168.10.5</span>
+<span class="go">2014/06/07 17:04:58 ossec-authd: INFO: Received request for a new agent (example-agent) from: 192.168.10.5</span>
+<span class="go">2014/06/07 17:04:58 ossec-authd: INFO: Agent key generated for example-agent (requested by 192.168.10.5)</span>
+<span class="go">2014/06/07 17:04:58 ossec-authd: INFO: Agent key created for example-agent (requested by 192.168.10.5)</span>
+<span class="go">2014/06/07 17:04:58 ossec-authd: DEBUG: Process 2044 exited</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+  <div class="section">
+  
+  
+  </div>
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2010-2015, OSSEC Project Team - OSSEC trademark and domain owned by Trend Micro, Inc. - Home page images courtesy of Pixbay.com.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

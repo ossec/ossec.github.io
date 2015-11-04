@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Sending output to a Database &mdash; OSSEC</title>
+    
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/parallax.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '2.8.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-sphinx.js"></script>
+    <link rel="author" title="About these documents" href="../../../about.html" />
+    <link rel="top" title="OSSEC" href="../../../index.html" />
+  
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  
+  
+  <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+  
+  <style type="text/css">
+    ul.ablog-archive {list-style: none; overflow: auto; margin-left: 0px}
+    ul.ablog-archive li {float: left; margin-right: 5px; font-size: 80%}
+  </style>
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../../index.html"><img src="../../../_static/ossec_logo_bare_small.png">
+          OSSEC</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="../../../about.html">About <i class="fa fa-info-circle"></i></a></li>
+                <li><a href="../../../blog.html">Blog <i class="fa fa-archive"></i></a></li>
+                <li><a href="../../">Documentaton <i class="fa fa-book"></i></a></li>
+                <li><a href="../../../downloads.html">Downloads <i class="fa fa-download"></i></a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"></ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="section" id="sending-output-to-a-database">
+<span id="manual-out-prelude"></span><h1>Sending output to a Database<a class="headerlink" href="#sending-output-to-a-database" title="Permalink to this headline">¶</a></h1>
+<p>OSSEC supports MySQL and PostgreSQL database outputs.</p>
+<div class="section" id="configuration-options">
+<h2>Configuration options<a class="headerlink" href="#configuration-options" title="Permalink to this headline">¶</a></h2>
+<p>These configurations options can be specified in the server or local install ossec.conf file.</p>
+<dl class="element">
+<dt id="element-database_output">
+<tt class="descname">database_output</tt><a class="headerlink" href="#element-database_output" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="element">
+<dt id="element-hostname">
+<tt class="descname">hostname</tt><a class="headerlink" href="#element-hostname" title="Permalink to this definition">¶</a></dt>
+<dd><p>IP Address of the database server.</p>
+<p><strong>Allowed:</strong> any valid IP address</p>
+</dd></dl>
+
+<dl class="element">
+<dt id="element-username">
+<tt class="descname">username</tt><a class="headerlink" href="#element-username" title="Permalink to this definition">¶</a></dt>
+<dd><p>Username to access the database.</p>
+<p><strong>Allowed:</strong> Any Valid Username</p>
+</dd></dl>
+
+<dl class="element">
+<dt id="element-password">
+<tt class="descname">password</tt><a class="headerlink" href="#element-password" title="Permalink to this definition">¶</a></dt>
+<dd><p>Password to access the database.</p>
+<p><strong>Allowed:</strong> Any Password</p>
+</dd></dl>
+
+<dl class="element">
+<dt id="element-database">
+<tt class="descname">database</tt><a class="headerlink" href="#element-database" title="Permalink to this definition">¶</a></dt>
+<dd><p>Database name to store the alerts.</p>
+<p><strong>Allowed:</strong> database name</p>
+</dd></dl>
+
+<dl class="element">
+<dt id="element-type">
+<tt class="descname">type</tt><a class="headerlink" href="#element-type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Type of database (Mysql or PostgreSQL).</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">OSSEC must be compiled with the database type that is to be used.</p>
+</div>
+<p><strong>Allowed:</strong> mysql/postgresql</p>
+</dd></dl>
+
+</div>
+<div class="section" id="enabling-database-support">
+<h2>Enabling Database Support<a class="headerlink" href="#enabling-database-support" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">You must have the MySQL or PgSQL Client libraries installed on the OSSEC server.</p>
+</div>
+<p>Before you run the &#8221;./install.sh&#8221; script execute the following to compile OSSEC with
+database support.</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">#</span> <span class="nb">cd </span>ossec-hids-*
+<span class="gp">#</span> <span class="nb">cd </span>src<span class="p">;</span> make setdb<span class="p">;</span> <span class="nb">cd</span> ..
+<span class="gp">#</span> ./install.sh
+</pre></div>
+</div>
+</div>
+<div class="section" id="enable-database-output-in-the-configuration">
+<h2>Enable Database output in the configuration<a class="headerlink" href="#enable-database-output-in-the-configuration" title="Permalink to this headline">¶</a></h2>
+<p>After installation is complete database support needs to be enabled.
+The following command will enable the database daemon on the next restart.</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">#</span> /var/ossec/bin/ossec-control <span class="nb">enable </span>database
+</pre></div>
+</div>
+</div>
+<div class="section" id="database-specific-setup">
+<h2>Database Specific Setup<a class="headerlink" href="#database-specific-setup" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="mysql-database-output.html">Configuring MySQL</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="mysql-database-output.html#database-setup">Database Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mysql-database-output.html#ossec-setup">OSSEC Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mysql-database-output.html#complete-mysql-output">Complete MySQL Output</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pgsql-database-outout.html">Configuring PgSQL</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pgsql-database-outout.html#database-setup">Database Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pgsql-database-outout.html#ossec-setup">OSSEC Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pgsql-database-outout.html#complete-pgsql-output">Complete PgSQL Output</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+  <div class="section">
+  
+  
+  </div>
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2010-2015, OSSEC Project Team - OSSEC trademark and domain owned by Trend Micro, Inc. - Home page images courtesy of Pixbay.com.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

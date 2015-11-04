@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>How to add multiple log files to be monitored? &mdash; OSSEC</title>
+    
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/parallax.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '2.8.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-sphinx.js"></script>
+    <link rel="author" title="About these documents" href="../../../about.html" />
+    <link rel="top" title="OSSEC" href="../../../index.html" />
+  
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  
+  
+  <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+  
+  <style type="text/css">
+    ul.ablog-archive {list-style: none; overflow: auto; margin-left: 0px}
+    ul.ablog-archive li {float: left; margin-right: 5px; font-size: 80%}
+  </style>
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../../index.html"><img src="../../../_static/ossec_logo_bare_small.png">
+          OSSEC</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="../../../about.html">About <i class="fa fa-info-circle"></i></a></li>
+                <li><a href="../../../blog.html">Blog <i class="fa fa-archive"></i></a></li>
+                <li><a href="../../">Documentaton <i class="fa fa-book"></i></a></li>
+                <li><a href="../../../downloads.html">Downloads <i class="fa fa-download"></i></a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"></ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="section" id="how-to-add-multiple-log-files-to-be-monitored">
+<h1>How to add multiple log files to be monitored?<a class="headerlink" href="#how-to-add-multiple-log-files-to-be-monitored" title="Permalink to this headline">¶</a></h1>
+<p>By <a class="reference external" href="http://www.dcid.me">Daniel B. Cid</a></p>
+<div class="section" id="for-unix-agents">
+<h2>For Unix Agents<a class="headerlink" href="#for-unix-agents" title="Permalink to this headline">¶</a></h2>
+<p>If you have multiple log files to be monitored by OSSEC and don&#8217;t
+want to add each one of them manually, you can configure them using
+posix regular expressions.</p>
+<p>For example, if you have a directory structure like this:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">/var/log/host1/xx.log, yy.log, zz.log</span>
+<span class="go">/var/log/host2/xx.log, aa.log</span>
+<span class="go">/var/log/host3/zz.log, abc.log</span>
+<span class="go">/var/log/hostn/bb.log, xyz.log</span>
+</pre></div>
+</div>
+<p>You can just add one entry in the localfile to monitor all these logs:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">&lt;localfile&gt;</span>
+<span class="go">  &lt;log_format&gt;syslog&lt;/log_format&gt;</span>
+<span class="go">  &lt;location&gt;/var/log/host*/*.log&lt;/location&gt;</span>
+<span class="go">&lt;/localfile&gt;</span>
+</pre></div>
+</div>
+<p>This tip can make large configurations much simpler.</p>
+</div>
+<div class="section" id="for-windows-agents">
+<h2>For Windows Agents<a class="headerlink" href="#for-windows-agents" title="Permalink to this headline">¶</a></h2>
+<p>For the Windows agent, the built-in globing doesn&#8217;t work. At time of writing (OSSEC
+version 1.5) you have to use a script to auto-generate <tt class="docutils literal"><span class="pre">ossec.conf</span></tt> if you want to
+monitor many log files without having to manually enter them. Here&#8217;s an example
+batch file to get you started:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">@echo off</span>
+
+<span class="go">set targetfile=&quot;C:\Program Files\ossec-agent\ossec.conf&quot;</span>
+
+<span class="go">copy &quot;%~dp0\ossec_template.conf&quot; %targetfile%</span>
+
+<span class="go">echo ^&lt;ossec_config^&gt; &gt;&gt; %targetfile%</span>
+<span class="go">echo. &gt;&gt; %targetfile%</span>
+<span class="go">for /D %%l in (D:\Logs\W3SVC*) do echo ^&lt;localfile^&gt;^&lt;location^&gt;%%l\ex%%y%%m%%d.log^&lt;/location^&gt;^&lt;log_format^&gt;iis^&lt;/log_format^&gt;^&lt;/localfile^&gt; &gt;&gt; %targetfile%</span>
+<span class="go">echo ^&lt;/ossec_config^&gt; &gt;&gt; %targetfile%</span>
+<span class="go">net stop &quot;OSSEC Hids&quot;</span>
+<span class="go">net start &quot;OSSEC Hids&quot;</span>
+</pre></div>
+</div>
+<p>Adjust the &#8220;for..in&#8221; globbing line as needed. In this example, I&#8217;m monitoring logs for multiple
+IIS sites which are all in D:Logs. Save it into a file with a .bat extension and put it
+somewhere on your hard drive. Create a file named <tt class="docutils literal"><span class="pre">ossec_template.conf</span></tt> in
+the <strong>`same directory</strong> as the batch file. You can probably just copy your current
+<tt class="docutils literal"><span class="pre">ossec.conf</span></tt> for this file, as this script will only append to it. You can then set
+up a scheduled task to run the batch file to automatically keep your ossec.conf up to date.</p>
+</div>
+</div>
+
+  <div class="section">
+  
+  
+  </div>
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2010-2015, OSSEC Project Team - OSSEC trademark and domain owned by Trend Micro, Inc. - Home page images courtesy of Pixbay.com.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

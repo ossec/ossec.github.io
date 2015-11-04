@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Downloads &mdash; OSSEC</title>
+    
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="_static/parallax.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '2.8.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="top" title="OSSEC" href="index.html" />
+  
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  
+  
+  <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+  
+  <style type="text/css">
+    ul.ablog-archive {list-style: none; overflow: auto; margin-left: 0px}
+    ul.ablog-archive li {float: left; margin-right: 5px; font-size: 80%}
+  </style>
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html"><img src="_static/ossec_logo_bare_small.png">
+          OSSEC</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="about.html">About <i class="fa fa-info-circle"></i></a></li>
+                <li><a href="blog.html">Blog <i class="fa fa-archive"></i></a></li>
+                <li><a href="docs/">Documentaton <i class="fa fa-book"></i></a></li>
+                <li><a href="#">Downloads <i class="fa fa-download"></i></a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"></ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">Downloads</a><ul>
+<li><a class="reference internal" href="#source-downloads">Source Downloads</a></li>
+<li><a class="reference internal" href="#rpms-for-rhel-centos-fedora-and-others">RPMs for RHEL, CentOS, Fedora and others</a><ul>
+<li><a class="reference internal" href="#rpm-installation">RPM Installation</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#debs-for-debian-wheezy-jessie-and-sid">DEBs for Debian Wheezy, Jessie and Sid</a><ul>
+<li><a class="reference internal" href="#deb-installation">DEB Installation</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#pgp-key">PGP key</a></li>
+<li><a class="reference internal" href="#contribute-back">Contribute back!</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    <div class="col-md-9">
+      
+  <div class="section" id="downloads">
+<h1>Downloads<a class="headerlink" href="#downloads" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="source-downloads">
+<h2>Source Downloads<a class="headerlink" href="#source-downloads" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="21%" />
+<col width="69%" />
+<col width="10%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head" colspan="3">latest development snapshots</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>server/agent</td>
+<td colspan="2"><a class="reference external" href="https://github.com/ossec/ossec-hids/releases">https://github.com/ossec/ossec-hids/releases</a></td>
+</tr>
+<tr class="row-odd"><td>web ui</td>
+<td colspan="2"><a class="reference external" href="https://github.com/ossec/ossec-wui/release">https://github.com/ossec/ossec-wui/release</a></td>
+</tr>
+<tr class="row-even"><td>docs</td>
+<td colspan="2"><a class="reference external" href="https://github.com/ossec/ossec-docs">https://github.com/ossec/ossec-docs</a></td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils">
+<colgroup>
+<col width="8%" />
+<col width="2%" />
+<col width="56%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head" colspan="4">Latest Stable Release (2.8.1)</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td colspan="2">Server/Agent Unix</td>
+<td><a class="reference external" href="https://github.com/ossec/ossec-hids/archive/2.8.1.tar.gz">2.8.1.tar.gz</a></td>
+<td><a class="reference external" href="files/ossec-hids-2.8.1-checksum.txt">Checksum</a></td>
+</tr>
+<tr class="row-odd"><td colspan="2">Agent Windows</td>
+<td><a class="reference external" href="https://github.com/ossec/ossec-hids/releases/download/v2.8.0/ossec-agent-win32-2.8.exe">ossec-agent-win32-2.8.exe</a></td>
+<td><a class="reference external" href="files/ossec-agent-win32-2.8-checksum.txt">Checksum</a></td>
+</tr>
+<tr class="row-even"><td colspan="2">Virtual Appl</td>
+<td><a class="reference external" href="http://www.ossec.net/files/ossec-vm-2.8.1.ova">ossec-vm-2.8.1.ova</a></td>
+<td><a class="reference external" href="files/ossec-vm-2.8.1-checksum.txt">Checksum</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="rpms-for-rhel-centos-fedora-and-others">
+<h2>RPMs for RHEL, CentOS, Fedora and others<a class="headerlink" href="#rpms-for-rhel-centos-fedora-and-others" title="Permalink to this headline">¶</a></h2>
+<p>Available in the <a class="reference external" href="http://www5.atomicorp.com/channels/ossec/">AtomiCorp repository</a>.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="16%" />
+<col width="84%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head" colspan="2">CentOS</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>el5</td>
+<td><a class="reference external" href="http://www5.atomicorp.com/channels/ossec/centos/5/i386/RPMS/">i386</a></td>
+</tr>
+<tr class="row-odd"><td>el5</td>
+<td><a class="reference external" href="http://www5.atomicorp.com/channels/ossec/centos/5/x86_64/RPMS/">x86_64</a></td>
+</tr>
+<tr class="row-even"><td>el6</td>
+<td><a class="reference external" href="http://www5.atomicorp.com/channels/ossec/centos/5/i386/RPMS/">i386</a></td>
+</tr>
+<tr class="row-odd"><td>el6</td>
+<td><a class="reference external" href="http://www5.atomicorp.com/channels/ossec/centos/6/x86_64/RPMS/">x86_64</a></td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils">
+<colgroup>
+<col width="16%" />
+<col width="84%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head" colspan="2">Fedora</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>el5</td>
+<td><a class="reference external" href="http://www5.atomicorp.com/channels/ossec/fedora/20/i386/RPMS/">i386</a></td>
+</tr>
+<tr class="row-odd"><td>el5</td>
+<td><a class="reference external" href="http://www5.atomicorp.com/channels/ossec/fedora/5/x86_64/RPMS/">x86_64</a></td>
+</tr>
+<tr class="row-even"><td>el6</td>
+<td><a class="reference external" href="http://www5.atomicorp.com/channels/ossec/fedora/5/i386/RPMS/">i386</a></td>
+</tr>
+<tr class="row-odd"><td>el6</td>
+<td><a class="reference external" href="http://www5.atomicorp.com/channels/ossec/fedora/6/x86_64/RPMS/">x86_64</a></td>
+</tr>
+<tr class="row-even"><td>All</td>
+<td><a class="reference external" href="http://www5.atomicorp.com/channels/ossec/fedora/">6 - 20</a></td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="rpm-installation">
+<h3>RPM Installation<a class="headerlink" href="#rpm-installation" title="Permalink to this headline">¶</a></h3>
+<p>To install with yum do the following:</p>
+<div class="code console highlight-python"><div class="highlight"><pre><span class="c"># wget -q -O – https://www.atomicorp.com/installers/atomic | sh</span>
+<span class="c"># yum install ossec-hids ossec-hids-server (or ossec-hids-client for the agent)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="debs-for-debian-wheezy-jessie-and-sid">
+<h2>DEBs for Debian Wheezy, Jessie and Sid<a class="headerlink" href="#debs-for-debian-wheezy-jessie-and-sid" title="Permalink to this headline">¶</a></h2>
+<p>Available in the <a class="reference external" href="http://ossec.alienvault.com/repos/apt/debian/pool/main/o/">AlienVault repository</a>.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="12%" />
+<col width="88%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head" colspan="2">Debian</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>OSSEC Server</td>
+<td><a class="reference external" href="http://ossec.alienvault.com/repos/apt/debian/pool/main/o/ossec-hids/">Wheezy, Jessie, Sid</a></td>
+</tr>
+<tr class="row-odd"><td>OSSEC Agent</td>
+<td><a class="reference external" href="http://ossec.alienvault.com/repos/apt/debian/pool/main/o/ossec-hids-agent/">Wheezy, Jessie, Sid</a></td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="deb-installation">
+<h3>DEB Installation<a class="headerlink" href="#deb-installation" title="Permalink to this headline">¶</a></h3>
+<p>To install with apt-get do the following:</p>
+<div class="code console highlight-python"><div class="highlight"><pre># wget -O – http://ossec.alienvault.com/repos/apt/conf/ossec-key.gpg.key | apt-key add –
+# echo “deb http://ossec.alienvault.com/repos/apt/debian wheezy main” &gt;&gt; /etc/apt/sources.list
+(change wheezy for your Debian distribution)
+# apt-get update
+# apt-get install ossec-hids  (or ossec-hids-agent)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="pgp-key">
+<h2>PGP key<a class="headerlink" href="#pgp-key" title="Permalink to this headline">¶</a></h2>
+<p>Before you install any package from our project, we recommend that you
+verify it using our PGP key. Follow these two steps if you are not used
+to using gpg. You first need to import our public key:</p>
+<div class="code console highlight-python"><div class="highlight"><pre><span class="n">ossec</span><span class="o">-</span><span class="n">test</span><span class="c"># wget http://www.ossec.net/files/OSSEC-PGP-KEY.asc</span>
+<span class="n">ossec</span><span class="o">-</span><span class="n">test</span><span class="c"># gpg –import OSSEC-PGP-KEY.asc</span>
+</pre></div>
+</div>
+<p>And then verify each file against its signature:</p>
+<div class="code console highlight-python"><div class="highlight"><pre><span class="n">ossec</span><span class="o">-</span><span class="n">test</span><span class="c"># gpg –verify file.sig file</span>
+</pre></div>
+</div>
+<p>You should get the following result:</p>
+<div class="code console highlight-python"><div class="highlight"><pre>gpg: Signature made Tue 19 Jul 2011 03:13:58 PM BRT using RSA key ID A3901351
+gpg: Good signature from “Daniel B. Cid ”
+Primary key fingerprint: 6F11 9E06 487A AF17 C84C E48A 456B 17CF A390 1351
+</pre></div>
+</div>
+<p>Note that the key expiration date was changed lately. If you get an
+warning saying “gpg: Note: This key has expired!”, make sure to update
+the key and run the “import” command again (as specified above).</p>
+</div>
+<div class="section" id="contribute-back">
+<h2>Contribute back!<a class="headerlink" href="#contribute-back" title="Permalink to this headline">¶</a></h2>
+<p>If you find ossec useful and would like to contribute back to the
+community, please contact us. We have a lot of work to do and any help
+is appreciated.</p>
+</div>
+</div>
+
+  <div class="section">
+  
+  
+  </div>
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2010-2015, OSSEC Project Team - OSSEC trademark and domain owned by Trend Micro, Inc. - Home page images courtesy of Pixbay.com.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

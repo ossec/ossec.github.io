@@ -1,0 +1,45 @@
+.. _install:
+
+Manager/Agent Installation
+==========================
+
+
+Installation of OSSEC HIDS is very simple, the ``install.sh`` shell script automating most of it.
+There are a few questions to be answered before the installation will occur, one of the most 
+important being which type of installation is desired.
+It is important to choose the correct installation type: server, agent, local, or hybrid.
+More information on thse can be found on the `OSSEC Architecture page <../ossec-architecture.html>`_.
+
+.. note::
+
+    In the following installation the commands follow the ``#``. 
+    Everything else is either comments out output. 
+
+1. Download the latest version and verify its checksum.
+
+.. include:: getossec.trst
+
+2. Extract the compressed package and run the ``install.sh`` script. It will guide you 
+   through the installation.
+
+    .. code-block:: console 
+
+        # tar -zxvf ossec-hids-*.tar.gz (or gunzip -d; tar -xvf)
+        # cd ossec-hids-* 
+        # ./install.sh
+
+3. The OSSEC manager listens on UDP port 1514. Any firewall sbetween the agents and 
+   the manager will need to allow this traffic.
+
+4. The server, agent, and hybrid installations will require additional configuration. 
+   More information can be found on the `Managing the agents page <../agent/agent-management.html>`_.
+
+5. Start OSSEC HIDS by running the following command:
+
+    .. code-block:: console 
+
+        # /var/ossec/bin/ossec-control start  
+
+
+
+

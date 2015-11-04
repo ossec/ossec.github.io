@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Log samples for Iplog &mdash; OSSEC</title>
+    
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/parallax.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '2.8.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-sphinx.js"></script>
+    <link rel="author" title="About these documents" href="../../../about.html" />
+    <link rel="top" title="OSSEC" href="../../../index.html" />
+  
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  
+  
+  <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+  
+  <style type="text/css">
+    ul.ablog-archive {list-style: none; overflow: auto; margin-left: 0px}
+    ul.ablog-archive li {float: left; margin-right: 5px; font-size: 80%}
+  </style>
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../../index.html"><img src="../../../_static/ossec_logo_bare_small.png">
+          OSSEC</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="../../../about.html">About <i class="fa fa-info-circle"></i></a></li>
+                <li><a href="../../../blog.html">Blog <i class="fa fa-archive"></i></a></li>
+                <li><a href="../../">Documentaton <i class="fa fa-book"></i></a></li>
+                <li><a href="../../../downloads.html">Downloads <i class="fa fa-download"></i></a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"></ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="section" id="log-samples-for-iplog">
+<h1>Log samples for Iplog<a class="headerlink" href="#log-samples-for-iplog" title="Permalink to this headline">¶</a></h1>
+<p>Some log samples for <a class="reference external" href="http://freshmeat.net/projects/iplog/">iplog</a></p>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">Nov  9 16:24:47 TCP: ftp connection attempt from mail.derkeiler.com (195.140.232.116):52516</span>
+<span class="go">Nov  9 16:24:47 TCP: pptp connection attempt from mail.derkeiler.com (195.140.232.116):51624</span>
+<span class="go">Nov  9 16:24:47 TCP: domain connection attempt from mail.derkeiler.com (195.140.232.116):56341</span>
+<span class="go">Nov  9 16:24:47 TCP: ldaps connection attempt from mail.derkeiler.com (195.140.232.116):57057</span>
+<span class="go">Nov  9 16:24:47 TCP: https connection attempt from mail.derkeiler.com (195.140.232.116):2032</span>
+<span class="go">Nov  9 16:24:47 TCP: ldap connection attempt from mail.derkeiler.com (195.140.232.116):53716</span>
+<span class="go">Nov  9 16:24:47 TCP: rdp connection attempt from mail.derkeiler.com (195.140.232.116):62101</span>
+<span class="go">Nov  9 16:24:47 TCP: rtsp connection attempt from mail.derkeiler.com (195.140.232.116):60003</span>
+<span class="go">Nov  9 16:24:49 TCP: rtsp connection attempt from mail.derkeiler.com (195.140.232.116):58672</span>
+<span class="go">Nov  9 16:24:49 TCP: pptp connection attempt from mail.derkeiler.com (195.140.232.116):56416</span>
+<span class="go">Nov  9 16:24:49 TCP: rdp connection attempt from mail.derkeiler.com (195.140.232.116):50295</span>
+<span class="go">Nov  9 16:24:49 TCP: https connection attempt from mail.derkeiler.com (195.140.232.116):53896</span>
+<span class="go">Nov  9 16:24:49 TCP: ldap connection attempt from mail.derkeiler.com (195.140.232.116):65200</span>
+<span class="go">Nov  9 16:24:49 TCP: ftp connection attempt from mail.derkeiler.com (195.140.232.116):61067</span>
+<span class="go">Nov  9 16:24:49 TCP: port scan detected [ports 21,1723,53,636,443,389,3389,554] from mail.derkeiler.com (195.140.232.116) [ports 52516,51624$</span>
+<span class="go">Nov  9 16:26:39 TCP: port scan mode expired for mail.derkeiler.com (195.140.232.116) - received a total of 3308 packets (132320 bytes).</span>
+</pre></div>
+</div>
+<p>=iplog=
+iplog is a TCP/IP traffic logger. Currently, it is capable of logging TCP, UDP, and ICMP traffic. iplog is able to detect TCP port scans, TCP null scans, FIN scans, UDP and ICMP &#8220;smurf&#8221; attacks, bogus TCP flags, TCP SYN scans, TCP &#8220;Xmas&#8221; scans, ICMP ping floods, UDP scans, and IP fragment attacks. iplog is able to run in promiscuous mode and monitor traffic to all hosts on a network. iplog uses libpcap to read data from the network and can be ported to any system that supports pthreads and on which libpcap will function.</p>
+<p>=iplog.conf=</p>
+<blockquote>
+<div>the syslog, user, group and internal network configuration is not show (OS dependient)
+iplog can log in diferets ways depending of the configuration parameters (DNS resolv, log_dest, etc), the proposed decoders and rules
+only work with the logs later described, this configuration file extract is functional with this requeriment, please read man iplog
+and man iplog.conf</div></blockquote>
+<p>&lt;nowiki&gt;# Log the IP address as well as the hostname of packets.&lt;/nowiki&gt;</p>
+<p>set log_ip true</p>
+<p>&lt;nowiki&gt;# Do not log the destination of packets (more presentable logs)&lt;/nowiki&gt;</p>
+<p>set log_dest false</p>
+<p>&lt;nowiki&gt;# Ignore DNS traffic from nameservers in /etc/resolv.conf.&lt;/nowiki&gt;</p>
+<p>set ignore_dns true</p>
+<p>&lt;nowiki&gt;# I dont want too many logs: ignore www, netbios, microsoft-ds loc-srv, 5900 tcp/port conecctions, not all the OS recognize the port alias, replace with de adecuate port number&lt;/nowiki&gt;</p>
+<p>ignore tcp dport 80</p>
+<p>ignore tcp dport netbios-ssn</p>
+<p>ignore tcp dport microsoft-ds</p>
+<p>ignore tcp dport loc-srv</p>
+<p>ignore tcp dport 5900</p>
+<p>&lt;nowiki&gt;# Port Scan Check&lt;/nowiki&gt;</p>
+<p>set portscan true</p>
+<p>set icmp true</p>
+<p>set frag true</p>
+<p>set smurf true</p>
+<p>set bogus true</p>
+<p>set fin_scan true</p>
+<p>set syn_scan true</p>
+<p>set udp_scan true</p>
+<p>set fool_nmap false</p>
+<p>set xmas_scan true</p>
+<p>set null_scan true</p>
+<p>set ping_flood true</p>
+<p>set traceroute true</p>
+<p>=iplog: Scan and attack responses=</p>
+<p>==&#8217;&#8216;&#8217;Connect Scan and SYN scan&#8217;&#8216;&#8217;==
+nmap -sT -PI -PT 10.10.160.2</p>
+<p>&#8216;&#8217;&#8216;iplog response&#8217;&#8216;&#8217;</p>
+<p>Nov 14 18:09:08 TCP: domain connection attempt from 10.10.150.1:51239</p>
+<p>Nov 14 18:09:08 TCP: https connection attempt from 10.10.150.1:51240</p>
+<p>Nov 14 18:09:08 TCP: port 1723 connection attempt from 10.10.150.1:51241</p>
+<p>Nov 14 18:09:08 TCP: ftp connection attempt from 10.10.150.1:51242</p>
+<p>Nov 14 18:09:08 TCP: smtp connection attempt from 10.10.150.1:51243</p>
+<p>Nov 14 18:09:08 TCP: port 3389 connection attempt from 10.10.150.1:51244</p>
+<p>Nov 14 18:09:08 TCP: auth connection attempt from 10.10.150.1:51245</p>
+<p>Nov 14 18:09:08 TCP: port 636 connection attempt from 10.10.150.1:51246</p>
+<p>Nov 14 18:09:08 TCP: port 256 connection attempt from 10.10.150.1:51247</p>
+<p>Nov 14 18:09:08 TCP: port 554 connection attempt from 10.10.150.1:51248</p>
+<p>Nov 14 18:09:08 TCP: telnet connection attempt from 10.10.150.1:51249</p>
+<p>Nov 14 18:09:08 TCP: port 389 connection attempt from 10.10.150.1:51250</p>
+<p>Nov 14 18:09:08 TCP: ssh connection attempt from 10.10.150.1:51251</p>
+<p>Nov 14 18:09:08 TCP: port 486 connection attempt from 10.10.150.1:51253</p>
+<p>&lt;font color=&#8221;red&#8221;&gt;Nov 14 18:09:08 TCP: port scan detected [ports 53,443,1723,21,25,3389,113,636,256,554,...] from 10.10.150.1 [ports 51242,51243,...]&lt;/font&gt;</p>
+<p>Nov 14 18:09:08 UDP: dgram to port 1 from 10.10.150.1:34324 (300 data bytes)</p>
+<p>&lt;font color=&#8221;red&#8221;&gt;Nov 14 18:09:12 TCP: SYN scan detected [ports 21,1] from 10.10.150.1 [ports 34333,34335,34325,34326,34327,...]&lt;/font&gt;</p>
+<p>Nov 14 18:09:12 UDP: dgram to port 1 from 10.10.150.1:34324 (300 data bytes)</p>
+<p>Nov 14 18:10:02 last message repeated 1 times</p>
+<p>Nov 14 18:10:02 TCP: port scan mode expired for 10.10.150.1 - received a total of 1678 packets (47092 bytes).</p>
+<p>Nov 14 18:10:09 TCP: SYN scan mode expired for 10.10.150.1 - received a total of 24 packets (960 bytes).</p>
+<p>==&#8217;&#8216;&#8217;FIN Stealth Scan&#8217;&#8216;&#8217;==
+nmap -sF -p- -PI -PT 10.10.150.2</p>
+<p>&#8216;&#8217;&#8216;iplog response&#8217;&#8216;&#8217;</p>
+<p>&lt;font color=&#8221;red&#8221;&gt;Nov 14 18:22:51 TCP: FIN scan detected [ports 3389,1723,256,113,22,389,554,443,21,23,...] from 10.10.150.1 [port 57876]&lt;/font&gt;</p>
+<p>Nov 14 18:24:05 TCP: FIN scan mode expired for 10.10.150.1 - received a total of 65535 packets (1310700 bytes)</p>
+<p>==&#8217;&#8216;&#8217;NULL Stealth Scan&#8217;&#8216;&#8217;==
+nmap -sN -p- -PI -PT 10.10.150.2</p>
+<p>&#8216;&#8217;&#8216;iplog response&#8217;&#8216;&#8217;</p>
+<p>&lt;font color=&#8221;red&#8221;&gt;Nov 14 18:26:58 TCP: null scan detected [ports 636,53,23,3389,1723,443,113,554,25,21,...] from 10.10.150.1 [port 35444]&lt;/font&gt;</p>
+<p>Nov 14 18:28:14 TCP: null scan mode expired for 10.10.150.1 - received a total of 65534 packets (1310680 bytes)</p>
+<p>==&#8217;&#8216;&#8217;Xmas Tree Stealth Scan&#8217;&#8216;&#8217;==
+nmap -sX -p- -PI -PT 10.10.150.2</p>
+<p>&#8216;&#8217;&#8216;iplog response&#8217;&#8216;&#8217;</p>
+<p>&lt;font color=&#8221;red&#8221;&gt;Nov 14 18:30:30 TCP: Xmas scan detected [ports 636,256,554,389,1723,53,443,21,3389,22,...] from 10.10.150.1 [port 42399]&lt;/font&gt;</p>
+<p>Nov 14 18:31:48 TCP: Xmas scan mode expired for 10.10.150.1 - received a total of 65532 packets (1310640 bytes).</p>
+<p>==&#8217;&#8216;&#8217;UDP port scan&#8217;&#8216;&#8217;==
+nmap -sU -p- -PI -PT 10.10.150.2</p>
+<p>&#8216;&#8217;&#8216;iplog response&#8217;&#8216;&#8217;</p>
+<p>Nov 14 18:34:59 UDP: dgram to port 33161 from 10.10.150.1:60362 (0 data bytes)</p>
+<p>Nov 14 18:34:59 UDP: dgram to port 41107 from 10.10.150.1:60362 (0 data bytes)</p>
+<p>Nov 14 18:34:59 UDP: dgram to port 63571 from 10.10.150.1:60362 (0 data bytes)</p>
+<p>Nov 14 18:34:59 UDP: dgram to port 48714 from 10.10.150.1:60362 (0 data bytes)</p>
+<p>Nov 14 18:34:59 UDP: dgram to port 25271 from 10.10.150.1:60362 (0 data bytes)</p>
+<p>Nov 14 18:34:59 UDP: dgram to port 13612 from 10.10.150.1:60362 (0 data bytes)</p>
+<p>Nov 14 18:34:59 UDP: dgram to port 41094 from 10.10.150.1:60362 (0 data bytes)</p>
+<p>Nov 14 18:34:59 UDP: dgram to port 52700 from 10.10.150.1:60362 (0 data bytes)</p>
+<p>Nov 14 18:34:59 UDP: dgram to port 11482 from 10.10.150.1:60362 (0 data bytes)</p>
+<p>Nov 14 18:34:59 UDP: dgram to port 62794 from 10.10.150.1:60362 (0 data bytes)</p>
+<p>Nov 14 18:34:59 UDP: dgram to port 28270 from 10.10.150.1:60362 (0 data bytes)</p>
+<p>Nov 14 18:34:59 UDP: dgram to port 27081 from 10.10.150.1:60362 (0 data bytes)</p>
+<p>Nov 14 18:34:59 UDP: dgram to port 10866 from 10.10.150.1:60362 (0 data bytes)</p>
+<p>Nov 14 18:34:59 UDP: dgram to port 63494 from 10.10.150.1:60362 (0 data bytes)</p>
+<p>Nov 14 18:34:59 UDP: dgram to port 28686 from 10.10.150.1:60362 (0 data bytes)</p>
+<p>Nov 14 18:34:59 UDP: dgram to port 44600 from 10.10.150.1:60362 (0 data bytes)</p>
+<p>Nov 14 18:34:59 UDP: dgram to port 21771 from 10.10.150.1:60362 (0 data bytes)</p>
+<p>Nov 14 18:34:59 UDP: dgram to port 53283 from 10.10.150.1:60362 (0 data bytes)</p>
+<p>Nov 14 18:34:59 UDP: dgram to port 44436 from 10.10.150.1:60362 (0 data bytes)</p>
+<p>Nov 14 18:34:59 UDP: dgram to port 46916 from 10.10.150.1:60362 (0 data bytes)</p>
+<p>Nov 14 18:34:59 UDP: dgram to port 30519 from 10.10.150.1:60362 (0 data bytes)</p>
+<p>Nov 14 18:34:59 UDP: dgram to port 8041 from 10.10.150.1:60362 (0 data bytes)</p>
+<p>Nov 14 18:35:00 UDP: dgram to port 8041 from 10.10.150.1:60363 (0 data bytes)</p>
+<p>Nov 14 18:35:00 UDP: dgram to port 30519 from 10.10.150.1:60363 (0 data bytes)</p>
+<p>&lt;font color=&#8221;red&#8221;&gt;Nov 14 18:35:00 UDP: scan/flood detected [ports 33161,41107,63571,48714,25271,...] from 10.10.150.1 [ports 60362]&lt;/font&gt;</p>
+<p>Nov 14 18:39:15 UDP: scan/flood mode expired for 10.10.150.1 - received a total of 356 packets (2848 bytes).</p>
+<p>==&#8217;&#8216;&#8217;traceroute&#8217;&#8216;&#8217;==
+traceroute 10.10.150.1</p>
+<p>&#8216;&#8217;&#8216;iplog response&#8217;&#8216;&#8217;</p>
+<p>&lt;font color=&#8221;red&#8221;&gt;Nov 14 18:57:18 UDP: traceroute from 10.10.150.2&lt;/font&gt;</p>
+<p>==&#8217;&#8216;&#8217;Flood ping attack&#8217;&#8216;&#8217;==
+ping -f 10.10.150.2</p>
+<p>&#8216;&#8217;&#8216;iplog response&#8217;&#8216;&#8217;</p>
+<p>&lt;font color=&#8221;red&#8221;&gt;Nov 14 19:09:33 ICMP: ping flood detected from 10.10.150.1&lt;/font&gt;</p>
+<p>Nov 14 19:11:29 ICMP: ping flood mode expired for 10.10.150.1 - received a total of 428 packets (8416000 bytes).</p>
+<p>==&#8217;&#8216;&#8217;IP fragment attacks&#8217;&#8216;&#8217;==
+TODO</p>
+<p>==&#8217;&#8216;&#8217;UDP and ICMP &#8220;smurf&#8221; attacks&#8217;&#8216;&#8217;==
+Nov 18 19:12:30 ICMP/UDP: smurf attack detected from 201.223.41.0</p>
+<p>&lt;font color=&#8221;red&#8221;&gt;Nov 18 19:23:30 ICMP/UDP: smurf attack detected from 201.223.41.0&lt;/font&gt;</p>
+<p>Nov 18 19:28:07 ICMP/UDP: smurf attack mode expired for 201.223.41.0 - received a total of 337 packets (21568 bytes).</p>
+<p>==&#8217;&#8216;&#8217;Another interesting logs&#8217;&#8216;&#8217;==</p>
+<p>&#8216;&#8217;&#8216;bogus TCP flags&#8217;&#8216;&#8217;</p>
+<p>&lt;font color=&#8221;red&#8221;&gt;Nov 14 15:57:56 TCP: Bogus TCP flags set by 10.10.160.2:60873 (dest port 25)&lt;/font&gt;</p>
+<p>=&#8217;&#8216;&#8217;OSSEC (HIDS) + iplog (sensor) implementation&#8217;&#8216;&#8217;=
+<a href="#id1"><span class="problematic" id="id2">*</span></a>Work in progress
+<a href="#id3"><span class="problematic" id="id4">*</span></a>TODO: improve regex, decoders and rules. p0f complementation?
+<a href="#id5"><span class="problematic" id="id6">*</span></a>Configuration tested in FreeBSD 6.1 and archlinux gimmick
+<a href="#id7"><span class="problematic" id="id8">*</span></a>Last modification 14/Nov/2006</p>
+<p>==&#8217;&#8216;&#8217;iplog decoder&#8217;&#8216;&#8217;==</p>
+<p>&#8216;&#8217;&#8216;For this logs:&#8217;&#8216;&#8217;</p>
+<p>Nov 14 18:09:12 TCP: SYN scan detected [ports 21,1] from 10.10.150.1 [ports 34333,34335,34325,34326,34327,...]</p>
+<p>Nov 14 18:09:08 TCP: port scan detected [ports 53,443,1723,21,25,3389,113,636,256,554,...] from 10.10.150.1 [ports 51242,51243,...]</p>
+<p>Nov 14 18:22:51 TCP: FIN scan detected [ports 3389,1723,256,113,22,389,554,443,21,23,...] from 10.10.150.1 [port 57876]</p>
+<p>Nov 14 18:26:58 TCP: null scan detected [ports 636,53,23,3389,1723,443,113,554,25,21,...] from 10.10.150.1 [port 35444]</p>
+<p>Nov 14 18:30:30 TCP: Xmas scan detected [ports 636,256,554,389,1723,53,443,21,3389,22,...] from 10.10.150.1 [port 42399]</p>
+<p>&#8216;&#8217;&#8216;a working decoder is:&#8217;&#8216;&#8217;</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>&lt;decoder name=&#8221;iplog-scan&#8221;&gt;</dt>
+<dd>&lt;prematch&gt;S+ scan detected&lt;/prematch&gt;
+&lt;regex offset=&#8221;after_prematch&#8221;&gt;S+ S+ from (S+)&lt;/regex&gt;
+&lt;order&gt;srcip&lt;/order&gt;</dd>
+</dl>
+<p>&lt;/decoder&gt;</p>
+</div></blockquote>
+<p>&#8216;&#8217;&#8216;For this log:&#8217;&#8216;&#8217;</p>
+<p>Nov 14 18:35:00 UDP: scan/flood detected [ports 33161,41107,63571,48714,25271,...] from 10.10.150.1 [ports 60362]</p>
+<p>&#8216;&#8217;&#8216;a proppossed decoder is (not tested):&#8217;&#8216;&#8217;</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>&lt;decoder name=&#8221;iplog-flood&#8221;&gt;</dt>
+<dd>&lt;prematch&gt;scan/flood detected&lt;/prematch&gt;
+&lt;regex offset=&#8221;after_prematch&#8221;&gt;S+ S+ from (S+)&lt;/regex&gt;
+&lt;order&gt;srcip&lt;/order&gt;</dd>
+</dl>
+<p>&lt;/decoder&gt;</p>
+</div></blockquote>
+<p>&#8216;&#8217;&#8216;For this log:&#8217;&#8216;&#8217;</p>
+<p>Nov 14 19:09:33 ICMP: ping flood detected from 10.10.150.1</p>
+<p>&#8216;&#8217;&#8216;a proppossed decoder is (not tested):&#8217;&#8216;&#8217;</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>&lt;decoder name=&#8221;iplog-pingflood&#8221;&gt;</dt>
+<dd>&lt;prematch&gt;ping flood detected from&lt;/prematch&gt;
+&lt;regex offset=&#8221;after_prematch&#8221;&gt;(S+)&lt;/regex&gt;
+&lt;order&gt;srcip&lt;/order&gt;</dd>
+</dl>
+<p>&lt;/decoder&gt;</p>
+</div></blockquote>
+<p>&#8216;&#8217;&#8216;For this log:&#8217;&#8216;&#8217;
+(necesary to include???????) i Think no (very paranoic)</p>
+<p>Nov 14 18:57:18 UDP: traceroute from 10.10.150.2</p>
+<p>&#8216;&#8217;&#8216;a proppossed decoder is (not tested):&#8217;&#8216;&#8217;</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>&lt;decoder name=&#8221;iplog-traceroute&#8221;&gt;</dt>
+<dd>&lt;prematch&gt;pingtraceroute from&lt;/prematch&gt;
+&lt;regex offset=&#8221;after_prematch&#8221;&gt;(S+)&lt;/regex&gt;
+&lt;order&gt;srcip&lt;/order&gt;</dd>
+</dl>
+<p>&lt;/decoder&gt;</p>
+</div></blockquote>
+<p>&#8216;&#8217;&#8216;For this log:&#8217;&#8216;&#8217;
+(necesary to include???????) i Think no (very paranoic)</p>
+<p>Nov 14 15:57:56 TCP: Bogus TCP flags set by 10.10.160.2:60873 (dest port 25)</p>
+<p>&#8216;&#8217;&#8216;a proppossed decoder is (not tested):&#8217;&#8216;&#8217;</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>&lt;decoder name=&#8221;iplog-bogustcp&#8221;&gt;</dt>
+<dd>&lt;prematch&gt;Bogus TCP flags set by&lt;/prematch&gt;
+&lt;regex offset=&#8221;after_prematch&#8221;&gt;(d+.d+.d+.d+):d+&lt;/regex&gt;
+&lt;order&gt;srcip&lt;/order&gt;</dd>
+</dl>
+<p>&lt;/decoder&gt;</p>
+</div></blockquote>
+<p>==&#8217;&#8216;&#8217;iplog rules&#8217;&#8216;&#8217;==</p>
+<p>Only for working decoders</p>
+<blockquote>
+<div>cd ~/ossec/rules
+touch iplog_rules.xml
+chown root:ossec iplog_rules.xml
+chmod 550 iplog_rules.xml</div></blockquote>
+<p>in iplog_rules.xml include:</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>&lt;group name=&#8221;syslog,errors,&#8221;&gt;</dt>
+<dd><dl class="first docutils">
+<dt>&lt;rule id=&#8221;99990&#8221; level=&#8221;6&#8221;&gt;</dt>
+<dd>&lt;decoded_as&gt;iplog-scan&lt;/decoded_as&gt;
+&lt;description&gt;iplog scan detect&lt;/description&gt;</dd>
+</dl>
+<p class="last">&lt;/rule&gt;</p>
+</dd>
+</dl>
+<p>&lt;/group&gt;</p>
+</div></blockquote>
+<p>==&#8217;&#8216;&#8217;ossec.conf&#8217;&#8216;&#8217;==</p>
+<blockquote>
+<div>cd ~/ossec/etc
+vi  ossec.conf</div></blockquote>
+<p>include in the correct place:</p>
+<blockquote>
+<div>&lt;include&gt;iplog_rules.xml&lt;/include&gt;</div></blockquote>
+<p>and</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>&lt;localfile&gt;</dt>
+<dd>&lt;log_format&gt;syslog&lt;/log_format&gt;
+&lt;location&gt;/var/log/iplog&lt;/location&gt;</dd>
+</dl>
+<p>&lt;/localfile&gt;</p>
+</div></blockquote>
+<p>or wherever you put your iplog logs</p>
+<p>start iplog</p>
+<blockquote>
+<div>iplog -d</div></blockquote>
+<p>restart ossec</p>
+<blockquote>
+<div>~/ossec/bin/ossec-control restart</div></blockquote>
+<p>test with nmap (see before)</p>
+<p>=&#8217;&#8216;&#8217;OSSEC active-response&#8217;&#8216;&#8217;=</p>
+<p>==&#8217;&#8216;&#8217;Firewall Drop: FreeBSD-IPFW&#8217;&#8216;&#8217;==
+add to your ipfw script the follow lines, if you are using the 00001 rule number disoccupying:</p>
+<blockquote>
+<div>/sbin/ipfw add 00001 deny ip from table(00002) to any
+/sbin/ipfw add 00001 deny ip from any to table(00002)</div></blockquote>
+<p>Change  ~/ossec/active-response/bin/firewall-drop.sh to adjust to the red lines</p>
+<blockquote>
+<div><p>&lt;nowiki&gt;#!/bin/sh&lt;/nowiki&gt;
+&lt;nowiki&gt;# Adds an IP to the IPFW drop list.&lt;/nowiki&gt;
+&lt;nowiki&gt;# Only works with IPFW.&lt;/nowiki&gt;
+&lt;nowiki&gt;# We use TABLE 00001. If you use this table for anything else,&lt;/nowiki&gt;
+&lt;nowiki&gt;# please change it here.&lt;/nowiki&gt;
+&lt;nowiki&gt;# Expect: srcip&lt;/nowiki&gt;
+&lt;nowiki&gt;# Author: Rafael Capovilla - under &#64; ( at ) underlinux.com.br&lt;/nowiki&gt;
+&lt;nowiki&gt;# Author: Daniel B. Cid - dcid &#64; ( at ) ossec.net&lt;/nowiki&gt;
+&lt;nowiki&gt;# Last modified: May 07, 2006&lt;/nowiki&gt;
+UNAME=`uname`
+IPFW=&#8221;/sbin/ipfw&#8221;
+ARG1=&#8221;&#8221;
+ARG2=&#8221;&#8221;
+ACTION=$1
+USER=$2
+IP=$3
+&lt;font color=&#8221;red&#8221;&gt;TABLE_ID=00002&lt;/font&gt;
+LOCAL=`dirname $0`;
+cd $LOCAL
+cd ../
+PWD=`pwd`
+echo &#8220;<cite>date</cite> $0 $1 $2 $3&#8221; &gt;&gt; ${PWD}/ossec-hids-responses.log
+&lt;nowiki&gt;# Checking for an IP&lt;/nowiki&gt;
+if [ &#8220;x${IP}&#8221; = &#8220;x&#8221; ]; then</p>
+<blockquote>
+<div>echo &#8220;$0: &lt;action&gt; &lt;username&gt; &lt;ip&gt;&#8221;
+exit 1;</div></blockquote>
+<p>fi
+&lt;nowiki&gt;# Blocking IP&lt;/nowiki&gt;
+if [ &#8220;x${ACTION}&#8221; != &#8220;xadd&#8221; -a &#8220;x${ACTION}&#8221; != &#8220;xdelete&#8221; ]; then</p>
+<blockquote>
+<div>echo &#8220;$0: Invalid action: ${ACTION}&#8221;
+exit 1;</div></blockquote>
+<p>fi
+&lt;nowiki&gt;# We should run on FreeBSD&lt;/nowiki&gt;
+&lt;nowiki&gt;# We always use table 00001 and rule id 00001.&lt;/nowiki&gt;
+if [ &#8220;X${UNAME}&#8221; = &#8220;XFreeBSD&#8221; ]; then</p>
+<blockquote>
+<div><blockquote>
+<div><p>ls ${IPFW} &gt;&gt; /dev/null 2&gt;&amp;1
+if [ $? != 0 ]; then</p>
+<blockquote>
+<div>exit 0;</div></blockquote>
+<p>fi</p>
+</div></blockquote>
+<p>&lt;nowiki&gt; # Check if our table is set&lt;/nowiki&gt;
+&lt;font color=&#8221;red&#8221;&gt; ${IPFW} show | grep &#8220;^00001&#8221; | grep &#8220;table(2)&#8221; &gt;/dev/null 2&gt;&amp;1&lt;/font&gt;</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>if [ ! $? = 0 ]; then</dt>
+<dd># We need to add the table
+${IPFW} -q 00001 add deny ip from table(${TABLE_ID}) to any
+${IPFW} -q 00001 add deny ip from any to table(${TABLE_ID})</dd>
+</dl>
+<p>fi</p>
+</div></blockquote>
+</div></blockquote>
+<dl class="docutils">
+<dt>&lt;nowiki&gt;   # Executing and exiting&lt;/nowiki&gt;</dt>
+<dd>${IPFW} -q table ${TABLE_ID} ${ACTION} ${IP}
+exit 0;</dd>
+</dl>
+<p>fi
+&lt;nowiki&gt;# Not FreeBSD&lt;/nowiki&gt;
+exit 1;</p>
+</div></blockquote>
+<p>Include in ~/ossec/etc/ossec.conf:</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>&lt;command&gt;</dt>
+<dd>&lt;name&gt;firewall-drop&lt;/name&gt;
+&lt;executable&gt;firewall-drop.sh&lt;/executable&gt;
+&lt;expect&gt;srcip&lt;/expect&gt;</dd>
+</dl>
+<p>&lt;/command&gt;</p>
+<dl class="docutils">
+<dt>&lt;active-response&gt;</dt>
+<dd><p class="first">&lt;disabled&gt;no&lt;/disabled&gt;
+&lt;command&gt;firewall-drop&lt;/command&gt;
+&lt;location&gt;local&lt;/location&gt;</p>
+<blockquote class="last">
+<div>&lt;rules_id&gt;99990&lt;/rules_id&gt;</div></blockquote>
+</dd>
+</dl>
+<p>&lt;/active-response&gt;</p>
+</div></blockquote>
+<dl class="docutils">
+<dt>restart ossec:</dt>
+<dd>~/ossec/bin/ossec-control restart</dd>
+<dt>Scan your machine (caution OSSEC will block the scanner IP) from online scanner server like: <a class="reference external" href="http://www.derkeiler.com/Service/PortScan/">http://www.derkeiler.com/Service/PortScan/</a>, or from a remote machine with:</dt>
+<dd>nmap -sT -PI -PT 1.2.3.4</dd>
+<dt>look if the active-response works with:</dt>
+<dd>/sbin/ipfw table 2 list</dd>
+<dt>or</dt>
+<dd>tail -f ~/ossec/active-response/ossec-hids-responses.log</dd>
+<dt>if you want to flush the banned IPs in the table</dt>
+<dd>/sbin/ipfw table 2 flush</dd>
+<dt>or want to remove a specific IP in the table</dt>
+<dd>/sbin/ipfw table 2 delete 1.2.3.4</dd>
+</dl>
+<p>if you want to flush the table every 24 Hrs:</p>
+<blockquote>
+<div>vi /etc/crontab</div></blockquote>
+<dl class="docutils">
+<dt>and include</dt>
+<dd>0    <a href="#id9"><span class="problematic" id="id10">*</span></a>/24       *       *       *  root /sbin/ipfw table 2 flush &gt; /dev/null 2&gt;&amp;1</dd>
+</dl>
+<p>=More restrictions=</p>
+<p><a href="#id11"><span class="problematic" id="id12">*</span></a>&#8216;&#8217;&#8216;iplog.conf&#8217;&#8216;&#8217;
+To Enable  or  disable  a mechanism that attempts to fool programs, such as nmap and queso, that perform remote OS detection, add the follow line to iplog.conf</p>
+<blockquote>
+<div>set fool_nmap true</div></blockquote>
+<p>As  a side effect, enabling this option will also cause most of nmap&#8217;sstealth&#8221; scans to fail.</p>
+<p><a href="#id13"><span class="problematic" id="id14">*</span></a>&#8216;&#8217;&#8216;BSD&#8217;s sysctl (some FreeBSD especific)&#8217;&#8216;&#8217;</p>
+<blockquote>
+<div>tcp_drop_synfin
+net.inet.tcp.blackhole
+net.inet.udp.blackhole</div></blockquote>
+<p>[[Category:rules]]
+[[Category:decoders]]</p>
+</div>
+
+  <div class="section">
+  
+  
+  </div>
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2010-2015, OSSEC Project Team - OSSEC trademark and domain owned by Trend Micro, Inc. - Home page images courtesy of Pixbay.com.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

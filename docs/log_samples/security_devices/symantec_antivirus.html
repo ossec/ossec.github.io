@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Symantec Antivirus logs &mdash; OSSEC</title>
+    
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/parallax.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '2.8.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-sphinx.js"></script>
+    <link rel="author" title="About these documents" href="../../../about.html" />
+    <link rel="top" title="OSSEC" href="../../../index.html" />
+  
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  
+  
+  <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+  
+  <style type="text/css">
+    ul.ablog-archive {list-style: none; overflow: auto; margin-left: 0px}
+    ul.ablog-archive li {float: left; margin-right: 5px; font-size: 80%}
+  </style>
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../../index.html"><img src="../../../_static/ossec_logo_bare_small.png">
+          OSSEC</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="../../../about.html">About <i class="fa fa-info-circle"></i></a></li>
+                <li><a href="../../../blog.html">Blog <i class="fa fa-archive"></i></a></li>
+                <li><a href="../../">Documentaton <i class="fa fa-book"></i></a></li>
+                <li><a href="../../../downloads.html">Downloads <i class="fa fa-download"></i></a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"></ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="section" id="symantec-antivirus-logs">
+<h1>Symantec Antivirus logs<a class="headerlink" href="#symantec-antivirus-logs" title="Permalink to this headline">¶</a></h1>
+<p>Definition of the logs is available <a class="reference external" href="http://service1.symantec.com/SUPPORT/ent-security.nsf/0/57757c1d149130b788256c760069f7f7?OpenDocument&amp;seg=en&amp;lg=en&amp;ct=us">here</a></p>
+<div class="section" id="general-logs">
+<h2>General logs:<a class="headerlink" href="#general-logs" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">24090D00000A,4,3,7,ACMELABS-SRV2,SYSTEM,,,,,,,16777216,&quot;Update to computer ACMELABS-LU2K3 of virus definition file 81011r succeeded.&quot;,0,,0,,,,,0,,,,,,,,,,,,,(IP)-192.168.49.66,ACMELABSav,ACMELABS,,8.1.825</span>
+<span class="go">24090D00000F,4,3,7,ACMELABS-SRV2,SYSTEM,,,,,,,16777216,&quot;Update to computer ACMELABS-APPS-BOX4 of virus definition file 81011r succeeded.&quot;,0,,0,,,,,0,,,,,,,,,,,,,(IP)-192.168.49.66,ACMELABSav,ACMELABS,,8.1.825</span>
+<span class="go">24090D000018,4,3,7,ACMELABS-SRV2,SYSTEM,,,,,,,16777216,&quot;Update to computer ACMELABS-APPS-BOX5 of virus definition file 81011r succeeded.&quot;,0,,0,,,,,0,,,,,,,,,,,,,(IP)-192.168.49.66,ACMELABSav,ACMELABS,,8.1.825</span>
+<span class="go">24090D00001C,4,3,7,ACMELABS-SRV2,SYSTEM,,,,,,,16777216,&quot;Update to computer ACMELABS-APPS-BOX3 of virus definition file 81011r succeeded.&quot;,0,,0,,,,,0,,,,,,,,,,,,,(IP)-192.168.49.66,ACMELABSav,ACMELABS,,8.1.825</span>
+<span class="go">24090D000023,4,3,7,ACMELABS-SRV2,SYSTEM,,,,,,,16777216,&quot;Update to computer ACMELABS-WB2K3 of virus definition file 81011r succeeded.&quot;,0,,0,,,,,0,,,,,,,,,,,,,(IP)-192.168.49.66,ACMELABSav,ACMELABS,,8.1.825</span>
+<span class="go">24090D000104,4,3,7,ACMELABS-SRV2,SYSTEM,,,,,,,16777216,&quot;Update to computer ACMELABS-SPTN2K3 of virus definition file 81011r succeeded.&quot;,0,,0,,,,,0,,,,,,,,,,,,,(IP)-192.168.49.66,ACMELABSav,ACMELABS,,8.1.825</span>
+<span class="go">24090D000117,4,3,7,ACMELABS-SRV2,SYSTEM,,,,,,,16777216,&quot;Update to computer ACMELABS-CIS-BOX8 of virus definition file 81011r succeeded.&quot;,0,,0,,,,,0,,,,,,,,,,,,,(IP)-192.168.49.66,ACMELABSav,ACMELABS,,8.1.825</span>
+<span class="go">24090D000A0A,4,3,7,ACMELABS-SRV2,SYSTEM,,,,,,,16777216,&quot;Update to computer ACMELABS-LU2K3 of virus definition file 81011r succeeded.&quot;,0,,0,,,,,0,,,,,,,,,,,,,(IP)-192.168.49.66,ACMELABSav,ACMELABS,,8.1.825</span>
+<span class="go">24090D000A10,4,3,7,ACMELABS-SRV2,SYSTEM,,,,,,,16777216,&quot;Update to computer ACMELABS-APPS-BOX4 of virus definition file 81011r succeeded.&quot;,0,,0,,,,,0,,,,,,,,,,,,,(IP)-192.168.49.66,ACMELABSav,ACMELABS,,8.1.825</span>
+<span class="go">24090D0C001B,3,2,0,ALWILSON2,rtrebbaragh,,,,,,,553648128,&quot;Scan started on all drives and all extensions.&quot;,1160755230,,0,,,,,0,,,,,,,,,,ACMELABS-SRV2,,,(IP)-127.0.0.1,ACMELABSav,ACMELABS,0:F:1F:E5:C:ED,8.1.825</span>
+<span class="go">24090D0B001E,4,3,7,ACMELABS-SRV2,SYSTEM,,,,,,,16777216,&quot;Update to computer ACMELABS-APPS-BOX3 of virus definition file 81011r succeeded.&quot;,0,,0,,,,,0,,,,,,,,,,,,,(IP)-192.168.49.66,ACMELABSav,ACMELABS,,8.1.825</span>
+<span class="go">24090D0C0024,3,2,0,SHEDGE1-LT,sHEDGE,,,,,,,553648128,&quot;Scan started on all drives and all extensions.&quot;,1160755238,,0,,,,,0,,,,,,,,,,ACMELABS-SRV2,,,(IP)-192.168.30.115,ACMELABSav,ACMELABS,0:15:C5:B:D1:E0,8.1.825</span>
+<span class="go">24090D0B0024,4,3,7,ACMELABS-SRV2,SYSTEM,,,,,,,16777216,&quot;Update to computer ACMELABS-WB2K3 of virus definition file 81011r succeeded.&quot;,0,,0,,,,,0,,,,,,,,,,,,,(IP)-192.168.49.66,ACMELABSav,ACMELABS,,8.1.825</span>
+<span class="go">24090D0C0037,3,2,0,OH-AMD03,ohenry,,,,,,,553648128,&quot;Scan started on all drives and all extensions.&quot;,1160755257,,0,,,,,0,,,,,,,,,,ACMELABS-SRV2,,,(IP)-192.168.32.26,ACMELABSav,ACMELABS,0:F:1F:DE:6A:E,8.1.825</span>
+<span class="go">24090D0B0101,7,3,8,JAMEINSON1,bwillis,,,,,,,553648128,&quot;New virus definition file loaded. Version: 81011r.&quot;,0,,0,,,,,0,,,,,,,,,,ACMELABS-SRV2,,,(IP)-192.168.2.124,ACMELABSav,ACMELABS,0:6:5B:27:4F:7E,8.1.825</span>
+<span class="go">24090D0C0E3A,2,2,0,BJOHNSONPC,fajuhnson,,,,,,,553648128,&quot;Scan Complete: Viruses:0   Infected:0   Scanned:73436   Files/Folders/Drives Omitted:20&quot;,1160758847,,0,0:0:73436:20,,,,0,,,,,,,,,,ACMELABS-SRV2,,,(IP)-192.168.80.177,ACMELABSav,ACMELABS,0:11:43:BC:F5:96,8.1.825</span>
+<span class="go">24090D0C0E3B,2,2,0,SLOVELACE1-PC,tfwqonson,,,,,,,553648128,&quot;Scan Complete: Viruses:0   Infected:0   Scanned:79847   Files/Folders/Drives Omitted:20&quot;,1160758825,,0,0:0:79847:20,,,,0,,,,,,,,,,ACMELABS-SRV2,,,(IP)-192.168.70.158,ACMELABSav,ACMELABS,,8.1.825</span>
+<span class="go">24090D0C0F01,2,2,0,JBIGSHOE1-PC,jgree,,,,,,,553648128,&quot;Scan Complete: Viruses:0   Infected:0   Scanned:96311   Files/Folders/Drives Omitted:20&quot;,1160758861,,0,0:0:96311:20,,,,0,,,,,,,,,,ACMELABS-SRV2,,,(IP)-192.168.50.109,ACMELABSav,ACMELABS,,8.1.825</span>
+<span class="go">24090D0C0F02,2,2,0,PRCUSTPC1,athorpe,,,,,,,553648128,&quot;Scan Complete: Viruses:0  Infected:0   Scanned:85159   Files/Folders/Drives Omitted:35&quot;,1160758841,,0,0:0:85159:35,,,,0,,,,,,,,,,ACMELABS-SRV2,,,(IP)-192.168.22.24,ACMELABSav,ACMELABS,0:12:3F:49:93:53,8.1.825</span>
+<span class="go">24090D0C0F05,6,2,0,SHARP1,SHARP,,,,,,,553648128,&quot;Scan could not open file C:\Documents and Settings\SHARP\Local Settings\Application Data\Microsoft\Windows\USRCLASS.DAT [00000003]&quot;,0,,0,,,,,0,,,,,,,,,,,,,(IP)-192.168.49.66,ACMELABSav,ACMELABS,,</span>
+<span class="go">24090D0C0F05,6,2,0,SHARP1,SHARP,,,,,,,553648128,&quot;Scan could not open file C:\Documents and Settings\SHARP\Local Settings\Application Data\Microsoft\Windows\USRCLA~1.LOG [00000003]&quot;,0,,0,,,,,0,,,,,,,,,,,,,(IP)-192.168.49.66,ACMELABSav,ACMELABS,,</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="log-samples-of-virus-detection">
+<h2>Log samples of virus detection:<a class="headerlink" href="#log-samples-of-virus-detection" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">240801012128,5,1,720997,RBLWAP,SYSTEM,Trojan.Zlob,C:\WINDOWS\system32\ld100.tmp,5,4,4,256,570441764,&quot;&quot;,0,,0,,0,4254,0,0,0,0,0,0,20060830.022,58100,2,4,0,acme-AVSRV,{579642AA-5A5E-46E1-8613-2289349D1F27},,(IP)-192.168.100.237,acmeav,acme,,8.1.825</span>
+<span class="go">240801012128,5,1,720997,RBLWAP,SYSTEM,Trojan.Nebuler,C:\WINDOWS\system32\winvdj32.dll,5,4,4,256,570441764,&quot;&quot;,0,,0,,0,18150,0,0,0,0,0,0,20060830.022,58100,2,4,0,acme-AVSRV,{579642AA-5A5E-46E1-8613-2289349D1F27},,(IP)-192.168.100.237,acmeav,acme,,8.1.825</span>
+<span class="go">240801012128,5,1,720997,RBLWAP,SYSTEM,Trojan Horse,C:\WINDOWS\TEMP\winD51.tmp,5,4,4,256,570441764,&quot;&quot;,0,,0,,0,25464,0,0,0,0,0,0,20060830.022,58100,2,4,0,acme-AVSRV,{579642AA-5A5E-46E1-8613-2289349D1F27},,(IP)-192.168.100.237,acmeav,acme,,8.1.825</span>
+<span class="go">240801012128,5,1,720997,RBLWAP,SYSTEM,Trojan Horse,C:\WINDOWS\TEMP\winDA7.tmp,5,4,4,256,570441764,&quot;&quot;,0,,0,,0,25464,0,0,0,0,0,0,20060830.022,58100,2,4,0,acme-AVSRV,{579642AA-5A5E-46E1-8613-2289349D1F27},,(IP)-192.168.100.237,acmeav,acme,,8.1.825</span>
+<span class="gp">240801012128,5,1,720997,RBLWAP,SYSTEM,W32.Reatle.I@mm,\\jsnail1\c$</span><span class="se">\W</span>INNT<span class="se">\s</span>ystem32<span class="se">\ </span>   .exe,5,4,4,256,570441764,<span class="s2">&quot;&quot;</span>,0,,0,,0,17525,0,0,0,0,0,0,20060830.022,58100,2,4,0,acme-AVSRV,<span class="o">{</span>579642AA-5A5E-46E1-8613-2289349D1F27<span class="o">}</span>,,<span class="o">(</span>IP<span class="o">)</span>-192.168.100.237,acmeav,acme,,8.1.825
+<span class="gp">240801012128,5,1,720997,RBLWAP,SYSTEM,W32.Reatle.I@mm,\\jsnail1\c$</span><span class="se">\W</span>INNT<span class="se">\s</span>ystem32<span class="se">\ </span> .exe,5,4,4,256,570441764,<span class="s2">&quot;&quot;</span>,0,,0,,0,17525,0,0,0,0,0,0,20060830.022,58100,2,4,0,acme-AVSRV,<span class="o">{</span>579642AA-5A5E-46E1-8613-2289349D1F27<span class="o">}</span>,,<span class="o">(</span>IP<span class="o">)</span>-192.168.100.237,acmeav,acme,,8.1.825
+<span class="gp">240801012128,5,1,720997,RBLWAP,SYSTEM,W32.Reatle.I@mm,\\jsnail1\c$</span><span class="se">\W</span>INNT<span class="se">\s</span>ystem32<span class="se">\ </span>                  .exe,5,4,4,256,570441764,<span class="s2">&quot;&quot;</span>,0,,0,,0,17525,0,0,0,0,0,0,20060830.022,58100,2,4,0,acme-AVSRV,<span class="o">{</span>579642AA-5A5E-46E1-8613-2289349D1F27<span class="o">}</span>,,<span class="o">(</span>IP<span class="o">)</span>-192.168.100.237,acmeav,acme,,8.1.825
+<span class="gp">240801012128,5,1,720997,RBLWAP,SYSTEM,W32.Reatle.I@mm,\\jsnail1\c$</span><span class="se">\W</span>INNT<span class="se">\s</span>ystem32<span class="se">\ </span>  .exe,5,4,4,256,570441764,<span class="s2">&quot;&quot;</span>,0,,0,,0,17525,0,0,0,0,0,0,20060830.022,58100,2,4,0,acme-AVSRV,<span class="o">{</span>579642AA-5A5E-46E1-8613-2289349D1F27<span class="o">}</span>,,<span class="o">(</span>IP<span class="o">)</span>-192.168.100.237,acmeav,acme,,8.1.825
+<span class="gp">240801012128,5,1,720997,RBLWAP,SYSTEM,W32.Reatle.I@mm,\\jsnail1\c$</span><span class="se">\W</span>INNT<span class="se">\s</span>ystem32<span class="se">\ </span>images.exe,5,4,4,256,570441764,<span class="s2">&quot;&quot;</span>,0,,0,,0,17525,0,0,0,0,0,0,20060830.022,58100,2,4,0,acme-AVSRV,<span class="o">{</span>579642AA-5A5E-46E1-8613-2289349D1F27<span class="o">}</span>,,<span class="o">(</span>IP<span class="o">)</span>-192.168.100.237,acmeav,acme,,8.1.825
+<span class="gp">240801012128,5,1,720997,RBLWAP,SYSTEM,W32.Reatle.I@mm,\\jsnail1\c$</span><span class="se">\W</span>INNT<span class="se">\s</span>ystem32<span class="se">\ </span>                        .exe,5,4,4,256,570441764,<span class="s2">&quot;&quot;</span>,0,,0,,0,17525,0,0,0,0,0,0,20060830.022,58100,2,4,0,acme-AVSRV,<span class="o">{</span>579642AA-5A5E-46E1-8613-2289349D1F27<span class="o">}</span>,,<span class="o">(</span>IP<span class="o">)</span>-192.168.100.237,acmeav,acme,,8.1.825
+<span class="gp">240801012128,5,1,720997,RBLWAP,SYSTEM,W32.Reatle.I@mm,\\jsnail1\c$</span><span class="se">\W</span>INNT<span class="se">\s</span>ystem32<span class="se">\ </span>                      .exe,5,4,4,256,570441764,<span class="s2">&quot;&quot;</span>,0,,0,,0,17525,0,0,0,0,0,0,20060830.022,58100,2,4,0,acme-AVSRV,<span class="o">{</span>579642AA-5A5E-46E1-8613-2289349D1F27<span class="o">}</span>,,<span class="o">(</span>IP<span class="o">)</span>-192.168.100.237,acmeav,acme,,8.1.825
+<span class="gp">240801012128,5,1,720997,RBLWAP,SYSTEM,W32.Reatle.I@mm,\\jsnail1\c$</span><span class="se">\W</span>INNT<span class="se">\s</span>ystem32<span class="se">\ </span>                   .exe,5,4,4,256,570441764,<span class="s2">&quot;&quot;</span>,0,,0,,0,17525,0,0,0,0,0,0,20060830.022,58100,2,4,0,acme-AVSRV,<span class="o">{</span>579642AA-5A5E-46E1-8613-2289349D1F27<span class="o">}</span>,,<span class="o">(</span>IP<span class="o">)</span>-192.168.100.237,acmeav,acme,,8.1.825
+<span class="go">240801012128,5,1,720997,RBLWAP,SYSTEM,Trojan Horse,C:\WINDOWS\TEMP\win1C.tmp,5,4,4,256,570441764,&quot;&quot;,0,,0,,0,25464,0,0,0,0,0,0,20060830.022,58100,2,4,0,acme-AVSRV,{579642AA-5A5E-46E1-8613-2289349D1F27},,(IP)-192.168.100.237,acmeav,acme,,8.1.825</span>
+<span class="gp">240801012128,5,1,720997,RBLWAP,SYSTEM,W32.Reatle.I@mm,\\jsnail1\c$</span><span class="se">\W</span>INNT<span class="se">\s</span>ystem32<span class="se">\ </span>         .exe,5,4,4,256,570441764,<span class="s2">&quot;&quot;</span>,0,,0,,0,17525,0,0,0,0,0,0,20060830.022,58100,2,4,0,acme-AVSRV,<span class="o">{</span>579642AA-5A5E-46E1-8613-2289349D1F27<span class="o">}</span>,,<span class="o">(</span>IP<span class="o">)</span>-192.168.100.237,acmeav,acme,,8.1.825
+<span class="gp">240801012127,5,1,720997,RBLWAP,SYSTEM,W32.Reatle.I@mm,\\jsnail1\c$</span><span class="se">\W</span>INNT<span class="se">\s</span>ystem32<span class="se">\ </span>       .exe,5,4,4,256,570441764,<span class="s2">&quot;&quot;</span>,0,,0,,0,17525,0,0,0,0,0,0,20060830.022,58100,2,4,0,acme-AVSRV,<span class="o">{</span>579642AA-5A5E-46E1-8613-2289349D1F27<span class="o">}</span>,,<span class="o">(</span>IP<span class="o">)</span>-192.168.100.237,acmeav,acme,,8.1.825
+<span class="gp">240801012127,5,1,720997,RBLWAP,SYSTEM,W32.Reatle.I@mm,\\jsnail1\c$</span><span class="se">\W</span>INNT<span class="se">\s</span>ystem32<span class="se">\ </span>     .exe,5,4,4,256,570441764,<span class="s2">&quot;&quot;</span>,0,,0,,0,17525,0,0,0,0,0,0,20060830.022,58100,2,4,0,acme-AVSRV,<span class="o">{</span>579642AA-5A5E-46E1-8613-2289349D1F27<span class="o">}</span>,,<span class="o">(</span>IP<span class="o">)</span>-192.168.100.237,acmeav,acme,,8.1.825
+<span class="gp">240801012127,5,1,720997,RBLWAP,SYSTEM,W32.Beagle.BY@mm,\\jsnail1\c$</span><span class="se">\W</span>INNT<span class="se">\b</span>agle.exe,5,4,4,256,570441764,<span class="s2">&quot;&quot;</span>,0,,0,,0,39707,0,0,0,0,0,0,20060830.022,58100,2,4,0,acme-AVSRV,<span class="o">{</span>579642AA-5A5E-46E1-8613-2289349D1F27<span class="o">}</span>,,<span class="o">(</span>IP<span class="o">)</span>-192.168.100.237,acmeav,acme,,8.1.825
+<span class="gp">240801012127,5,1,720997,RBLWAP,SYSTEM,W32.Reatle.I@mm,\\jsnail1\c$</span><span class="se">\W</span>INNT<span class="se">\s</span>ystem32<span class="se">\ </span>    .exe,5,4,4,256,570441764,<span class="s2">&quot;&quot;</span>,0,,0,,0,17525,0,0,0,0,0,0,20060830.022,58100,2,4,0,acme-AVSRV,<span class="o">{</span>579642AA-5A5E-46E1-8613-2289349D1F27<span class="o">}</span>,,<span class="o">(</span>IP<span class="o">)</span>-192.168.100.237,acmeav,acme,,8.1.825
+<span class="gp">240801012127,5,1,720997,RBLWAP,SYSTEM,W32.Reatle.I@mm,\\jsnail1\c$</span><span class="se">\W</span>INNT<span class="se">\s</span>ystem32<span class="se">\ </span>      .exe,5,4,4,256,570441764,<span class="s2">&quot;&quot;</span>,0,,0,,0,17525,0,0,0,0,0,0,20060830.022,58100,2,4,0,acme-AVSRV,<span class="o">{</span>579642AA-5A5E-46E1-8613-2289349D1F27<span class="o">}</span>,,<span class="o">(</span>IP<span class="o">)</span>-192.168.100.237,acmeav,acme,,8.1.825
+<span class="go">240801012127,5,1,720997,RBLWAP,SYSTEM,Trojan Horse,C:\WINDOWS\TEMP\win19D3.tmp,5,4,4,256,570441764,&quot;&quot;,0,,0,,0,25464,0,0,0,0,0,0,20060830.022,58100,2,4,0,acme-AVSRV,{579642AA-5A5E-46E1-8613-2289349D1F27},,(IP)-192.168.100.237,acmeav,acme,,8.1.825</span>
+<span class="go">240801012127,5,1,720997,RBLWAP,SYSTEM,Trojan Horse,C:\WINDOWS\TEMP\win19E5.tmp,5,4,4,256,570441764,&quot;&quot;,0,,0,,0,25464,0,0,0,0,0,0,20060830.022,58100,2,4,0,acme-AVSRV,{579642AA-5A5E-46E1-8613-2289349D1F27},,(IP)-192.168.100.237,acmeav,acme,,8.1.825</span>
+<span class="go">240801012127,5,1,720997,RBLWAP,SYSTEM,Trojan Horse,C:\WINDOWS\TEMP\win1A04.tmp,5,4,4,256,570441764,&quot;&quot;,0,,0,,0,25464,0,0,0,0,0,0,20060830.022,58100,2,4,0,acme-AVSRV,{579642AA-5A5E-46E1-8613-2289349D1F27},,(IP)-192.168.100.237,acmeav,acme,,8.1.825</span>
+<span class="go">240801012127,5,1,720997,RBLWAP,SYSTEM,Trojan Horse,C:\WINDOWS\TEMP\win1A0B.tmp,5,4,4,256,570441764,&quot;&quot;,0,,0,,0,25464,0,0,0,0,0,0,20060830.022,58100,2,4,0,acme-AVSRV,{579642AA-5A5E-46E1-8613-2289349D1F27},,(IP)-192.168.100.237,acmeav,acme,,8.1.825</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+  <div class="section">
+  
+  
+  </div>
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2010-2015, OSSEC Project Team - OSSEC trademark and domain owned by Trend Micro, Inc. - Home page images courtesy of Pixbay.com.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Log Samples from vpopmail &mdash; OSSEC</title>
+    
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/parallax.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '2.8.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-sphinx.js"></script>
+    <link rel="author" title="About these documents" href="../../../about.html" />
+    <link rel="top" title="OSSEC" href="../../../index.html" />
+  
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  
+  
+  <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+  
+  <style type="text/css">
+    ul.ablog-archive {list-style: none; overflow: auto; margin-left: 0px}
+    ul.ablog-archive li {float: left; margin-right: 5px; font-size: 80%}
+  </style>
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../../index.html"><img src="../../../_static/ossec_logo_bare_small.png">
+          OSSEC</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="../../../about.html">About <i class="fa fa-info-circle"></i></a></li>
+                <li><a href="../../../blog.html">Blog <i class="fa fa-archive"></i></a></li>
+                <li><a href="../../">Documentaton <i class="fa fa-book"></i></a></li>
+                <li><a href="../../../downloads.html">Downloads <i class="fa fa-download"></i></a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"></ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="section" id="log-samples-from-vpopmail">
+<h1>Log Samples from vpopmail<a class="headerlink" href="#log-samples-from-vpopmail" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="failed-logins">
+<h2>Failed logins:<a class="headerlink" href="#failed-logins" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">Sep 14 07:21:42 iron vpopmail[939]: vchkpw-pop3: password fail user1@xxxx.com:192.168.2.1</span>
+<span class="go">Sep 14 07:21:42 iron vpopmail[937]: vchkpw-pop3: password fail user2@xxxx.com:192.168.2.1</span>
+<span class="go">Sep 14 07:21:42 iron vpopmail[935]: vchkpw-pop3: password fail user3@xxxx.com:192.168.2.1</span>
+<span class="go">Jun 9 08:56:30 www vpopmail[65827]: vchkpw-smtp: password fail (pass: &#39;&lt;65825.1118321790@mail.xxx.com&gt;&#39;) myuserid@xxx.com:208.210.222.68</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="invalid-user">
+<h2>Invalid user:<a class="headerlink" href="#invalid-user" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">vpopmail[2100]: vchkpw-pop3: vpopmail user not found abc@xxx.com:x.x.x.x</span>
+<span class="go">vpopmail[65851]: vchkpw-pop3: vpopmail user not found myuserid@:208.210.222.68</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="full-samples">
+<h2>Full samples:<a class="headerlink" href="#full-samples" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">Jun 9 08:56:03 www vpopmail[65826]: vchkpw-pop3: vpopmail user not found postmaster@:208.210.222.68</span>
+<span class="go">Jun 9 08:56:30 www vpopmail[65827]: vchkpw-smtp: password fail (pass: &#39;&lt;65825.1118321790@mail.xxx.com&gt;&#39;) myuserid@xxx.com:208.210.222.68</span>
+<span class="go">Jun 9 09:04:16 www vpopmail[65851]: vchkpw-pop3: vpopmail user not found myuserid@:208.210.222.68</span>
+<span class="go">Jun 9 09:04:23 www vpopmail[65853]: vchkpw-pop3: vpopmail user not found myuserid@:208.210.222.68</span>
+<span class="go">Jun 9 09:05:00 www vpopmail[65855]: vchkpw-smtp: password fail (pass: &#39;&lt;65854.1118322299@mail.xxx.com&gt;&#39;) myuserid@xxx.com:208.210.222.68</span>
+<span class="go">Jun 9 09:14:41 www vpopmail[65880]: vchkpw-pop3: vpopmail user not found myuserid@:208.210.222.6</span>
+<span class="go">Feb 24 06:48:03 circle vpopmail[12039]: vchkpw-pop3: password fail [EMAIL PROTECTED]:67.109.191.46</span>
+<span class="go">Feb 24 06:49:03 circle vpopmail[12043]: vchkpw-pop3: password fail [EMAIL PROTECTED]:67.109.191.46</span>
+<span class="go">Feb 24 06:50:03 circle vpopmail[12099]: vchkpw-pop3: password fail [EMAIL PROTECTED]:67.109.191.46</span>
+<span class="go">Feb 24 08:13:31 circle vpopmail[13042]: vchkpw-pop3: password fail [EMAIL PROTECTED]:70.104.21.208</span>
+<span class="go">Feb 24 08:13:32 circle vpopmail[13046]: vchkpw-pop3: password fail [EMAIL PROTECTED]:70.104.21.208</span>
+<span class="go">May 24 11:45:03 mail01 vpopmail[40833]: vchkpw-pop3: vpopmail user not found dlb@example.net:67.92.111.22</span>
+<span class="go">May 24 11:50:03 mail01 vpopmail[41401]: vchkpw-pop3: vpopmail user not found dlb@example.net:67.92.111.22</span>
+<span class="go">May 24 11:55:04 mail01 vpopmail[42117]: vchkpw-pop3: vpopmail user not found dlb@example.net:67.92.111.22</span>
+<span class="go">May 24 12:00:04 mail01 vpopmail[42735]: vchkpw-pop3: vpopmail user not found dlb@example.net:67.92.111.22</span>
+<span class="go">May 24 12:50:06 mail01 vpopmail[51623]: vchkpw-pop3: vpopmail user not found dlb@example.net:67.92.111.22</span>
+<span class="go">May 24 12:55:07 mail01 vpopmail[52208]: vchkpw-pop3: vpopmail user not found dlb@example.net:67.92.111.22</span>
+<span class="go">May 24 13:00:06 mail01 vpopmail[52799]: vchkpw-pop3: vpopmail user not found dlb@example.net:67.92.111.22</span>
+<span class="go">May 24 13:20:16 mail01 vpopmail[55953]: vchkpw-pop3: vpopmail user not found dlb@example.net:67.92.111.22</span>
+<span class="go">May 24 13:48:23 mail01 vpopmail[13650]: vchkpw-pop3: vpopmail user not found dlb@example.net:67.92.111.22</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="brute-force-attack">
+<h2>Brute Force Attack:<a class="headerlink" href="#brute-force-attack" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">Aug 12 11:52:52 mail vpopmail[4162]: vchkpw-pop3: vpopmail user not found support@:69.3.64.3</span>
+<span class="go">Aug 12 11:52:52 mail vpopmail[4171]: vchkpw-pop3: vpopmail user not found info@:69.3.64.3</span>
+<span class="go">Aug 12 11:52:53 mail vpopmail[4187]: vchkpw-pop3: vpopmail user not found help@:69.3.64.3</span>
+<span class="go">Aug 12 11:52:53 mail vpopmail[4191]: vchkpw-pop3: vpopmail user not found spam@:69.3.64.3</span>
+<span class="go">Aug 12 11:52:54 mail vpopmail[4198]: vchkpw-pop3: vpopmail user not found aaron@:69.3.64.3</span>
+<span class="go">Aug 12 11:52:54 mail vpopmail[4203]: vchkpw-pop3: vpopmail user not found abby@:69.3.64.3</span>
+<span class="go">Aug 12 11:52:54 mail vpopmail[4208]: vchkpw-pop3: vpopmail user not found abigail@:69.3.64.3</span>
+<span class="go">Aug 12 11:52:55 mail vpopmail[4228]: vchkpw-pop3: vpopmail user not found abraham@:69.3.64.3</span>
+<span class="go">Aug 12 11:52:55 mail vpopmail[4241]: vchkpw-pop3: vpopmail user not found abuse@:69.3.64.3</span>
+<span class="go">Aug 12 11:52:56 mail vpopmail[4258]: vchkpw-pop3: vpopmail user not found account@:69.3.64.3</span>
+<span class="go">Aug 12 11:52:57 mail vpopmail[4267]: vchkpw-pop3: vpopmail user not found support@:69.3.64.3</span>
+<span class="go">Aug 12 11:52:58 mail vpopmail[4289]: vchkpw-pop3: vpopmail user not found adm@:69.3.64.3</span>
+</pre></div>
+</div>
+<p>Log samples from vpopmail and qmailtoaster</p>
+<p>In qmailtoaster vpopmail can be use for: pop3, pop3s, imap, imaps, smtp, submission and webmail.
+Therefore each record can include respectively:
+* vchkpw-pop3:
+* vchkpw-pop3s:
+* vchkpw-imap:
+* vchkpw-imaps:
+* vchkpw-smtp:
+* vchkpw-submission:
+* vchkpw-webmail:</p>
+</div>
+<div class="section" id="succesfull-login">
+<h2>Succesfull login:<a class="headerlink" href="#succesfull-login" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">Jul  7 11:23:52 srv vpopmail[20057]: vchkpw-pop3: (PLAIN) login success user@my_domain:1.2.3.4</span>
+<span class="go">Jul  7 12:57:06 srv vpopmail[21466]: vchkpw-pop3s: (PLAIN) login success user@my_domain:1.2.3.4</span>
+<span class="go">Jul  5 07:45:29 srv vpopmail[31411]: vchkpw-imaps: (PLAIN) login success user@my_domain:1.2.3.4</span>
+<span class="go">Jul  6 10:21:52 srv vpopmail[18917: vchkpw-smtp: (CRAM-MD5) login success user@my_domain:1.2.3.4</span>
+<span class="go">Jul  7 11:08:51 srv vpopmail[19743]: vchkpw-submission: (CRAM-MD5) login success user@my_domain:1.2.3.4</span>
+<span class="go">Jul  7 11:14:22 srv vpopmail[19938]: vchkpw-webmail: (PLAIN) login success user@my_domain:127.0.0.1</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="bad-password">
+<h2>Bad password:<a class="headerlink" href="#bad-password" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">Jul  7 07:10:18 srv vpopmail[4800]: vchkpw-pop3: password fail (pass: &#39;test&#39;) user@my_domain:1.2.3.4</span>
+<span class="go">Jul  7 12:37:11 srv vpopmail[21183]: vchkpw-pop3s: password fail (pass: &#39;test1&#39;) user1@my_domain:1.2.3.4</span>
+<span class="go">Jul  6 10:22:55 srv vpopmail[18934]: vchkpw-imap: password fail (pass: &#39;aaaa&#39;) user@my_domain:192.168.1.19</span>
+<span class="go">Jul  9 15:13:08 srv vpopmail[16542]: vchkpw-webmail: password fail (pass: &#39;test&#39;) user@my_domain:127.0.0.1</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="or-if-no-password-given">
+<h2>or if no password given:<a class="headerlink" href="#or-if-no-password-given" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">Jul  5 16:02:13 srv vpopmail[4160]: vchkpw-pop3: null password given oneone1:121.243.18.134</span>
+<span class="go">Jul  9 10:19:58 srv vpopmail[5676]: vchkpw-webmail: null password given user@my_domain:127.0.0.1</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id1">
+<h2>Invalid user:<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">Jun 22 16:30:50 srv vpopmail[8581]: vchkpw-smtp: vpopmail user not found webmaster@:58.62.86.10</span>
+<span class="go">Jul  5 15:59:00 srv vpopmail[3840]: vchkpw-pop3: vpopmail user not found done@:121.243.18.134</span>
+<span class="go">Jul 12 16:19:31 srv vpopmail[25240]: vchkpw-webmail: vpopmail user not found a@:127.0.0.1</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+  <div class="section">
+  
+  
+  </div>
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2010-2015, OSSEC Project Team - OSSEC trademark and domain owned by Trend Micro, Inc. - Home page images courtesy of Pixbay.com.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

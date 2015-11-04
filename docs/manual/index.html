@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Manual &mdash; OSSEC</title>
+    
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/parallax.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '2.8.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="top" title="OSSEC" href="../../index.html" />
+  
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  
+  
+  <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+  
+  <style type="text/css">
+    ul.ablog-archive {list-style: none; overflow: auto; margin-left: 0px}
+    ul.ablog-archive li {float: left; margin-right: 5px; font-size: 80%}
+  </style>
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html"><img src="../../_static/ossec_logo_bare_small.png">
+          OSSEC</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="../../about.html">About <i class="fa fa-info-circle"></i></a></li>
+                <li><a href="../../blog.html">Blog <i class="fa fa-archive"></i></a></li>
+                <li><a href="../">Documentaton <i class="fa fa-book"></i></a></li>
+                <li><a href="../../downloads.html">Downloads <i class="fa fa-download"></i></a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"></ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="section" id="manual">
+<h1>Manual<a class="headerlink" href="#manual" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="non-technical-overview.html">Getting started with OSSEC</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="non-technical-overview.html#key-benefits">Key Benefits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="non-technical-overview.html#key-features">Key Features</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ossec-architecture.html">OSSEC Architecture</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ossec-architecture.html#manager-or-server">Manager (or Server)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ossec-architecture.html#agents">Agents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ossec-architecture.html#agentless">Agentless</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ossec-architecture.html#virtualization-vmware">Virtualization/VMware</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ossec-architecture.html#firewalls-switches-and-routers">Firewalls, switches and routers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ossec-architecture.html#internal-architecture">Internal Architecture</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="supported-systems.html">Supported Systems</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="supported-systems.html#operating-systems">Operating Systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="supported-systems.html#devices-supported-via-syslog">Devices supported via Syslog</a></li>
+<li class="toctree-l2"><a class="reference internal" href="supported-systems.html#devices-and-operating-systems-via-agentless">Devices and Operating Systems via Agentless</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="installation/index.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="installation/installation-requirements.html">Installations requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation/install-source.html">Manager/Agent Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation/installation-windows.html">Windows Agent Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation/installation-binary.html">Binary Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation/install-virtual-server.html">Server Virtual Appliance Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation/install-source-unattended.html">Unattended Source Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation/compile-ossec-on-windows.html">Compiling the OSSEC Windows Agent on Windows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation/compile-ossec-mingw.html">Compiling OSSEC with MinGW:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation/deployment_with_cfengine.html">Intergration and Deployment with cfengine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation/updates.html">OSSEC Updates</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="agent/index.html">Agents</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="agent/agent-management.html">Managing Agents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="agent/agent-dhcp-nat.html">Agent systems behind NAT or with dynamic IPs (DHCP)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="agent/agent-auth.html">Adding an agent with ossec-authd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="agent/agent-configuration.html">Centralized agent configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="agent/agentless-monitoring.html">Agentless Monitoring</a></li>
+<li class="toctree-l2"><a class="reference internal" href="agent/agentless-scripts.html">Writing Agentless Scripts</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="monitoring/index.html">Log monitoring/analysis</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="monitoring/index.html#what-is-log-analysis">What is log analysis?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="monitoring/index.html#quick-facts">Quick Facts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="monitoring/index.html#configuration-options">Configuration Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="monitoring/index.html#monitoring-logs">Monitoring logs</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="syscheck/index.html">Syscheck</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="syscheck/index.html#why-integrity-checking">Why Integrity checking?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="syscheck/index.html#quick-facts">Quick facts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="syscheck/index.html#realtime-options">Realtime options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="syscheck/index.html#configuration-options">Configuration options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="syscheck/index.html#configuration-examples">Configuration Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="syscheck/index.html#real-time-monitoring">Real time Monitoring</a></li>
+<li class="toctree-l2"><a class="reference internal" href="syscheck/index.html#report-changes">Report Changes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="syscheck/index.html#syscheck-faq">Syscheck: FAQ</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="rootcheck/index.html">Rootcheck Manual</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="rootcheck/manual-rootcheck.html">Rootcheck</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rootcheck/rootcheck_unix_policy_audit.html">Understanding the Unix policy auditing on OSSEC</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="rules-decoders/index.html">Rules and Decoders</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="rules-decoders/testing.html">Testing OSSEC rules/decoders</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rules-decoders/rule-lists.html">CDB List lookups from within Rules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rules-decoders/create-custom.html">Create Custom decoder and rules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rules-decoders/rule_decoder_dir.html">Directory path loading of rules and decoders</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rules-decoders/rule-levels.html">Rules Classification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rules-decoders/rule-levels.html#rules-group">Rules Group</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="output/index.html">Output and Alert options</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="output/index.html#contents">Contents:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="output/index.html#overview">Overview:</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ar/index.html">Active Response</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ar/ar-custom.html">Creating Customized Active Responses</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar/ar-unix.html">UNIX: Active Response Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar/ar-windows.html">Windows: Active Response Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ar/systems/ar-freebsd-firewall.html">Understanding Active Response with FreeBSD</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+  <div class="section">
+  
+  
+  </div>
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2010-2015, OSSEC Project Team - OSSEC trademark and domain owned by Trend Micro, Inc. - Home page images courtesy of Pixbay.com.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

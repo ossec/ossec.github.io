@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Exchange Log Samples &mdash; OSSEC</title>
+    
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/parallax.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '2.8.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-sphinx.js"></script>
+    <link rel="author" title="About these documents" href="../../../about.html" />
+    <link rel="top" title="OSSEC" href="../../../index.html" />
+  
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  
+  
+  <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+  
+  <style type="text/css">
+    ul.ablog-archive {list-style: none; overflow: auto; margin-left: 0px}
+    ul.ablog-archive li {float: left; margin-right: 5px; font-size: 80%}
+  </style>
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../../index.html"><img src="../../../_static/ossec_logo_bare_small.png">
+          OSSEC</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="../../../about.html">About <i class="fa fa-info-circle"></i></a></li>
+                <li><a href="../../../blog.html">Blog <i class="fa fa-archive"></i></a></li>
+                <li><a href="../../">Documentaton <i class="fa fa-book"></i></a></li>
+                <li><a href="../../../downloads.html">Downloads <i class="fa fa-download"></i></a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"></ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="section" id="exchange-log-samples">
+<h1>Exchange Log Samples<a class="headerlink" href="#exchange-log-samples" title="Permalink to this headline">¶</a></h1>
+<p>Here are two different formats of the Exchange 2000 SMTP logs.</p>
+<div class="section" id="w3c-extended-format">
+<h2>W3C Extended format:<a class="headerlink" href="#w3c-extended-format" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">#</span>Software: Microsoft Internet Information Services 5.0
+<span class="gp">#</span>Version: 1.0
+<span class="gp">#</span>Date: 2006-10-09 05:00:15
+<span class="gp">#</span>Fields: date <span class="nb">time </span>c-ip cs-username s-sitename s-computername s-ip s-port cs-method cs-uri-stem cs-uri-query sc-status sc-win32-status sc-bytes cs-bytes <span class="nb">time</span>-taken cs-version cs-host cs<span class="o">(</span>User-Agent<span class="o">)</span> cs<span class="o">(</span>Cookie<span class="o">)</span> cs<span class="o">(</span>Referer<span class="o">)</span>
+<span class="go">2006-10-09 05:00:15 24.118.118.106 36A42160 SMTPSVC1 MEE-PDC 192.168.1.2 0 HELO - +36A42160 250 0 48 13 0 SMTP - - - -</span>
+<span class="go">2006-10-09 05:00:16 24.118.118.106 36A42160 SMTPSVC1 MEE-PDC 192.168.1.2 0 MAIL - +FROM:+&lt;EldonpyzWestoncusk@sbcglobal.net&gt; 250 0 57 45 0 SMTP - - - -</span>
+<span class="go">2006-10-09 05:00:16 24.118.118.106 36A42160 SMTPSVC1 MEE-PDC 192.168.1.2 0 RCPT - +TO:+&lt;pamb@meelift.com&gt; 250 0 29 27 0 SMTP - - - -</span>
+<span class="go">2006-10-09 05:00:19 24.118.118.106 36A42160 SMTPSVC1 MEE-PDC 192.168.1.2 0 DATA - +&lt;4F5002F2.860022@web.de&gt; 250 0 108 1399 1922 SMTP - - - -</span>
+<span class="go">2006-10-09 05:00:19 24.118.118.106 36A42160 SMTPSVC1 MEE-PDC 192.168.1.2 0 QUIT - 36A42160 240 6219 68 4 0 SMTP - - - -</span>
+<span class="go">2006-10-09 05:00:42 192.168.1.247 notify.ossec.net SMTPSVC1 MEE-PDC 192.168.1.2 0 HELO - +notify.ossec.net 250 0 47 21 0 SMTP - - - -</span>
+<span class="go">2006-10-09 05:00:42 192.168.1.247 notify.ossec.net SMTPSVC1 MEE-PDC 192.168.1.2 0 MAIL - +From:+&lt;ossecm@HULK&gt; 250 0 36 24 16 SMTP - - - -</span>
+<span class="go">2006-10-09 05:00:42 192.168.1.247 notify.ossec.net SMTPSVC1 MEE-PDC 192.168.1.2 0 RCPT - +To:+&lt;dbveto@meelift.com&gt; 250 0 31 29 0 SMTP - - - -</span>
+<span class="go">2006-10-09 05:00:42 192.168.1.247 notify.ossec.net SMTPSVC1 MEE-PDC 192.168.1.2 0 DATA - &lt;MEE-PDCfSDGAIXWb9DY00001e05@mee-pdc.meelift.com&gt; 250 0 132 29518 62 SMTP - - - -</span>
+<span class="go">2006-10-09 05:00:42 192.168.1.247 notify.ossec.net SMTPSVC1 MEE-PDC 192.168.1.2 0 QUIT - notify.ossec.net 240 78 68 4 0 SMTP - - - -</span>
+<span class="go">2006-10-09 05:00:50 192.168.1.22 REDBARRON SMTPSVC1 MEE-PDC 192.168.1.2 0 EHLO - +REDBARRON 250 0 275 14 93 SMTP - - - -</span>
+<span class="go">2006-10-09 05:00:50 192.168.1.22 REDBARRON SMTPSVC1 MEE-PDC 192.168.1.2 0 MAIL - +FROM:&lt;Kiwisyslog@meelift.com&gt; 250 0 47 34 0 SMTP - - - -</span>
+<span class="go">2006-10-09 05:00:50 192.168.1.22 REDBARRON SMTPSVC1 MEE-PDC 192.168.1.2 0 RCPT - +TO:&lt;dbveto@meelift.com&gt; 250 0 31 28 0 SMTP - - - -</span>
+<span class="go">2006-10-09 05:00:50 192.168.1.22 REDBARRON SMTPSVC1 MEE-PDC 192.168.1.2 0 DATA - &lt;MEE-PDCccSN00ktmzmV00001e06@mee-pdc.meelift.com&gt; 250 0 132 2413 531 SMTP - - - -</span>
+<span class="go">2006-10-09 05:00:50 192.168.1.22 REDBARRON SMTPSVC1 MEE-PDC 192.168.1.2 0 QUIT - REDBARRON 240 1015 68 4 0 SMTP - - - -</span>
+<span class="go">2006-10-09 05:01:04 24.95.255.99 - SMTPSVC1 MEE-PDC 192.168.1.2 0 xxxx - +rr.com 500 0 32 11 0 SMTP - - - -</span>
+<span class="go">2006-10-09 05:01:04 24.95.255.99 - SMTPSVC1 MEE-PDC 192.168.1.2 0 QUIT - - 240 375 68 4 16 SMTP - - - -</span>
+<span class="go">2006-10-09 05:01:19 70.114.247.230 - SMTPSVC1 MEE-PDC 192.168.1.2 0 xxxx - +rr.com 500 0 32 11 0 SMTP - - - -</span>
+<span class="go">2006-10-09 05:01:19 70.114.247.230 - SMTPSVC1 MEE-PDC 192.168.1.2 0 QUIT - - 240 172 68 4 0 SMTP - - - -</span>
+<span class="go">2006-10-09 05:01:26 24.174.89.177 - SMTPSVC1 MEE-PDC 192.168.1.2 0 xxxx - +rr.com 500 0 32 11 0 SMTP - - - -</span>
+<span class="go">2006-10-09 05:01:26 24.174.89.177 - SMTPSVC1 MEE-PDC 192.168.1.2 0 QUIT - - 240 188 68 4 0 SMTP - - - -</span>
+<span class="go">2006-10-09 05:01:33 80.64.22.8 - SMTPSVC1 MEE-PDC 192.168.1.2 0 xxxx - +sveta 500 0 32 10 0 SMTP - - - -</span>
+<span class="go">2006-10-09 05:01:33 80.64.22.8 sveta SMTPSVC1 MEE-PDC 192.168.1.2 0 HELO - +sveta 250 0 44 10 0 SMTP - - - -</span>
+<span class="go">2006-10-09 05:01:33 80.64.22.8 sveta SMTPSVC1 MEE-PDC 192.168.1.2 0 MAIL - +FROM:&lt;malaquias@fu-berlin.de&gt; 250 0 47 34 0 SMTP - - - -</span>
+<span class="go">2006-10-09 05:01:33 80.64.22.8 sveta SMTPSVC1 MEE-PDC 192.168.1.2 0 RCPT - +TO:&lt;heyrmanmheyrman@meelift.com&gt; 250 0 40 37 0 SMTP - - - -</span>
+<span class="go">2006-10-09 05:01:37 80.64.22.8 sveta SMTPSVC1 MEE-PDC 192.168.1.2 0 DATA - +&lt;000b01c6eb60$0511fad0$4507a8c0@sveta&gt; 250 0 122 22786 3297 SMTP - - - -</span>
+<span class="go">2006-10-09 05:01:37 80.64.22.8 sveta SMTPSVC1 MEE-PDC 192.168.1.2 0 QUIT - sveta 240 4735 68 4 0 SMTP - - - -</span>
+<span class="go">2006-10-09 05:02:11 71.127.86.239 isyndicate.com SMTPSVC1 MEE-PDC 192.168.1.2 0 HELO - +isyndicate.com 250 0 47 19 0 SMTP - - - -</span>
+<span class="go">2006-10-09 05:02:11 71.127.86.239 isyndicate.com SMTPSVC1 MEE-PDC 192.168.1.2 0 MAIL - +FROM:&lt;grazia@isyndicate.com&gt; 250 0 46 33 0 SMTP - - - -</span>
+<span class="go">2006-10-09 05:02:11 71.127.86.239 isyndicate.com SMTPSVC1 MEE-PDC 192.168.1.2 0 RCPT - +TO:&lt;jgrub@meelift.com&gt; 250 0 30 27 0 SMTP - - - -</span>
+<span class="go">2006-10-09 05:02:11 71.127.86.239 isyndicate.com SMTPSVC1 MEE-PDC 192.168.1.2 0 DATA - +&lt;000001c6eb5f$c56726d0$8c12a8c0@usbty&gt; 250 0 122 1754 406 SMTP - - - -</span>
+<span class="go">2006-10-09 05:02:11 71.127.86.239 isyndicate.com SMTPSVC1 MEE-PDC 192.168.1.2 0 QUIT - isyndicate.com 240 500 68 4 0 SMTP - - - -</span>
+<span class="go">2006-10-09 05:02:46 72.185.9.146 - SMTPSVC1 MEE-PDC 192.168.1.2 0 xxxx - +cpe-72-185-9-146.tampabay.res.rr.com 500 0 32 41 0 SMTP - - - -</span>
+<span class="go">2006-10-09 05:02:46 72.185.9.146 - SMTPSVC1 MEE-PDC 192.168.1.2 0 QUIT - - 240 125 32 41 62 SMTP - - - -</span>
+<span class="go">2006-10-09 05:03:13 83.34.136.228 altimaxns.com SMTPSVC1 MEE-PDC 192.168.1.2 0 HELO - +altimaxns.com 250 0 47 18 0 SMTP - - - -</span>
+<span class="go">2006-10-09 05:03:13 83.34.136.228 altimaxns.com SMTPSVC1 MEE-PDC 192.168.1.2 0 MAIL - +FROM:&lt;veste@altimaxns.com&gt; 250 0 44 31 0 SMTP - - - -</span>
+<span class="go">2006-10-09 05:03:13 83.34.136.228 altimaxns.com SMTPSVC1 MEE-PDC 192.168.1.2 0 RCPT - +TO:&lt;jheyrman@meelift.com&gt; 250 0 33 30 0 SMTP - - - -</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="ncsa-format">
+<h2>NCSA format:<a class="headerlink" href="#ncsa-format" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">205.188.158.121 - OutboundConnectionResponse [11/Oct/2006:13:16:39 -0600] &quot;- -?220-rly-yi06.mx.aol.com+ESMTP+mail_relay_in-yi6.1;+Wed,+11+Oct+2006+14:16:38+-0400 SMTP&quot; 0 82</span>
+<span class="go">205.188.158.121 - OutboundConnectionCommand [11/Oct/2006:13:16:39 -0600] &quot;EHLO -?mee-pdc.meelift.com SMTP&quot; 0 4</span>
+<span class="go">205.188.158.121 - OutboundConnectionResponse [11/Oct/2006:13:16:39 -0600] &quot;- -?250-rly-yi06.mx.aol.com+207-250-64-66.static.twtelecom.net SMTP&quot; 0 58</span>
+<span class="go">61.47.65.115 - 207.250.64.66 [11/Oct/2006:13:16:40 -0600] &quot;HELO -?+207.250.64.66 SMTP&quot; 250 46</span>
+<span class="go">61.47.65.115 - 207.250.64.66 [11/Oct/2006:13:16:41 -0600] &quot;MAIL -?+FROM:+&lt;Keith@boardermail.com&gt; SMTP&quot; 250 46</span>
+<span class="go">61.47.65.115 - 207.250.64.66 [11/Oct/2006:13:16:41 -0600] &quot;RCPT -?+TO:+&lt;s-r_kke@meelift.com&gt; SMTP&quot; 250 32</span>
+<span class="go">61.47.65.115 - 207.250.64.66 [11/Oct/2006:13:16:42 -0600] &quot;RCPT -?+TO:+&lt;s-r_mke@meelift.com&gt; SMTP&quot; 250 32</span>
+<span class="go">83.44.189.146 - 1stallied.com [11/Oct/2006:13:16:43 -0600] &quot;HELO -?+1stallied.com SMTP&quot; 250 47</span>
+<span class="go">61.47.65.115 - 207.250.64.66 [11/Oct/2006:13:16:43 -0600] &quot;RCPT -?+TO:+&lt;dbveto@meelift.com&gt; SMTP&quot; 250 31</span>
+<span class="go">83.44.189.146 - 1stallied.com [11/Oct/2006:13:16:43 -0600] &quot;MAIL -?+FROM:&lt;penwine@1stallied.com&gt; SMTP&quot; 250 46</span>
+<span class="go">83.44.189.146 - 1stallied.com [11/Oct/2006:13:16:43 -0600] &quot;RCPT -?+TO:&lt;rcutsforth@meelift.com&gt; SMTP&quot; 250 35</span>
+<span class="go">61.47.65.115 - 207.250.64.66 [11/Oct/2006:13:16:44 -0600] &quot;RCPT -?+TO:+&lt;pamb@meelift.com&gt; SMTP&quot; 250 29</span>
+<span class="go">61.47.65.115 - 207.250.64.66 [11/Oct/2006:13:16:44 -0600] &quot;RCPT -?+TO:+&lt;tom@meelift.com&gt; SMTP&quot; 250 28</span>
+<span class="go">83.44.189.146 - 1stallied.com [11/Oct/2006:13:16:45 -0600] &quot;DATA -?+&lt;000001c6ed61$33a7e690$97cfa8c0@edvhaov&gt; SMTP&quot; 250 124</span>
+<span class="go">83.44.189.146 - 1stallied.com [11/Oct/2006:13:16:45 -0600] &quot;QUIT -?1stallied.com SMTP&quot; 240 68</span>
+<span class="go">65.214.43.171 - - [11/Oct/2006:13:16:47 -0600] &quot;xxxx -?+armin.techtarget.com SMTP&quot; 500 32</span>
+<span class="go">61.47.65.115 - 207.250.64.66 [11/Oct/2006:13:16:47 -0600] &quot;RCPT -?+TO:+&lt;tkappers@meelift.com&gt; SMTP&quot; 250 33</span>
+<span class="go">65.214.43.171 - armin.techtarget.com [11/Oct/2006:13:16:48 -0600] &quot;HELO -?+armin.techtarget.com SMTP&quot; 250 47</span>
+<span class="go">65.214.43.171 - armin.techtarget.com [11/Oct/2006:13:16:49 -0600] &quot;MAIL -?+FROM:&lt;567507-dbveto=meelift.com@lists.techtarget.com&gt; SMTP&quot; 250 71</span>
+<span class="go">61.47.65.115 - 207.250.64.66 [11/Oct/2006:13:16:50 -0600] &quot;DATA -?+&lt;10100.marigold@cleat&gt; SMTP&quot; 250 106</span>
+<span class="go">61.47.65.115 - 207.250.64.66 [11/Oct/2006:13:16:50 -0600] &quot;QUIT -?207.250.64.66 SMTP&quot; 240 68</span>
+<span class="go">65.214.43.171 - armin.techtarget.com [11/Oct/2006:13:16:51 -0600] &quot;RCPT -?+TO:&lt;dbveto@meelift.com&gt; SMTP&quot; 250 31</span>
+<span class="go">81.196.176.167 - - [11/Oct/2006:13:16:54 -0600] &quot;xxxx -?+81-196-176-167.rdsnet.ro SMTP&quot; 500 32</span>
+<span class="go">81.196.176.167 - 81-196-176-167.rdsnet.ro [11/Oct/2006:13:16:54 -0600] &quot;HELO -?+81-196-176-167.rdsnet.ro SMTP&quot; 250 48</span>
+<span class="go">81.196.176.167 - 81-196-176-167.rdsnet.ro [11/Oct/2006:13:16:55 -0600] &quot;MAIL -?+FROM:&lt;sshambeau@meelift.com&gt; SMTP&quot; 250 46</span>
+<span class="go">81.196.176.167 - 81-196-176-167.rdsnet.ro [11/Oct/2006:13:16:55 -0600] &quot;RCPT -?+TO:&lt;sshambeau@meelift.com&gt; SMTP&quot; 250 34</span>
+<span class="go">81.196.176.167 - 81-196-176-167.rdsnet.ro [11/Oct/2006:13:16:56 -0600] &quot;DATA -?+&lt;000901c6ed61$6e8f3f10$0271aa58@ktcysfoh&gt; SMTP&quot; 250 125</span>
+<span class="go">81.196.176.167 - 81-196-176-167.rdsnet.ro [11/Oct/2006:13:16:56 -0600] &quot;QUIT -?81-196-176-167.rdsnet.ro SMTP&quot; 240 68</span>
+<span class="go">205.188.158.121 - OutboundConnectionCommand [11/Oct/2006:13:17:02 -0600] &quot;MAIL -?FROM:&lt;pbourque@meelift.com&gt; SMTP&quot; 0 4</span>
+<span class="go">205.188.158.121 - OutboundConnectionResponse [11/Oct/2006:13:17:02 -0600] &quot;- -?250+OK SMTP&quot; 0 6</span>
+<span class="go">205.188.158.121 - OutboundConnectionCommand [11/Oct/2006:13:17:02 -0600] &quot;RCPT -?TO:&lt;kbee923@aol.com&gt; SMTP&quot; 0 4</span>
+<span class="go">205.188.158.121 - OutboundConnectionResponse [11/Oct/2006:13:17:02 -0600] &quot;- -?250+OK SMTP&quot; 0 6</span>
+<span class="go">205.188.158.121 - OutboundConnectionCommand [11/Oct/2006:13:17:02 -0600] &quot;DATA - SMTP&quot; 0 4</span>
+<span class="go">205.188.158.121 - OutboundConnectionResponse [11/Oct/2006:13:17:02 -0600] &quot;- -?354+START+MAIL+INPUT,+END+WITH+&quot;.&quot;+ON+A+LINE+BY+ITSELF SMTP&quot; 0 54</span>
+<span class="go">205.188.158.121 - OutboundConnectionResponse [11/Oct/2006:13:17:04 -0600] &quot;- -?250+OK SMTP&quot; 0 6</span>
+<span class="go">205.188.158.121 - OutboundConnectionCommand [11/Oct/2006:13:17:04 -0600] &quot;QUIT - SMTP&quot; 0 4</span>
+<span class="go">205.188.158.121 - OutboundConnectionResponse [11/Oct/2006:13:17:04 -0600] &quot;- -?221+SERVICE+CLOSING+CHANNEL SMTP&quot; 0 27</span>
+<span class="go">217.169.41.109 - outbound.emediausa.com [11/Oct/2006:13:17:13 -0600] &quot;HELO -?+outbound.emediausa.com SMTP&quot; 250 48</span>
+<span class="go">217.169.41.109 - outbound.emediausa.com [11/Oct/2006:13:17:17 -0600] &quot;MAIL -?+FROM:&lt;Subscriber.108049.Bulletins@eb.emediaUSA.com&gt; SMTP&quot; 250 69</span>
+<span class="go">217.169.41.109 - outbound.emediausa.com [11/Oct/2006:13:17:17 -0600] &quot;RCPT -?+TO:&lt;dbveto@meelift.com&gt; SMTP&quot; 250 3</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+  <div class="section">
+  
+  
+  </div>
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2010-2015, OSSEC Project Team - OSSEC trademark and domain owned by Trend Micro, Inc. - Home page images courtesy of Pixbay.com.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

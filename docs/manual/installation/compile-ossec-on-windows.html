@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Compiling the OSSEC Windows Agent on Windows &mdash; OSSEC</title>
+    
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/parallax.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '2.8.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-sphinx.js"></script>
+    <link rel="author" title="About these documents" href="../../../about.html" />
+    <link rel="top" title="OSSEC" href="../../../index.html" />
+  
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  
+  
+  <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+  
+  <style type="text/css">
+    ul.ablog-archive {list-style: none; overflow: auto; margin-left: 0px}
+    ul.ablog-archive li {float: left; margin-right: 5px; font-size: 80%}
+  </style>
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../../index.html"><img src="../../../_static/ossec_logo_bare_small.png">
+          OSSEC</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="../../../about.html">About <i class="fa fa-info-circle"></i></a></li>
+                <li><a href="../../../blog.html">Blog <i class="fa fa-archive"></i></a></li>
+                <li><a href="../../">Documentaton <i class="fa fa-book"></i></a></li>
+                <li><a href="../../../downloads.html">Downloads <i class="fa fa-download"></i></a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"></ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="section" id="compiling-the-ossec-windows-agent-on-windows">
+<span id="compile-ossec-on-windows"></span><h1>Compiling the OSSEC Windows Agent on Windows<a class="headerlink" href="#compiling-the-ossec-windows-agent-on-windows" title="Permalink to this headline">¶</a></h1>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">As of 2.9 this is no longer supported. The Windows agent can be built on <a class="reference external" href="../installation/compile-ossec-mingw.html">Linux systems</a>.
+Patches to update the Windows compilation support are very welcome.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Originally posted <a class="reference external" href="http://www.immutablesecurity.com/index.php/2010/07/06/compiling-the-ossec-agent-on-windows/">Compiling the OSSEC Windows Agent on Windows</a>
+by <a class="reference external" href="http://www.immutablesecurity.com/index.php/author/mstarks/">mstarks</a>,
+duplicated here with permission.</p>
+</div>
+<p>Most people that use the OSSEC Windows agent <a class="reference external" href="http://www.ossec.net/main/downloads/">download a pre-compiled</a> copy from the OSSEC site. While that is a good option for many individual users, it may not suit those with more specific needs and/or those in enterprise environments. Users who fall into those categories could benefit from customizing the agent and maintaining internal builds in order to suit their individual needs.</p>
+<p>There are already instructions on <a class="reference external" href="http://dcid.me/2009/06/compiling-the-windows-agent-from-a-linux-system/">how to compile the Windows agent on Linux</a>, but ironically the process doesn&#8217;t work so well on Windows. I had a need to make this work on Windows, so I thought I would share the process with you.</p>
+<div class="section" id="requirements">
+<h2>Requirements:<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>The <a class="reference external" href="http://nsis.sourceforge.net/Download">Nullsoft Scriptable Install System</a> (NSIS)</li>
+<li>The <a class="reference external" href="http://sourceforge.net/downloads/mingw/">Minimalist GNU for Windows (MinGW) compiler</a></li>
+<li>My <a class="reference external" href="http://www.immutablesecurity.com/wp-content/wp_uploads/gen_win.txt">batch file.</a>  Simply rename from gen_win.txt to gen_win.cmd.</li>
+<li><a class="reference external" href="http://www.7-zip.org/download.html">7-Zip for Windows</a></li>
+<li>The public domain <a class="reference external" href="http://www.efgh.com/software/unix2dos.htm">Unix2DOS utility</a></li>
+<li>The latest OSSEC for <a class="reference external" href="http://www.ossec.net/main/downloads/">Unix/Linux</a> (this contains the Windows source code)</li>
+</ul>
+</div>
+<div class="section" id="here-are-the-steps">
+<h2>Here are the steps:<a class="headerlink" href="#here-are-the-steps" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Download and install the required programs. Be sure to pay special attention to the <a class="reference external" href="http://www.mingw.org/wiki/Getting_Started">steps for properly installing and configuring MinGW</a>, particularly the part about modifying the PATH environment variable.</li>
+<li>Next, we.re going to extract OSSEC using 7-Zip. To do so, simply right-click on the file and select 7-Zip, extract to &#8220;folder name.tar,&#8221; where folder name is the name of the package. This decompresses the archive. Navigate within that folder and repeat this step to untar the archive. At this point, you should see all of the files in the package.</li>
+<li>Place gen_win.txt in the <tt class="docutils literal"><span class="pre">src\win32</span></tt> folder and rename the extension to .cmd.</li>
+<li>Download Unix2DOS and place it in the <tt class="docutils literal"><span class="pre">src\win32</span></tt> folder</li>
+<li>Open a command prompt. Navigate to <tt class="docutils literal"><span class="pre">src\win32</span></tt>, make any desired customizations, and execute gen_win.cmd. This should gather all of the required files and place them in <tt class="docutils literal"><span class="pre">src\win-pkg</span></tt>.</li>
+<li>Next, we compile the Windows agent by navigating to <tt class="docutils literal"><span class="pre">src\win-pkg</span></tt> and executing make.bat (I assume you have the chops to know how to change directories :) ).</li>
+<li>Now we have all of the files we need but no way to effectively install it. To generate the installer, simply execute the NSIS compiler like so: <tt class="docutils literal"><span class="pre">&quot;c:\Program</span> <span class="pre">Files\NSIS\makensis.exe&quot;</span> <span class="pre">ossec-installer.nsi</span></tt></li>
+</ol>
+<p>If you see no errors and a binary named ossec-win32-agent.exe, everything was successful. Congratulations, you now have a custom-made version of OSSEC!</p>
+</div>
+</div>
+
+  <div class="section">
+  
+  
+  </div>
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2010-2015, OSSEC Project Team - OSSEC trademark and domain owned by Trend Micro, Inc. - Home page images courtesy of Pixbay.com.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

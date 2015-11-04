@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Log Samples for postfix &mdash; OSSEC</title>
+    
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/parallax.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '2.8.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-sphinx.js"></script>
+    <link rel="author" title="About these documents" href="../../../about.html" />
+    <link rel="top" title="OSSEC" href="../../../index.html" />
+  
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  
+  
+  <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+  
+  <style type="text/css">
+    ul.ablog-archive {list-style: none; overflow: auto; margin-left: 0px}
+    ul.ablog-archive li {float: left; margin-right: 5px; font-size: 80%}
+  </style>
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../../index.html"><img src="../../../_static/ossec_logo_bare_small.png">
+          OSSEC</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="../../../about.html">About <i class="fa fa-info-circle"></i></a></li>
+                <li><a href="../../../blog.html">Blog <i class="fa fa-archive"></i></a></li>
+                <li><a href="../../">Documentaton <i class="fa fa-book"></i></a></li>
+                <li><a href="../../../downloads.html">Downloads <i class="fa fa-download"></i></a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"></ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="section" id="log-samples-for-postfix">
+<h1>Log Samples for postfix<a class="headerlink" href="#log-samples-for-postfix" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="postfix-internal-error">
+<h2>Postfix internal error:<a class="headerlink" href="#postfix-internal-error" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div>postfix/bounce[21172]: fatal: lock file defer 4438F62ECB: Resource temporarily unavailable
+postfix/smtpd[21779]: warning: connect to private/policy: Resource temporarily unavailable
+postfix/smtp[30785]: warning: 75FEC31D36: defer service failure
+postfix/postfix-script: fatal: the Postfix mail system is not running</div></blockquote>
+</div>
+<div class="section" id="email-rejected-source-blacklisted">
+<h2>Email rejected (source blacklisted):<a class="headerlink" href="#email-rejected-source-blacklisted" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>postfix/smtpd[10419]: NOQUEUE: reject: RCPT from unknown[200.71.50.65]: 554 Service unavailable; Client host [200.71.50.65] blocked using sbl-xbl.spamhaus.org; <a class="reference external" href="http://www.spamhaus.org/query/bl?ip=200.71.50.65">http://www.spamhaus.org/query/bl?ip=200.71.50.65</a>; from=&lt;<a class="reference external" href="mailto:kpxbeiu&#37;&#52;&#48;superig&#46;com&#46;br">kpxbeiu<span>&#64;</span>superig<span>&#46;</span>com<span>&#46;</span>br</a>&gt; to=&lt;<a class="reference external" href="mailto:cleresilva&#37;&#52;&#48;lac&#46;ossec&#46;net">cleresilva<span>&#64;</span>lac<span>&#46;</span>ossec<span>&#46;</span>net</a>&gt; proto=SMTP helo=&lt;Static-IP-cr200715065.cable.net.co&gt;</p>
+<p>postfix/smtpd[13496]: NOQUEUE: reject: RCPT from pool-71-121-135-165.sttlwa.dsl-w.verizon.net[71.121.135.165]: 554 Service unavailable; Client host [71.121.135.165] blocked using sbl-xbl.spamhaus.org; <a class="reference external" href="http://www.spamhaus.org/query/bl?ip=71.121.135.165">http://www.spamhaus.org/query/bl?ip=71.121.135.165</a>; from=&lt;<a class="reference external" href="mailto:vxznjomowm&#37;&#52;&#48;directnet&#46;com&#46;br">vxznjomowm<span>&#64;</span>directnet<span>&#46;</span>com<span>&#46;</span>br</a>&gt; to=&lt;<a class="reference external" href="mailto:lala&#37;&#52;&#48;lac&#46;ossec&#46;net">lala<span>&#64;</span>lac<span>&#46;</span>ossec<span>&#46;</span>net</a>&gt; proto=SMTP helo=&lt;pool-71-121-135-165.sttlwa.dsl-w.verizon.net&gt;</p>
+</div></blockquote>
+</div>
+<div class="section" id="spam-attempts">
+<h2>Spam attempts:<a class="headerlink" href="#spam-attempts" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>postfix/smtpd[6741]: NOQUEUE: reject: RCPT from unknown[201.82.55.24]: 503 &lt;<a class="reference external" href="mailto:nplxfbtk&#37;&#52;&#48;fbi&#46;com">nplxfbtk<span>&#64;</span>fbi<span>&#46;</span>com</a>&gt;: Sender address rejected: Improper use of SMTP command pipelining; from=&lt;<a class="reference external" href="mailto:nplxfbtk&#37;&#52;&#48;fbi&#46;com">nplxfbtk<span>&#64;</span>fbi<span>&#46;</span>com</a>&gt; to=&lt;<a class="reference external" href="mailto:x&#37;&#52;&#48;x&#46;br">x<span>&#64;</span>x<span>&#46;</span>br</a>&gt; proto=SMTP helo=&lt;ran-2h991bqbujq&gt;</p>
+<p>postfix/smtpd[6741]: NOQUEUE: reject: RCPT from unknown[201.82.55.24]: 503 &lt;<a class="reference external" href="mailto:nplxfbtk&#37;&#52;&#48;fbi&#46;com">nplxfbtk<span>&#64;</span>fbi<span>&#46;</span>com</a>&gt;: Sender address rejected: Improper use of SMTP command pipelining; from=&lt;<a class="reference external" href="mailto:nplxfbtk&#37;&#52;&#48;fbi&#46;com">nplxfbtk<span>&#64;</span>fbi<span>&#46;</span>com</a>&gt; to=&lt;<a class="reference external" href="mailto:x&#37;&#52;&#48;xl&#46;org&#46;br">x<span>&#64;</span>xl<span>&#46;</span>org<span>&#46;</span>br</a>&gt; proto=SMTP helo=&lt;ran-2h991bqbujq&gt;</p>
+</div></blockquote>
+</div>
+<div class="section" id="insufficient-storage">
+<h2>Insufficient storage:<a class="headerlink" href="#insufficient-storage" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">Sep  4 01:14:35 vector postfix/smtpd[15337]: NOQUEUE: reject: MAIL from 89.pool85-60-78.dynamic.orange.es[85.60.78.89]: 452 4.3.1 Insufficient system storage; proto=ESMTP helo=&lt;89.pool85-60-78.dynamic.orange.es&gt;</span>
+<span class="go">Sep  4 02:24:39 vector postfix/smtpd[16863]: NOQUEUE: reject: MAIL from 217-133-56-239.b2b.tiscali.it[217.133.56.239]: 452 4.3.1 Insufficient system storage; proto=ESMTP</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>helo=&lt;217-133-56-239.b2b.tiscali.it&gt;</dt>
+<dd>Jun 29 17:28:38 linuxserver postfix/smtpd[27712]: NOQUEUE: reject: MAIL from localhost[127.0.0.1]: 452 Insufficient system storage; proto=ESMTP helo=&lt;localhost&gt;</dd>
+</dl>
+</div>
+<div class="section" id="some-postfix-errors">
+<h2>Some postfix errors:<a class="headerlink" href="#some-postfix-errors" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">Mar 15 06:25:12 mframe1 postfix/postfix-script[23423]: fatal: the Postfix mail system is already running</span>
+<span class="go">Jan 24 06:32:47 mframe1 postfix/smtp[8377]: fatal: unknown service: smtp/tcp</span>
+<span class="go">Jan 14 16:30:24 mframe1 postfix[662]: fatal: usage: postfix [-c config_dir] [-Dv] command</span>
+<span class="go">Jun 20 19:16:46 mframe1 postfix/smtpd[25854]: warning: valid_hostname: invalid character 92(decimal): \@</span>
+<span class="go">Jun 20 19:16:46 mframe1 postfix/smtpd[25854]: warning: malformed domain name in resource data of MX record for dondino.de: \@</span>
+<span class="go">Jun 26 02:39:40 mframe1 postfix/smtpd[20570]: warning: non-SMTP command from localhost[127.0.0.1]: Content-Type: text/html;</span>
+<span class="go">Feb 25 15:57:27 mframe1 postfix/smtpd[25140]: warning: Illegal address syntax from localhost[127.0.0.1] in RCPT command: &lt;name@62.157.140.137&gt;</span>
+<span class="go">Feb 20 22:56:51 mframe1 postfix/postfix-script[4735]: fatal: the Postfix mail system is already running</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+  <div class="section">
+  
+  
+  </div>
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2010-2015, OSSEC Project Team - OSSEC trademark and domain owned by Trend Micro, Inc. - Home page images courtesy of Pixbay.com.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

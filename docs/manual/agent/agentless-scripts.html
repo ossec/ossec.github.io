@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Writing Agentless Scripts &mdash; OSSEC</title>
+    
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/parallax.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '2.8.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-sphinx.js"></script>
+    <link rel="author" title="About these documents" href="../../../about.html" />
+    <link rel="top" title="OSSEC" href="../../../index.html" />
+  
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  
+  
+  <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+  
+  <style type="text/css">
+    ul.ablog-archive {list-style: none; overflow: auto; margin-left: 0px}
+    ul.ablog-archive li {float: left; margin-right: 5px; font-size: 80%}
+  </style>
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../../index.html"><img src="../../../_static/ossec_logo_bare_small.png">
+          OSSEC</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="../../../about.html">About <i class="fa fa-info-circle"></i></a></li>
+                <li><a href="../../../blog.html">Blog <i class="fa fa-archive"></i></a></li>
+                <li><a href="../../">Documentaton <i class="fa fa-book"></i></a></li>
+                <li><a href="../../../downloads.html">Downloads <i class="fa fa-download"></i></a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"></ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="contents topic" id="contents">
+<span id="manual-agentless-scripts"></span><p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#writing-agentless-scripts" id="id1">Writing Agentless Scripts</a><ul>
+<li><a class="reference internal" href="#agentless-script-types" id="id2">Agentless Script Types</a><ul>
+<li><a class="reference internal" href="#periodic-diff-specification" id="id3">Periodic diff Specification</a></li>
+<li><a class="reference internal" href="#periodic-specification" id="id4">Periodic Specification</a><ul>
+<li><a class="reference internal" href="#example-of-real-fwd-command" id="id5">Example of real FWD: command.</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#agentless-script-ssh-integrity-check-linux" id="id6">Agentless Script: ssh_integrity_check_linux</a></li>
+<li><a class="reference internal" href="#modifying-to-make-own-agentless-script-ssh-dmz-linux" id="id7">Modifying to make own Agentless Script: ssh_dmz_linux</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="writing-agentless-scripts">
+<h1><a class="toc-backref" href="#id1">Writing Agentless Scripts</a><a class="headerlink" href="#writing-agentless-scripts" title="Permalink to this headline">¶</a></h1>
+<p>All scripts that work with OSSEC agentless security monitoring use stdout
+for communication and reporting to the OSSEC server. This makes writing scripts
+for OSSEC simple as you do not need to do anything more then print or echo to
+stdout. The format of the output does need to meet the OSSEC specification,
+but that is a very simple thing to do.</p>
+<div class="section" id="agentless-script-types">
+<h2><a class="toc-backref" href="#id2">Agentless Script Types</a><a class="headerlink" href="#agentless-script-types" title="Permalink to this headline">¶</a></h2>
+<p>Before we move to the specification details I need to explain that OSSEC agentless
+runs to different types of scripts. Namely the following:</p>
+<ul class="simple">
+<li><strong>periodic_diff</strong><ul>
+<li>Scripts output data to the OSSEC agentless process that will then be compared
+to past runs and if there are differences an OSSEC alert will be generated.</li>
+</ul>
+</li>
+<li><strong>periodic</strong><ul>
+<li>Scripts output controlled messages to the OSSEC agentless process that
+will then be processed accordingly.</li>
+</ul>
+</li>
+</ul>
+<div class="section" id="periodic-diff-specification">
+<h3><a class="toc-backref" href="#id3">Periodic diff Specification</a><a class="headerlink" href="#periodic-diff-specification" title="Permalink to this headline">¶</a></h3>
+<p>The output for periodic_diff is very simple, any and all output after the agentless
+command <tt class="samp docutils literal"><span class="pre">STORE:</span> <span class="pre">now</span></tt> and before the next OSSEC Command will be stored and compared
+for differences. This type of script is mostly used for hardware devices such as
+Cisco IOS, Juniper JunOS, and other products.</p>
+<p>Scripts that use the periodic_diff make use of the following commands:</p>
+<ul class="simple">
+<li><strong>INFO:</strong><ul>
+<li>The string following INFO will be logged to /var/ossec/logs/ossec.log by OSSEC for debugging.</li>
+</ul>
+</li>
+<li><strong>ERROR:</strong><ul>
+<li>Error needs to be reported. The string following this command is forwarded to the
+OSSEC manager, and the OSSEC process closes down the script.</li>
+</ul>
+</li>
+<li><strong>STORE:</strong><ul>
+<li>All the lines that follows this command will be added stored and compared to
+previous runs of the script</li>
+</ul>
+</li>
+</ul>
+<p>Here is an example of a periodic_diff script that comes with OSSEC. (Please note
+with all agentless scripts you must be in the root of the OSSEC install for them
+to function correctly.)</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">obsd46#( cd /var/ossec &amp;&amp; ./agentless/ssh_pixconfig_diff cisco@172.17.0.1 &#39;show hardware&#39; )</span>
+<span class="go">spawn ssh -c des cisco@172.17.0.1</span>
+<span class="go">No valid ciphers for protocol version 2 given, using defaults.</span>
+<span class="go">Password:</span>
+
+<span class="go">a.zfw.tss&gt;INFO: Starting.</span>
+<span class="go">enable</span>
+<span class="go">Password:</span>
+<span class="go">a.zfw.tss#ok on enable pass</span>
+
+<span class="go">STORE: now</span>
+<span class="go">no pager</span>
+<span class="go">             ^</span>
+<span class="gp">%</span> Invalid input detected at <span class="s1">&#39;^&#39;</span> marker.
+
+<span class="go">a.zfw.tss#term len 0</span>
+<span class="go">a.zfw.tss#terminal pager 0</span>
+<span class="go">                     ^</span>
+<span class="gp">%</span> Invalid input detected at <span class="s1">&#39;^&#39;</span> marker.
+
+<span class="go">a.zfw.tss#show version | grep -v Configuration last| up</span>
+<span class="go">                         ^</span>
+<span class="gp">%</span> Invalid input detected at <span class="s1">&#39;^&#39;</span> marker.
+
+<span class="go">a.zfw.tss#show running-config</span>
+<span class="go">Building configuration...</span>
+
+
+<span class="go">Current configuration : 14631 bytes</span>
+<span class="go">!</span>
+<span class="go">version 12.4</span>
+
+<span class="go">[................SNIP CONFIG.................]</span>
+
+<span class="go">a.zfw.tss#show hardware</span>
+<span class="go">Cisco IOS Software, 3800 Software (C3845-ADVENTERPRISEK9-M), Version 12.4(24)T1, RELEASE SOFTWARE (fc3)</span>
+<span class="go">Technical Support: http://www.cisco.com/techsupport</span>
+<span class="go">Copyright (c) 1986-2009 by Cisco Systems, Inc.</span>
+<span class="go">Compiled Fri 19-Jun-09 19:21 by prod_rel_team</span>
+
+<span class="go">ROM: System Bootstrap, Version 12.3(11r)T2, RELEASE SOFTWARE (fc1)</span>
+
+<span class="go">a.zfw.tss uptime is 1 week, 5 days, 7 hours, 29 minutes</span>
+<span class="go">System returned to ROM by reload at 13:34:26 UTC Thu Oct 22 2009</span>
+<span class="go">System image file is &quot;flash:c3845-adventerprisek9-mz.124-24.T1.bin&quot;</span>
+
+
+<span class="go">This product contains cryptographic features and is subject to United</span>
+<span class="go">States and local country laws governing import, export, transfer and</span>
+<span class="go">use. Delivery of Cisco cryptographic products does not imply</span>
+<span class="go">third-party authority to import, export, distribute or use encryption.</span>
+<span class="go">Importers, exporters, distributors and users are responsible for</span>
+<span class="go">compliance with U.S. and local country laws. By using this product you</span>
+<span class="go">agree to comply with applicable laws and regulations. If you are unable</span>
+<span class="go">to comply with U.S. and local laws, return this product immediately.</span>
+
+<span class="go">A summary of U.S. laws governing Cisco cryptographic products may be found at:</span>
+<span class="go">http://www.cisco.com/wwl/export/crypto/tool/stqrg.html</span>
+
+<span class="go">If you require further assistance please contact us by sending email to</span>
+<span class="go">export@cisco.com.</span>
+
+<span class="go">Cisco 3845 (revision 1.0) with 1007615K/40960K bytes of memory.</span>
+<span class="go">Processor board ID FTX1043A2CR</span>
+<span class="go">2 Gigabit Ethernet interfaces</span>
+<span class="go">1 ATM interface</span>
+<span class="go">1 Virtual Private Network (VPN) Module</span>
+<span class="go">4 CEM T1/E1 ports</span>
+<span class="go">DRAM configuration is 64 bits wide with parity enabled.</span>
+<span class="go">479K bytes of NVRAM.</span>
+<span class="go">492015K bytes of USB Flash usbflash0 (Read/Write)</span>
+<span class="go">62720K bytes of ATA System CompactFlash (Read/Write)</span>
+
+<span class="go">Configuration register is 0x2102</span>
+
+
+<span class="go">a.zfw.tss#exit</span>
+<span class="go">Connection to 172.17.0.1 closed by remote host.</span>
+<span class="go">Connection to 172.17.0.1 closed.</span>
+
+<span class="go">INFO: Finished.</span>
+</pre></div>
+</div>
+<p>In this example above the script would store the contents between <tt class="samp docutils literal"><span class="pre">STORE:</span> <span class="pre">now</span></tt>
+and <tt class="samp docutils literal"><span class="pre">INFO:</span> <span class="pre">Finished.</span></tt>. If this is the first time that OSSEC agentless has run
+this command no alerts would be generated and the contents would have been saved for
+later comparisons. If OSSEC agentless has a stored copy from a previous execution it
+will compare the files and if there are any differences it will generate an alert.</p>
+</div>
+<div class="section" id="periodic-specification">
+<h3><a class="toc-backref" href="#id4">Periodic Specification</a><a class="headerlink" href="#periodic-specification" title="Permalink to this headline">¶</a></h3>
+<p>The periodic specification has more options and gives more control to the script
+writer on what actions OSSEC will take. Once again stdout is used for communication
+so script writing is easy.</p>
+<ul class="simple">
+<li><strong>INFO:</strong><ul>
+<li>The string following INFO will be logged to /var/ossec/logs/ossec.log by OSSEC for
+debugging.</li>
+</ul>
+</li>
+<li><strong>ERROR:</strong><ul>
+<li>Error needs to be reported. The string following this command is forwarded to the
+OSSEC manager, and the OSSEC process closes down the script.</li>
+</ul>
+</li>
+<li><strong>FWD:</strong><ul>
+<li>The string following FWD is a colon delimited list of stats on a given file.</li>
+</ul>
+</li>
+<li><strong>LOG:</strong><ul>
+<li>The string following LOG: will be passed into ossec-analysisd and processed like
+all other log messages.</li>
+</ul>
+</li>
+</ul>
+<div class="section" id="example-of-real-fwd-command">
+<h4><a class="toc-backref" href="#id5">Example of real FWD: command.</a><a class="headerlink" href="#example-of-real-fwd-command" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">FWD: 19419:600:0:0:fb30de5b02029950ae05885a3d407c8c:017cd6118cdc166ee8eba8af1b7fdad6763203d3 ./.bash_history</span>
+</pre></div>
+</div>
+<p>The Fields break down in to the following:</p>
+<ul class="simple">
+<li>FWD:<ul>
+<li>The OSSEC Command</li>
+</ul>
+</li>
+<li>19419<ul>
+<li>Total size of file, in bytes</li>
+</ul>
+</li>
+<li>600<ul>
+<li>Access rights of file in octal</li>
+</ul>
+</li>
+<li>0<ul>
+<li>User ID of file owner</li>
+</ul>
+</li>
+<li>0<ul>
+<li>Group ID of file owner</li>
+</ul>
+</li>
+<li>fb30de5b02029950ae05885a3d407c8c<ul>
+<li>MD5 Hash of file</li>
+</ul>
+</li>
+<li>017cd6118cdc166ee8eba8af1b7fdad6763203d3<ul>
+<li>SHA1 Hash of file</li>
+</ul>
+</li>
+<li>./.bash_history<ul>
+<li>Path and name of file</li>
+</ul>
+</li>
+</ul>
+<p>Using this format OSSEC can store the information about a file and then in the future run
+compare that they are the same. If for some reason they are not the same an alert will be
+generated. Here is an example of a password change on a linux system:</p>
+<div class="highlight-python"><div class="highlight"><pre>OSSEC HIDS Notification.
+2009 Sep 21 15:19:00
+
+Received From: (ssh_integrity_check_linux) root@172.17.20.20-&gt;syscheck
+Rule: 550 fired (level 7) -&gt; &quot;Integrity checksum changed.&quot;
+Portion of the log(s):
+
+Integrity checksum changed for: &#39;/etc/shadow&#39;
+Old md5sum was: &#39;0d92e12c92f3edcf9d8876ea57c5f677&#39;
+New md5sum is : &#39;2bd51b61dea17c5682fb2c0cf4f92c63&#39;
+Old sha1sum was: &#39;2270c03a920ef8dd50e11cefdef046a8660f7a29&#39;
+New sha1sum is : &#39;d9518ea9022b10d07f81925c6d7f2abb4364b548&#39;
+
+--END OF NOTIFICATION
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="agentless-script-ssh-integrity-check-linux">
+<h2><a class="toc-backref" href="#id6">Agentless Script: ssh_integrity_check_linux</a><a class="headerlink" href="#agentless-script-ssh-integrity-check-linux" title="Permalink to this headline">¶</a></h2>
+<p>Now that we have an understanding of how agentless scripts communicate with the parent
+OSSEC process, let’s move on to a working example. The OSSEC supplied script
+<tt class="docutils literal"><span class="pre">ssh_integrity_check_linux</span></tt> is a great place to start, so lets open it up and see
+what is going on.</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">obsd46# cat /var/ossec/agentless/ssh_integrity_check_linux</span>
+<span class="go"> #!/usr/bin/env expect</span>
+
+<span class="go"> # @(#) $Id: ssh_integrity_check_linux,v 1.11 2009/06/24 17:06:21 dcid Exp $</span>
+<span class="go"> # Agentless monitoring</span>
+<span class="go"> #</span>
+<span class="go"> # Copyright (C) 2009 Trend Micro Inc.</span>
+<span class="go"> # All rights reserved.</span>
+<span class="go"> #</span>
+<span class="go"> # This program is a free software; you can redistribute it</span>
+<span class="go"> # and/or modify it under the terms of the GNU General Public</span>
+<span class="go"> # License (version 3) as published by the FSF - Free Software</span>
+<span class="go"> # Foundation.</span>
+
+
+<span class="go"> # Main script.</span>
+<span class="go">source &quot;agentless/main.exp&quot;</span>
+
+
+<span class="go"> # SSHing to the box and passing the directories to check.</span>
+<span class="go">if [catch {</span>
+<span class="go">    spawn ssh $hostname</span>
+<span class="go">} loc_error] {</span>
+<span class="go">    send_user &quot;ERROR: Opening connection: $loc_error.\n&quot;</span>
+<span class="go">    exit 1;</span>
+<span class="go">}</span>
+
+
+<span class="go">source $sshsrc</span>
+<span class="go">source $susrc</span>
+
+<span class="go">set timeout 600</span>
+<span class="go">send &quot;echo \&quot;INFO: Starting.\&quot;; for i in `find $args 2&gt;/dev/null`;do tail \$i &gt;/dev/null 2&gt;&amp;1 &amp;&amp;</span>
+<span class="go">md5=`md5sum \$i | cut -d \&quot; \&quot; -f 1` &amp;&amp; sha1=`sha1sum \$i | cut -d \&quot; \&quot; -f</span>
+<span class="go"> 1` &amp;&amp; echo FWD: `stat --printf \&quot;%s:%a:%u:%g\&quot; \$i`:\$md5:\$sha1 \$i; done; exit\r&quot;</span>
+<span class="go">send &quot;exit\r&quot;</span>
+
+<span class="go">expect {</span>
+<span class="go">    timeout {</span>
+<span class="go">        send_user &quot;ERROR: Timeout while running commands on host: $hostname .\n&quot;</span>
+<span class="go">        exit 1;</span>
+<span class="go">    }</span>
+<span class="go">    eof {</span>
+<span class="go">        send_user &quot;\nINFO: Finished.\n&quot;</span>
+<span class="go">        exit 0;</span>
+<span class="go">    }</span>
+<span class="go">}</span>
+
+<span class="go">exit 0;</span>
+</pre></div>
+</div>
+<p>The comments in the script hints to what is going on, but everything up to and
+including set timeout 600 is related to setting up the expect functions and code
+for handling the ssh subprocess and connecting to the remote host. I am not going
+to spend any time with this section, I am just going to make use of it.</p>
+<p>The meat of what is getting processed on the remote end all happens in two lines.</p>
+<div class="highlight-sh"><div class="highlight"><pre>send <span class="s2">&quot;echo \&quot;INFO: Starting.\&quot;; for i in `find </span><span class="nv">$args</span><span class="s2"> 2&gt;/dev/null`;do tail \$i &gt;/dev/null 2&gt;&amp;1 &amp;&amp;</span>
+<span class="s2">md5=`md5sum \$i | cut -d \&quot; \&quot; -f 1` &amp;&amp; sha1=`sha1sum \$i | cut -d \&quot; \&quot; -f</span>
+<span class="s2"> 1` &amp;&amp; echo FWD: `stat --printf \&quot;%s:%a:%u:%g\&quot; \$i`:\$md5:\$sha1 \$i; done; exit\r&quot;</span>
+</pre></div>
+</div>
+<p>Let&#8217;s break this down to see what is happening.</p>
+<p>The send command pushes the following string to the ssh subprocess which gets run on
+the remote end of the connection. Before the script is sent to the remote host expect internally
+processes the string. This includes searching for variables and removing any control characters.</p>
+<p>The control characters are first taken into account, and in the case of our example all escaped
+special characters are processed. &#8221;, r, and $ would be replaced with &#8221;, “carriage return“,
+and &amp; respectively. The reason the escape characters are needed so that they will not
+interfere with expects own string processing and control. We will need to handle control
+characters in this way when we begin writing our own script.</p>
+<p>While special characters were being handled by expect it also looked for variables to
+replace, in this case it will find $args and replace it with what ever arguments were
+passed to the script by the OSSEC agentless process. If we specified the following in
+<tt class="docutils literal"><span class="pre">/var/ossec/etc/ossec.conf</span></tt> the $args variable would be replaced with <tt class="docutils literal"><span class="pre">/bin</span> <span class="pre">/etc</span> <span class="pre">/sbin</span></tt>.</p>
+<div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;agentless&gt;</span>
+    <span class="nt">&lt;type&gt;</span>ssh_integrity_check_linux<span class="nt">&lt;/type&gt;</span>
+    <span class="nt">&lt;frequency&gt;</span>3600<span class="nt">&lt;/frequency&gt;</span>
+    <span class="nt">&lt;host&gt;</span>root@172.17.20.20<span class="nt">&lt;/host&gt;</span>
+    <span class="nt">&lt;state&gt;</span>periodic<span class="nt">&lt;/state&gt;</span>
+    <span class="nt">&lt;arguments&gt;</span>/bin /etc /sbin<span class="nt">&lt;/arguments&gt;</span>
+<span class="nt">&lt;/agentless&gt;</span>
+</pre></div>
+</div>
+<p>Back to the commands that get run. Once expect has completed replacement we are
+left with this command.</p>
+<div class="highlight-sh"><div class="highlight"><pre><span class="nb">echo</span> <span class="s2">&quot;INFO: Starting.&quot;</span><span class="p">;</span> <span class="k">for</span> i in <span class="sb">`</span>find /bin /etc /sbin 2&gt;/dev/null<span class="sb">`</span><span class="p">;</span><span class="k">do</span> tail <span class="nv">$i</span> &gt;/dev/null 2&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="o">&amp;&amp;</span>
+<span class="nv">md5</span><span class="o">=</span><span class="sb">`</span>md5sum <span class="nv">$i</span> <span class="p">|</span> cut -d <span class="s2">&quot; &quot;</span> -f 1<span class="sb">`</span> <span class="o">&amp;&amp;</span> <span class="nv">sha1</span><span class="o">=</span><span class="sb">`</span>sha1sum <span class="nv">$i</span> <span class="p">|</span> cut -d <span class="s2">&quot; &quot;</span> -f
+ 1<span class="sb">`</span> <span class="o">&amp;&amp;</span> <span class="nb">echo </span>FWD: <span class="sb">`</span>stat --printf <span class="s2">&quot;%s:%a:%u:%g&quot;</span> <span class="nv">$i</span><span class="sb">`</span>:<span class="nv">$md5</span>:<span class="nv">$sha1</span> <span class="nv">$i</span><span class="p">;</span> <span class="k">done</span><span class="p">;</span> <span class="nb">exit</span>
+<span class="nb">    exit</span>
+</pre></div>
+</div>
+<p>This script then goes and uses the Unix find command to locate all files in
+the specified path (from the arguments passed) and generates an OSSEC FWD: command
+for each one and prints it to stdout. Making use of the commands stat, md5sum, and
+sha1sum to generate the data needed. Here is an example of the output checking.</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">spawn ssh root@172.17.20.20</span>
+<span class="go">Last login: Wed Nov  4 11:32:51 2009 from 172.17.20.131^M</span>
+<span class="go">[linux26 ~]#</span>
+<span class="go">INFO: Started.</span>
+<span class="go">echo &quot;INFO: Starting.&quot;; for i in `find {/bin /etc /sbin} 2&gt;/dev/null`;do tail $i &gt;/dev/null 2&gt;&amp;1 &amp;&amp;</span>
+<span class="go">md5=`md5sum $i | cut -d &quot; &quot; -f 1` &amp;&amp; sha1=`sh a1sum $i | cut -d &quot; &quot; -f</span>
+<span class="go"> 1` &amp;&amp; echo FWD: `stat --printf &quot;%s:%a:%u:%g&quot; $i`:$md5:$sha1 $i; done; exit</span>
+<span class="go">INFO: Starting.</span>
+<span class="go">FWD: 833:644:0:0:4148adea745af5121963f6b731b60013:60877a6f6981b16c0d53d32bcd3f07d41cfb5bd4 /etc/modprobe.d/</span>
+<span class="go">glib2.sh</span>
+<span class="go">[...........SNIP............]</span>
+<span class="go">FWD: 1696:644:0:0:c2bd306b205ad9e81fb02ce6b225d384:5244d65815cb228a4fac7bc4c1c7774508fb7505 /etc/nsswitch.conf</span>
+<span class="go">FWD: 85179:644:0:0:8db574225cd1068b47e77ceccd96f8ff:b5ef6183b35ee9d1b66ed2cefe98003c5bd99192 /etc/sensors.conf</span>
+<span class="go">FWD: 49:644:0:0:52c3df2f1edf30ca3db82174be3a68d2:1934648f2429b70b1f729d343a6956fb0ea73136 /etc/php.d/imap.ini</span>
+<span class="go">FWD: 873:644:0:0:04559d1fe27ecd079b69df8b319f937e:e5cab1bf1f9e4bc4386309f4e00a9b7be3e543a2 /etc/php.d/memcache.ini</span>
+<span class="go">FWD: 59:644:0:0:94636ba6c4bac9d8d49d9de1a513ae0c:41d5164a2c6e332e40edf55c59a2d0df8a260964 /etc/php.d/pdo_mysql.ini</span>
+<span class="go">FWD: 49:644:0:0:917dbbafbfaaa20f660063d627123dae:0e829d4ffc69f58dc258510b4b8452412e31ccc5 /etc/php.d/json.ini</span>
+<span class="go">FWD: 0:644:0:0:d41d8cd98f00b204e9800998ecf8427e:da39a3ee5e6b4b0d3255bfef95601890afd80709 /etc/wvdial.conf</span>
+<span class="go">logout</span>
+<span class="go">Connection to 172.17.20.20 closed.</span>
+
+<span class="go">INFO: Finished.</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="modifying-to-make-own-agentless-script-ssh-dmz-linux">
+<h2><a class="toc-backref" href="#id7">Modifying to make own Agentless Script: ssh_dmz_linux</a><a class="headerlink" href="#modifying-to-make-own-agentless-script-ssh-dmz-linux" title="Permalink to this headline">¶</a></h2>
+<p>Using the built in OSSEC agentless scripts are great, but sometimes we need more
+focused scanning and checking. So let’s modify the ssh_integrity_check_linux
+for our environment.</p>
+<p>The goals for this new script will be to watch for changes to files based
+on the following criteria:</p>
+<ul class="simple">
+<li>All setuid and setgid files</li>
+<li>All files related to authentication (including .htaccess and ssh files)</li>
+<li>All application specific files (apache, ssh)</li>
+</ul>
+<p><strong>Finding all setuid and setgid files</strong></p>
+<p>Let’s first start by identifying a method to locate all files with their
+setuid or setgid bits enabled. To do this we will ssh to the host 172.17.20.20
+and use find to locate the files.</p>
+<div class="highlight-xml"><div class="highlight"><pre>obsd46# sudo -u ossec ssh root@172.17.20.20
+[linux26 ~]# find / -type f \( -perm -4000 -o -perm -2000 \)
+/sbin/umount.nfs
+/sbin/netreport
+/sbin/unix_chkpwd
+/sbin/mount.nfs
+/sbin/pam_timestamp_check
+/sbin/mount.nfs4
+/sbin/umount.nfs4
+/bin/ping6
+/bin/su
+/bin/umount
+/bin/ping
+/bin/mount
+/lib/dbus-1/dbus-daemon-launch-helper
+/usr/libexec/openssh/ssh-keysign
+/usr/libexec/utempter/utempter
+/usr/sbin/usernetctl
+/usr/sbin/postqueue
+/usr/sbin/userhelper
+/usr/sbin/userisdnctl
+/usr/sbin/postdrop
+/usr/sbin/suexec
+/usr/bin/chsh
+/usr/bin/chfn
+/usr/bin/sudo
+/usr/bin/locate
+/usr/bin/wall
+/usr/bin/sudoedit
+/usr/bin/gpasswd
+/usr/bin/lockfile
+/usr/bin/newgrp
+/usr/bin/write
+/usr/bin/screen
+/usr/bin/passwd
+/usr/bin/chage
+/usr/bin/sperl5.8.8
+/usr/bin/crontab
+/usr/bin/ssh-agent
+</pre></div>
+</div>
+<p><strong>Finding all files related to authentication and applications specific files</strong></p>
+<p>Finding all files with setuid and setgid was simple, but finding all files related to
+authentication is more involved. This of course will vary from system to system, but
+this should be good starting point.</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">obsd46# sudo -u ossec ssh root@172.17.20.20</span>
+<span class="go">[linux26 ~]# find / \( -name &quot;.ssh&quot; -o -name &quot;ssh&quot; -o -name &quot;sshd&quot; -o -name &quot;httpd&quot; -o -name &quot;.htaccess&quot;</span>
+<span class="go">-o -name &quot;pam.d&quot; \) -exec find {} \;</span>
+<span class="go">/var/www/html/admin/modules/framework/var/www/html/admin/modules/.htaccess</span>
+<span class="go">/etc/httpd</span>
+<span class="go">/etc/httpd/conf</span>
+<span class="go">/etc/httpd/conf.d</span>
+<span class="go">/etc/httpd/conf.d/php.conf</span>
+<span class="go">/etc/httpd/conf.d/proxy_ajp.conf</span>
+<span class="go">/etc/httpd/conf.d/README</span>
+<span class="go">/etc/httpd/conf.d/ssl.conf</span>
+<span class="go">/etc/httpd/conf.d/welcome.conf</span>
+<span class="go">/etc/httpd/conf/httpd.conf</span>
+<span class="go">/etc/httpd/conf/magic</span>
+<span class="go">/etc/httpd/logs</span>
+<span class="go">/etc/httpd/modules</span>
+<span class="go">/etc/httpd/run</span>
+<span class="go">/etc/logrotate.d/httpd</span>
+<span class="go">/etc/pam.d</span>
+<span class="go">/etc/pam.d/authconfig</span>
+<span class="go">[...................SNIP PAM Files.....................]</span>
+<span class="go">/etc/pam.d/system-config-network-cmd</span>
+<span class="go">/etc/pam.d/vsftpd</span>
+<span class="go">/etc/rc.d/init.d/httpd</span>
+<span class="go">/etc/rc.d/init.d/sshd</span>
+<span class="go">/etc/ssh</span>
+<span class="go">/etc/ssh/ssh_config</span>
+<span class="go">/etc/ssh/sshd_config</span>
+<span class="go">/etc/ssh/ssh_host_dsa_key</span>
+<span class="go">/etc/ssh/ssh_host_dsa_key.pub</span>
+<span class="go">/etc/ssh/ssh_host_key</span>
+<span class="go">/etc/ssh/ssh_host_key.pub</span>
+<span class="go">/etc/ssh/ssh_host_rsa_key</span>
+<span class="go">/etc/ssh/ssh_host_rsa_key.pub</span>
+<span class="go">/etc/sysconfig/httpd</span>
+<span class="go">/root/.ssh</span>
+<span class="go">/root/.ssh/authorized_keys</span>
+<span class="go">/usr/bin/ssh</span>
+<span class="go">/usr/lib/httpd</span>
+<span class="go">/usr/lib/httpd/modules</span>
+<span class="go">/usr/lib/httpd/modules/libphp5.so</span>
+<span class="go">[...................SNIP Apache modules................]</span>
+
+<span class="go">/usr/lib/httpd/modules/mod_vhost_alias.so</span>
+<span class="go">/usr/sbin/httpd</span>
+<span class="go">/usr/sbin/sshd</span>
+<span class="go">/usr/src/tbm-pbxconfig-5.5.1/amp_conf/htdocs/admin/modules/framework/htdocs/admin/modules/.htaccess</span>
+<span class="go">/usr/src/tbm-pbxconfig-5.5.1/amp_conf/htdocs/admin/modules/.htaccess</span>
+<span class="go">/var/empty/sshd</span>
+<span class="go">/var/empty/sshd/etc</span>
+<span class="go">/var/empty/sshd/etc/localtime</span>
+<span class="go">/var/www/html/admin/modules/framework/var/www/html/admin/modules/.htaccess</span>
+<span class="go">/var/www/html/admin/modules/.htaccess</span>
+</pre></div>
+</div>
+<p><strong>Merging finds</strong></p>
+<p>Now we have two basic find methods that identify the files we want to monitor for
+changes, but our finds were a little greedy so we should create a way to strip out
+unwanted files from the list. As this is a unix system egrep is the king for finding
+or removing items from a list. To simplify things we can use egrep with the -v
+command line argument which tells egrep NOT to print any matching items.</p>
+<p>Just to make sure that we do not end up double processing files we can make use
+of the sort command with -u argument to remove any duplicates.</p>
+<p>Here is how we would put together both finds, egrep, and sort to locate and
+filter what is needed.</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">( find / -type f \( -perm -4000 -o -perm -2000 \) &amp;&amp; \find / \( -name &quot;.ssh&quot; -o -name &quot;ssh&quot; -o -name &quot;sshd&quot;</span>
+<span class="go">-o -name &quot;httpd&quot; -o -name &quot;.htaccess&quot; -o -name &quot;pam.d&quot; \) -exec find {} \; ) 2&gt;/dev/null | egrep</span>
+<span class="go">-v &quot;known_hosts|moduli|var\/log|var\/lock&quot; | sort -u</span>
+</pre></div>
+</div>
+<p>The above command we have found all files and paths that we would like to monitor,
+but this still needs to be integrated into a script on the OSSEC server.</p>
+<p><strong>Creating ssh_dmz_linux</strong></p>
+<p>We don’t want to make changes to ssh_integrity_check_linux directly so we will need
+to make a copy.</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">obsd46# (cd /var/ossec/agentless &amp;&amp; cp ssh_integrity_check_linux ssh_dmz_linux)</span>
+</pre></div>
+</div>
+<p>Integrating our new command line into the script we must pay close attention to
+special characters that expect will process. Due to this we will need to escape
+all / and &#8221; by proceeding them with . Once we are done escaping we just insert
+our new line in place of find $args 2&gt;/dev/null in our new file.</p>
+<p>Here is what the completed script will look like.</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">obsd56# cat /var/ossec/agentless/ssh_dmz_linux</span>
+<span class="go"> #!/usr/bin/env expect</span>
+
+<span class="go"> # @(#) $Id: ssh_integrity_check_linux,v 1.11 2009/06/24 17:06:21 dcid Exp $</span>
+<span class="go"> # Agentless monitoring</span>
+<span class="go"> #</span>
+<span class="go"> # Copyright (C) 2009 Trend Micro Inc.</span>
+<span class="go"> # All rights reserved.</span>
+<span class="go"> #</span>
+<span class="go"> # This program is a free software; you can redistribute it</span>
+<span class="go"> # and/or modify it under the terms of the GNU General Public</span>
+<span class="go"> # License (version 3) as published by the FSF - Free Software</span>
+<span class="go"> # Foundation.</span>
+
+
+<span class="go"> # Main script.</span>
+<span class="go">source &quot;agentless/main.exp&quot;</span>
+
+
+<span class="go"> # SSHing to the box and passing the directories to check.</span>
+<span class="go">if [catch {</span>
+<span class="go">    spawn ssh $hostname</span>
+<span class="go">} loc_error] {</span>
+<span class="go">    send_user &quot;ERROR: Opening connection: $loc_error.\n&quot;</span>
+<span class="go">    exit 1;</span>
+<span class="go">}</span>
+
+
+<span class="go">source $sshsrc</span>
+<span class="go">source $susrc</span>
+
+<span class="go">set timeout 600</span>
+<span class="go">send &quot;echo \&quot;INFO: Starting.\&quot;; for i in `(find / \\( -name \&quot;.ssh\&quot; -o -name \&quot;ssh\&quot; -o -name \&quot;sshd\&quot;</span>
+<span class="go">-o -name \&quot;httpd\&quot; -o -name \&quot;.htaccess\&quot; -o -name \&quot;pam.d\&quot; \\) -exec find {} \\; &amp;&amp; find / -type f</span>
+<span class="go">\\( -perm -4000 -o -perm -2000 \\); ) 2&gt;/dev/null | egrep -v \&quot;known_hosts|moduli|var\\/log|var\\/lock\&quot; | sort -u`;</span>
+<span class="go">do tail \$i &gt;/dev/null 2&gt;&amp;1 &amp;&amp; md5=`md5sum \$i | cut -d \&quot; \&quot; -f 1` &amp;&amp; sha1=`sha1sum \$i | cut -d \&quot; \&quot;</span>
+<span class="go">-f 1` &amp;&amp; echo FWD: `stat --printf \&quot;%s:%a:%u:%g\&quot; \$i`:\$md5:\$sha1 \$i; done; exit\r&quot;</span>
+<span class="go">send &quot;exit\r&quot;</span>
+
+<span class="go">expect {</span>
+<span class="go">    timeout {</span>
+<span class="go">        send_user &quot;ERROR: Timeout while running commands on host: $hostname .\n&quot;</span>
+<span class="go">        exit 1;</span>
+<span class="go">    }</span>
+<span class="go">    eof {</span>
+<span class="go">        send_user &quot;\nINFO: Finished.\n&quot;</span>
+<span class="go">        exit 0;</span>
+<span class="go">    }</span>
+<span class="go">}</span>
+
+<span class="go">exit 0;</span>
+</pre></div>
+</div>
+<p><strong>Testing</strong></p>
+<p>Before we add this new script to OSSEC configuration we need to test it.</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">obsd46# (cd /var/ossec &amp;&amp; sudo -u ossec ./agentless/ssh_dmz_linux root@172.17.20.20 )</span>
+
+<span class="go">ERROR: ssh_integrity_check &lt;hostname&gt; &lt;arguments&gt;</span>
+</pre></div>
+</div>
+<p>Due to not making use of the of the $arg variable in the way that ssh_integrity_check_linux
+wants use too, this caused this the problem above. Solving this problem would require
+making changes to files that will affect other built in scripts. So a quick solution is
+to just pass anything as an argument to the script. This will have no effect on our
+script as we do not make use of the $arg variable.</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">obsd46# (cd /var/ossec &amp;&amp; sudo -u ossec ./agentless/ssh_dmz_linux root@172.17.20.20 NOTUSED)</span>
+<span class="go">spawn ssh root@172.17.20.20</span>
+<span class="go">Last login: Wed Nov  4 13:46:32 2009 from 172.17.20.131^M</span>
+<span class="go">[linux26 ~]#</span>
+<span class="go">INFO: Started.</span>
+<span class="go">echo &quot;INFO: Starting.&quot;; for i in `(find / \( -name &quot;.ssh&quot; -o -name &quot;ssh&quot; -o -name &quot;sshd&quot; -o -name &quot;httpd&quot;</span>
+<span class="go">-o -name &quot;.htaccess&quot; -o -name &quot;pam.d&quot; \)  -exec find {} \; &amp;&amp; find / -type f \( -perm -4000 -o -perm -2000</span>
+<span class="go">\); ) 2&gt;/dev/null | egrep -v &quot;known_hosts|moduli|var\/log|var\/lock&quot;`;do tail $i &gt;/dev/null 2&gt;&amp;1 &amp;&amp;</span>
+<span class="go"> md5=`md5s ^Mum $i | cut -d &quot; &quot; -f 1` &amp;&amp; sha1=`sha1sum $i | cut -d &quot; &quot; -f 1` &amp;&amp; echo FWD: `stat --printf</span>
+<span class="go">&quot;%s:%a:%u:%g&quot; $i`:$md5:$sha1 $i; done; exit</span>
+<span class="go">INFO: Starting.</span>
+<span class="go">FWD: 14:775:100:101:3bc0a3e92f8170084dd102eda9a474b1:25a1783a3c6bdd9745ec245ec1bfa0414ee05d23 /var/www/html/admin/modules/.htaccessmodules/.htaccess</span>
+<span class="go">FWD: 3519:644:0:0:e4ca381035a34b7a852184cc0dd89baa:6e43d0b5a46ed5ba78da5c7e9dcf319b27d769e7 /var/empty/sshd/etc/localtime</span>
+<span class="go">FWD: 560:644:0:0:58370830ecfa056421ad21aff9c18905:d115bb5aeefaab97c53fbbd5df84ebcb9170d796 /etc/httpd/conf.d/php.conf</span>
+<span class="go">[...................SNIP.............................]</span>
+<span class="go">FWD: 392:644:0:0:e92bea7e9d70a9ecdc61edd7c0a2f59a:d77b61dac010c60589b4d8a2039e3b8a5bed18b2 /etc/httpd/conf.d/README</span>
+<span class="go">FWD: 70888:4711:0:0:9046bd13339e7ef22266067b633e601a:3fc41029ddb14fe4ed613f479fa9e89c944f04dd /usr/bin/sperl5.8.8</span>
+<span class="go">FWD: 315416:6755:0:0:4c63a9709fb7f0f97c30aa29d204859c:c379efa658de72866b8f6de5767906ff78d127b0 /usr/bin/crontab</span>
+<span class="go">FWD: 88964:2755:0:99:baf3ebef6377d6ef42858776c33621b0:62394bf57d18c3fd49adeb39a1da61661cabc3c8 /usr/bin/ssh-agent</span>
+<span class="go">logout</span>
+<span class="go">Connection to 172.17.20.20 closed.</span>
+
+<span class="go">INFO: Finished.</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+  <div class="section">
+  
+  
+  </div>
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2010-2015, OSSEC Project Team - OSSEC trademark and domain owned by Trend Micro, Inc. - Home page images courtesy of Pixbay.com.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

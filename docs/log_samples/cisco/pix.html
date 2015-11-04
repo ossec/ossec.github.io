@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Cisco PIX Logs &mdash; OSSEC</title>
+    
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/parallax.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '2.8.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-sphinx.js"></script>
+    <link rel="author" title="About these documents" href="../../../about.html" />
+    <link rel="top" title="OSSEC" href="../../../index.html" />
+  
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  
+  
+  <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+  
+  <style type="text/css">
+    ul.ablog-archive {list-style: none; overflow: auto; margin-left: 0px}
+    ul.ablog-archive li {float: left; margin-right: 5px; font-size: 80%}
+  </style>
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../../index.html"><img src="../../../_static/ossec_logo_bare_small.png">
+          OSSEC</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="../../../about.html">About <i class="fa fa-info-circle"></i></a></li>
+                <li><a href="../../../blog.html">Blog <i class="fa fa-archive"></i></a></li>
+                <li><a href="../../">Documentaton <i class="fa fa-book"></i></a></li>
+                <li><a href="../../../downloads.html">Downloads <i class="fa fa-download"></i></a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"></ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="section" id="cisco-pix-logs">
+<h1>Cisco PIX Logs<a class="headerlink" href="#cisco-pix-logs" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="log-samples-from-the-cisco-pix">
+<h2>Log Samples from the Cisco PIX:<a class="headerlink" href="#log-samples-from-the-cisco-pix" title="Permalink to this headline">¶</a></h2>
+<p>The Cisco PIX logs are very well formatted and easy to parse. Every message starts with a unique
+ID of the event, which is in the following format: &lt;b&gt;%PIX-severity-eventID. A complete
+list with all event IDS can be found at the :
+[<a class="reference external" href="http://www.cisco.com/en/US/products/sw/secursw/ps2120/products_system_message_guide_chapter09186a008051a0ca.html">http://www.cisco.com/en/US/products/sw/secursw/ps2120/products_system_message_guide_chapter09186a008051a0ca.html</a> cisco site].
+[<a class="reference external" href="http://www.cisco.com/univercd/cc/td/doc/product/iaabu/pix/pix_v53/syslog/pixemsgs.htm">http://www.cisco.com/univercd/cc/td/doc/product/iaabu/pix/pix_v53/syslog/pixemsgs.htm</a> Cisco Pix Specific].</p>
+</div>
+<div class="section" id="full-log-samples">
+<h2>Full log samples:<a class="headerlink" href="#full-log-samples" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">Sep  7 06:25:17 PIXName %PIX-7-710005: UDP request discarded from 0.0.0.0/68 to outside:255.255.255.255/67</span>
+<span class="go">Sep  7 06:25:23 PIXName %PIX-7-710005: UDP request discarded from 1.1.1.1/137 to outside:1.1.1.255/137</span>
+<span class="go">Sep  7 06:25:23 PIXName %PIX-7-710005: UDP request discarded from 1.1.1.1/137 to outside:1.1.1.255/137</span>
+<span class="go">Sep  7 06:25:23 PIXName %PIX-7-710005: UDP request discarded from 1.1.1.1/137 to outside:1.1.1.255/137</span>
+<span class="go">Sep  7 06:25:24 PIXName %PIX-7-710005: UDP request discarded from 1.1.1.1/137 to outside:1.1.1.255/137</span>
+<span class="go">Sep  7 06:25:24 PIXName %PIX-7-710005: UDP request discarded from 1.1.1.1/137 to outside:1.1.1.255/137</span>
+<span class="go">Sep  7 06:25:24 PIXName %PIX-7-710005: UDP request discarded from 1.1.1.1/137 to outside:1.1.1.255/137</span>
+<span class="go">Sep  7 06:25:25 PIXName %PIX-7-710005: UDP request discarded from 1.1.1.1/137 to outside:1.1.1.255/137</span>
+<span class="go">Sep  7 06:25:25 PIXName %PIX-7-710005: UDP request discarded from 1.1.1.1/137 to outside:1.1.1.255/137</span>
+<span class="go">Sep  7 06:25:25 PIXName %PIX-7-710005: UDP request discarded from 1.1.1.1/137 to outside:1.1.1.255/137</span>
+<span class="go">Sep  7 06:25:28 PIXName %PIX-7-609001: Built local-host db:10.0.0.1</span>
+<span class="go">Sep  7 06:25:28 PIXName %PIX-6-302013: Built inbound TCP connection 141968 for db:10.0.0.1/60749 (10.0.0.1/60749) to NP Identity Ifc: 10.0.0.2/22 (10.0.0.2/22)</span>
+<span class="go">Sep  7 06:25:28 PIXName %PIX-7-710002: TCP access permitted from 10.0.0.1/60749 to db:10.0.0.2/ssh</span>
+<span class="go">Sep  7 06:26:20 PIXName %PIX-5-304001: 203.87.123.139 Accessed URL 10.0.0.10:/Home/index.cfm</span>
+<span class="go">Sep  7 06:26:20 PIXName %PIX-5-304001: 203.87.123.139 Accessed URL 10.0.0.10:/aboutus/volunteers.cfm</span>
+<span class="go">Sep  7 06:26:49 PIXName %PIX-4-106023: Deny udp src outside:204.16.208.49/58939 dst dmz:10.0.0.158/1026 by access-group &quot;acl_outside&quot; [0x0, 0x0]</span>
+<span class="go">Sep  7 06:26:49 PIXName %PIX-4-106023: Deny udp src outside: 204.16.208.49/58940 dst dmz:10.0.0.158/1027 by access-group &quot;acl_outside&quot; [0x0, 0x0]</span>
+<span class="go">Sep  7 06:31:26 PIXName %PIX-7-711002: Task ran for 330 msec, Process= ssh_init, PC = fddd93, Traceback =   0x00FF1E6B  0x00FE1890 0x00FE0D3C  0x00FD326A  0x00FC0BFC 0x00FDBB8E  0x00FDBA4D  0x00FCD846  0x00FBF09C  0x001C76AE 0x00A01512  0x009CF6B5  0x00BDB9CE  0x00BDA502</span>
+<span class="go">Sep  7 06:31:32 PIXName %PIX-6-315011: SSH session from 10.0.0.254 on interface db for user &quot;&quot; disconnected by SSH server, reason: &quot;TCP connection closed&quot; (0x03)</span>
+
+<span class="gp">%</span>PIX-7-710001: TCP access requested from 192.168.2.10/13269 to outside:192.168.2.14/ssh
+<span class="gp">%</span>PIX-7-710001: TCP access requested from 192.168.2.10/13528 to outside:192.168.2.14/ssh
+<span class="gp">%</span>PIX-7-710001: TCP access requested from 192.168.2.10/14154 to outside:192.168.2.14/ssh
+<span class="gp">%</span>PIX-7-710001: TCP access requested from 192.168.2.10/19067 to outside:192.168.2.14/ssh
+<span class="gp">%</span>PIX-7-710001: TCP access requested from 192.168.2.10/21532 to outside:192.168.2.14/ssh
+<span class="gp">%</span>PIX-7-710001: TCP access requested from 192.168.2.10/27167 to outside:192.168.2.14/ssh
+<span class="gp">%</span>PIX-7-710001: TCP access requested from 192.168.2.10/29488 to outside:192.168.2.14/ssh
+<span class="gp">%</span>PIX-7-710001: TCP access requested from 192.168.2.10/32597 to outside:192.168.2.14/ssh
+<span class="gp">%</span>PIX-7-710001: TCP access requested from 192.168.2.10/40654 to outside:192.168.2.14/ssh
+<span class="gp">%</span>PIX-7-710001: TCP access requested from 192.168.2.10/48798 to outside:192.168.2.14/ssh
+<span class="gp">%</span>PIX-7-710001: TCP access requested from 192.168.2.10/7180 to outside:192.168.2.14/ssh
+<span class="gp">%</span>PIX-7-710002: TCP access permitted from 192.168.2.10/13269 to outside:192.168.2.14/ssh
+<span class="gp">%</span>PIX-7-710002: TCP access permitted from 192.168.2.10/13528 to outside:192.168.2.14/ssh
+<span class="gp">%</span>PIX-7-710002: TCP access permitted from 192.168.2.10/14154 to outside:192.168.2.14/ssh
+<span class="gp">%</span>PIX-7-710002: TCP access permitted from 192.168.2.10/19067 to outside:192.168.2.14/ssh
+<span class="gp">%</span>PIX-7-710002: TCP access permitted from 192.168.2.10/21532 to outside:192.168.2.14/ssh
+<span class="gp">%</span>PIX-7-710002: TCP access permitted from 192.168.2.10/27167 to outside:192.168.2.14/ssh
+<span class="gp">%</span>PIX-7-710002: TCP access permitted from 192.168.2.10/29488 to outside:192.168.2.14/ssh
+<span class="gp">%</span>PIX-7-710002: TCP access permitted from 192.168.2.10/32597 to outside:192.168.2.14/ssh
+<span class="gp">%</span>PIX-7-710002: TCP access permitted from 192.168.2.10/40654 to outside:192.168.2.14/ssh
+<span class="gp">%</span>PIX-7-710002: TCP access permitted from 192.168.2.10/48798 to outside:192.168.2.14/ssh
+<span class="gp">%</span>PIX-7-710002: TCP access permitted from 192.168.2.10/7180 to outside:192.168.2.14/ssh
+<span class="gp">%</span>PIX-7-710005: UDP request discarded from 0.0.0.0/68 to outside:255.255.255.255/bootps
+<span class="gp">%</span>PIX-7-710005: UDP request discarded from 192.168.1.2/137 to inside:192.168.1.255/netbios-ns
+<span class="gp">%</span>PIX-7-710005: UDP request discarded from 192.168.1.2/138 to inside:192.168.1.255/netbios-dgm
+<span class="gp">%</span>PIX-7-710005: UDP request discarded from 192.168.1.2/3935 to inside:192.168.1.1/1900
+<span class="gp">%</span>PIX-7-710005: UDP request discarded from 192.168.2.1/137 to outside:192.168.2.11/netbios-ns
+<span class="gp">%</span>PIX-7-710005: UDP request discarded from 192.168.2.1/137 to outside:192.168.2.14/netbios-ns
+<span class="gp">%</span>PIX-7-710005: UDP request discarded from 192.168.2.11/137 to outside:192.168.2.255/netbios-ns
+<span class="gp">%</span>PIX-7-710005: UDP request discarded from 192.168.2.11/138 to outside:192.168.2.255/netbios-dgm
+<span class="gp">%</span>PIX-7-710005: UDP request discarded from 192.168.2.11/68 to outside:255.255.255.255/bootps
+<span class="gp">%</span>PIX-7-710005: UDP request discarded from 192.168.2.12/137 to outside:192.168.2.255/netbios-ns
+<span class="gp">%</span>PIX-7-710005: UDP request discarded from 192.168.2.12/138 to outside:192.168.2.255/netbios-dgm
+<span class="gp">%</span>PIX-7-710005: UDP request discarded from 192.168.2.12/68 to outside:255.255.255.255/bootps
+<span class="gp">%</span>PIX-7-710005: UDP request discarded from 192.168.2.13/137 to outside:192.168.2.255/netbios-ns
+<span class="gp">%</span>PIX-7-710005: UDP request discarded from 192.168.2.13/138 to outside:192.168.2.255/netbios-dgm
+<span class="gp">%</span>PIX-7-710005: UDP request discarded from 192.168.2.13/68 to outside:255.255.255.255/bootps
+<span class="gp">%</span>PIX-7-710005: UDP request discarded from 192.168.2.190/137 to outside:192.168.2.255/netbios-ns
+<span class="gp">%</span>PIX-6-315011: SSH session from 192.168.2.10 on interface outside <span class="k">for</span> user <span class="s2">&quot;roo&quot;</span> disconnected by SSH server, reason: <span class="s2">&quot;TCP connection closed&quot;</span> <span class="o">(</span>0x03<span class="o">)</span>
+<span class="gp">%</span>PIX-6-604101: DHCP client interface outside: Allocated <span class="nv">ip</span> <span class="o">=</span> 192.168.2.11, <span class="nv">mask</span> <span class="o">=</span> 255.255.255.0, <span class="nv">gw</span> <span class="o">=</span> 192.168.2.1
+<span class="gp">%</span>PIX-6-604101: DHCP client interface outside: Allocated <span class="nv">ip</span> <span class="o">=</span> 192.168.2.14, <span class="nv">mask</span> <span class="o">=</span> 255.255.255.0, <span class="nv">gw</span> <span class="o">=</span> 192.168.2.1
+<span class="gp">%</span>PIX-6-604103: DHCP daemon interface inside:  address granted 000c.29e4.ebc3 <span class="o">(</span>12.168.1.3<span class="o">)</span>
+<span class="gp">%</span>PIX-6-604103: DHCP daemon interface inside:  address granted 000c.29e4.ebc3 <span class="o">(</span>12.168.1.4<span class="o">)</span>
+<span class="gp">%</span>PIX-6-604103: DHCP daemon interface inside:  address granted 0100.0d9d.8283.ec<span class="o">(</span>192.168.1.2<span class="o">)</span>
+<span class="gp">%</span>PIX-6-605004: Login denied from 192.168.2.10/13269 to outside:192.168.2.14/ssh <span class="k">for</span> user <span class="s2">&quot;root&quot;</span>
+<span class="gp">%</span>PIX-6-605004: Login denied from 192.168.2.10/13528 to outside:192.168.2.14/ssh <span class="k">for</span> user <span class="s2">&quot;dcid&quot;</span>
+<span class="gp">%</span>PIX-6-605004: Login denied from 192.168.2.10/14154 to outside:192.168.2.14/ssh <span class="k">for</span> user <span class="s2">&quot;root&quot;</span>
+<span class="gp">%</span>PIX-3-305006: portmap translation creation failed <span class="k">for</span> tcp src inside:192.168.1.2/2893 dst outside:192.168.2.99/3128
+<span class="gp">%</span>PIX-3-305006: portmap translation creation failed <span class="k">for</span> tcp src inside:192.168.1.2/2892 dst outside:192.168.2.99/3128
+<span class="gp">%</span>PIX-3-201008: The PIX is disallowing new connections.
+<span class="gp">%</span>PIX-3-106011: Deny inbound <span class="o">(</span>No xlate<span class="o">)</span> udp src outside:192.168.2.1/137 dst outside:192.168.2.14/137
+<span class="gp">%</span>PIX-3-106011: Deny inbound <span class="o">(</span>No xlate<span class="o">)</span> tcp src outside:63.245.209.21/80 dst outside:192.168.2.14/1823
+<span class="gp">%</span>PIX-3-106011: Deny inbound <span class="o">(</span>No xlate<span class="o">)</span> tcp src outside:195.27.11.150/80 dst outside:192.168.2.14/1717
+<span class="gp">%</span>PIX-3-106011: Deny inbound <span class="o">(</span>No xlate<span class="o">)</span> tcp src outside:195.27.11.150/80 dst outside:192.168.2.14/1716
+<span class="gp">%</span>PIX-3-106011: Deny inbound <span class="o">(</span>No xlate<span class="o">)</span> tcp src outside:195.27.11.143/80 dst outside:192.168.2.14/1721
+<span class="gp">%</span>PIX-3-106011: Deny inbound <span class="o">(</span>No xlate<span class="o">)</span> tcp src outside:195.27.11.142/80 dst outside:192.168.2.14/1720
+
+<span class="gp">%</span>PIX-3-106011: Deny inbound <span class="o">(</span>No xlate<span class="o">)</span> tcp src inside:10.100.7.43/80 dst inside:10.100.4.71/2285
+<span class="gp">%</span>PIX-3-106011: Deny inbound <span class="o">(</span>No xlate<span class="o">)</span> tcp src inside:10.100.5.43/80 dst inside:10.100.4.71/2285
+<span class="gp">%</span>PIX-3-106011: Deny inbound <span class="o">(</span>No xlate<span class="o">)</span> tcp src outside:213.98.202.19/3959 dst outside:213.58.100.132/139
+<span class="gp">%</span>PIX-3-106011: Deny inbound <span class="o">(</span>No xlate<span class="o">)</span> tcp src outside:213.98.202.19/3959 dst outside:213.58.100.132/139
+<span class="gp">%</span>PIX-3-106011: Deny inbound <span class="o">(</span>No xlate<span class="o">)</span> udp src outside:192.168.2.1/137 dst outside:192.168.2.14/137
+<span class="gp">%</span>PIX-3-106010: Deny inbound tcp src outside:213.98.79.233/2620 dst dmz:213.98.254.145/135
+<span class="gp">%</span>PIX-3-106010: Deny inbound tcp src outside:213.91.69.233/2620 dst dmz:213.98.254.145/145
+
+<span class="go">Jan 28 02:04:30 pix-inside %PIX-3-106010: Deny inbound tcp src outside:67.200.184.237/1262 dst inside:10.107.96.170/80</span>
+<span class="go">Jan 28 02:01:08 pix-inside %PIX-3-106010: Deny inbound udp src outside:216.143.1.229/1321 dst inside:10.107.96.213/1434</span>
+<span class="go">Jan 28 06:17:47 pix-inside %PIX-3-106010: Deny inbound icmp src outside:80.181.210.80 dst inside:10.107.96.229 (type 8, code 0)</span>
+<span class="go">Jan 28 00:21:50 pix-inside %PIX-3-106011: Deny inbound (No xlate) tcp src outside:217.228.221.121/1233 dst outside:10.47.243.45/80</span>
+<span class="go">Jan 28 00:01:38 pix-inside %PIX-4-106023: Deny tcp src outside:213.22.40.190/1381 dst inside:10.107.8.6/445 by access-group &quot;ACL-FROM-OUTSIDE&quot;</span>
+<span class="go">Jan 28 00:01:38 pix-inside %PIX-4-106023: Deny udp src outside:24.200.88.234/1025 dst inside:10.107.31.183/137 by access-group &quot;ACL-FROM-OUTSIDE&quot;</span>
+<span class="go">Jan 28 00:41:42 pix-inside %PIX-4-106023: Deny icmp src outside:128.9.160.165 dst inside:10.107.19.103 (type 8, code 0) by access-group &quot;ACL-FROM-OUTSIDE&quot;</span>
+<span class="go">Jan 28 01:48:01 pix-inside %PIX-4-106023: Deny protocol 4 src outside:131.119.0.197 dst inside:10.107.16.135 by access-group &quot;ACL-FROM-OUTSIDE&quot;</span>
+
+<span class="go">&lt;164&gt;Jul 05 2004 00:58:00: %PIX-4-400011: IDS:2001 ICMP unreachable from 172.54.32.18 to 192.168.54.23 on interface outside</span>
+<span class="go">&lt;162&gt;Jul 05 2004 00:56:23: %PIX-2-109011: Authen Session Start: user &#39;Graffe&#39;, sid 55</span>
+<span class="go">&lt;164&gt;Jul 05 2004 00:56:26: %PIX-4-500004: Invalid transport field for protocol=17, from 10.34.55.198/50230 to 192.168.64.23/0</span>
+<span class="go">&lt;164&gt;Dec 05 2006 12:06:59: %PIX-4-405001: Received ARP request collision from 10.54.100.218/007e.0cfe.b3a4 on interface inside</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="alert-messages-severity-1">
+<h2>Alert Messages, Severity 1:<a class="headerlink" href="#alert-messages-severity-1" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="critical-messages-severity-2">
+<h2>Critical Messages, Severity 2:<a class="headerlink" href="#critical-messages-severity-2" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">%</span>PIX-2-106006: Deny inbound UDP from ***/20031 to ***/20031 on  interface vpn
+<span class="gp">%</span>PIX-2-106006: Deny inbound UDP from ***/20031 to ***/20031 on  interface vpn
+<span class="gp">%</span>PIX-2-106006: Deny inbound UDP from ***/54481 to ***/1026 on  interface vpn
+<span class="gp">%</span>PIX-2-106006: Deny inbound UDP from ***9/20031 to ***/20031 on interface vpn
+<span class="gp">%</span>PIX-2-106006: Deny inbound UDP from ***/20031 to ***/20031 on  interface vpn
+</pre></div>
+</div>
+</div>
+<div class="section" id="error-messages-severity-3">
+<h2>Error Messages, Severity 3:<a class="headerlink" href="#error-messages-severity-3" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">%</span>PIX-3-313001: Denied ICMP <span class="nb">type</span><span class="o">=</span>11, <span class="nv">code</span><span class="o">=</span><span class="m">0</span> from 192.168.30.2 on interface 2
+</pre></div>
+</div>
+</div>
+<div class="section" id="warning-messages-severity-4">
+<h2>Warning Messages, Severity 4:<a class="headerlink" href="#warning-messages-severity-4" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">%</span>PIX-4-410001: Dropped UDP DNS reply from os-to-dmz:192.168.30.2 to outside:192.168.100.2/53<span class="p">;</span> packet length <span class="m">560</span> bytes exceeds configured limit of <span class="m">512</span> bytes
+</pre></div>
+</div>
+</div>
+<div class="section" id="notification-messages-severity-5">
+<h2>Notification Messages, Severity 5:<a class="headerlink" href="#notification-messages-severity-5" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">%</span>PIX-5-304001: 192.168.20.50 Accessed URL x.y.z.a:/test/xx/yy.html
+</pre></div>
+</div>
+</div>
+<div class="section" id="informational-messages-severity-6">
+<h2>Informational Messages, Severity 6:<a class="headerlink" href="#informational-messages-severity-6" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">%</span>PIX-6-302016: Teardown UDP connection <span class="m">1042068</span> <span class="k">for</span> outside:192.168.20.45/53 to inside:192.168.20.208/37989 duration 0:02:10 bytes 185
+<span class="gp">%</span>PIX-6-106015: Deny TCP <span class="o">(</span>no connection<span class="o">)</span> from 192.168.2.50/443 to 192.168.20/65 flags RST on interface outside
+</pre></div>
+</div>
+</div>
+<div class="section" id="debugging-messages-severity-7">
+<h2>Debugging Messages, Severity 7:<a class="headerlink" href="#debugging-messages-severity-7" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">%</span>PIX-7-710005: UDP request discarded from  192.168.20.45/53 to outside:192.168.20.208/37989
+</pre></div>
+</div>
+</div>
+</div>
+
+  <div class="section">
+  
+  
+  </div>
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2010-2015, OSSEC Project Team - OSSEC trademark and domain owned by Trend Micro, Inc. - Home page images courtesy of Pixbay.com.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>syscheck_control &mdash; OSSEC</title>
+    
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/parallax.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '2.8.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="top" title="OSSEC" href="../../index.html" />
+  
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  
+  
+  <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+  
+  <style type="text/css">
+    ul.ablog-archive {list-style: none; overflow: auto; margin-left: 0px}
+    ul.ablog-archive li {float: left; margin-right: 5px; font-size: 80%}
+  </style>
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html"><img src="../../_static/ossec_logo_bare_small.png">
+          OSSEC</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="../../about.html">About <i class="fa fa-info-circle"></i></a></li>
+                <li><a href="../../blog.html">Blog <i class="fa fa-archive"></i></a></li>
+                <li><a href="../">Documentaton <i class="fa fa-book"></i></a></li>
+                <li><a href="../../downloads.html">Downloads <i class="fa fa-download"></i></a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"></ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="section" id="syscheck-control">
+<span id="id1"></span><h1>syscheck_control<a class="headerlink" href="#syscheck-control" title="Permalink to this headline">¶</a></h1>
+<p>syscheck_control provides an interface for managing and viewing the integrity checking database.</p>
+<div class="section" id="syscheck-control-argument-options">
+<h2>syscheck_control argument options<a class="headerlink" href="#syscheck-control-argument-options" title="Permalink to this headline">¶</a></h2>
+<dl class="option">
+<dt id="cmdoption-syscheck_control-h">
+<tt class="descname">-h</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-syscheck_control-h" title="Permalink to this definition">¶</a></dt>
+<dd><p>Display the help message.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-syscheck_control-l">
+<tt class="descname">-l</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-syscheck_control-l" title="Permalink to this definition">¶</a></dt>
+<dd><p>List available agents.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-syscheck_control-lc">
+<tt class="descname">-lc</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-syscheck_control-lc" title="Permalink to this definition">¶</a></dt>
+<dd><p>List only currently connected agents.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-syscheck_control-u">
+<tt class="descname">-u</tt><tt class="descclassname"> &lt;agent_id&gt;</tt><a class="headerlink" href="#cmdoption-syscheck_control-u" title="Permalink to this definition">¶</a></dt>
+<dd><p>Updates (clear) the database for the agent.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-syscheck_control-u">
+<tt class="descname">-u</tt><tt class="descclassname"> all</tt><a class="headerlink" href="#cmdoption-syscheck_control-u" title="Permalink to this definition">¶</a></dt>
+<dd><p>Updates (clear) the database for all agents.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-syscheck_control-i">
+<tt class="descname">-i</tt><tt class="descclassname"> &lt;agent_id&gt;</tt><a class="headerlink" href="#cmdoption-syscheck_control-i" title="Permalink to this definition">¶</a></dt>
+<dd><p>Prints database for the agent.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-syscheck_control-r">
+<tt class="descname">-r</tt><tt class="descclassname"> -i</tt><a class="headerlink" href="#cmdoption-syscheck_control-r" title="Permalink to this definition">¶</a></dt>
+<dd><p>List modified registry entries for the agent (Windows only).</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-syscheck_control-f">
+<tt class="descname">-f</tt><tt class="descclassname"> &lt;file&gt;</tt><a class="headerlink" href="#cmdoption-syscheck_control-f" title="Permalink to this definition">¶</a></dt>
+<dd><p>Used with -i. Prints information about a modified file.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-syscheck_control-z">
+<tt class="descname">-z</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-syscheck_control-z" title="Permalink to this definition">¶</a></dt>
+<dd><p>Used with -f, zeroes the auto-ignore counter.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-syscheck_control-d">
+<tt class="descname">-d</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-syscheck_control-d" title="Permalink to this definition">¶</a></dt>
+<dd><p>Used with -f, ignores that file.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-syscheck_control-s">
+<tt class="descname">-s</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-syscheck_control-s" title="Permalink to this definition">¶</a></dt>
+<dd><p>Changes the output to CSV (comma delimited).</p>
+</dd></dl>
+
+</div>
+<div class="section" id="syscheck-control-example-usage">
+<h2>syscheck_control example usage<a class="headerlink" href="#syscheck-control-example-usage" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="example-1-getting-a-list-of-modified-files-for-an-agent">
+<h3>Example 1: Getting a list of modified files for an agent<a class="headerlink" href="#example-1-getting-a-list-of-modified-files-for-an-agent" title="Permalink to this headline">¶</a></h3>
+<p>To retrieve information about files that were monitored by OSSEC and modified after OSSEC was deployed, run <em class="xref std std-option">syscheck_control -i</em>.</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">#</span> /var/ossec/bin/syscheck_control -i 002
+
+<span class="go">Integrity changes for agent &#39;ossec-agent (002) - 192.168.1.86&#39;:</span>
+
+<span class="go">Changes for 2009 Dec 21:</span>
+<span class="go">2009 Dec 21 13:52:40,0 - /etc/authorization</span>
+<span class="go">2009 Dec 21 13:52:42,0 - /etc/cups/printers.conf</span>
+<span class="go">2009 Dec 21 13:52:42,0 - /etc/cups/printers.conf.O</span>
+<span class="go">2009 Dec 21 13:52:58,0 - /etc/postfix/main.cf.default</span>
+
+<span class="go">Changes for 2010 Jan 04:</span>
+<span class="go">2010 Jan 04 10:13:58,0 - /etc/authorization</span>
+
+<span class="go">Changes for 2010 Jan 06:</span>
+<span class="go">2010 Jan 06 09:45:43,0 - /etc/postfix/main.cf.default</span>
+
+<span class="go">Changes for 2010 Jan 18:</span>
+<span class="go">2010 Jan 18 09:18:51,0 - /etc/cups/printers.conf</span>
+<span class="go">2010 Jan 18 09:18:51,0 - /etc/cups/printers.conf.O</span>
+
+<span class="go">Changes for 2010 Feb 23:</span>
+<span class="go">2010 Feb 23 09:17:22,2 - /etc/cups/printers.conf</span>
+<span class="go">2010 Feb 23 09:17:22,2 - /etc/cups/printers.conf.O</span>
+
+<span class="go">Changes for 2010 Mar 24:</span>
+<span class="go">2010 Mar 24 08:42:52,3 - /etc/cups/printers.conf</span>
+<span class="go">2010 Mar 24 08:42:52,3 - /etc/cups/printers.conf.O</span>
+</pre></div>
+</div>
+<p>As you can see this command provides an overview about file modifications.</p>
+</div>
+<div class="section" id="example-2-getting-more-detailed-information-about-a-modified-file">
+<h3>Example 2: Getting more detailed information about a modified file<a class="headerlink" href="#example-2-getting-more-detailed-information-about-a-modified-file" title="Permalink to this headline">¶</a></h3>
+<p>If you need to get more detailed information about a file that was modified you can use syscheck_control to view</p>
+<ul class="simple">
+<li>the time stamp when the file was added to the syscheck database</li>
+<li>the integrity checking values when the file was added to the syscheck database</li>
+<li>the time stamps when OSSEC detected a modification</li>
+<li>the integrity checking values for every time OSSEC detected a modification.</li>
+</ul>
+<p>The integrity checking values include</p>
+<ul class="simple">
+<li>how often the file has changed</li>
+<li>file size</li>
+<li>file permissions</li>
+<li>owner and group id of the file</li>
+<li>MD5 and SHA1 hashes of the file.</li>
+</ul>
+<p>To retrieve this information, run <em class="xref std std-option">syscheck_control -i</em>:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">#</span> /var/ossec/bin/syscheck_control -i <span class="m">002</span> -f /etc/authorization
+
+<span class="go">Integrity changes for agent &#39;ossec-agent (002) - 192.168.1.86&#39;:</span>
+<span class="go">Detailed information for entries matching: &#39;/etc/authorization&#39;</span>
+
+<span class="go">2009 Dec 21 13:52:40,0 - /etc/authorization</span>
+<span class="go">File added to the database.</span>
+<span class="go">Integrity checking values:</span>
+<span class="go">   Size: 27771</span>
+<span class="go">   Perm: rw-r--r--</span>
+<span class="go">   Uid:  0</span>
+<span class="go">   Gid:  0</span>
+<span class="go">   Md5:  dd62912576ae05d611d7469be809cf1d</span>
+<span class="go">   Sha1: 530df0283df52f0152b9e7ce1a518119b06ceebc</span>
+
+<span class="go">2010 Jan 04 10:13:58,0 - /etc/authorization</span>
+<span class="go">File changed. - 1st time modified.</span>
+<span class="go">Integrity checking values:</span>
+<span class="go">   Size: &gt;28050</span>
+<span class="go">   Perm: rw-r--r--</span>
+<span class="go">   Uid:  0</span>
+<span class="go">   Gid:  0</span>
+<span class="go">   Md5:  &gt;50da55def41bcede7d42ac5ee8fe12c9</span>
+<span class="go">   Sha1: &gt;97f4b2b48a97321a3e245221e0ea4353cf4fa8ef</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="example-3-clearing-the-syscheck-database">
+<h3>Example 3: Clearing the syscheck database<a class="headerlink" href="#example-3-clearing-the-syscheck-database" title="Permalink to this headline">¶</a></h3>
+<p>To clear the syscheck database for a certain agent run the following command:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">#</span> /var/ossec/bin/syscheck_control -u 002
+
+<span class="go">** Integrity check database updated.</span>
+</pre></div>
+</div>
+<p><em class="xref std std-option">syscheck_control -i 002</em> will now show that no modified files for that agent are in the database:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">#</span> /var/ossec/bin/syscheck_control -i 002
+
+<span class="go">Integrity changes for agent &#39;ossec-agent (002) - 192.168.1.86&#39;:</span>
+
+<span class="go">** No entries found.</span>
+</pre></div>
+</div>
+<p>To clear the database for all agents and the server run the following command:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">#</span> /var/ossec/bin/syscheck_control -u all
+
+<span class="go">** Integrity check database updated.</span>
+</pre></div>
+</div>
+<p>The next time syscheck is run, the database will be populated again.</p>
+</div>
+</div>
+</div>
+
+  <div class="section">
+  
+  
+  </div>
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2010-2015, OSSEC Project Team - OSSEC trademark and domain owned by Trend Micro, Inc. - Home page images courtesy of Pixbay.com.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

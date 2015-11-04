@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Unattended Source Installation &mdash; OSSEC</title>
+    
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/parallax.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '2.8.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-sphinx.js"></script>
+    <link rel="author" title="About these documents" href="../../../about.html" />
+    <link rel="top" title="OSSEC" href="../../../index.html" />
+  
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  
+  
+  <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+  
+  <style type="text/css">
+    ul.ablog-archive {list-style: none; overflow: auto; margin-left: 0px}
+    ul.ablog-archive li {float: left; margin-right: 5px; font-size: 80%}
+  </style>
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../../index.html"><img src="../../../_static/ossec_logo_bare_small.png">
+          OSSEC</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="../../../about.html">About <i class="fa fa-info-circle"></i></a></li>
+                <li><a href="../../../blog.html">Blog <i class="fa fa-archive"></i></a></li>
+                <li><a href="../../">Documentaton <i class="fa fa-book"></i></a></li>
+                <li><a href="../../../downloads.html">Downloads <i class="fa fa-download"></i></a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"></ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="section" id="unattended-source-installation">
+<h1>Unattended Source Installation<a class="headerlink" href="#unattended-source-installation" title="Permalink to this headline">¶</a></h1>
+<p>OSSEC has the capability to be compiled and installed without the interactivity of <tt class="docutils literal"><span class="pre">install.sh</span></tt>.
+The install script can collect the answers to its questions from the <tt class="docutils literal"><span class="pre">etc/preloaded-vars.conf</span></tt> configuration file.</p>
+<p>Most of the questions asked by the installer are present in the configuration file, along with the default answers.
+Uncommenting each variable will allow the script to know the answer. Any changes from the default install should be
+made in the configuration file.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If <tt class="docutils literal"><span class="pre">USER_NO_STOP=&quot;y&quot;</span></tt> is not set, install.sh may prompt for confirmation.</p>
+</div>
+<p>Example preloaded-vars.conf:</p>
+<div class="highlight-console"><div class="highlight"><pre># preloaded-vars.conf, Daniel B. Cid (dcid @ ossec.net).
+#
+# Use this file to customize your installations.
+# It will make the install.sh script pre-load some
+# specific options to make it run automatically
+# or with less questions.
+
+# PLEASE NOTE:
+# When we use &quot;n&quot; or &quot;y&quot; in here, it should be changed
+# to &quot;n&quot; or &quot;y&quot; in the language your are doing the
+# installation. For example, in portuguese it would
+# be &quot;s&quot; or &quot;n&quot;.
+
+
+# USER_LANGUAGE defines to language to be used.
+# It can be &quot;en&quot;, &quot;br&quot;, &quot;tr&quot;, &quot;it&quot;, &quot;de&quot; or &quot;pl&quot;.
+# In case of an invalid language, it will default
+# to English &quot;en&quot;
+#USER_LANGUAGE=&quot;en&quot;     # For english
+#USER_LANGUAGE=&quot;br&quot;     # For portuguese
+
+
+# If USER_NO_STOP is set to anything, the confirmation
+# messages are not going to be asked.
+#USER_NO_STOP=&quot;y&quot;
+
+
+# USER_INSTALL_TYPE defines the installation type to
+# be used during install. It can only be &quot;local&quot;,
+# &quot;agent&quot; or &quot;server&quot;.
+#USER_INSTALL_TYPE=&quot;local&quot;
+#USER_INSTALL_TYPE=&quot;agent&quot;
+#USER_INSTALL_TYPE=&quot;server&quot;
+
+
+# USER_DIR defines the location to install ossec
+#USER_DIR=&quot;/var/ossec&quot;
+
+
+# If USER_DELETE_DIR is set to &quot;y&quot;, the directory
+# to install OSSEC will be removed if present.
+#USER_DELETE_DIR=&quot;y&quot;
+
+
+# If USER_ENABLE_ACTIVE_RESPONSE is set to &quot;n&quot;,
+# active response will be disabled.
+#USER_ENABLE_ACTIVE_RESPONSE=&quot;y&quot;
+
+
+# If USER_ENABLE_SYSCHECK is set to &quot;y&quot;,
+# syscheck will be enabled. Set to &quot;n&quot; to
+# disable it.
+#USER_ENABLE_SYSCHECK=&quot;y&quot;
+
+
+# If USER_ENABLE_ROOTCHECK is set to &quot;y&quot;,
+# rootcheck will be enabled. Set to &quot;n&quot; to
+# disable it.
+#USER_ENABLE_ROOTCHECK=&quot;y&quot;
+
+
+# If USER_UPDATE is set to anything, the update
+# installation will be done.
+#USER_UPDATE=&quot;y&quot;
+
+# If USER_UPDATE_RULES is set to anything, the
+# rules will also be updated.
+#USER_UPDATE_RULES=&quot;y&quot;
+
+# If USER_BINARYINSTALL is set, the installation
+# is not going to compile the code, but use the
+# binaries from ./bin/
+#USER_BINARYINSTALL=&quot;x&quot;
+
+
+### Agent Installation variables. ###
+
+# Specifies the IP address or hostname of the
+# ossec server. Only used on agent installations.
+# Choose only one, not both.
+# USER_AGENT_SERVER_IP=&quot;1.2.3.4&quot;
+# USER_AGENT_SERVER_NAME
+
+
+# USER_AGENT_CONFIG_PROFILE specifies the agent&#39;s config profile
+# name. This is used to create agent.conf configuration profiles
+# for this particular profile name. Only used on agent installations.
+# Can be any string. E.g. LinuxDBServer or WindowsDomainController
+#USER_AGENT_CONFIG_PROFILE=&quot;generic&quot;
+
+
+
+### Server/Local Installation variables. ###
+
+# USER_ENABLE_EMAIL enables or disables email alerting.
+#USER_ENABLE_EMAIL=&quot;y&quot;
+
+# USER_EMAIL_ADDRESS defines the destination e-mail of the alerts.
+#USER_EMAIL_ADDRESS=&quot;dcid@test.ossec.net&quot;
+
+# USER_EMAIL_SMTP defines the SMTP server to send the e-mails.
+#USER_EMAIL_SMTP=&quot;test.ossec.net&quot;
+
+
+# USER_ENABLE_SYSLOG enables or disables remote syslog.
+#USER_ENABLE_SYSLOG=&quot;y&quot;
+
+
+# USER_ENABLE_FIREWALL_RESPONSE enables or disables
+# the firewall response.
+#USER_ENABLE_FIREWALL_RESPONSE=&quot;y&quot;
+
+
+# Enable PF firewall (OpenBSD and FreeBSD only)
+#USER_ENABLE_PF=&quot;y&quot;
+
+
+# PF table to use (OpenBSD and FreeBSD only).
+#USER_PF_TABLE=&quot;ossec_fwtable&quot;
+
+
+# USER_WHITE_LIST is a list of IPs or networks
+# that are going to be set to never be blocked.
+#USER_WHITE_LIST=&quot;192.168.2.1 192.168.1.0/24&quot;
+
+
+#### exit ? ###
+</pre></div>
+</div>
+</div>
+
+  <div class="section">
+  
+  
+  </div>
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2010-2015, OSSEC Project Team - OSSEC trademark and domain owned by Trend Micro, Inc. - Home page images courtesy of Pixbay.com.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

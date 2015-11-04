@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Log samples from PF &mdash; OSSEC</title>
+    
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/parallax.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '2.8.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-sphinx.js"></script>
+    <link rel="author" title="About these documents" href="../../../about.html" />
+    <link rel="top" title="OSSEC" href="../../../index.html" />
+  
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  
+  
+  <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+  
+  <style type="text/css">
+    ul.ablog-archive {list-style: none; overflow: auto; margin-left: 0px}
+    ul.ablog-archive li {float: left; margin-right: 5px; font-size: 80%}
+  </style>
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../../index.html"><img src="../../../_static/ossec_logo_bare_small.png">
+          OSSEC</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="../../../about.html">About <i class="fa fa-info-circle"></i></a></li>
+                <li><a href="../../../blog.html">Blog <i class="fa fa-archive"></i></a></li>
+                <li><a href="../../">Documentaton <i class="fa fa-book"></i></a></li>
+                <li><a href="../../../downloads.html">Downloads <i class="fa fa-download"></i></a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"></ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="section" id="log-samples-from-pf">
+<h1>Log samples from PF<a class="headerlink" href="#log-samples-from-pf" title="Permalink to this headline">¶</a></h1>
+<p>Various versions of PF currently run on OpenBSD, FreeBSD, NetBSD, DragonflyBSD, and Mac OS X 10.6. For details on how to configure it, check <a class="reference external" href="http://www.openbsd.org/faq/pf/logging.html">the pf FAQ</a></p>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">Mar 30 15:55:20 enigma pf: Mar 30 15:53:25.793256 rule 2/(match) pass in on xl0: 205.174.165.231.50425 &gt; 192.168.2.10.22: . ack 2450721 win 73 &lt;nop,nop,timestamp 1815379950 17589621,[|tcp]&gt; (DF) [tos 0x10]</span>
+<span class="go">Mar 30 15:55:20 enigma pf: Mar 30 15:53:25.815208 rule 2/(match) pass in on xl0: 205.174.165.231.50425 &gt; 192.168.2.10.22: . ack 2450721 win 73 &lt;nop,nop,timestamp 1815379973 17589621,[|tcp]&gt; (DF) [tos 0x10]</span>
+<span class="go">Mar 30 15:55:20 enigma pf: Mar 30 15:53:25.844763 rule 2/(match) pass in on xl0: 205.174.165.231.50425 &gt; 192.168.2.10.22: . ack 2450721 win 73 &lt;nop,nop,timestamp 1815380002 17589621,[|tcp]&gt; (DF) [tos 0x10]</span>
+<span class="go">Mar 30 15:55:20 enigma pf: Mar 30 15:53:25.867973 rule 2/(match) pass in on xl0: 205.174.165.231.50425 &gt; 192.168.2.10.22: . ack 2450721 win 73 &lt;nop,nop,timestamp 1815380026 17589621,[|tcp]&gt; (DF) [tos 0x10]</span>
+<span class="go">Mar 30 15:55:20 enigma pf: Mar 30 15:53:25.892592 rule 2/(match) pass in on xl0: 205.174.165.231.50425 &gt; 192.168.2.10.22: . ack 2450721 win 73 &lt;nop,nop,timestamp 1815380050 17589621,[|tcp]&gt; (DF) [tos 0x10]</span>
+<span class="go">Mar 30 15:55:20 enigma pf: Mar 30 15:53:25.916465 rule 2/(match) pass in on xl0: 205.174.165.231.50425 &gt; 192.168.2.10.22: . ack 2450721 win 73 &lt;nop,nop,timestamp 1815380074 17589621,[|tcp]&gt; (DF) [tos 0x10]</span>
+<span class="go">Mar 30 15:55:20 enigma pf: Mar 30 15:53:25.945039 rule 2/(match) pass in on xl0: 205.174.165.231.50425 &gt; 192.168.2.10.22: . ack 2450721 win 73 &lt;nop,nop,timestamp 1815380102 17589621,[|tcp]&gt; (DF) [tos 0x10]</span>
+<span class="go">Mar 30 15:55:20 enigma pf: Mar 30 15:53:25.966970 rule 2/(match) pass in on xl0: 205.174.165.231.50425 &gt; 192.168.2.10.22: . ack 2450721 win 73 &lt;nop,nop,timestamp 1815380125 17589621,[|tcp]&gt; (DF) [tos 0x10]</span>
+<span class="go">Mar 30 15:55:20 enigma pf: Mar 30 15:53:25.968177 rule 2/(match) pass in on xl0: 205.174.165.231.50425 &gt; 192.168.2.10.22: . ack 2451361 win 73 &lt;nop,nop,timestamp 1815380125 17589621,[|tcp]&gt; (DF) [tos 0x10]</span>
+<span class="go">Mar 30 15:55:20 enigma pf: Mar 30 15:54:39.257554 rule 3/(match) pass out on xl0: 192.168.2.10.22 &gt; 205.174.165.231.56038: . ack 53376 win 16416 &lt;nop,nop,timestamp 4232982920 1815453138,[|tcp]&gt; (DF) [tos 0x10]</span>
+<span class="go">Mar 30 15:55:20 enigma pf: Mar 30 15:55:14.265470 rule 3/(match) pass out on xl0: 192.168.2.10.1514 &gt; 192.168.2.26.3875:  udp 57</span>
+<span class="go">Mar 30 15:55:20 enigma pf: Mar 30 15:55:14.267876 rule 3/(match) pass out on xl0: 192.168.2.10.1514 &gt; 192.168.2.26.3875:  udp 57</span>
+<span class="go">Mar 30 15:55:20 enigma pf: Mar 30 15:55:14.270532 rule 3/(match) pass out on xl0: 192.168.2.10.1514 &gt; 192.168.2.26.3875:  udp 73</span>
+<span class="go">Mar 30 15:55:20 enigma pf: Mar 30 15:55:14.273141 rule 3/(match) pass out on xl0: 192.168.2.10.1514 &gt; 192.168.2.26.3875:  udp 105</span>
+<span class="go">Mar 30 15:55:20 enigma pf: Mar 30 15:55:14.275813 rule 3/(match) pass out on xl0: 192.168.2.10.1514 &gt; 192.168.2.26.3875:  udp 105</span>
+<span class="go">Mar 30 15:55:20 enigma pf: Mar 30 15:55:14.278266 rule 3/(match) pass out on xl0: 192.168.2.10.1514 &gt; 192.168.2.26.3875:  udp 105</span>
+<span class="go">Mar 30 15:55:20 enigma pf: Mar 30 15:55:14.281040 rule 3/(match) pass out on xl0: 192.168.2.10.1514 &gt; 192.168.2.26.3875:  udp 105</span>
+<span class="go">Mar 30 15:55:20 enigma pf: Mar 30 15:55:14.283846 rule 3/(match) pass out on xl0: 192.168.2.10.1514 &gt; 192.168.2.26.3875:  udp 105</span>
+<span class="go">Mar 30 15:55:20 enigma pf: Mar 30 15:55:14.286602 rule 3/(match) pass out on xl0: 192.168.2.10.1514 &gt; 192.168.2.26.3875:  udp 105</span>
+<span class="go">Mar 30 15:55:20 enigma pf: Mar 30 15:55:14.289160 rule 3/(match) pass out on xl0: 192.168.2.10.1514 &gt; 192.168.2.26.3875:  udp 97</span>
+<span class="go">Mar 30 15:55:19 enigma pf: Mar 30 15:48:02.810188 rule 2/(match) pass in on lo0: 127.0.0.1 &gt; 127.0.0.1: icmp: echo reply</span>
+<span class="go">Mar 30 15:55:19 enigma pf: Mar 30 15:48:03.688233 rule 3/(match) pass out on xl0: 192.168.2.10 &gt; 192.168.2.1: icmp: 192.168.2.10 udp port 137 unreachable</span>
+<span class="go">Mar 30 15:55:19 enigma pf: Mar 30 15:48:03.820068 rule 3/(match) pass out on lo0: 127.0.0.1 &gt; 127.0.0.1: icmp: echo request</span>
+<span class="go">Mar 30 15:55:19 enigma pf: Mar 30 15:48:03.820087 rule 2/(match) pass in on lo0: 127.0.0.1 &gt; 127.0.0.1: icmp: echo request</span>
+<span class="go">Mar 30 15:55:19 enigma pf: Mar 30 15:48:03.820115 rule 3/(match) pass out on lo0: 127.0.0.1 &gt; 127.0.0.1: icmp: echo reply</span>
+<span class="go">Mar 30 15:55:19 enigma pf: Mar 30 15:48:03.820129 rule 2/(match) pass in on lo0: 127.0.0.1 &gt; 127.0.0.1: icmp: echo reply</span>
+<span class="go">Mar 30 15:55:19 enigma pf: Mar 30 15:48:04.830069 rule 3/(match) pass out on lo0: 127.0.0.1 &gt; 127.0.0.1: icmp: echo request</span>
+<span class="go">Mar 30 15:55:19 enigma pf: Mar 30 15:48:04.830088 rule 2/(match) pass in on lo0: 127.0.0.1 &gt; 127.0.0.1: icmp: echo request</span>
+<span class="go">Mar 30 15:55:19 enigma pf: Mar 30 15:48:04.830118 rule 3/(match) pass out on lo0: 127.0.0.1 &gt; 127.0.0.1: icmp: echo reply</span>
+<span class="go">Mar 30 15:55:19 enigma pf: Mar 30 15:48:04.830132 rule 2/(match) pass in on lo0: 127.0.0.1 &gt; 127.0.0.1: icmp: echo reply</span>
+</pre></div>
+</div>
+</div>
+
+  <div class="section">
+  
+  
+  </div>
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2010-2015, OSSEC Project Team - OSSEC trademark and domain owned by Trend Micro, Inc. - Home page images courtesy of Pixbay.com.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

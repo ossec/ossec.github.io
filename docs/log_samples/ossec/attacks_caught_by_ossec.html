@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Example of web scan detected by ossec (looking for Wordpress, xmlrpc and awstats): &mdash; OSSEC</title>
+    
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/parallax.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '2.8.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-sphinx.js"></script>
+    <link rel="author" title="About these documents" href="../../../about.html" />
+    <link rel="top" title="OSSEC" href="../../../index.html" />
+  
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  
+  
+  <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+  
+  <style type="text/css">
+    ul.ablog-archive {list-style: none; overflow: auto; margin-left: 0px}
+    ul.ablog-archive li {float: left; margin-right: 5px; font-size: 80%}
+  </style>
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../../index.html"><img src="../../../_static/ossec_logo_bare_small.png">
+          OSSEC</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="../../../about.html">About <i class="fa fa-info-circle"></i></a></li>
+                <li><a href="../../../blog.html">Blog <i class="fa fa-archive"></i></a></li>
+                <li><a href="../../">Documentaton <i class="fa fa-book"></i></a></li>
+                <li><a href="../../../downloads.html">Downloads <i class="fa fa-download"></i></a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"></ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <dl class="docutils">
+<dt>Web Scan sample 2</dt>
+<dd></dd>
+</dl>
+<div class="section" id="example-of-web-scan-detected-by-ossec-looking-for-wordpress-xmlrpc-and-awstats">
+<h1>Example of web scan detected by ossec (looking for Wordpress, xmlrpc and awstats):<a class="headerlink" href="#example-of-web-scan-detected-by-ossec-looking-for-wordpress-xmlrpc-and-awstats" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-console"><div class="highlight"><pre><span class="go"> OSSEC HIDS Notification.</span>
+<span class="go"> 2007 Mar 23 19:57:38</span>
+
+<span class="go"> Received From: teletubbies-&gt;/var/log/httpd/error_log</span>
+<span class="go"> Rule: 30114 fired (level 10) -&gt; &quot;Multiple attempts to access non-existent files (web scan) from same source.&quot;</span>
+<span class="go"> Portion of the log(s):</span>
+
+<span class="go"> [Fri Mar 23 19:57:37 2007] [error] [client 207.44.184.96] File does not exist: /var/www/html/wordpress</span>
+<span class="go"> [Fri Mar 23 19:57:37 2007] [error] [client 207.44.184.96] File does not exist: /var/www/html/b2evo</span>
+<span class="go"> [Fri Mar 23 19:57:37 2007] [error] [client 207.44.184.96] File does not exist: /var/www/html/b2</span>
+<span class="go"> [Fri Mar 23 19:57:37 2007] [error] [client 207.44.184.96] File does not exist: /var/www/html/blogtest</span>
+<span class="go"> [Fri Mar 23 19:57:37 2007] [error] [client 207.44.184.96] File does not exist: /var/www/html/blog</span>
+<span class="go"> [Fri Mar 23 19:57:37 2007] [error] [client 207.44.184.96] File does not exist: /var/www/html/blogs</span>
+<span class="go"> [Fri Mar 23 19:57:36 2007] [error] [client 207.44.184.96] File does not exist: /var/www/html/community</span>
+<span class="go"> [Fri Mar 23 19:57:33 2007] [error] [client 207.44.184.96] File does not exist: /var/www/html/drupal</span>
+<span class="go"> [Fri Mar 23 19:57:30 2007] [error] [client 207.44.184.96] File does not exist: /var/www/html/blog</span>
+<span class="go"> [Fri Mar 23 19:57:30 2007] [error] [client 207.44.184.96] File does not exist: /var/www/html/xmlsrv</span>
+
+
+
+<span class="go">--END OF NOTIFICATION</span>
+
+
+
+<span class="go"> OSSEC HIDS Notification.</span>
+<span class="go"> 2007 Mar 23 19:57:38</span>
+
+<span class="go"> Received From: teletubbies-&gt;/var/log/httpd/access_log</span>
+<span class="go"> Rule: 31151 fired (level 10) -&gt; &quot;Mutiple web server 400 error codes from same source ip.&quot;</span>
+<span class="go"> Portion of the log(s):</span>
+
+<span class="go"> 207.44.184.96 - - [23/Mar/2007:19:57:37 -0300] &quot;GET /b2/xmlsrv/xmlrpc.php HTTP/1.0&quot; 404 297 &quot;-&quot; &quot;-&quot;</span>
+<span class="go"> 207.44.184.96 - - [23/Mar/2007:19:57:37 -0300] &quot;GET /blogtest/xmlsrv/xmlrpc.php HTTP/1.0&quot; 404 303 &quot;-&quot; &quot;-&quot;</span>
+<span class="go"> 207.44.184.96 - - [23/Mar/2007:19:57:37 -0300] &quot;GET /blog/xmlsrv/xmlrpc.php HTTP/1.0&quot; 404 299 &quot;-&quot; &quot;-&quot;</span>
+<span class="go"> 207.44.184.96 - - [23/Mar/2007:19:57:37 -0300] &quot;GET /blogs/xmlsrv/xmlrpc.php HTTP/1.0&quot; 404 300 &quot;-&quot; &quot;-&quot;</span>
+<span class="go"> 207.44.184.96 - - [23/Mar/2007:19:57:37 -0300] &quot;GET /blogs/xmlrpc.php HTTP/1.0&quot; 404 293 &quot;-&quot; &quot;-&quot;</span>
+<span class="go"> 207.44.184.96 - - [23/Mar/2007:19:57:36 -0300] &quot;GET /community/xmlrpc.php HTTP/1.0&quot; 404 297 &quot;-&quot; &quot;-&quot;</span>
+<span class="go"> 207.44.184.96 - - [23/Mar/2007:19:57:33 -0300] &quot;GET /drupal/xmlrpc.php HTTP/1.0&quot; 404 294 &quot;-&quot; &quot;-&quot;</span>
+<span class="go"> 207.44.184.96 - - [23/Mar/2007:19:57:30 -0300] &quot;GET /blog/xmlrpc.php HTTP/1.0&quot; 404 292 &quot;-&quot; &quot;-&quot;</span>
+<span class="go"> 207.44.184.96 - - [23/Mar/2007:19:57:30 -0300] &quot;GET /xmlsrv/xmlrpc.php HTTP/1.0&quot; 404 294 &quot;-&quot; &quot;-&quot;</span>
+<span class="go"> 207.44.184.96 - - [23/Mar/2007:19:57:30 -0300] &quot;GET /xmlrpc/xmlrpc.php HTTP/1.0&quot; 404 294 &quot;-&quot; &quot;-&quot;</span>
+
+
+
+<span class="go">--END OF NOTIFICATION</span>
+
+
+
+<span class="go"> OSSEC HIDS Notification.</span>
+<span class="go"> 2007 Mar 23 19:57:38</span>
+
+<span class="go"> Received From: teletubbies-&gt;/var/log/httpd/access_log</span>
+<span class="go"> Rule: 31151 fired (level 10) -&gt; &quot;Mutiple web server 400 error codes from same source ip.&quot;</span>
+<span class="go"> Portion of the log(s):</span>
+
+<span class="go"> 207.44.184.96 - - [23/Mar/2007:19:57:37 -0300] &quot;GET /scripts/awstats.pl HTTP/1.0&quot; 404 295 &quot;-&quot; &quot;-&quot;</span>
+<span class="go"> 207.44.184.96 - - [23/Mar/2007:19:57:37 -0300] &quot;GET /scgi/awstats/awstats.pl HTTP/1.0&quot; 404 300 &quot;-&quot; &quot;-&quot;</span>
+<span class="go"> 207.44.184.96 - - [23/Mar/2007:19:57:37 -0300] &quot;GET /cgi/awstats/awstats.pl HTTP/1.0&quot; 404 299 &quot;-&quot; &quot;-&quot;</span>
+<span class="go"> 207.44.184.96 - - [23/Mar/2007:19:57:37 -0300] &quot;GET /scgi-bin/awstats/awstats.pl HTTP/1.0&quot; 404 304 &quot;-&quot; &quot;-&quot;</span>
+<span class="go"> 207.44.184.96 - - [23/Mar/2007:19:57:37 -0300] &quot;GET /cgi-bin/awstats/awstats.pl HTTP/1.0&quot; 404 303 &quot;-&quot; &quot;-&quot;</span>
+<span class="go"> 207.44.184.96 - - [23/Mar/2007:19:57:37 -0300] &quot;GET /awstats/awstats.pl HTTP/1.0&quot; 404 295 &quot;-&quot; &quot;-&quot;</span>
+<span class="go"> 207.44.184.96 - - [23/Mar/2007:19:57:37 -0300] &quot;GET /scgi-bin/awstats.pl HTTP/1.0&quot; 404 296 &quot;-&quot; &quot;-&quot;</span>
+<span class="go"> 207.44.184.96 - - [23/Mar/2007:19:57:37 -0300] &quot;GET /cgi/awstats.pl HTTP/1.0&quot; 404 291 &quot;-&quot; &quot;-&quot;</span>
+<span class="go"> 207.44.184.96 - - [23/Mar/2007:19:57:37 -0300] &quot;GET /cgi-bin/awstats.pl HTTP/1.0&quot; 404 295 &quot;-&quot; &quot;-&quot;</span>
+<span class="go"> 207.44.184.96 - - [23/Mar/2007:19:57:37 -0300] &quot;GET /phpgroupware/xmlrpc.php HTTP/1.0&quot; 404 300 &quot;-&quot; &quot;-&quot;</span>
+
+
+
+<span class="go">--END OF NOTIFICATION</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="web-scan-sample-4">
+<h1>Web scan sample 4:<a class="headerlink" href="#web-scan-sample-4" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-console"><div class="highlight"><pre><span class="go"> OSSEC HIDS Notification.</span>
+<span class="go"> 2007 Aug 15 15:50:43</span>
+
+<span class="go"> Received From: xx-&gt;/var/log/httpd/error_log</span>
+<span class="go"> Rule: 30114 fired (level 10) -&gt; &quot;Multiple attempts to access non-existent files (web scan) from same source.&quot;</span>
+<span class="go"> Portion of the log(s):</span>
+
+<span class="go"> [Wed Aug 15 15:50:42 2007] [error] [client 202.143.138.46] File does not exist: /var/www/html/phpadmin</span>
+<span class="go"> [Wed Aug 15 15:50:42 2007] [error] [client 202.143.138.46] File does not exist: /var/www/html/mysqladmin</span>
+<span class="go"> [Wed Aug 15 15:50:42 2007] [error] [client 202.143.138.46] File does not exist: /var/www/html/phpmyadmin2</span>
+<span class="go"> [Wed Aug 15 15:50:41 2007] [error] [client 202.143.138.46] File does not exist: /var/www/html/phpMyAdmin 2.6.4-rc1</span>
+<span class="go"> [Wed Aug 15 15:50:41 2007] [error] [client 202.143.138.46] File does not exist: /var/www/html/admin</span>
+<span class="go"> [Wed Aug 15 15:50:40 2007] [error] [client 202.143.138.46] File does not exist: /var/www/html/web</span>
+<span class="go"> [Wed Aug 15 15:50:40 2007] [error] [client 202.143.138.46] File does not exist: /var/www/html/dbadmin</span>
+<span class="go"> [Wed Aug 15 15:50:40 2007] [error] [client 202.143.138.46] File does not exist: /var/www/html/db</span>
+<span class="go"> [Wed Aug 15 15:50:40 2007] [error] [client 202.143.138.46] File does not exist: /var/www/html/admin</span>
+<span class="go"> [Wed Aug 15 15:50:39 2007] [error] [client 202.143.138.46] File does not exist: /var/www/html/mysql</span>
+
+
+
+<span class="go">--END OF NOTIFICATION</span>
+
+
+
+<span class="go"> OSSEC HIDS Notification.</span>
+<span class="go"> 2007 Aug 15 15:50:43</span>
+
+<span class="go"> Received From: xx-&gt;/var/log/httpd/access_log</span>
+<span class="go"> Rule: 31151 fired (level 10) -&gt; &quot;Mutiple web server 400 error codes from same source ip.&quot;</span>
+<span class="go"> Portion of the log(s):</span>
+
+<span class="go"> 202.143.138.46 - - [15/Aug/2007:15:50:42 -0300] &quot;GET /mysqladmin/read_dump.php HTTP/1.1&quot; 404 285 &quot;-&quot; &quot;Mozilla/4.0 (compatible; MSIE 5.00; Windows 98)&quot;</span>
+<span class="go"> 202.143.138.46 - - [15/Aug/2007:15:50:42 -0300] &quot;GET /phpmyadmin2/read_dump.php HTTP/1.1&quot; 404 286 &quot;-&quot; &quot;Mozilla/4.0 (compatible; MSIE 5.00; Windows 98)&quot;</span>
+<span class="go"> 202.143.138.46 - - [15/Aug/2007:15:50:41 -0300] &quot;GET /phpMyAdmin%202.6.4-rc1/read_dump.php HTTP/1.1&quot; 404 295 &quot;-&quot; &quot;Mozilla/4.0 (compatible; MSIE 5.00; Windows 98)&quot;</span>
+<span class="go"> 202.143.138.46 - - [15/Aug/2007:15:50:41 -0300] &quot;GET /admin/phpmyadmin/read_dump.php HTTP/1.1&quot; 404 291 &quot;-&quot; &quot;Mozilla/4.0 (compatible; MSIE 5.00; Windows 98)&quot;</span>
+<span class="go"> 202.143.138.46 - - [15/Aug/2007:15:50:41 -0300] &quot;GET /admin/pma/read_dump.php HTTP/1.1&quot; 404 284 &quot;-&quot; &quot;Mozilla/4.0 (compatible; MSIE 5.00; Windows 98)&quot;</span>
+<span class="go"> 202.143.138.46 - - [15/Aug/2007:15:50:40 -0300] &quot;GET /web/phpMyAdmin/read_dump.php HTTP/1.1&quot; 404 289 &quot;-&quot; &quot;Mozilla/4.0 (compatible; MSIE 5.00; Windows 98)&quot;</span>
+<span class="go"> 202.143.138.46 - - [15/Aug/2007:15:50:40 -0300] &quot;GET /dbadmin/read_dump.php HTTP/1.1&quot; 404 282 &quot;-&quot; &quot;Mozilla/4.0 (compatible; MSIE 5.00; Windows 98)&quot;</span>
+<span class="go"> 202.143.138.46 - - [15/Aug/2007:15:50:40 -0300] &quot;GET /db/read_dump.php HTTP/1.1&quot; 404 277 &quot;-&quot; &quot;Mozilla/4.0 (compatible; MSIE 5.00; Windows 98)&quot;</span>
+<span class="go"> 202.143.138.46 - - [15/Aug/2007:15:50:40 -0300] &quot;GET /admin/read_dump.php HTTP/1.1&quot; 404 280 &quot;-&quot; &quot;Mozilla/4.0 (compatible; MSIE 5.00; Windows 98)&quot;</span>
+<span class="go"> 202.143.138.46 - - [15/Aug/2007:15:50:39 -0300] &quot;GET /mysql/read_dump.php HTTP/1.1&quot; 404 280 &quot;-&quot; &quot;Mozilla/4.0 (compatible; MSIE 5.00; Windows 98)&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="sshd-brute-force">
+<h1>SSHD brute force:<a class="headerlink" href="#sshd-brute-force" title="Permalink to this headline">¶</a></h1>
+<p>Example of a SSHD brute force attack.</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">OSSEC HIDS Notification.</span>
+<span class="go">2007 Jun 26 17:40:29</span>
+
+<span class="go">Received From: xx-&gt;/var/log/secure</span>
+<span class="go">Rule: 5712 fired (level 10) -&gt; &quot;SSHD brute force trying to get access to the system.&quot;</span>
+<span class="go">Portion of the log(s):</span>
+
+<span class="go">Jun 26 17:40:27 xx sshd[7629]: Failed password for invalid user admin from 61.146.178.13 port 42107 ssh2</span>
+<span class="go">Jun 26 17:40:25 xx sshd[7629]: Invalid user admin from 61.146.178.13</span>
+<span class="go">Jun 26 17:40:23 xx sshd[7625]: Failed password for invalid user admin from 61.146.178.13 port 41983 ssh2</span>
+<span class="go">Jun 26 17:40:20 xx sshd[7625]: Invalid user admin from 61.146.178.13</span>
+<span class="go">Jun 26 17:40:18 xx sshd[7621]: Failed password for invalid user guest from 61.146.178.13 port 41889 ssh2</span>
+<span class="go">Jun 26 17:40:15 xx sshd[7621]: Invalid user guest from 61.146.178.13</span>
+<span class="go">Jun 26 17:40:14 xx sshd[7617]: Failed password for invalid user test from 61.146.178.13 port 41797 ssh2</span>
+
+
+<span class="go">OSSEC HIDS Notification.</span>
+<span class="go">2007 Jun 25 15:53:47</span>
+
+<span class="go">Received From: xx-&gt;/var/log/secure</span>
+<span class="go">Rule: 5712 fired (level 10) -&gt; &quot;SSHD brute force trying to get access to the system.&quot;</span>
+<span class="go">Portion of the log(s):</span>
+
+<span class="go">Jun 25 15:53:46 xx sshd[15840]: Failed password for invalid user alias from 210.6.69.117 port 56138 ssh2</span>
+<span class="go">Jun 25 15:53:43 xx sshd[15840]: Invalid user alias from 210.6.69.117</span>
+<span class="go">Jun 25 15:53:41 xx sshd[15836]: Failed password for invalid user recruit from 210.6.69.117 port 56031 ssh2</span>
+<span class="go">Jun 25 15:53:39 xx sshd[15836]: Invalid user recruit from 210.6.69.117</span>
+<span class="go">Jun 25 15:53:37 xx sshd[15832]: Failed password for invalid user sales from 210.6.69.117 port 55924 ssh2</span>
+<span class="go">Jun 25 15:53:34 xx sshd[15832]: Invalid user sales from 210.6.69.117</span>
+<span class="go">Jun 25 15:53:32 xx sshd[15828]: Failed password for invalid user staff from 210.6.69.117 port 55820 ssh2</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="ftp-scan">
+<h1>FTP Scan:<a class="headerlink" href="#ftp-scan" title="Permalink to this headline">¶</a></h1>
+<p>Example of FTP scan detected by monitoring MS FTP logs.</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="go"> OSSEC HIDS Notification.</span>
+<span class="go"> 2006 Oct 19 04:57:59</span>
+
+<span class="go"> Received From: (ftp-server-1) 172.16.1.99-&gt;\WINNT\System32\LogFiles\MSFTPSVC1\ex061019.log</span>
+<span class="go"> Rule: 11511 fired (level 10) -&gt; &quot;Multiple connection attempts from same source.&quot;Portion of the log(s):</span>
+
+<span class="go"> 2006-10-19 08:57:53 210.11.216.256 Administrator MSFTPSVC1 FTP-SERVER 172.16.1.99 21 [423]USER Administrator - 331 0 0 0 0 FTP - - - -</span>
+<span class="go"> 2006-10-19 08:57:52 210.11.216.256 Administrator MSFTPSVC1 FTP-SERVER 172.16.1.99 21 [423]USER Administrator - 331 0 0 0 0 FTP - - - -</span>
+<span class="go"> 2006-10-19 08:57:49 210.11.216.256 Administrator MSFTPSVC1 FTP-SERVER 172.16.1.99 21 [423]USER Administrator - 331 0 0 0 0 FTP - - - -</span>
+<span class="go"> 2006-10-19 08:57:47 210.11.216.256 Administrator MSFTPSVC1 FTP-SERVER 172.16.1.99 21 [423]USER Administrator - 331 0 0 0 0 FTP - - - -</span>
+<span class="go"> 2006-10-19 08:57:45 210.11.216.256 Administrator MSFTPSVC1 FTP-SERVER 172.16.1.99 21 [423]USER Administrator - 331 0 0 0 0 FTP - - - -</span>
+<span class="go"> 2006-10-19 08:57:43 210.11.216.256 Administrator MSFTPSVC1 FTP-SERVER 172.16.1.99 21 [423]USER Administrator - 331 0 0 0 0 FTP - - - -</span>
+<span class="go"> 2006-10-19 08:57:41 210.11.216.256 Administrator MSFTPSVC1 FTP-SERVER 172.16.1.99 21 [423]USER Administrator - 331 0 0 0 0 FTP - - - -</span>
+<span class="go"> 2006-10-19 08:57:39 210.11.216.256 Administrator MSFTPSVC1 FTP-SERVER 172.16.1.99 21 [423]USER Administrator - 331 0 0 0 0 FTP - - - -</span>
+<span class="go"> 2006-10-19 08:57:37 210.11.216.256 Administrator MSFTPSVC1 FTP-SERVER 172.16.1.99 21 [423]USER Administrator - 331 0 0 0 0 FTP - - - -</span>
+
+
+
+<span class="go">--END OF NOTIFICATION</span>
+
+
+
+<span class="go"> OSSEC HIDS Notification.</span>
+<span class="go"> 2006 Oct 19 04:57:59</span>
+
+<span class="go"> Received From: (ftp-server-1) 172.16.1.99-&gt;\WINNT\System32\LogFiles\MSFTPSVC1\ex061019.log</span>
+<span class="go"> Rule: 11510 fired (level 10) -&gt; &quot;FTP brute force (multiple failed logins).&quot;</span>
+<span class="go"> Portion of the log(s):</span>
+
+<span class="go"> 2006-10-19 08:57:55 210.11.216.256 - MSFTPSVC1 FTP-SERVER 172.16.1.99 21 [423]PASS - - 530 1326 0 0 0 FTP - - - -</span>
+<span class="go"> 2006-10-19 08:57:54 210.11.216.256 - MSFTPSVC1 FTP-SERVER 172.16.1.99 21 [423]PASS - - 530 1326 0 0 0 FTP - - - -</span>
+<span class="go"> 2006-10-19 08:57:52 210.11.216.256 - MSFTPSVC1 FTP-SERVER 172.16.1.99 21 [423]PASS - - 530 1326 0 0 0 FTP - - - -</span>
+<span class="go"> 2006-10-19 08:57:49 210.11.216.256 - MSFTPSVC1 FTP-SERVER 172.16.1.99 21 [423]PASS - - 530 1326 0 0 0 FTP - - - -</span>
+<span class="go"> 2006-10-19 08:57:47 210.11.216.256 - MSFTPSVC1 FTP-SERVER 172.16.1.99 21 [423]PASS - - 530 1326 0 0 0 FTP - - - -</span>
+<span class="go"> 2006-10-19 08:57:45 210.11.216.256 - MSFTPSVC1 FTP-SERVER 172.16.1.99 21 [423]PASS - - 530 1326 0 0 0 FTP - - - -</span>
+<span class="go"> 2006-10-19 08:57:44 210.11.216.256 - MSFTPSVC1 FTP-SERVER 172.16.1.99 21 [423]PASS - - 530 1326 0 0 0 FTP - - - -</span>
+
+
+
+<span class="go">--END OF NOTIFICATION</span>
+
+
+
+<span class="go"> OSSEC HIDS Notification.</span>
+<span class="go"> 2006 Oct 19 04:57:59</span>
+
+<span class="go"> Received From: (ftp-server-1) 172.16.1.99-&gt;\WINNT\System32\LogFiles\MSFTPSVC1\ex061019.log</span>
+<span class="go"> Rule: 11511 fired (level 10) -&gt; &quot;Multiple connection attempts from same source.&quot;Portion of the log(s):</span>
+
+<span class="go"> 2006-10-19 08:57:55 210.11.216.256 Administrator MSFTPSVC1 FTP-SERVER 172.16.1.99 21 [423]USER Administrator - 331 0 0 0 0 FTP - - - -</span>
+<span class="go"> 2006-10-19 08:57:54 210.11.216.256 Administrator MSFTPSVC1 FTP-SERVER 172.16.1.99 21 [423]USER Administrator - 331 0 0 0 0 FTP - - - -</span>
+<span class="go"> 2006-10-19 08:57:52 210.11.216.256 Administrator MSFTPSVC1 FTP-SERVER 172.16.1.99 21 [423]USER Administrator - 331 0 0 0 0 FTP - - - -</span>
+<span class="go"> 2006-10-19 08:57:49 210.11.216.256 Administrator MSFTPSVC1 FTP-SERVER 172.16.1.99 21 [423]USER Administrator - 331 0 0 0 0 FTP - - - -</span>
+<span class="go"> 2006-10-19 08:57:47 210.11.216.256 Administrator MSFTPSVC1 FTP-SERVER 172.16.1.99 21 [423]USER Administrator - 331 0 0 0 0 FTP - - - -</span>
+<span class="go"> 2006-10-19 08:57:45 210.11.216.256 Administrator MSFTPSVC1 FTP-SERVER 172.16.1.99 21 [423]USER Administrator - 331 0 0 0 0 FTP - - - -</span>
+<span class="go"> 2006-10-19 08:57:43 210.11.216.256 Administrator MSFTPSVC1 FTP-SERVER 172.16.1.99 21 [423]USER Administrator - 331 0 0 0 0 FTP - - - -</span>
+<span class="go"> 2006-10-19 08:57:41 210.11.216.256 Administrator MSFTPSVC1 FTP-SERVER 172.16.1.99 21 [423]USER Administrator - 331 0 0 0 0 FTP - - - -</span>
+<span class="go"> 2006-10-19 08:57:39 210.11.216.256 Administrator MSFTPSVC1 FTP-SERVER 172.16.1.99 21 [423]USER Administrator - 331 0 0 0 0 FTP - - - -</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="multiple-firewall-denies-on-the-windows-firewall">
+<h1>Multiple firewall denies on the Windows firewall:<a class="headerlink" href="#multiple-firewall-denies-on-the-windows-firewall" title="Permalink to this headline">¶</a></h1>
+<p>Example of multiple firewall denies detected.
+.. code-block:: console</p>
+<blockquote>
+<div><p>Received From: (ossec64) 192.168.2.25-&gt;Windowspfirewall.log
+Rule: 4151 fired (level 10) -&gt; &#8220;Multiple Firewall drop events from same source.&#8221;
+Portion of the log(s):</p>
+<p>2006-10-17 09:25:03 DROP UDP 192.168.2.190 192.168.2.255 137 137 78 - - - - - - - RECEIVE
+2006-10-17 09:25:01 DROP UDP 192.168.2.190 192.168.2.255 138 138 229 - - - - - - - RECEIVE
+2006-10-17 09:25:00 DROP UDP 192.168.2.190 192.168.2.255 137 137 96 - - - - - - - RECEIVE
+2006-10-17 09:25:00 DROP UDP 192.168.2.190 192.168.2.255 137 137 96 - - - - - - - RECEIVE
+2006-10-17 09:24:59 DROP UDP 192.168.2.190 192.168.2.255 137 137 96 - - - - - - - RECEIVE
+2006-10-17 09:24:59 DROP UDP 192.168.2.190 192.168.2.255 137 137 96 - - - - - - - RECEIVE
+2006-10-17 09:24:59 DROP UDP 192.168.2.190 192.168.2.255 137 137 96 - - - - - - - RECEIVE
+2006-10-17 09:24:59 DROP UDP 192.168.2.190 192.168.2.255 137 137 96 - - - - - - - RECEIVE
+2006-10-17 09:24:58 DROP UDP 192.168.2.190 192.168.2.255 137 137 96 - - - - - - - RECEIVE
+2006-10-17 09:24:58 DROP UDP 192.168.2.190 192.168.2.255 137 137 96 - - - - - - - RECEIVE</p>
+<p class="attribution">&mdash;END OF NOTIFICATION</p>
+</div></blockquote>
+</div>
+<div class="section" id="multiple-spam-attempts">
+<h1>Multiple spam attempts:<a class="headerlink" href="#multiple-spam-attempts" title="Permalink to this headline">¶</a></h1>
+<p>Example of spam attempts detected (postix log analysis)</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">OSSEC HIDS Notification.</span>
+<span class="go">2006 Oct 24 18:46:29</span>
+
+<span class="go">Received From: (xx) 200.1.2.a-&gt;/var/log/maillog</span>
+<span class="go">Rule: 3354 fired (level 12) -&gt; &quot;Multiple misuse of SMTP service (bad sequence of commands).&quot;</span>
+<span class="go">Portion of the log(s):</span>
+</pre></div>
+</div>
+<p>postfix/smtpd[6741]: NOQUEUE: reject: RCPT from unknown[201.82.55.24]: 503 &lt;<a class="reference external" href="mailto:nplxfbtk&#37;&#52;&#48;fbi&#46;com">nplxfbtk<span>&#64;</span>fbi<span>&#46;</span>com</a>&gt;: Sender address rejected: Improper use of SMTP command pipelining; from=&lt;<a class="reference external" href="mailto:nplxfbtk&#37;&#52;&#48;fbi&#46;com">nplxfbtk<span>&#64;</span>fbi<span>&#46;</span>com</a>&gt; to=&lt;<a class="reference external" href="mailto:x&#37;&#52;&#48;x&#46;br">x<span>&#64;</span>x<span>&#46;</span>br</a>&gt; proto=SMTP helo=&lt;ran-2h991bqbujq&gt;
+postfix/smtpd[6741]: NOQUEUE: reject: RCPT from unknown[201.82.55.24]: 503 &lt;<a class="reference external" href="mailto:nplxfbtk&#37;&#52;&#48;fbi&#46;com">nplxfbtk<span>&#64;</span>fbi<span>&#46;</span>com</a>&gt;: Sender address rejected: Improper use of SMTP command pipelining; from=&lt;<a class="reference external" href="mailto:nplxfbtk&#37;&#52;&#48;fbi&#46;com">nplxfbtk<span>&#64;</span>fbi<span>&#46;</span>com</a>&gt; to=&lt;<a class="reference external" href="mailto:x&#37;&#52;&#48;xl&#46;org&#46;br">x<span>&#64;</span>xl<span>&#46;</span>org<span>&#46;</span>br</a>&gt; proto=SMTP helo=&lt;ran-2h991bqbujq&gt;
+postfix/smtpd[6741]: NOQUEUE: reject: RCPT from unknown[201.82.55.24]: 503 &lt;<a class="reference external" href="mailto:nplxfbtk&#37;&#52;&#48;fbi&#46;com">nplxfbtk<span>&#64;</span>fbi<span>&#46;</span>com</a>&gt;: Sender address rejected: Improper use of SMTP command pipelining; from=&lt;<a class="reference external" href="mailto:nplxfbtk&#37;&#52;&#48;fbi&#46;com">nplxfbtk<span>&#64;</span>fbi<span>&#46;</span>com</a>&gt; to=&lt;<a class="reference external" href="mailto:y&#37;&#52;&#48;y&#46;org&#46;br">y<span>&#64;</span>y<span>&#46;</span>org<span>&#46;</span>br</a>&gt; proto=SMTP helo=&lt;ran-2h991bqbujq&gt;
+postfix/smtpd[6741]: NOQUEUE: reject: RCPT from unknown[201.82.55.24]: 503 &lt;<a class="reference external" href="mailto:nplxfbtk&#37;&#52;&#48;fbi&#46;com">nplxfbtk<span>&#64;</span>fbi<span>&#46;</span>com</a>&gt;: Sender address rejected: Improper use of SMTP command pipelining; from=&lt;<a class="reference external" href="mailto:nplxfbtk&#37;&#52;&#48;fbi&#46;com">nplxfbtk<span>&#64;</span>fbi<span>&#46;</span>com</a>&gt; to=&lt;<a class="reference external" href="mailto:z&#37;&#52;&#48;l&#46;org&#46;br">z<span>&#64;</span>l<span>&#46;</span>org<span>&#46;</span>br</a>&gt; proto=SMTP helo=&lt;ran-2h991bqbujq&gt;
+postfix/smtpd[6741]: NOQUEUE: reject: RCPT from unknown[201.82.55.24]: 503 &lt;<a class="reference external" href="mailto:nplxfbtk&#37;&#52;&#48;fbi&#46;com">nplxfbtk<span>&#64;</span>fbi<span>&#46;</span>com</a>&gt;: Sender address rejected: Improper use of SMTP command pipelining; from=&lt;<a class="reference external" href="mailto:nplxfbtk&#37;&#52;&#48;fbi&#46;com">nplxfbtk<span>&#64;</span>fbi<span>&#46;</span>com</a>&gt; to=&lt;<a class="reference external" href="mailto:a&#37;&#52;&#48;slala&#46;org&#46;br">a<span>&#64;</span>slala<span>&#46;</span>org<span>&#46;</span>br</a>&gt; proto=SMTP helo=&lt;ran-2h991bqbujq&gt;
+postfix/smtpd[6741]: NOQUEUE: reject: RCPT from unknown[201.82.55.24]: 503 &lt;<a class="reference external" href="mailto:nplxfbtk&#37;&#52;&#48;fbi&#46;com">nplxfbtk<span>&#64;</span>fbi<span>&#46;</span>com</a>&gt;: Sender address rejected: Improper use of SMTP command pipelining; from=&lt;<a class="reference external" href="mailto:nplxfbtk&#37;&#52;&#48;fbi&#46;com">nplxfbtk<span>&#64;</span>fbi<span>&#46;</span>com</a>&gt; to=&lt;<a class="reference external" href="mailto:b&#37;&#52;&#48;l&#46;org&#46;br">b<span>&#64;</span>l<span>&#46;</span>org<span>&#46;</span>br</a>&gt; proto=SMTP helo=&lt;ran-2h991bqbujq&gt;
+postfix/smtpd[6741]: NOQUEUE: reject: RCPT from unknown[201.82.55.24]: 503 &lt;<a class="reference external" href="mailto:nplxfbtk&#37;&#52;&#48;fbi&#46;com">nplxfbtk<span>&#64;</span>fbi<span>&#46;</span>com</a>&gt;: Sender address rejected: Improper use of SMTP command pipelining; from=&lt;<a class="reference external" href="mailto:nplxfbtk&#37;&#52;&#48;fbi&#46;com">nplxfbtk<span>&#64;</span>fbi<span>&#46;</span>com</a>&gt; to=&lt;<a class="reference external" href="mailto:c&#37;&#52;&#48;y&#46;org&#46;br">c<span>&#64;</span>y<span>&#46;</span>org<span>&#46;</span>br</a>&gt; proto=SMTP helo=&lt;ran-2h991bqbujq&gt;</p>
+</div>
+<div class="section" id="sql-injection-attempt-detected">
+<h1>SQL Injection attempt detected:<a class="headerlink" href="#sql-injection-attempt-detected" title="Permalink to this headline">¶</a></h1>
+<p>Example of an SQL injection detected by ossec:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="go"> OSSEC HIDS Notification.</span>
+<span class="go"> 2006 Sep 12 09:45:56</span>
+
+<span class="go"> Received From: (spongebob) 1.2.3.4-&gt;/usr/pages/xx/logs/access_log</span>
+<span class="go"> Rule: 31106 fired (level 12) -&gt; &quot;A web attack returned code 200 (success).&quot;</span>
+<span class="go"> Portion of the log(s):</span>
+
+<span class="go"> 200.96.104.241 - - [12/Sep/2006:09:44:28 -0300] &quot;GET /modules.php?name=Downloads&amp;d_op=modifydownloadrequest&amp;%20lid=-1%20UNION%20SELECT%200,username,user_id,user_password,name,%20user_email,user_level,0,0%20FROM%20nuke_users HTTP/1.1&quot; 200 9918 &quot;-&quot; &quot;Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 1.1.4322)&quot;</span>
+
+
+
+<span class="go">--END OF NOTIFICATION</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="internal-system-possibly-compromised-with-irnbot">
+<h1>Internal system possibly compromised with IrnBot:<a class="headerlink" href="#internal-system-possibly-compromised-with-irnbot" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="http://www.offensivecomputing.net/?q=node/378">http://www.offensivecomputing.net/?q=node/378</a></p>
+<div class="highlight-console"><div class="highlight"><pre><span class="go"> OSSEC HIDS Notification.</span>
+<span class="go"> 2007 Jan 30 04:38:37</span>
+
+<span class="go"> Received From: (xxx) 2.2.3.4-&gt;/usr/local/squid/var/logs/access.log</span>
+<span class="go"> Rule: 35051 fired (level 10) -&gt; &quot;Multiple attempts to access forbidden file or directory from same source ip.&quot;</span>
+<span class="go"> Portion of the log(s):</span>
+
+<span class="go"> 1170076710.819    774 x9.68.xx.1 TCP_DENIED/403 1426 GET http://www.matchav.com/deny2/azenv.php - NONE/- text/html</span>
+<span class="go"> 1170076709.340   2608 x9.68.xx.1 TCP_DENIED/403 1414 GET http://www.proxy.us.pl/azenv.php - NONE/- text/html</span>
+<span class="go"> 1170076708.126    419 x9.68.xx.1 TCP_DENIED/403 1412 GET http://kaox.php0h.com/azenv.php - NONE/- text/html</span>
+<span class="go"> 1170076707.123   3129 x9.68.xx.1 TCP_DENIED/403 1422 GET http://www.internetsec.org/azenv.php - NONE/- text/html</span>
+<span class="go"> 1170076705.993      0 x9.68.xx.1 TCP_DENIED/403 1384 CONNECT www.google.com:80 - NONE/- text/html</span>
+<span class="go"> 1170076705.198    751 x9.68.xx.1 TCP_DENIED/403 1440 GET http://www.anonymitytest.com/cgi-bin/azenv.pl - NONE/- text/html</span>
+
+
+
+<span class="go">--END OF NOTIFICATION</span>
+</pre></div>
+</div>
+<p>==Multiple WordPress (blog) comment spam attempts==</p>
+<p>Attempts to submit spammer comments to the ossec blog:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">OSSEC HIDS Notification.</span>
+<span class="go">2007 Jun 22 09:02:41</span>
+
+<span class="go">Received From: xx-&gt;/var/log/httpd/xx.access.log</span>
+<span class="go">Rule: 31151 fired (level 10) -&gt; &quot;Mutiple web server 400 error codes from same source ip.&quot;</span>
+<span class="go">Portion of the log(s):</span>
+
+<span class="go">124.87.40.203 - - [22/Jun/2007:09:02:39 -0300] &quot;POST /dcid/wp-trackback.php?p=9 HTTP/1.0&quot; 401 464 &quot;&quot; &quot;Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1)&quot;</span>
+<span class="go">124.87.40.203 - - [22/Jun/2007:09:02:38 -0300] &quot;POST /dcid/wp-trackback.php?p=79 HTTP/1.0&quot; 401 464 &quot;&quot; &quot;Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1)&quot;</span>
+<span class="go">124.87.40.203 - - [22/Jun/2007:09:02:37 -0300] &quot;POST /dcid/wp-trackback.php?p=53 HTTP/1.0&quot; 401 464 &quot;&quot; &quot;Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1)&quot;</span>
+<span class="go">124.87.40.203 - - [22/Jun/2007:09:02:36 -0300] &quot;POST /dcid/wp-trackback.php?p=5 HTTP/1.0&quot; 401 464 &quot;&quot; &quot;Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1)&quot;</span>
+<span class="go">124.87.40.203 - - [22/Jun/2007:09:02:35 -0300] &quot;POST /dcid/wp-trackback.php?p=37 HTTP/1.0&quot; 401 464 &quot;&quot; &quot;Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1)&quot;</span>
+<span class="go">124.87.40.203 - - [22/Jun/2007:09:02:31 -0300] &quot;POST /dcid/wp-trackback.php?p=35 HTTP/1.0&quot; 401 464 &quot;&quot; &quot;Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1)&quot;</span>
+<span class="go">124.87.40.203 - - [22/Jun/2007:09:02:29 -0300] &quot;POST /dcid/wp-trackback.php?p=26 HTTP/1.0&quot; 401 464 &quot;&quot; &quot;Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1)&quot;</span>
+<span class="go">124.87.40.203 - - [22/Jun/2007:09:02:28 -0300] &quot;POST /dcid/wp-trackback.php?p=23 HTTP/1.0&quot; 401 464 &quot;&quot; &quot;Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1)&quot;</span>
+<span class="go">124.87.40.203 - - [22/Jun/2007:09:02:27 -0300] &quot;POST /dcid/wp-trackback.php?p=19 HTTP/1.0&quot; 401 464 &quot;&quot; &quot;Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1)&quot;</span>
+<span class="go">124.87.40.203 - - [22/Jun/2007:09:02:26 -0300] &quot;POST /dcid/wp-trackback.php?p=18 HTTP/1.0&quot; 401 464 &quot;&quot; &quot;Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1)&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="e-mail-scan-vpopmail">
+<h1>E-mail scan (vpopmail):<a class="headerlink" href="#e-mail-scan-vpopmail" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">OSSEC HIDS Notification.</span>
+<span class="go">2007 Aug 15 21:22:53</span>
+
+<span class="go">Received From: mail-&gt;/var/log/messages</span>
+<span class="go">Rule: 9952 fired (level 10) -&gt; &quot;POP3 brute force (email harvesting).&quot;</span>
+<span class="go">Portion of the log(s):</span>
+
+<span class="go">Aug 12 11:52:56 mail vpopmail[4258]: vchkpw-pop3: vpopmail user not found account@:69.3.64.3</span>
+<span class="go">Aug 12 11:52:55 mail vpopmail[4241]: vchkpw-pop3: vpopmail user not found abuse@:69.3.64.3</span>
+<span class="go">Aug 12 11:52:55 mail vpopmail[4228]: vchkpw-pop3: vpopmail user not found abraham@:69.3.64.3</span>
+<span class="go">Aug 12 11:52:54 mail vpopmail[4208]: vchkpw-pop3: vpopmail user not found abigail@:69.3.64.3</span>
+<span class="go">Aug 12 11:52:54 mail vpopmail[4203]: vchkpw-pop3: vpopmail user not found abby@:69.3.64.3</span>
+<span class="go">Aug 12 11:52:54 mail vpopmail[4198]: vchkpw-pop3: vpopmail user not found aaron@:69.3.64.3</span>
+<span class="go">Aug 12 11:52:53 mail vpopmail[4191]: vchkpw-pop3: vpopmail user not found spam@:69.3.64.3</span>
+<span class="go">Aug 12 11:52:53 mail vpopmail[4187]: vchkpw-pop3: vpopmail user not found help@:69.3.64.3</span>
+<span class="go">Aug 12 11:52:52 mail vpopmail[4171]: vchkpw-pop3: vpopmail user not found info@:69.3.64.3</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="file-system-full">
+<h1>File system full:<a class="headerlink" href="#file-system-full" title="Permalink to this headline">¶</a></h1>
+<p>Not really an attack, but a serious issue if your web server is out of space.</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="go"> OSSEC HIDS Notification.</span>
+<span class="go"> 2007 Aug 16 22:49:38</span>
+
+<span class="go"> Received From: enigma-&gt;/var/log/messages</span>
+<span class="go"> Rule: 1007 fired (level 7) -&gt; &quot;File system full.&quot;</span>
+<span class="go"> Portion of the log(s):</span>
+
+<span class="go"> Aug 16 22:49:37 enigma /bsd: uid 1000 on /var/www: file system full</span>
+
+
+
+<span class="go">--END OF NOTIFICATION</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="custom-sql-injection-against-ossec-net">
+<h1>Custom SQL injection against ossec.net:<a class="headerlink" href="#custom-sql-injection-against-ossec-net" title="Permalink to this headline">¶</a></h1>
+<p>Someone trying our web application to display the latest rules. Of course, it didn&#8217;t work&lt;br /&gt;
+(but we return code 200 on all cases).</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="go"> OSSEC HIDS Notification.</span>
+<span class="go"> 2007 Aug 27 21:43:48</span>
+
+<span class="go"> Received From: teletubbies-&gt;/var/log/httpd/ossec.access.log</span>
+<span class="go"> Rule: 31106 fired (level 12) -&gt; &quot;A web attack returned code 200 (success).&quot;</span>
+<span class="go"> Portion of the log(s):</span>
+
+<span class="go"> 221.200.107.218 - - [27/Aug/2007:21:43:48 -0300] &quot;GET /rules/?f=decoder.xml&#39;%20and%20user%3E0%20and%20&#39;&#39;=&#39; HTTP/1.1&quot; 200 2099 &quot;-&quot; &quot;-&quot;</span>
+
+
+
+<span class="go">--END OF NOTIFICATION</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="application-being-installed">
+<h1>Application being installed:<a class="headerlink" href="#application-being-installed" title="Permalink to this headline">¶</a></h1>
+<p>An alert when an application is installed on Windows. Not always an attack, but may indicate
+a computer misuse.</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">OSSEC HIDS Notification.</span>
+<span class="go">2008 Aug 27 14:37:36</span>
+
+<span class="go">Received From: (lili3win) 192.168.2.0-&gt;WinEvtLog</span>
+<span class="go">Rule: 18147 fired (level 5) -&gt; &quot;Application Installed.&quot;</span>
+<span class="go">Portion of the log(s):</span>
+
+<span class="go">WinEvtLog: Application: INFORMATION(11707): MsiInstaller: lac: OSSEC64: OSSEC64: Product: Microsoft Office Live Meeting 2007 -- Installation completed successfully. (NULL) (NULL) (NULL)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="virtual-machine-being-shut-down">
+<h1>Virtual machine being shut down:<a class="headerlink" href="#virtual-machine-being-shut-down" title="Permalink to this headline">¶</a></h1>
+<p>By monitoring VMware ESX logs, you can get alerts when a virtual machine is stopped:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">OSSEC HIDS Notification.</span>
+<span class="go">2008 Aug 28 15:53:11</span>
+
+<span class="go">Received From: enigma-&gt;/var/log/messages</span>
+<span class="go">Rule: 19120 fired (level 8) -&gt; &quot;Virtual machine state changed to OFF.&quot;</span>
+<span class="go">Portion of the log(s):</span>
+
+<span class="go">[2008-07-26 10:09:56.601 &#39;vm:/vmfs/volumes/485a72e0-dd49e4f1-796c-001517761286/Nostalgia/Nostalgia.vmx&#39;</span>
+<span class="go">123898800 info] State Transition (VM_STATE_RECONFIGURING -&gt; VM_STATE_OFF)</span>
+</pre></div>
+</div>
+</div>
+
+  <div class="section">
+  
+  
+  </div>
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2010-2015, OSSEC Project Team - OSSEC trademark and domain owned by Trend Micro, Inc. - Home page images courtesy of Pixbay.com.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>UNIX: Active Response Configuration &mdash; OSSEC</title>
+    
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/parallax.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '2.8.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-sphinx.js"></script>
+    <link rel="author" title="About these documents" href="../../../about.html" />
+    <link rel="top" title="OSSEC" href="../../../index.html" />
+  
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  
+  
+  <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+  
+  <style type="text/css">
+    ul.ablog-archive {list-style: none; overflow: auto; margin-left: 0px}
+    ul.ablog-archive li {float: left; margin-right: 5px; font-size: 80%}
+  </style>
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../../index.html"><img src="../../../_static/ossec_logo_bare_small.png">
+          OSSEC</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="../../../about.html">About <i class="fa fa-info-circle"></i></a></li>
+                <li><a href="../../../blog.html">Blog <i class="fa fa-archive"></i></a></li>
+                <li><a href="../../">Documentaton <i class="fa fa-book"></i></a></li>
+                <li><a href="../../../downloads.html">Downloads <i class="fa fa-download"></i></a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"></ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="section" id="unix-active-response-configuration">
+<span id="manual-ar-unix"></span><h1>UNIX: Active Response Configuration<a class="headerlink" href="#unix-active-response-configuration" title="Permalink to this headline">¶</a></h1>
+<p>The Active response configuration is divided into two parts. In the first one you
+configure the commands you want to execute. In the second one, you bind the
+commands to rules or events.</p>
+<div class="section" id="commands-configuration">
+<h2>Commands Configuration<a class="headerlink" href="#commands-configuration" title="Permalink to this headline">¶</a></h2>
+<p>In the commands configuration you create new “commands” to be used as responses.
+You can have as many commands as you want. Each one should be inside their own
+“command” element. For further information please see the <a class="reference external" href="../../syntax/head_ossec_config.active-response.html#example-active-response-configurations">examples</a>.</p>
+<div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;command&gt;</span>
+    <span class="nt">&lt;name&gt;</span>The name (A-Za-Z0-9)<span class="nt">&lt;/name&gt;</span>
+    <span class="nt">&lt;executable&gt;</span>The command to execute (A-Za-z0-9.-)<span class="nt">&lt;/executable&gt;</span>
+    <span class="nt">&lt;expect&gt;</span>Comma separated list of arguments (A-Za-z0-9)<span class="nt">&lt;/expect&gt;</span>
+    <span class="nt">&lt;timeout_allowed&gt;</span>yes/no<span class="nt">&lt;/timeout_allowed&gt;</span>
+<span class="nt">&lt;/command&gt;</span>
+</pre></div>
+</div>
+<ul>
+<li><p class="first"><strong>name</strong>: Used to link the command to the response.</p>
+</li>
+<li><p class="first"><strong>executable</strong>: It must be a file (with exec permissions) inside
+“/var/ossec/active-response/bin”.</p>
+<p>You don’t need to provide the whole path.</p>
+</li>
+<li><p class="first"><strong>expect</strong>: The arguments this command is expecting (options are srcip and
+username).</p>
+</li>
+<li><p class="first"><strong>timeout_allowed</strong>: Specifies if this command supports timeout.</p>
+</li>
+</ul>
+</div>
+<div class="section" id="responses-configuration">
+<h2>Responses Configuration<a class="headerlink" href="#responses-configuration" title="Permalink to this headline">¶</a></h2>
+<p>In the active-response configuration, you bind the commands (created) to events.
+You can have as many responses as you want. Each one should be inside their own
+“active-response” element. For further information please see the ` &lt;../../syntax/head_ossec_config.active-response.html#example-active-response-con
+figurations&gt;`_.</p>
+<div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;active-response&gt;</span>
+    <span class="nt">&lt;disabled&gt;</span>Completely disables active response if &quot;yes&quot;<span class="nt">&lt;/disabled&gt;</span>
+    <span class="nt">&lt;command&gt;</span>The name of any command already created<span class="nt">&lt;/command&gt;</span>
+    <span class="nt">&lt;location&gt;</span>Location to execute the command<span class="nt">&lt;/location&gt;</span>
+    <span class="nt">&lt;agent_id&gt;</span>ID of an agent (when using a defined agent)<span class="nt">&lt;/agent_id&gt;</span>
+    <span class="nt">&lt;level&gt;</span>The lower level to execute it (0-9)<span class="nt">&lt;/level&gt;</span>
+    <span class="nt">&lt;rules_id&gt;</span>Comma separated list of rules id (0-9)<span class="nt">&lt;/rules_id&gt;</span>
+    <span class="nt">&lt;rules_group&gt;</span>Comma separated list of groups (A-Za-z0-9)<span class="nt">&lt;/rules_group&gt;</span>
+    <span class="nt">&lt;timeout&gt;</span>Time to block<span class="nt">&lt;/timeout&gt;</span>
+<span class="nt">&lt;/active-response&gt;</span>
+</pre></div>
+</div>
+<ul>
+<li><p class="first"><strong>disabled</strong>: Disables active response if set to yes.</p>
+</li>
+<li><p class="first"><strong>command</strong>: Used to link the response to the command</p>
+</li>
+<li><p class="first"><strong>location</strong>: Where the command should be executed. You have four options:</p>
+<blockquote>
+<div><ul class="simple">
+<li><strong>local</strong>: on the agent that generated the event</li>
+<li><strong>server</strong>: on the OSSEC server</li>
+<li><strong>defined-agent</strong>: on a specific agent (when using this option, you need to set the agent_id to use)</li>
+<li><strong>all</strong>: or everywhere.</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first"><strong>agent_id</strong>: The ID of the agent to execute the response (when defined-agent is set).</p>
+</li>
+<li><p class="first"><strong>level</strong>: The response will be executed on any event with this level or higher.</p>
+</li>
+<li><p class="first"><strong>timeout</strong>: How long until the reverse command is executed (IP unblocked,
+for example).</p>
+</li>
+</ul>
+</div>
+<div class="section" id="active-response-tools">
+<h2>Active Response Tools<a class="headerlink" href="#active-response-tools" title="Permalink to this headline">¶</a></h2>
+<p>By default, the ossec hids comes with the following pre-configured
+active-response tools:</p>
+<ul>
+<li><p class="first"><strong>host-deny.sh</strong>: Adds an IP to the /etc/hosts.deny file (most Unix systems).</p>
+</li>
+<li><p class="first"><strong>firewall-drop.sh</strong> (iptables): Adds an IP to the iptables deny list (Linux 2.4 and 2.6).</p>
+</li>
+<li><p class="first"><strong>firewall-drop.sh</strong> (ipfilter): Adds an IP to the ipfilter deny list (FreeBSD, NetBSD and Solaris).</p>
+</li>
+<li><p class="first"><strong>firewall-drop.sh</strong> (ipfw): Adds an IP to the ipfw deny table (FreeBSD).</p>
+<blockquote>
+<div><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">On IPFW we use the table 1 to add the IPs to be blocked. We also
+set this table as deny in the beginning of the firewall list. If you use the
+table 1 for anything else, please change the script to use a different
+table id.</p>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first"><strong>firewall-drop.sh</strong> (ipsec): Adds an IP to the ipsec drop table (AIX).</p>
+</li>
+<li><p class="first"><strong>firewall-drop.sh</strong> (pf): Adds an IP to a pre-configured pf deny table (OpenBSD and FreeBSD).</p>
+<blockquote>
+<div><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>On PF, you need to create a table in your config and deny all the
+traffic to it. Add the following lines at the beginning of your
+rules and reload pf (pfctl -F all &amp;&amp; pfctl -f /etc/pf.conf):
+table &lt;ossec_fwtable&gt; persist #ossec_fwtable</p>
+<p class="last">block in quick from &lt;ossec_fwtable&gt; to any
+block out quick from any to &lt;ossec_fwtable&gt;</p>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first"><strong>firewalld-drop.sh</strong> (firewalld): Adds a rich-rule to block an IP to firewalld (Linux with firewalld enabled).</p>
+<blockquote>
+<div><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">You must manually enable this script in ossec.conf if you have firewalld
+enabled. The script will add (and remove) a rich-rule that drops all
+incoming communication from the supplied srcip.</p>
+</div>
+</div></blockquote>
+</li>
+</ul>
+</div>
+</div>
+
+  <div class="section">
+  
+  
+  </div>
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2010-2015, OSSEC Project Team - OSSEC trademark and domain owned by Trend Micro, Inc. - Home page images courtesy of Pixbay.com.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

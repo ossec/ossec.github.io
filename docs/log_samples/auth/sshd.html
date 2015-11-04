@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Log Samples from sshd &mdash; OSSEC</title>
+    
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/parallax.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '2.8.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-sphinx.js"></script>
+    <link rel="author" title="About these documents" href="../../../about.html" />
+    <link rel="top" title="OSSEC" href="../../../index.html" />
+  
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  
+  
+  <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+  
+  <style type="text/css">
+    ul.ablog-archive {list-style: none; overflow: auto; margin-left: 0px}
+    ul.ablog-archive li {float: left; margin-right: 5px; font-size: 80%}
+  </style>
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../../index.html"><img src="../../../_static/ossec_logo_bare_small.png">
+          OSSEC</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="../../../about.html">About <i class="fa fa-info-circle"></i></a></li>
+                <li><a href="../../../blog.html">Blog <i class="fa fa-archive"></i></a></li>
+                <li><a href="../../">Documentaton <i class="fa fa-book"></i></a></li>
+                <li><a href="../../../downloads.html">Downloads <i class="fa fa-download"></i></a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"></ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="section" id="log-samples-from-sshd">
+<h1>Log Samples from sshd<a class="headerlink" href="#log-samples-from-sshd" title="Permalink to this headline">¶</a></h1>
+<p>If the system is using pam, authentication events from sshd may also be logged in the <a class="reference external" href="../auth/pam.html">pam format</a></p>
+<p>Always make sure to disable DNS lookup to have the IP address logged instead of the hostname (sshd_config):</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">UseDNS no</span>
+</pre></div>
+</div>
+<div class="section" id="did-not-receive-identification-string-occurs-during-some-forms-of-sshd-dos">
+<h2>Did not receive identification string (occurs during some forms of sshd DoS):<a class="headerlink" href="#did-not-receive-identification-string-occurs-during-some-forms-of-sshd-dos" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">Mar  8 06:08:23 stamina sshd[7713]: Did not receive identification string from 190.97.xx.199</span>
+<span class="go">Mar  8 06:08:26 stamina sshd[7758]: Did not receive identification string from 190.97.xx.199</span>
+<span class="go">Mar  8 06:08:26 stamina sshd[7739]: Did not receive identification string from 190.97.xx.199</span>
+<span class="go">Mar  8 06:08:27 stamina sshd[7770]: Did not receive identification string from 190.97.xx.199</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="rule-to-catch-multiple-instances-insert-into-local-rules-xml">
+<h2>Rule to catch multiple instances (insert into local_rules.xml):<a class="headerlink" href="#rule-to-catch-multiple-instances-insert-into-local-rules-xml" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">&lt;rule id=&quot;100031&quot; level=&quot;10&quot; frequency=&quot;4&quot; timeframe=&quot;360&quot;&gt;</span>
+<span class="go">  &lt;if_matched_sid&gt;5706&lt;/if_matched_sid&gt;</span>
+<span class="go">  &lt;description&gt;Possible DDoS attempt &lt;/description&gt;</span>
+<span class="go">  &lt;description&gt;(high number of non-existent identification strings).&lt;/description&gt;</span>
+<span class="go">&lt;/rule&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="software-caused-connection-abort-occurs-during-some-forms-of-sshd-dos">
+<h2>Software caused connection abort (occurs during some forms of sshd DoS):<a class="headerlink" href="#software-caused-connection-abort-occurs-during-some-forms-of-sshd-dos" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">Mar  8 06:09:56 stamina sshd[82181]: error: accept: Software caused connection abort</span>
+<span class="go">Mar  8 06:13:11 stamina sshd[82181]: error: accept: Software caused connection abort</span>
+<span class="go">Mar  8 06:13:42 stamina sshd[82181]: error: accept: Software caused connection abort</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="rule-to-help-ossec-recognise-this-error-as-nothing-serious">
+<h2>Rule to help OSSEC recognise this error as nothing serious:<a class="headerlink" href="#rule-to-help-ossec-recognise-this-error-as-nothing-serious" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">&lt;rule id=&quot;100032&quot; level=&quot;0&quot;&gt;</span>
+<span class="go">  &lt;if_sid&gt;5700&lt;/if_sid&gt;</span>
+<span class="go">  &lt;match&gt;Software caused connection abort&lt;/match&gt;</span>
+<span class="go">  &lt;description&gt;Software caused connection abort.&lt;/description&gt;</span>
+<span class="go">&lt;/rule&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="login-sucessful">
+<h2>Login sucessful:<a class="headerlink" href="#login-sucessful" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">May 21 20:22:28 slacker2 sshd[8813]: Accepted password for root from 192.168.20.185 port 1066 ssh2</span>
+<span class="go">May 21 20:22:28 sol2 sshd[23857]: [ID 702911 auth.notice] User test1, coming from 192.168.2.185,  -  authenticated.</span>
+<span class="go">Oct 11 08:05:46 hostname auth|security:info sshd[323808]: Accepted publickey for usr1 from 2.3.4.5 port 37909 ssh2</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="login-failed">
+<h2>Login failed:<a class="headerlink" href="#login-failed" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">May 21 20:22:28 slacker sshd[21487]: Failed password for root from 192.168.20.185 port 1045 ssh2</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="invalid-user-login-attempt">
+<h2>Invalid user login attempt:<a class="headerlink" href="#invalid-user-login-attempt" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">Jul  7 10:51:24 chaves sshd[19537]: Invalid user admin from spongebob.lab.ossec.net</span>
+<span class="go">Jul  7 10:53:24 chaves sshd[12914]: Failed password for invalid user test-inv from spongebob.lab.ossec.net</span>
+<span class="go">Jul  7 10:53:24 kiko sshd[3251]: User dcid not allowed because listed in DenyUsers</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="full-scan-sample">
+<h2>Full scan sample:<a class="headerlink" href="#full-scan-sample" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">Aug  1 18:27:45 knight sshd[20325]: Illegal user test from 218.49.183.17</span>
+<span class="go">Aug  1 18:27:46 knight sshd[20325]: Failed password for illegal user test from 218.49.183.17 port 48849 ssh2</span>
+<span class="go">Aug  1 18:27:46 knight sshd[20325]: error: Could not get shadow information for NOUSER</span>
+<span class="go">Aug  1 18:27:48 knight sshd[20327]: Illegal user guest from 218.49.183.17</span>
+<span class="go">Aug  1 18:27:49 knight sshd[20327]: Failed password for illegal user guest from 218.49.183.17 port 49090 ssh2</span>
+<span class="go">Aug  1 18:27:49 knight sshd[20327]: error: Could not get shadow information for NOUSER</span>
+<span class="go">Aug  1 18:27:52 knight sshd[20329]: Failed password for admin from 218.49.183.17 port 49266 ssh2</span>
+<span class="go">Aug  1 18:27:56 knight sshd[20331]: Failed password for admin from 218.49.183.17 port 49468 ssh2</span>
+<span class="go">Aug  1 18:27:58 knight sshd[20334]: Illegal user user from 218.49.183.17</span>
+<span class="go">Aug  1 18:27:59 knight sshd[20334]: Failed password for illegal user user from 218.49.183.17 port 49680 ssh2</span>
+<span class="go">Aug  1 18:27:59 knight sshd[20334]: error: Could not get shadow information for NOUSER</span>
+<span class="go">Aug  1 18:28:02 knight sshd[20336]: Failed password for root from 218.49.183.17 port 49869 ssh2</span>
+<span class="go">Aug  1 18:28:05 knight sshd[20347]: Failed password for root from 218.49.183.17 port 50063 ssh2</span>
+<span class="go">Aug  1 18:28:12 knight sshd[20349]: Failed password for root from 218.49.183.17 port 50245 ssh2</span>
+<span class="go">Aug  1 18:28:14 knight sshd[20352]: Illegal user test from 218.49.183.17</span>
+<span class="go">Aug  1 18:28:19 knight sshd[20352]: Failed password for illegal user test from 218.49.183.17 port 50671 ssh2</span>
+<span class="go">Aug  1 18:28:19 knight sshd[20352]: error: Could not get shadow information for NOUSER</span>
+<span class="go">Aug  1 18:29:55 knight sshd[20402]: Illegal user test from 218.49.183.17</span>
+<span class="go">Aug  1 18:29:56 knight sshd[20402]: Failed password for illegal user test from 218.49.183.17 port 52244 ssh2</span>
+<span class="go">Aug  1 18:29:56 knight sshd[20402]: error: Could not get shadow information for NOUSER</span>
+<span class="go">Aug  1 18:29:58 knight sshd[20404]: Illegal user guest from 218.49.183.17</span>
+<span class="go">Aug  1 18:30:02 knight sshd[20406]: Illegal user test from 218.49.183.17</span>
+<span class="go">Aug  1 18:30:03 knight sshd[20404]: Failed password for illegal user guest from 218.49.183.17 port 52416 ssh2</span>
+<span class="go">Aug  1 18:30:03 knight sshd[20404]: error: Could not get shadow information for NOUSER</span>
+<span class="go">Aug  1 18:30:03 knight sshd[20406]: Failed password for illegal user test from 218.49.183.17 port 52558 ssh2</span>
+<span class="go">Aug  1 18:30:03 knight sshd[20406]: error: Could not get shadow information for NOUSER</span>
+<span class="go">Aug  1 18:30:05 knight sshd[20439]: Failed password for illegal user guest from 218.49.183.17 port 52818 ssh2</span>
+<span class="go">Aug  1 18:30:05 knight sshd[20439]: Illegal user guest from 218.49.183.17</span>
+<span class="go">Aug  1 18:30:05 knight sshd[20439]: error: Could not get shadow information for NOUSER</span>
+<span class="go">Aug  1 18:30:06 knight sshd[20441]: Failed password for admin from 218.49.183.17 port 52851 ssh2</span>
+<span class="go">Aug  1 18:30:08 knight sshd[20443]: Failed password for admin from 218.49.183.17 port 53014 ssh2</span>
+<span class="go">Aug  1 18:30:09 knight sshd[20445]: Failed password for admin from 218.49.183.17 port 53040 ssh2</span>
+<span class="go">Aug  1 18:30:11 knight sshd[20447]: Failed password for admin from 218.49.183.17 port 53192 ssh2</span>
+<span class="go">Aug  1 18:30:11 knight sshd[20449]: Illegal user user from 218.49.183.17</span>
+<span class="go">Aug  1 18:30:12 knight sshd[20449]: Failed password for illegal user user from 218.49.183.17 port 53230 ssh2</span>
+<span class="go">Aug  1 18:30:12 knight sshd[20449]: error: Could not get shadow information for NOUSER</span>
+<span class="go">Aug  1 18:30:13 knight sshd[20451]: Illegal user user from 218.49.183.17</span>
+<span class="go">Aug  1 18:30:14 knight sshd[20451]: Failed password for illegal user user from 218.49.183.17 port 53404 ssh2</span>
+<span class="go">Aug  1 18:30:14 knight sshd[20451]: error: Could not get shadow information for NOUSER</span>
+<span class="go">Aug  1 18:30:14 knight sshd[20453]: Failed password for root from 218.49.183.17 port 53425 ssh2</span>
+<span class="go">Aug  1 18:30:21 knight sshd[20455]: Failed password for root from 218.49.183.17 port 53571 ssh2</span>
+<span class="go">Aug  1 18:30:22 knight sshd[20457]: Failed password for root from 218.49.183.17 port 53615 ssh2</span>
+<span class="go">Aug  1 18:30:24 knight sshd[20476]: Failed password for root from 218.49.183.17 port 54033 ssh2</span>
+<span class="go">Aug  1 18:30:24 knight sshd[20484]: Failed password for root from 218.49.183.17 port 54078 ssh2</span>
+<span class="go">Aug  1 18:30:26 knight sshd[20488]: Illegal user test from 218.49.183.17</span>
+<span class="go">Aug  1 18:30:27 knight sshd[20486]: Failed password for root from 218.49.183.17 port 54243 ssh2</span>
+<span class="go">Aug  1 18:30:27 knight sshd[20488]: Failed password for illegal user test from 218.49.183.17 port 54285 ssh2</span>
+<span class="go">Aug  1 18:30:27 knight sshd[20488]: error: Could not get shadow information for NOUSER</span>
+<span class="go">Aug  1 18:30:29 knight sshd[20490]: Illegal user test from 218.49.183.17</span>
+<span class="go">Aug  1 18:30:34 knight sshd[20490]: Failed password for illegal user test from 218.49.183.17 port 54423 ssh2</span>
+<span class="go">Aug  1 18:30:34 knight sshd[20490]: error: Could not get shadow information for NOUSER</span>
+<span class="go">Aug  1 18:35:53 knight sshd[20658]: Illegal user test from 218.49.183.17</span>
+<span class="go">Aug  1 18:35:54 knight sshd[20658]: Failed password for illegal user test from 218.49.183.17 port 39604 ssh2</span>
+<span class="go">Aug  1 18:35:54 knight sshd[20658]: error: Could not get shadow information for NOUSER</span>
+<span class="go">Aug  1 18:35:56 knight sshd[20660]: Illegal user guest from 218.49.183.17</span>
+<span class="go">Aug  1 18:35:57 knight sshd[20660]: Failed password for illegal user guest from 218.49.183.17 port 39811 ssh2</span>
+<span class="go">Aug  1 18:35:57 knight sshd[20660]: error: Could not get shadow information for NOUSER</span>
+<span class="go">Aug  1 18:36:00 knight sshd[20664]: Failed password for admin from 218.49.183.17 port 40009 ssh2</span>
+<span class="go">Aug  1 18:36:04 knight sshd[20666]: Failed password for admin from 218.49.183.17 port 40217 ssh2</span>
+<span class="go">Aug  1 18:36:06 knight sshd[20675]: Illegal user user from 218.49.183.17</span>
+<span class="go">Aug  1 18:36:11 knight sshd[20675]: Failed password for illegal user user from 218.49.183.17 port 40470 ssh2</span>
+<span class="go">Aug  1 18:36:11 knight sshd[20675]: error: Could not get shadow information for NOUSER</span>
+<span class="go">Aug  1 18:36:14 knight sshd[20677]: Failed password for root from 218.49.183.17 port 40973 ssh2</span>
+<span class="go">Aug  1 18:36:21 knight sshd[20679]: Failed password for root from 218.49.183.17 port 41159 ssh2</span>
+<span class="go">Aug  1 18:36:24 knight sshd[20681]: Failed password for root from 218.49.183.17 port 41541 ssh2</span>
+<span class="go">Aug  1 18:36:27 knight sshd[20683]: Illegal user test from 218.49.183.17</span>
+<span class="go">Aug  1 18:36:28 knight sshd[20683]: Failed password for illegal user test from 218.49.183.17 port 41630 ssh</span>
+<span class="go">Aug  1 18:36:28 knight sshd[20683]: error: Could not get shadow information for NOUSER</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+  <div class="section">
+  
+  
+  </div>
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2010-2015, OSSEC Project Team - OSSEC trademark and domain owned by Trend Micro, Inc. - Home page images courtesy of Pixbay.com.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

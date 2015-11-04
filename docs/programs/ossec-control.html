@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>ossec-control &mdash; OSSEC</title>
+    
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/parallax.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '2.8.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="top" title="OSSEC" href="../../index.html" />
+  
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  
+  
+  <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+  
+  <style type="text/css">
+    ul.ablog-archive {list-style: none; overflow: auto; margin-left: 0px}
+    ul.ablog-archive li {float: left; margin-right: 5px; font-size: 80%}
+  </style>
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html"><img src="../../_static/ossec_logo_bare_small.png">
+          OSSEC</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="../../about.html">About <i class="fa fa-info-circle"></i></a></li>
+                <li><a href="../../blog.html">Blog <i class="fa fa-archive"></i></a></li>
+                <li><a href="../">Documentaton <i class="fa fa-book"></i></a></li>
+                <li><a href="../../downloads.html">Downloads <i class="fa fa-download"></i></a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"></ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="section" id="ossec-control">
+<span id="id1"></span><h1>ossec-control<a class="headerlink" href="#ossec-control" title="Permalink to this headline">¶</a></h1>
+<p><tt class="docutils literal"><span class="pre">ossec-control</span></tt> is a script to start, stop, configure, or check on the status of OSSEC processes.
+<tt class="docutils literal"><span class="pre">ossc-control</span></tt> can enable or disable client-syslog, database logging, agentless configurations, and debug mode.</p>
+<div class="section" id="ossec-control-argument-options">
+<h2>ossec-control argument options<a class="headerlink" href="#ossec-control-argument-options" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><dl class="docutils">
+<dt><strong>start</strong></dt>
+<dd>Start the OSSEC processes.</dd>
+</dl>
+<dl class="docutils">
+<dt><strong>stop</strong></dt>
+<dd>Stop the OSSEC processes.</dd>
+</dl>
+<dl class="docutils">
+<dt><strong>restart</strong></dt>
+<dd>Restart the OSSEC processes.</dd>
+</dl>
+<dl class="docutils">
+<dt><strong>reload</strong></dt>
+<dd><p class="first">Restart all OSSEC processes except <tt class="docutils literal"><span class="pre">ossec-execd</span></tt>. This allows an agent to reload without losing active response status.</p>
+<div class="last admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This is only available on an OSSEC agent.</p>
+</div>
+</dd>
+</dl>
+<dl class="docutils">
+<dt><strong>status</strong></dt>
+<dd>Determine which OSSEC processes are running.</dd>
+</dl>
+<dl class="docutils">
+<dt><strong>enable</strong></dt>
+<dd><p class="first">Enable OSSEC functionality.</p>
+<blockquote class="last">
+<div><dl class="docutils">
+<dt><strong>database</strong></dt>
+<dd><p class="first">Enable the <tt class="docutils literal"><span class="pre">ossec-dbd</span></tt> daemon for logging to a database.</p>
+<p><strong>Available:</strong> Server and local installs only.</p>
+<div class="last admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Database support must be compiled in at install time.</p>
+</div>
+</dd>
+</dl>
+<dl class="docutils">
+<dt><strong>client-syslog</strong></dt>
+<dd><p class="first">Enable <tt class="docutils literal"><span class="pre">ossec-csyslogd</span></tt> for logging to remote syslog.</p>
+<p class="last"><strong>Available:</strong> Server and local installs only.</p>
+</dd>
+</dl>
+<dl class="docutils">
+<dt><strong>agentless</strong></dt>
+<dd><p class="first">Enable <tt class="docutils literal"><span class="pre">ossec-agentlessd</span></tt> for running commands on systems without OSSEC agents.</p>
+<p class="last"><strong>Available:</strong> Server and local installs only.</p>
+</dd>
+</dl>
+<dl class="docutils">
+<dt><strong>debug</strong></dt>
+<dd>Run all OSSEC daemons in debug mode.</dd>
+</dl>
+</div></blockquote>
+</dd>
+</dl>
+<dl class="docutils">
+<dt><strong>disable</strong></dt>
+<dd><p class="first">Disable OSSEC functionality.</p>
+<blockquote class="last">
+<div><dl class="docutils">
+<dt><strong>database</strong></dt>
+<dd><p class="first">Disable the <tt class="docutils literal"><span class="pre">ossec-dbd</span></tt> daemon for logging to a database.</p>
+<p><strong>Available:</strong> Server and local installs only.</p>
+<div class="last admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Database support must be compiled in at install time.</p>
+</div>
+</dd>
+</dl>
+<dl class="docutils">
+<dt><strong>client-syslog</strong></dt>
+<dd><blockquote class="first">
+<div>Disable <tt class="docutils literal"><span class="pre">ossec-csyslogd</span></tt> for logging to remote syslog.</div></blockquote>
+<p class="last"><strong>Available:</strong> Server and local installs only.</p>
+</dd>
+</dl>
+<dl class="docutils">
+<dt><strong>agentless</strong></dt>
+<dd><p class="first">Disable <tt class="docutils literal"><span class="pre">ossec-agentlessd</span></tt> for running commands on systems without OSSEC agents.</p>
+<p class="last"><strong>Available:</strong> Server and local installs only.</p>
+</dd>
+</dl>
+<dl class="docutils">
+<dt><strong>debug</strong></dt>
+<dd>Turn off debug mode.</dd>
+</dl>
+</div></blockquote>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+<div class="section" id="ossec-control-example-usage">
+<h2>ossec-control example usage<a class="headerlink" href="#ossec-control-example-usage" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="example-running-ossec-control">
+<h3>Example: Running ossec-control<a class="headerlink" href="#example-running-ossec-control" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">#</span> /var/ossec/bin/ossec-control
+
+<span class="go">Usage: /var/ossec/bin/ossec-control {start|stop|restart|status|enable|disable}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+  <div class="section">
+  
+  
+  </div>
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2010-2015, OSSEC Project Team - OSSEC trademark and domain owned by Trend Micro, Inc. - Home page images courtesy of Pixbay.com.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

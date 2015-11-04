@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Misc. Notes &mdash; OSSEC</title>
+    
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/parallax.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '2.8.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-sphinx.js"></script>
+    <link rel="author" title="About these documents" href="../../../about.html" />
+    <link rel="top" title="OSSEC" href="../../../index.html" />
+  
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  
+  
+  <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+  
+  <style type="text/css">
+    ul.ablog-archive {list-style: none; overflow: auto; margin-left: 0px}
+    ul.ablog-archive li {float: left; margin-right: 5px; font-size: 80%}
+  </style>
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../../index.html"><img src="../../../_static/ossec_logo_bare_small.png">
+          OSSEC</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="../../../about.html">About <i class="fa fa-info-circle"></i></a></li>
+                <li><a href="../../../blog.html">Blog <i class="fa fa-archive"></i></a></li>
+                <li><a href="../../">Documentaton <i class="fa fa-book"></i></a></li>
+                <li><a href="../../../downloads.html">Downloads <i class="fa fa-download"></i></a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"></ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="section" id="misc-notes">
+<h1>Misc. Notes<a class="headerlink" href="#misc-notes" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="active_directory_failures.html">Why am I getting multiple 675 events from AD + Samba?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="agentless_script.html">Agentless Scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="agentless_script.html#periodic-diff-specification">Periodic diff Specification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="agentless_script.html#periodic-specification">Periodic Specification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="agentless_script.html#example-of-real-fwd-command">Example of real FWD: command.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="checkpoint_configure.html">Configuring Checkpoint</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="checkpoint_configure.html#run-this-command">Run this command:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="checkpoint_configure.html#explanation">Explanation:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="checkpoint_configure.html#do-not-use-the-following-options-in-fw-log">Do not use the following options in fw log:</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="compiled_rules.html">How do I use or create my own compiled rules?</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="compiled_rules.html#how-do-they-work">How do they work?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="compiled_rules.html#how-to-write-my-own-rule">How to write my own rule:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="compiled_rules.html#available-fields-in-the-event-structure">Available fields in the Event structure:</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="correlate_snort.html">Correlating multiple snort IDS with ossec</a></li>
+<li class="toctree-l1"><a class="reference internal" href="custom_ar.html">Creating Customized Active Responses</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="custom_ar.html#creating-the-command">Creating the command:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="custom_ar.html#create-active-response-script">Create active response script:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="custom_ar.html#restart-ossec-and-test-it">Restart OSSEC and test it:</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="decoder_rule_relation.html">Question: How does the decoder.xml relate to the rules?</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="decoder_rule_relation.html#answer">Answer:</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="disconnected_agent_alert.html">Disconnected Agent Alert</a></li>
+<li class="toctree-l1"><a class="reference internal" href="extra_rules.html">Additional rules</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="extra_rules.html#windows-rule-to-alert-on-password-changes-by-another-user">Windows: Rule to alert on password changes by another user</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="iptables_configuration.html">Why is OSSEC not seeing my iptables messages?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="manager_backup.html">Migrating/backing up the manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multiple_files.html">How to add multiple log files to be monitored?</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="multiple_files.html#for-unix-agents">For Unix Agents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="multiple_files.html#for-windows-agents">For Windows Agents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="nmap_correlation.html">Nmap correlation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="nmap_correlation.html#process">Process:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nmap_correlation.html#example-of-alert-when-a-new-host-is-found">Example of alert when a new host is found:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nmap_correlation.html#example-of-alert-when-a-new-a-host-information-is-changed">Example of alert when a new a host information is changed:</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ossec_syslog.html">How to set up Syslog output</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ossec_syslog.html#configuring-the-syslog-servers">Configuring the Syslog servers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ossec_syslog.html#enabling-client-syslog">Enabling client-syslog</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ossec_syslog.html#checking-the-configuration">Checking the configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pix_configuration.html">How to configure PIX and OSSEC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="portscan_detection.html">Detecting portscans with OSSEC and iplog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="portscan_detection.html#iplog-conf">iplog.conf:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="portscan_detection.html#iplog-scan-and-attack-responses">iplog: Scan and attack responses</a></li>
+<li class="toctree-l2"><a class="reference internal" href="portscan_detection.html#connect-scan-and-syn-scan">Connect Scan and SYN scan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="portscan_detection.html#iplog-response">iplog response:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="portscan_detection.html#fin-stealth-scan">FIN Stealth Scan:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="portscan_detection.html#id1">iplog response:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="portscan_detection.html#null-stealth-scan">NULL Stealth Scan:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="portscan_detection.html#id2">iplog response:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="portscan_detection.html#xmas-tree-stealth-scan">Xmas Tree Stealth Scan:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="portscan_detection.html#id3">iplog response:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="portscan_detection.html#udp-port-scan">UDP port scan:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="portscan_detection.html#id4">iplog response:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="portscan_detection.html#traceroute">traceroute:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="portscan_detection.html#id5">iplog response:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="portscan_detection.html#flood-ping-attack">Flood ping attack:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="portscan_detection.html#id6">iplog response:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="portscan_detection.html#ip-fragment-attacks">IP fragment attacks:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="portscan_detection.html#udp-and-icmp-smurf-attacks">UDP and ICMP &#8220;smurf&#8221; attacks:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="portscan_detection.html#another-interesting-logs">Another interesting logs:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="portscan_detection.html#bogus-tcp-flags">bogus TCP flags:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="portscan_detection.html#ossec-hids-iplog-sensor-implementation">OSSEC (HIDS) + iplog (sensor) implementation:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="portscan_detection.html#iplog-decoder">iplog decoder:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="portscan_detection.html#for-this-logs">For this logs:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="portscan_detection.html#a-working-decoder-is">a working decoder is:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="portscan_detection.html#for-this-log">For this log:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="portscan_detection.html#a-proppossed-decoder-is-not-tested">a proppossed decoder is (not tested):</a></li>
+<li class="toctree-l2"><a class="reference internal" href="portscan_detection.html#id7">For this log:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="portscan_detection.html#id8">a proppossed decoder is (not tested):</a></li>
+<li class="toctree-l2"><a class="reference internal" href="portscan_detection.html#id9">For this log:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="portscan_detection.html#id10">a proppossed decoder is (not tested):</a></li>
+<li class="toctree-l2"><a class="reference internal" href="portscan_detection.html#id11">For this log:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="portscan_detection.html#id12">a proppossed decoder is (not tested):</a></li>
+<li class="toctree-l2"><a class="reference internal" href="portscan_detection.html#iplog-rules">iplog rules:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="portscan_detection.html#ossec-active-response">OSSEC active-response:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="portscan_detection.html#firewall-drop-freebsd-ipfw">Firewall Drop: FreeBSD-IPFW:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="portscan_detection.html#more-restrictions">More restrictions:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="portscan_detection.html#id15">iplog.conf:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="portscan_detection.html#bsd-s-sysctl-some-freebsd-especific">BSD&#8217;s sysctl (some FreeBSD especific):</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="rule_groups.html">Rule Groups</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="rule_groups.html#reconnaissance">Reconnaissance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rule_groups.html#authentication-control">Authentication Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rule_groups.html#attack-misuse">Attack/Misuse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rule_groups.html#access-control">Access Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rule_groups.html#network-control">Network Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rule_groups.html#system-monitor">System Monitor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rule_groups.html#policy-violation">Policy Violation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="white_list.html">How to configure ossec to never block some IPs in the active response</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="white_list.html#white-list-an-ip-and-a-network">White list an IP and a network</a></li>
+<li class="toctree-l2"><a class="reference internal" href="white_list.html#cidr-addresses-can-also-be-used-to-white-list-whole-networks">CIDR addresses can also be used to white list whole networks:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="white_list.html#for-dns-servers">For DNS servers</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+  <div class="section">
+  
+  
+  </div>
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2010-2015, OSSEC Project Team - OSSEC trademark and domain owned by Trend Micro, Inc. - Home page images courtesy of Pixbay.com.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

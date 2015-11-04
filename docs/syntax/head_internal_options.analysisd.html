@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>internal_options.conf: analysisd &mdash; OSSEC</title>
+    
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/parallax.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '2.8.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="top" title="OSSEC" href="../../index.html" />
+  
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  
+  
+  <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+  
+  <style type="text/css">
+    ul.ablog-archive {list-style: none; overflow: auto; margin-left: 0px}
+    ul.ablog-archive li {float: left; margin-right: 5px; font-size: 80%}
+  </style>
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html"><img src="../../_static/ossec_logo_bare_small.png">
+          OSSEC</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="../../about.html">About <i class="fa fa-info-circle"></i></a></li>
+                <li><a href="../../blog.html">Blog <i class="fa fa-archive"></i></a></li>
+                <li><a href="../">Documentaton <i class="fa fa-book"></i></a></li>
+                <li><a href="../../downloads.html">Downloads <i class="fa fa-download"></i></a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"></ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="section" id="internal-options-conf-analysisd">
+<span id="intopt-analysisd"></span><h1>internal_options.conf: analysisd<a class="headerlink" href="#internal-options-conf-analysisd" title="Permalink to this headline">¶</a></h1>
+<span class="target" id="analysisd"></span><dl class="intopt">
+<dt id="intopt-analysisd.default_timeframe">
+<tt class="descname">analysisd.default_timeframe</tt><a class="headerlink" href="#intopt-analysisd.default_timeframe" title="Permalink to this definition">¶</a></dt>
+<dd><p>Analysisd default rule timeframe</p>
+<p><strong>Default:</strong> 360</p>
+<p><strong>Allowed:</strong> Any interger</p>
+</dd></dl>
+
+<dl class="intopt">
+<dt id="intopt-analysisd.stats_maxdiff">
+<tt class="descname">analysisd.stats_maxdiff</tt><a class="headerlink" href="#intopt-analysisd.stats_maxdiff" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Default:</strong> 25000</p>
+<p><strong>Allowed:</strong> Any interger</p>
+</dd></dl>
+
+<dl class="intopt">
+<dt id="intopt-analysisd.stats_mindiff">
+<tt class="descname">analysisd.stats_mindiff</tt><a class="headerlink" href="#intopt-analysisd.stats_mindiff" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Default:</strong> 250</p>
+<p><strong>Allowed:</strong> Any interger</p>
+</dd></dl>
+
+<dl class="intopt">
+<dt id="intopt-analysisd.stats_percent_diff">
+<tt class="descname">analysisd.stats_percent_diff</tt><a class="headerlink" href="#intopt-analysisd.stats_percent_diff" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Default:</strong> 30</p>
+<p><strong>Allowed:</strong> Any interger</p>
+</dd></dl>
+
+<dl class="intopt">
+<dt id="intopt-analysisd.fts_list_size">
+<tt class="descname">analysisd.fts_list_size</tt><a class="headerlink" href="#intopt-analysisd.fts_list_size" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Default:</strong> 32</p>
+<p><strong>Allowed:</strong> Any interger</p>
+</dd></dl>
+
+<dl class="intopt">
+<dt id="intopt-analysisd.fts_min_size_for_str">
+<tt class="descname">analysisd.fts_min_size_for_str</tt><a class="headerlink" href="#intopt-analysisd.fts_min_size_for_str" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Default:</strong> 14</p>
+<p><strong>Allowed:</strong> Any interger</p>
+</dd></dl>
+
+<dl class="intopt">
+<dt id="intopt-analysisd.log_fw">
+<tt class="descname">analysisd.log_fw</tt><a class="headerlink" href="#intopt-analysisd.log_fw" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Default:</strong> 1</p>
+<p><strong>Allowed:</strong> Any interger</p>
+</dd></dl>
+
+<dl class="intopt">
+<dt id="intopt-analysisd.debug">
+<tt class="descname">analysisd.debug</tt><a class="headerlink" href="#intopt-analysisd.debug" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Default:</strong> 0</p>
+<p><strong>Allowed:</strong> Any interger</p>
+</dd></dl>
+
+</div>
+<div class="section" id="internal-options-conf-agent">
+<h1>internal_options.conf: agent<a class="headerlink" href="#internal-options-conf-agent" title="Permalink to this headline">¶</a></h1>
+<span class="target" id="agent"></span><dl class="intopt">
+<dt id="intopt-agent.debug">
+<tt class="descname">agent.debug</tt><a class="headerlink" href="#intopt-agent.debug" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run the agent&#8217;s processes in debug mode.</p>
+<p><strong>Default:</strong> 0</p>
+</dd></dl>
+
+</div>
+<div class="section" id="internal-options-conf-dbd">
+<h1>internal_options.conf: dbd<a class="headerlink" href="#internal-options-conf-dbd" title="Permalink to this headline">¶</a></h1>
+<span class="target" id="dbd"></span><dl class="intopt">
+<dt id="intopt-dbd.reconnect_attempts">
+<tt class="descname">dbd.reconnect_attempts</tt><a class="headerlink" href="#intopt-dbd.reconnect_attempts" title="Permalink to this definition">¶</a></dt>
+<dd><p>The number of times <tt class="docutils literal"><span class="pre">ossec-dbd</span></tt> will attempt to reconnect to the database.</p>
+<p><strong>Default:</strong> 10</p>
+</dd></dl>
+
+</div>
+<div class="section" id="internal-options-conf-logcollector">
+<h1>internal_options.conf: logcollector<a class="headerlink" href="#internal-options-conf-logcollector" title="Permalink to this headline">¶</a></h1>
+<span class="target" id="logcollector"></span><dl class="intopt">
+<dt id="intopt-logcollector.loop_timeout">
+<tt class="descname">logcollector.loop_timeout</tt><a class="headerlink" href="#intopt-logcollector.loop_timeout" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Default:</strong> 2</p>
+</dd></dl>
+
+<dl class="intopt">
+<dt id="intopt-logcollector.open_attempts">
+<tt class="descname">logcollector.open_attempts</tt><a class="headerlink" href="#intopt-logcollector.open_attempts" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Default:</strong> 8</p>
+</dd></dl>
+
+<dl class="intopt">
+<dt id="intopt-logcollector.remote_commands=0">
+<tt class="descname">logcollector.remote_commands=0</tt><a class="headerlink" href="#intopt-logcollector.remote_commands=0" title="Permalink to this definition">¶</a></dt>
+<dd><p>Allow the agents to run commands defined in <tt class="docutils literal"><span class="pre">agent.conf</span></tt>.</p>
+<p><strong>Allowed:</strong> 0,1</p>
+<p><strong>Default:</strong> 0</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This option first appeared in OSSEC 2.7.</p>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="internal-options-conf-maild">
+<h1>internal_options.conf: maild<a class="headerlink" href="#internal-options-conf-maild" title="Permalink to this headline">¶</a></h1>
+<span class="target" id="maild"></span><dl class="intopt">
+<dt id="intopt-maild.strict_checking">
+<tt class="descname">maild.strict_checking</tt><a class="headerlink" href="#intopt-maild.strict_checking" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Default:</strong> 1</p>
+<p><strong>Allowed:</strong> 0 or 1</p>
+</dd></dl>
+
+<dl class="intopt">
+<dt id="intopt-maild.groupping">
+<tt class="descname">maild.groupping</tt><a class="headerlink" href="#intopt-maild.groupping" title="Permalink to this definition">¶</a></dt>
+<dd><p>If set to <tt class="docutils literal"><span class="pre">1</span></tt> alerts will be grouped together in one email. These alerts may be of different types or levels, and may be from different systems.</p>
+<p><strong>Default:</strong> 1</p>
+<p><strong>Allowed:</strong> 0 or 1</p>
+</dd></dl>
+
+<dl class="intopt">
+<dt id="intopt-maild.full_subject">
+<tt class="descname">maild.full_subject</tt><a class="headerlink" href="#intopt-maild.full_subject" title="Permalink to this definition">¶</a></dt>
+<dd><p>If set to <tt class="docutils literal"><span class="pre">1</span></tt> maild will use a full subject when sending alert emails. If set to <tt class="docutils literal"><span class="pre">0</span></tt> the subject is shortened.</p>
+<p><strong>Default:</strong> 0</p>
+<p><strong>Allowed:</strong> 0 or 1</p>
+</dd></dl>
+
+<dl class="intopt">
+<dt id="intopt-maild.geoip">
+<tt class="descname">maild.geoip</tt><a class="headerlink" href="#intopt-maild.geoip" title="Permalink to this definition">¶</a></dt>
+<dd><p>If set to <tt class="docutils literal"><span class="pre">1</span></tt> mails will display GeoIP data in alert emails.</p>
+<p><strong>Default:</strong> 1</p>
+<p><strong>Allowed:</strong> 0 or 1</p>
+</dd></dl>
+
+</div>
+<div class="section" id="internal-options-conf-monitord">
+<h1>internal_options.conf: monitord<a class="headerlink" href="#internal-options-conf-monitord" title="Permalink to this headline">¶</a></h1>
+<dl class="intopt">
+<dt id="intopt-monitord.day_wait">
+<tt class="descname">monitord.day_wait</tt><a class="headerlink" href="#intopt-monitord.day_wait" title="Permalink to this definition">¶</a></dt>
+<dd><p>Amount of time OSSEC will wait before compressing/signing log files.</p>
+<p><strong>Default:</strong> 10</p>
+</dd></dl>
+
+<dl class="intopt">
+<dt id="intopt-monitord.compress">
+<tt class="descname">monitord.compress</tt><a class="headerlink" href="#intopt-monitord.compress" title="Permalink to this definition">¶</a></dt>
+<dd><p>If set to <tt class="docutils literal"><span class="pre">1</span></tt> <tt class="docutils literal"><span class="pre">ossec-monitord</span></tt> will compress old log files.</p>
+<p><strong>Default:</strong> 1</p>
+<p><strong>Available:</strong> 0 or 1</p>
+</dd></dl>
+
+<dl class="intopt">
+<dt id="intopt-monitord.sign">
+<tt class="descname">monitord.sign</tt><a class="headerlink" href="#intopt-monitord.sign" title="Permalink to this definition">¶</a></dt>
+<dd><p>If set to <tt class="docutils literal"><span class="pre">1</span></tt> <tt class="docutils literal"><span class="pre">ossec-monitord</span></tt> will sign old log files.</p>
+<p><strong>Default:</strong> 1</p>
+</dd></dl>
+
+<dl class="intopt">
+<dt id="intopt-monitord.monitor_agents">
+<tt class="descname">monitord.monitor_agents</tt><a class="headerlink" href="#intopt-monitord.monitor_agents" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Default:</strong> 1</p>
+</dd></dl>
+
+</div>
+<div class="section" id="internal-options-conf-remoted">
+<h1>internal_options.conf: remoted<a class="headerlink" href="#internal-options-conf-remoted" title="Permalink to this headline">¶</a></h1>
+<span class="target" id="remoted"></span><dl class="intopt">
+<dt id="intopt-remoted.recv_counter_flush">
+<tt class="descname">remoted.recv_counter_flush</tt><a class="headerlink" href="#intopt-remoted.recv_counter_flush" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Default:</strong> 128</p>
+</dd></dl>
+
+<dl class="intopt">
+<dt id="intopt-remoted.comp_average_printout">
+<tt class="descname">remoted.comp_average_printout</tt><a class="headerlink" href="#intopt-remoted.comp_average_printout" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Default:</strong> 19999</p>
+</dd></dl>
+
+<dl class="intopt">
+<dt id="intopt-remoted.verify_msg_id">
+<tt class="descname">remoted.verify_msg_id</tt><a class="headerlink" href="#intopt-remoted.verify_msg_id" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Default:</strong> 1</p>
+</dd></dl>
+
+<dl class="intopt">
+<dt id="intopt-remoted.debug">
+<tt class="descname">remoted.debug</tt><a class="headerlink" href="#intopt-remoted.debug" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Default:</strong> 0</p>
+</dd></dl>
+
+</div>
+<div class="section" id="internal-options-conf-syscheck">
+<h1>internal_options.conf: syscheck<a class="headerlink" href="#internal-options-conf-syscheck" title="Permalink to this headline">¶</a></h1>
+<span class="target" id="syscheck"></span><dl class="intopt">
+<dt id="intopt-syscheck.sleep">
+<tt class="descname">syscheck.sleep</tt><a class="headerlink" href="#intopt-syscheck.sleep" title="Permalink to this definition">¶</a></dt>
+<dd><p><tt class="docutils literal"><span class="pre">ossec-syscheckd</span></tt> uses this setting to determine how long to sleep after reading <tt class="docutils literal"><span class="pre">syscheck.sleep_after</span></tt> number of files. By default <tt class="docutils literal"><span class="pre">ossec-syscheckd</span></tt> sleeps for 2 seconds after checking 15 files.</p>
+<p><strong>Default:</strong> 2</p>
+</dd></dl>
+
+<dl class="intopt">
+<dt id="intopt-syscheck.sleep_after">
+<tt class="descname">syscheck.sleep_after</tt><a class="headerlink" href="#intopt-syscheck.sleep_after" title="Permalink to this definition">¶</a></dt>
+<dd><p><tt class="docutils literal"><span class="pre">ossec-syscheckd</span></tt> reads this many files before sleeping for <tt class="docutils literal"><span class="pre">syscheck.sleep</span></tt> seconds.</p>
+<p><strong>Default:</strong> 15</p>
+</dd></dl>
+
+</div>
+<div class="section" id="internal-options-conf-windows">
+<h1>internal_options.conf: windows<a class="headerlink" href="#internal-options-conf-windows" title="Permalink to this headline">¶</a></h1>
+<span class="target" id="windows"></span><dl class="intopt">
+<dt id="intopt-windows.debug">
+<tt class="descname">windows.debug</tt><a class="headerlink" href="#intopt-windows.debug" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Default:</strong> 0
+<strong>Allowed:</strong> 0 or 1</p>
+</dd></dl>
+
+</div>
+
+  <div class="section">
+  
+  
+  </div>
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2010-2015, OSSEC Project Team - OSSEC trademark and domain owned by Trend Micro, Inc. - Home page images courtesy of Pixbay.com.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

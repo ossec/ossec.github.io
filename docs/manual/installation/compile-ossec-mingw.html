@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Compiling OSSEC with MinGW: &mdash; OSSEC</title>
+    
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/parallax.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '2.8.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-sphinx.js"></script>
+    <link rel="author" title="About these documents" href="../../../about.html" />
+    <link rel="top" title="OSSEC" href="../../../index.html" />
+  
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  
+  
+  <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+  
+  <style type="text/css">
+    ul.ablog-archive {list-style: none; overflow: auto; margin-left: 0px}
+    ul.ablog-archive li {float: left; margin-right: 5px; font-size: 80%}
+  </style>
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../../index.html"><img src="../../../_static/ossec_logo_bare_small.png">
+          OSSEC</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="../../../about.html">About <i class="fa fa-info-circle"></i></a></li>
+                <li><a href="../../../blog.html">Blog <i class="fa fa-archive"></i></a></li>
+                <li><a href="../../">Documentaton <i class="fa fa-book"></i></a></li>
+                <li><a href="../../../downloads.html">Downloads <i class="fa fa-download"></i></a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"></ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="section" id="compiling-ossec-with-mingw">
+<span id="compile-ossec-mingw"></span><h1>Compiling OSSEC with MinGW:<a class="headerlink" href="#compiling-ossec-with-mingw" title="Permalink to this headline">¶</a></h1>
+<p>OSSEC&#8217;s Windows agent is compiled using <a class="reference external" href="http://www.mingw.org/">MinGW</a></p>
+<p>It has always been a pain to generate snapshots for Windows because it required me to open up my Windows VM (slow), push the code there, compile, etc. Well, until this week when I started to play with MinGW cross-compilation feature to completely build an Windows agent from Linux.</p>
+<p>How it works? First, you need to install MinGW and <a class="reference external" href="http://nsis.sourceforge.net/Main_Page">nsis</a> (to build the installer). For OpenSSL support, an OpenSSL MinGW package will also be necessary.</p>
+<p>After that, download the source and generate the Windows package directory (replace 2.6 with the latest version or download the latest source <a class="reference external" href="https://bitbucket.org/dcid/ossec-hids/get/tip.tar.gz">here</a>):</p>
+<blockquote>
+<div><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">On some systems, the command md5, sha1, or wget may not exist. Try md5sum, sha1sum
+or lynx respectively instead.</p>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">wget may not be able to pull files from the OSSEC site. Use the <tt class="docutils literal"><span class="pre">-U</span></tt> flag to add a UserAgent,
+or obtain the checksum file by some other manner.</p>
+</div>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">#</span> wget -U ossec http://www.ossec.net/files/ossec-hids-2.8.1.tar.gz
+<span class="gp">#</span> wget -U ossec http://www.ossec.net/files/ossec-hids-2.8.1-checksum.txt
+<span class="gp">#</span> cat ossec-hids-2.8.1-checksum.txt
+<span class="go">MD5(ossec-hids-2.8.1.tar.gz)= c2ffd25180f760e366ab16eeb82ae382</span>
+<span class="go">SHA1(ossec-hids-2.8.1.tar.gz)= 0ecf1df09558dc8bb4b6f65e1fb2ca7a7df9817c</span>
+<span class="gp">#</span> md5sum ossec-hids-2.8.1.tar.gz
+<span class="go">MD5(ossec-hids-2.8.1.tar.gz)= c2ffd25180f760e366ab16eeb82ae382</span>
+<span class="gp">#</span> sha1sum ossec-hids-2.8.1.tar.gz
+<span class="go">SHA1(ossec-hids-2.8.1.tar.gz)= 0ecf1df09558dc8bb4b6f65e1fb2ca7a7df9817c</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>And generate the Windows package directory:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">#</span> <span class="nb">cd </span>ossec-hids-2.8.1/src/win32
+<span class="gp">#</span> ./gen-win.sh
+</pre></div>
+</div>
+<p>Now, you will have the win-pkg directory under src. Just go there and run make.sh. Your Windows agent package should be created in a few minutes:</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The <tt class="docutils literal"><span class="pre">make.sh</span></tt> script may require modification depending on the Linux distribution used.</p>
+</div>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">#</span> <span class="nb">cd</span> ../win-pkg
+<span class="gp">#</span> sh ./make.sh
+</pre></div>
+</div>
+<p>You will see the following in the screen:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">Making windows agent</span>
+<span class="go">rootcheck/win-common.c: In function &quot;__os_winreg_querykey&quot;:</span>
+<span class="go">rootcheck/win-common.c:279: warning: pointer targets in passing argument 7 of &quot;RegEnumValueA&quot; differ in signedness</span>
+<span class="go">win-registry.c: In function &quot;os_winreg_querykey&quot;:</span>
+<span class="go">...</span>
+
+<span class="go">Output: &quot;ossec-win32-agent.exe&quot;</span>
+<span class="go">Install: 7 pages (448 bytes), 3 sections (3144 bytes), 379 instructions (10612 bytes), 247 strings (42580 bytes), 1 language table (346 bytes).</span>
+<span class="go">Uninstall: 5 pages (320 bytes),</span>
+<span class="go">1 section (1048 bytes), 301 instructions (8428 bytes), 166 strings (2646 bytes), 1 language table (290 bytes).</span>
+<span class="go">Datablock optimizer saved 8371 bytes (~0.7%).</span>
+</pre></div>
+</div>
+<p>Which means that your agent executable ossec-win32-agent.exe has been created properly.</p>
+</div>
+
+  <div class="section">
+  
+  
+  </div>
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2010-2015, OSSEC Project Team - OSSEC trademark and domain owned by Trend Micro, Inc. - Home page images courtesy of Pixbay.com.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

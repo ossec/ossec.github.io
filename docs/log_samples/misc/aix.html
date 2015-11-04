@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Log Samples from AIX &mdash; OSSEC</title>
+    
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/parallax.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '2.8.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-sphinx.js"></script>
+    <link rel="author" title="About these documents" href="../../../about.html" />
+    <link rel="top" title="OSSEC" href="../../../index.html" />
+  
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  
+  
+  <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+  
+  <style type="text/css">
+    ul.ablog-archive {list-style: none; overflow: auto; margin-left: 0px}
+    ul.ablog-archive li {float: left; margin-right: 5px; font-size: 80%}
+  </style>
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../../index.html"><img src="../../../_static/ossec_logo_bare_small.png">
+          OSSEC</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="../../../about.html">About <i class="fa fa-info-circle"></i></a></li>
+                <li><a href="../../../blog.html">Blog <i class="fa fa-archive"></i></a></li>
+                <li><a href="../../">Documentaton <i class="fa fa-book"></i></a></li>
+                <li><a href="../../../downloads.html">Downloads <i class="fa fa-download"></i></a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"></ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="section" id="log-samples-from-aix">
+<h1>Log Samples from AIX<a class="headerlink" href="#log-samples-from-aix" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="aix-su">
+<h2>AIX SU:<a class="headerlink" href="#aix-su" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">Mar  2 15:14:36 WebServer1 su: BAD SU from 1.2.3.4 to root at /dev/pts/1</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="examples-aix-messages-log">
+<h2>Examples AIX messages log:<a class="headerlink" href="#examples-aix-messages-log" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">Mar  6 11:09:27 webserver1 librmad[12906]: librmad Tue Mar  6 11:09:27 2007 /project/rm410/build/rm410/src/rm/rmeif/lib/rmad.c Line: 371, rmad_send_message, HRMRM0017E Message formatting failed with a return code of -1.</span>
+<span class="go">Mar  6 11:14:43 epopws1 xntpd[5676]: time reset (step) -0.199116 s</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="examples-aix-ibm-accessmanager-request-log-weblog">
+<h2>Examples AIX/IBM AccessManager request.log (weblog):<a class="headerlink" href="#examples-aix-ibm-accessmanager-request-log-weblog" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">1.2.3.4 - Unauth [04/Mar/2007:00:03:11 +0100] &quot;HEAD / HTTP/1.0&quot; 200 0</span>
+<span class="go">2.3.4.5 - jMeter@is [04/Mar/2007:00:03:11 +0100] &quot;GET /pkmslogout HTTP/1.1&quot; 200 6691</span>
+<span class="go">3.4.5.6 - Unauth [04/Mar/2007:00:03:11 +0100] &quot;GET /cin HTTP/1.1&quot; 200 12272</span>
+</pre></div>
+</div>
+<p><a href="#id1"><span class="problematic" id="id2">*</span></a>Examples of AIX ipsec logs:
+.. code-block:: console</p>
+<blockquote>
+<div>ipsec_logd: #:3 R:p  I:10.0.0.99 S:10.0.0.82 D:10.0.0.99     P:tcp/ack SP:50349 DP:22 R:l I:en0 F:n T:0 L:88
+ipsec_logd: #:1 R:p  O:10.0.0.99. S:10.0.0.99 D:10.0.0.25     P:udp SP:2063 DP:53 R:l I:en0 F:n T:0 L:81</div></blockquote>
+</div>
+<div class="section" id="examples-of-aix-sshd-logins">
+<h2>Examples of AIX sshd logins:<a class="headerlink" href="#examples-of-aix-sshd-logins" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">Apr  3 04:46:53 aixhostname sshd[21174]: Accepted publickey for user1 from 2.3.4.5 port 59663 ssh2</span>
+<span class="go">May 21 20:22:28 aixhostname sshd[21487]: Failed password for user2 from 2.3.4.5 port 1045 ssh2</span>
+<span class="go">May 21 20:22:29 aixhostname sshd[21489]: Invalid user admin from 2.3.4.5</span>
+<span class="go">Apr  6 08:11:12 &lt;host&gt; sshd[21900]: User &lt;user&gt; not allowed because not listed in AllowUsers</span>
+<span class="go">Apr  6 08:12:54 &lt;host&gt; syslog: ssh: failed login attempt for &lt;user&gt; from &lt;host&gt;</span>
+<span class="go">Apr  6 08:12:54 &lt;host&gt; sshd[6318]: Failed password for &lt;host&gt; from &lt;host&gt; port 59083 ssh2</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="aix-5-3">
+<h2>AIX 5.3:<a class="headerlink" href="#aix-5-3" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">Apr 24 10:40:38 aix03srv auth|security:info sshd[475526]: Login restricted for tesu: You entered an invalid login name or password.</span>
+<span class="go">Apr 24 10:40:38 aix03srv auth|security:info sshd[475526]: Failed none for invalid user user1a from 127.0.0.1 port 58997 ssh2</span>
+<span class="go">Apr 24 10:40:43 aix03srv auth|security:info sshd[475526]: Failed password for invalid user usa1 from 127.0.0.1 port 58997 ssh2</span>
+<span class="go">Apr 24 10:40:43 aix03srv auth|security:info syslog: ssh: failed login attempt for UNKNOWN_USER from loopback</span>
+<span class="go">Apr 12 15:19:47 lpar1 auth|security:info sshd[368754]: Failed password for root from 10.1.5.20 port 54747 ssh2</span>
+<span class="go">Apr 12 15:19:47 lpar1 auth|security:info syslog: ssh: failed login attempt for root from csm01</span>
+<span class="go">Apr 12 15:19:47 lpar1auth|security:info sshd[774360]: Failed password for root from 10.1.5.20 port 54748 ssh2</span>
+<span class="go">Apr 12 15:19:47 lpar1 auth|security:info syslog: ssh: failed login attempt for root from csm01</span>
+
+
+<span class="go">Jul 23 12:59:35 freescale auth.info sshd[1816]: User igotre password has expired (root forced)</span>
+<span class="go">Jul 23 12:59:35 freescale  auth.info sshd[1816]: Accepted password for igotre from 10.1.20.9 port 36875 ssh2</span>
+<span class="go">Jul 23 12:59:35 freescale auth.err sshd[1820]: error: setlogin failed: Function not implemented</span>
+<span class="go">Jul 23 12:59:35 freescale auth.err sshd[1821]: error: open /dev/tty failed - could not set controlling tty: Permission denied</span>
+<span class="go">Jul 23 12:59:44 freescale auth.info passwd[1821]: password for `igotre&#39; changed by user `igotre&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+  <div class="section">
+  
+  
+  </div>
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2010-2015, OSSEC Project Team - OSSEC trademark and domain owned by Trend Micro, Inc. - Home page images courtesy of Pixbay.com.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

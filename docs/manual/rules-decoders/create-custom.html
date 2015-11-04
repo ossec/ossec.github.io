@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Create Custom decoder and rules &mdash; OSSEC</title>
+    
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/parallax.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '2.8.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-sphinx.js"></script>
+    <link rel="author" title="About these documents" href="../../../about.html" />
+    <link rel="top" title="OSSEC" href="../../../index.html" />
+  
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  
+  
+  <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+  
+  <style type="text/css">
+    ul.ablog-archive {list-style: none; overflow: auto; margin-left: 0px}
+    ul.ablog-archive li {float: left; margin-right: 5px; font-size: 80%}
+  </style>
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../../index.html"><img src="../../../_static/ossec_logo_bare_small.png">
+          OSSEC</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="../../../about.html">About <i class="fa fa-info-circle"></i></a></li>
+                <li><a href="../../../blog.html">Blog <i class="fa fa-archive"></i></a></li>
+                <li><a href="../../">Documentaton <i class="fa fa-book"></i></a></li>
+                <li><a href="../../../downloads.html">Downloads <i class="fa fa-download"></i></a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"></ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="admonition note" id="manual-rules-decoder-custom">
+<p class="first admonition-title">Note</p>
+<p class="last">Previous versions of this page page orginally was created by &#64;j_hen on her blog <a class="reference external" href="http://jentalkstoomuch.blogspot.com/2010/09/writing-custom-ossec-rules-for-your.html">http://jentalkstoomuch.blogspot.com/2010/09/writing-custom-ossec-rules-for-your.html</a>
+Some content may be the same, but examples have been updated.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">In the xml based examples, any text between <tt class="docutils literal"><span class="pre">&lt;!--</span></tt> and <tt class="docutils literal"><span class="pre">--&gt;</span></tt> are comments.
+In the console based examples, anything after <tt class="docutils literal"><span class="pre">#</span></tt> may be an example.
+For more information on OSSEC&#8217;s non-standard regular expression (regex) syntax, refer to the <a class="reference external" href="../syntax/regex.html">regex page</a>.</p>
+</div>
+<div class="section" id="create-custom-decoder-and-rules">
+<h1>Create Custom decoder and rules<a class="headerlink" href="#create-custom-decoder-and-rules" title="Permalink to this headline">¶</a></h1>
+<p>One of the main features of OSSEC is monitoring system and application logs. Many popular services have logs and decoders, but there are hundreds that are not covered.
+Custom applications and services will also not be covered. Adding decoders and rules for services is generally very easy.</p>
+<div class="section" id="adding-a-file-to-be-monitored">
+<h2>Adding a File to be Monitored<a class="headerlink" href="#adding-a-file-to-be-monitored" title="Permalink to this headline">¶</a></h2>
+<p>Adding a log file to the configuration for monitoring is simple. In the system&#8217;s ossec.conf add an entry like this:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;localfile&gt;</span>
+  <span class="nt">&lt;log_format&gt;</span>syslog<span class="nt">&lt;/log_format&gt;</span>
+  <span class="nt">&lt;location&gt;</span>/path/to/log/file<span class="nt">&lt;/location&gt;</span>
+<span class="nt">&lt;/localfile&gt;</span>
+</pre></div>
+</div>
+<p><tt class="docutils literal"><span class="pre">syslog</span></tt> is a generic format, consisting of a singular line of text appended to the log file. There are other formats available, they are detailed on the localfile syntax page.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Additional examples can be found <a class="reference external" href="../monitoring/file-log-monitoring.html">here.</a>
+More detailed syntax can be found <a class="reference external" href="../../syntax/head_ossec_config.localfile.html">here.</a></p>
+</div>
+<p>After adding a localfile entry, the OSSEC processes must be restarted.</p>
+</div>
+<div class="section" id="create-a-custom-decoder">
+<h2>Create a Custom Decoder<a class="headerlink" href="#create-a-custom-decoder" title="Permalink to this headline">¶</a></h2>
+<p>The following log messages will be used for most of the examples in this section:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">2013-11-01T10:01:04.600374-04:00 arrakis ossec-exampled[9123]: test connection from 192.168.1.1 via test-protocol1</span>
+<span class="go">2013-11-01T10:01:05.600494-04:00 arrakis ossec-exampled[9123]: successful authentication for user test-user from 192.168.1.1 via test-protocol1</span>
+</pre></div>
+</div>
+<p>The first log message is broken down as follows:</p>
+<ul class="simple">
+<li>2013-11-01T10:01:04.600374-04:00 - timestamp from <a class="reference external" href="http://www.rsyslog.com">rsyslog</a></li>
+<li>arrakis - hostname of the system</li>
+<li>ossec-exampled - daemon creating the log</li>
+<li>[9123] - process ID of the ossec-exampled instance</li>
+<li>test connection from 192.168.1.1 via test-protocol1 - log message</li>
+</ul>
+<p><a class="reference external" href="../programs/ossec-logtest.html">ossec-logtest</a> will be used to test the custom decoder and any custom rules.</p>
+<p>Custom decoders are added to the <tt class="docutils literal"><span class="pre">local_decoder.xml</span></tt> file, typically found in <tt class="docutils literal"><span class="pre">/var/ossec/etc</span></tt> on a standard installation. The basic syntax is listed <a class="reference external" href="../syntax/head_decoders.html">here</a>, but this page is not well documented at the moment.</p>
+<p>Using ossec-logtest on this sample rule results in the following output:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">#</span> /var/ossec/bin/ossec-logtest
+<span class="go">2013/11/01 10:39:07 ossec-testrule: INFO: Reading local decoder file.</span>
+<span class="go">2013/11/01 10:39:07 ossec-testrule: INFO: Started (pid: 32109).</span>
+<span class="go">ossec-testrule: Type one log per line.</span>
+
+<span class="go">2013-11-01T10:01:04.600374-04:00 arrakis ossec-exampled[9123]: test connection from 192.168.1.1 via test-protocol1</span>
+
+
+<span class="go">**Phase 1: Completed pre-decoding.</span>
+<span class="go">       full event: &#39;2013-11-01T10:01:04.600374-04:00 arrakis ossec-exampled[9123]: test connection from 192.168.1.1 via test-protocol1&#39;</span>
+<span class="go">       hostname: &#39;arrakis&#39;</span>
+<span class="go">       program_name: &#39;ossec-exampled&#39;</span>
+<span class="go">       log: &#39;test connection from 192.168.1.1 via test-protocol1&#39;</span>
+
+<span class="go">**Phase 2: Completed decoding.</span>
+<span class="go">       No decoder matched.</span>
+</pre></div>
+</div>
+<p>There is not a lot of output here because OSSEC does not understand this log. Creating a decoder for this log message will provide OSSEC much more information.</p>
+<p>Phase 1 &#8220;pre-decodes&#8221; some information. The hostname is the system that generated the log message, program_name is the name of the application that created the log, and log is the rest of the log message.</p>
+<p>The following is a very basic decoder for <tt class="docutils literal"><span class="pre">ossec-exampled</span></tt>:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;decoder</span> <span class="na">name=</span><span class="s">&quot;ossec-exampled&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;program_name&gt;</span>ossec-exampled<span class="nt">&lt;/program_name&gt;</span>
+<span class="nt">&lt;/decoder&gt;</span>
+</pre></div>
+</div>
+<p>This decoder simply looks for any log messages generated by <tt class="docutils literal"><span class="pre">ossec-exampled</span></tt>. Using a very generic decoder like this can allow an OSSEC user to create more specific child decoders for services with less consistant log messages.</p>
+<p>Here is the ossec-logtest output after adding this decoder:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">#</span> /var/ossec/bin/ossec-logtest
+<span class="go">2013/11/01 10:52:09 ossec-testrule: INFO: Reading local decoder file.</span>
+<span class="go">2013/11/01 10:52:09 ossec-testrule: INFO: Started (pid: 25151).</span>
+<span class="go">ossec-testrule: Type one log per line.</span>
+
+<span class="go">2013-11-01T10:01:04.600374-04:00 arrakis ossec-exampled[9123]: test connection from 192.168.1.1 via test-protocol1</span>
+
+
+<span class="go">**Phase 1: Completed pre-decoding.</span>
+<span class="go">       full event: &#39;2013-11-01T10:01:04.600374-04:00 arrakis ossec-exampled[9123]: test connection from 192.168.1.1 via test-protocol1&#39;</span>
+<span class="go">       hostname: &#39;arrakis&#39;</span>
+<span class="go">       program_name: &#39;ossec-exampled&#39;</span>
+<span class="go">       log: &#39;test connection from 192.168.1.1 via test-protocol1&#39;</span>
+
+<span class="go">**Phase 2: Completed decoding.</span>
+<span class="go">       decoder: &#39;ossec-exampled&#39;</span>
+</pre></div>
+</div>
+<p>Phase 2 now correctly identifies this log message as coming from ossec-exampled. There is still some very important information in the log message that should be decoded, namely the source IP and <tt class="docutils literal"><span class="pre">test-protocol1</span></tt>. To decode these a child decoder will be added. It will set the <tt class="docutils literal"><span class="pre">ossec-exampled</span></tt> decoder as a parent, and use <tt class="docutils literal"><span class="pre">prematch</span></tt> to limit its use to the correct log message.</p>
+<div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;decoder</span> <span class="na">name=</span><span class="s">&quot;ossec-exampled-test-connection&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;parent&gt;</span>ossec-exampled<span class="nt">&lt;/parent&gt;</span>
+  <span class="nt">&lt;prematch</span> <span class="na">offset=</span><span class="s">&quot;after_parent&quot;</span><span class="nt">&gt;</span>^test connection <span class="nt">&lt;/prematch&gt;</span> <span class="c">&lt;!-- offset=&quot;after_parent&quot; makes OSSEC ignore anything matched by the parent decoder and before --&gt;</span>
+  <span class="nt">&lt;regex</span> <span class="na">offset=</span><span class="s">&quot;after_prematch&quot;</span><span class="nt">&gt;</span>^from (\S+) via (\S+)$<span class="nt">&lt;/regex&gt;</span> <span class="c">&lt;!-- offset=&quot;after_prematch&quot; makes OSSEC ignore anything matched by the prematch and earlier--&gt;</span>
+  <span class="nt">&lt;order&gt;</span>srcip, protocol<span class="nt">&lt;/order&gt;</span>
+<span class="nt">&lt;/decoder&gt;</span>
+</pre></div>
+</div>
+<p>Breaking this down piece by piece:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">&lt;decoder</span> <span class="pre">name=&quot;ossec-exampled-test-connection&quot;&gt;</span></tt> - Declaring this to be a decoder and giving it a name.</li>
+<li><tt class="docutils literal"><span class="pre">&lt;parent&gt;ossec-exampled&lt;/parent&gt;</span></tt> - This decoder will only be checked if <tt class="docutils literal"><span class="pre">ossec-exampled</span></tt> also matched.</li>
+<li><tt class="docutils literal"><span class="pre">&lt;prematch</span> <span class="pre">offset=&quot;after_parent&quot;&gt;^test</span> <span class="pre">connection</span> <span class="pre">&lt;/prematch&gt;</span></tt> - If a log message does not contain the data in the prematch, it will not use that decoder. Setting the offset tells OSSEC to only look at data after the parent (ossec-exampled[9123]: in this case), in an effort to speed up matches.</li>
+<li><tt class="docutils literal"><span class="pre">&lt;regex</span> <span class="pre">offset=&quot;after_prematch&quot;&gt;^from</span> <span class="pre">(\S+)</span> <span class="pre">via</span> <span class="pre">(\S+)$&lt;/regex&gt;</span></tt> - The regex line can be used to pull data out of the log message for use in rules. In this instance the first <tt class="docutils literal"><span class="pre">\S+</span></tt> matches the IP address, and the second matches the protocol. Anything between the parenthesis will be able to be used in rules.</li>
+<li><tt class="docutils literal"><span class="pre">&lt;order&gt;srcip,</span> <span class="pre">protocol&lt;/order&gt;</span></tt> - Defines what the entries in the regex line are labeled as. The IP address will be labeled as srcip, and the protocol by proto.</li>
+</ul>
+<p>ossec-logtest output after adding this decoder:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">#</span> /var/ossec/bin/ossec-logtest
+<span class="go">2013/11/01 11:03:25 ossec-testrule: INFO: Reading local decoder file.</span>
+<span class="go">2013/11/01 11:03:25 ossec-testrule: INFO: Started (pid: 6290).</span>
+<span class="go">ossec-testrule: Type one log per line.</span>
+
+<span class="go">2013-11-01T10:01:04.600374-04:00 arrakis ossec-exampled[9123]: test connection from 192.168.1.1 via test-protocol1</span>
+
+
+<span class="go">**Phase 1: Completed pre-decoding.</span>
+<span class="go">       full event: &#39;2013-11-01T10:01:04.600374-04:00 arrakis ossec-exampled[9123]: test connection from 192.168.1.1 via test-protocol1&#39;</span>
+<span class="go">       hostname: &#39;arrakis&#39;</span>
+<span class="go">       program_name: &#39;ossec-exampled&#39;</span>
+<span class="go">       log: &#39;test connection from 192.168.1.1 via test-protocol1&#39;</span>
+
+<span class="go">**Phase 2: Completed decoding.</span>
+<span class="go">       decoder: &#39;ossec-exampled&#39;</span>
+<span class="go">       srcip: &#39;192.168.1.1&#39;</span>
+<span class="go">       proto: &#39;test-protocol1&#39;</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The <tt class="docutils literal"><span class="pre">decoder</span></tt> will be labeled as the parent decoder, not the child. It&#8217;s common to think a child decoder doesn&#8217;t work because the parent decoder&#8217;s name is listed, but that may not be a problem.</p>
+</div>
+<p>Now that the first sample log message is decoded, how does the second message fare? <tt class="docutils literal"><span class="pre">ossec-logtest</span></tt> output:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">2013-11-01T10:01:05.600494-04:00 arrakis ossec-exampled[9123]: successful authentication for user test-user from 192.168.1.1 via test-protocol1</span>
+
+
+<span class="go">**Phase 1: Completed pre-decoding.</span>
+<span class="go">       full event: &#39;2013-11-01T10:01:05.600494-04:00 arrakis ossec-exampled[9123]: successful authentication for user test-user from 192.168.1.1 via test-protocol1&#39;</span>
+<span class="go">       hostname: &#39;arrakis&#39;</span>
+<span class="go">       program_name: &#39;ossec-exampled&#39;</span>
+<span class="go">       log: &#39;successful authentication for user test-user from 192.168.1.1 via test-protocol1&#39;</span>
+
+<span class="go">**Phase 2: Completed decoding.</span>
+<span class="go">       decoder: &#39;ossec-exampled&#39;</span>
+</pre></div>
+</div>
+<p>The decoded fields added in <tt class="docutils literal"><span class="pre">ossec-exampled-test-connection</span></tt> do not get decoded in this log message. This is expected because the <tt class="docutils literal"><span class="pre">prematch</span></tt> does not match. In this log message there are 4 fields that would be useful: status (successful), srcuser, srcip, and protocol. Adding a decoder for this should also be simple:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;decoder</span> <span class="na">name=</span><span class="s">&quot;ossec-exampled-auth&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;parent&gt;</span>ossec-exampled<span class="nt">&lt;/parent&gt;</span>
+  <span class="nt">&lt;prematch</span> <span class="na">offset=</span><span class="s">&quot;after_parent&quot;</span><span class="nt">&gt;</span> authentication <span class="nt">&lt;/prematch&gt;</span>
+  <span class="nt">&lt;regex</span> <span class="na">offset=</span><span class="s">&quot;after_parent&quot;</span><span class="nt">&gt;</span>^(\S+) authentication for user (\S+) from (\S+) via (\S+)$<span class="nt">&lt;/regex&gt;</span> <span class="c">&lt;!-- Using after_parent here because after_prematch would eliminate the possibility of matching the status (successful) --&gt;</span>
+  <span class="nt">&lt;order&gt;</span>status, srcuser, srcip, protocol<span class="nt">&lt;/order&gt;</span>
+<span class="nt">&lt;/decoder&gt;</span>
+</pre></div>
+</div>
+<p><tt class="docutils literal"><span class="pre">ossec-logtest</span></tt> output:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">2013-11-01T10:01:05.600494-04:00 arrakis ossec-exampled[9123]: successful authentication for user test-user from 192.168.1.1 via test-protocol1</span>
+
+
+<span class="go">**Phase 1: Completed pre-decoding.</span>
+<span class="go">       full event: &#39;2013-11-01T10:01:05.600494-04:00 arrakis ossec-exampled[9123]: successful authentication for user test-user from 192.168.1.1 via test-protocol1&#39;</span>
+<span class="go">       hostname: &#39;arrakis&#39;</span>
+<span class="go">       program_name: &#39;ossec-exampled&#39;</span>
+<span class="go">       log: &#39;successful authentication for user test-user from 192.168.1.1 via test-protocol1&#39;</span>
+
+<span class="go">**Phase 2: Completed decoding.</span>
+<span class="go">       decoder: &#39;ossec-exampled&#39;</span>
+<span class="go">       status: &#39;successful&#39;</span>
+<span class="go">       srcuser: &#39;test-user&#39;</span>
+<span class="go">       srcip: &#39;192.168.1.1&#39;</span>
+<span class="go">       proto: &#39;test-protocol1&#39;</span>
+</pre></div>
+</div>
+<p>Now the useful fields have been extracted for this log message as well. Double checking the original log message, to make sure there were no regressions:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">2013-11-01T10:01:04.600374-04:00 arrakis ossec-exampled[9123]: test connection from 192.168.1.1 via test-protocol1</span>
+
+
+<span class="go">**Phase 1: Completed pre-decoding.</span>
+<span class="go">       full event: &#39;2013-11-01T10:01:04.600374-04:00 arrakis ossec-exampled[9123]: test connection from 192.168.1.1 via test-protocol1&#39;</span>
+<span class="go">       hostname: &#39;arrakis&#39;</span>
+<span class="go">       program_name: &#39;ossec-exampled&#39;</span>
+<span class="go">       log: &#39;test connection from 192.168.1.1 via test-protocol1&#39;</span>
+
+<span class="go">**Phase 2: Completed decoding.</span>
+<span class="go">       decoder: &#39;ossec-exampled&#39;</span>
+<span class="go">       srcip: &#39;192.168.1.1&#39;</span>
+<span class="go">       proto: &#39;test-protocol1&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+  <div class="section">
+  
+  
+  </div>
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2010-2015, OSSEC Project Team - OSSEC trademark and domain owned by Trend Micro, Inc. - Home page images courtesy of Pixbay.com.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

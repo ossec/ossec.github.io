@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Courier Log samples &mdash; OSSEC</title>
+    
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/parallax.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '2.8.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-sphinx.js"></script>
+    <link rel="author" title="About these documents" href="../../../about.html" />
+    <link rel="top" title="OSSEC" href="../../../index.html" />
+  
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  
+  
+  <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+  
+  <style type="text/css">
+    ul.ablog-archive {list-style: none; overflow: auto; margin-left: 0px}
+    ul.ablog-archive li {float: left; margin-right: 5px; font-size: 80%}
+  </style>
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../../index.html"><img src="../../../_static/ossec_logo_bare_small.png">
+          OSSEC</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="../../../about.html">About <i class="fa fa-info-circle"></i></a></li>
+                <li><a href="../../../blog.html">Blog <i class="fa fa-archive"></i></a></li>
+                <li><a href="../../">Documentaton <i class="fa fa-book"></i></a></li>
+                <li><a href="../../../downloads.html">Downloads <i class="fa fa-download"></i></a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"></ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="section" id="courier-log-samples">
+<h1>Courier Log samples<a class="headerlink" href="#courier-log-samples" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="pop3-login-failed">
+<h2>Pop3 Login failed:<a class="headerlink" href="#pop3-login-failed" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">May 30 00:01:02 server2 courierpop3login: LOGIN FAILED, ip=[::ffff:193.68.217.36]</span>
+<span class="go">May 30 00:01:03 server2 courierpop3login: LOGIN FAILED, ip=[::ffff:193.68.217.36]</span>
+<span class="go">May 30 00:01:02 server2 courierpop3login: LOGIN FAILED, ip=[::ffff:193.68.217.36]</span>
+
+<span class="go">Dec 1 10:46:22 debian courierpop3login: LOGIN FAILED, ip=[::ffff:192.168.1.161]</span>
+<span class="go">Dec 1 10:46:30 debian courierpop3login: Connection, ip=[::ffff:192.168.1.161]</span>
+<span class="go">Dec 1 10:46:35 debian courierpop3login: LOGIN FAILED, ip=[::ffff:192.168.1.161]</span>
+
+<span class="go">Nov 22 20:02:24 www courierpop3login: LOGIN FAILED, ip=[::ffff:192.168.0.188]</span>
+<span class="go">Nov 22 20:02:26 www courierpop3login: LOGIN FAILED, ip=[::ffff:5.4.234.42]</span>
+<span class="go">Nov 22 20:02:26 www courierpop3login: LOGOUT, ip=[::ffff:5.4.234.42]</span>
+<span class="go">Nov 22 20:02:26 www courierpop3login: Connection, ip=[::ffff:5.4.234.42]</span>
+<span class="go">Nov 22 20:02:30 www courierpop3login: LOGIN FAILED, ip=[::ffff:62.10.125.238]</span>
+<span class="go">Nov 22 20:02:34 www courierpop3login: LOGIN FAILED, ip=[::ffff:5.4.234.42]</span>
+<span class="go">Nov 22 20:02:34 www courierpop3login: LOGOUT, ip=[::ffff:5.4.234.42]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="pop3d-ssl-login-failed">
+<h2>Pop3d-ssl Login failed:<a class="headerlink" href="#pop3d-ssl-login-failed" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">Jan 3 02:07:37 web pop3d-ssl: Connection, ip=[::ffff:192.168.0.200]</span>
+<span class="go">Jan 3 02:07:44 web pop3d-ssl: LOGIN FAILED, ip=[::ffff:192.168.0.200]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="imapd-login-failed">
+<h2>Imapd Login failed:<a class="headerlink" href="#imapd-login-failed" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">Sep 21 00:40:57 server01 imaplogin: LOGIN FAILED, ip=[::ffff:127.0.0.1]</span>
+<span class="go">Sep 21 00:41:17 server01 imaplogin: LOGIN FAILED, ip=[::ffff:127.0.0.1]</span>
+<span class="go">Sep 21 00:42:21 server01 imaplogin: LOGIN FAILED, ip=[::ffff:127.0.0.1]</span>
+<span class="go">Sep 21 00:42:21 server01 imaplogin: DISCONNECTED, ip=[::ffff:127.0.0.1], time=5</span>
+<span class="go">Sep 21 00:42:28 server01 imaplogin: LOGIN FAILED, ip=[::ffff:127.0.0.1]</span>
+<span class="go">Sep 21 00:44:23 server01 imaplogin: DISCONNECTED, ip=[::ffff:127.0.0.1], time=0</span>
+<span class="go">Sep 21 00:48:58 server01 courierpop3login: LOGIN FAILED, ip=[::ffff:88.73.124.13]</span>
+<span class="go">Sep 21 00:49:42 server01 imaplogin: LOGIN FAILED, ip=[::ffff:127.0.0.1]</span>
+<span class="go">Sep 21 00:51:50 server01 courierpop3login: LOGIN FAILED, ip=[::ffff:88.73.124.13]</span>
+<span class="go">Sep 21 00:53:42 server01 courierpop3login: LOGIN FAILED, ip=[::ffff:88.73.124.13]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="valid-logins">
+<h2>Valid logins:<a class="headerlink" href="#valid-logins" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">Jun 1 00:12:06 server1 courierpop3login: LOGIN, user=web10_mauricio, ip=[::ffff:192.168.0.100]</span>
+<span class="go">Jun 1 00:12:06 server1 courierpop3login: LOGOUT, user=web10_mauricio, ip=[::ffff:192.168.0.100], top=0, retr=0, rcvd=24, sent=96, time=0</span>
+<span class="go">Jun 1 00:21:40 server1 courierpop3login: Connection, ip=[::ffff:192.168.0.100]</span>
+<span class="go">Jun 1 00:21:40 server1 courierpop3login: LOGIN, user=web10_mauricio, ip=[::ffff:192.168.0.100]</span>
+<span class="go">Jun 1 00:21:40 server1 courierpop3login: LOGOUT, user=web10_mauricio, ip=[::ffff:192.168.0.100], top=0, retr=0, rcvd=24, sent=96, time=0</span>
+<span class="go">Jun 1 00:30:15 server1 courierpop3login: Connection, ip=[::ffff:192.168.0.100]</span>
+<span class="go">Jun 1 00:30:15 server1 courierpop3login: LOGIN, user=web10_mauricio, ip=[::ffff:192.168.0.100]</span>
+<span class="go">Jun 1 00:30:15 server1 courierpop3login: LOGOUT, user=web10_mauricio, ip=[::ffff:192.168.0.100], top=0, retr=0, rcvd=24, sent=96, time=0</span>
+<span class="go">Jun 1 00:31:40 server1 courierpop3login: Connection, ip=[::ffff:192.168.0.100]</span>
+<span class="go">Jun 1 00:31:40 server1 courierpop3login: LOGIN, user=web10_mauricio, ip=[::ffff:192.168.0.100]</span>
+<span class="go">Jun 1 00:31:40 server1 courierpop3login: LOGOUT, user=web10_mauricio, ip=[::ffff:192.168.0.100], top=0, retr=0, rcvd=24, sent=96, time=0</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+  <div class="section">
+  
+  
+  </div>
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2010-2015, OSSEC Project Team - OSSEC trademark and domain owned by Trend Micro, Inc. - Home page images courtesy of Pixbay.com.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

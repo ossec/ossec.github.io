@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Centralized agent configuration &mdash; OSSEC</title>
+    
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/parallax.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '2.8.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-sphinx.js"></script>
+    <link rel="author" title="About these documents" href="../../../about.html" />
+    <link rel="top" title="OSSEC" href="../../../index.html" />
+  
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  
+  
+  <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+  
+  <style type="text/css">
+    ul.ablog-archive {list-style: none; overflow: auto; margin-left: 0px}
+    ul.ablog-archive li {float: left; margin-right: 5px; font-size: 80%}
+  </style>
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../../index.html"><img src="../../../_static/ossec_logo_bare_small.png">
+          OSSEC</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="../../../about.html">About <i class="fa fa-info-circle"></i></a></li>
+                <li><a href="../../../blog.html">Blog <i class="fa fa-archive"></i></a></li>
+                <li><a href="../../">Documentaton <i class="fa fa-book"></i></a></li>
+                <li><a href="../../../downloads.html">Downloads <i class="fa fa-download"></i></a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"></ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="section" id="centralized-agent-configuration">
+<span id="manual-syscheck"></span><h1>Centralized agent configuration<a class="headerlink" href="#centralized-agent-configuration" title="Permalink to this headline">¶</a></h1>
+<p>If you ever wanted to be able to configure your agents remotely, you will be
+happy to know that starting on version 2.1 you will be able to do so. We allow
+centralized configuration for file integrity checking (syscheckd), rootkit
+detection (rootcheck) and log analysis.</p>
+<p>This is how it works.</p>
+<div class="section" id="create-agent-configuration">
+<h2>Create agent configuration<a class="headerlink" href="#create-agent-configuration" title="Permalink to this headline">¶</a></h2>
+<p>First Create the file /var/ossec/etc/shared/agent.conf.</p>
+<p>Inside the file you can configure the agent just as you would normally at
+ossec.conf</p>
+<div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;agent_config&gt;</span>
+    <span class="nt">&lt;localfile&gt;</span>
+        <span class="nt">&lt;location&gt;</span>/var/log/my.log<span class="nt">&lt;/location&gt;</span>
+        <span class="nt">&lt;log_format&gt;</span>syslog<span class="nt">&lt;/log_format&gt;</span>
+    <span class="nt">&lt;/localfile&gt;</span>
+<span class="nt">&lt;/agent_config&gt;</span>
+</pre></div>
+</div>
+<p>But you have a few more options. You can restrict the config by agent name,
+operating system, or profile:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;agent_config</span> <span class="na">name=</span><span class="s">&quot;agent1&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;localfile&gt;</span>
+        <span class="nt">&lt;location&gt;</span>/var/log/my.log<span class="nt">&lt;/location&gt;</span>
+        <span class="nt">&lt;log_format&gt;</span>syslog<span class="nt">&lt;/log_format&gt;</span>
+    <span class="nt">&lt;/localfile&gt;</span>
+<span class="nt">&lt;/agent_config&gt;</span>
+
+<span class="nt">&lt;agent_config</span> <span class="na">os=</span><span class="s">&quot;Linux&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;localfile&gt;</span>
+        <span class="nt">&lt;location&gt;</span>/var/log/my.log2<span class="nt">&lt;/location&gt;</span>
+        <span class="nt">&lt;log_format&gt;</span>syslog<span class="nt">&lt;/log_format&gt;</span>
+    <span class="nt">&lt;/localfile&gt;</span>
+<span class="nt">&lt;/agent_config&gt;</span>
+
+<span class="nt">&lt;agent_config</span> <span class="na">os=</span><span class="s">&quot;Windows&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;localfile&gt;</span>
+        <span class="nt">&lt;location&gt;</span>C:\myapp\my.log<span class="nt">&lt;/location&gt;</span>
+        <span class="nt">&lt;log_format&gt;</span>syslog<span class="nt">&lt;/log_format&gt;</span>
+    <span class="nt">&lt;/localfile&gt;</span>
+<span class="nt">&lt;/agent_config&gt;</span>
+</pre></div>
+</div>
+<p>And only the proper agent will read them, giving us great granularity to push
+the configuration to all your agents.</p>
+<p>After you configured, the manager will push it to the agents. Note that it can
+take a while for it to complete (since the manager caches the shared files and
+only re-reads them every few hours). If you restart the manager the
+configuration will be pushed much quicker.</p>
+</div>
+<div class="section" id="restart-the-agent">
+<h2>Restart the agent<a class="headerlink" href="#restart-the-agent" title="Permalink to this headline">¶</a></h2>
+<p>Once the configuration file is pushed, you can run the command <a class="reference internal" href="../../programs/agent_control.html#agent-control"><em>agent_control</em></a> to
+see if the agent received the config and restart the agent remotely.</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">#</span> md5sum /var/ossec/etc/shared/agent.conf
+<span class="go">MD5 (/var/ossec/etc/shared/agent.conf) = ee1882236893df851bd9e4842007e7e7</span>
+<span class="gp">#</span> /var/ossec/bin/agent_control -i 200
+
+<span class="go">OSSEC HIDS agent_control. Agent information:</span>
+<span class="go">Agent ID: 200</span>
+<span class="go">Agent Name: ourhome</span>
+<span class="go">IP address: 192.168.0.0/16</span>
+<span class="go">Status: Active</span>
+
+<span class="go">Operating system: Linux ourhome 2.6.24-23-generic #1 SMP Mon Jan 26 00..</span>
+<span class="go">Client version: OSSEC HIDS v2.1 / ee1882236893df851bd9e4842007e7e7</span>
+<span class="go">Last keep alive: Tue Jun 30 08:29:17 2009</span>
+
+<span class="go">Syscheck last started at: Tue Jun 30 04:29:32 2009</span>
+<span class="go">Rootcheck last started at: Tue Jun 30 06:03:08 2009</span>
+</pre></div>
+</div>
+<p>When the agent received the configuration, the “Client Version” field will have
+the md5sum of the agent.conf file.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Linux systems generally use <tt class="docutils literal"><span class="pre">md5sum</span></tt>, but other systems may use <tt class="docutils literal"><span class="pre">md5</span></tt> as the name of the application to check the hash of the file.</p>
+</div>
+<p>To restart the agent:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">#</span> /var/ossec/bin/agent_control -R <span class="m">200</span> <span class="o">(</span>where <span class="m">200</span> is the agent id<span class="o">)</span>
+
+<span class="go">OSSEC HIDS agent_control: Restarting agent: 200</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+  <div class="section">
+  
+  
+  </div>
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2010-2015, OSSEC Project Team - OSSEC trademark and domain owned by Trend Micro, Inc. - Home page images courtesy of Pixbay.com.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

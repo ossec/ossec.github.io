@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Intergration and Deployment with cfengine &mdash; OSSEC</title>
+    
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/parallax.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '2.8.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-sphinx.js"></script>
+    <link rel="author" title="About these documents" href="../../../about.html" />
+    <link rel="top" title="OSSEC" href="../../../index.html" />
+  
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  
+  
+  <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+  
+  <style type="text/css">
+    ul.ablog-archive {list-style: none; overflow: auto; margin-left: 0px}
+    ul.ablog-archive li {float: left; margin-right: 5px; font-size: 80%}
+  </style>
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../../index.html"><img src="../../../_static/ossec_logo_bare_small.png">
+          OSSEC</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="../../../about.html">About <i class="fa fa-info-circle"></i></a></li>
+                <li><a href="../../../blog.html">Blog <i class="fa fa-archive"></i></a></li>
+                <li><a href="../../">Documentaton <i class="fa fa-book"></i></a></li>
+                <li><a href="../../../downloads.html">Downloads <i class="fa fa-download"></i></a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"></ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="section" id="intergration-and-deployment-with-cfengine">
+<h1>Intergration and Deployment with cfengine<a class="headerlink" href="#intergration-and-deployment-with-cfengine" title="Permalink to this headline">¶</a></h1>
+<p>I recently required a larger deployment of OSSEC-HIDS without too much manual intervention.  Almost every OSSEC-HIDS tutorial I&#8217;ve across says this is possible, yet I was unable to find a tutorial demonstrating it.   So, in the spirit of open source, I&#8217;m contributing a brief overview.</p>
+<div class="section" id="prerequisites">
+<h2>Prerequisites:<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
+<p>In order to facilitate the key request, I chose to generate a file with the relevant information and copy it back to my cfmaster server.  I developed the following tutorial to demonstrate a cfengine copy back scenario: <a class="reference external" href="http://divisionbyzero.net/blog/2007/05/03/copy-back-with-cfengine/">Copy Back with cfengine</a>.</p>
+</div>
+<div class="section" id="configuring-the-cfengine-clients">
+<h2>Configuring the cfengine clients:<a class="headerlink" href="#configuring-the-cfengine-clients" title="Permalink to this headline">¶</a></h2>
+<p>I added a group to my <tt class="docutils literal"><span class="pre">cfagent.conf</span></tt> for my ossec server named: <tt class="docutils literal"><span class="pre">hg_ossec_server</span></tt> (host group). I then created an <tt class="docutils literal"><span class="pre">ossec-hids.cf</span></tt> containing the following:</p>
+<ul class="simple">
+<li>control</li>
+</ul>
+<p>My control sections sets up the variables I&#8217;ll be using in the rest of the file.</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">control:</span>
+<span class="go">  any::</span>
+<span class="go">    ossec_key_dir = (/usr/local/cfkeys/ossec)</span>
+<span class="go">    ossec_req_dir = ( $(util_updir)/ossec )</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>package</li>
+</ul>
+<p>I&#8217;m using yum to automatically install OSSEC-HIDS from my local RPM Repository.</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">packages:</span>
+<span class="go">  !hg_ossec_server::</span>
+<span class="go">      ossec-hids                  action=install</span>
+<span class="go">      ossec-hids-client           action=install</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>links</li>
+</ul>
+<p>The Links section just links ossec-agent.conf to ossec.conf on the clients.</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">links:</span>
+<span class="go">  !hg_ossec_server::</span>
+<span class="go">    /var/ossec/etc/ossec.conf -&gt; /var/ossec/etc/ossec-agent.conf</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>copy</li>
+</ul>
+<p>I manage the <tt class="docutils literal"><span class="pre">ossec-agent.conf</span></tt> in cfengine, because my cfengine configurations are all stored in a subversion repository.  The first stanza in copy just pushes the most recent copy of the <tt class="docutils literal"><span class="pre">ossec-agent.conf</span></tt> file to my network, setting the dynamic class <tt class="docutils literal"><span class="pre">dc_restart_ossec</span></tt> if the copy occurs.</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">copy:</span>
+<span class="go">  !hg_ossec_server::</span>
+<span class="go">      $(distribute)/ossec-agent.conf      dest=/var/ossec/etc/ossec-agent.conf</span>
+<span class="go">                                          server=$(policyhost)</span>
+<span class="go">                                          mode=640</span>
+<span class="go">                                          group=ossec</span>
+<span class="go">                                          type=sum</span>
+<span class="go">                                          define=dc_restart_ossec</span>
+</pre></div>
+</div>
+<p>This second stanza in the <tt class="docutils literal"><span class="pre">copy</span></tt> section copies a file from our ossec key directory to the client.keys file on the client.  This copy only happens if the two files are different.  It also sets <tt class="docutils literal"><span class="pre">dc_restart_ossec</span></tt> if the copy occurs.</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">$</span><span class="o">(</span>ossec_key_dir<span class="o">)</span>/<span class="k">$(</span>host<span class="k">)</span>.ossec    <span class="nv">dest</span><span class="o">=</span>/var/ossec/etc/client.keys
+<span class="go">                                  server=$(policyhost)</span>
+<span class="go">                                  mode=640</span>
+<span class="go">                                  group=ossec</span>
+<span class="go">                                  type=sum</span>
+<span class="go">                                  define=dc_restart_ossec</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>processes</li>
+</ul>
+<p>My processes block checks to ensure that OSSEC-HIDS is running the correct daemons.</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">processes:</span>
+<span class="go">  !hg_ossec_server::</span>
+<span class="go">      &quot;ossec-agentd&quot; elsedefine=dc_restart_ossec</span>
+<span class="go">  ``hg_ossec_server``::</span>
+<span class="go">      &quot;ossec-remoted&quot; elsedefine=dc_restart_ossec</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>shellcommands</li>
+</ul>
+<p>This section is where the certificate request occurs through some devious mechanisms I designed for no other reason than to amuse myself.  Hopefully, it amuses others as well.  The first thing it does is issue a command that echo&#8217;s the client eth0 ipv4 address to a file named &#8216;&#8217;host.ossec&#8217;&#8217; in the ossec request directory I defined.   The <tt class="docutils literal"><span class="pre">hg_ossec_server</span></tt> class will use this to generate a cert to place in the aforementioned copy block.</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">shellcommands:</span>
+<span class="go">  !hg_ossec_server::</span>
+<span class="go">      &quot;/usr/bin/ssh util@$(policyhost) -i $(util_privkey) &#39;echo $(global.ipv4[eth0]) &gt; $(ossec_req_dir)/$(host).ossec&#39;&quot;</span>
+</pre></div>
+</div>
+<p>The last statement checks to see if anyone defined <tt class="docutils literal"><span class="pre">dc_restart_ossec</span></tt>, and restart ossec-hids if it was defined.</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">dc_restart_ossec::</span>
+<span class="go">    &quot;/sbin/service ossec-hids restart&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="ok-so-who-cares">
+<h2>Ok, so who cares?<a class="headerlink" href="#ok-so-who-cares" title="Permalink to this headline">¶</a></h2>
+<p>Well, now, our clients are setup to install, configure, and run OSSEC-HIDS as well as issuing a request for their certificate.  However, the certificate directory on the server is empty and so none of them will actually run.  This is a problem.</p>
+</div>
+<div class="section" id="configuring-the-ossec-server-w-cfengine">
+<h2>Configuring the OSSEC Server w/cfengine<a class="headerlink" href="#configuring-the-ossec-server-w-cfengine" title="Permalink to this headline">¶</a></h2>
+<p>The cfengine part of this was a pain for me because of the order of the actions I had defined and the extent of work I had done incorrectly in the past.  I could have figured out an interesting way to handle this, but I didn&#8217;t want to scrap my entire cfengine config and start from scratch.  So I created a perl script that allowed me to use the <tt class="docutils literal"><span class="pre">manage_agents</span></tt> script without interaction.  It does require the <tt class="docutils literal"><span class="pre">Expect.pm</span></tt> &amp; <tt class="docutils literal"><span class="pre">Regexp::Common</span></tt> from CPAN, but is otherwise stock Perl 5.8.x.  I also wrote a shell script wrapper to handle running the perl script and culminating the results.  I saved these two scripts in <tt class="docutils literal"><span class="pre">/root/security</span></tt>, so if you put them elsewhere, make sure to update the shell script wrapper.</p>
+<p>The scripts for managing keys can be downloaded <a href="#id1"><span class="problematic" id="id2">`here &lt; http://db0.us/~brad/cfengine-ossec-scripts.tar.gz&gt;`_</span></a></p>
+<p>The cfengine bit was really simple, it just had to call my wrapper shell script and set the class.  I did this with a control block:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">control:</span>
+<span class="go"> hg_ossec_server::</span>
+<span class="go">   AddClasses = ( ExecResult(/root/security/ossec-scan.sh) )</span>
+</pre></div>
+</div>
+<p>The combination of the two scripts and this one line in the cfengine configuration handle creating, removing, and exporting the keys, as well as configuring the <tt class="docutils literal"><span class="pre">dc_restart_ossec</span></tt> class if there have been changes.</p>
+</div>
+</div>
+
+  <div class="section">
+  
+  
+  </div>
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2010-2015, OSSEC Project Team - OSSEC trademark and domain owned by Trend Micro, Inc. - Home page images courtesy of Pixbay.com.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

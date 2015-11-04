@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Getting started with OSSEC &mdash; OSSEC</title>
+    
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/parallax.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '2.8.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="top" title="OSSEC" href="../../index.html" />
+  
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  
+  
+  <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+  
+  <style type="text/css">
+    ul.ablog-archive {list-style: none; overflow: auto; margin-left: 0px}
+    ul.ablog-archive li {float: left; margin-right: 5px; font-size: 80%}
+  </style>
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html"><img src="../../_static/ossec_logo_bare_small.png">
+          OSSEC</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="../../about.html">About <i class="fa fa-info-circle"></i></a></li>
+                <li><a href="../../blog.html">Blog <i class="fa fa-archive"></i></a></li>
+                <li><a href="../">Documentaton <i class="fa fa-book"></i></a></li>
+                <li><a href="../../downloads.html">Downloads <i class="fa fa-download"></i></a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"></ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="section" id="getting-started-with-ossec">
+<span id="nontech-overview"></span><h1>Getting started with OSSEC<a class="headerlink" href="#getting-started-with-ossec" title="Permalink to this headline">¶</a></h1>
+<p>OSSEC is a platform to monitor and control your systems. It mixes together
+all the aspects of HIDS (host-based intrusion detection), log monitoring, and
+Security Incident Management (SIM)/Security Information and Event Management
+(SIEM) together in a simple, powerful, and open source solution.</p>
+<div class="section" id="key-benefits">
+<h2>Key Benefits<a class="headerlink" href="#key-benefits" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="compliance-requirements">
+<h3>Compliance Requirements<a class="headerlink" href="#compliance-requirements" title="Permalink to this headline">¶</a></h3>
+<p>OSSEC helps customers meet specific compliance requirements such as PCI and HIPAA.
+It lets customers detect and alert on unauthorized file system modifications
+and malicious behavior embedded in the log files of commercial products as well as
+custom applications. For PCI, it covers the sections of file integrity monitoring
+(PCI 11.5, 10.5), log inspection and monitoring (section 10), and policy
+enforcement/checking.</p>
+</div>
+<div class="section" id="multi-platform">
+<h3>Multi platform<a class="headerlink" href="#multi-platform" title="Permalink to this headline">¶</a></h3>
+<p>OSSEC lets customers implement a comprehensive host based intrusion detection
+system with fine grained application/server specific policies across multiple
+platforms such as Linux, Solaris, Windows, and Mac OS X.</p>
+</div>
+<div class="section" id="real-time-and-configurable-alerts">
+<h3>Real-time and Configurable Alerts<a class="headerlink" href="#real-time-and-configurable-alerts" title="Permalink to this headline">¶</a></h3>
+<p>OSSEC lets customers configure incidents they want to be alerted on, and lets
+them focus on raising the priority of critical incidents over the regular noise
+on any system. Integration with smtp, sms, and syslog allows customers to be on
+top of alerts by sending them to e-mail enabled devices.
+Active response options to block an attack immediately are also available.</p>
+</div>
+<div class="section" id="integration-with-current-infrastructure">
+<h3>Integration with current infrastructure<a class="headerlink" href="#integration-with-current-infrastructure" title="Permalink to this headline">¶</a></h3>
+<p>OSSEC will integrate with current investments from customers such as SIM/SEM
+(Security Incident Management/Security Events Management) products for centralized
+reporting and correlation of events.</p>
+</div>
+<div class="section" id="centralized-management">
+<h3>Centralized management<a class="headerlink" href="#centralized-management" title="Permalink to this headline">¶</a></h3>
+<p>OSSEC provides a simplified centralized management server to manage policies
+across multiple operating systems. Additionally, it also lets customers define
+server specific overrides for finer grained policies.</p>
+</div>
+<div class="section" id="agent-and-agentless-monitoring">
+<h3>Agent and agentless monitoring<a class="headerlink" href="#agent-and-agentless-monitoring" title="Permalink to this headline">¶</a></h3>
+<p>OSSEC offers the flexibility of agent based and agentless monitoring of systems
+and networking components such as routers and firewalls. Agentless monitoring
+lets customers who have restrictions on software being installed on systems
+(such as FDA approved systems or appliances) meet security and compliance needs.</p>
+</div>
+</div>
+<div class="section" id="key-features">
+<h2>Key Features<a class="headerlink" href="#key-features" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="file-integrity-checking">
+<h3>File Integrity checking<a class="headerlink" href="#file-integrity-checking" title="Permalink to this headline">¶</a></h3>
+<p>There is one thing in common to any attack to your networks and computers: they
+change your systems in some way. The goal of file integrity checking (or FIM -
+file integrity monitoring) is to detect these changes and alert you when they
+happen. It can be an attack, or a misuse by an employee or even a typo by an
+admin, any file, directory or registry change will be alerted to you.</p>
+<p>Covers PCI DSS sections 11.5 and 10.5.5.</p>
+</div>
+<div class="section" id="log-monitoring">
+<h3>Log Monitoring<a class="headerlink" href="#log-monitoring" title="Permalink to this headline">¶</a></h3>
+<p>Your operating system wants to speak to you, but do you know how to listen? Every
+operating system, application, and device on your network generate logs (events)
+to let you know what is happening. OSSEC collects, analyzes and correlates these
+logs to let you know if something suspicious is happening (attack, misuse, errors,
+etc). Do you want to know when an application is installed on your client box? Or
+when someone changes a rule in your firewall? By monitoring your logs, OSSEC will
+notify you.</p>
+<p>This should cover PCI DSS section 10.</p>
+</div>
+<div class="section" id="rootkit-detection">
+<h3>Rootkit detection<a class="headerlink" href="#rootkit-detection" title="Permalink to this headline">¶</a></h3>
+<p>Criminal hackers want to hide their actions, but using rootkit detection you can
+be notified when the system is modified in a way common to rootkits.</p>
+</div>
+<div class="section" id="active-response">
+<h3>Active response<a class="headerlink" href="#active-response" title="Permalink to this headline">¶</a></h3>
+<p>Active response allows OSSEC to take immediate action when specified alerts are
+triggered. This may prevent an incident from spreading before an administrator
+can take action.</p>
+</div>
+</div>
+</div>
+
+  <div class="section">
+  
+  
+  </div>
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2010-2015, OSSEC Project Team - OSSEC trademark and domain owned by Trend Micro, Inc. - Home page images courtesy of Pixbay.com.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

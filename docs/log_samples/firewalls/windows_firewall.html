@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Samples for the Windows firewall &mdash; OSSEC</title>
+    
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/parallax.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '2.8.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-sphinx.js"></script>
+    <link rel="author" title="About these documents" href="../../../about.html" />
+    <link rel="top" title="OSSEC" href="../../../index.html" />
+  
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  
+  
+  <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+  
+  <style type="text/css">
+    ul.ablog-archive {list-style: none; overflow: auto; margin-left: 0px}
+    ul.ablog-archive li {float: left; margin-right: 5px; font-size: 80%}
+  </style>
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../../index.html"><img src="../../../_static/ossec_logo_bare_small.png">
+          OSSEC</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="../../../about.html">About <i class="fa fa-info-circle"></i></a></li>
+                <li><a href="../../../blog.html">Blog <i class="fa fa-archive"></i></a></li>
+                <li><a href="../../">Documentaton <i class="fa fa-book"></i></a></li>
+                <li><a href="../../../downloads.html">Downloads <i class="fa fa-download"></i></a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"></ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="section" id="samples-for-the-windows-firewall">
+<h1>Samples for the Windows firewall<a class="headerlink" href="#samples-for-the-windows-firewall" title="Permalink to this headline">¶</a></h1>
+<p>By default the logs are stored at &lt;b&gt;C:Windowspfirewall.log.</p>
+<div class="section" id="fields">
+<h2>Fields:<a class="headerlink" href="#fields" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">#</span>Fields: date <span class="nb">time </span>action protocol src-ip dst-ip src-port dst-port size tcpflags tcpsyn tcpack tcpwin icmptype icmpcode info path
+</pre></div>
+</div>
+</div>
+<div class="section" id="firewall-drop">
+<h2>Firewall drop:<a class="headerlink" href="#firewall-drop" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">2006-09-19 10:48:12 DROP UDP 172.20.73.241 239.255.255.250 2250 1900 250 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-20 10:38:21 DROP TCP 192.168.72.196 10.20.72.12 445 2459 48 SA 4175551841 892874455 17520 - - - RECEIVE</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="firewall-accept">
+<h2>Firewall Accept:<a class="headerlink" href="#firewall-accept" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">2006-09-19 03:04:29 OPEN TCP 192.168.72.12 10.20.72.204 3599 445 - - - - - - - - -</span>
+<span class="go">2006-09-19 03:04:29 OPEN TCP 192.168.72.12 10.20.72.204 3600 139 - - - - - - - - -</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="large-sample">
+<h2>Large sample:<a class="headerlink" href="#large-sample" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">2006-09-19 03:26:26 DROP UDP 172.20.73.241 239.255.255.250 2250 1900 315 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 03:26:26 DROP UDP 172.20.73.241 239.255.255.250 2250 1900 305 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 03:27:05 CLOSE UDP 192.168.72.12 10.20.72.186 3682 88 - - - - - - - - -</span>
+<span class="go">2006-09-19 03:27:05 CLOSE UDP 192.168.72.12 10.20.72.186 3683 88 - - - - - - - - -</span>
+<span class="go">2006-09-19 03:27:53 CLOSE TCP 192.168.72.12 10.20.72.186 3680 445 - - - - - - - - -</span>
+<span class="go">2006-09-19 03:29:24 DROP UDP 172.20.73.241 239.255.255.250 2250 1900 250 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 03:29:24 DROP UDP 172.20.73.241 239.255.255.250 2250 1900 315 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 03:29:24 DROP UDP 172.20.73.241 239.255.255.250 2250 1900 263 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 03:29:24 DROP UDP 172.20.73.241 239.255.255.250 2250 1900 315 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 03:29:24 DROP UDP 172.20.73.241 239.255.255.250 2250 1900 305 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 03:31:15 DROP UDP 192.168.183.114 239.255.255.250 65173 1900 310 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 03:31:15 DROP UDP 192.168.183.114 239.255.255.250 65173 1900 310 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 03:31:15 DROP UDP 192.168.183.114 239.255.255.250 65172 1900 319 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 03:31:15 DROP UDP 192.168.183.114 239.255.255.250 65172 1900 319 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 03:32:17 DROP UDP 192.168.99.165 239.255.255.250 1900 1900 367 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 03:32:17 DROP UDP 192.168.99.165 239.255.255.250 1900 1900 367 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 03:32:17 DROP UDP 192.168.99.165 239.255.255.250 1900 1900 355 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 03:32:17 DROP UDP 192.168.99.165 239.255.255.250 1900 1900 355 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 03:32:17 DROP UDP 192.168.99.165 239.255.255.250 1900 1900 312 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 03:32:17 DROP UDP 192.168.99.165 239.255.255.250 1900 1900 303 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 03:32:17 DROP UDP 192.168.99.165 239.255.255.250 1900 1900 369 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 03:32:21 DROP UDP 172.20.73.241 239.255.255.250 2250 1900 250 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 03:32:21 DROP UDP 172.20.73.241 239.255.255.250 2250 1900 315 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 03:32:21 DROP UDP 172.20.73.241 239.255.255.250 2250 1900 263 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 03:32:21 DROP UDP 172.20.73.241 239.255.255.250 2250 1900 315 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 03:32:21 DROP UDP 172.20.73.241 239.255.255.250 2250 1900 305 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 03:32:24 DROP UDP 192.168.99.165 239.255.255.250 1900 1900 312 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 03:32:24 DROP UDP 192.168.99.165 239.255.255.250 1900 1900 303 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 03:32:24 DROP UDP 192.168.99.165 239.255.255.250 1900 1900 369 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 03:32:24 DROP UDP 192.168.99.165 239.255.255.250 1900 1900 355 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 03:32:24 DROP UDP 192.168.99.165 239.255.255.250 1900 1900 367 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 03:35:19 DROP UDP 172.20.73.241 239.255.255.250 2250 1900 250 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 03:35:19 DROP UDP 172.20.73.241 239.255.255.250 2250 1900 315 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 03:35:19 DROP UDP 172.20.73.241 239.255.255.250 2250 1900 263 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 03:35:19 DROP UDP 172.20.73.241 239.255.255.250 2250 1900 315 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 03:35:19 DROP UDP 172.20.73.241 239.255.255.250 2250 1900 305 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 03:35:57 DROP UDP 192.168.183.114 239.255.255.250 65171 1900 310 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 03:35:57 DROP UDP 192.168.183.114 239.255.255.250 65171 1900 310 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 03:35:57 DROP UDP 192.168.183.114 239.255.255.250 65170 1900 319 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 03:35:57 DROP UDP 192.168.183.114 239.255.255.250 65170 1900 319 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 03:37:52 OPEN UDP 192.168.72.12 10.20.72.186 1025 53 - - - - - - - - -</span>
+<span class="go">2006-09-19 03:37:57 CLOSE TCP 192.168.72.12 10.20.158.58 3685 80 - - - - - - - - -</span>
+<span class="go">2006-09-19 03:37:57 CLOSE TCP 192.168.72.12 10.20.158.58 3691 80 - - - - - - - - -</span>
+<span class="go">2006-09-19 03:37:58 OPEN TCP 192.168.72.12 10.20.158.58 3698 80 - - - - - - - - -</span>
+<span class="go">2006-09-19 03:37:58 CLOSE TCP 192.168.72.12 10.20.158.58 3698 80 - - - - - - - - -</span>
+<span class="go">2006-09-19 03:37:59 OPEN TCP 192.168.72.12 10.20.158.58 3699 80 - - - - - - - - -</span>
+<span class="go">2006-09-19 03:37:57 OPEN TCP 192.168.72.12 10.20.158.58 3684 80 - - - - - - - - -</span>
+<span class="go">2006-09-19 03:37:57 CLOSE TCP 192.168.72.12 10.20.158.58 3684 80 - - - - - - - - -</span>
+<span class="go">2006-09-19 03:37:57 OPEN TCP 192.168.72.12 10.20.158.58 3685 80 - - - - - - - - -</span>
+<span class="go">2006-09-19 03:37:57 OPEN TCP 192.168.72.12 10.20.158.58 3686 80 - - - - - - - - -</span>
+<span class="go">2006-09-19 03:37:57 CLOSE TCP 192.168.72.12 10.20.158.58 3686 80 - - - - - - - - -</span>
+<span class="go">2006-09-19 03:37:57 OPEN TCP 192.168.72.12 10.20.158.58 3687 80 - - - - - - - - -</span>
+<span class="go">2006-09-19 03:37:57 CLOSE TCP 192.168.72.12 10.20.158.58 3687 80 - - - - - - - - -</span>
+<span class="go">2006-09-19 03:37:57 OPEN TCP 192.168.72.12 10.20.158.58 3688 80 - - - - - - - - -</span>
+<span class="go">2006-09-19 03:37:57 CLOSE TCP 192.168.72.12 10.20.158.58 3688 80 - - - - - - - - -</span>
+<span class="go">2006-09-19 03:37:57 OPEN TCP 192.168.72.12 10.20.158.58 3689 80 - - - - - - - - -</span>
+<span class="go">2006-09-19 03:37:57 OPEN TCP 192.168.72.12 10.20.158.58 3690 80 - - - - - - - - -</span>
+<span class="go">2006-09-19 03:37:57 CLOSE TCP 192.168.72.12 10.20.158.58 3690 80 - - - - - - - - -</span>
+<span class="go">2006-09-19 03:37:57 OPEN TCP 192.168.72.12 10.20.158.58 3691 80 - - - - - - - - -</span>
+<span class="go">2006-09-19 03:37:57 OPEN TCP 192.168.72.12 10.20.158.58 3692 80 - - - - - - - - -</span>
+<span class="go">2006-09-19 03:37:57 CLOSE TCP 192.168.72.12 10.20.158.58 3692 80 - - - - - - - - -</span>
+<span class="go">2006-09-19 03:37:58 OPEN TCP 192.168.72.12 10.20.158.58 3693 80 - - - - - - - - -</span>
+<span class="go">2006-09-19 03:37:58 CLOSE TCP 192.168.72.12 10.20.158.58 3693 80 - - - - - - - - -</span>
+<span class="go">2006-09-19 03:37:58 OPEN TCP 192.168.72.12 10.20.158.58 3694 80 - - - - - - - - -</span>
+<span class="go">2006-09-19 03:37:58 CLOSE TCP 192.168.72.12 10.20.158.58 3694 80 - - - - - - - - -</span>
+<span class="go">2006-09-19 03:37:58 OPEN TCP 192.168.72.12 10.20.158.58 3695 80 - - - - - - - - -</span>
+<span class="go">2006-09-19 03:37:58 CLOSE TCP 192.168.72.12 10.20.158.58 3695 80 - - - - - - - - -</span>
+<span class="go">2006-09-19 03:37:58 OPEN TCP 192.168.72.12 10.20.158.58 3696 80 - - - - - - - - -</span>
+<span class="go">2006-09-19 03:37:58 CLOSE TCP 192.168.72.12 10.20.158.58 3696 80 - - - - - - - - -</span>
+<span class="go">2006-09-19 03:37:58 OPEN TCP 192.168.72.12 10.20.158.58 3697 80 - - - - - - - - -</span>
+<span class="go">2006-09-19 03:37:58 CLOSE TCP 192.168.72.12 10.20.158.58 3697 80 - - - - - - - - -</span>
+<span class="go">2006-09-19 03:37:59 CLOSE TCP 192.168.72.12 10.20.158.58 3699 80 - - - - - - - - -</span>
+<span class="go">2006-09-19 03:38:17 DROP UDP 172.20.73.241 239.255.255.250 2250 1900 250 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 03:38:17 DROP UDP 172.20.73.241 239.255.255.250 2250 1900 315 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 03:38:17 DROP UDP 172.20.73.241 239.255.255.250 2250 1900 263 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 03:38:17 DROP UDP 172.20.73.241 239.255.255.250 2250 1900 315 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 03:38:17 DROP UDP 172.20.73.241 239.255.255.250 2250 1900 305 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 03:38:39 OPEN UDP 192.168.72.12 129.6.15.28 123 123 - - - - - - - - -2006-09-19 03:39:05 CLOSE UDP 192.168.72.12 10.20.72.186 1025 53 - - - - - - - - -</span>
+<span class="go">2006-09-19 03:40:05 CLOSE UDP 192.168.72.12 129.6.15.28 123 123 - - - - - - - - -</span>
+<span class="go">2006-09-19 03:40:09 CLOSE TCP 192.168.72.12 10.20.158.58 3689 80 - - - - - - - - -</span>
+<span class="go">2006-09-19 03:40:31 OPEN UDP 192.168.72.12 10.20.72.186 3703 88 - - - - - - - - -</span>
+<span class="go">2006-09-19 03:40:30 OPEN TCP 192.168.72.12 10.20.72.186 3700 445 - - - - - - - - -</span>
+<span class="go">2006-09-19 03:40:30 OPEN UDP 192.168.72.12 10.20.72.186 3702 389 - - - - - - - - -</span>
+<span class="go">2006-09-19 03:40:54 DROP UDP 192.168.183.114 239.255.255.250 65169 1900 310 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 03:40:54 DROP UDP 192.168.183.114 239.255.255.250 65169 1900 310 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 03:40:54 DROP UDP 192.168.183.114 239.255.255.250 65168 1900 319 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 03:40:54 DROP UDP 192.168.183.114 239.255.255.250 65168 1900 319 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 03:41:15 DROP UDP 172.20.73.241 239.255.255.250 2250 1900 250 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 03:41:15 DROP UDP 172.20.73.241 239.255.255.250 2250 1900 315 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 03:41:15 DROP UDP 172.20.73.241 239.255.255.250 2250 1900 263 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 03:41:15 DROP UDP 172.20.73.241 239.255.255.250 2250 1900 315 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 03:41:15 DROP UDP 172.20.73.241 239.255.255.250 2250 1900 305 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 03:42:05 CLOSE UDP 192.168.72.12 10.20.72.186 3702 389 - - - - - - - - -</span>
+<span class="go">2006-09-19 03:42:05 CLOSE UDP 192.168.72.12 10.20.72.186 3703 88 - - - - - - - - -</span>
+<span class="go">2006-09-19 03:42:53 CLOSE TCP 192.168.72.12 10.20.72.186 3700 445 - - - - - - - - -</span>
+<span class="go">2006-09-19 03:44:13 DROP UDP 172.20.73.241 239.255.255.250 2250 1900 250 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 03:44:13 DROP UDP 172.20.73.241 239.255.255.250 2250 1900 315 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 03:44:13 DROP UDP 172.20.73.241 239.255.255.250 2250 1900 263 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 03:44:13 DROP UDP 172.20.73.241 239.255.255.250 2250 1900 315 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 03:44:13 DROP UDP 172.20.73.241 239.255.255.250 2250 1900 305 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 03:45:36 DROP UDP 192.168.99.165 239.255.255.250 1900 1900 303 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 03:45:36 DROP UDP 192.168.99.165 239.255.255.250 1900 1900 303 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 03:45:36 DROP UDP 192.168.99.165 239.255.255.250 1900 1900 355 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 03:45:36 DROP UDP 192.168.99.165 239.255.255.250 1900 1900 367 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 03:45:36 DROP UDP 192.168.99.165 239.255.255.250 1900 1900 312 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 03:45:36 DROP UDP 192.168.99.165 239.255.255.250 1900 1900 369 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 03:45:43 DROP UDP 192.168.99.165 239.255.255.250 1900 1900 303 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 03:45:43 DROP UDP 192.168.183.114 239.255.255.250 65167 1900 310 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 03:45:43 DROP UDP 192.168.183.114 239.255.255.250 65167 1900 310 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 03:45:43 DROP UDP 192.168.183.114 239.255.255.250 65166 1900 319 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 03:45:43 DROP UDP 192.168.183.114 239.255.255.250 65166 1900 319 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 03:45:43 DROP UDP 192.168.99.165 239.255.255.250 1900 1900 355 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 03:45:43 DROP UDP 192.168.99.165 239.255.255.250 1900 1900 367 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 03:45:43 DROP UDP 192.168.99.165 239.255.255.250 1900 1900 369 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 03:45:43 DROP UDP 192.168.99.165 239.255.255.250 1900 1900 312 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 03:47:11 DROP UDP 172.20.73.241 239.255.255.250 2250 1900 250 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 03:47:11 DROP UDP 172.20.73.241 239.255.255.250 2250 1900 315 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 03:47:11 DROP UDP 172.20.73.241 239.255.255.250 2250 1900 263 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 03:47:11 DROP UDP 172.20.73.241 239.255.255.250 2250 1900 315 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 03:47:11 DROP UDP 172.20.73.241 239.255.255.250 2250 1900 305 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 03:50:09 DROP UDP 172.20.73.241 239.255.255.250 2250 1900 250 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 03:50:09 DROP UDP 172.20.73.241 239.255.255.250 2250 1900 315 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 03:50:09 DROP UDP 172.20.73.241 239.255.255.250 2250 1900 263 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 03:50:09 DROP UDP 172.20.73.241 239.255.255.250 2250 1900 315 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 03:50:09 DROP UDP 172.20.73.241 239.255.255.250 2250 1900 305 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 03:50:32 DROP UDP 192.168.183.114 239.255.255.250 65165 1900 310 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 03:50:32 DROP UDP 192.168.183.114 239.255.255.250 65165 1900 310 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 03:50:32 DROP UDP 192.168.183.114 239.255.255.250 65164 1900 319 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 03:50:32 DROP UDP 192.168.183.114 239.255.255.250 65164 1900 319 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 03:53:07 DROP UDP 172.20.73.241 239.255.255.250 2250 1900 250 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 03:53:07 DROP UDP 172.20.73.241 239.255.255.250 2250 1900 315 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 03:53:07 DROP UDP 172.20.73.241 239.255.255.250 2250 1900 263 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 03:53:07 DROP UDP 172.20.73.241 239.255.255.250 2250 1900 315 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 03:53:07 DROP UDP 172.20.73.241 239.255.255.250 2250 1900 305 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 03:55:29 DROP UDP 192.168.183.114 239.255.255.250 65163 1900 310 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 03:55:29 DROP UDP 192.168.183.114 239.255.255.250 65163 1900 310 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 03:55:29 DROP UDP 192.168.183.114 239.255.255.250 65162 1900 319 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 03:55:29 DROP UDP 192.168.183.114 239.255.255.250 65162 1900 319 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 03:55:31 OPEN TCP 192.168.72.12 10.20.72.186 3704 445 - - - - - - - - -</span>
+<span class="go">2006-09-19 03:55:31 OPEN UDP 192.168.72.12 10.20.72.186 3706 88 - - - - - - - - -</span>
+<span class="go">2006-09-19 03:56:05 DROP UDP 172.20.73.241 239.255.255.250 2250 1900 250 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 03:56:05 DROP UDP 172.20.73.241 239.255.255.250 2250 1900 315 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 03:56:05 DROP UDP 172.20.73.241 239.255.255.250 2250 1900 263 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 03:56:05 DROP UDP 172.20.73.241 239.255.255.250 2250 1900 315 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 03:56:05 DROP UDP 172.20.73.241 239.255.255.250 2250 1900 305 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 03:57:05 CLOSE UDP 192.168.72.12 10.20.72.186 3706 88 - - - - - - - - -</span>
+<span class="go">2006-09-19 03:57:53 CLOSE TCP 192.168.72.12 10.20.72.186 3704 445 - - - - - - - - -</span>
+<span class="go">2006-09-19 03:58:21 DROP UDP 192.168.99.165 239.255.255.250 1900 1900 367 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 03:58:21 DROP UDP 192.168.99.165 239.255.255.250 1900 1900 367 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 03:58:21 DROP UDP 192.168.99.165 239.255.255.250 1900 1900 312 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 03:58:21 DROP UDP 192.168.99.165 239.255.255.250 1900 1900 303 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 03:58:21 DROP UDP 192.168.99.165 239.255.255.250 1900 1900 369 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 03:58:21 DROP UDP 192.168.99.165 239.255.255.250 1900 1900 355 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 03:58:28 DROP UDP 192.168.99.165 239.255.255.250 1900 1900 312 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 03:58:28 DROP UDP 192.168.99.165 239.255.255.250 1900 1900 369 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 03:58:28 DROP UDP 192.168.99.165 239.255.255.250 1900 1900 303 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 03:58:28 DROP UDP 192.168.99.165 239.255.255.250 1900 1900 355 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 03:58:28 DROP UDP 192.168.99.165 239.255.255.250 1900 1900 367 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 03:59:02 DROP UDP 172.20.73.241 239.255.255.250 2250 1900 250 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 03:59:02 DROP UDP 172.20.73.241 239.255.255.250 2250 1900 315 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 03:59:02 DROP UDP 172.20.73.241 239.255.255.250 2250 1900 263 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 03:59:02 DROP UDP 172.20.73.241 239.255.255.250 2250 1900 315 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 03:59:02 DROP UDP 172.20.73.241 239.255.255.250 2250 1900 305 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 04:00:12 DROP UDP 192.168.183.114 239.255.255.250 65161 1900 310 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 04:00:12 DROP UDP 192.168.183.114 239.255.255.250 65161 1900 310 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 04:00:12 DROP UDP 192.168.183.114 239.255.255.250 65160 1900 319 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 04:00:12 DROP UDP 192.168.183.114 239.255.255.250 65160 1900 319 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 04:02:00 DROP UDP 172.20.73.241 239.255.255.250 2250 1900 250 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 04:02:00 DROP UDP 172.20.73.241 239.255.255.250 2250 1900 315 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 04:02:00 DROP UDP 172.20.73.241 239.255.255.250 2250 1900 263 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 04:02:00 DROP UDP 172.20.73.241 239.255.255.250 2250 1900 315 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 04:02:00 DROP UDP 172.20.73.241 239.255.255.250 2250 1900 305 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 04:04:58 DROP UDP 172.20.73.241 239.255.255.250 2250 1900 250 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 04:04:58 DROP UDP 172.20.73.241 239.255.255.250 2250 1900 315 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 04:04:58 DROP UDP 172.20.73.241 239.255.255.250 2250 1900 263 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 04:04:58 DROP UDP 172.20.73.241 239.255.255.250 2250 1900 315 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 04:04:58 DROP UDP 172.20.73.241 239.255.255.250 2250 1900 305 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 04:05:05 DROP UDP 192.168.183.114 239.255.255.250 65159 1900 310 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 04:05:05 DROP UDP 192.168.183.114 239.255.255.250 65159 1900 310 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 04:05:05 DROP UDP 192.168.183.114 239.255.255.250 65158 1900 319 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 04:05:05 DROP UDP 192.168.183.114 239.255.255.250 65158 1900 319 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 04:07:25 DROP UDP 192.168.99.165 239.255.255.250 1900 1900 303 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 04:07:25 DROP UDP 192.168.99.165 239.255.255.250 1900 1900 303 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 04:07:25 DROP UDP 192.168.99.165 239.255.255.250 1900 1900 355 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 04:07:25 DROP UDP 192.168.99.165 239.255.255.250 1900 1900 369 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 04:07:25 DROP UDP 192.168.99.165 239.255.255.250 1900 1900 367 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 04:07:25 DROP UDP 192.168.99.165 239.255.255.250 1900 1900 312 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 04:07:32 DROP UDP 192.168.99.165 239.255.255.250 1900 1900 303 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 04:07:32 DROP UDP 192.168.99.165 239.255.255.250 1900 1900 355 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 04:07:32 DROP UDP 192.168.99.165 239.255.255.250 1900 1900 367 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 04:07:32 DROP UDP 192.168.99.165 239.255.255.250 1900 1900 312 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 04:07:32 DROP UDP 192.168.99.165 239.255.255.250 1900 1900 369 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 04:07:56 DROP UDP 172.20.73.241 239.255.255.250 2250 1900 250 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 04:07:56 DROP UDP 172.20.73.241 239.255.255.250 2250 1900 315 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 04:07:56 DROP UDP 172.20.73.241 239.255.255.250 2250 1900 263 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 04:07:56 DROP UDP 172.20.73.241 239.255.255.250 2250 1900 315 - - - - - - - RECEIVE</span>
+<span class="go">2006-09-19 04:07:56 DROP UDP 172.20.73.241 239.255.255.250 2250 1900 305 - - - - - - - RECEIVE</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="sample-2">
+<h2>Sample 2:<a class="headerlink" href="#sample-2" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">2006-09-20 02:59:03 OPEN TCP x.x.x.79 69.16.211.107 4328 110 - - - - - - - - -</span>
+<span class="go">2006-09-20 02:59:03 OPEN TCP x.x.x.79 69.16.211.107 4329 110 - - - - - - - - -</span>
+<span class="go">2006-09-20 02:59:03 OPEN TCP x.x.x.79 207.97.245.100 4336 110 - - - - - - - - -</span>
+<span class="go">2006-09-20 02:59:03 OPEN TCP x.x.x.79 69.16.211.107 4331 110 - - - - - - - - -</span>
+<span class="go">2006-09-20 02:59:03 OPEN TCP x.x.x.79 69.16.211.107 4333 110 - - - - - - - - -</span>
+<span class="go">2006-09-20 02:59:04 OPEN TCP x.x.x.79 207.97.245.100 4338 110 - - - - - - - - -</span>
+<span class="go">2006-09-20 02:59:04 CLOSE TCP x.x.x.79 69.16.211.107 4330 110 - - - - - - - - -</span>
+<span class="go">2006-09-20 02:59:05 CLOSE TCP x.x.x.79 205.236.14.2 4344 110 - - - - - - - - -</span>
+<span class="go">2006-09-20 02:59:05 OPEN TCP x.x.x.79 205.236.14.2 4345 110 - - - - - - - - -</span>
+<span class="go">2006-09-20 02:59:07 OPEN TCP x.x.x.79 207.97.245.100 4347 110 - - - - - - - - -</span>
+<span class="go">2006-09-20 02:59:07 CLOSE TCP x.x.x.79 207.97.245.100 4347 110 - - - - - - - - -</span>
+<span class="go">2006-09-20 02:59:04 CLOSE TCP x.x.x.79 69.16.211.107 4337 110 - - - - - - - - -</span>
+<span class="go">2006-09-20 02:59:04 CLOSE TCP x.x.x.79 69.16.211.107 4331 110 - - - - - - - - -</span>
+<span class="go">2006-09-20 02:59:04 OPEN TCP x.x.x.79 69.16.211.107 4341 110 - - - - - - - - -</span>
+<span class="go">2006-09-20 02:59:04 OPEN TCP x.x.x.79 69.16.211.107 4342 110 - - - - - - - - -</span>
+<span class="go">2006-09-20 02:59:04 CLOSE TCP x.x.x.79 69.16.211.107 4332 110 - - - - - - - - -</span>
+<span class="go">2006-09-20 02:59:04 CLOSE TCP x.x.x.79 69.16.211.107 4328 110 - - - - - - - - -</span>
+<span class="go">2006-09-20 02:59:04 CLOSE TCP x.x.x.79 69.16.211.107 4333 110 - - - - - - - - -</span>
+<span class="go">2006-09-20 02:59:04 CLOSE TCP x.x.x.79 205.236.14.2 4334 110 - - - - - - - - -</span>
+<span class="go">2006-09-20 02:59:07 CLOSE TCP x.x.x.79 207.97.245.100 4338 110 - - - - - - - - -</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+  <div class="section">
+  
+  
+  </div>
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2010-2015, OSSEC Project Team - OSSEC trademark and domain owned by Trend Micro, Inc. - Home page images courtesy of Pixbay.com.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

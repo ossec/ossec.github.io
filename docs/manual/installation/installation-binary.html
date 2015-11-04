@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Binary Installation &mdash; OSSEC</title>
+    
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/parallax.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '2.8.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-sphinx.js"></script>
+    <link rel="author" title="About these documents" href="../../../about.html" />
+    <link rel="top" title="OSSEC" href="../../../index.html" />
+  
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  
+  
+  <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+  
+  <style type="text/css">
+    ul.ablog-archive {list-style: none; overflow: auto; margin-left: 0px}
+    ul.ablog-archive li {float: left; margin-right: 5px; font-size: 80%}
+  </style>
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../../index.html"><img src="../../../_static/ossec_logo_bare_small.png">
+          OSSEC</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="../../../about.html">About <i class="fa fa-info-circle"></i></a></li>
+                <li><a href="../../../blog.html">Blog <i class="fa fa-archive"></i></a></li>
+                <li><a href="../../">Documentaton <i class="fa fa-book"></i></a></li>
+                <li><a href="../../../downloads.html">Downloads <i class="fa fa-download"></i></a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"></ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="section" id="binary-installation">
+<span id="manual-install-binary"></span><h1>Binary Installation<a class="headerlink" href="#binary-installation" title="Permalink to this headline">¶</a></h1>
+<p>OSSEC is typically compiled on each system it is installed on, but this may not always be easy.
+To help in these cases there are a few methods of binary installation available. OSSEC can be
+compiled on one system, and copied to the destination systems. There are also plans for RPM and
+Debian packages.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">OSSEC has very limited cross compiling facilities. Windows binaries can be built on Linux systems,
+but binaries for other systems should be built on a system of the same OS and CPU platform.</p>
+</div>
+<div class="section" id="compiling-ossec-for-install-on-a-second-server">
+<span id="manual-install-binary-build"></span><h2>Compiling OSSEC for install on a second server<a class="headerlink" href="#compiling-ossec-for-install-on-a-second-server" title="Permalink to this headline">¶</a></h2>
+<p>First download the OSSEC package corresponding to the version you want to
+install and unpack it (on the system with a compiler).</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">#</span> wget -U ossec http://www.ossec.net/files/ossec-hids-2.8.1.tar.gz
+<span class="gp">#</span> tar -zxvf ossec-hids-latest.tar.gz
+</pre></div>
+</div>
+<p>Enter in the source directory of the downloaded package, and configure OSSEC to build the <tt class="docutils literal"><span class="pre">agent</span></tt> version.
+The <tt class="docutils literal"><span class="pre">make</span></tt> commands should compile the correct binaries.</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">#</span> <span class="nb">cd </span>ossec-*/src
+<span class="gp">#</span> make setagent
+<span class="gp">#</span> make all
+<span class="gp">#</span> make build
+</pre></div>
+</div>
+<p>Modify ossec-hids-<a href="#id1"><span class="problematic" id="id2">*</span></a>/etc/preloaded-vars.conf to set BINARY_INSTALL to yes.</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">#</span> <span class="nb">echo</span> <span class="s2">&quot;USER_BINARYINSTALL=\&quot;y\&quot;&quot;</span> &gt;&gt; ossec-hids*/etc/preloaded-vars.conf
+</pre></div>
+</div>
+<p>Finally create an OSSEC package.</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">#</span> tar -cvf ossec-binary.tar ossec-hids*
+</pre></div>
+</div>
+</div>
+<div class="section" id="installation-of-the-binary-ossec-package">
+<span id="manual-install-binary-install"></span><h2>Installation of the binary OSSEC package<a class="headerlink" href="#installation-of-the-binary-ossec-package" title="Permalink to this headline">¶</a></h2>
+<p>On the target system (that does not have a C compiler) download your ossec-binary.tar
+created in the steps above.</p>
+<p>Complete the installation by unarchiving the binary package and running ./install.sh.</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">#</span> tar xfv ossec-binary.tar
+<span class="gp">#</span> <span class="nb">cd </span>ossec-*
+<span class="gp">#</span> ./install.sh
+</pre></div>
+</div>
+<p>After following the installation prompts the install will be complete.</p>
+</div>
+</div>
+
+  <div class="section">
+  
+  
+  </div>
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2010-2015, OSSEC Project Team - OSSEC trademark and domain owned by Trend Micro, Inc. - Home page images courtesy of Pixbay.com.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

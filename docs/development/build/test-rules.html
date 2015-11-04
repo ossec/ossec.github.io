@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>test-rules: &mdash; OSSEC</title>
+    
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/parallax.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '2.8.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-sphinx.js"></script>
+    <link rel="author" title="About these documents" href="../../../about.html" />
+    <link rel="top" title="OSSEC" href="../../../index.html" />
+  
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  
+  
+  <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+  
+  <style type="text/css">
+    ul.ablog-archive {list-style: none; overflow: auto; margin-left: 0px}
+    ul.ablog-archive li {float: left; margin-right: 5px; font-size: 80%}
+  </style>
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../../index.html"><img src="../../../_static/ossec_logo_bare_small.png">
+          OSSEC</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="../../../about.html">About <i class="fa fa-info-circle"></i></a></li>
+                <li><a href="../../../blog.html">Blog <i class="fa fa-archive"></i></a></li>
+                <li><a href="../../">Documentaton <i class="fa fa-book"></i></a></li>
+                <li><a href="../../../downloads.html">Downloads <i class="fa fa-download"></i></a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"></ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="section" id="test-rules">
+<span id="id1"></span><h1>test-rules:<a class="headerlink" href="#test-rules" title="Permalink to this headline">¶</a></h1>
+<p>OSSEC includes the facilities to test rules in bulk.
+These checks should ensure there are no regressions after changes have been made.
+<tt class="docutils literal"><span class="pre">ossec-logtest</span> <span class="pre">-U</span></tt> is used to testthe outcome of rules. If <tt class="docutils literal"><span class="pre">ossec-logtest</span></tt>
+exits with any code but 0 it is considered a failure.</p>
+<div class="section" id="requirements">
+<h2>Requirements:<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
+<p>This feature currently requires python, a copy of the OSSEC source code,
+and the tools required to build OSSEC.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This requirement may change in the future.
+There is interest in utilizing the embedded lua.</p>
+</div>
+</div>
+<div class="section" id="how-to-run">
+<h2>How to run:<a class="headerlink" href="#how-to-run" title="Permalink to this headline">¶</a></h2>
+<p>Running the current tests is as simple as running <tt class="docutils literal"><span class="pre">make</span> <span class="pre">test-rules</span></tt> in the <tt class="docutils literal"><span class="pre">src</span></tt> directory.</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">[ddpbsd@ossec-build:ossec-hids/src] $</span> more /tmp/ttt
+<span class="go">( cd ../contrib/ossec-testing &amp;&amp; sudo python runtests.py)</span>
+<span class="go">- [ File = ./tests/named.ini ] ---------</span>
+<span class="go">.....</span>
+<span class="go">- [ File = ./tests/sshd.ini ] ---------</span>
+<span class="go">...........</span>
+<span class="go">- [ File = ./tests/apparmor.ini ] ---------</span>
+<span class="go">.....</span>
+<span class="go">- [ File = ./tests/cimserver.ini ] ---------</span>
+<span class="go">..</span>
+<span class="go">- [ File = ./tests/cisco_ios.ini ] ---------</span>
+<span class="go">.....</span>
+<span class="go">- [ File = ./tests/firewalld.ini ] ---------</span>
+<span class="go">..</span>
+<span class="go">- [ File = ./tests/netscreen.ini ] ---------</span>
+<span class="go">...</span>
+<span class="go">- [ File = ./tests/ossec.ini ] ---------</span>
+<span class="go">....</span>
+<span class="go">- [ File = ./tests/pam.ini ] ---------</span>
+<span class="go">.....</span>
+<span class="go">- [ File = ./tests/rsh.ini ] ---------</span>
+<span class="go">..</span>
+<span class="go">- [ File = ./tests/samba.ini ] ---------</span>
+<span class="go">....</span>
+<span class="go">- [ File = ./tests/su.ini ] ---------</span>
+<span class="go">.....</span>
+<span class="go">- [ File = ./tests/sudo.ini ] ---------</span>
+<span class="go">..</span>
+<span class="go">- [ File = ./tests/syslog.ini ] ---------</span>
+<span class="go">..</span>
+<span class="go">- [ File = ./tests/systemd.ini ] ---------</span>
+<span class="go">.</span>
+<span class="go">- [ File = ./tests/unbound.ini ] ---------</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="file-format">
+<h2>File format:<a class="headerlink" href="#file-format" title="Permalink to this headline">¶</a></h2>
+<p>The rule checks are configured in <tt class="docutils literal"><span class="pre">ini</span></tt> files. These files are in the <tt class="docutils literal"><span class="pre">contrib/ossec-testing/tests</span></tt> directory.
+Each file contains the configuration to check the rules for one program, for example <tt class="docutils literal"><span class="pre">named.ini</span></tt> contains checks
+for the named rules.</p>
+<p>Example:</p>
+<div class="highlight-ini"><div class="highlight"><pre><span class="k">[su: failed ]</span>
+<span class="na">log 1 pass</span> <span class="o">=</span> <span class="s">Apr 27 15:22:23 niban su[2921936]: failed: ttyq4 changing from ldap to root</span>
+<span class="na">rule</span> <span class="o">=</span> <span class="s">5302</span>
+<span class="na">alert</span> <span class="o">=</span> <span class="s">9</span>
+<span class="na">decoder</span> <span class="o">=</span> <span class="s">su</span>
+
+<span class="k">[su: bad pass]</span>
+<span class="na">log 1 pass</span> <span class="o">=</span> <span class="s">Apr 27 15:22:23 niban su[234]: BAD SU ger to fwmaster on /dev/ttyp0</span>
+<span class="na">rule</span> <span class="o">=</span> <span class="s">5301</span>
+<span class="na">alert</span> <span class="o">=</span> <span class="s">5</span>
+<span class="na">decoder</span> <span class="o">=</span> <span class="s">su</span>
+
+<span class="k">[su: pam - auth fail]</span>
+<span class="na">log 1 fail</span> <span class="o">=</span> <span class="s">Apr 27 15:22:23 niban su(pam_unix)[23164]: authentication failure; logname= uid=1342 euid=0 tty= ruser=dcid rhost=  user=osaudit</span>
+<span class="na">log 2 fail</span> <span class="o">=</span> <span class="s">Apr 27 15:22:23 niban su(pam_unix)[2298]: authentication failure; logname= uid=1342 euid=0 tty= ruser=dcid rhost=  user=root</span>
+<span class="na">rule</span> <span class="o">=</span> <span class="s">5503</span>
+<span class="na">alert</span> <span class="o">=</span> <span class="s">5</span>
+<span class="na">decoder</span> <span class="o">=</span> <span class="s">su</span>
+
+<span class="k">[su: work]</span>
+<span class="na">log 1 pass</span> <span class="o">=</span> <span class="s">Apr 22 17:51:51 enigma su: dcid to root on /dev/ttyp1</span>
+<span class="na">rule</span> <span class="o">=</span> <span class="s">5303</span>
+<span class="na">alert</span> <span class="o">=</span> <span class="s">3</span>
+<span class="na">decoder</span> <span class="o">=</span> <span class="s">su</span>
+</pre></div>
+</div>
+<p>Each entry has a number of configuration elements:</p>
+<blockquote>
+<div><ul class="simple">
+<li><tt class="docutils literal"><span class="pre">[su:</span> <span class="pre">-</span> <span class="pre">bad</span> <span class="pre">pass]</span></tt> - This is a heading, it usually contains the rule description.</li>
+<li><tt class="docutils literal"><span class="pre">log</span> <span class="pre">1</span> <span class="pre">pass</span> <span class="pre">=</span></tt> - This is the first log, and the <tt class="docutils literal"><span class="pre">ossec-logtest</span></tt> should pass. Noting failures is also possible by using <tt class="docutils literal"><span class="pre">fail</span></tt> instead of <tt class="docutils literal"><span class="pre">pass</span></tt>.</li>
+<li><tt class="docutils literal"><span class="pre">Apr</span> <span class="pre">27</span> <span class="pre">15:22:23</span> <span class="pre">niban</span> <span class="pre">su[234]:</span> <span class="pre">BAD</span> <span class="pre">SU</span> <span class="pre">ger</span> <span class="pre">to</span> <span class="pre">fwmaster</span> <span class="pre">on</span> <span class="pre">/dev/ttyp0</span></tt> - This is the log message to be checked.</li>
+<li><tt class="docutils literal"><span class="pre">rule</span> <span class="pre">=</span> <span class="pre">5301</span></tt> - This is the expected rule, if the log message triggers a different rule the test will return a failure.</li>
+<li><tt class="docutils literal"><span class="pre">alert</span> <span class="pre">=</span> <span class="pre">5</span></tt> - This is the expected rule level. A failure to match this level will result in a failure.</li>
+<li><tt class="docutils literal"><span class="pre">decoder</span> <span class="pre">=</span> <span class="pre">su</span></tt> - This is the expected decoder. A failure to match this decoder will result in a failure.</li>
+</ul>
+</div></blockquote>
+<p>The above entry can be verified by running the log message through ossec-logtest:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="go"> [ddpbsd@ossec-build:/var/ossec] $ sudo /var/ossec/bin/ossec-logtest</span>
+<span class="go"> 2014/10/31 10:37:38 ossec-testrule: INFO: Reading local decoder file.</span>
+<span class="go"> 2014/10/31 10:37:38 ossec-testrule: INFO: Started (pid: 25545).</span>
+<span class="go"> ossec-testrule: Type one log per line.</span>
+
+<span class="go"> Apr 27 15:22:23 niban su[234]: BAD SU ger to fwmaster on /dev/ttyp0</span>
+
+
+<span class="go">**Phase 1: Completed pre-decoding.</span>
+<span class="go">        full event: &#39;Apr 27 15:22:23 niban su[234]: BAD SU ger to fwmaster on /dev/ttyp0&#39;</span>
+<span class="go">        hostname: &#39;niban&#39;</span>
+<span class="go">        program_name: &#39;su&#39;</span>
+<span class="go">        log: &#39;BAD SU ger to fwmaster on /dev/ttyp0&#39;</span>
+
+<span class="go"> **Phase 2: Completed decoding.</span>
+<span class="go">        decoder: &#39;su&#39;</span>
+<span class="go">        srcuser: &#39;ger&#39;</span>
+<span class="go">        dstuser: &#39;fwmaster&#39;</span>
+
+<span class="go"> **Phase 3: Completed filtering (rules).</span>
+<span class="go">        Rule id: &#39;5301&#39;</span>
+<span class="go">        Level: &#39;5&#39;</span>
+<span class="go">        Description: &#39;User missed the password to change UID (user id).&#39;</span>
+<span class="go"> **Alert to be generated.</span>
+</pre></div>
+</div>
+<p>The rule triggered is indeed 5301, it is a level 5 alert, and the decoder was su.</p>
+<p>Here is an example of a planned failure:</p>
+<div class="highlight-ini"><div class="highlight"><pre><span class="k">[su: pam - auth fail]</span>
+<span class="na">log 1 fail</span> <span class="o">=</span> <span class="s">Apr 27 15:22:23 niban su(pam_unix)[23164]: authentication failure; logname= uid=1342 euid=0 tty= ruser=dcid rhost=  user=osaudit</span>
+<span class="na">rule</span> <span class="o">=</span> <span class="s">5503</span>
+<span class="na">alert</span> <span class="o">=</span> <span class="s">5</span>
+<span class="na">decoder</span> <span class="o">=</span> <span class="s">su</span>
+</pre></div>
+</div>
+<p>Running the above log message through ossec-logtest:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">Apr 27 15:22:23 niban su(pam_unix)[23164]: authentication failure; logname= uid=1342 euid=0 tty= ruser=dcid rhost=  user=osaudit</span>
+
+<span class="go">**Phase 1: Completed pre-decoding.</span>
+<span class="go">       full event: &#39;Apr 27 15:22:23 niban su(pam_unix)[23164]: authentication failure; logname= uid=1342 euid=0 tty= ruser=dcid rhost=  user=osaudit&#39;</span>
+<span class="go">       hostname: &#39;niban&#39;</span>
+<span class="go">       program_name: &#39;su(pam_unix)&#39;</span>
+<span class="go">       log: &#39;authentication failure; logname= uid=1342 euid=0 tty= ruser=dcid rhost=  user=osaudit&#39;</span>
+
+<span class="go">**Phase 2: Completed decoding.</span>
+<span class="go">       decoder: &#39;pam&#39;</span>
+<span class="go">       dstuser: &#39;dcid&#39;</span>
+
+<span class="go">**Phase 3: Completed filtering (rules).</span>
+<span class="go">       Rule id: &#39;5503&#39;</span>
+<span class="go">       Level: &#39;5&#39;</span>
+<span class="go">       Description: &#39;User login failed.&#39;</span>
+<span class="go">**Alert to be generated.</span>
+</pre></div>
+</div>
+<p>The rule and level are correct, but the decoder is not. This triggers the expected failure.</p>
+<p>An unexpected failure will produce output like the following:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">( cd ../contrib/ossec-testing &amp;&amp; sudo python runtests.py)</span>
+<span class="go">- [ File = ./tests/named.ini ] ---------</span>
+
+<span class="go">------------------------------------------------------------</span>
+<span class="go">Failed: Exit code = 0</span>
+<span class="go">        Alert     = 0</span>
+<span class="go">        Rule      = 12108</span>
+<span class="go">        Decoder   = named</span>
+<span class="go">        Section   = Query cache denied</span>
+<span class="go">        line name = log 1 fail</span>
+
+<span class="go">2014/10/31 10:49:47 ossec-testrule: INFO: Reading local decoder file.</span>
+<span class="go">2014/10/31 10:49:47 ossec-testrule: INFO: Started (pid: 16533).</span>
+<span class="go">ossec-testrule: Type one log per line.</span>
+
+
+
+<span class="go">**Phase 1: Completed pre-decoding.</span>
+<span class="go">       full event: &#39;Aug 29 15:33:13 ns3 named[464]: client 217.148.39.3#1036: query (cache) denied&#39;</span>
+<span class="go">       hostname: &#39;ns3&#39;</span>
+<span class="go">       program_name: &#39;named&#39;</span>
+<span class="go">       log: &#39;client 217.148.39.3#1036: query (cache) denied&#39;</span>
+
+<span class="go">**Phase 2: Completed decoding.</span>
+<span class="go">       decoder: &#39;named&#39;</span>
+<span class="go">       srcip: &#39;217.148.39.3&#39;</span>
+
+<span class="go">**Phase 3: Completed filtering (rules).</span>
+<span class="go">       Rule id: &#39;12108&#39;</span>
+<span class="go">       Level: &#39;0&#39;</span>
+<span class="go">       Description: &#39;Query cache denied (probably config error).&#39;</span>
+<span class="go">       Info - Link: &#39;http://www.reedmedia.net/misc/dns/errors.html&#39;</span>
+<span class="go">0</span>
+
+<span class="go">....</span>
+<span class="go">- [ File = ./tests/sshd.ini ] ---------</span>
+<span class="go">...........</span>
+</pre></div>
+</div>
+<p>The named rule failed because it was expecting a failure in decoding, but did not trigger one.</p>
+</div>
+</div>
+
+  <div class="section">
+  
+  
+  </div>
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2010-2015, OSSEC Project Team - OSSEC trademark and domain owned by Trend Micro, Inc. - Home page images courtesy of Pixbay.com.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

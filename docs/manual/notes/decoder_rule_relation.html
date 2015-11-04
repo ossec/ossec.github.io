@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Question: How does the decoder.xml relate to the rules? &mdash; OSSEC</title>
+    
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/parallax.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '2.8.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-sphinx.js"></script>
+    <link rel="author" title="About these documents" href="../../../about.html" />
+    <link rel="top" title="OSSEC" href="../../../index.html" />
+  
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  
+  
+  <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+  
+  <style type="text/css">
+    ul.ablog-archive {list-style: none; overflow: auto; margin-left: 0px}
+    ul.ablog-archive li {float: left; margin-right: 5px; font-size: 80%}
+  </style>
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../../index.html"><img src="../../../_static/ossec_logo_bare_small.png">
+          OSSEC</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="../../../about.html">About <i class="fa fa-info-circle"></i></a></li>
+                <li><a href="../../../blog.html">Blog <i class="fa fa-archive"></i></a></li>
+                <li><a href="../../">Documentaton <i class="fa fa-book"></i></a></li>
+                <li><a href="../../../downloads.html">Downloads <i class="fa fa-download"></i></a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"></ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="section" id="question-how-does-the-decoder-xml-relate-to-the-rules">
+<h1>Question: How does the decoder.xml relate to the rules?<a class="headerlink" href="#question-how-does-the-decoder-xml-relate-to-the-rules" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="answer">
+<h2>Answer:<a class="headerlink" href="#answer" title="Permalink to this headline">¶</a></h2>
+<p>The decoder.xml file can be used to capture certain bits of information from the logs that ossec is monitoring.  These bits of information can be passed to rules as XML objects.  Take for example, the pair of rules below:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">&lt;rule id=&quot;3100&quot; level=&quot;0&quot;&gt;</span>
+<span class="go">  &lt;decoded_as&gt;web-accesslog&lt;/decoded_as&gt;</span>
+<span class="go">  &lt;category&gt;web-log&lt;/category&gt;</span>
+<span class="go">  &lt;description&gt;Access log messages grouped.&lt;/description&gt;</span>
+<span class="go">&lt;/rule&gt;</span>
+
+<span class="go">&lt;rule id=&quot;3101&quot; level=&quot;5&quot;&gt;</span>
+<span class="go">  &lt;if_sid&gt;3100&lt;/if_sid&gt;</span>
+<span class="go">  &lt;id&gt;^40&lt;/id&gt;</span>
+<span class="go">  &lt;description&gt;Web server 400 error code.&lt;/description&gt;</span>
+<span class="go">&lt;/rule&gt;</span>
+</pre></div>
+</div>
+<p>The first rule acts as a &#8220;collector&#8221; for specific log messages.  As part of the rule construct, the <tt class="docutils literal"><span class="pre">&lt;decoded_as&gt;&lt;/decoded_as&gt;</span></tt> tags are used to determine how the log entry will be decoded, and aspects of it captured.  In this case, it will be a web-accesslog.  The corresponding construct in decoder.xml (shown below) matches the log entry and captures certain parts of the entry to be used later.</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">&lt;decoder name=&quot;web-accesslog&quot;&gt;</span>
+<span class="go">  &lt;type&gt;web-log&lt;/type&gt;</span>
+<span class="go">  &lt;prematch&gt;^\d+.\d+.\d+.\d+ - &lt;/prematch&gt;</span>
+<span class="go">  &lt;regex&gt;^(\d+.\d+.\d+.\d+) - \S+ [\S+ -\d+] &lt;/regex&gt;</span>
+<span class="go">  &lt;regex&gt;&quot;\w+ (\S+) HTTP\S+ (\d+) &lt;/regex&gt;</span>
+<span class="go">  &lt;order&gt;srcip,url,id&lt;/order&gt;</span>
+<span class="go">&lt;/decoder&gt;</span>
+</pre></div>
+</div>
+<p>Looking at the regular expression we can see that the source IP, the URL, and the HTTP Result Code are captured.  The first set of parentheses denotes that this part of the expression is the source IP, the second set denotes the URL, and the last set is the ID code, which for the example is the HTTP result code.  Going back to the second rule above, its construct contains the <tt class="docutils literal"><span class="pre">&lt;id&gt;&lt;/id&gt;</span></tt> tags, which, in this case (rule #3101), is used to match a 400 HTTP result code.  Something else worth noting is the multiple &lt;regex&gt; tags in this example.  This is simply done to provide enhanced clarity and preventing lines over 80 characters.  The values inside both tags are concatenated before being processed by ossec.</p>
+<p>These regex variables can also be passed to active-response command constructs like the one show below:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">&lt;command&gt;</span>
+<span class="go">  &lt;name&gt;host-deny&lt;/name&gt;</span>
+<span class="go">  &lt;executable&gt;host-deny.sh&lt;/executable&gt;</span>
+<span class="go">  &lt;expect&gt;srcip&lt;/expect&gt;</span>
+<span class="go">  &lt;timeout_allowed&gt;yes&lt;/timeout_allowed&gt;</span>
+<span class="go">&lt;/command&gt;</span>
+</pre></div>
+</div>
+<p>The <tt class="docutils literal"><span class="pre">&lt;expect&gt;&lt;/expect&gt;</span></tt> tags are used here to specify which variable is expected as an argument to the executable being used for the active-response action.  A list of available variables is shown below:</p>
+<ul class="simple">
+<li>location</li>
+<li>hostname</li>
+<li>log_tag</li>
+<li>srcip</li>
+<li>dstip</li>
+<li>srcport</li>
+<li>dstport</li>
+<li>protocol</li>
+<li>action</li>
+<li>user</li>
+<li>dstuser</li>
+<li>id</li>
+<li>command</li>
+<li>url</li>
+<li>data</li>
+</ul>
+<p>Not all of these will be available for every decoder type, but you can check the decoder.xml to see which ones are available for which decoders.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If you are creating custom rules to monitor logs, almost all of your editing will occur in the rules files.  The decoder.xml is just another way to make your rules more powerful, pass specific information to your active-response commands.</p>
+</div>
+</div>
+</div>
+
+  <div class="section">
+  
+  
+  </div>
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2010-2015, OSSEC Project Team - OSSEC trademark and domain owned by Trend Micro, Inc. - Home page images courtesy of Pixbay.com.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>OSSEC Architecture &mdash; OSSEC</title>
+    
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/parallax.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '2.8.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="top" title="OSSEC" href="../../index.html" />
+  
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  
+  
+  <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+  
+  <style type="text/css">
+    ul.ablog-archive {list-style: none; overflow: auto; margin-left: 0px}
+    ul.ablog-archive li {float: left; margin-right: 5px; font-size: 80%}
+  </style>
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html"><img src="../../_static/ossec_logo_bare_small.png">
+          OSSEC</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="../../about.html">About <i class="fa fa-info-circle"></i></a></li>
+                <li><a href="../../blog.html">Blog <i class="fa fa-archive"></i></a></li>
+                <li><a href="../">Documentaton <i class="fa fa-book"></i></a></li>
+                <li><a href="../../downloads.html">Downloads <i class="fa fa-download"></i></a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"></ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="section" id="ossec-architecture">
+<span id="id1"></span><h1>OSSEC Architecture<a class="headerlink" href="#ossec-architecture" title="Permalink to this headline">¶</a></h1>
+<p>OSSEC is composed of multiple pieces. It has a central manager for monitoring
+and receiving information from agents, syslog, databases, and from
+agentless devices.</p>
+<div class="section" id="manager-or-server">
+<h2>Manager (or Server)<a class="headerlink" href="#manager-or-server" title="Permalink to this headline">¶</a></h2>
+<p>The manager is the central piece of the OSSEC deployment. It stores the file
+integrity checking databases, the logs, events, and system auditing entries.
+All the rules, decoders, and major configuration options are stored centrally in
+the manager; making it easy to administer even a large number of agents.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The manager may be called the OSSEC server, or even just server in this documentation.</p>
+</div>
+</div>
+<div class="section" id="agents">
+<h2>Agents<a class="headerlink" href="#agents" title="Permalink to this headline">¶</a></h2>
+<p>The agent is a small program, or collection of programs, installed on the systems
+to be monitored. The agent will collect information and forward
+it to the manager for analysis and correlation. Some information is collected in
+real time, others periodically. It has a very small memory and CPU
+footprint by default, not affecting the system&#8217;s usage.</p>
+<p><em>Agent security</em>: It runs with a low privilege user (generally created during the
+installation) and inside a chroot jail isolated from the system. Most of the
+agent configuration can be pushed from the manager.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">OSSEC only supports agents on Microsoft Windows platforms. These systems will require
+an OSSEC server, running on Linux or another unix-like system.</p>
+</div>
+</div>
+<div class="section" id="agentless">
+<h2>Agentless<a class="headerlink" href="#agentless" title="Permalink to this headline">¶</a></h2>
+<p>For systems that an agent cannot be installed on, the agentless support may allow
+integrity checks to be performed. Agentless scans can be used
+to monitor firewalls, routers, and even Unix systems.</p>
+</div>
+<div class="section" id="virtualization-vmware">
+<h2>Virtualization/VMware<a class="headerlink" href="#virtualization-vmware" title="Permalink to this headline">¶</a></h2>
+<p>OSSEC allows you to install the agent on the guest operating systems.
+It may also be installed inside some versions of VMWare ESX, but this
+may cause support issues. With the agent installed inside VMware ESX you can get
+alerts about when a VM guest is being installed, removed, started, etc. It
+also monitors logins, logouts and errors inside the ESX server. In addition to
+that, OSSEC performs the Center for Internet Security (CIS) checks for VMware,
+alerting if there is any insecure configuration option enabled or any other issue.</p>
+</div>
+<div class="section" id="firewalls-switches-and-routers">
+<h2>Firewalls, switches and routers<a class="headerlink" href="#firewalls-switches-and-routers" title="Permalink to this headline">¶</a></h2>
+<p>OSSEC can receive and analyze syslog events from a large variety of firewalls,
+switches and routers. It supports all Cisco routers, Cisco PIX, Cisco FWSM,
+Cisco ASA, Juniper Routers, Netscreen firewall, Checkpoint and many others.</p>
+<div class="section" id="architecture">
+<h3>Architecture<a class="headerlink" href="#architecture" title="Permalink to this headline">¶</a></h3>
+<p>This diagram shows the central manager receiving events from the agents and
+system logs from remote devices. When something is detected, active responses
+can be executed and the admin is notified.</p>
+<a class="reference internal image-reference" href="../../_images/ossec-arch.jpg"><img alt="Ossec architecture network diagram" class="align-center" src="../../_images/ossec-arch.jpg" style="width: 363px; height: 210px;" /></a>
+</div>
+</div>
+<div class="section" id="internal-architecture">
+<h2>Internal Architecture<a class="headerlink" href="#internal-architecture" title="Permalink to this headline">¶</a></h2>
+<p>For technical and deep detailed information on how it works, please read the
+following documents:</p>
+<p><a class="reference external" href="http://ossec.net/ossec-docs/auscert-2007-dcid.pdf">OSSEC log analysis/inspection architecture</a> (PDF) - by Daniel Cid</p>
+<a class="reference external image-reference" href="http://www.ossec.net/main/get-commercial-support"><img alt="../../_images/logo_tagline_09.png" class="align-center" src="../../_images/logo_tagline_09.png" /></a>
+</div>
+</div>
+
+  <div class="section">
+  
+  
+  </div>
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2010-2015, OSSEC Project Team - OSSEC trademark and domain owned by Trend Micro, Inc. - Home page images courtesy of Pixbay.com.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

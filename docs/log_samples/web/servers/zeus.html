@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Zeus web server &mdash; OSSEC</title>
+    
+    <link rel="stylesheet" href="../../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/parallax.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../../',
+        VERSION:     '2.8.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../../../_static/bootstrap-sphinx.js"></script>
+    <link rel="author" title="About these documents" href="../../../../about.html" />
+    <link rel="top" title="OSSEC" href="../../../../index.html" />
+  
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  
+  
+  <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+  
+  <style type="text/css">
+    ul.ablog-archive {list-style: none; overflow: auto; margin-left: 0px}
+    ul.ablog-archive li {float: left; margin-right: 5px; font-size: 80%}
+  </style>
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../../../index.html"><img src="../../../../_static/ossec_logo_bare_small.png">
+          OSSEC</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="../../../../about.html">About <i class="fa fa-info-circle"></i></a></li>
+                <li><a href="../../../../blog.html">Blog <i class="fa fa-archive"></i></a></li>
+                <li><a href="../../../">Documentaton <i class="fa fa-book"></i></a></li>
+                <li><a href="../../../../downloads.html">Downloads <i class="fa fa-download"></i></a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../../../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"></ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="section" id="zeus-web-server">
+<h1>Zeus web server<a class="headerlink" href="#zeus-web-server" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="failed-logins">
+<h2>Failed logins:<a class="headerlink" href="#failed-logins" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">[26/Jun/2006:05:02:57 +0100] WARN:admin:Authentication failure, url=/index.cgi, host=xx.yy.com, user=admin</span>
+<span class="go">[03/Aug/2006:18:43:11 +0100] WARN:admin:Authentication failure, url=/index.cgi, host=1.2.3.4, user=admin</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="informational">
+<h2>Informational:<a class="headerlink" href="#informational" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">[09/Dec/2006:05:04:15 +0000] INFO:https://1.2.3.4:9091</span>
+<span class="go">[09/Dec/2006:05:04:15 +0000] INFO:Child started - pid 5800</span>
+<span class="go">[09/Dec/2006:05:04:15 +0000] INFO:Zeus Admin Server running</span>
+<span class="go">[09/Dec/2006:05:08:39 +0000] INFO:Server shutdown requested</span>
+<span class="go">[10/Dec/2006:16:59:26 +0000] INFO:Zeus Admin Server started</span>
+<span class="go">[10/Dec/2006:16:59:26 +0000] INFO:Version 4.3r3, Build date: Jun 16 2006 09:20:11</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="fatal">
+<h2>Fatal:<a class="headerlink" href="#fatal" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">[11/Mar/2007:00:26:18 +0000] FATAL:Zeus Admin Server already running (PID: 13709)</span>
+<span class="go">[11/Mar/2007:00:26:52 +0000] FATAL:Zeus Admin Server already running (PID: 26890)</span>
+<span class="go">[14/Mar/2007:14:10:01 +0000] SERIOUS:Node 1.2.3.3 (1.2.3.3:80) has failed - A monitor has detected a failure</span>
+<span class="go">[14/Mar/2007:14:10:01 +0000] SERIOUS:Pool &#39;HTTP&#39; has no back-end nodes responding</span>
+<span class="go">[14/Mar/2007:21:37:12 +0000] SERIOUS:Pool &#39;ws00&#39; has no back-end nodes responding</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+  <div class="section">
+  
+  
+  </div>
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2010-2015, OSSEC Project Team - OSSEC trademark and domain owned by Trend Micro, Inc. - Home page images courtesy of Pixbay.com.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

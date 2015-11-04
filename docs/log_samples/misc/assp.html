@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Log Samples for ASSP &mdash; OSSEC</title>
+    
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/parallax.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '2.8.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-sphinx.js"></script>
+    <link rel="author" title="About these documents" href="../../../about.html" />
+    <link rel="top" title="OSSEC" href="../../../index.html" />
+  
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  
+  
+  <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+  
+  <style type="text/css">
+    ul.ablog-archive {list-style: none; overflow: auto; margin-left: 0px}
+    ul.ablog-archive li {float: left; margin-right: 5px; font-size: 80%}
+  </style>
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../../index.html"><img src="../../../_static/ossec_logo_bare_small.png">
+          OSSEC</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="../../../about.html">About <i class="fa fa-info-circle"></i></a></li>
+                <li><a href="../../../blog.html">Blog <i class="fa fa-archive"></i></a></li>
+                <li><a href="../../">Documentaton <i class="fa fa-book"></i></a></li>
+                <li><a href="../../../downloads.html">Downloads <i class="fa fa-download"></i></a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"></ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="section" id="log-samples-for-assp">
+<h1>Log Samples for ASSP<a class="headerlink" href="#log-samples-for-assp" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="sample-log">
+<h2>Sample log:<a class="headerlink" href="#sample-log" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">Jun-26-10 17:00:16 Info: hourly scheduler running at 17:00;</span>
+<span class="go">Jun-26-10 17:20:25 65624-06856 188.50.23.174 &lt;mailuser@mysite.de&gt; to: mailuser@mysite.de [scoring:10] -- IP in HELO does not match connection: &#39;[188.49.27.228]&#39; -- [Brand erection meds reseller];</span>
+<span class="go">Jun-26-10 17:20:25 65624-06856 [Whitish] 188.50.23.174 &lt;mailuser@mysite.de&gt; to: mailuser@mysite.de [scoring:-10] -- whitish address &#39;mailuser@mysite.de&#39; -- [Brand erection meds reseller];</span>
+<span class="go">Jun-26-10 17:20:25 65624-06856 [ForgedLocalSender] 188.50.23.174 &lt;mailuser@mysite.de&gt; to: mailuser@mysite.de [spam found] -- Invalid Local Sender &#39;mailuser@mysite.de&#39; -- [Brand erection meds reseller];</span>
+<span class="go">Jun-26-10 17:53:02 Cleaning up delaying databases ...;</span>
+<span class="go">Jun-26-10 17:53:02 Cleaning delaying database (triplets) finished; keys before=0, deleted=0;</span>
+<span class="go">Jun-26-10 17:53:02 Cleaning delaying database (safelisted tuplets) finished; keys before=0, deleted=0;</span>
+<span class="go">Jun-26-10 17:53:02 Cleaning up penalty records ...;</span>
+<span class="go">Jun-26-10 17:53:02 PenaltyBox: cleaning BlackBox finished; before=52, deleted=15;</span>
+<span class="go">Jun-26-10 17:53:02 PenaltyBox: cleaning WhiteBox finished; before=157, deleted=2;</span>
+<span class="go">Jun-26-10 17:53:02 Saving penalty records;</span>
+<span class="go">Jun-26-10 17:53:07 Cleaning up cache records ...;</span>
+<span class="go">Jun-26-10 17:53:07 DNSBLCache: cleaning cache finished; before=41, deleted=2;</span>
+<span class="go">Jun-26-10 17:53:07 URIBLCache: cleaning cache finished: Domains before=26, deleted=0;</span>
+<span class="go">Jun-26-10 17:53:07 PTRCache: cleaning cache finished; before=25, deleted=1;</span>
+<span class="go">Jun-26-10 17:53:07 MXACache: cleaning cache finished; before=17, deleted=0;</span>
+<span class="go">Jun-26-10 17:53:07 SenderBaseCache: cleaning cache finished; before=430, deleted=4;</span>
+<span class="go">Jun-26-10 17:53:07 OKCache: cleaning cache finished; before=18, deleted=1;</span>
+<span class="go">Jun-26-10 17:53:07 Saving cache records;</span>
+<span class="go">Jun-26-10 17:53:17 Saving whitelist;</span>
+<span class="go">Jun-26-10 17:53:17 Saving redlist;</span>
+<span class="go">Jun-26-10 17:54:22 Info: next assp version check download in 15 hours 32 mins ;</span>
+<span class="go">Jun-26-10 18:00:18 Info: hourly scheduler running at 18:00;</span>
+<span class="go">Jun-26-10 18:13:39 68818-10051 [MsgID] 125.160.111.171 &lt;prefacesd21@booktango.com&gt; to: mailuser@mysite.de [scoring] (Message-ID suspicious: &#39;000d01cb154c$02b58760$6400a8c0@prefacesd21&#39;);</span>
+<span class="go">Jun-26-10 18:13:39 68818-10051 [InvalidHELO] 125.160.111.171 &lt;prefacesd21@booktango.com&gt; to: mailuser@mysite.de [scoring:5] -- invalid HELO: &#39;171.subnet125-160-111.speedy.telkom.net.id&#39;;</span>
+<span class="go">Jun-26-10 18:13:39 68818-10051 [DNSBL] 125.160.111.171 &lt;prefacesd21@booktango.com&gt; to: mailuser@mysite.de [spam found] -- DNSBL: failed, 125.160.111.171 listed in ix.dnsbl.manitu.net zen.spamhaus.org -- [Start building your style with unique bracelet mad] -&gt; spam/10051.eml;</span>
+<span class="go">Jun-26-10 18:17:42 69061-10295 [DNSBL] 82.98.111.248 &lt;postmaster@admail-ltd.net&gt; to: mailuser@mysite.de [scoring:15] -- DNSBL: hit, 82.98.111.248 listed in l2.apews.org;</span>
+<span class="go">Jun-26-10 18:17:44 69061-10295 82.98.111.248 &lt;postmaster@admail-ltd.net&gt; to: mailuser@mysite.de [scoring:45] Bayesian Check - Prob: 1.0000 =&gt; spam;</span>
+<span class="go">Jun-26-10 18:17:44 69061-10295 [MessageScoring] 82.98.111.248 &lt;postmaster@admail-ltd.net&gt; to: mailuser@mysite.de [spam found] -- MessageScore (70) over limit (50) -- [Wir schicken Deutschland g nstiger in den Urlaub];</span>
+<span class="go">Jun-26-10 18:25:35 69532-10767 [BlackHELO] 89.137.151.155 &lt;fwufyoyomy@rwanational.org&gt; to: mailuser@mysite.de [scoring] -- blacklisted HELO &#39;rwanational.org&#39; -- [Tolle Neuigkeiten jetzt spielen];</span>
+<span class="go">Jun-26-10 18:25:35 69532-10767 [DNSBL] 89.137.151.155 &lt;fwufyoyomy@rwanational.org&gt; to: mailuser@mysite.de [spam found] -- DNSBL: failed, 89.137.151.155 listed in dnsbl-1.uceprotect.net zen.spamhaus.org -- [Tolle Neuigkeiten jetzt spielen] -&gt; spam/10767.eml;</span>
+<span class="go">Jun-26-10 18:25:40 69537-10773 [BlackHELO] 41.251.63.164 &lt;jhonyuveeuc@yebox.com&gt; to: mailuser@mysite.de [scoring] -- blacklisted HELO &#39;yebox.com&#39; -- [Deftiger Bonus im Anmarsch];</span>
+<span class="go">Jun-26-10 18:25:40 69537-10773 [DNSBL] 41.251.63.164 &lt;jhonyuveeuc@yebox.com&gt; to: mailuser@mysite.de [scoring:38] -- DNSBL: hit, 41.251.63.164 listed in dnsbl-3.uceprotect.net l2.apews.org;</span>
+<span class="go">Jun-26-10 18:25:43 69537-10773 [MissingMX] 41.251.63.164 &lt;jhonyuveeuc@yebox.com&gt; to: mailuser@mysite.de [scoring:10] MX record missing for domain: yebox.com;</span>
+<span class="go">Jun-26-10 18:25:44 69537-10773 [PTRmissing] 41.251.63.164 &lt;jhonyuveeuc@yebox.com&gt; to: mailuser@mysite.de [scoring:5] (PTR missing);</span>
+<span class="go">Jun-26-10 18:25:44 69537-10773 [MessageScoring] 41.251.63.164 &lt;jhonyuveeuc@yebox.com&gt; to: mailuser@mysite.de [spam found] -- MessageScore (83) over limit (50) -- [Deftiger Bonus im Anmarsch] -&gt; spam/10773.eml;</span>
+<span class="go">Jun-26-10 18:25:51 69546-10783 [DNSBL] 189.106.42.126 &lt;touomumaeop@doneasy.com&gt; to: mailuser@mysite.de [spam found] -- DNSBL: failed, 189.106.42.126 listed in l2.apews.org zen.spamhaus.org -- [Erhalten Sie einen besonderen Bonus im CC] -&gt; spam/10783.eml;</span>
+<span class="go">Jun-26-10 18:49:23 70963-12201 [MsgID] 85.246.192.130 &lt;guwyha8850@telepac.pt&gt; to: mailuser@mysite.de [scoring] (Message-ID missing);</span>
+<span class="go">Jun-26-10 18:49:24 70963-12201 [BlackHELO] 85.246.192.130 &lt;guwyha8850@telepac.pt&gt; to: mailuser@mysite.de [scoring] -- blacklisted HELO &#39;telepac.pt&#39; -- [Hot news for mailuser 70 off all June word is];</span>
+<span class="go">Jun-26-10 18:49:24 70963-12201 [DNSBL] 85.246.192.130 &lt;guwyha8850@telepac.pt&gt; to: mailuser@mysite.de [spam found] -- DNSBL: failed, 85.246.192.130 listed in ix.dnsbl.manitu.net zen.spamhaus.org -- [Hot news for mailuser 70 off all June word is] -&gt; spam/12201.eml;</span>
+<span class="go">Jun-26-10 18:53:19 Saving whitelist;</span>
+<span class="go">Jun-26-10 18:53:19 Saving redlist;</span>
+<span class="go">Jun-26-10 18:54:24 Info: next assp version check download in 7 hours 32 mins ;</span>
+<span class="go">Jun-26-10 19:00:20 Info: hourly scheduler running at 19:00;</span>
+<span class="go">Jun-26-10 19:16:43 72601-13840 [MsgID] 201.212.33.20 &lt;uizute1512@prima.net.ar&gt; to: mailuser@mysite.de [scoring] (Message-ID missing);</span>
+<span class="go">Jun-26-10 19:16:43 72601-13840 [BlackHELO] 201.212.33.20 &lt;uizute1512@prima.net.ar&gt; to: mailuser@mysite.de [scoring] -- blacklisted HELO &#39;prima.net.ar&#39; -- [Hot news for mailuser 70 off all June Of Standardiz];</span>
+<span class="go">Jun-26-10 19:16:43 72601-13840 [DNSBL] 201.212.33.20 &lt;uizute1512@prima.net.ar&gt; to: mailuser@mysite.de [spam found] -- DNSBL: failed, 201.212.33.20 listed in ix.dnsbl.manitu.net psbl.surriel.com -- [Hot news for mailuser 70 off all June Of Standardiz] -&gt; spam/13840.eml;</span>
+<span class="go">Jun-26-10 19:19:29 72769-00009 [Whitelisted] 82.195.75.100 &lt;bounce-debian-user-german=seo=myhost.de@lists.debian.org&gt; to: seo@myhost.de whitelisted -- debian-user-german-request@lists.debian.org on whitelistdb -- [Nach Upgrade auf Lenny Samba ADS will nicht mehr] -&gt; notspam/9.eml;</span>
+<span class="go">Jun-26-10 19:37:35 73854-01095 [Whitelisted] 82.195.75.100 &lt;bounce-debian-user-german=seo=myhost.de@lists.debian.org&gt; to: seo@myhost.de whitelisted -- debian-user-german-request@lists.debian.org on whitelistdb -- [Re Nach Upgrade auf Lenny Samba ADS will nicht meh] -&gt; notspam/1095.eml;</span>
+<span class="go">Jun-26-10 19:41:21 74080-01322 151.68.208.180 &lt;mailuser@mysite.de&gt; to: mailuser@mysite.de [scoring:10] -- HELO contains IP: &#39;[151.68.208.180]&#39; -- [Great news mailuser 80 off today President British];</span>
+<span class="go">Jun-26-10 19:41:21 74080-01322 [Whitish] 151.68.208.180 &lt;mailuser@mysite.de&gt; to: mailuser@mysite.de [scoring:-10] -- whitish address &#39;mailuser@mysite.de&#39; -- [Great news mailuser 80 off today President British];</span>
+<span class="go">Jun-26-10 19:41:21 74080-01322 [ForgedLocalSender] 151.68.208.180 &lt;mailuser@mysite.de&gt; to: mailuser@mysite.de [spam found] -- Invalid Local Sender &#39;mailuser@mysite.de&#39; -- [Great news mailuser 80 off today President British];</span>
+<span class="go">Jun-26-10 19:53:00 Uploading stats via direct connection;</span>
+<span class="go">Jun-26-10 19:53:10 Cleaning up cache records ...;</span>
+<span class="go">Jun-26-10 19:53:10 DNSBLCache: cleaning cache finished; before=46, deleted=0;</span>
+<span class="go">Jun-26-10 19:53:10 URIBLCache: cleaning cache finished: Domains before=32, deleted=0;</span>
+<span class="go">Jun-26-10 19:53:10 PTRCache: cleaning cache finished; before=26, deleted=0;</span>
+<span class="go">Jun-26-10 19:53:10 MXACache: cleaning cache finished; before=18, deleted=0;</span>
+<span class="go">Jun-26-10 19:53:10 SenderBaseCache: cleaning cache finished; before=433, deleted=4;</span>
+<span class="go">Jun-26-10 19:53:10 OKCache: cleaning cache finished; before=17, deleted=0;</span>
+<span class="go">Jun-26-10 19:53:10 Saving cache records;</span>
+<span class="go">Jun-26-10 19:53:20 Saving whitelist;</span>
+<span class="go">Jun-26-10 19:53:20 Saving redlist;</span>
+<span class="go">Jun-26-10 19:54:25 Info: next assp version check download in 14 hours 32 mins ;</span>
+<span class="go">Jun-26-10 20:00:21 Info: hourly scheduler running at 20:00;</span>
+<span class="go">Jun-26-10 20:03:29 75399-02642 118.166.224.97 &lt;z2007tw@yahoo.com.tw&gt; to: vkihwpdh@yahoo.com.tw [scoring:10] -- IP in HELO does not match connection: &#39;88.198.52.246&#39; -- [BC 88 198 52 246];</span>
+<span class="go">Jun-26-10 20:03:30 75399-02642 [InvalidHELO] 118.166.224.97 &lt;z2007tw@yahoo.com.tw&gt; to: vkihwpdh@yahoo.com.tw [scoring:5] -- invalid HELO: &#39;88.198.52.246&#39;;</span>
+<span class="go">Jun-26-10 20:03:30 75399-02642 [BlackHELO] 118.166.224.97 &lt;z2007tw@yahoo.com.tw&gt; to: vkihwpdh@yahoo.com.tw [scoring] -- blacklisted HELO &#39;88.198.52.246&#39; -- [BC 88 198 52 246];</span>
+<span class="go">Jun-26-10 20:03:30 75399-02642 [DNSBL] 118.166.224.97 &lt;z2007tw@yahoo.com.tw&gt; to: vkihwpdh@yahoo.com.tw [spam found] -- DNSBL: failed, 118.166.224.97 listed in l2.apews.org zen.spamhaus.org -- [BC 88 198 52 246] -&gt; spam/2642.eml;</span>
+<span class="go">Jun-26-10 20:24:09 76649-03893 [Whitelisted] 82.195.75.100 &lt;bounce-debian-user-german=seo=myhost.de@lists.debian.org&gt; to: seo@myhost.de whitelisted -- debian-user-german-request@lists.debian.org on whitelistdb -- [Re Nach Upgrade auf Lenny Samba ADS will nicht meh] -&gt; notspam/3893.eml;</span>
+<span class="go">Jun-26-10 20:42:57 Admin connection from 91.60.195.89:53675; page:/maillog;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="sample2">
+<h2>Sample2:<a class="headerlink" href="#sample2" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">FEb-23-10 13:20:02 Assp.pl version 1.7.0.0(0.0.12) (Perl 5.010001) initializing ;</span>
+<span class="go">FEb-23-10 13:20:02 File::Scan::ClamAV module version 1.91 installed and available;</span>
+<span class="go">FEb-23-10 13:20:02 Assp.pl running on server: myhost.de (88.198.52.246);</span>
+<span class="go">FEb-23-10 13:20:02 Net::LDAP module version 0.39 installed and available;</span>
+<span class="go">FEb-23-10 13:20:02 Net::DNS module version 0.66 installed;</span>
+<span class="go">FEb-23-10 13:20:02 Email::Valid module version 0.182 installed and available;</span>
+<span class="go">FEb-23-10 13:20:02 Email::Send module version 2.198 installed - resending blocked messages available;</span>
+<span class="go">FEb-23-10 13:20:02 Mail::SPF module version 2.007 installed and available;</span>
+<span class="go">FEb-23-10 13:20:02 Mail::SRS module version 0.31 installed - Sender Rewriting Scheme available;</span>
+<span class="go">FEb-23-10 13:20:02 Compress::Zlib module version 2.024 installed - HTTP compression available;</span>
+<span class="go">FEb-23-10 13:20:02 Digest::MD5 module version 2.39 installed - Greylisting/Delaying can use MD5 keys for hashes;</span>
+<span class="go">FEb-23-10 13:20:02 Digest::SHA1 module version 2.12 installed - Message-ID tagging (FBMTV) available;</span>
+<span class="go">FEb-23-10 13:20:02 File::ReadBackwards module version 1.04 installed - searching of log files enabled;</span>
+<span class="go">FEb-23-10 13:20:02 Time::HiRes module version 1.972 installed - CPU usage statistics available;</span>
+<span class="go">FEb-23-10 13:20:02 Sys::Syslog module version 0.27 installed - Unix centralized logging enabled;</span>
+<span class="go">FEb-23-10 13:20:02 Tie::RDBM module version 0.70 installed - mysql usage available;</span>
+<span class="go">FEb-23-10 13:20:02 Net::IP::Match::Regexp module version 1.01 installed - CIDR notation for IP range available;</span>
+<span class="go">FEb-23-10 13:20:02 Net::CIDR::Lite module version 0.20 installed - Hyphenated IP address range available;</span>
+<span class="go">FEb-23-10 13:20:02 Net::SenderBase module version 1.01 installed - SenderBase Queries available;</span>
+<span class="go">FEb-23-10 13:20:02 LWP::Simple module version 5.827 installed - griplist available;</span>
+<span class="go">FEb-23-10 13:20:02 Email::MIME::Modifier module version 1.903 installed - attachments detection available;</span>
+<span class="go">FEb-23-10 13:20:02 Net::SMTP module version 2.31 installed - VRFY Recipients available;</span>
+<span class="go">FEb-23-10 13:20:02 IO::Socket::SSL module not checked   - SSL support is disabled in config (enableSSL);</span>
+<span class="go">FEb-23-10 13:20:02 IO::Socket::INET6 module not checked   - IPv6 support not enabled (enableINET6);</span>
+<span class="go">FEb-23-10 13:20:02 Listening for SMTP connections on 88.198.52.246:25;</span>
+<span class="go">FEb-23-10 13:20:02 Listening for ADMIN http connections on 55555;</span>
+<span class="go">FEb-23-10 13:20:02 Listening for STATISTICS  http connections on 55553;</span>
+<span class="go">FEb-23-10 13:20:02 Listening for additional SMTP connections on 88.198.52.246:587;</span>
+<span class="go">FEb-23-10 13:20:03 Running in (base)directory &#39;/usr/share/assp&#39;;</span>
+<span class="go">FEb-23-10 13:20:03 Starting assp.pl 1.7.0.0(0.0.12) (PID: 14626) as daemon;</span>
+<span class="go">FEb-23-10 13:20:17 Admin connection from 79.237.168.155:43133; page:/;</span>
+<span class="go">FEb-23-10 13:20:23 Admin connection from 79.237.168.155:43145; page:/maillog;</span>
+<span class="go">FEb-23-10 13:20:35 27634-11634 [Local] 79.237.168.155 &lt;admin@myhost.de&gt; to: alexander-myuser@web.de local --  --  [s] -&gt; /usr/share/assp/notspam/11634.eml;</span>
+<span class="go">FEb-23-10 13:21:04 27660-11661 87.248.110.141 &lt;blahmana@yahoo.de&gt; to: admin@myhost.de [scoring] Bayesian Check - Prob: 0.84024 =&gt; spam;</span>
+<span class="go">FEb-23-10 13:21:04 27660-11661 [MessageScore] 87.248.110.141 &lt;blahmana@yahoo.de&gt; to: admin@myhost.de [spam passed] -- passing because messagescore(46) is in warning range ( 45 - 50)  --  [keks] -&gt; /usr/share/assp/discarded/11661.eml;</span>
+<span class="go">FEb-23-10 13:21:15 27675-11677 [Whitelisted] 82.195.75.100 &lt;bounce-debian-user-german=seo=myhost.de@lists.debian.org&gt; to: seo@myhost.de whitelisted -- debian-user-german-request@lists.debian.org on whitelist  --  [Re Debian kann sich nicht entscheiden ob flashplay] -&gt; /usr/share/assp/notspam/11677.eml;</span>
+<span class="go">FEb-23-10 13:21:31 27688-11691 [MessageOK] 87.248.110.140 &lt;blahmana@yahoo.de&gt; to: admin@myhost.de -- Message OK --  [AW keks] -&gt; /usr/share/assp/okmail/AW_keks--1.eml;</span>
+<span class="go">FEb-23-10 13:21:46 27706-11710 [Whitelisted] 91.189.94.204 &lt;ubuntu-de-bounces@lists.ubuntu.com&gt; to: seo@myhost.de whitelisted -- ubuntu-de-request@lists.ubuntu.com on whitelist  --  [Re tar gz installieren] -&gt; /usr/share/assp/notspam/11710.eml;</span>
+<span class="go">FEb-23-10 13:22:39 27759-11764 [Whitelisted] 82.195.75.100 &lt;bounce-debian-user-german=seo=myhost.de@lists.debian.org&gt; to: seo@myhost.de whitelisted -- debian-user-german-request@lists.debian.org on whitelist  --  [Re CRM System] -&gt; /usr/share/assp/notspam/11764.eml;</span>
+<span class="go">FEb-23-10 13:24:53 Admin connection from 79.237.168.155:56831; page:/;</span>
+<span class="go">FEb-23-10 13:24:58 Admin connection from 79.237.168.155:56832; page:/;</span>
+<span class="go">FEb-23-10 13:26:10 27967-11973 87.248.110.137 &lt;blahmana@yahoo.de&gt; to: admin@myhost.de [scoring] Bayesian Check - Prob: 0.84024 =&gt; spam;</span>
+<span class="go">FEb-23-10 13:26:10 27967-11973 [MessageScore] 87.248.110.137 &lt;blahmana@yahoo.de&gt; to: admin@myhost.de [spam passed] -- passing because messagescore(46) is in warning range ( 45 - 50)  --  [keks] -&gt; /usr/share/assp/discarded/11973.eml;</span>
+<span class="go">FEb-23-10 13:26:15 27975-11982 193.169.180.3 &lt;return@news.tchibo.de&gt; to: myuser@myhost.de [spam found] -- blacklisted domain &#39;news.tchibo.de&#39; --  [In Sachen Sport gibt es jetzt f r jeden das Richti] -&gt; /usr/share/assp/spam/11982.eml;</span>
+<span class="go">FEb-23-10 13:27:15 28035-12043 [Whitelisted] 82.195.75.100 &lt;bounce-debian-user-german=seo=myhost.de@lists.debian.org&gt; to: seo@myhost.de whitelisted -- debian-user-german-request@lists.debian.org on whitelist  --  [Re CRM System] -&gt; /usr/share/assp/notspam/12043.eml;</span>
+<span class="go">FEb-23-10 13:28:47 28124-12133 87.248.110.139 &lt;blahmana@yahoo.de&gt; to: admin@myhost.de [scoring] Bayesian Check - Prob: 0.99916 =&gt; spam;</span>
+<span class="go">FEb-23-10 13:28:47 28124-12133 [MessageScore] 87.248.110.139 &lt;blahmana@yahoo.de&gt; to: admin@myhost.de [spam passed] -- passing because messagescore(46) is in warning range ( 45 - 50)  --  [keks] -&gt; /usr/share/assp/discarded/12133.eml;</span>
+<span class="go">FEb-23-10 13:30:13 28213-12223 [MessageOK] 87.248.110.141 &lt;blahmana@yahoo.de&gt; to: admin@myhost.de -- Message OK --  [keks] -&gt; /usr/share/assp/okmail/keks--2.eml;</span>
+<span class="go">FEb-23-10 13:36:50 28608-12619 [MessageOK] 213.133.104.100 &lt;root@robot.first-ns.de&gt; to: admin@myhost.de -- Message OK --  [Achtung Traffic Report Limit Ueberschreitung atten] -&gt; /usr/share/assp/okmail/Achtung_Traffic_Report_Limit_Ueberschreitung_attention_exceeding_of_traffic_report_limit--3.eml;</span>
+<span class="go">FEb-23-10 13:39:01 28741-12753 [Whitelisted] 82.195.75.100 &lt;bounce-debian-user-german=seo=myhost.de@lists.debian.org&gt; to: seo@myhost.de whitelisted -- debian-user-german-request@lists.debian.org on whitelist  --  [Re Debian kann sich nicht entscheiden ob flashplay] -&gt; /usr/share/assp/notspam/12753.eml;</span>
+<span class="go">FEb-23-10 13:45:34 29134-13147 89.136.17.236 &lt;myuser@myhost.de&gt; to: myuser@myhost.de [scoring:-10] -- greenlisted address &#39;myuser@myhost.de&#39; --  [Exclusively for myuser 80];</span>
+<span class="go">FEb-23-10 13:45:34 29134-13147 [SpoofedSender] 89.136.17.236 &lt;myuser@myhost.de&gt; to: myuser@myhost.de [scoring] -- No Spoofing Allowed --  [Exclusively for myuser 80];</span>
+<span class="go">FEb-23-10 13:45:34 29134-13147 [MsgID] 89.136.17.236 &lt;myuser@myhost.de&gt; to: myuser@myhost.de [scoring] (Message-ID missing);</span>
+<span class="go">FEb-23-10 13:45:34 29134-13147 [DNSBL] 89.136.17.236 &lt;myuser@myhost.de&gt; to: myuser@myhost.de [spam found] -- DNSBL: failed, 89.136.17.236 listed in ix.dnsbl.manitu.net psbl.surriel.com --  [Exclusively for myuser 80] -&gt; /usr/share/assp/spam/13147.eml;</span>
+<span class="go">FEb-23-10 13:51:54 29514-13529 [Whitelisted] 82.195.75.100 &lt;bounce-debian-user-german=seo=myhost.de@lists.debian.org&gt; to: seo@myhost.de whitelisted -- debian-user-german-request@lists.debian.org on whitelist  --  [AW CRM System] -&gt; /usr/share/assp/notspam/13529.eml;</span>
+<span class="go">FEb-23-10 13:59:36 29976-13992 [Whitelisted] 82.195.75.100 &lt;bounce-debian-user-german=seo=myhost.de@lists.debian.org&gt; to: seo@myhost.de whitelisted -- debian-user-german-request@lists.debian.org on whitelist  --  [Re Debian kann sich nicht entscheiden ob flashplay] -&gt; /usr/share/assp/notspam/13992.eml;</span>
+<span class="go">FEb-23-10 14:00:01 Info: hourly scheduler running at 14:00;</span>
+<span class="go">FEb-23-10 14:00:15 30015-00032 [Whitelisted] 82.195.75.100 &lt;bounce-debian-user-german=seo=myhost.de@lists.debian.org&gt; to: seo@myhost.de whitelisted -- debian-user-german-request@lists.debian.org on whitelist  --  [Re Debian kann sich nicht entscheiden ob flashplay] -&gt; /usr/share/assp/notspam/32.eml;</span>
+<span class="go">FEb-23-10 14:00:55 30055-00073 [MessageOK] 213.133.104.100 &lt;root@robot.first-ns.de&gt; to: admin@myhost.de -- Message OK --  [Achtung Traffic Report Limit Ueberschreitung atten] -&gt; /usr/share/assp/okmail/Achtung_Traffic_Report_Limit_Ueberschreitung_attention_exceeding_of_traffic_report_limit--4.eml;</span>
+<span class="go">FEb-23-10 14:13:51 30830-00849 [MsgID] 58.9.5.229 &lt;uvuwefyf2157@asianet.co.th&gt; to: myuser@myhost.de [scoring] (Message-ID missing);</span>
+<span class="go">FEb-23-10 14:13:51 30830-00849 [BlackHELO] 58.9.5.229 &lt;uvuwefyf2157@asianet.co.th&gt; to: myuser@myhost.de [scoring] -- blacklisted HELO &#39;asianet.co.th&#39; --  [Exclusively for myuser 80];</span>
+<span class="go">FEb-23-10 14:13:51 30830-00849 [DNSBL] 58.9.5.229 &lt;uvuwefyf2157@asianet.co.th&gt; to: myuser@myhost.de [spam found] -- DNSBL: failed, 58.9.5.229 listed in dnsbl-2.uceprotect.net ix.dnsbl.manitu.net --  [Exclusively for myuser 80] -&gt; /usr/share/assp/spam/849.eml;</span>
+<span class="go">FEb-23-10 14:20:02 Saving whitelist;</span>
+<span class="go">FEb-23-10 14:20:02 Saving redlist;</span>
+<span class="go">FEb-23-10 14:36:26 32186-02206 [MessageOK] 213.133.104.100 &lt;root@robot.first-ns.de&gt; to: admin@myhost.de -- Message OK --  [Achtung Traffic Report Limit Ueberschreitung atten] -&gt; /usr/share/assp/okmail/Achtung_Traffic_Report_Limit_Ueberschreitung_attention_exceeding_of_traffic_report_limit--5.eml;</span>
+<span class="go">FEb-23-10 14:37:41 32261-02282 [Whitelisted] 82.195.75.100 &lt;bounce-debian-user-german=seo=myhost.de@lists.debian.org&gt; to: seo@myhost.de whitelisted -- debian-user-german-request@lists.debian.org on whitelist  --  [Re Serverseitiger zeitverz gerter Emailversand] -&gt; /usr/share/assp/notspam/2282.eml;</span>
+<span class="go">FEb-23-10 14:57:57 33476-03498 41.107.96.234 &lt;myuser@myhost.de&gt; to: myuser@myhost.de [scoring:-10] -- greenlisted address &#39;myuser@myhost.de&#39; --  [Exclusively for myuser 80];</span>
+<span class="go">FEb-23-10 14:57:57 33476-03498 [SpoofedSender] 41.107.96.234 &lt;myuser@myhost.de&gt; to: myuser@myhost.de [scoring] -- No Spoofing Allowed --  [Exclusively for myuser 80];</span>
+<span class="go">FEb-23-10 14:57:57 33476-03498 [MsgID] 41.107.96.234 &lt;myuser@myhost.de&gt; to: myuser@myhost.de [scoring] (Message-ID missing);</span>
+<span class="go">FEb-23-10 14:57:57 33476-03498 [MessageScoring] 41.107.96.234 &lt;myuser@myhost.de&gt; to: myuser@myhost.de [spam found] -- MessageScore (51) over limit (50) --  [Exclusively for myuser 80] -&gt; /usr/share/assp/spam/3498.eml;</span>
+<span class="go">FEb-23-10 15:00:02 Info: hourly scheduler running at 15:00;</span>
+<span class="go">FEb-23-10 15:14:45 34485-04508 [Whitelisted] 91.189.94.204 &lt;ubuntu-de-bounces@lists.ubuntu.com&gt; to: seo@myhost.de whitelisted -- ubuntu-de-request@lists.ubuntu.com on whitelist  --  [Re Schreibrecht auf Windows partitionen] -&gt; /usr/share/assp/notspam/4508.eml;</span>
+<span class="go">FEb-23-10 15:15:45 34545-04569 [Whitelisted] 91.189.94.204 &lt;ubuntu-de-bounces@lists.ubuntu.com&gt; to: seo@myhost.de whitelisted -- ubuntu-de-request@lists.ubuntu.com on whitelist  --  [Re Cyberjack unter Ubuntu 9 10 64Bit zum Laufen br] -&gt; /usr/share/assp/notspam/4569.eml;</span>
+<span class="go">FEb-23-10 15:20:06 Saving whitelist;</span>
+<span class="go">FEb-23-10 15:20:06 Saving redlist;</span>
+<span class="go">FEb-23-10 15:20:06 Cleaning up cache records ...;</span>
+<span class="go">FEb-23-10 15:20:06 DNSBLCache: cleaning cache finished; before=77, deleted=10;</span>
+<span class="go">FEb-23-10 15:20:06 URIBLCache: cleaning cache finished; before=11, deleted=10;</span>
+<span class="go">FEb-23-10 15:20:06 PTRCache: cleaning cache finished; before=5, deleted=0;</span>
+<span class="go">FEb-23-10 15:20:06 MXACache: cleaning cache finished; before=2, deleted=0;</span>
+<span class="go">FEb-23-10 15:20:06 SenderBaseCache: cleaning cache finished; before=702, deleted=7;</span>
+<span class="go">FEb-23-10 15:20:06 Saving cache records;</span>
+<span class="go">FEb-23-10 15:22:08 34928-04953 [BlackHELO] 62.27.57.113 &lt;newsletter-EMID0A601NL092LJ9FD015S5T018FK0NB@nl.aktiencheck.de&gt; to: myuser@myhost.de [scoring] -- blacklisted HELO &#39;mx113.akt.fagms.net&#39; --  [www aktiencheck de Basic Newsletter 23 02 2010];</span>
+<span class="go">FEb-23-10 15:22:08 34928-04953 [DNSBL] 62.27.57.113 &lt;newsletter-EMID0A601NL092LJ9FD015S5T018FK0NB@nl.aktiencheck.de&gt; to: myuser@myhost.de [spam found] -- DNSBL: failed, 62.27.57.113 listed in dnsbl-1.uceprotect.net dnsbl-2.uceprotect.net --  [www aktiencheck de Basic Newsletter 23 02 2010] -&gt; /usr/share/assp/spam/4953.eml;</span>
+<span class="go">FEb-23-10 15:25:27 35126-05152 [DNSBL] 190.21.29.25 &lt;&gt; to: myuser@myhost.de [spam found] -- DNSBL: failed, 190.21.29.25 listed in dnsbl-3.uceprotect.net zen.spamhaus.org --  [Nur Legale Software Im Maerz 30 Reduziert];</span>
+<span class="go">FEb-23-10 15:26:27 35185-05212 [DNSBL] 190.21.29.25 &lt;&gt; to: myuser@myhost.de [spam found] -- DNSBLcache: failed, 190.21.29.25 listed in dnsbl-3.uceprotect.net, zen.spamhaus.org --  [Bekomme Jetzt deine Software Fast Geschenkt];</span>
+<span class="go">FEb-23-10 15:30:23 35423-05451 [Whitelisted] 82.195.75.100 &lt;bounce-debian-user-german=seo=myhost.de@lists.debian.org&gt; to: seo@myhost.de whitelisted -- debian-user-german-request@lists.debian.org on whitelist  --  [Re skript zum Zeit korrekt setzen bei einem Brothe] -&gt; /usr/share/assp/notspam/5451.eml;</span>
+<span class="go">FEb-23-10 15:37:01 35821-05850 [MessageOK] 213.133.104.100 &lt;root@robot.first-ns.de&gt; to: admin@myhost.de -- Message OK --  [Achtung Traffic Report Limit Ueberschreitung atten] -&gt; /usr/share/assp/okmail/Achtung_Traffic_Report_Limit_Ueberschreitung_attention_exceeding_of_traffic_report_limit--6.eml;</span>
+<span class="go">FEb-23-10 15:41:50 36110-06140 [Whitelisted] 91.189.94.204 &lt;ubuntu-de-bounces@lists.ubuntu.com&gt; to: seo@myhost.de whitelisted -- ubuntu-de-request@lists.ubuntu.com on whitelist  --  [Re Schreibrecht auf Windows partitionen] -&gt; /usr/share/assp/notspam/6140.eml;</span>
+<span class="go">FEb-23-10 15:41:54 36111-06142 [MsgID] 189.105.84.156 &lt;ihiwuneviv3990@veloxzone.com.br&gt; to: myuser@myhost.de [scoring] (Message-ID missing);</span>
+<span class="go">FEb-23-10 15:41:54 36111-06142 [BlackHELO] 189.105.84.156 &lt;ihiwuneviv3990@veloxzone.com.br&gt; to: myuser@myhost.de [scoring] -- blacklisted HELO &#39;veloxzone.com.br&#39; --  [Exclusively for myuser 80];</span>
+<span class="go">FEb-23-10 15:41:54 36111-06142 [DNSBL] 189.105.84.156 &lt;ihiwuneviv3990@veloxzone.com.br&gt; to: myuser@myhost.de [spam found] -- DNSBL: failed, 189.105.84.156 listed in dnsbl-2.uceprotect.net psbl.surriel.com --  [Exclusively for myuser 80] -&gt; /usr/share/assp/spam/6142.eml;</span>
+<span class="go">FEb-23-10 15:57:57 37077-07109 [Whitelisted] 82.195.75.100 &lt;bounce-debian-user-german=seo=myhost.de@lists.debian.org&gt; to: seo@myhost.de whitelisted -- debian-user-german-request@lists.debian.org on whitelist  --  [Lieliska iesp ja sa emt d vanu] -&gt; /usr/share/assp/notspam/7109.eml;</span>
+<span class="go">FEb-23-10 15:59:19 37159-07192 [Whitelisted] 91.189.94.204 &lt;ubuntu-de-bounces@lists.ubuntu.com&gt; to: seo@myhost.de whitelisted -- ubuntu-de-request@lists.ubuntu.com on whitelist  --  [Re Schreibrecht auf Windows partitionen] -&gt; /usr/share/assp/notspam/7192.eml;</span>
+<span class="go">FEb-23-10 16:00:04 Info: hourly scheduler running at 16:00;</span>
+<span class="go">FEb-23-10 16:04:21 37460-07494 [Whitelisted] 208.42.190.242 &lt;info114@service.govdelivery.com&gt; to: a.myuser@blackhat-security.de whitelisted -- nasa_subscriptions@service.govdelivery.com on whitelist  --  [Discovery Being Prepped for Rollout] -&gt; /usr/share/assp/notspam/7494.eml;</span>
+<span class="go">FEb-23-10 16:04:37 37477-07512 [Whitelisted] 208.42.190.242 &lt;info114@service.govdelivery.com&gt; to: a.myuser@blackhat-security.de whitelisted -- nasa_subscriptions@service.govdelivery.com on whitelist  --  [Preparing for the Next Mission] -&gt; /usr/share/assp/notspam/7512.eml;</span>
+<span class="go">FEb-23-10 16:05:33 37533-07569 [Whitelisted] 208.42.190.160 &lt;info114@service.govdelivery.com&gt; to: a.myuser@blackhat-security.de whitelisted -- nasa_subscriptions@service.govdelivery.com on whitelist  --  [Preparing for the Next Mission] -&gt; /usr/share/assp/notspam/7569.eml;</span>
+<span class="go">FEb-23-10 16:10:22 37822-07859 [MsgID] 83.135.136.231 &lt;uoxetedac8219@versanet.de&gt; to: myuser@myhost.de [scoring] (Message-ID missing);</span>
+<span class="go">FEb-23-10 16:10:22 37822-07859 [BlackHELO] 83.135.136.231 &lt;uoxetedac8219@versanet.de&gt; to: myuser@myhost.de [scoring] -- blacklisted HELO &#39;versanet.de&#39; --  [Special offer for myuser 80 better price];</span>
+<span class="go">FEb-23-10 16:10:23 37822-07859 [DNSBL] 83.135.136.231 &lt;uoxetedac8219@versanet.de&gt; to: myuser@myhost.de [spam found] -- DNSBL: failed, 83.135.136.231 listed in dnsbl-3.uceprotect.net zen.spamhaus.org --  [Special offer for myuser 80 better price] -&gt; /usr/share/assp/spam/7859.eml;</span>
+<span class="go">FEb-23-10 16:11:47 37906-07944 [Whitelisted] 91.189.94.204 &lt;ubuntu-de-bounces@lists.ubuntu.com&gt; to: seo@myhost.de whitelisted -- ubuntu-de-request@lists.ubuntu.com on whitelist  --  [Re Schreibrecht auf Windows partitionen] -&gt; /usr/share/assp/notspam/7944.eml;</span>
+<span class="go">FEb-23-10 16:20:02 Cleaning up delaying databases ...;</span>
+<span class="go">FEb-23-10 16:20:02 Cleaning delaying database (triplets) finished; keys before=0, deleted=0;</span>
+<span class="go">FEb-23-10 16:20:02 Cleaning delaying database (safelisted tuplets) finished; keys before=0, deleted=0;</span>
+<span class="go">FEb-23-10 16:20:02 Cleaning up penalty records ...;</span>
+<span class="go">FEb-23-10 16:20:02 PenaltyBox: cleaning BlackBox finished; before=68, deleted=22;</span>
+<span class="go">FEb-23-10 16:20:02 PenaltyBox: cleaning WhiteBox finished; before=116, deleted=0;</span>
+<span class="go">FEb-23-10 16:20:02 Saving penalty records;</span>
+<span class="go">FEb-23-10 16:20:07 Saving whitelist;</span>
+<span class="go">FEb-23-10 16:20:07 Saving redlist;</span>
+<span class="go">FEb-23-10 16:25:54 38750-08789 205.134.160.230 &lt;root@midgard.ai.net&gt; to: seo@myhost.de [scoring] Bayesian Check - Prob: 1.00000 =&gt; spam;</span>
+<span class="go">FEb-23-10 16:25:54 38750-08789 [MessageOK] 205.134.160.230 &lt;root@midgard.ai.net&gt; to: seo@myhost.de -- Message OK --  [1000 Search Engine Submission] -&gt; /usr/share/assp/okmail/1000_Search_Engine_Submission--7.eml;</span>
+<span class="go">FEb-23-10 16:31:36 39096-09136 85.10.252.175 &lt;fox@kjm2.de&gt; to: myuser@myhost.de [spam found] -- blacklisted domain &#39;kjm2.de&#39; --  [Bis zu 2 400 Euro GRATIS Bonus f r Sie Herr Sieber] -&gt; /usr/share/assp/spam/9136.eml;</span>
+<span class="go">FEb-23-10 16:33:30 39210-09251 [Local] 79.237.151.235 &lt;myuser@myhost.de&gt; to: edenrose85@web.de local --  --  [vorgestern gestern und heute] -&gt; /usr/share/assp/notspam/9251.eml;</span>
+<span class="go">FEb-23-10 16:37:48 39468-09510 [MessageOK] 213.133.104.100 &lt;root@robot.first-ns.de&gt; to: admin@myhost.de -- Message OK --  [Achtung Traffic Report Limit Ueberschreitung atten] -&gt; /usr/share/assp/okmail/Achtung_Traffic_Report_Limit_Ueberschreitung_attention_exceeding_of_traffic_report_limit--8.eml;</span>
+<span class="go">FEb-23-10 16:43:48 39828-09871 [Whitelisted] 91.189.94.204 &lt;ubuntu-de-bounces@lists.ubuntu.com&gt; to: seo@myhost.de whitelisted -- ubuntu-de-request@lists.ubuntu.com on whitelist  --  [Re Schreibrecht auf Windows partitionen] -&gt; /usr/share/assp/notspam/9871.eml;</span>
+<span class="go">FEb-23-10 16:46:17 39975-10019 195.140.186.51 &lt;gbounce-6099390595-6096-600172335-1266939969398@bounce.service.xing.com&gt; to: tegtmeier@blackhat-security.de [scoring] Bayesian Check - Prob: 1.00000 =&gt; spam;</span>
+<span class="go">FEb-23-10 16:46:17 39975-10019 [MessageOK] 195.140.186.51 &lt;gbounce-6099390595-6096-600172335-1266939969398@bounce.service.xing.com&gt; to: tegtmeier@blackhat-security.de -- Message OK --  [XING Recruiter Mitgliedschaft in 10 Sekunden zur p] -&gt; /usr/share/assp/okmail/XING_Recruiter_Mitgliedschaft_in_10_Sekunden_zur_perfektenKandidatenliste--9.eml;</span>
+<span class="go">FEb-23-10 16:47:17 40036-10081 [DNSBL] 189.23.53.194 &lt;stindebted@cntltd.com&gt; to: myuser@myhost.de [spam found] -- DNSBL: failed, 189.23.53.194 listed in bl.spamcop.net psbl.surriel.com --  [Weihnachten ist Potenz Zeit] -&gt; /usr/share/assp/spam/10081.eml;</span>
+<span class="go">FEb-23-10 16:58:38 40718-10764 [Local] 79.237.151.235 &lt;myuser@myhost.de&gt; to: jens.hochrein@magyar.fr local --  --  [elektronisches Wiege Messystem f r Schienenfahrzeu] -&gt; /usr/share/assp/notspam/10764.eml;</span>
+<span class="go">FEb-23-10 17:00:05 Info: hourly scheduler running at 17:00;</span>
+<span class="go">FEb-23-10 17:00:28 40828-10875 [BlackHELO] 85.214.141.132 &lt;news2@news.aidamedia.com&gt; to: myuser@myhost.de [scoring] -- blacklisted HELO &#39;mail05.aidamedia.com&#39; --  [Tolle Urlaubsangebote f r S dtirol im Post Alpina];</span>
+<span class="go">FEb-23-10 17:00:29 40828-10875 [DNSBL] 85.214.141.132 &lt;news2@news.aidamedia.com&gt; to: myuser@myhost.de [spam found] -- DNSBL: failed, 85.214.141.132 listed in dnsbl-1.uceprotect.net dnsbl-2.uceprotect.net --  [Tolle Urlaubsangebote f r S dtirol im Post Alpina] -&gt; /usr/share/assp/spam/10875.eml;</span>
+<span class="go">FEb-23-10 17:04:54 41094-11142 [Whitelisted] 82.195.75.100 &lt;bounce-debian-user-german=seo=myhost.de@lists.debian.org&gt; to: seo@myhost.de whitelisted -- debian-user-german-request@lists.debian.org on whitelist  --  [Re Platte aus Recorder ber USB an Debian Rechner] -&gt; /usr/share/assp/notspam/11142.eml;</span>
+<span class="go">FEb-23-10 17:10:04 41403-11452 [MsgID] 113.53.170.44 &lt;accumulativeffb@orlandoliquordelivery.com&gt; to: myuser@myhost.de [scoring] (Message-ID suspicious: &#39;000d01cab4a2$a712cfd0$6400a8c0@accumulativeffb&#39;);</span>
+<span class="go">FEb-23-10 17:10:05 41403-11452 [InvalidHELO] 113.53.170.44 &lt;accumulativeffb@orlandoliquordelivery.com&gt; to: myuser@myhost.de [spam found] -- Invalid HELO: &#39;VDPWWBHDQD&#39; --  [Not being rich doesn t mean not being able to own ] -&gt; /usr/share/assp/discarded/11452.eml;</span>
+<span class="go">FEb-23-10 17:10:08 41406-11456 [MsgID] 113.53.170.44 &lt;indulgedrx@diphenylether.com&gt; to: myuser@myhost.de [scoring] (Message-ID suspicious: &#39;000d01cab4a2$a91aadc0$6400a8c0@indulgedrx&#39;);</span>
+<span class="go">FEb-23-10 17:10:08 41406-11456 [InvalidHELO] 113.53.170.44 &lt;indulgedrx@diphenylether.com&gt; to: myuser@myhost.de [spam found] -- Invalid HELO: &#39;EUYGVGHZU&#39; --  [You can have the expression of a rich man on your ] -&gt; /usr/share/assp/discarded/11456.eml;</span>
+<span class="go">FEb-23-10 17:10:11 41409-11460 [MsgID] 113.53.170.44 &lt;emporiumh970@natproinc.com&gt; to: myuser@myhost.de [scoring] (Message-ID suspicious: &#39;000d01cab4a2$aaeb9d30$6400a8c0@emporiumh970&#39;);</span>
+<span class="go">FEb-23-10 17:10:11 41409-11460 [InvalidHELO] 113.53.170.44 &lt;emporiumh970@natproinc.com&gt; to: myuser@myhost.de [spam found] -- Invalid HELO: &#39;HGSSCYPBR&#39; --  [Take a chance to buy a Submariner SS watch and you] -&gt; /usr/share/assp/discarded/11460.eml;</span>
+<span class="go">FEb-23-10 17:20:06 Cleaning up cache records ...;</span>
+<span class="go">FEb-23-10 17:20:07 DNSBLCache: cleaning cache finished; before=75, deleted=6;</span>
+<span class="go">FEb-23-10 17:20:07 URIBLCache: cleaning cache finished; before=11, deleted=3;</span>
+<span class="go">FEb-23-10 17:20:07 PTRCache: cleaning cache finished; before=7, deleted=0;</span>
+<span class="go">FEb-23-10 17:20:07 MXACache: cleaning cache finished; before=4, deleted=0;</span>
+<span class="go">FEb-23-10 17:20:07 SenderBaseCache: cleaning cache finished; before=701, deleted=9;</span>
+<span class="go">FEb-23-10 17:20:07 Saving cache records;</span>
+<span class="go">FEb-23-10 17:20:12 Saving whitelist;</span>
+<span class="go">FEb-23-10 17:20:12 Saving redlist;</span>
+<span class="go">FEb-23-10 17:24:21 42260-12312 81.130.73.25 &lt;myuser@myhost.de&gt; to: myuser@myhost.de [scoring:-10] -- greenlisted address &#39;myuser@myhost.de&#39; --  [Hello myuser check our 80 Sale];</span>
+<span class="go">FEb-23-10 17:24:21 42260-12312 [SpoofedSender] 81.130.73.25 &lt;myuser@myhost.de&gt; to: myuser@myhost.de [scoring] -- No Spoofing Allowed --  [Hello myuser check our 80 Sale];</span>
+<span class="go">FEb-23-10 17:24:21 42260-12312 [MsgID] 81.130.73.25 &lt;myuser@myhost.de&gt; to: myuser@myhost.de [scoring] (Message-ID missing);</span>
+<span class="go">FEb-23-10 17:24:21 42260-12312 [DNSBL] 81.130.73.25 &lt;myuser@myhost.de&gt; to: myuser@myhost.de [spam found] -- DNSBL: failed, 81.130.73.25 listed in ix.dnsbl.manitu.net psbl.surriel.com --  [Hello myuser check our 80 Sale] -&gt; /usr/share/assp/spam/12312.eml;</span>
+<span class="go">FEb-23-10 17:26:15 42375-12428 79.237.151.235 &lt;myuser@myhost.de&gt; to: Lutz.Harder@chemline-europe.de whitelist addition: lutz.harder@chemline-europe.de;</span>
+<span class="go">FEb-23-10 17:26:16 42375-12428 [Local] 79.237.151.235 &lt;myuser@myhost.de&gt; to: Lutz.Harder@chemline-europe.de local --  --  [ZUsammenarbeit] -&gt; /usr/share/assp/notspam/12428.eml;</span>
+<span class="go">FEb-23-10 17:39:32 43171-13225 [MessageOK] 213.133.104.100 &lt;root@robot.first-ns.de&gt; to: admin@myhost.de -- Message OK --  [Achtung Traffic Report Limit Ueberschreitung atten] -&gt; /usr/share/assp/okmail/Achtung_Traffic_Report_Limit_Ueberschreitung_attention_exceeding_of_traffic_report_limit--10.eml;</span>
+<span class="go">FEb-23-10 17:43:22 43402-13457 [MsgID] 193.251.76.57 &lt;ijouu4031@wanadoo.fr&gt; to: myuser@myhost.de [scoring] (Message-ID missing);</span>
+<span class="go">FEb-23-10 17:43:22 43402-13457 [DNSBL] 193.251.76.57 &lt;ijouu4031@wanadoo.fr&gt; to: myuser@myhost.de [spam found] -- DNSBL: failed, 193.251.76.57 listed in bl.spamcop.net psbl.surriel.com --  [Exclusively for myuser 80] -&gt; /usr/share/assp/spam/13457.eml;</span>
+<span class="go">FEb-23-10 18:00:09 Info: hourly scheduler running at 18:00;</span>
+<span class="go">FEb-23-10 18:03:48 44626-00682 [DNSBL] 93.124.94.16 &lt;Elke.Ludwiglihyg@sura.ru&gt; to: myuser@myhost.de [spam found] -- DNSBL: failed, 93.124.94.16 listed in dnsbl-3.uceprotect.net zen.spamhaus.org --  [Endlich wollust in Ihrem Bettchen] -&gt; /usr/share/assp/spam/682.eml;</span>
+<span class="go">FEb-23-10 18:04:03 44636-00693 [DNSBL] 189.4.113.24 &lt;Susanne.Dietrichjukoe@virtua.com.br&gt; to: myuser@myhost.de [spam found] -- DNSBL: failed, 189.4.113.24 listed in dnsbl-2.uceprotect.net ix.dnsbl.manitu.net --  [Endlich mehr kraft im Schlafzimmer] -&gt; /usr/share/assp/spam/693.eml;</span>
+<span class="go">FEb-23-10 18:08:07 44887-00945 [Whitelisted] 208.42.190.242 &lt;info114@service.govdelivery.com&gt; to: a.myuser@blackhat-security.de whitelisted -- nasa_subscriptions@service.govdelivery.com on whitelist  --  [NASA Supports Univision Hispanic Education Campaig] -&gt; /usr/share/assp/notspam/945.eml;</span>
+<span class="go">FEb-23-10 18:15:46 45345-01404 [MsgID] 189.106.133.145 &lt;eajuvemic8449@veloxzone.com.br&gt; to: myuser@myhost.de [scoring] (Message-ID missing);</span>
+<span class="go">FEb-23-10 18:15:47 45345-01404 [BlackHELO] 189.106.133.145 &lt;eajuvemic8449@veloxzone.com.br&gt; to: myuser@myhost.de [scoring] -- blacklisted HELO &#39;veloxzone.com.br&#39; --  [Special offer for myuser 80 better price];</span>
+<span class="go">FEb-23-10 18:15:47 45345-01404 [DNSBL] 189.106.133.145 &lt;eajuvemic8449@veloxzone.com.br&gt; to: myuser@myhost.de [spam found] -- DNSBL: failed, 189.106.133.145 listed in dnsbl-3.uceprotect.net zen.spamhaus.org --  [Special offer for myuser 80 better price] -&gt; /usr/share/assp/spam/1404.eml;</span>
+<span class="go">FEb-23-10 18:16:50 45409-01469 [MsgID] 82.233.16.248 &lt;weozypykeb1029@proxad.net&gt; to: myuser@myhost.de [scoring] (Message-ID missing);</span>
+<span class="go">FEb-23-10 18:16:50 45409-01469 [BlackHELO] 82.233.16.248 &lt;weozypykeb1029@proxad.net&gt; to: myuser@myhost.de [scoring] -- blacklisted HELO &#39;proxad.net&#39; --  [For myuser we cut prices to 80];</span>
+<span class="go">FEb-23-10 18:16:50 45409-01469 [DNSBL] 82.233.16.248 &lt;weozypykeb1029@proxad.net&gt; to: myuser@myhost.de [spam found] -- DNSBL: failed, 82.233.16.248 listed in bl.spamcop.net dnsbl-1.uceprotect.net --  [For myuser we cut prices to 80] -&gt; /usr/share/assp/spam/1469.eml;</span>
+<span class="go">FEb-23-10 18:20:15 Saving whitelist;</span>
+<span class="go">FEb-23-10 18:20:16 Saving redlist;</span>
+<span class="go">FEb-23-10 18:23:15 45794-01855 [MsgID] 98.223.254.249 &lt;paytabo6212@comcast.net&gt; to: myuser@myhost.de [scoring] (Message-ID missing);</span>
+<span class="go">FEb-23-10 18:23:15 45794-01855 [BlackHELO] 98.223.254.249 &lt;paytabo6212@comcast.net&gt; to: myuser@myhost.de [scoring] -- blacklisted HELO &#39;comcast.net&#39; --  [Exclusively for myuser 80];</span>
+<span class="go">FEb-23-10 18:23:15 45794-01855 [DNSBL] 98.223.254.249 &lt;paytabo6212@comcast.net&gt; to: myuser@myhost.de [spam found] -- DNSBL: failed, 98.223.254.249 listed in ix.dnsbl.manitu.net psbl.surriel.com --  [Exclusively for myuser 80] -&gt; /usr/share/assp/spam/1855.eml;</span>
+<span class="go">FEb-23-10 18:30:26 46226-02288 [BlackHELO] 85.214.141.132 &lt;news2@news.aidamedia.com&gt; to: myuser@myhost.de [scoring] -- blacklisted HELO &#39;mail05.aidamedia.com&#39; --  [Nehmen Sie ab mit forever slim und erhalten Sie ei];</span>
+<span class="go">FEb-23-10 18:30:26 46226-02288 [DNSBL] 85.214.141.132 &lt;news2@news.aidamedia.com&gt; to: myuser@myhost.de [spam found] -- DNSBLcache: failed, 85.214.141.132 listed in dnsbl-1.uceprotect.net, dnsbl-2.uceprotect.net --  [Nehmen Sie ab mit forever slim und erhalten Sie ei] -&gt; /usr/share/assp/spam/2288.eml;</span>
+<span class="go">FEb-23-10 18:31:20 46280-02343 [Whitelisted] 91.189.94.204 &lt;ubuntu-de-bounces@lists.ubuntu.com&gt; to: seo@myhost.de whitelisted -- ubuntu-de-request@lists.ubuntu.com on whitelist  --  [Re Schreibrecht auf Windows partitionen] -&gt; /usr/share/assp/notspam/2343.eml;</span>
+<span class="go">FEb-23-10 18:38:48 46728-02792 [MessageOK] 213.133.104.100 &lt;root@robot.first-ns.de&gt; to: admin@myhost.de -- Message OK --  [Achtung Traffic Report Limit Ueberschreitung atten] -&gt; /usr/share/assp/okmail/Achtung_Traffic_Report_Limit_Ueberschreitung_attention_exceeding_of_traffic_report_limit--11.eml;</span>
+<span class="go">FEb-23-10 18:56:52 47810-03875 [DNSBL] 189.4.174.197 &lt;Fina.Boehmcwo@virtua.com.br&gt; to: myuser@myhost.de [spam found] -- DNSBL: failed, 189.4.174.197 listed in dnsbl-1.uceprotect.net ix.dnsbl.manitu.net --  [S ind Sie zu dick] -&gt; /usr/share/assp/spam/3875.eml;</span>
+<span class="go">FEb-23-10 18:56:58 47816-03882 [DNSBL] 200.49.20.129 &lt;Gale.Koehlerbiuy@papnet.cl&gt; to: myuser@myhost.de [spam found] -- DNSBL: failed, 200.49.20.129 listed in ix.dnsbl.manitu.net zen.spamhaus.org --  [Schnell abnehmen geht das] -&gt; /usr/share/assp/spam/3882.eml;</span>
+<span class="go">FEb-23-10 18:57:04 47821-03888 [DNSBL] 95.53.166.117 &lt;Gilberte.Schulzsoxfa@vologda.ru&gt; to: myuser@myhost.de [spam found] -- DNSBL: failed, 95.53.166.117 listed in dnsbl-2.uceprotect.net zen.spamhaus.org --  [Diaet von Guttenberg] -&gt; /usr/share/assp/spam/3888.eml;</span>
+<span class="go">FEb-23-10 18:58:36 47915-03983 [MsgID] 94.97.118.144 &lt;iaxyqew5175@saudi.net.sa&gt; to: myuser@myhost.de [scoring] (Message-ID missing);</span>
+<span class="go">FEb-23-10 18:58:36 47915-03983 [BlackHELO] 94.97.118.144 &lt;iaxyqew5175@saudi.net.sa&gt; to: myuser@myhost.de [scoring] -- blacklisted HELO &#39;saudi.net.sa&#39; --  [Exclusively for myuser 80];</span>
+<span class="go">FEb-23-10 18:58:36 47915-03983 [DNSBL] 94.97.118.144 &lt;iaxyqew5175@saudi.net.sa&gt; to: myuser@myhost.de [spam found] -- DNSBL: failed, 94.97.118.144 listed in psbl.surriel.com zen.spamhaus.org --  [Exclusively for myuser 80] -&gt; /usr/share/assp/spam/3983.eml;</span>
+<span class="go">FEb-23-10 19:00:11 Info: hourly scheduler running at 19:00;</span>
+<span class="go">FEb-23-10 19:08:02 48482-04551 [Whitelisted] 82.195.75.100 &lt;bounce-debian-user-german=seo=myhost.de@lists.debian.org&gt; to: seo@myhost.de whitelisted -- debian-user-german-request@lists.debian.org on whitelist  --  [Re CRM System] -&gt; /usr/share/assp/notspam/4551.eml;</span>
+<span class="go">FEb-23-10 19:20:03 Cleaning up delaying databases ...;</span>
+<span class="go">FEb-23-10 19:20:03 Cleaning delaying database (triplets) finished; keys before=0, deleted=0;</span>
+<span class="go">FEb-23-10 19:20:03 Cleaning delaying database (safelisted tuplets) finished; keys before=0, deleted=0;</span>
+<span class="go">FEb-23-10 19:20:03 Cleaning up penalty records ...;</span>
+<span class="go">FEb-23-10 19:20:03 PenaltyBox: cleaning BlackBox finished; before=76, deleted=20;</span>
+<span class="go">FEb-23-10 19:20:03 PenaltyBox: cleaning WhiteBox finished; before=116, deleted=1;</span>
+<span class="go">FEb-23-10 19:20:03 Saving penalty records;</span>
+<span class="go">FEb-23-10 19:20:08 Cleaning up cache records ...;</span>
+<span class="go">FEb-23-10 19:20:08 DNSBLCache: cleaning cache finished; before=80, deleted=7;</span>
+<span class="go">FEb-23-10 19:20:08 URIBLCache: cleaning cache finished; before=11, deleted=10;</span>
+<span class="go">FEb-23-10 19:20:08 PTRCache: cleaning cache finished; before=7, deleted=0;</span>
+<span class="go">FEb-23-10 19:20:08 MXACache: cleaning cache finished; before=4, deleted=0;</span>
+<span class="go">FEb-23-10 19:20:08 SenderBaseCache: cleaning cache finished; before=703, deleted=5;</span>
+<span class="go">FEb-23-10 19:20:08 Saving cache records;</span>
+<span class="go">FEb-23-10 19:20:18 Saving whitelist;</span>
+<span class="go">FEb-23-10 19:20:18 Saving redlist;</span>
+<span class="go">FEb-23-10 19:37:01 50220-06290 [MessageOK] 213.133.104.100 &lt;root@robot.first-ns.de&gt; to: admin@myhost.de -- Message OK --  [Achtung Traffic Report Limit Ueberschreitung atten] -&gt; /usr/share/assp/okmail/Achtung_Traffic_Report_Limit_Ueberschreitung_attention_exceeding_of_traffic_report_limit--12.eml;</span>
+<span class="go">FEb-23-10 19:40:27 50426-06497 [MsgID] 88.74.239.231 &lt;tudyacux9288@arcor-ip.net&gt; to: myuser@myhost.de [scoring] (Message-ID missing);</span>
+<span class="go">FEb-23-10 19:40:27 50426-06497 [BlackHELO] 88.74.239.231 &lt;tudyacux9288@arcor-ip.net&gt; to: myuser@myhost.de [scoring] -- blacklisted HELO &#39;arcor-ip.net&#39; --  [Exclusively for myuser 80];</span>
+<span class="go">FEb-23-10 19:40:27 50426-06497 [DNSBL] 88.74.239.231 &lt;tudyacux9288@arcor-ip.net&gt; to: myuser@myhost.de [spam found] -- DNSBL: failed, 88.74.239.231 listed in dnsbl-3.uceprotect.net ix.dnsbl.manitu.net --  [Exclusively for myuser 80] -&gt; /usr/share/assp/spam/6497.eml;</span>
+<span class="go">FEb-23-10 19:56:09 51369-07441 [BlackHELO] 62.27.57.152 &lt;info-EMID0AA01LA0B1G05BL27015QHE01ORM4VA@news.hotelreservierung.de&gt; to: myuser@myhost.de [scoring] -- blacklisted HELO &#39;mx152.unister.fagms.net&#39; --  [Hamburg K ln Berlin Ihr City Urlaub zum Bestpreis];</span>
+<span class="go">FEb-23-10 19:56:10 51369-07441 [DNSBL] 62.27.57.152 &lt;info-EMID0AA01LA0B1G05BL27015QHE01ORM4VA@news.hotelreservierung.de&gt; to: myuser@myhost.de [spam found] -- DNSBL: failed, 62.27.57.152 listed in dnsbl-1.uceprotect.net dnsbl-2.uceprotect.net --  [Hamburg K ln Berlin Ihr City Urlaub zum Bestpreis] -&gt; /usr/share/assp/spam/7441.eml;</span>
+<span class="go">FEb-23-10 20:00:15 Info: hourly scheduler running at 20:00;</span>
+<span class="go">FEb-23-10 20:12:52 52371-08444 [Whitelisted] 91.189.94.204 &lt;ubuntu-de-bounces@lists.ubuntu.com&gt; to: seo@myhost.de whitelisted -- ubuntu-de-request@lists.ubuntu.com on whitelist  --  [Re Schreibrecht auf Windows partitionen] -&gt; /usr/share/assp/notspam/8444.eml;</span>
+<span class="go">FEb-23-10 20:14:38 52477-08551 [Whitelisted] 208.42.190.242 &lt;info114@service.govdelivery.com&gt; to: a.myuser@blackhat-security.de whitelisted -- nasa_subscriptions@service.govdelivery.com on whitelist  --  [New NASA Web Page Sheds Light on Science of a Warm] -&gt; /usr/share/assp/notspam/8551.eml;</span>
+<span class="go">FEb-23-10 20:20:19 Saving whitelist;</span>
+<span class="go">FEb-23-10 20:20:19 Saving redlist;</span>
+<span class="go">FEb-23-10 20:21:12 52869-08944 186.81.136.20 &lt;myuser@myhost.de&gt; to: myuser@myhost.de [scoring:-10] -- greenlisted address &#39;myuser@myhost.de&#39; --  [News on myspace];</span>
+<span class="go">FEb-23-10 20:21:12 52869-08944 [SpoofedSender] 186.81.136.20 &lt;myuser@myhost.de&gt; to: myuser@myhost.de [scoring] -- No Spoofing Allowed --  [News on myspace];</span>
+<span class="go">FEb-23-10 20:21:12 52869-08944 [MsgID] 186.81.136.20 &lt;myuser@myhost.de&gt; to: myuser@myhost.de [scoring] (Message-ID missing);</span>
+<span class="go">FEb-23-10 20:21:12 52869-08944 [DNSBL] 186.81.136.20 &lt;myuser@myhost.de&gt; to: myuser@myhost.de [scoring:42] DNSBL: neutral, 186.81.136.20 listed in dnsbl-3.uceprotect.net l2.apews.org;</span>
+<span class="go">FEb-23-10 20:21:12 52869-08944 [MessageScoring] 186.81.136.20 &lt;myuser@myhost.de&gt; to: myuser@myhost.de [spam found] -- MessageScore (67) over limit (50) --  [News on myspace] -&gt; /usr/share/assp/spam/8944.eml;</span>
+<span class="go">FEb-23-10 20:36:54 53813-09889 [MessageOK] 213.133.104.100 &lt;root@robot.first-ns.de&gt; to: admin@myhost.de -- Message OK --  [Achtung Traffic Report Limit Ueberschreitung atten] -&gt; /usr/share/assp/okmail/Achtung_Traffic_Report_Limit_Ueberschreitung_attention_exceeding_of_traffic_report_limit--13.eml;</span>
+<span class="go">FEb-23-10 20:54:57 54896-10973 66.28.139.229 &lt;webpronews@ientrynetwork.net&gt; to: seo@myhost.de [spam found] -- blacklisted domain &#39;@ientrynetwork.net&#39; --  [Is Apple Displaying a Puritan Double Standard] -&gt; /usr/share/assp/spam/10973.eml;</span>
+<span class="go">FEb-23-10 20:57:13 55033-11111 [Whitelisted] 82.195.75.100 &lt;bounce-debian-user-german=seo=myhost.de@lists.debian.org&gt; to: seo@myhost.de whitelisted -- debian-user-german-request@lists.debian.org on whitelist  --  [debian lenny zwei getrennte Partitionen im RAID5] -&gt; /usr/share/assp/notspam/11111.eml;</span>
+<span class="go">FEb-23-10 21:00:19 Info: hourly scheduler running at 21:00;</span>
+<span class="go">FEb-23-10 21:01:09 55269-11348 [Whitelisted] 82.195.75.100 &lt;bounce-debian-user-german=seo=myhost.de@lists.debian.org&gt; to: seo@myhost.de whitelisted -- debian-user-german-request@lists.debian.org on whitelist  --  [Re debian lenny zwei getrennte Partitionen im RAID] -&gt; /usr/share/assp/notspam/11348.eml;</span>
+<span class="go">FEb-23-10 21:14:00 56040-12120 [Whitelisted] 82.195.75.100 &lt;bounce-debian-user-german=seo=myhost.de@lists.debian.org&gt; to: seo@myhost.de whitelisted -- debian-user-german-request@lists.debian.org on whitelist  --  [Re Debian Projekt wieder auf der CeBIT vertreten] -&gt; /usr/share/assp/notspam/12120.eml;</span>
+<span class="go">FEb-23-10 21:19:30 56370-12451 [MsgID] 85.13.91.134 &lt;ohime7785@lidos.cz&gt; to: myuser@myhost.de [scoring] (Message-ID missing);</span>
+<span class="go">FEb-23-10 21:19:31 56370-12451 [DNSBL] 85.13.91.134 &lt;ohime7785@lidos.cz&gt; to: myuser@myhost.de [spam found] -- DNSBL: failed, 85.13.91.134 listed in ix.dnsbl.manitu.net psbl.surriel.com --  [Exclusively for myuser 80] -&gt; /usr/share/assp/spam/12451.eml;</span>
+<span class="go">FEb-23-10 21:19:51 56391-12473 [Whitelisted] 82.195.75.100 &lt;bounce-debian-user-german=seo=myhost.de@lists.debian.org&gt; to: seo@myhost.de whitelisted -- debian-user-german-request@lists.debian.org on whitelist  --  [Wie feststellen welches Programm den Port belegt] -&gt; /usr/share/assp/notspam/12473.eml;</span>
+<span class="go">FEb-23-10 21:20:06 Uploading stats via direct connection;</span>
+<span class="go">FEb-23-10 21:20:12 Cleaning up cache records ...;</span>
+<span class="go">FEb-23-10 21:20:12 DNSBLCache: cleaning cache finished; before=77, deleted=4;</span>
+<span class="go">FEb-23-10 21:20:12 URIBLCache: cleaning cache finished; before=4, deleted=3;</span>
+<span class="go">FEb-23-10 21:20:12 PTRCache: cleaning cache finished; before=7, deleted=0;</span>
+<span class="go">FEb-23-10 21:20:12 MXACache: cleaning cache finished; before=4, deleted=0;</span>
+<span class="go">FEb-23-10 21:20:12 SenderBaseCache: cleaning cache finished; before=701, deleted=10;</span>
+<span class="go">FEb-23-10 21:20:12 Saving cache records;</span>
+<span class="go">FEb-23-10 21:20:22 Saving whitelist;</span>
+<span class="go">FEb-23-10 21:20:22 Saving redlist;</span>
+<span class="go">FEb-23-10 21:21:16 56476-12559 [Whitelisted] 82.195.75.100 &lt;bounce-debian-user-german=seo=myhost.de@lists.debian.org&gt; to: seo@myhost.de whitelisted -- debian-user-german-request@lists.debian.org on whitelist  --  [AW AW AW Anti DDOS Script 148 1 unexpected operato] -&gt; /usr/share/assp/notspam/12559.eml;</span>
+<span class="go">FEb-23-10 21:27:13 56833-12917 [Whitelisted] 82.195.75.100 &lt;bounce-debian-user-german=seo=myhost.de@lists.debian.org&gt; to: seo@myhost.de whitelisted -- debian-user-german-request@lists.debian.org on whitelist  --  [Re debian lenny zwei getrennte Partitionen im RAID] -&gt; /usr/share/assp/notspam/12917.eml;</span>
+<span class="go">FEb-23-10 21:31:23 57083-13168 [Whitelisted] 82.195.75.100 &lt;bounce-debian-user-german=seo=myhost.de@lists.debian.org&gt; to: seo@myhost.de whitelisted -- debian-user-german-request@lists.debian.org on whitelist  --  [Re Wie feststellen welches Programm den Port beleg] -&gt; /usr/share/assp/notspam/13168.eml;</span>
+<span class="go">FEb-23-10 21:32:13 57133-13219 [Whitelisted] 82.195.75.100 &lt;bounce-debian-user-german=seo=myhost.de@lists.debian.org&gt; to: seo@myhost.de whitelisted -- debian-user-german-request@lists.debian.org on whitelist  --  [Re Debian kann sich nicht entscheiden ob flashplay] -&gt; /usr/share/assp/notspam/13219.eml;</span>
+<span class="go">FEb-23-10 21:33:55 57235-13322 [Whitelisted] 91.189.94.204 &lt;ubuntu-de-bounces@lists.ubuntu.com&gt; to: seo@myhost.de whitelisted -- ubuntu-de-request@lists.ubuntu.com on whitelist  --  [Re Cyberjack unter Ubuntu 9 10 64Bit zum Laufen br] -&gt; /usr/share/assp/notspam/13322.eml;</span>
+<span class="go">FEb-23-10 21:36:13 57373-13461 [Whitelisted] 82.195.75.100 &lt;bounce-debian-user-german=seo=myhost.de@lists.debian.org&gt; to: seo@myhost.de whitelisted -- debian-user-german-request@lists.debian.org on whitelist  --  [Re Wie feststellen welches Programm den Port beleg] -&gt; /usr/share/assp/notspam/13461.eml;</span>
+<span class="go">FEb-23-10 21:36:57 57416-13505 [MessageOK] 213.133.104.100 &lt;root@robot.first-ns.de&gt; to: admin@myhost.de -- Message OK --  [Achtung Traffic Report Limit Ueberschreitung atten] -&gt; /usr/share/assp/okmail/Achtung_Traffic_Report_Limit_Ueberschreitung_attention_exceeding_of_traffic_report_limit--14.eml;</span>
+<span class="go">FEb-23-10 21:38:57 57537-13627 [Whitelisted] 82.195.75.100 &lt;bounce-debian-user-german=seo=myhost.de@lists.debian.org&gt; to: seo@myhost.de whitelisted -- debian-user-german-request@lists.debian.org on whitelist  --  [Re Wie feststellen welches Programm den Port beleg] -&gt; /usr/share/assp/notspam/13627.eml;</span>
+<span class="go">FEb-23-10 21:47:05 58025-00116 [Whitelisted] 82.195.75.100 &lt;bounce-debian-user-german=seo=myhost.de@lists.debian.org&gt; to: seo@myhost.de whitelisted -- debian-user-german-request@lists.debian.org on whitelist  --  [AW Wie feststellen welches Programm den Port beleg] -&gt; /usr/share/assp/notspam/116.eml;</span>
+<span class="go">FEb-23-10 21:48:20 58100-00192 [Whitelisted] 82.195.75.100 &lt;bounce-debian-user-german=seo=myhost.de@lists.debian.org&gt; to: seo@myhost.de whitelisted -- debian-user-german-request@lists.debian.org on whitelist  --  [Re debian lenny zwei getrennte Partitionen im RAID] -&gt; /usr/share/assp/notspam/192.eml;</span>
+<span class="go">FEb-23-10 21:49:20 58160-00253 78.97.25.50 &lt;myuser@myhost.de&gt; to: myuser@myhost.de [scoring:-10] -- greenlisted address &#39;myuser@myhost.de&#39; --  [Exclusively for myuser 80];</span>
+<span class="go">FEb-23-10 21:49:20 58160-00253 [SpoofedSender] 78.97.25.50 &lt;myuser@myhost.de&gt; to: myuser@myhost.de [scoring] -- No Spoofing Allowed --  [Exclusively for myuser 80];</span>
+<span class="go">FEb-23-10 21:49:20 58160-00253 [MsgID] 78.97.25.50 &lt;myuser@myhost.de&gt; to: myuser@myhost.de [scoring] (Message-ID missing);</span>
+<span class="go">FEb-23-10 21:49:20 58160-00253 [DNSBL] 78.97.25.50 &lt;myuser@myhost.de&gt; to: myuser@myhost.de [spam found] -- DNSBL: failed, 78.97.25.50 listed in ix.dnsbl.manitu.net psbl.surriel.com --  [Exclusively for myuser 80] -&gt; /usr/share/assp/spam/253.eml;</span>
+<span class="go">FEb-23-10 21:49:23 58162-00256 [DNSBL] 81.66.143.119 &lt;Melessa.Strebermanncuakb@numericable.fr&gt; to: myuser@myhost.de [spam found] -- DNSBL: failed, 81.66.143.119 listed in combined.njabl.org ix.dnsbl.manitu.net --  [A Merkel will so abnehmen] -&gt; /usr/share/assp/spam/256.eml;</span>
+<span class="go">FEb-23-10 21:49:30 58167-00262 [DNSBL] 187.36.85.73 &lt;Ailene.Krauseym@virtua.com.br&gt; to: myuser@myhost.de [spam found] -- DNSBL: failed, 187.36.85.73 listed in dnsbl-1.uceprotect.net zen.spamhaus.org --  [Wie abnehmen] -&gt; /usr/share/assp/spam/262.eml;</span>
+<span class="go">FEb-23-10 21:49:33 58172-00268 [DNSBL] 85.221.140.130 &lt;Arlena.Streberberguv@icpnet.pl&gt; to: myuser@myhost.de [spam found] -- DNSBL: failed, 85.221.140.130 listed in ix.dnsbl.manitu.net zen.spamhaus.org --  [Schlank sofort] -&gt; /usr/share/assp/spam/268.eml;</span>
+<span class="go">FEb-23-10 21:51:44 58304-00401 [Whitelisted] 82.195.75.100 &lt;bounce-debian-user-german=seo=myhost.de@lists.debian.org&gt; to: seo@myhost.de whitelisted -- debian-user-german-request@lists.debian.org on whitelist  --  [Re AW Wie feststellen welches Programm den Port be] -&gt; /usr/share/assp/notspam/401.eml;</span>
+<span class="go">FEb-23-10 21:53:04 58383-00481 [DNSBL] 41.251.28.102 &lt;vdimquhalcowi@redhatmagazine.com&gt; to: myuser@myhost.de [spam found] -- DNSBL: failed, 41.251.28.102 listed in dnsbl-3.uceprotect.net ix.dnsbl.manitu.net --  [M chten Sie gewinnen Jetzt herunterladen] -&gt; /usr/share/assp/spam/481.eml;</span>
+<span class="go">FEb-23-10 21:53:14 58388-00487 [DNSBL] 201.132.202.177 &lt;vdurixagakixy@icqmail.com&gt; to: myuser@myhost.de [scoring:42] DNSBL: neutral, 201.132.202.177 listed in l2.apews.org zen.spamhaus.org;</span>
+<span class="go">FEb-23-10 21:53:14 58388-00487 [MessageScoring] 201.132.202.177 &lt;vdurixagakixy@icqmail.com&gt; to: myuser@myhost.de [spam found] -- MessageScore (52) over limit (50) --  [Eine Auszahlungsquote in H he von 98 Jetzt herunte] -&gt; /usr/share/assp/spam/487.eml;</span>
+<span class="go">FEb-23-10 21:53:18 58396-00496 [DNSBL] 78.97.90.26 &lt;lafdmepe@wikipedia.org&gt; to: myuser@myhost.de [spam found] -- DNSBL: failed, 78.97.90.26 listed in dnsbl-3.uceprotect.net ix.dnsbl.manitu.net --  [Ein Bonus zum Herzerw rmen] -&gt; /usr/share/assp/spam/496.eml;</span>
+<span class="go">FEb-23-10 21:53:21 58399-00500 [DNSBL] 89.229.130.255 &lt;ocfxyudqezado@weblogawards.org&gt; to: myuser@myhost.de [spam found] -- DNSBL: failed, 89.229.130.255 listed in dnsbl-3.uceprotect.net ix.dnsbl.manitu.net --  [Jetzt herunterladen und die Reise Ihres Lebens ant] -&gt; /usr/share/assp/spam/500.eml;</span>
+<span class="go">FEb-23-10 21:53:27 58404-00506 [DNSBL] 189.113.235.136 &lt;ujtjeasl@atlaswebmail.com&gt; to: myuser@myhost.de [spam found] -- DNSBL: failed, 189.113.235.136 listed in dnsbl-1.uceprotect.net ix.dnsbl.manitu.net --  [Hier spielen Gewinner] -&gt; /usr/share/assp/spam/506.eml;</span>
+<span class="go">FEb-23-10 21:53:30 58408-00511 [DNSBL] 93.113.40.79 &lt;dnikiaioa@padems.com&gt; to: myuser@myhost.de [spam found] -- DNSBL: failed, 93.113.40.79 listed in ix.dnsbl.manitu.net zen.spamhaus.org --  [Hier spielen Gewinner] -&gt; /usr/share/assp/spam/511.eml;</span>
+<span class="go">FEb-23-10 21:53:36 58412-00516 [DNSBL] 213.135.184.9 &lt;cwcyranuox@keromail.com&gt; to: myuser@myhost.de [spam found] -- DNSBL: failed, 213.135.184.9 listed in dnsbl-1.uceprotect.net ix.dnsbl.manitu.net --  [M chten Sie gewinnen Jetzt herunterladen] -&gt; /usr/share/assp/spam/516.eml;</span>
+<span class="go">FEb-23-10 21:53:55 58435-00540 [Whitelisted] 82.195.75.100 &lt;bounce-debian-user-german=seo=myhost.de@lists.debian.org&gt; to: seo@myhost.de whitelisted -- debian-user-german-request@lists.debian.org on whitelist  --  [AW Wie feststellen welches Programm den Port beleg] -&gt; /usr/share/assp/notspam/540.eml;</span>
+<span class="go">FEb-23-10 21:55:40 58540-00646 [Whitelisted] 82.195.75.100 &lt;bounce-debian-user-german=seo=myhost.de@lists.debian.org&gt; to: seo@myhost.de whitelisted -- debian-user-german-request@lists.debian.org on whitelist  --  [AW AW Wie feststellen welches Programm den Port be] -&gt; /usr/share/assp/notspam/646.eml;</span>
+<span class="go">FEb-23-10 22:00:21 Info: hourly scheduler running at 22:00;</span>
+<span class="go">FEb-23-10 22:04:26 59065-01172 [Whitelisted] 91.189.94.204 &lt;ubuntu-de-bounces@lists.ubuntu.com&gt; to: seo@myhost.de whitelisted -- ubuntu-de-request@lists.ubuntu.com on whitelist  --  [Re Cyberjack unter Ubuntu 9 10 64Bit zum Laufen br] -&gt; /usr/share/assp/notspam/1172.eml;</span>
+<span class="go">FEb-23-10 22:11:51 59510-01618 [Whitelisted] 208.42.190.180 &lt;info114@service.govdelivery.com&gt; to: a.myuser@blackhat-security.de whitelisted -- nasa_subscriptions@service.govdelivery.com on whitelist  --  [NASA s Space Shuttle Discovery Rolls to Launch Pad] -&gt; /usr/share/assp/notspam/1618.eml;</span>
+<span class="go">FEb-23-10 22:12:08 59527-01636 [Whitelisted] 208.42.190.160 &lt;info114@service.govdelivery.com&gt; to: a.myuser@blackhat-security.de whitelisted -- nasa_subscriptions@service.govdelivery.com on whitelist  --  [NASA Awards Mississippi Information and Technical ] -&gt; /usr/share/assp/notspam/1636.eml;</span>
+<span class="go">FEb-23-10 22:13:05 59582-01692 [Whitelisted] 208.42.190.242 &lt;info114@service.govdelivery.com&gt; to: a.myuser@blackhat-security.de whitelisted -- nasa_subscriptions@service.govdelivery.com on whitelist  --  [Restructured NASA Advisory Council Meets to Formul] -&gt; /usr/share/assp/notspam/1692.eml;</span>
+<span class="go">FEb-23-10 22:19:37 59977-02088 [Whitelisted] 82.195.75.100 &lt;bounce-debian-user-german=seo=myhost.de@lists.debian.org&gt; to: seo@myhost.de whitelisted -- debian-user-german-request@lists.debian.org on whitelist  --  [Re AW AW Wie feststellen welches Programm den Port] -&gt; /usr/share/assp/notspam/2088.eml;</span>
+<span class="go">FEb-23-10 22:20:07 Cleaning up delaying databases ...;</span>
+<span class="go">FEb-23-10 22:20:07 Cleaning delaying database (triplets) finished; keys before=0, deleted=0;</span>
+<span class="go">FEb-23-10 22:20:07 Cleaning delaying database (safelisted tuplets) finished; keys before=0, deleted=0;</span>
+<span class="go">FEb-23-10 22:20:07 Cleaning up penalty records ...;</span>
+<span class="go">FEb-23-10 22:20:07 PenaltyBox: cleaning BlackBox finished; before=86, deleted=12;</span>
+<span class="go">FEb-23-10 22:20:07 PenaltyBox: cleaning WhiteBox finished; before=115, deleted=0;</span>
+<span class="go">FEb-23-10 22:20:07 Saving penalty records;</span>
+<span class="go">FEb-23-10 22:20:22 Saving whitelist;</span>
+<span class="go">FEb-23-10 22:20:22 Saving redlist;</span>
+<span class="go">FEb-23-10 22:23:04 60184-02296 [Whitelisted] 82.195.75.100 &lt;bounce-debian-user-german=seo=myhost.de@lists.debian.org&gt; to: seo@myhost.de whitelisted -- debian-user-german-request@lists.debian.org on whitelist  --  [AW AW AW Wie feststellen welches Programm den Port] -&gt; /usr/share/assp/notspam/2296.eml;</span>
+<span class="go">FEb-23-10 22:23:13 60192-02305 [MsgID] 190.45.7.154 &lt;cavoni2133@vtr.net&gt; to: myuser@myhost.de [scoring] (Message-ID missing);</span>
+<span class="go">FEb-23-10 22:23:14 60192-02305 [BlackHELO] 190.45.7.154 &lt;cavoni2133@vtr.net&gt; to: myuser@myhost.de [scoring] -- blacklisted HELO &#39;vtr.net&#39; --  [Exclusively for myuser 80];</span>
+<span class="go">FEb-23-10 22:23:14 60192-02305 [DNSBL] 190.45.7.154 &lt;cavoni2133@vtr.net&gt; to: myuser@myhost.de [spam found] -- DNSBL: failed, 190.45.7.154 listed in dnsbl-2.uceprotect.net ix.dnsbl.manitu.net --  [Exclusively for myuser 80] -&gt; /usr/share/assp/spam/2305.eml;</span>
+<span class="go">FEb-23-10 22:37:42 61062-03177 [MessageOK] 213.133.104.100 &lt;root@robot.first-ns.de&gt; to: admin@myhost.de -- Message OK --  [Achtung Traffic Report Limit Ueberschreitung atten] -&gt; /usr/share/assp/okmail/Achtung_Traffic_Report_Limit_Ueberschreitung_attention_exceeding_of_traffic_report_limit--15.eml;</span>
+<span class="go">FEb-23-10 22:42:13 61333-03449 [Whitelisted] 82.195.75.100 &lt;bounce-debian-user-german=seo=myhost.de@lists.debian.org&gt; to: seo@myhost.de whitelisted -- debian-user-german-request@lists.debian.org on whitelist  --  [Re Wie feststellen welches Programm den Port beleg] -&gt; /usr/share/assp/notspam/3449.eml;</span>
+<span class="go">FEb-23-10 22:51:04 61864-03981 [Whitelisted] 82.195.75.100 &lt;bounce-debian-user-german=seo=myhost.de@lists.debian.org&gt; to: seo@myhost.de whitelisted -- debian-user-german-request@lists.debian.org on whitelist  --  [Re Wie feststellen welches Programm den Port beleg] -&gt; /usr/share/assp/notspam/3981.eml;</span>
+<span class="go">FEb-23-10 22:52:22 61942-04060 [BlackHELO] 62.27.57.188 &lt;news-EMID0AA01AU0EQA01FET1015QMO00GI7QBL@news.geld.de&gt; to: myuser@myhost.de [scoring] -- blacklisted HELO &#39;mx188.unister.fagms.net&#39; --  [Herr myuser ein Rechtsstreit muss nicht teuer sei];</span>
+<span class="go">FEb-23-10 22:52:22 61942-04060 [DNSBL] 62.27.57.188 &lt;news-EMID0AA01AU0EQA01FET1015QMO00GI7QBL@news.geld.de&gt; to: myuser@myhost.de [spam found] -- DNSBL: failed, 62.27.57.188 listed in dnsbl-1.uceprotect.net dnsbl-2.uceprotect.net --  [Herr myuser ein Rechtsstreit muss nicht teuer sei] -&gt; /usr/share/assp/spam/4060.eml;</span>
+<span class="go">FEb-23-10 22:55:12 62112-04231 [MsgID] 72.38.218.8 &lt;ueusyiof1644@cgocable.net&gt; to: myuser@myhost.de [scoring] (Message-ID missing);</span>
+<span class="go">FEb-23-10 22:55:13 62112-04231 [DNSBL] 72.38.218.8 &lt;ueusyiof1644@cgocable.net&gt; to: myuser@myhost.de [spam found] -- DNSBL: failed, 72.38.218.8 listed in dnsbl-3.uceprotect.net psbl.surriel.com --  [Exclusively for myuser 80] -&gt; /usr/share/assp/spam/4231.eml;</span>
+<span class="go">FEb-23-10 22:55:48 62148-04268 [Whitelisted] 82.195.75.100 &lt;bounce-debian-user-german=seo=myhost.de@lists.debian.org&gt; to: seo@myhost.de whitelisted -- debian-user-german-request@lists.debian.org on whitelist  --  [Re Wie feststellen welches Programm den Port beleg] -&gt; /usr/share/assp/notspam/4268.eml;</span>
+<span class="go">FEb-23-10 23:00:23 Info: hourly scheduler running at 23:00;</span>
+<span class="go">FEb-23-10 23:10:53 63052-05173 [Whitelisted] 208.42.190.180 &lt;info114@service.govdelivery.com&gt; to: a.myuser@blackhat-security.de whitelisted -- nasa_subscriptions@service.govdelivery.com on whitelist  --  [NASA Awards Agency Wide Mission Network Services C] -&gt; /usr/share/assp/notspam/5173.eml;</span>
+<span class="go">FEb-23-10 23:20:14 Cleaning up cache records ...;</span>
+<span class="go">FEb-23-10 23:20:14 DNSBLCache: cleaning cache finished; before=87, deleted=15;</span>
+<span class="go">FEb-23-10 23:20:14 URIBLCache: cleaning cache finished; before=4, deleted=3;</span>
+<span class="go">FEb-23-10 23:20:14 PTRCache: cleaning cache finished; before=7, deleted=0;</span>
+<span class="go">FEb-23-10 23:20:14 MXACache: cleaning cache finished; before=4, deleted=0;</span>
+<span class="go">FEb-23-10 23:20:14 SenderBaseCache: cleaning cache finished; before=704, deleted=6;</span>
+<span class="go">FEb-23-10 23:20:14 Saving cache records;</span>
+<span class="go">FEb-23-10 23:20:24 Saving whitelist;</span>
+<span class="go">FEb-23-10 23:20:24 Saving redlist;</span>
+<span class="go">FEb-23-10 23:23:12 63792-05914 88.101.36.86 &lt;myuser@myhost.de&gt; to: myuser@myhost.de [scoring:-10] -- greenlisted address &#39;myuser@myhost.de&#39; --  [Hello myuser check our 80 Sale];</span>
+<span class="go">FEb-23-10 23:23:12 63792-05914 [SpoofedSender] 88.101.36.86 &lt;myuser@myhost.de&gt; to: myuser@myhost.de [scoring] -- No Spoofing Allowed --  [Hello myuser check our 80 Sale];</span>
+<span class="go">FEb-23-10 23:23:12 63792-05914 [MsgID] 88.101.36.86 &lt;myuser@myhost.de&gt; to: myuser@myhost.de [scoring] (Message-ID missing);</span>
+<span class="go">FEb-23-10 23:23:12 63792-05914 [DNSBL] 88.101.36.86 &lt;myuser@myhost.de&gt; to: myuser@myhost.de [spam found] -- DNSBL: failed, 88.101.36.86 listed in dnsbl-3.uceprotect.net ix.dnsbl.manitu.net --  [Hello myuser check our 80 Sale] -&gt; /usr/share/assp/spam/5914.eml;</span>
+<span class="go">FEb-23-10 23:27:10 64030-06153 93.107.218.21 &lt;myuser@myhost.de&gt; to: myuser@myhost.de [scoring:-10] -- greenlisted address &#39;myuser@myhost.de&#39; --  [Exclusively for myuser 80];</span>
+<span class="go">FEb-23-10 23:27:10 64030-06153 [SpoofedSender] 93.107.218.21 &lt;myuser@myhost.de&gt; to: myuser@myhost.de [scoring] -- No Spoofing Allowed --  [Exclusively for myuser 80];</span>
+<span class="go">FEb-23-10 23:27:10 64030-06153 [MsgID] 93.107.218.21 &lt;myuser@myhost.de&gt; to: myuser@myhost.de [scoring] (Message-ID missing);</span>
+<span class="go">FEb-23-10 23:27:11 64030-06153 [DNSBL] 93.107.218.21 &lt;myuser@myhost.de&gt; to: myuser@myhost.de [spam found] -- DNSBL: failed, 93.107.218.21 listed in dnsbl-3.uceprotect.net zen.spamhaus.org --  [Exclusively for myuser 80] -&gt; /usr/share/assp/spam/6153.eml;</span>
+<span class="go">FEb-23-10 23:33:00 64380-06504 [Whitelisted] 82.195.75.100 &lt;bounce-debian-user-german=seo=myhost.de@lists.debian.org&gt; to: seo@myhost.de whitelisted -- debian-user-german-request@lists.debian.org on whitelist  --  [AW Wie feststellen welches Programm den Port beleg] -&gt; /usr/share/assp/notspam/6504.eml;</span>
+<span class="go">FEb-23-10 23:37:39 64658-06783 [MessageOK] 213.133.104.100 &lt;root@robot.first-ns.de&gt; to: admin@myhost.de -- Message OK --  [Achtung Traffic Report Limit Ueberschreitung atten] -&gt; /usr/share/assp/okmail/Achtung_Traffic_Report_Limit_Ueberschreitung_attention_exceeding_of_traffic_report_limit--16.eml;</span>
+<span class="go">FEb-24-10 00:00:25: Rolling log file -- archive saved as &#39;logs/10-02-23.maillog.txt&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+  <div class="section">
+  
+  
+  </div>
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2010-2015, OSSEC Project Team - OSSEC trademark and domain owned by Trend Micro, Inc. - Home page images courtesy of Pixbay.com.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

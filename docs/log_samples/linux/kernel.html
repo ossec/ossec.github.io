@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Log Samples from the Linux kernel &mdash; OSSEC</title>
+    
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/parallax.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '2.8.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-sphinx.js"></script>
+    <link rel="author" title="About these documents" href="../../../about.html" />
+    <link rel="top" title="OSSEC" href="../../../index.html" />
+  
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  
+  
+  <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+  
+  <style type="text/css">
+    ul.ablog-archive {list-style: none; overflow: auto; margin-left: 0px}
+    ul.ablog-archive li {float: left; margin-right: 5px; font-size: 80%}
+  </style>
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../../index.html"><img src="../../../_static/ossec_logo_bare_small.png">
+          OSSEC</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="../../../about.html">About <i class="fa fa-info-circle"></i></a></li>
+                <li><a href="../../../blog.html">Blog <i class="fa fa-archive"></i></a></li>
+                <li><a href="../../">Documentaton <i class="fa fa-book"></i></a></li>
+                <li><a href="../../../downloads.html">Downloads <i class="fa fa-download"></i></a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"></ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="section" id="log-samples-from-the-linux-kernel">
+<h1>Log Samples from the Linux kernel<a class="headerlink" href="#log-samples-from-the-linux-kernel" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="nfs-incompability-between-linux-and-solaris-not-security-related">
+<h2>NFS incompability between Linux and Solaris (not security related):<a class="headerlink" href="#nfs-incompability-between-linux-and-solaris-not-security-related" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">Feb 28 07:46:15 bs11 kernel: svc: unknown program 100227 (me 100003)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="system-shutdown">
+<h2>System shutdown:<a class="headerlink" href="#system-shutdown" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">Jun  1 22:20:05 secserv kernel: Kernel logging (proc) stopped.</span>
+<span class="go">Jun  1 22:20:05 secserv kernel: Kernel log daemon terminating.</span>
+<span class="go">Jun  1 22:20:06 secserv exiting on signal 15</span>
+<span class="go">Nov 27 08:05:57 galileo kernel: Kernel logging (proc) stopped.</span>
+<span class="go">Nov 27 08:05:57 galileo kernel: Kernel log daemon terminating.</span>
+<span class="go">Nov 27 08:05:57 galileo exiting on signal 15</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="adsl-monitor">
+<h2>ADSL monitor:<a class="headerlink" href="#adsl-monitor" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">Nov 22 02:35:36 thecla2 kernel: ATM dev 0: ADSL line is up (2752 kb/s down | 448 kb/s up)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="description">
+<h2>description:<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">May 21 20:22:28 slacker2 kernel: tcp_parse_options: Illegal window scaling value 200 &gt;14 received.</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="kernel-level-hardware-scsi-error-not-security-related">
+<h2>Kernel level hardware SCSI error (not security related):<a class="headerlink" href="#kernel-level-hardware-scsi-error-not-security-related" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">Aug 30 10:06:11 newfish kernel: &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; Dump Card State Begins &lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;</span>
+<span class="go">Aug 30 10:06:11 newfish kernel: scsi1: Dumping Card State in Message-out phase, at SEQADDR 0x16b</span>
+<span class="go">Aug 30 10:06:11 newfish kernel: Card was paused</span>
+<span class="go">Aug 30 10:06:11 newfish kernel: ACCUM = 0xa0, SINDEX = 0x61, DINDEX = 0xe4, ARG_2 = 0x1</span>
+<span class="go">Aug 30 10:06:11 newfish kernel: HCNT = 0x0 SCBPTR = 0x1</span>
+<span class="go">Aug 30 10:06:11 newfish kernel: SCSIPHASE[0x0] SCSISIGI[0xa4] ERROR[0x0] SCSIBUSL[0xd]</span>
+<span class="go">Aug 30 10:06:11 newfish kernel: LASTPHASE[0xa0] SCSISEQ[0x12] SBLKCTL[0xa] SCSIRATE[0xc2]</span>
+<span class="go">Aug 30 10:06:11 newfish kernel: SEQCTL[0x10] SEQ_FLAGS[0x40] SSTAT0[0x0] SSTAT1[0x0]</span>
+<span class="go">Aug 30 10:06:11 newfish kernel: SSTAT2[0x0] SSTAT3[0x0] SIMODE0[0x8] SIMODE1[0xac]</span>
+<span class="go">Aug 30 10:06:11 newfish kernel: SXFRCTL0[0x88] DFCNTRL[0x0] DFSTATUS[0x89]</span>
+<span class="go">Aug 30 10:06:11 newfish kernel: STACK: 0xe1 0xe1 0x163 0x178</span>
+<span class="go">Aug 30 10:06:11 newfish kernel: SCB count = 12</span>
+<span class="go">Aug 30 10:06:11 newfish kernel: Kernel NEXTQSCB = 11</span>
+<span class="go">Aug 30 10:06:11 newfish kernel: Card NEXTQSCB = 4</span>
+<span class="go">Aug 30 10:06:12 newfish kernel: QINFIFO entries: 4</span>
+<span class="go">Aug 30 10:06:12 newfish kernel: Waiting Queue entries:</span>
+<span class="go">Aug 30 10:06:12 newfish kernel: Disconnected Queue entries: 2:7</span>
+<span class="go">Aug 30 10:06:12 newfish kernel: QOUTFIFO entries:</span>
+<span class="go">Aug 30 10:06:12 newfish kernel: Sequencer Free SCB List: 0 6 7 5 4 3 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31</span>
+<span class="go">Aug 30 10:06:12 newfish kernel: Sequencer SCB Info:</span>
+<span class="go">Aug 30 10:06:12 newfish kernel:   0 SCB_CONTROL[0x0] SCB_SCSIID[0x17] SCB_LUN[0x0] SCB_TAG[0xff]</span>
+<span class="go">Aug 30 10:06:12 newfish kernel:   1 SCB_CONTROL[0x64] SCB_SCSIID[0x17] SCB_LUN[0x0] SCB_TAG[0x5]</span>
+<span class="go">Aug 30 10:06:12 newfish kernel:   2 SCB_CONTROL[0x64] SCB_SCSIID[0x17] SCB_LUN[0x0] SCB_TAG[0x7]</span>
+<span class="go">Aug 30 10:06:12 newfish kernel:   3 SCB_CONTROL[0xe0] SCB_SCSIID[0x7] SCB_LUN[0x0] SCB_TAG[0xff]</span>
+<span class="go">Aug 30 10:06:12 newfish kernel:   4 SCB_CONTROL[0xe0] SCB_SCSIID[0x7] SCB_LUN[0x0] SCB_TAG[0xff]</span>
+<span class="go">Aug 30 10:06:12 newfish kernel:   5 SCB_CONTROL[0xe0] SCB_SCSIID[0x17] SCB_LUN[0x0] SCB_TAG[0xff]</span>
+<span class="go">Aug 30 10:06:12 newfish kernel:   6 SCB_CONTROL[0x0] SCB_SCSIID[0x17] SCB_LUN[0x0] SCB_TAG[0xff]</span>
+<span class="go">Aug 30 10:06:12 newfish kernel:   7 SCB_CONTROL[0xe0] SCB_SCSIID[0x17] SCB_LUN[0x0] SCB_TAG[0xff]</span>
+<span class="go">Aug 30 10:06:12 newfish kernel:   8 SCB_CONTROL[0x0] SCB_SCSIID[0xff] SCB_LUN[0xff] SCB_TAG[0xff]</span>
+<span class="go">Aug 30 10:06:12 newfish kernel:   9 SCB_CONTROL[0x0] SCB_SCSIID[0xff] SCB_LUN[0xff] SCB_TAG[0xff]</span>
+<span class="go">Aug 30 10:06:12 newfish kernel:  10 SCB_CONTROL[0x0] SCB_SCSIID[0xff] SCB_LUN[0xff] SCB_TAG[0xff]</span>
+<span class="go">Aug 30 10:06:12 newfish kernel:  11 SCB_CONTROL[0x0] SCB_SCSIID[0xff] SCB_LUN[0xff] SCB_TAG[0xff]</span>
+<span class="go">Aug 30 10:06:12 newfish kernel:  12 SCB_CONTROL[0x0] SCB_SCSIID[0xff] SCB_LUN[0xff] SCB_TAG[0xff]</span>
+<span class="go">Aug 30 10:06:12 newfish kernel:  13 SCB_CONTROL[0x0] SCB_SCSIID[0xff] SCB_LUN[0xff] SCB_TAG[0xff]</span>
+<span class="go">Aug 30 10:06:12 newfish kernel:  14 SCB_CONTROL[0x0] SCB_SCSIID[0xff] SCB_LUN[0xff] SCB_TAG[0xff]</span>
+<span class="go">Aug 30 10:06:12 newfish kernel:  15 SCB_CONTROL[0x0] SCB_SCSIID[0xff] SCB_LUN[0xff] SCB_TAG[0xff]</span>
+<span class="go">Aug 30 10:06:12 newfish kernel:  16 SCB_CONTROL[0x0] SCB_SCSIID[0xff] SCB_LUN[0xff] SCB_TAG[0xff]</span>
+<span class="go">Aug 30 10:06:12 newfish kernel:  17 SCB_CONTROL[0x0] SCB_SCSIID[0xff] SCB_LUN[0xff] SCB_TAG[0xff]</span>
+<span class="go">Aug 30 10:06:12 newfish kernel:  18 SCB_CONTROL[0x0] SCB_SCSIID[0xff] SCB_LUN[0xff] SCB_TAG[0xff]</span>
+<span class="go">Aug 30 10:06:13 newfish kernel:  19 SCB_CONTROL[0x0] SCB_SCSIID[0xff] SCB_LUN[0xff] SCB_TAG[0xff]</span>
+<span class="go">Aug 30 10:06:13 newfish kernel:  20 SCB_CONTROL[0x0] SCB_SCSIID[0xff] SCB_LUN[0xff] SCB_TAG[0xff]</span>
+<span class="go">Aug 30 10:06:13 newfish kernel:  21 SCB_CONTROL[0x0] SCB_SCSIID[0xff] SCB_LUN[0xff] SCB_TAG[0xff]</span>
+<span class="go">Aug 30 10:06:13 newfish kernel:  22 SCB_CONTROL[0x0] SCB_SCSIID[0xff] SCB_LUN[0xff] SCB_TAG[0xff]</span>
+<span class="go">Aug 30 10:06:13 newfish kernel:  23 SCB_CONTROL[0x0] SCB_SCSIID[0xff] SCB_LUN[0xff] SCB_TAG[0xff]</span>
+<span class="go">Aug 30 10:06:13 newfish kernel:  24 SCB_CONTROL[0x0] SCB_SCSIID[0xff] SCB_LUN[0xff] SCB_TAG[0xff]</span>
+<span class="go">Aug 30 10:06:13 newfish kernel:  25 SCB_CONTROL[0x0] SCB_SCSIID[0xff] SCB_LUN[0xff] SCB_TAG[0xff]</span>
+<span class="go">Aug 30 10:06:13 newfish kernel:  26 SCB_CONTROL[0x0] SCB_SCSIID[0xff] SCB_LUN[0xff] SCB_TAG[0xff]</span>
+<span class="go">Aug 30 10:06:13 newfish kernel:  27 SCB_CONTROL[0x0] SCB_SCSIID[0xff] SCB_LUN[0xff] SCB_TAG[0xff]</span>
+<span class="go">Aug 30 10:06:13 newfish kernel:  28 SCB_CONTROL[0x0] SCB_SCSIID[0xff] SCB_LUN[0xff] SCB_TAG[0xff]</span>
+<span class="go">Aug 30 10:06:13 newfish kernel:  29 SCB_CONTROL[0x0] SCB_SCSIID[0xff] SCB_LUN[0xff] SCB_TAG[0xff]</span>
+<span class="go">Aug 30 10:06:13 newfish kernel:  30 SCB_CONTROL[0x0] SCB_SCSIID[0xff] SCB_LUN[0xff] SCB_TAG[0xff]</span>
+<span class="go">Aug 30 10:06:13 newfish kernel:  31 SCB_CONTROL[0x0] SCB_SCSIID[0xff] SCB_LUN[0xff] SCB_TAG[0xff]</span>
+<span class="go">Aug 30 10:06:13 newfish kernel: Pending list:</span>
+<span class="go">Aug 30 10:06:13 newfish kernel:   7 SCB_CONTROL[0x60] SCB_SCSIID[0x17] SCB_LUN[0x0]</span>
+<span class="go">Aug 30 10:06:13 newfish kernel:   4 SCB_CONTROL[0x74] SCB_SCSIID[0x17] SCB_LUN[0x0]</span>
+<span class="go">Aug 30 10:06:13 newfish kernel:   5 SCB_CONTROL[0x64] SCB_SCSIID[0x17] SCB_LUN[0x0]</span>
+<span class="go">Aug 30 10:06:13 newfish kernel: Kernel Free SCB list: 1 0 2 3 6 10 9 8</span>
+<span class="go">Aug 30 10:06:13 newfish kernel: DevQ(0:0:0): 0 waiting</span>
+<span class="go">Aug 30 10:06:13 newfish kernel: DevQ(0:1:0): 0 waiting</span>
+<span class="go">Aug 30 10:06:13 newfish kernel: DevQ(0:6:0): 0 waiting</span>
+<span class="go">Aug 30 10:06:13 newfish kernel:</span>
+<span class="go">Aug 30 10:06:13 newfish kernel: &lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt; Dump Card State Ends &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;</span>
+<span class="go">Aug 30 10:06:13 newfish kernel: Recovery SCB completes</span>
+<span class="go">Aug 30 10:06:13 newfish kernel: (scsi1:A:1:0): Device is disconnected, re-queuing SCB</span>
+<span class="go">Aug 30 10:06:13 newfish kernel: Recovery code sleeping</span>
+<span class="go">Aug 30 10:06:13 newfish kernel: Recovery code awake</span>
+<span class="go">Aug 30 10:06:13 newfish kernel: Timer Expired</span>
+<span class="go">Aug 30 10:06:13 newfish kernel: aic7xxx_abort returns 0x2003</span>
+<span class="go">Aug 30 10:06:13 newfish kernel: scsi1:0:1:0: Attempting to queue a TARGET RESET message</span>
+<span class="go">Aug 30 10:06:13 newfish kernel: CDB: 0x28 0x0 0x4 0x7a 0x65 0xcf 0x0 0x0 0x10 0x0</span>
+<span class="go">Aug 30 10:06:13 newfish kernel: aic7xxx_dev_reset returns 0x2003</span>
+<span class="go">Aug 30 10:06:13 newfish kernel: Recovery SCB completes</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="linux-bug-and-call-trace-example">
+<h2>Linux BUG and call trace example:<a class="headerlink" href="#linux-bug-and-call-trace-example" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">BUG: unable to handle kernel NULL pointer dereference at (null)</span>
+<span class="go">IP: [&lt;ffffffff8141c423&gt;] 0xffffffff8141c423</span>
+<span class="go">PGD 0</span>
+<span class="go">Oops: 0002 [#1] PREEMPT SMP</span>
+<span class="go">last sysfs file: /sys/devices/pci0000:00/0000:00:1f.2/host0/target0:0:0/0:0:0:0/scsi_level</span>
+<span class="go">CPU 0</span>
+<span class="go">Modules linked in: zr364xx videodev v4l1_compat v4l2_compat_ioctl32 videobuf_vmalloc videobuf_core usb_storage r8187</span>
+<span class="go">ieee80211_rtl ieee80211_crypt_ccmp_rtl ieee80211_crypt_tkip_rtl ieee80211_crypt_wep_rtl ieee80211_crypt_rtl coretemp</span>
+<span class="go">snd_seq_dummy sdhci_pci sdhci snd_seq_oss snd_hda_codec_realtek snd_seq_midi_event snd_seq snd_seq_device</span>
+<span class="go">mmc_core iTCO_wdt iTCO_vendor_support nvidia(P) snd_hda_intel snd_hda_codec snd_hwdep snd_pcm_oss snd_pcm</span>
+<span class="go">snd_timer snd_page_alloc snd_mixer_oss snd soundcore r8169 mii pata_acpi [last unloaded: ieee80211_crypt_rtl]</span>
+<span class="go">Pid: 226, comm: khubd Tainted: P           2.6.30.5 #1 GX700</span>
+<span class="go">RIP: 0010:[&lt;ffffffff8141c423&gt;]  [&lt;ffffffff8141c423&gt;] 0xffffffff8141c423</span>
+<span class="go">RSP: 0018:ffff8800bfa2fc08  EFLAGS: 00010246</span>
+<span class="go">RAX: 0000000000000000 RBX: ffff8800b0953d14 RCX: 0000000000000000</span>
+<span class="go">RDX: 0000000000000000 RSI: 0000000000000083 RDI: ffff8800b0953d14</span>
+<span class="go">RBP: ffff8800b0953d10 R08: 0000000000000000 R09: 00000000000000ae</span>
+<span class="go">R10: ffff880001744540 R11: 0000000000000008 R12: ffffffffffffffff</span>
+<span class="go">R13: ffff8800b0953d18 R14: 0000000000000000 R15: ffff8800bf8671c0</span>
+<span class="go">FS:  0000000000000000(0000) GS:ffff88000165f000(0000) knlGS:0000000000000000</span>
+<span class="go">CS:  0010 DS: 0018 ES: 0018 CR0: 000000008005003b</span>
+<span class="go">CR2: 0000000000000000 CR3: 0000000001001000 CR4: 00000000000006e0</span>
+<span class="go">DR0: 0000000000000000 DR1: 0000000000000000 DR2: 0000000000000000</span>
+<span class="go">DR3: 0000000000000000 DR6: 00000000ffff0ff0 DR7: 0000000000000400</span>
+<span class="go">Process khubd (pid: 226, threadinfo ffff8800bfa2e000, task ffff8800bf8671c0)</span>
+<span class="go">Stack:</span>
+<span class="go"> ffff8800b0953d18 ffff8800a9049c30 ffff8800bfa2fc60 ffff8800bfa2fcb0</span>
+<span class="go"> ffffffff8110aaaa ffff8800b0953d10 ffff8800b08a5c00 ffffffffa09ea788</span>
+<span class="go"> ffff8800bb05f800 000000000000001f 0000000000000000 ffffffff8141c06a</span>
+<span class="go">Call Trace:</span>
+<span class="go"> [&lt;ffffffff8110aaaa&gt;] ? 0xffffffff8110aaaa</span>
+<span class="go"> [&lt;ffffffff8141c06a&gt;] ? 0xffffffff8141c06a</span>
+<span class="go"> [&lt;ffffffffa09cd5e6&gt;] ? 0xffffffffa09cd5e6</span>
+<span class="go"> [&lt;ffffffffa09e711a&gt;] ? 0xffffffffa09e711a</span>
+<span class="go"> [&lt;ffffffff812a8878&gt;] ? 0xffffffff812a8878</span>
+<span class="go"> [&lt;ffffffff81246932&gt;] ? 0xffffffff81246932</span>
+<span class="go"> [&lt;ffffffff81246a55&gt;] ? 0xffffffff81246a55</span>
+<span class="go"> [&lt;ffffffff81245bf1&gt;] ? 0xffffffff81245bf1</span>
+<span class="go"> [&lt;ffffffff81244208&gt;] ? 0xffffffff81244208</span>
+<span class="go"> [&lt;ffffffff812a609a&gt;] ? 0xffffffff812a609a</span>
+<span class="go"> [&lt;ffffffff812a12b9&gt;] ? 0xffffffff812a12b9</span>
+<span class="go"> [&lt;ffffffff812a214f&gt;] ? 0xffffffff812a214f</span>
+<span class="go"> [&lt;ffffffff810098cc&gt;] ? 0xffffffff810098cc</span>
+<span class="go"> [&lt;ffffffff81033551&gt;] ? 0xffffffff81033551</span>
+<span class="go"> [&lt;ffffffff8141dc39&gt;] ? 0xffffffff8141dc39</span>
+<span class="go"> [&lt;ffffffff81053f10&gt;] ? 0xffffffff81053f10</span>
+<span class="go"> [&lt;ffffffff812a1cf0&gt;] ? 0xffffffff812a1cf0</span>
+<span class="go"> [&lt;ffffffff81053b24&gt;] ? 0xffffffff81053b24</span>
+<span class="go"> [&lt;ffffffff8100c57a&gt;] ? 0xffffffff8100c57a</span>
+<span class="go"> [&lt;ffffffff81053ad0&gt;] ? 0xffffffff81053ad0</span>
+<span class="go"> [&lt;ffffffff8100c570&gt;] ? 0xffffffff8100c570</span>
+<span class="go">Code: 7f b6 66 0f 1f 44 00 00 48 8d 5d 04 4c 8d 6d 08 48 89 df 49 c7 c4 ff ff ff ff e8 c9 14 00 00 48 8b 45 10 4c 89 2c 24 48 89 65 10 &lt;48&gt; 89 20 48 89 44 24 08 4c 89 7c 24 10 4c 89 e0 87 45 00 83 f8</span>
+<span class="go">RIP  [&lt;ffffffff8141c423&gt;] 0xffffffff8141c423</span>
+<span class="go"> RSP &lt;ffff8800bfa2fc08&gt;</span>
+<span class="go">CR2: 0000000000000000</span>
+<span class="go">---[ end trace 05e0b9e1e8d124aa ]---</span>
+<span class="go">note: khubd[226] exited with preempt_count 2</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="slub-mem-allocate-failed-swapper-page-allocation-failure">
+<h2>SLUB mem allocate failed(swapper: page allocation failure.)<a class="headerlink" href="#slub-mem-allocate-failed-swapper-page-allocation-failure" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">Feb 20 21:20:06 server1 kernel: SLUB: Unable to allocate memory on node -1 (gfp=0x20)</span>
+<span class="go">Feb 20 21:20:06 server1 kernel:  cache: kmalloc-4096, object size: 4096, buffer size: 4096, default order: 3, min order: 0</span>
+<span class="go">Feb 20 21:20:06 server1 kernel:  node 0: slabs: 619, objs: 1641, free: 0</span>
+<span class="go">Feb 20 21:20:06 server1 kernel: swapper: page allocation failure. order:0, mode:0x4020</span>
+<span class="go">Feb 20 21:20:06 server1 kernel: Pid: 0, comm: swapper Not tainted 2.6.32.4 #1</span>
+<span class="go">Feb 20 21:20:06 server1 kernel: Call Trace:</span>
+<span class="go">Feb 20 21:20:06 server1 kernel: &lt;IRQ&gt;  [&lt;ffffffff81084d3a&gt;] ? __alloc_pages_nodemask+0x54a/0x670</span>
+<span class="go">Feb 20 21:20:06 server1 kernel: [&lt;ffffffff810b1f8a&gt;] ? __slab_alloc+0x69a/0x6b0</span>
+<span class="go">Feb 20 21:20:06 server1 kernel: [&lt;ffffffff81710ee7&gt;] ? __netdev_alloc_skb+0x17/0x40</span>
+<span class="go">Feb 20 21:20:06 server1 kernel: [&lt;ffffffff8178309d&gt;] ? tcp_v4_rcv+0x6bd/0x780</span>
+<span class="go">Feb 20 21:20:06 server1 kernel: [&lt;ffffffff81710ee7&gt;] ? __netdev_alloc_skb+0x17/0x40</span>
+<span class="go">Feb 20 21:20:06 server1 kernel: [&lt;ffffffff810b2f0b&gt;] ? __kmalloc_track_caller+0xcb/0x110</span>
+<span class="go">Feb 20 21:20:06 server1 kernel: [&lt;ffffffff81710b6b&gt;] ? __alloc_skb+0x6b/0x170</span>
+<span class="go">Feb 20 21:20:06 server1 kernel: [&lt;ffffffff81710ee7&gt;] ? __netdev_alloc_skb+0x17/0x40</span>
+<span class="go">Feb 20 21:20:06 server1 kernel: [&lt;ffffffff8164fa29&gt;] ? rtl8169_rx_fill+0xc9/0x220</span>
+<span class="go">Feb 20 21:20:06 server1 kernel: [&lt;ffffffff8164fdc0&gt;] ? rtl8169_rx_interrupt+0x240/0x520</span>
+<span class="go">Feb 20 21:20:06 server1 kernel: [&lt;ffffffff81650236&gt;] ? rtl8169_poll+0x56/0x240</span>
+<span class="go">Feb 20 21:20:06 server1 kernel: [&lt;ffffffff8171d513&gt;] ? net_rx_action+0x83/0x130</span>
+<span class="go">Feb 20 21:20:06 server1 kernel: [&lt;ffffffff81049dd6&gt;] ? __do_softirq+0xa6/0x130</span>
+<span class="go">Feb 20 21:20:06 server1 kernel: [&lt;ffffffff8100c5ec&gt;] ? call_softirq+0x1c/0x30</span>
+<span class="go">Feb 20 21:20:06 server1 kernel: [&lt;ffffffff8100e58d&gt;] ? do_softirq+0x4d/0x80</span>
+<span class="go">Feb 20 21:20:06 server1 kernel: [&lt;ffffffff81049c15&gt;] ? irq_exit+0x95/0xa0</span>
+<span class="go">Feb 20 21:20:06 server1 kernel: [&lt;ffffffff8100db8e&gt;] ? do_IRQ+0x6e/0xe0</span>
+<span class="go">Feb 20 21:20:06 server1 kernel: [&lt;ffffffff8100be53&gt;] ? ret_from_intr+0x0/0xa</span>
+<span class="go">Feb 20 21:20:06 server1 kernel: &lt;EOI&gt;  [&lt;ffffffff8101f020&gt;] ? lapic_next_event+0x0/0x20</span>
+<span class="go">Feb 20 21:20:06 server1 kernel: [&lt;ffffffff81013452&gt;] ? default_idle+0x32/0x40</span>
+<span class="go">Feb 20 21:20:06 server1 kernel: [&lt;ffffffff81013494&gt;] ? c1e_idle+0x34/0x100</span>
+<span class="go">Feb 20 21:20:06 server1 kernel: [&lt;ffffffff8100a14c&gt;] ? cpu_idle+0xac/0x100</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="example-segfault-log">
+<h2>example segfault log<a class="headerlink" href="#example-segfault-log" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">Jun 20 09:44:14 srv1 kernel: chttp[5849] general protection ip:7f185c076c93 sp:7fff38b79610 error:0 in libc-2.12.so[7f185c009000+153000]</span>
+<span class="go">Jun 20 09:56:31 srv1 kernel: chttp[5883]: segfault at 0 ip 00007f0cc4898af0 sp 00007fff0b43d5f8 error 4 in libc-2.12.so[7f0cc481f000+153000]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="cdrom-errors">
+<h2>cdrom errors:<a class="headerlink" href="#cdrom-errors" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">Jun  7 15:32:50 Lab4 kernel: cdrom: This disc doesn&#39;t have any tracks I recognize!</span>
+<span class="go">Jun  7 15:32:50 Lab4 kernel: sr 3:0:0:0: [sr0] Result: hostbyte=DID_OK driverbyte=DRIVER_SENSE</span>
+<span class="go">Jun  7 15:32:50 Lab4 kernel: sr 3:0:0:0: [sr0] Sense Key : Illegal Request [current]</span>
+<span class="go">Jun  7 15:32:50 Lab4 kernel: Info fld=0x0</span>
+<span class="go">Jun  7 15:32:50 Lab4 kernel: sr 3:0:0:0: [sr0] Add. Sense: Logical block address out of range</span>
+<span class="go">Jun  7 15:32:50 Lab4 kernel: sr 3:0:0:0: [sr0] CDB: Read(10): 28 00 00 00 00 00 00 00 01 00</span>
+<span class="go">Jun  7 15:32:50 Lab4 kernel: end_request: I/O error, dev sr0, sector 0</span>
+<span class="go">Jun  7 15:32:50 Lab4 kernel: Buffer I/O error on device sr0, logical block 0</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="usb-flash-drive-connect">
+<h2>USB flash drive connect:<a class="headerlink" href="#usb-flash-drive-connect" title="Permalink to this headline">¶</a></h2>
+<p>Maybe use this to block if someone plugs in an usb stick and rip some data from the server.</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">Jun 27 16:42:52 Lab14 kernel: usb 3-1.2: new full speed USB device using uhci_hcd and address 6</span>
+<span class="go">Jun 27 16:42:52 Lab14 kernel: usb 3-1.2: not running at top speed; connect to a high speed hub</span>
+<span class="go">Jun 27 16:42:52 Lab14 kernel: scsi5 : usb-storage 3-1.2:1.0</span>
+<span class="go">Jun 27 16:42:53 Lab14 kernel: scsi 5:0:0:0: Direct-Access     Ut165    USB2FlashStorage 0.00 PQ: 0 ANSI: 2</span>
+<span class="go">Jun 27 16:42:53 Lab14 kernel: sd 5:0:0:0: Attached scsi generic sg2 type 0</span>
+<span class="go">Jun 27 16:42:53 Lab14 kernel: sd 5:0:0:0: [sdb] 15794176 512-byte logical blocks: (8.08 GB/7.53 GiB)</span>
+<span class="go">Jun 27 16:42:53 Lab14 kernel: sd 5:0:0:0: [sdb] Write Protect is off</span>
+<span class="go">Jun 27 16:42:53 Lab14 kernel: sdb: unknown partition table</span>
+<span class="go">Jun 27 16:42:53 Lab14 kernel: sd 5:0:0:0: [sdb] Attached SCSI removable disk</span>
+<span class="go">Jun 27 16:43:01 Lab14 kernel: EXT3-fs: barriers not enabled</span>
+<span class="go">Jun 27 16:43:01 Lab14 kernel: kjournald starting.  Commit interval 5 seconds</span>
+<span class="go">Jun 27 16:43:01 Lab14 kernel: EXT3-fs (sdb): warning: maximal mount count reached, running e2fsck is recommended</span>
+<span class="go">Jun 27 16:43:01 Lab14 kernel: EXT3-fs (sdb): using internal journal</span>
+<span class="go">Jun 27 16:43:01 Lab14 kernel: EXT3-fs (sdb): mounted filesystem with writeback data mode</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+  <div class="section">
+  
+  
+  </div>
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2010-2015, OSSEC Project Team - OSSEC trademark and domain owned by Trend Micro, Inc. - Home page images courtesy of Pixbay.com.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

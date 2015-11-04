@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Log Samples from Racoon VPN &mdash; OSSEC</title>
+    
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/parallax.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '2.8.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-sphinx.js"></script>
+    <link rel="author" title="About these documents" href="../../../about.html" />
+    <link rel="top" title="OSSEC" href="../../../index.html" />
+  
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  
+  
+  <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+  
+  <style type="text/css">
+    ul.ablog-archive {list-style: none; overflow: auto; margin-left: 0px}
+    ul.ablog-archive li {float: left; margin-right: 5px; font-size: 80%}
+  </style>
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../../index.html"><img src="../../../_static/ossec_logo_bare_small.png">
+          OSSEC</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="../../../about.html">About <i class="fa fa-info-circle"></i></a></li>
+                <li><a href="../../../blog.html">Blog <i class="fa fa-archive"></i></a></li>
+                <li><a href="../../">Documentaton <i class="fa fa-book"></i></a></li>
+                <li><a href="../../../downloads.html">Downloads <i class="fa fa-download"></i></a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"></ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="section" id="log-samples-from-racoon-vpn">
+<h1>Log Samples from Racoon VPN<a class="headerlink" href="#log-samples-from-racoon-vpn" title="Permalink to this headline">¶</a></h1>
+<p><a href="#id1"><span class="problematic" id="id2">*</span></a>submited by Charles (kef_list &lt;<a class="reference external" href="mailto:kef_list&#37;&#52;&#48;ibacom&#46;es">kef_list<span>&#64;</span>ibacom<span>&#46;</span>es</a>&gt;) to the Ossec List.</p>
+<div class="section" id="good-login">
+<h2>Good login:<a class="headerlink" href="#good-login" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">2006-08-10 19:22:40: INFO: respond new phase 1 negotiation:</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>111.111.111.194[500]&lt;=&gt;83.36.51.44[500]</dt>
+<dd>2006-08-10 19:22:40: INFO: begin Aggressive mode.
+2006-08-10 19:22:40: INFO: received Vendor ID: draft-ietf-ipsec-nat-t-</dd>
+<dt>ike-02</dt>
+<dd>2006-08-10 19:22:41: INFO: ISAKMP-SA established 111.111.111.194</dd>
+<dt>[500]-83.36.51.44[500] spi:3ac2d5023f433d3e:e2d682b6f4fc4830</dt>
+<dd>2006-08-10 19:22:42: INFO: respond new phase 2 negotiation:</dd>
+<dt>111.111.111.194[0]&lt;=&gt;83.36.51.44[0]</dt>
+<dd>2006-08-10 19:22:42: INFO: no policy found, try to generate the</dd>
+<dt>policy <span class="classifier-delimiter">:</span> <span class="classifier">10.0.1.5/32[0] 10.15.13.224/27[0] proto=any dir=in</span></dt>
+<dd>2006-08-10 19:22:42: INFO: IPsec-SA established: ESP/Tunnel</dd>
+<dt>83.36.51.44-&gt;111.111.111.194 spi=188599340(0xb3dcc2c)</dt>
+<dd>2006-08-10 19:22:42: INFO: IPsec-SA established: ESP/Tunnel</dd>
+<dt>111.111.111.194-&gt;83.36.51.44 spi=19221256(0x1254b08)</dt>
+<dd>2006-08-10 19:22:42: ERROR: such policy does not already exist:</dd>
+<dt>10.0.1.5/32[0] 10.15.13.224/27[0] proto=any dir=in</dt>
+<dd>2006-08-10 19:22:42: ERROR: such policy does not already exist:</dd>
+<dt>10.0.1.5/32[0] 10.15.13.224/27[0] proto=any dir=fwd</dt>
+<dd>2006-08-10 19:22:42: ERROR: such policy does not already exist:</dd>
+</dl>
+<p>10.15.13.224/27[0] 10.0.1.5/32[0] proto=any dir=out</p>
+</div>
+<div class="section" id="this-line-indicates-that-the-initial-phase-1-auth-pskeys-or-certificates-have-been-exchanged-correctly">
+<h2>This line indicates that the initial phase 1 auth (pskeys or certificates) have been exchanged correctly:<a class="headerlink" href="#this-line-indicates-that-the-initial-phase-1-auth-pskeys-or-certificates-have-been-exchanged-correctly" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">2006-08-10 19:22:41: INFO: ISAKMP-SA established 111.111.111.194 [500]-83.36.51.44[500] spi:3ac2d5023f433d3e:e2d682b6f4fc4830</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="the-other-two-lines-to-notice-and-the-ones-that-definetly-say-we-have-a-new-vpn-established-are">
+<h2>The other two lines to notice, and the ones that definetly say we have a new VPN established are:<a class="headerlink" href="#the-other-two-lines-to-notice-and-the-ones-that-definetly-say-we-have-a-new-vpn-established-are" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">2006-08-10 19:22:42: INFO: IPsec-SA established: ESP/Tunnel 83.36.51.44-&gt;111.111.111.194 spi=188599340(0xb3dcc2c)</span>
+<span class="go">2006-08-10 19:22:42: INFO: IPsec-SA established: ESP/Tunnel 111.111.111.194-&gt;83.36.51.44 spi=19221256(0x1254b08)</span>
+</pre></div>
+</div>
+<p>(there are two, one for incomming traffic, another for outgoing
+traffic).</p>
+<p>Strangely enough the last 3 errror lines are NOT errors. They are
+caused because I am using a &#8220;roadwarrior&#8221; configuration where
+connections are allowed from variable IP addresses as opposed to the
+tipical VPN between two static IPs. They simply indicate that racoon
+as automatically created security policies for those IPs (and both
+sides are behind NAT).</p>
+<p>Another sample of GOOD login (in this case between two static IPs)</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">2006-02-19 11:09:25: INFO: respond new phase 1 negotiation: 80.34.246.154[500]&lt;=&gt;217.127.190.50[500]</span>
+<span class="go">2006-02-19 11:09:25: INFO: begin Identity Protection mode.</span>
+<span class="go">2006-02-19 11:09:26: WARNING: ignore INITIAL-CONTACT notification, because it is only accepted after phase1.</span>
+<span class="go">2006-02-19 11:09:26: INFO: ISAKMP-SA established 80.34.246.154 [500]-217.127.190.50[500] spi:bc013ca51d1a8745:9b95e47f6705088b</span>
+<span class="go">2006-02-19 11:09:26: INFO: respond new phase 2 negotiation: 80.34.246.154[0]&lt;=&gt;217.127.190.50[0]</span>
+<span class="go">2006-02-19 11:09:27: INFO: IPsec-SA established: ESP/Tunnel 217.127.190.50-&gt;80.34.246.154 spi=87487840(0x536f560)</span>
+<span class="go">2006-02-19 11:09:27: INFO: IPsec-SA established: ESP/Tunnel 80.34.246.154-&gt;217.127.190.50 spi=1290938215(0x4cf22767)</span>
+</pre></div>
+</div>
+<p>As you can see the last two lines are identical as the first case.</p>
+<p>WARNING: in both samples they represent a &#8220;tunnel&#8221; configuration. I
+do not know what they would look like in &#8220;transport&#8221; mode....</p>
+</div>
+<div class="section" id="now-here-are-some-samples-of-failled-logins-from-hackers-trying-to-get-in">
+<h2>Now here are some samples of FAILLED logins from hackers trying to get in:<a class="headerlink" href="#now-here-are-some-samples-of-failled-logins-from-hackers-trying-to-get-in" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">2006-08-08 01:42:08: INFO: respond new phase 1 negotiation: 111.111.111.194[500]&lt;=&gt;222.155.15.88[500]</span>
+<span class="go">2006-08-08 01:42:08: INFO: begin Identity Protection mode.</span>
+<span class="go">2006-08-08 01:42:08: INFO: received Vendor ID: MS NT5 ISAKMPOAKLEY</span>
+<span class="go">2006-08-08 01:42:09: ERROR: couldn&#39;t find the pskey for 222.155.15.88.</span>
+<span class="go">2006-08-08 01:42:09: ERROR: failed to process packet.</span>
+<span class="go">2006-08-08 01:42:09: ERROR: phase1 negotiation failed.</span>
+<span class="go">2006-08-08 01:43:12: ERROR: unknown Informational exchange received.</span>
+</pre></div>
+</div>
+<p>The interesting line is:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">2006-08-08 01:42:09: ERROR: couldn&#39;t find the pskey for 222.155.15.88.</span>
+</pre></div>
+</div>
+<p>Also, there is no INFO: ISAKMP-SA established... line because phase 1
+has failed.</p>
+<p>Here is another case of invalid login, this time the errors are
+caused because the hacker has used different settings for the many
+options that need to be set the same way on both sides to establish a
+VPN</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">2006-07-22 08:19:43: INFO: respond new phase 1 negotiation:</span>
+<span class="go">2006-07-22 08:19:43: INFO: begin Identity Protection mode.</span>
+<span class="go">2006-07-22 08:19:43: INFO: received Vendor ID: MS NT5 ISAKMPOAKLEY</span>
+<span class="go">2006-07-22 08:19:43: ERROR: invalid attribute type 32001.</span>
+<span class="go">2006-07-22 08:19:43: ERROR: invalid attribute type 32001.</span>
+<span class="go">2006-07-22 08:19:43: ERROR: invalid attribute type 32001.</span>
+<span class="go">2006-07-22 08:19:43: ERROR: invalid attribute type 32001.</span>
+<span class="go">2006-07-22 08:19:43: ERROR: rejected authmethod: DB (prop#1:trns#1):Peer(prop#1:trns#2) = pre-shared key:GSS-API on Kerberos 5</span>
+<span class="go">2006-07-22 08:19:43: ERROR: rejected authmethod: DB (prop#1:trns#1):Peer(prop#1:trns#4) = pre-shared key:GSS-API on Kerberos 5</span>
+<span class="go">2006-07-22 08:19:43: ERROR: rejected hashtype: DB(prop#1:trns#1):Peer (prop#1:trns#4) = SHA:MD5</span>
+<span class="go">2006-07-22 08:19:43: ERROR: rejected enctype: DB(prop#1:trns#1):Peer (prop#1:trns#6) = 3DES-CBC:DES-CBC</span>
+<span class="go">2006-07-22 08:19:43: ERROR: rejected authmethod: DB (prop#1:trns#1):Peer(prop#1:trns#6) = pre-shared key:GSS-API on Kerberos 5</span>
+<span class="go">2006-07-22 08:19:43: ERROR: rejected dh_group: DB(prop#1:trns#1):Peer (prop#1:trns#6) = 1024-bit MODP group:768-bit MODP group</span>
+<span class="go">2006-07-22 08:19:43: ERROR: rejected enctype: DB(prop#1:trns#1):Peer (prop#1:trns#8) = 3DES-CBC:DES-CBC</span>
+<span class="go">2006-07-22 08:19:43: ERROR: rejected authmethod: DB (prop#1:trns#1):Peer(prop#1:trns#8) = pre-shared key:GSS-API on Kerberos 5</span>
+<span class="go">2006-07-22 08:19:43: ERROR: rejected hashtype: DB(prop#1:trns#1):Peer (prop#1:trns#8) = SHA:MD5</span>
+<span class="go">2006-07-22 08:19:43: ERROR: rejected dh_group: DB(prop#1:trns#1):Peer (prop#1:trns#8) = 1024-bit MODP group:768-bit MODP group</span>
+<span class="go">2006-07-22 08:19:43: ERROR: no suitable proposal found.</span>
+<span class="go">2006-07-22 08:19:43: ERROR: failed to get valid proposal.</span>
+<span class="go">2006-07-22 08:19:43: ERROR: failed to process packet.</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+  <div class="section">
+  
+  
+  </div>
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2010-2015, OSSEC Project Team - OSSEC trademark and domain owned by Trend Micro, Inc. - Home page images courtesy of Pixbay.com.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

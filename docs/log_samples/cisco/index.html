@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Cisco Logs &mdash; OSSEC</title>
+    
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/parallax.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '2.8.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-sphinx.js"></script>
+    <link rel="author" title="About these documents" href="../../../about.html" />
+    <link rel="top" title="OSSEC" href="../../../index.html" />
+  
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  
+  
+  <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+  
+  <style type="text/css">
+    ul.ablog-archive {list-style: none; overflow: auto; margin-left: 0px}
+    ul.ablog-archive li {float: left; margin-right: 5px; font-size: 80%}
+  </style>
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../../index.html"><img src="../../../_static/ossec_logo_bare_small.png">
+          OSSEC</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="../../../about.html">About <i class="fa fa-info-circle"></i></a></li>
+                <li><a href="../../../blog.html">Blog <i class="fa fa-archive"></i></a></li>
+                <li><a href="../../">Documentaton <i class="fa fa-book"></i></a></li>
+                <li><a href="../../../downloads.html">Downloads <i class="fa fa-download"></i></a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"></ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="section" id="cisco-logs">
+<h1>Cisco Logs<a class="headerlink" href="#cisco-logs" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="cisco_ids.html">Log samples for the Cisco IDS/IPS module for IOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cisco_ios.html">Cisco IOS Samples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cisco_ios.html#full-log-sample">Full log sample:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cisco_ios.html#access-list-full-timestamp-and-message-id">Access list (full timestamp and message id):</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cisco_ios.html#configured">Configured:</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pix.html">Cisco PIX Logs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pix.html#log-samples-from-the-cisco-pix">Log Samples from the Cisco PIX:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pix.html#full-log-samples">Full log samples:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pix.html#alert-messages-severity-1">Alert Messages, Severity 1:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pix.html#critical-messages-severity-2">Critical Messages, Severity 2:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pix.html#error-messages-severity-3">Error Messages, Severity 3:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pix.html#warning-messages-severity-4">Warning Messages, Severity 4:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pix.html#notification-messages-severity-5">Notification Messages, Severity 5:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pix.html#informational-messages-severity-6">Informational Messages, Severity 6:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pix.html#debugging-messages-severity-7">Debugging Messages, Severity 7:</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="secure_acs.html">Cisco Secure ACS</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="secure_acs.html#here-is-a-sample-of-the-log-file-tracking-failed-login-attempts-filename-failed-attempt-2004-05-18-csv">Here is a sample of the log file tracking failed login attempts : filename = Failed Attempt 2004-05-18.csv</a></li>
+<li class="toctree-l2"><a class="reference internal" href="secure_acs.html#here-is-a-sample-of-the-log-file-tracking-successful-logins-filename-passed-authentications-2004-07-08-csv">Here is a sample of the log file tracking successful logins : filename = Passed Authentications 2004-07-08.csv</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+  <div class="section">
+  
+  
+  </div>
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2010-2015, OSSEC Project Team - OSSEC trademark and domain owned by Trend Micro, Inc. - Home page images courtesy of Pixbay.com.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

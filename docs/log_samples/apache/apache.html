@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Log Samples from Apache &mdash; OSSEC</title>
+    
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/parallax.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '2.8.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-sphinx.js"></script>
+    <link rel="author" title="About these documents" href="../../../about.html" />
+    <link rel="top" title="OSSEC" href="../../../index.html" />
+  
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  
+  
+  <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+  
+  <style type="text/css">
+    ul.ablog-archive {list-style: none; overflow: auto; margin-left: 0px}
+    ul.ablog-archive li {float: left; margin-right: 5px; font-size: 80%}
+  </style>
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../../index.html"><img src="../../../_static/ossec_logo_bare_small.png">
+          OSSEC</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="../../../about.html">About <i class="fa fa-info-circle"></i></a></li>
+                <li><a href="../../../blog.html">Blog <i class="fa fa-archive"></i></a></li>
+                <li><a href="../../">Documentaton <i class="fa fa-book"></i></a></li>
+                <li><a href="../../../downloads.html">Downloads <i class="fa fa-download"></i></a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"></ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="section" id="log-samples-from-apache">
+<h1>Log Samples from Apache<a class="headerlink" href="#log-samples-from-apache" title="Permalink to this headline">¶</a></h1>
+<p>Apache generally has two log files: apache error log and apache access log. &lt;br /&gt;
+The format of these files can be changed in the configuration, but these are&lt;br /&gt;
+the default formats:</p>
+<div class="section" id="apache-access-log-success-code-200">
+<h2>Apache access log (success - code 200):<a class="headerlink" href="#apache-access-log-success-code-200" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">192.168.2.20 - - [28/Jul/2006:10:27:10 -0300] &quot;GET /cgi-bin/try/ HTTP/1.0&quot; 200 3395</span>
+<span class="go">127.0.0.1 - - [28/Jul/2006:10:22:04 -0300] &quot;GET / HTTP/1.0&quot; 200 2216</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="apache-access-log-failure-code-4xx">
+<h2>Apache access log (failure - code 4xx):<a class="headerlink" href="#apache-access-log-failure-code-4xx" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">127.0.0.1 - - [28/Jul/2006:10:27:32 -0300] &quot;GET /hidden/ HTTP/1.0&quot; 404 7218</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="apache-unnacepted-request-methods-caused-by-tortoisesvn">
+<h2>Apache unnacepted request methods (caused by TortoiseSVN):<a class="headerlink" href="#apache-unnacepted-request-methods-caused-by-tortoisesvn" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">x.x.x.90 - - [13/Sep/2006:07:01:53 -0700] &quot;PROPFIND /svn/[xxxx]/Extranet/branches/SOW-101 HTTP/1.1&quot; 401 587</span>
+<span class="go">x.x.x.90 - - [13/Sep/2006:07:01:51 -0700] &quot;PROPFIND /svn/[xxxx]/[xxxx]/trunk HTTP/1.1&quot; 401 587</span>
+<span class="go">x.x.x.90 - - [13/Sep/2006:07:00:53 -0700] &quot;PROPFIND /svn/[xxxx]/[xxxx]/2.5 HTTP/1.1&quot; 401 587</span>
+<span class="go">x.x.x.90 - - [13/Sep/2006:07:00:53 -0700] &quot;PROPFIND /svn/[xxxx]/Extranet/branches/SOW-101 HTTP/1.1&quot; 401 587</span>
+<span class="go">x.x.x.90 - - [13/Sep/2006:07:00:21 -0700] &quot;PROPFIND /svn/[xxxx]/[xxxx]/trunk HTTP/1.1&quot; 401 587</span>
+<span class="go">x.x.x.90 - - [13/Sep/2006:06:59:53 -0700] &quot;PROPFIND /svn/[xxxx]/[xxxx]/2.5 HTTP/1.1&quot; 401 587</span>
+<span class="go">x.x.x.90 - - [13/Sep/2006:06:59:50 -0700] &quot;PROPFIND /svn/[xxxx]/[xxxx]/trunk HTTP/1.1&quot; 401 587</span>
+<span class="go">x.x.x.90 - - [13/Sep/2006:06:58:52 -0700] &quot;PROPFIND /svn/[xxxx]/[xxxx]/trunk HTTP/1.1&quot; 401 587</span>
+<span class="go">x.x.x.90 - - [13/Sep/2006:06:58:52 -0700] &quot;PROPFIND /svn/[xxxx]/Extranet/branches/SOW-101 HTTP/1.1&quot; 401 587</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="apache-error-log">
+<h2>Apache error log:<a class="headerlink" href="#apache-error-log" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">[Fri Dec 16 01:46:23 2005] [error] [client 1.2.3.4] Directory index forbidden by rule: /home/test/</span>
+<span class="go">[Fri Dec 16 01:54:34 2005] [error] [client 1.2.3.4] Directory index forbidden by rule: /apache/web-data/test2</span>
+<span class="go">[Fri Dec 16 02:25:55 2005] [error] [client 1.2.3.4] Client sent malformed Host header</span>
+<span class="go">[Mon Dec 19 23:02:01 2005] [error] [client 1.2.3.4] user test: authentication failure for &quot;/~dcid/test1&quot;: Password Mismatch</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="apache-error-log-startup-3-examples">
+<h2>Apache error log (startup) 3 examples:<a class="headerlink" href="#apache-error-log-startup-3-examples" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">** Normal (v2.x)</span>
+<span class="go">[Sat Aug 12 04:05:51 2006] [notice] Apache/1.3.11 (Unix) mod_perl/1.21 configured -- resuming normal operations</span>
+<span class="go">[Thu Jun 22 14:20:55 2006] [notice] Digest: generating secret for digest authentication ...</span>
+<span class="go">[Thu Jun 22 14:20:55 2006] [notice] Digest: done</span>
+<span class="go">[Thu Jun 22 14:20:55 2006] [notice] Apache/2.0.46 (Red Hat) DAV/2 configured -- resuming normal operations</span>
+
+<span class="go">** Restart by HUP signal (optional suEXEC)</span>
+<span class="go">[Sat Aug 12 04:05:49 2006] [notice] SIGHUP received.  Attempting to restart</span>
+<span class="go">[Sat Aug 12 04:05:51 2006] [notice] suEXEC mechanism enabled (wrapper: /usr/local/apache/sbin/suexec)</span>
+
+<span class="go">** after &#39;unclean&#39; shutdown (left over PID file)</span>
+<span class="go">[Sat Jun 24 09:06:22 2006] [warn] pid file /opt/CA/BrightStorARCserve/httpd/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?</span>
+<span class="go">[Sat Jun 24 09:06:23 2006] [notice] Apache/2.0.46 (Red Hat) DAV/2 configured -- resuming normal operations</span>
+<span class="go">[Sat Jun 24 09:06:22 2006] [notice] Digest: generating secret for digest authentication ...</span>
+<span class="go">[Sat Jun 24 09:06:22 2006] [notice] Digest: done</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="apache-error-log-shutdown-by-term-signal">
+<h2>Apache error log (shutdown by TERM signal):<a class="headerlink" href="#apache-error-log-shutdown-by-term-signal" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">[Thu Jun 22 11:35:48 2006] [notice] caught SIGTERM, shutting down</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="apache-without-resources">
+<h2>Apache without resources:<a class="headerlink" href="#apache-without-resources" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">[Tue Mar 08 10:34:21 2005] [error] (11)Resource temporarily unavailable: fork: Unable to fork new process</span>
+<span class="go">[Tue Mar 08 10:34:31 2005] [error] (11)Resource temporarily unavailable: fork: Unable to fork new process</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+  <div class="section">
+  
+  
+  </div>
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2010-2015, OSSEC Project Team - OSSEC trademark and domain owned by Trend Micro, Inc. - Home page images courtesy of Pixbay.com.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

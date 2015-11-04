@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>ossec-reportd &mdash; OSSEC</title>
+    
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/parallax.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '2.8.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="top" title="OSSEC" href="../../index.html" />
+  
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  
+  
+  <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+  
+  <style type="text/css">
+    ul.ablog-archive {list-style: none; overflow: auto; margin-left: 0px}
+    ul.ablog-archive li {float: left; margin-right: 5px; font-size: 80%}
+  </style>
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html"><img src="../../_static/ossec_logo_bare_small.png">
+          OSSEC</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="../../about.html">About <i class="fa fa-info-circle"></i></a></li>
+                <li><a href="../../blog.html">Blog <i class="fa fa-archive"></i></a></li>
+                <li><a href="../">Documentaton <i class="fa fa-book"></i></a></li>
+                <li><a href="../../downloads.html">Downloads <i class="fa fa-download"></i></a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"></ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="section" id="ossec-reportd">
+<span id="id1"></span><h1>ossec-reportd<a class="headerlink" href="#ossec-reportd" title="Permalink to this headline">¶</a></h1>
+<blockquote>
+<div><p><tt class="docutils literal"><span class="pre">ossec-reportd</span></tt> is a program to create reports from OSSEC alerts.
+<tt class="docutils literal"><span class="pre">ossec-reportd</span></tt> accepts alerts on <tt class="docutils literal"><span class="pre">stdin</span></tt>, and outputs a report on <tt class="docutils literal"><span class="pre">stderr</span></tt>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Since <tt class="docutils literal"><span class="pre">ossec-reportd</span></tt> outputs to stderr some utilities like <tt class="docutils literal"><span class="pre">less</span></tt> will not work if you do not redirect the output.
+End the ossec-reportd with <tt class="docutils literal"><span class="pre">2&gt;&amp;1</span></tt> to redirect stderr to stdout. <tt class="docutils literal"><span class="pre">more</span></tt> or <tt class="docutils literal"><span class="pre">less</span></tt> can be easily used after the stderr redirect.</p>
+</div>
+</div></blockquote>
+<div class="section" id="ossec-reportd-argument-options">
+<h2>ossec-reportd argument options<a class="headerlink" href="#ossec-reportd-argument-options" title="Permalink to this headline">¶</a></h2>
+<dl class="option">
+<dt id="cmdoption-ossec-reportd-D">
+<tt class="descname">-D</tt><tt class="descclassname"> &lt;dir&gt;</tt><a class="headerlink" href="#cmdoption-ossec-reportd-D" title="Permalink to this definition">¶</a></dt>
+<dd><p>chroot to <tt class="docutils literal"><span class="pre">&lt;dir&gt;</span></tt>.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-ossec-reportd-d">
+<tt class="descname">-d</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-ossec-reportd-d" title="Permalink to this definition">¶</a></dt>
+<dd><p>Execute ossec-reportd in debug mode. This option can be used multiple times to increase the verbosity of the debug messages.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-ossec-reportd-f">
+<tt class="descname">-f</tt><tt class="descclassname"> &lt;filter&gt; &lt;value&gt;</tt><a class="headerlink" href="#cmdoption-ossec-reportd-f" title="Permalink to this definition">¶</a></dt>
+<dd><p>Filter the results.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Allowed filters: group, rule, level, location, user, srcip, and filename.</p>
+</div>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-ossec-reportd-h">
+<tt class="descname">-h</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-ossec-reportd-h" title="Permalink to this definition">¶</a></dt>
+<dd><p>Display the help message</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-ossec-reportd-n">
+<tt class="descname">-n</tt><tt class="descclassname"> &lt;string&gt;</tt><a class="headerlink" href="#cmdoption-ossec-reportd-n" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a description for the report.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-ossec-reportd-r">
+<tt class="descname">-r</tt><tt class="descclassname"> &lt;filter&gt; &lt;value&gt;</tt><a class="headerlink" href="#cmdoption-ossec-reportd-r" title="Permalink to this definition">¶</a></dt>
+<dd><p>Show related entries.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-ossec-reportd-s">
+<tt class="descname">-s</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-ossec-reportd-s" title="Permalink to this definition">¶</a></dt>
+<dd><p>Show the alerts related to the summary.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-ossec-reportd-V">
+<tt class="descname">-V</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-ossec-reportd-V" title="Permalink to this definition">¶</a></dt>
+<dd><p>Display OSSEC Version and license information.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="ossec-reportd-example-usage">
+<h2>ossec-reportd example usage<a class="headerlink" href="#ossec-reportd-example-usage" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="example-1-show-successful-logins">
+<h3>Example 1: Show Successful Logins<a class="headerlink" href="#example-1-show-successful-logins" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">#</span> cat /var/ossec/logs/alerts/alerts.log <span class="p">|</span> /var/ossec/bin/ossec-reportd -f group authentication_success
+</pre></div>
+</div>
+</div>
+<div class="section" id="example-2-show-alerts-level-10-and-greater">
+<h3>Example 2: Show Alerts Level 10 and Greater<a class="headerlink" href="#example-2-show-alerts-level-10-and-greater" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">#</span> cat /var/ossec/logs/alerts/alerts.log <span class="p">|</span> /var/ossec/bin/ossec-reportd -f level 10
+</pre></div>
+</div>
+</div>
+<div class="section" id="example-3-show-the-srcip-for-all-users">
+<h3>Example 3: Show the srcip for all users<a class="headerlink" href="#example-3-show-the-srcip-for-all-users" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">#</span> cat /var/ossec/logs/alerts/alerts.log <span class="p">|</span> /var/ossec/bin/ossec-reportd -f group authentication -r user srcip
+</pre></div>
+</div>
+</div>
+<div class="section" id="example-4-show-changed-files-as-reported-by-syscheck">
+<h3>Example 4: Show Changed files as reported by Syscheck<a class="headerlink" href="#example-4-show-changed-files-as-reported-by-syscheck" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">#</span> cat /var/ossec/logs/alerts/alerts.log <span class="p">|</span> /var/ossec/bin/ossec-reportd -f group syscheck -r location filename
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="example-output">
+<h2>Example output<a class="headerlink" href="#example-output" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none"><div class="highlight"><pre># cat /var/ossec/logs/alerts/alerts.log | /var/ossec/bin/ossec-reportd 2&gt;&amp;1 | more
+2011/07/11 21:01:36 ossec-reportd: INFO: Started (pid: 1444).
+2011/07/11 21:01:41 ossec-reportd: INFO: Report completed. Creating output...
+
+Report completed. ==
+------------------------------------------------
+-&gt;Processed alerts: 17
+-&gt;Post-filtering alerts: 17
+-&gt;First alert: 2011 Jul 11 00:00:46
+-&gt;Last alert: 2011 Jul 11 00:16:52
+
+
+Top entries for &#39;Username&#39;:
+------------------------------------------------
+_nrpe                                           |6       |
+SYSTEM                                          |2       |
+
+
+Top entries for &#39;Level&#39;:
+------------------------------------------------
+Severity 3                                      |13      |
+Severity 2                                      |4       |
+
+
+Top entries for &#39;Group&#39;:
+------------------------------------------------
+syslog                                          |10      |
+sudo                                            |6       |
+dropbearrecon                                   |4       |
+ossec                                           |4       |
+sshd                                            |4       |
+authentication_success                          |2       |
+windows                                         |2       |
+clamd                                           |1       |
+freshclam                                       |1       |
+virus                                           |1       |
+
+
+Top entries for &#39;Location&#39;:
+------------------------------------------------
+ix-&gt;/var/log/secure                             |4       |
+ix-&gt;ossec-logcollector                          |3       |
+(vistapc) 192.168.17.0-&gt;WinEvtLog               |2       |
+buffalo1-&gt;/var/log/secure                       |2       |
+buffalo2-&gt;/var/log/secure                       |2       |
+(junction) 192.168.17.17-&gt;/var/log/secure       |1       |
+(junction) 192.168.17.17-&gt;ossec-logcollector    |1       |
+ix-&gt;/var/log/local6                             |1       |
+junction-&gt;/var/log/secure                       |1       |
+
+
+Top entries for &#39;Rule&#39;:
+------------------------------------------------
+5402 - Successful sudo to ROOT executed         |6       |
+51006 - Client exited before authentication.    |4       |
+591 - Log file rotated.                         |4       |
+18107 - Windows Logon Success.                  |2       |
+52507 - ClamAV database update                  |1       |
+</pre></div>
+</div>
+</div>
+</div>
+
+  <div class="section">
+  
+  
+  </div>
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2010-2015, OSSEC Project Team - OSSEC trademark and domain owned by Trend Micro, Inc. - Home page images courtesy of Pixbay.com.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

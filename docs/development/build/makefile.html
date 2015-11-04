@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Makefile &mdash; OSSEC</title>
+    
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/parallax.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '2.8.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-sphinx.js"></script>
+    <link rel="author" title="About these documents" href="../../../about.html" />
+    <link rel="top" title="OSSEC" href="../../../index.html" />
+  
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  
+  
+  <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+  
+  <style type="text/css">
+    ul.ablog-archive {list-style: none; overflow: auto; margin-left: 0px}
+    ul.ablog-archive li {float: left; margin-right: 5px; font-size: 80%}
+  </style>
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../../index.html"><img src="../../../_static/ossec_logo_bare_small.png">
+          OSSEC</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="../../../about.html">About <i class="fa fa-info-circle"></i></a></li>
+                <li><a href="../../../blog.html">Blog <i class="fa fa-archive"></i></a></li>
+                <li><a href="../../">Documentaton <i class="fa fa-book"></i></a></li>
+                <li><a href="../../../downloads.html">Downloads <i class="fa fa-download"></i></a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"></ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="section" id="makefile">
+<span id="build-makefile"></span><h1>Makefile<a class="headerlink" href="#makefile" title="Permalink to this headline">¶</a></h1>
+<p>OSSEC is using (starting with 2.9) a single Makefile to build the binaries
+for each installation type.
+The <tt class="docutils literal"><span class="pre">Makefile</span></tt> uses features of <a class="reference external" href="http://www.gnu.org/software/make/">GNU make</a>,
+and it is a requirement of the build process.
+The make system attempts to perform all necessary tasks in a single run.
+The type of installation must be specified when executed because there
+is no state stored between executions.</p>
+<div class="section" id="settings">
+<h2>Settings<a class="headerlink" href="#settings" title="Permalink to this headline">¶</a></h2>
+<p>All changes to the makefile that take external input should be reported
+via the settings build step. This allows troubleshooting and review of
+the environment, and the hope is that some new features will become
+discoverable for other developers.</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">%</span> make <span class="nv">DATABASE</span><span class="o">=</span>mysql <span class="nv">TARGET</span><span class="o">=</span>server <span class="nv">USE_ZEROMQ</span><span class="o">=</span><span class="m">1</span> <span class="nv">USE_GEOIP</span><span class="o">=</span><span class="m">1</span> settings
+
+<span class="go">General settings:</span>
+<span class="go">    TARGET:          server</span>
+<span class="go">    V:</span>
+<span class="go">    DEBUG:</span>
+<span class="go">    DEBUGAD</span>
+<span class="go">    PREFIX:          /var/ossec</span>
+<span class="go">    MAXAGENTS:       2048</span>
+<span class="go">    DATABASE:        mysql</span>
+<span class="go">User settings:</span>
+<span class="go">    OSSEC_GROUP:     ossec</span>
+<span class="go">    OSSEC_USER:      ossec</span>
+<span class="go">    OSSEC_USER_MAIL: ossecm</span>
+<span class="go">    OSSEC_USER_REM:  ossecr</span>
+<span class="go">Lua settings:</span>
+<span class="go">    LUA_PLAT:       macosx</span>
+<span class="go">USE settings:</span>
+<span class="go">    USE_ZEROMQ:     1</span>
+<span class="go">    USE_GEOIP:      1</span>
+<span class="go">    USE_PRELUDE:    0</span>
+<span class="go">Mysql settings:</span>
+<span class="go">    includes:       -I/usr/include/mysql/</span>
+<span class="go">    libs:           -L/usr/lib/mysql -lmysqlclient</span>
+<span class="go">Pgsql settings:</span>
+<span class="go">    includes:</span>
+<span class="go">    libs:</span>
+<span class="go">Defines:</span>
+<span class="go">    -DMAX_AGENTS=2048 -DOSSECHIDS -DDarwin -DHIGHFIRST -DZEROMQ_OUTPUT  -DGEOIP -DUMYSQL</span>
+<span class="go">Compiler:</span>
+<span class="go">    CFLAGS          -DMAX_AGENTS=2048 -DOSSECHIDS -DDarwin -DHIGHFIRST -DZEROMQ_OUTPUT  -DGEOIP -DUMYSQL  -Wall -Wextra -O2 -I./ -I./headers/</span>
+<span class="go">    LDFLAGS         -lzmq -lczmq -lGeoIP -L/usr/lib/mysql -lmysqlclient</span>
+<span class="go">    CC              cc</span>
+<span class="go">    MAKE            /Applications/Xcode.app/Contents/Developer/usr/bin/make</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="options-varaiables">
+<h2>Options / Varaiables<a class="headerlink" href="#options-varaiables" title="Permalink to this headline">¶</a></h2>
+<dl class="envvar">
+<dt id="envvar-TARGET">
+<tt class="descname">TARGET</tt><a class="headerlink" href="#envvar-TARGET" title="Permalink to this definition">¶</a></dt>
+<dd><p>Defines the type of installation to build.</p>
+<p><strong>Allowed:</strong> server/agent/hybrid/local</p>
+</dd></dl>
+
+<dl class="envvar">
+<dt id="envvar-V">
+<tt class="descname">V</tt><a class="headerlink" href="#envvar-V" title="Permalink to this definition">¶</a></dt>
+<dd><p><tt class="docutils literal"><span class="pre">V</span></tt> can toggle verbose building, and will instruct <tt class="docutils literal"><span class="pre">make</span></tt> to
+display the full output without color.</p>
+<p><strong>Applies to Target:</strong> all</p>
+<p><strong>Default:</strong> 0</p>
+<p><strong>Allowed:</strong> 0/1</p>
+</dd></dl>
+
+<dl class="envvar">
+<dt id="envvar-PREFIX">
+<tt class="descname">PREFIX</tt><a class="headerlink" href="#envvar-PREFIX" title="Permalink to this definition">¶</a></dt>
+<dd><p><tt class="docutils literal"><span class="pre">PREFIX</span></tt> is the absolute path OSSEC will be installed to.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Please note that paths with SPACES and tabs in them are not supported and
+may cause compilation or runtime issues.</p>
+</div>
+<p><strong>Applies to Target:</strong> all</p>
+<p><strong>Default:</strong> /var/ossec</p>
+<p><strong>Allowed:</strong> All valid paths</p>
+</dd></dl>
+
+<dl class="envvar">
+<dt id="envvar-MAXAGENTS">
+<tt class="descname">MAXAGENTS</tt><a class="headerlink" href="#envvar-MAXAGENTS" title="Permalink to this definition">¶</a></dt>
+<dd><p>OSSEC is compiled with a maximum number of agents on the server/hybrid TARGETS.
+<tt class="docutils literal"><span class="pre">MAXAGENTS</span></tt> allows users to select values expected for their environment.</p>
+<p><strong>Applies to Target:</strong> server/hybrid</p>
+<p><strong>Default:</strong> 2048</p>
+<p><strong>Allowed:</strong>  [2 - 65000]</p>
+</dd></dl>
+
+<dl class="envvar">
+<dt id="envvar-DEBUG">
+<tt class="descname">DEBUG</tt><a class="headerlink" href="#envvar-DEBUG" title="Permalink to this definition">¶</a></dt>
+<dd><p><tt class="docutils literal"><span class="pre">DEBUG</span></tt> enables debugging symbols in all compiled programs.</p>
+<p><strong>Applies to Target:</strong> all</p>
+<p><strong>Default:</strong> 0</p>
+<p><strong>Allowed:</strong> 0/1</p>
+</dd></dl>
+
+<dl class="envvar">
+<dt id="envvar-DEBUGAD">
+<tt class="descname">DEBUGAD</tt><a class="headerlink" href="#envvar-DEBUGAD" title="Permalink to this definition">¶</a></dt>
+<dd><p><tt class="docutils literal"><span class="pre">DEBUGAD</span></tt> enables extra debugging logging in ossec-analysisd.</p>
+<p><strong>Applies to Target:</strong> server/hybrid</p>
+<p><strong>Default:</strong> 0</p>
+<p><strong>Allowed:</strong> 0/1</p>
+</dd></dl>
+
+<dl class="envvar">
+<dt id="envvar-OSSEC_USER">
+<tt class="descname">OSSEC_USER</tt><a class="headerlink" href="#envvar-OSSEC_USER" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Default:</strong> ossec</p>
+</dd></dl>
+
+<dl class="envvar">
+<dt id="envvar-OSSEC_GROUP">
+<tt class="descname">OSSEC_GROUP</tt><a class="headerlink" href="#envvar-OSSEC_GROUP" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Default:</strong> ossec</p>
+</dd></dl>
+
+<dl class="envvar">
+<dt id="envvar-OSSEC_USER_MAIL">
+<tt class="descname">OSSEC_USER_MAIL</tt><a class="headerlink" href="#envvar-OSSEC_USER_MAIL" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Default:</strong> ossecm</p>
+</dd></dl>
+
+<dl class="envvar">
+<dt id="envvar-OSSEC_USER_REM">
+<tt class="descname">OSSEC_USER_REM</tt><a class="headerlink" href="#envvar-OSSEC_USER_REM" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Default:</strong> ossecr</p>
+</dd></dl>
+
+<dl class="envvar">
+<dt id="envvar-LUA_PLAT">
+<tt class="descname">LUA_PLAT</tt><a class="headerlink" href="#envvar-LUA_PLAT" title="Permalink to this definition">¶</a></dt>
+<dd><p><tt class="docutils literal"><span class="pre">LUA_PLAT</span></tt> determines the platform that LUA will be compiled for.</p>
+<p>This is autogenerated for each install.</p>
+<p><strong>Applies to Target:</strong> all</p>
+</dd></dl>
+
+<dl class="envvar">
+<dt id="envvar-USE_GEOIP">
+<tt class="descname">USE_GEOIP</tt><a class="headerlink" href="#envvar-USE_GEOIP" title="Permalink to this definition">¶</a></dt>
+<dd><p><tt class="docutils literal"><span class="pre">USE_GEOIP</span></tt> enables support for <a class="reference external" href="https://www.maxmind.com/en/geoip2-services-and-databases">MAX Mind GeoIP</a>
+looks on output.</p>
+<p><strong>Applies to Target:</strong> server/hybrid/local</p>
+<p><strong>Default:</strong> 0</p>
+<p><strong>Allowed:</strong> 0/1</p>
+</dd></dl>
+
+<dl class="envvar">
+<dt id="envvar-USE_PRELUDE">
+<tt class="descname">USE_PRELUDE</tt><a class="headerlink" href="#envvar-USE_PRELUDE" title="Permalink to this definition">¶</a></dt>
+<dd><p><tt class="docutils literal"><span class="pre">USE_PRELUDE</span></tt> enables support for
+<a class="reference external" href="https://www.prelude-ids.org">Prelude-IDS</a> alert output.</p>
+<p><strong>Applies to Target:</strong> server/hybrid/local</p>
+<p><strong>Default:</strong> 0</p>
+<p><strong>Allowed:</strong> 0/1</p>
+</dd></dl>
+
+<dl class="envvar">
+<dt id="envvar-USE_ZEROMQ">
+<tt class="descname">USE_ZEROMQ</tt><a class="headerlink" href="#envvar-USE_ZEROMQ" title="Permalink to this definition">¶</a></dt>
+<dd><p><tt class="docutils literal"><span class="pre">USE_ZEROMQ</span></tt> enables support for zeromq output.</p>
+<p><strong>Applies to Target:</strong> server/hybrid/local</p>
+<p><strong>Default:</strong> 0</p>
+<p><strong>Allowed:</strong> 0/1</p>
+</dd></dl>
+
+<dl class="envvar">
+<dt id="envvar-DATABASE">
+<tt class="descname">DATABASE</tt><a class="headerlink" href="#envvar-DATABASE" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <tt class="docutils literal"><span class="pre">DATABASE</span></tt> variable selects the database
+enviromnet to enable.</p>
+<p><strong>Applies to Target:</strong> server/hybrid/local</p>
+<p><strong>Allowed:</strong> mysql/pgsql</p>
+</dd></dl>
+
+</div>
+</div>
+
+  <div class="section">
+  
+  
+  </div>
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2010-2015, OSSEC Project Team - OSSEC trademark and domain owned by Trend Micro, Inc. - Home page images courtesy of Pixbay.com.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

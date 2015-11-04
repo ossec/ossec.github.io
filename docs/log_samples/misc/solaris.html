@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Log Samples from Solaris 8/9 &mdash; OSSEC</title>
+    
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/parallax.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '2.8.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-sphinx.js"></script>
+    <link rel="author" title="About these documents" href="../../../about.html" />
+    <link rel="top" title="OSSEC" href="../../../index.html" />
+  
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  
+  
+  <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+  
+  <style type="text/css">
+    ul.ablog-archive {list-style: none; overflow: auto; margin-left: 0px}
+    ul.ablog-archive li {float: left; margin-right: 5px; font-size: 80%}
+  </style>
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../../index.html"><img src="../../../_static/ossec_logo_bare_small.png">
+          OSSEC</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="../../../about.html">About <i class="fa fa-info-circle"></i></a></li>
+                <li><a href="../../../blog.html">Blog <i class="fa fa-archive"></i></a></li>
+                <li><a href="../../">Documentaton <i class="fa fa-book"></i></a></li>
+                <li><a href="../../../downloads.html">Downloads <i class="fa fa-download"></i></a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"></ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="section" id="log-samples-from-solaris-8-9">
+<h1>Log Samples from Solaris 8/9<a class="headerlink" href="#log-samples-from-solaris-8-9" title="Permalink to this headline">¶</a></h1>
+<p>Solaris doesn&#8217;t include the source server name in their Syslog message.  So you can&#8217;t forward Solaris Syslog message directly to Ossec.</p>
+<p>The Problem: The problem exists in the way, the Syslog messages are formatted from Solaris 8/9. As an example, we take the following sample Syslog message:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">Aug  2 11:49:23 su: [ID 366847 auth.info] &#39;su root&#39; succeeded for root on /dev/console</span>
+</pre></div>
+</div>
+<p>This message is missing the source, which has to be before the Syslogtag, as it is defined in RFC3164. So correctly, the Syslog would have to look like this:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">Aug  2 11:49:23 mymaschine su: [ID 366847 auth.info] &#39;su root&#39; succeeded for root on /dev/console</span>
+</pre></div>
+</div>
+<p>In order to format the Syslog message to be compliant with RFC3164, you need to set-up Syslog-ng and forward the Syslog message to it.  Make sure you change the syslog receiving port of ossec or syslog-ng.</p>
+<div class="section" id="su">
+<h2>SU:<a class="headerlink" href="#su" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">Dec 12 00:00:00 machinename su: [ID 366847 auth.info] &#39;su oracle&#39; succeeded for root on /dev/???</span>
+
+<span class="go">Dec 12 00:23:28 machinename su: [ID 366847 auth.info] &#39;su oracle&#39; failed for root on /dev/???</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="sendmail">
+<h2>SENDMAIL:<a class="headerlink" href="#sendmail" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">Dec 12 00:00:02 machinename sendmail[20512]: [ID 801593 mail.info] kBC502520512: from=root, size=301, class=0, nrcpts=1, msgid=&lt;200612120500.kBC502520512@name.domain.com&gt;, relay=root@localhost</span>
+
+<span class="go">Dec 12 00:00:03 machinename sendmail[20514]: [ID 801593 mail.info] kBC502520512: to=root, ctladdr=root (0/1), delay=00:00:01, xdelay=00:00:01, mailer=local, pri=120301, relay=local, dsn=2.0.0, stat=Sent</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="sshd">
+<h2>SSHD:<a class="headerlink" href="#sshd" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">Dec 12 00:10:55 machinename sshd[21698]: [ID 800047 auth.info] User blablabla not allowed because account is locked</span>
+
+<span class="go">Dec 12 00:10:55 machinename sshd[21698]: [ID 800047 auth.info] Failed none for invalid user blablabla from 192.168.0.1 port 40410 ssh2</span>
+
+<span class="go">Dec 12 00:10:55 machinename sshd[21698]: [ID 800047 auth.info] Failed password for invalid user blablabla from 192.168.0.1 port 40410 ssh2</span>
+
+<span class="go">Dec 12 09:33:48 machinename sshd[18195]: [ID 800047 auth.info] Failed keyboard-interactive for blablabla from 192.168.0.1 port 1530 ssh2</span>
+
+<span class="go">Dec 12 09:33:50 machinename sshd[18195]: [ID 800047 auth.info] Accepted password for blablabla from 192.168.0.1 port 1530 ssh2</span>
+
+<span class="go">Dec 12 23:59:54 machinename sshd[24191]: [ID 800047 auth.info] User blablabla not allowed because account is locked</span>
+
+<span class="go">Dec 12 09:33:25 machinename sshd[18094]: [ID 800047 auth.info] User blablabla password has expired (root forced)</span>
+
+<span class="go">Dec 12 01:30:04 machinename sshd[11819]: [ID 800047 auth.info] Accepted publickey for blablabla from 192.168.0.1 port 4527 ssh2</span>
+
+<span class="go">Dec 12 01:30:04 machinename sshd[11821]: [ID 800047 auth.info] subsystem request for sftp</span>
+
+<span class="go">Dec 12 01:30:06 machinename sshd[15907]: [ID 800047 auth.info] Postponed publickey for blablabla from 192.168.0.1 port 4528 ssh2</span>
+
+<span class="go">Dec 12 08:00:03 machinename sshd[3399]: [ID 800047 auth.info] Authentication tried for root with correct key but not from a permitted host (host=hostname, ip=10.11.10.8).</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="ftp">
+<h2>FTP:<a class="headerlink" href="#ftp" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">Dec 12 01:09:29 machinename inetd[301]: [ID 317013 daemon.notice] ftp[8378] from 192.168.0.1 25143</span>
+
+<span class="go">Dec 12 01:22:23 machinename inetd[301]: [ID 317013 daemon.notice] ftp[10504] from 192.168.0.1 6719</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="in-ftpd">
+<h2>IN.FTPD:<a class="headerlink" href="#in-ftpd" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">Dec 12 01:09:29 machinename in.ftpd[8378]: [ID 373804 daemon.info] connection from name.domain.com at Tue Dec 12 01:09:29 2006</span>
+
+<span class="go">Dec 12 01:22:24 machinename in.ftpd[10504]: [ID 373804 daemon.info] connection from name.domain.com at Tue Dec 12 01:22:24 2006</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="named-xfer">
+<h2>NAMED-XFER:<a class="headerlink" href="#named-xfer" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">Dec 12 02:23:45 machinename named-xfer[9924]: [ID 140103 daemon.info] send AXFR query 0 to 192.168.0.1</span>
+
+<span class="go">Dec 12 03:13:10 machinename named-xfer[368]: [ID 140103 daemon.info] send AXFR query 0 to 192.168.0.1</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="named">
+<h2>NAMED:<a class="headerlink" href="#named" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">Dec 12 03:13:10 machinename named[311]: [ID 295310 local2.warning] default: warning: owner name &quot;name.domain.com&quot; IN (secondary) is invalid - proceeding anyway</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="limdaemon">
+<h2>LIMDAEMON:<a class="headerlink" href="#limdaemon" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">Dec 12 07:27:49 machinename limdaemon: [ID 701944 user.notice] login by blablabla (pid=24835,cost=1)</span>
+
+<span class="go">Dec 12 07:27:52 machinename limdaemon: [ID 709948 user.notice] logout by blablabla (pid=24835)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="proftpd">
+<h2>PROFTPD:<a class="headerlink" href="#proftpd" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">Dec 12 07:40:32 machinename proftpd[16601]: [ID 567783 daemon.info] qcdevasq (name.domain.com[192.168.0.1]) - FTP session opened.</span>
+
+<span class="go">Dec 12 07:40:32 machinename proftpd[16601]: [ID 567783 auth.notice] qcdevasq (name.domain.com[192.168.0.1]) - USER blablabla: Login successful.</span>
+
+<span class="go">Dec 12 07:40:32 machinename proftpd[16601]: [ID 567783 daemon.info] qcdevasq (name.domain.com[192.168.0.1]) - FTP session closed.</span>
+
+<span class="go">Dec 12 09:33:46 machinename proftpd[20958]: [ID 567783 daemon.info] qcmtlasi (name.domain.com[192.168.0.1]) - FTP session closed.</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="ftpd">
+<h2>FTPD:<a class="headerlink" href="#ftpd" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">Dec 12 07:41:11 machinename ftpd[10209]: [ID 210975 daemon.info] ANONYMOUS FTP LOGIN FROM name.domain.com [192.168.0.1], blablabla</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="login">
+<h2>LOGIN:<a class="headerlink" href="#login" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">Dec 12 08:43:50 machinename login: [ID 507249 auth.notice] Login failure on /dev/pts/7 from name.domain.com, blablabla</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="bsm">
+<h2>BSM:<a class="headerlink" href="#bsm" title="Permalink to this headline">¶</a></h2>
+<p>Some information about BSM:</p>
+<p><a class="reference external" href="http://seclab.cs.ucdavis.edu/projects/misuse/prototypes/bsm.html">http://seclab.cs.ucdavis.edu/projects/misuse/prototypes/bsm.html</a>
+<a class="reference external" href="http://abelew.web.wesleyan.edu/bsmaudit1.html">http://abelew.web.wesleyan.edu/bsmaudit1.html</a></p>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">Nov 21 15:12:56 unknown audit: [ID 905220 audit.notice] system booted text booting kernel</span>
+<span class="go">Nov 21 15:16:22 unknown audit: [ID 984917 audit.notice] login - telnet failed session 2740580090 by root as root:root from 1.254.168.192</span>
+<span class="go">Nov 21 15:16:34 unknown audit: [ID 120101 audit.notice] login - telnet failed session 1843523234 by -1 as -1:-1 from 1.254.168.192</span>
+<span class="go">Nov 21 15:37:24 unknown audit: [ID 338777 audit.notice] login - telnet failed session 3312149268 by root as root:root from 1.254.168.192</span>
+<span class="go">Nov 21 15:43:26 unknown audit: [ID 905220 audit.notice] system booted text booting kernel</span>
+<span class="go">Nov 21 15:44:11 unknown audit: [ID 216919 audit.notice] login - local ok session 627 by root as root:root from pc1305a.etri.re.kr text</span>
+<span class="go">Nov 21 15:45:14 unknown audit: [ID 866727 audit.notice] su ok session 3668504681 by kanthi as root:other from 1.254.168.192 text success for user root</span>
+<span class="go">Nov 21 15:49:34 unknown audit: [ID 702844 audit.notice] su ok session 2714481116 by kanthi as root:other from 1.254.168.192 text success for user root</span>
+<span class="go">Nov 21 15:50:35 unknown audit: [ID 816908 audit.notice] ftp access failed session 858 by root as root:root from 1.254.168.192 text excluded user</span>
+<span class="go">Nov 21 15:50:37 unknown audit: [ID 887505 audit.notice] ftp access failed session 858 by root as root:root from 1.254.168.192 text misc failure</span>
+<span class="go">Nov 21 16:04:32 unknown audit: [ID 905220 audit.notice] system booted text booting kernel</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+  <div class="section">
+  
+  
+  </div>
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2010-2015, OSSEC Project Team - OSSEC trademark and domain owned by Trend Micro, Inc. - Home page images courtesy of Pixbay.com.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

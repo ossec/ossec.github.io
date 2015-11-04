@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Log Samples from the Netscreen Firewall &mdash; OSSEC</title>
+    
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/parallax.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '2.8.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-sphinx.js"></script>
+    <link rel="author" title="About these documents" href="../../../about.html" />
+    <link rel="top" title="OSSEC" href="../../../index.html" />
+  
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  
+  
+  <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+  
+  <style type="text/css">
+    ul.ablog-archive {list-style: none; overflow: auto; margin-left: 0px}
+    ul.ablog-archive li {float: left; margin-right: 5px; font-size: 80%}
+  </style>
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../../index.html"><img src="../../../_static/ossec_logo_bare_small.png">
+          OSSEC</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="../../../about.html">About <i class="fa fa-info-circle"></i></a></li>
+                <li><a href="../../../blog.html">Blog <i class="fa fa-archive"></i></a></li>
+                <li><a href="../../">Documentaton <i class="fa fa-book"></i></a></li>
+                <li><a href="../../../downloads.html">Downloads <i class="fa fa-download"></i></a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"></ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="section" id="log-samples-from-the-netscreen-firewall">
+<h1>Log Samples from the Netscreen Firewall<a class="headerlink" href="#log-samples-from-the-netscreen-firewall" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="traffic-denied">
+<h2>Traffic denied:<a class="headerlink" href="#traffic-denied" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">Jun  2 14:55:46 fire00 fire00: NetScreen device_id=fire00  [Root]system-notification-00257(traffic): start_time=&quot;2006-06-02 14:55:45&quot; duration=0 policy_id=119 service=udp/port:7001 proto=17 src zone=Trust dst zone=Untrust action=Deny sent=0 rcvd=0 src=192.168.2.1 dst=1.2.3.4 src_port=3036 dst_port=7001</span>
+<span class="go">Jun  2 14:53:31 fire00 aka1: NetScreen device_id=aka1  [Root]system-notification-00257(traffic): start_time=&quot;2006-06-02 14:53:30&quot; duration=0 policy_id=120 service=udp/port:20721 proto=17 src zone=Trust dst zone=DMZ action=Deny sent=0 rcvd=0 src=192.168.2.2 dst=1.2.3.4 src_port=53 dst_port=20721</span>
+<span class="go">Jun  2 14:53:31 fire00 aka1: NetScreen device_id=aka1  [Root]system-notification-00257(traffic): start_time=&quot;2006-06-02 14:53:30&quot; duration=0 policy_id=120 service=udp/port:17210 proto=17 src zone=Trust dst zone=DMZ action=Deny sent=0 rcvd=0 src=192.168.2.2 dst=1.2.3.4 src_port=53 dst_port=17210</span>
+<span class="go">Mar 16 15:27:56 172.16.10.42 ns5gt: NetScreen device_id=ns5gt  [No Name]system-notification-00257(traffic): start_time=\&quot;2005-03-16 16:33:22\&quot; duration=0 policy_id=320001 service=tcp/port:120 proto=6 src zone=Null dst zone=self action=Deny sent=0 rcvd=60 src=192.168.2.1 dst=1.2.3.4 src_port=31048 dst_port=12</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="alert-messages">
+<h2>Alert messages:<a class="headerlink" href="#alert-messages" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">Jun  1 22:01:35 [xx] ns5gt: NetScreen device_id=ns5gt  [Root]system-alert-00016: Port scan! From 1.2.3.4:54886 to 2.3.4.5:406, proto TCP (zone Untrust, int untrust). Occurred 1 times. (2004-06-01 22:09:03)</span>
+<span class="go">Jun  1 22:01:57 [xx] ns5gt: NetScreen device_id=ns5gt  [Root]system-alert-00016: Port scan! From 1.2.3.4:55181 to 2.3.4.5:1358, proto TCP (zone Untrust, int untrust). Occurred 1 times. (2004-06-01 22:09:25)</span>
+<span class="go">Jun  1 22:02:10 [xx] ns5gt: NetScreen device_id=ns5gt  [Root]system-alert-00016: Port scan! From 1.2.3.4:55339 to 2.3.4.5:1515, proto TCP (zone Untrust, int untrust). Occurred 1 times. (2004-06-01 22:09:38)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="critical-messages">
+<h2>Critical messages:<a class="headerlink" href="#critical-messages" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">Jun  2 11:24:16 fire00 sav00: NetScreen device_id=sav00  [Root]system-critical-00436: Large ICMP packet! From 1.2.3.4 to 2.3.4.5, proto 1 (zone Untrust, int ethernet1/2). Occurred 1 times. (2006-06-02 11:24:16)</span>
+<span class="go">[00001] 2007-04-01 15:32:00 [Root]system-critical-00031: arp req detected an IP conflict (IP 10.1.1.1, MAC 0027f2424c8c) on interface ethernet1</span>
+<span class="go">[00001] 2007-03-12 12:47:36 [Root]system-critical-00001(second traffic alarm):  Policy ID=14 Rate=180 bytes/sec exceeds threshold</span>
+<span class="go">[00008] 2006-06-30 13:10:09 [Root]system-critical-00041: VPN &#39;zzz-primary-vpn&#39; from a.b.c.d is down.</span>
+<span class="go">[00002] 2006-06-30 13:11:41 [Root]system-critical-00040: VPN &#39;zzz-primary-vpn&#39; from a.b.c.d is up.</span>
+<span class="go">[00001] 2005-05-16 12:55:10 [Root]system-critical-00042: Replay packet detected on IPSec tunnel on ethernet3 with tunnel ID 0x1c! From z.y.x.w to a.b.c.d/336, ESP, SPI 0xf63af637, SEQ 0xe337.</span>
+<span class="go">[00001] 2006-05-25 13:34:33 [Root]system-alert-00008: IP spoofing! From 10.1.1.238:80 to a.b.c.d:49807, proto TCP (zone Untrust, int ethernet3). Occurred 1 times.</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="admin-login">
+<h2>Admin login:<a class="headerlink" href="#admin-login" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">Jun  1 22:02:12 [xx] ns5gt: NetScreen device_id=ns5gt  [Root]system-notification-00002: Admin user &quot;baby&quot; logged in for Web(http) management (port 8080) from 1.2.3.4:2150 (2004-06-01 22:09:40)</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+  <div class="section">
+  
+  
+  </div>
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2010-2015, OSSEC Project Team - OSSEC trademark and domain owned by Trend Micro, Inc. - Home page images courtesy of Pixbay.com.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

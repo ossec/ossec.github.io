@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>ossec-logtest &mdash; OSSEC</title>
+    
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/parallax.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '2.8.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="top" title="OSSEC" href="../../index.html" />
+  
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  
+  
+  <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+  
+  <style type="text/css">
+    ul.ablog-archive {list-style: none; overflow: auto; margin-left: 0px}
+    ul.ablog-archive li {float: left; margin-right: 5px; font-size: 80%}
+  </style>
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html"><img src="../../_static/ossec_logo_bare_small.png">
+          OSSEC</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="../../about.html">About <i class="fa fa-info-circle"></i></a></li>
+                <li><a href="../../blog.html">Blog <i class="fa fa-archive"></i></a></li>
+                <li><a href="../">Documentaton <i class="fa fa-book"></i></a></li>
+                <li><a href="../../downloads.html">Downloads <i class="fa fa-download"></i></a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"></ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="section" id="ossec-logtest">
+<span id="id1"></span><h1>ossec-logtest<a class="headerlink" href="#ossec-logtest" title="Permalink to this headline">¶</a></h1>
+<p>ossec-logtest is the single most useful tool when working with ossec.  This tool allows oneself
+to test and verify log files in the exact same way that <cite>ossec-anaylistd</cite> does.</p>
+<p>Something ossec-logtest can help with:</p>
+<ul class="simple">
+<li>Writing rules (Debugging your custom rules)</li>
+<li>Troubleshooting false positives or false negatives</li>
+</ul>
+<p>ossec-logtest accepts standard input for all log to test.</p>
+<div class="section" id="osssec-logtest-argument-options">
+<h2>osssec-logtest argument options<a class="headerlink" href="#osssec-logtest-argument-options" title="Permalink to this headline">¶</a></h2>
+<dl class="option">
+<dt id="cmdoption-ossec-logtest-a">
+<tt class="descname">-a</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-ossec-logtest-a" title="Permalink to this definition">¶</a></dt>
+<dd><p>Analyze of input lines as if they are live events.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-ossec-logtest-c">
+<tt class="descname">-c</tt><tt class="descclassname"> &lt;config&gt;</tt><a class="headerlink" href="#cmdoption-ossec-logtest-c" title="Permalink to this definition">¶</a></dt>
+<dd><p>&lt;config&gt; is the path and filename to load in place of the default /var/ossec/etc/ossec.conf.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-ossec-logtest-D">
+<tt class="descname">-D</tt><tt class="descclassname"> &lt;dir&gt;</tt><a class="headerlink" href="#cmdoption-ossec-logtest-D" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is the path that ossec-logtest will chroot to before it completes loading all rules,
+decoders, and lists and processing standard input.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-ossec-logtest-d">
+<tt class="descname">-d</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-ossec-logtest-d" title="Permalink to this definition">¶</a></dt>
+<dd><p>Print debug output to the terminal. This option can be used multiple times to increase the verbosity of the debug messages.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-ossec-logtest-h">
+<tt class="descname">-h</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-ossec-logtest-h" title="Permalink to this definition">¶</a></dt>
+<dd><p>Print the help message to the console.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-ossec-logtest-t">
+<tt class="descname">-t</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-ossec-logtest-t" title="Permalink to this definition">¶</a></dt>
+<dd><p>Test configuration.  This will print file details on the ossec-anaylistd rules,
+decoders, and lists as they are loaded and the order they were processed.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-ossec-logtest-U">
+<tt class="descname">-U</tt><tt class="descclassname"> &lt;rule-id:alert-level:decoder-name&gt;</tt><a class="headerlink" href="#cmdoption-ossec-logtest-U" title="Permalink to this definition">¶</a></dt>
+<dd><p>This option will cause ossec-logtest to return with an exit status other then zero unless
+the last line tested matches the arguments passed.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This only works for the last, line so passing many lines into ossec-logtest with
+this argument may not provide the desired results.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This ossec-logtest code requires access to all ossec configuation files.
+This is a bug and will be corrected. It is documented in issue #`61 &lt;<a class="reference external" href="https://bitbucket.org/jbcheng/ossec-hids/issue/61/ossec-logtest-must-be-used-with-a-full">https://bitbucket.org/jbcheng/ossec-hids/issue/61/ossec-logtest-must-be-used-with-a-full</a>&gt;`_</p>
+</div>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">%</span> <span class="nb">echo</span> <span class="s2">&quot;Aug 29 15:33:13 ns3 named[464]: client 217.148.39.3#1036: query (cache) denied&quot;</span> <span class="p">|</span> sudo /var/ossec/bin/ossec-logtest -U 12108:0:named 2&gt;<span class="p">&amp;</span><span class="m">1</span> &gt; /dev/null
+<span class="gp">%</span> <span class="nb">echo</span> <span class="nv">$?</span>
+<span class="go">0</span>
+<span class="gp">%</span> <span class="nb">echo</span> <span class="s2">&quot;Aug 29 15:33:13 ns3 XXXXXX[464]: client 217.148.39.3#1036: query (cache) denied&quot;</span> <span class="p">|</span> sudo /var/ossec/bin/ossec-logtest -U 12108:0:named 2&gt;<span class="p">&amp;</span><span class="m">1</span> &gt; /dev/null
+<span class="gp">%</span> <span class="nb">echo</span> <span class="nv">$?</span>
+<span class="go">3</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-ossec-logtest-V">
+<tt class="descname">-V</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-ossec-logtest-V" title="Permalink to this definition">¶</a></dt>
+<dd><p>Print the Version and license message for OSSEC and ossec-logtest.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-ossec-logtest-v">
+<tt class="descname">-v</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-ossec-logtest-v" title="Permalink to this definition">¶</a></dt>
+<dd><p>Full output of all details and matches.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This the key argument to troubleshoot a rule, decoder problem.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This is argument was incorrectly displayed as running in the foreground
+in all version before version 2.5</p>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="caveats">
+<h2>Caveats<a class="headerlink" href="#caveats" title="Permalink to this headline">¶</a></h2>
+<p>Some log formats will be processed differently than they appear in the log file. MySQL log files for instance will have <a href="#id2"><span class="problematic" id="id3">``</span></a>MySQL log: `` prepended to the log message before analysis. If using ossec-logtest to test MySQL logs, please add this string to the beginning.</p>
+<p>Example:</p>
+<p>Given the following MySQL log message:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">130218 12:07:52 [Warning] Unsafe statement written to the binary log using statement format since BINLOG_FORMAT = STATEMENT. The statement is unsafe because it uses a LIMIT clause. This is unsafe because the set of rows included cannot be predicted. Statement: DELETE FROM `emailQueue` WHERE `emailQueueID` = &#39;12207&#39; LIMIT 1</span>
+</pre></div>
+</div>
+<p>The message that should be pasted into ossec-logtest is:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">MySQL log: 130218 12:07:52 [Warning] Unsafe statement written to the binary log using statement format since BINLOG_FORMAT = STATEMENT. The statement is unsafe because it uses a LIMIT clause. This is unsafe because the set of rows included cannot be predicted. Statement: DELETE FROM `emailQueue` WHERE `emailQueueID` = &#39;12207&#39; LIMIT 1</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="ossec-logtest-example-usage">
+<h2>ossec-logtest example usage<a class="headerlink" href="#ossec-logtest-example-usage" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="example-1-testing-standard-rules">
+<h3>Example 1: Testing standard rules<a class="headerlink" href="#example-1-testing-standard-rules" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">#</span> <span class="nb">echo</span> <span class="s2">&quot;Aug 29 15:33:13 ns3 named[464]: client 217.148.39.3#1036: query (cache) denied&quot;</span> <span class="p">|</span> /var/ossec/bin/ossec-logtest -f
+<span class="go">2010/08/10 06:57:06 ossec-testrule: INFO: Reading decoder file loadables/decoders/00_decoders.xml.</span>
+<span class="go">2010/08/10 06:57:06 ossec-testrule: INFO: Reading decoder file loadables/decoders/50_named.xml.</span>
+<span class="go">2010/08/10 06:57:06 ossec-testrule: INFO: Reading decoder file loadables/decoders/50_pam.xml.</span>
+<span class="go">2010/08/10 06:57:06 ossec-testrule: INFO: Reading decoder file loadables/decoders/50_sshd.xml.</span>
+<span class="go">2010/08/10 06:57:06 ossec-testrule: INFO: Reading loading the lists file: &#39;loadables/lists/rfc1918-privateaddresses&#39;</span>
+<span class="go">2010/08/10 06:57:06 ossec-testrule: INFO: Started (pid: 78828).</span>
+<span class="go">ossec-testrule: Type one log per line.</span>
+
+
+
+<span class="go">**Phase 1: Completed pre-decoding.</span>
+<span class="go">       full event: &#39;Aug 29 15:33:13 ns3 named[464]: client 217.148.39.3#1036: query (cache) denied&#39;</span>
+<span class="go">       hostname: &#39;ns3&#39;</span>
+<span class="go">       program_name: &#39;named&#39;</span>
+<span class="go">       log: &#39;client 217.148.39.3#1036: query (cache) denied&#39;</span>
+
+<span class="go">**Phase 2: Completed decoding.</span>
+<span class="go">       decoder: &#39;named&#39;</span>
+<span class="go">       srcip: &#39;217.148.39.3&#39;</span>
+
+<span class="go">**Rule debugging:</span>
+<span class="go">    Trying rule: 1 - Generic template for all syslog rules.</span>
+<span class="go">       *Rule 1 matched.</span>
+<span class="go">       *Trying child rules.</span>
+<span class="go">    Trying rule: 30100 - Apache messages grouped.</span>
+<span class="go">    Trying rule: 7200 - Grouping of the arpwatch rules.</span>
+<span class="go">    Trying rule: 6200 - Asterisk messages grouped.</span>
+<span class="go">    Trying rule: 9600 - cimserver messages grouped.</span>
+<span class="go">    Trying rule: 4700 - Grouping of Cisco IOS rules.</span>
+<span class="go">    Trying rule: 3900 - Grouping for the courier rules.</span>
+<span class="go">    Trying rule: 9700 - Dovecot Messages Grouped.</span>
+<span class="go">    Trying rule: 11100 - Grouping for the ftpd rules.</span>
+<span class="go">    Trying rule: 9300 - Grouping for the Horde imp rules.</span>
+<span class="go">    Trying rule: 3600 - Grouping of the imapd rules.</span>
+<span class="go">    Trying rule: 3700 - Grouping of mailscanner rules.</span>
+<span class="go">    Trying rule: 3800 - Grouping of Exchange rules.</span>
+<span class="go">    Trying rule: 6300 - Grouping for the MS-DHCP rules.</span>
+<span class="go">    Trying rule: 6350 - Grouping for the MS-DHCP rules.</span>
+<span class="go">    Trying rule: 11500 - Grouping for the Microsoft ftp rules.</span>
+<span class="go">    Trying rule: 50100 - MySQL messages grouped.</span>
+<span class="go">    Trying rule: 12100 - Grouping of the named rules</span>
+<span class="go">       *Rule 12100 matched.</span>
+<span class="go">       *Trying child rules.</span>
+<span class="go">    Trying rule: 12107 - DNS update using RFC2136 Dynamic protocol.</span>
+<span class="go">    Trying rule: 12101 - Invalid DNS packet. Possibility of attack.</span>
+<span class="go">    Trying rule: 12109 - Named fatal error. DNS service going down.</span>
+<span class="go">    Trying rule: 12102 - Failed attempt to perform a zone transfer.</span>
+<span class="go">    Trying rule: 12103 - DNS update denied. Generally mis-configuration.</span>
+<span class="go">    Trying rule: 12104 - Log permission misconfiguration in Named.</span>
+<span class="go">    Trying rule: 12105 - Unexpected error while resolving domain.</span>
+<span class="go">    Trying rule: 12106 - DNS configuration error.</span>
+<span class="go">    Trying rule: 12108 - Query cache denied (maybe config error).</span>
+<span class="go">       *Rule 12108 matched.</span>
+
+<span class="go">**Phase 3: Completed filtering (rules).</span>
+<span class="go">       Rule id: &#39;12108&#39;</span>
+<span class="go">       Level: &#39;4&#39;</span>
+<span class="go">       Description: &#39;Query cache denied (maybe config error).&#39;</span>
+<span class="go">       Info - Link: &#39;http://www.reedmedia.net/misc/dns/errors.html&#39;</span>
+<span class="go">**Alert to be generated.</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="example-2-using-ossec-for-the-forensic-analysis-of-log-files">
+<h3>Example 2: Using OSSEC for the forensic analysis of log files<a class="headerlink" href="#example-2-using-ossec-for-the-forensic-analysis-of-log-files" title="Permalink to this headline">¶</a></h3>
+<p>If you have one old log file that you want to check or if you are doing a
+forensics analysis of a box and wants to check the logs with OSSEC, we
+now have a solution too.</p>
+<p>Let’s say you have a file /var/log/secure that you want to analyze with OSSEC.
+You need to use the ossec-logtest tool with the “<tt class="docutils literal"><span class="pre">-a</span></tt>” flag to reproduce
+the alerts:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">#</span> cat /var/log/secure <span class="p">|</span> /var/ossec/bin/ossec-logtest -a
+
+<span class="go">** Alert 1264788284.11: - syslog,sshd,authentication_success,</span>
+<span class="go">2010 Jan 29 14:04:44 enigma-&gt;stdin</span>
+<span class="go">Rule: 5715 (level 3) -&gt; ‘SSHD authentication success.’</span>
+<span class="go">Src IP: a.b.2.15</span>
+<span class="go">User: dcid</span>
+<span class="go">Jan 15 10:25:01 enigma sshd[17594]: Accepted password for dcid from a.b.2.15 port 47526 ssh2</span>
+
+<span class="go">** Alert 1264788284.12: - syslog,sshd,authentication_success,</span>
+<span class="go">2010 Jan 29 14:04:44 enigma-&gt;stdin</span>
+<span class="go">Rule: 5715 (level 3) -&gt; ‘SSHD authentication success.’</span>
+<span class="go">Src IP: 127.0.0.1</span>
+<span class="go">User: dcid</span>
+<span class="go">Jan 15 11:19:20 enigma sshd[18853]: Accepted publickey for dcid from 127.0.0.1 port 6725 ssh2</span>
+</pre></div>
+</div>
+<p>You will get the alerts just like you would at /var/ossec/logs/alerts.log. The
+benefit now is that you can pipe this output to <em class="xref std std-ref">ossec-reported</em> to get a
+better view of what is going on:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">#</span> cat /var/log/secure <span class="p">|</span> /var/ossec/bin/ossec-logtest -a <span class="p">|</span>/var/ossec/bin/ossec-reported
+<span class="go">Report completed. ==</span>
+<span class="go">————————————————</span>
+<span class="go">-&gt;Processed alerts: 522</span>
+<span class="go">-&gt;Post-filtering alerts: 522</span>
+
+<span class="go">Top entries for ‘Source ip’:</span>
+<span class="go">————————————————</span>
+<span class="go">89.200.169.170 |41 |</span>
+<span class="go">127.0.0.1 |33 |</span>
+<span class="go">83.170.106.142 |20 |</span>
+<span class="go">204.232.206.109 |16 |</span>
+<span class="go">..</span>
+
+<span class="go">Top entries for ‘Username’:</span>
+<span class="go">————————————————</span>
+<span class="go">root |247 |</span>
+
+<span class="go">Top entries for ‘Level’:</span>
+<span class="go">————————————————</span>
+<span class="go">Severity 5 |406 |</span>
+<span class="go">Severity 3 |41 |</span>
+<span class="go">Severity 10 |32 |</span>
+
+<span class="go">Top entries for ‘Group’:</span>
+<span class="go">————————————————</span>
+<span class="go">syslog |522 |</span>
+<span class="go">sshd |509 |</span>
+<span class="go">authentication_failed |369 |</span>
+<span class="go">invalid_login |146 |</span>
+
+<span class="go">Top entries for ‘Rule’:</span>
+<span class="go">————————————————</span>
+<span class="go">5716 - SSHD authentication failed. |223 |</span>
+<span class="go">5710 - Attempt to login using a non-existent.. |146 |</span>
+<span class="go">5715 - SSHD authentication success. |41 |</span>
+<span class="go">5702 - Reverse lookup error (bad ISP or atta.. |37 |</span>
+</pre></div>
+</div>
+<p>To get a report of all brute force attacks (for example) that scanned my
+box:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">#</span> cat /var/log/secure <span class="p">|</span> /var/ossec/bin/ossec-logtest -a <span class="p">|</span>/var/ossec/bin/ossec-reported -f group authentication_failures
+
+<span class="go">Report completed. ==</span>
+<span class="go">————————————————</span>
+<span class="go">-&gt;Processed alerts: 522</span>
+<span class="go">-&gt;Post-filtering alerts: 25</span>
+
+<span class="go">Top entries for ‘Source ip’:</span>
+<span class="go">————————————————</span>
+<span class="go">83.170.106.142 |2 |</span>
+<span class="go">89.200.169.170 |2 |</span>
+<span class="go">114.255.100.163 |1 |</span>
+<span class="go">117.135.138.183 |1 |</span>
+<span class="go">124.205.62.36 |1 |</span>
+<span class="go">173.45.108.230 |1 |</span>
+<span class="go">200.182.99.59 |1 |</span>
+<span class="go">202.63.160.50 |1 |</span>
+<span class="go">210.21.225.202 |1 |</span>
+<span class="go">211.151.64.220 |1 |</span>
+<span class="go">213.229.70.12 |1 |</span>
+<span class="go">218.30.19.48 |1 |</span>
+<span class="go">221.12.12.3 |1 |</span>
+<span class="go">59.3.239.114 |1 |</span>
+<span class="go">61.168.227.12 |1 |</span>
+<span class="go">61.233.42.47 |1 |</span>
+<span class="go">67.43.61.80 |1 |</span>
+<span class="go">72.52.75.228 |1 |</span>
+<span class="go">77.245.148.196 |1 |</span>
+<span class="go">79.125.35.214 |1 |</span>
+<span class="go">85.21.83.170 |1 |</span>
+<span class="go">92.240.75.6 |1 |</span>
+<span class="go">94.198.49.185 |1 |</span>
+
+<span class="go">Top entries for ‘Username’:</span>
+<span class="go">————————————————</span>
+<span class="go">root |24 |</span>
+
+<span class="go">Top entries for ‘Level’:</span>
+<span class="go">————————————————</span>
+<span class="go">Severity 10 |25 |</span>
+
+<span class="go">Top entries for ‘Group’:</span>
+<span class="go">————————————————</span>
+<span class="go">authentication_failures |25 |</span>
+<span class="go">sshd |25 |</span>
+<span class="go">syslog |25 |</span>
+
+<span class="go">Top entries for ‘Location’:</span>
+<span class="go">————————————————</span>
+<span class="go">enigma-&gt;stdin |25 |</span>
+
+<span class="go">Top entries for ‘Rule’:</span>
+<span class="go">————————————————</span>
+<span class="go">5720 - Multiple SSHD authentication failures. |24 |</span>
+<span class="go">5712 - SSHD brute force trying to get access.. |1 |</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+  <div class="section">
+  
+  
+  </div>
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2010-2015, OSSEC Project Team - OSSEC trademark and domain owned by Trend Micro, Inc. - Home page images courtesy of Pixbay.com.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

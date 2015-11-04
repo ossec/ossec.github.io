@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Understanding the Unix policy auditing on OSSEC &mdash; OSSEC</title>
+    
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/parallax.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '2.8.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-sphinx.js"></script>
+    <link rel="author" title="About these documents" href="../../../about.html" />
+    <link rel="top" title="OSSEC" href="../../../index.html" />
+  
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  
+  
+  <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+  
+  <style type="text/css">
+    ul.ablog-archive {list-style: none; overflow: auto; margin-left: 0px}
+    ul.ablog-archive li {float: left; margin-right: 5px; font-size: 80%}
+  </style>
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../../index.html"><img src="../../../_static/ossec_logo_bare_small.png">
+          OSSEC</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="../../../about.html">About <i class="fa fa-info-circle"></i></a></li>
+                <li><a href="../../../blog.html">Blog <i class="fa fa-archive"></i></a></li>
+                <li><a href="../../">Documentaton <i class="fa fa-book"></i></a></li>
+                <li><a href="../../../downloads.html">Downloads <i class="fa fa-download"></i></a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"></ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="section" id="understanding-the-unix-policy-auditing-on-ossec">
+<span id="rootcheck-unix-policy-audit"></span><h1>Understanding the Unix policy auditing on OSSEC<a class="headerlink" href="#understanding-the-unix-policy-auditing-on-ossec" title="Permalink to this headline">¶</a></h1>
+<p>OSSEC&#8217;s policy monitor allows you to verify that all your systems conform to a set of policies regarding configuration settings and applications usage.
+They are configured centrally on the ossec server
+and pushed down to the agents. It also checks if a system in in compliance with the CIS Security Benchmarks
+and VMware security hardening guidelines.</p>
+<p>The following systems are tested for the CIS and VMware guidelines:</p>
+<ul class="simple">
+<li><a class="reference external" href="audit/CIS_debian.html">Debian and Ubuntu</a></li>
+<li><a class="reference external" href="audit/CIS_rhel.html">Red Hat and Fedora</a></li>
+<li><a class="reference external" href="audit/CIS_rhel5.html">Red Hat Enterprise Linux 5</a></li>
+<li><a class="reference external" href="audit/vmware_hardening.html">VMWare ESX 3.0 and 3.5</a></li>
+</ul>
+<div class="section" id="receiving-audit-and-application-alerts-via-email">
+<h2>Receiving Audit and Application alerts via Email<a class="headerlink" href="#receiving-audit-and-application-alerts-via-email" title="Permalink to this headline">¶</a></h2>
+<p>By default, both the policy auditing and application checks are logged as level <tt class="docutils literal"><span class="pre">3</span></tt>, so you will not
+receive any e-mail alerts with the original configuration.</p>
+<p>If you wish to receive e-mail alerts for any (or both of the two) types of events, you need to create
+local rules with a higher severity or with the <tt class="docutils literal"><span class="pre">alert_by_email</span></tt> option set.</p>
+</div>
+<div class="section" id="example1-sending-e-mail-for-every-audit-event">
+<h2>Example1: Sending e-mail for every Audit event<a class="headerlink" href="#example1-sending-e-mail-for-every-audit-event" title="Permalink to this headline">¶</a></h2>
+<p>Add to your local_rules.xml the following:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">&lt;pre&gt;</span>
+<span class="go">  &lt;rule id=&quot;512&quot; level=&quot;9&quot; overwrite=&quot;yes&quot;&gt;</span>
+<span class="go">    &lt;if_sid&gt;510&lt;/if_sid&gt;</span>
+<span class="go">    &lt;match&gt;^System Audit&lt;/match&gt;</span>
+<span class="go">    &lt;description&gt;System Audit event.&lt;/description&gt;</span>
+<span class="go">    &lt;group&gt;rootcheck,&lt;/group&gt;</span>
+<span class="go">  &lt;/rule&gt;</span>
+<span class="go">&lt;/pre&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="listing-entries-per-agent">
+<h2>Listing entries per agent<a class="headerlink" href="#listing-entries-per-agent" title="Permalink to this headline">¶</a></h2>
+<p>To control the policy database, use the &#8216;&#8217;&#8216;rootcheck_control&#8217;&#8216;&#8217; tool.</p>
+<p>This page was originally authored by Daniel Cid for the OSSEC wiki.</p>
+</div>
+</div>
+
+  <div class="section">
+  
+  
+  </div>
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2010-2015, OSSEC Project Team - OSSEC trademark and domain owned by Trend Micro, Inc. - Home page images courtesy of Pixbay.com.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

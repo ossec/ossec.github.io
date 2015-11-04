@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Change Log &mdash; OSSEC</title>
+    
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="_static/parallax.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '2.8.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="top" title="OSSEC" href="index.html" />
+  
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  
+  
+  <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+  
+  <style type="text/css">
+    ul.ablog-archive {list-style: none; overflow: auto; margin-left: 0px}
+    ul.ablog-archive li {float: left; margin-right: 5px; font-size: 80%}
+  </style>
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html"><img src="_static/ossec_logo_bare_small.png">
+          OSSEC</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="about.html">About <i class="fa fa-info-circle"></i></a></li>
+                <li><a href="blog.html">Blog <i class="fa fa-archive"></i></a></li>
+                <li><a href="docs/">Documentaton <i class="fa fa-book"></i></a></li>
+                <li><a href="downloads.html">Downloads <i class="fa fa-download"></i></a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"></ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="section" id="change-log">
+<h1>Change Log<a class="headerlink" href="#change-log" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="upcoming-2015-02-21-20-11-00-00">
+<h2>upcoming (2015/02/21 20:11 +00:00)<a class="headerlink" href="#upcoming-2015-02-21-20-11-00-00" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/553">#553</a> Use the
+MAKEBIN variable instead of hardcoded make (&#64;ddpbsd)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/551">#551</a> Output
+alerts.json, newline delimited json, beside the alerts.log file.
+(&#64;jondb)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/547">#547</a> Feature/nfs
+exclusion v2 (&#64;reyjrar)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/549">#549</a> Fixed typo
+(&#64;gustavo-gomez)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/548">#548</a> Fix
+misspelling of &#8216;source&#8217; (&#64;DazWorrall)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/546">#546</a> several
+Coverity fixes (&#64;cgzones)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/545">#545</a> remove
+coverity plugin from travis, because it does not work properly
+(&#64;cgzones)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/537">#537</a> fix most gcc
+-Wall -Wextra warnings in windows build (&#64;cgzones)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/544">#544</a> Correct some
+spelling, and update based on ossec-docs (&#64;ddpbsd)</li>
+</ul>
+</div>
+<div class="section" id="beta03-2015-02-09-14-01-00-00">
+<h2>2.9.0-beta03 (2015/02/09 14:01 +00:00)<a class="headerlink" href="#beta03-2015-02-09-14-01-00-00" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/536">#536</a> analysisd:
+fix compiler warnings (&#64;cgzones)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/542">#542</a> Coverity
+fixes (&#64;cgzones)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/508">#508</a> enable web
+attack detection for IIS with status code 200 (&#64;ChristianBeer)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/539">#539</a> Coverity
+travis (&#64;cgzones)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/538">#538</a> Remove unused
+windows build (&#64;awiddersheim)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/533">#533</a> add
+information about matched and expected decoders to logtest
+(&#64;ChristianBeer)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/528">#528</a> Add
+contributors and remove white space (&#64;awiddersheim)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/530">#530</a> Remove old
+build files that are no longer used (&#64;awiddersheim)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/531">#531</a> Rename
+vista_sec.csv to vista_sec.txt (&#64;awiddersheim)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/534">#534</a> increase
+timeout for md5sha1 testcase, reported in #532 (&#64;cgzones)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/529">#529</a> Fix potential
+uninitialized value (&#64;awiddersheim)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/526">#526</a> possible fix
+to vista_sec.csv (&#64;ChristianBeer)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/527">#527</a> fix rule
+18138 (&#64;martindiv)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/512">#512</a> exit on
+single unit test failure (&#64;cgzones)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/516">#516</a> add decoder
+for ossec-logcollector messages (&#64;ChristianBeer)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/511">#511</a> remove
+unknown code (&#64;cgzones)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/513">#513</a> merge windows
+buildlogic into main makefile (&#64;cgzones)</li>
+</ul>
+</div>
+<div class="section" id="beta01-2015-01-31-23-35-00-00">
+<h2>2.9.0-beta01 (2015/01/31 23:35 +00:00)<a class="headerlink" href="#beta01-2015-01-31-23-35-00-00" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/515">#515</a> fix some
+Coverity issues (&#64;cgzones)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/514">#514</a> fix warnings
+(&#64;cgzones)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/510">#510</a> clean up
+analysisd/output and fix #488 (&#64;cgzones)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/509">#509</a> fix
+compilation without libssl-dev and libz-dev installed (&#64;cgzones)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/506">#506</a> Freebsd
+inotify (&#64;ddpbsd)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/502">#502</a> Giant
+code-formatting patch (&#64;wclarie)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/501">#501</a> Add support
+for FQDN in csyslogd (&#64;ccooke)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/500">#500</a> Travis builds
+(&#64;jrossi)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/499">#499</a> less sloppy
+indenting (&#64;ddpbsd)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/494">#494</a> Fix for issue
+#463 (rule overwrites causing a segfault) (&#64;ddpbsd)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/496">#496</a> Fixes to
+event channel code (&#64;awiddersheim)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/497">#497</a> Fix the wrong
+ARGV0 defined for authd causing the init script to fail (&#64;nixfloyd)</li>
+</ul>
+</div>
+<div class="section" id="snapshot-20150112-2015-01-11-13-57-00-00">
+<h2>snapshot/20150112 (2015/01/11 13:57 +00:00)<a class="headerlink" href="#snapshot-20150112-2015-01-11-13-57-00-00" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/493">#493</a> Remove
+install message to email Daniel Cid for all languages (&#64;sexybiggetje)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/491">#491</a> nginx tests -
+without false positives (&#64;dangarthwaite)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/492">#492</a> Fix cleanup
+code in mkstemp_ex() for Windows (&#64;awiddersheim)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/482">#482</a>
+Whitespace/pep8 and option to run just one test (&#64;dangarthwaite)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/476">#476</a> Add new rule
+to proftpd ruleset (&#64;ChristianBeer)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/485">#485</a> Update
+msauth_rules.xml (&#64;hyn172)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/486">#486</a> Test web
+appsec rules (&#64;dangarthwaite)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/489">#489</a> match failed
+authentication at OSX login window (&#64;mikedowney01)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/477">#477</a> Fix incorrect
+declaration (&#64;awiddersheim)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/474">#474</a> Sudo rule fix
+and sample log (&#64;ddpbsd)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/439">#439</a> Cleanup more
+makefile and some standardization for output. (&#64;jrossi)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/457">#457</a> Fix windows
+event channel (&#64;awiddersheim)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/465">#465</a> Added src/dst
+IP and username to the email if it exists in the alert_data.
+(&#64;reyjrar)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/468">#468</a>
+os_auth/main-server.c won&#8217;t compile without any headers (&#64;reyjrar)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/460">#460</a> bitrig uses
+gmake. (&#64;ddpbsd)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/458">#458</a> Fix log
+message during client startup (&#64;awiddersheim)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/456">#456</a> Update
+README.md (&#64;jeffreyjackson)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/452">#452</a> catching PHP
+Notices in Apache 2.4 error log (&#64;ChristianBeer)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/450">#450</a> fix to sshd
+rules (&#64;ChristianBeer)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/451">#451</a> Apache tests
+added (&#64;ChristianBeer)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/449">#449</a> Fix include
+order warnings when compiling win32 (&#64;awiddersheim)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/448">#448</a> Fix manage
+agents error messaage compile warning (&#64;awiddersheim)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/441">#441</a> Fix
+csyslogd-config XML syslog location definition (&#64;mikey-austin)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/440">#440</a> Format
+breakout format options into small bit of code (&#64;jrossi)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/435">#435</a> Installation
+(&#64;ddpbsd)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/436">#436</a> Build
+(&#64;ddpbsd)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/433">#433</a> fix compiler
+warnings reported in #421 (&#64;cgzones)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/428">#428</a> fully
+integrate Apparmor rules (&#64;ddpbsd)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/427">#427</a> Zmq (&#64;ddpbsd)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/424">#424</a> More decoder
+testing (&#64;jrossi)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/426">#426</a> fixes #425
+moves srandom before chroot (&#64;jrossi)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/423">#423</a> Zeromq
+(&#64;ddpbsd)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/412">#412</a>
+[os_csyslogd] fix some compiler warnings (&#64;cgzones)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/411">#411</a> fix #409
+(&#64;cgzones)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/414">#414</a> standalone
+script for firewalld on Linux (&#64;ChristianBeer)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/413">#413</a> Decoder fix
+for Apache 2.4 (&#64;ChristianBeer)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/408">#408</a> adding
+-Werror flag (&#64;cgzones)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/401">#401</a> syscall
+errors (&#64;cgzones)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/407">#407</a> rename
+memset_s to memset_secure (&#64;cgzones)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/397">#397</a> enabling rule
+tests (&#64;jrossi)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/406">#406</a> fix uid/gid
+conversions (&#64;cgzones)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/400">#400</a> fix remaining
+-Wextra issues (&#64;cgzones)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/402">#402</a> use memset_s
+on sensitive data (&#64;cgzones)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/403">#403</a> update ar
+command (&#64;cgzones)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/404">#404</a> fix recent
+coverity warnings (&#64;cgzones)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/405">#405</a> make map
+not-static, so it is not instantiated in every translation unit
+(&#64;cgzones)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/398">#398</a> Cppcheck
+cleanup (&#64;jrossi)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/396">#396</a> enabling
+apparomor for new installs (&#64;jrossi)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/395">#395</a> moving
+srandom_init before chroot (&#64;jrossi)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/385">#385</a> os_auth
+(&#64;cgzones)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/393">#393</a> remove
+obsolete Makeall script (&#64;cgzones)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/392">#392</a> correctly
+setup slack+travis based on ossec/ossec-hids (&#64;jrossi)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/389">#389</a> Fix
+formatting of chmod() and ErrorExit() params (&#64;awiddersheim)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/377">#377</a> seed random
+with a real random data (&#64;jrossi)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/383">#383</a>
+[client-agent] fix compiler warnings (&#64;cgzones)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/388">#388</a> fix chmod
+error message (&#64;cgzones)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/387">#387</a> [reportd] fix
+compiler warnings (&#64;cgzones)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/386">#386</a> [remoted] fix
+compiler warnings (&#64;cgzones)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/384">#384</a> [monitord]
+fix compiler warnings (&#64;cgzones)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/382">#382</a> [os_auth]
+force usage of TLSv1.2 (&#64;cgzones)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/380">#380</a> Lua loading
+paths (&#64;jrossi)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/336">#336</a> Fix manage
+agents keys (&#64;awiddersheim)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/379">#379</a> Remove unused
+files and moved files into correct location. (&#64;jrossi)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/378">#378</a> intergrations
+into slack (&#64;jrossi)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/376">#376</a> Merge test
+makefile (&#64;cgzones)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/374">#374</a> agentlessd
+(&#64;cgzones)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/373">#373</a> My Old code
+cleanup (&#64;jrossi)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/368">#368</a> rootcheck
+(&#64;cgzones)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/367">#367</a> syscheck
+(&#64;cgzones)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/372">#372</a> addagent
+(&#64;cgzones)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/371">#371</a> util
+(&#64;cgzones)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/361">#361</a> logcollector
+(&#64;cgzones)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/364">#364</a> better file
+handling on update (&#64;cgzones)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/363">#363</a> [tests] set
+timeout for OS_GetHost() tests to 10 seconds (&#64;cgzones)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/360">#360</a> Fix compile
+warnings printing size_t (&#64;awiddersheim)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/357">#357</a> Fix build
+settings (&#64;awiddersheim)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/359">#359</a> os_execd
+(&#64;cgzones)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/356">#356</a> Permission
+fix (&#64;cgzones)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/355">#355</a> Conversion
+fix (&#64;cgzones)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/354">#354</a> fix
+displaying settings after build (&#64;cgzones)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/352">#352</a> fix several
+-Wextra warnings (&#64;cgzones)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/353">#353</a> fix
+compilation color (&#64;cgzones)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/351">#351</a> display
+defaults for PREFIX and MAXAGENTS in make help (&#64;cgzones)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/350">#350</a> Update log.c
+(&#64;jrossi)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/345">#345</a> Makefile
+tweaks (&#64;ddpbsd)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/346">#346</a> Output
+settings after doing a build (&#64;awiddersheim)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/347">#347</a> clean up
+.gitignore (&#64;cgzones)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/349">#349</a> fix spelling
+(&#64;cgzones)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/343">#343</a> gnu make
+fallout (&#64;ddpbsd)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/344">#344</a> fix spelling
+for clean-internals (&#64;cgzones)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/334">#334</a> Makefile need
+love too (&#64;jrossi)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/341">#341</a> fix several
+Coverity issues (&#64;cgzones)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/338">#338</a> Fix include
+order warnings when compiling win32 (&#64;awiddersheim)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/339">#339</a> Remove unused
+variable (&#64;awiddersheim)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/324">#324</a> Better
+differentiation between web-access and pure-transfer logs (&#64;bchavet)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/337">#337</a> Fix compile
+warnings printing size_t (&#64;awiddersheim)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/335">#335</a> fix
+compilation without ssl (DEFAULT_PORT is not defined) (&#64;cgzones)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/333">#333</a> fix postgres
+(&#64;cgzones)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/332">#332</a> os_dbd
+(&#64;cgzones)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/331">#331</a> - Add CIS 1.3
+benchmark for RHEL/CentOS 6 (&#64;atomicturtle)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/330">#330</a> Decoder and
+Rules for apache-2.4 error logs (&#64;bchavet)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/326">#326</a> use global
+variable __local_name instead of macro ARGV0 in libraries
+(&#64;cgzones)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/328">#328</a> [os_regex]
+do not use static maps (&#64;cgzones)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/329">#329</a> Update
+cis_rhel5_linux_rcl.txt (&#64;atomicturtle)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/325">#325</a> fixing
+compiler warnings with &#8220;-O2 -Wall&#8221; (&#64;cgzones)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/323">#323</a> derp, forgot
+that the domains end in a . (&#64;ddpbsd)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/322">#322</a> extra_data
+doesn&#8217;t seem to be a supported field for cdb lists. (&#64;ddpbsd)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/214">#214</a> adding
+heloserver name to the options for email (&#64;jrossi)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/319">#319</a> test
+searchAndReplace() with different sizes for search and replace string
+(&#64;cgzones)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/316">#316</a> update
+postgresql.schema (&#64;sechacking)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/317">#317</a> os_maild
+(&#64;cgzones)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/318">#318</a> fix
+searchAndReplace() (&#64;cgzones)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/315">#315</a> Fix host deny
+(&#64;ddpbsd)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/313">#313</a> fix 312
+(&#64;cgzones)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/309">#309</a> fix for
+time.h time_t on macosx. (&#64;jrossi)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/306">#306</a> I have
+created a output dir in analysis to move some of the output plugins
+into. (&#64;jrossi)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/304">#304</a> os_net fixes
+(&#64;cgzones)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/273">#273</a> shared review
+(re-up) (&#64;cgzones)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/274">#274</a> config review
+(re-up) (&#64;cgzones)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/302">#302</a> [os_crypto]
+fix random value (&#64;cgzones)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/300">#300</a> Do not
+truncate OS information in agent_control (&#64;awiddersheim)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/249">#249</a> mysql changes
+- all the mysql related patches from the atomic spec (&#64;jrossi)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/287">#287</a> [os_crypto]
+change timestamp type to time_t (&#64;cgzones)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/286">#286</a> [or_regex]
+fix clang analyzer warning (&#64;cgzones)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/285">#285</a> [os_crypto]
+fix compiler warnings (&#64;cgzones)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/297">#297</a> Fix
+manage_agents help (&#64;awiddersheim)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/296">#296</a>
+[os_csyslogd] fix pull request #246 (&#64;cgzones)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/291">#291</a> Fix for
+CVE-2014-5284 which allows for root escalation via temp files
+(&#64;jrossi)</li>
+</ul>
+</div>
+<div class="section" id="id1">
+<h2>2.8.1 (2014/09/09 02:03 +00:00)<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/246">#246</a> About
+feedback of data loss and lack of GEOIP (&#64;rhelfter)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/288">#288</a> [os_regex]
+remove unimplemented declaration of &#8216;OS_Match3&#8217; (&#64;cgzones)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/289">#289</a> [os_xml]
+remove unused and obsolete debug code (&#64;cgzones)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/284">#284</a> [os_xml]
+update examples (&#64;cgzones)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/283">#283</a> [os_regex]
+update examples (&#64;cgzones)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/282">#282</a> reportd
+outsourcing (&#64;cgzones)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/272">#272</a> Unbound
+(&#64;ddpbsd)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/279">#279</a> Remove
+syscheck-baseline.c (&#64;awiddersheim)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/280">#280</a> Remove
+extract-win-el.c (&#64;awiddersheim)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/281">#281</a> Fix help for
+ossec-rootcheck (&#64;awiddersheim)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/277">#277</a> Add defaults
+to help output (&#64;awiddersheim)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/270">#270</a> Remove shared
+help (&#64;awiddersheim)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/275">#275</a> keep repo
+clean after make all (&#64;cgzones)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/266">#266</a> travis
+(&#64;cgzones)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/262">#262</a> remove
+windows build related file on make clean (&#64;cgzones)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/261">#261</a> os net unit
+tests (&#64;cgzones)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/264">#264</a> 2.7.1 to 2.8
+(&#64;ddpbsd)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/257">#257</a> Misc rules
+(&#64;ddpbsd)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/259">#259</a> Random
+decoders rules (&#64;ddpbsd)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/260">#260</a> run unit
+tests with valgrind (&#64;cgzones)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/231">#231</a> Lines sent to
+SMTP server need to be terminated with , not . (&#64;ibatten)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/256">#256</a> More openbsd
+(&#64;ddpbsd)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/255">#255</a> More pam
+(&#64;ddpbsd)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/253">#253</a> Apparmor ini2
+(&#64;ddpbsd)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/252">#252</a> [tests] fix
+buffer overflow (&#64;cgzones)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/251">#251</a> remove CPATH
+as it&#8217;s not used by ossec build, but use used gcc (&#64;jrossi)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/250">#250</a> Fix windows
+builds on travis. (&#64;jrossi)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/240">#240</a> os_ crypto
+(&#64;cgzones)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/242">#242</a> os_crypto
+unittest (&#64;cgzones)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/243">#243</a> Apparmor
+(&#64;ddpbsd)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/237">#237</a> Fixing
+hard-coded paths (&#64;mstarks01)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/241">#241</a> fix comment
+in decoder.xml (&#64;cgzones)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/233">#233</a>
+Fix/accumulator null check (&#64;reyjrar)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/232">#232</a> fix crash in
+is_simple_http_request (&#64;navtej)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/229">#229</a> Updated
+help.txt for Windows (&#64;awiddersheim)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/227">#227</a> Fix Windows
+Installed Date (&#64;awiddersheim)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/226">#226</a> Fixes to
+make.sh for Windows (&#64;awiddersheim)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/221">#221</a> [os_regex]
+set as the inverse of (&#64;cgzones)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/220">#220</a> [os_xml] fix
+209 (&#64;cgzones)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/205">#205</a> Certificate
+verification for ossec-authd and agent-auth (&#64;mweigel)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/198">#198</a> New Feature -
+Accumulator (Multiline logs with consistent IDs) (&#64;reyjrar)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/217">#217</a> regex
+correction by Christian Hettler (&#64;Nukama)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/216">#216</a> Allow + in
+valid_email_addresses in installer.sh (&#64;Nukama)</li>
+</ul>
+</div>
+<div class="section" id="v2-8-0-2014-05-22-13-10-00-00">
+<h2>v2.8.0 (2014/05/22 13:10 +00:00)<a class="headerlink" href="#v2-8-0-2014-05-22-13-10-00-00" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/208">#208</a> bug fix of
+eventchannel timestamp (&#64;jrossi)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/202">#202</a> fix
+active-response on mac os installation (&#64;jknockaert)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/203">#203</a> Align
+eventchannel log format with eventlog, fixes #155 (&#64;gaelmuller)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/200">#200</a> os_net fixes
+(&#64;cgzones)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/197">#197</a> Fixes #194.
+Checks for both paths of openssl (&#64;harshilmathur)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/195">#195</a> os_regex
+review (&#64;cgzones)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/191">#191</a> os_regex
+unit tests #2 (&#64;cgzones)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/189">#189</a> Windows agent
+UI version and Copyright update (&#64;jbcheng)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/188">#188</a> os_regex
+unit tests (&#64;cgzones)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/187">#187</a> [tests]
+explicit enable branch coverage for new version of lcov (&#64;cgzones)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/186">#186</a> [os_xml] fix
+possible array underflows: see coverity (&#64;cgzones)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/185">#185</a> Avoid a crash
+of agentd on Solaris. (&#64;danpop60)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/173">#173</a> os_xml
+refresh2 (&#64;cgzones)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/180">#180</a> Use the
+evironment for the CC binary (&#64;jrossi)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/179">#179</a> Fixes to
+win32 installation (&#64;awiddersheim)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/176">#176</a> Fix windows
+agent compile error/warnings #define ENOBUFS, ALERT_SYSTEM_ERR
+(&#64;jbcheng)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/175">#175</a> Moving
+ossec-lua back to posix so that we do no have a libreadline dep
+(&#64;jrossi)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/159">#159</a> Fixes to
+win32 (un)installation process (&#64;awiddersheim)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/160">#160</a> Added
+#include for errno.h in os_net.c (&#64;denied39)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/163">#163</a> Added more
+Vista+-associated event IDs for existing rules (&#64;mstarks01)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/157">#157</a> Removing
+event ID 676 (&#64;mstarks01)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/142">#142</a> os_xml
+review (&#64;cgzones)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/150">#150</a> Added option
+to ossec.conf (additional email header) (&#64;dopefish)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/151">#151</a> Remove event
+ID 672 (&#64;mstarks01)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/145">#145</a> Fix make.sh
+files for win32 (&#64;awiddersheim)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/144">#144</a> Continue
+removing the bro-ids stuff (&#64;ddpbsd)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/120">#120</a> ossec-lua lua
+interpreter (&#64;jrossi)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/139">#139</a> Unittest os
+regex (&#64;jrossi)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/136">#136</a> Fix compile
+warnings with win32 (&#64;awiddersheim)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/134">#134</a> Remove win32
+service start and stop executables (&#64;awiddersheim)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/133">#133</a> os_zlib
+update (&#64;cgzones)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/132">#132</a> enable full
+clang support and remove gcc dependencies (&#64;cgzones)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/121">#121</a> removing
+deploy from travis-ci (&#64;jrossi)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/131">#131</a> Added error
+checking to ossec.conf installation (&#64;awiddersheim)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/129">#129</a> Fixes to
+win32 services (&#64;awiddersheim)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/125">#125</a> Fixes to
+ossec-installer.nsi (&#64;awiddersheim)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/124">#124</a> SetDateSave
+off in ossec-installer.nsi (&#64;awiddersheim)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/126">#126</a> Use file
+command in ossec-installer.nsi (&#64;awiddersheim)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/130">#130</a> Show details
+during win32 installation (&#64;awiddersheim)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/127">#127</a> Update
+manage_keys.c (&#64;awiddersheim)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/128">#128</a> Added /? as a
+parameter to ossec-agent on win32 (&#64;awiddersheim)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/123">#123</a> Grandstream
+ATA decoder (&#64;mstarks01)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/122">#122</a> A simple
+script to calculate OSSEC events-per-second (&#64;mstarks01)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/119">#119</a> Fixing
+route-null active response on Windows (&#64;mstarks01)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/96">#96</a> Remove annoying
+win32ui dialog box (&#64;awiddersheim)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/118">#118</a> Remove ui.nsi
+(&#64;awiddersheim)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/117">#117</a> Fixes to
+ossec-installer.nsi (&#64;awiddersheim)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/102">#102</a> Remove debug
+messages it src/win32/ui/common.c (&#64;awiddersheim)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/107">#107</a> Make
+manage_agents.exe work on win32 (&#64;awiddersheim)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/116">#116</a> Fixes to
+ossec-installer.nsi (&#64;awiddersheim)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/103">#103</a> Free
+install_date pointer (&#64;awiddersheim)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/115">#115</a> add
+eventchannel (again) with proper build (&#64;gaelmuller)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/108">#108</a> enable geoip
+in travis build (&#64;cgzones)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/114">#114</a> remove unused
+source code files (&#64;cgzones)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/111">#111</a> Fix win32
+ARGV0 names (&#64;awiddersheim)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/92">#92</a> fix problem
+with umlaut in date string when pre-decoding the log message
+(&#64;ChristianBeer)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/98">#98</a> Add install
+date to win32ui (&#64;awiddersheim)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/106">#106</a> Remove
+os_auth from win-files.txt (&#64;awiddersheim)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/100">#100</a> Fix
+permissions and privilege detection (&#64;awiddersheim)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/97">#97</a> Add better
+version handling to win32ui (&#64;awiddersheim)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/94">#94</a> Fix win32 OS
+detection (&#64;awiddersheim)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/113">#113</a> Remove local
+file additions in setup-win.c (&#64;awiddersheim)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/109">#109</a> fix clang
+-Wall warnings (&#64;cgzones)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/110">#110</a> simplify
+cJSON makefile (&#64;cgzones)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/104">#104</a> Fix win32ui
+messages (&#64;awiddersheim)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/99">#99</a> Fix win32 setup
+log message (&#64;awiddersheim)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/93">#93</a> Fix the client
+status exit code (&#64;pdrakeweb)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/95">#95</a> Add to
+.gitignore (&#64;awiddersheim)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/105">#105</a> Adding a new
+sshd rule for bad packet lengths (&#64;joshgarnett)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/87">#87</a> Fix comment in
+win32/ui/common.c (&#64;awiddersheim)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/86">#86</a> OpenBSD deluser
+rule and remove bro-ids garbage (&#64;ddpbsd)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/85">#85</a> fix to segfault
+introduced by pull request #81 (&#64;ChristianBeer)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/81">#81</a> fix resource
+leaks in active-response.c (&#64;ChristianBeer)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/68">#68</a> ignore warning
+about assignment in condition (&#64;cgzones)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/82">#82</a> fix gcc wall
+warnings seen on travis (&#64;cgzones)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/71">#71</a> fix missing
+returns reported by eclipse (&#64;cgzones)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/72">#72</a> surround binary
+expression with parenthesis (&#64;cgzones)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/73">#73</a> fix missing
+breaks (&#64;cgzones)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/74">#74</a> remove unused
+declarations (&#64;cgzones)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/75">#75</a> rename syscheck
+config struct (&#64;cgzones)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/76">#76</a> rename global
+agent struct (&#64;cgzones)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/77">#77</a> fix cyclic
+header relationship mem_op.h &lt;-&gt; shared.h (&#64;cgzones)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/80">#80</a> fixing gcc
+-Wall warnings (&#64;cgzones)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/78">#78</a> exit on error
+during making zlib or cJSON (&#64;cgzones)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/69">#69</a> fix buffer
+overflow (&#64;cgzones)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/79">#79</a> fix spelling
+preventing building geoip support (&#64;cgzones)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/66">#66</a> fix spelling
+(&#64;cgzones)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/67">#67</a> remove static
+cJSON library on make clean (&#64;cgzones)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/70">#70</a> remove complete
+bin directory on make clean and ignore failure by removi...
+(&#64;cgzones)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/65">#65</a> ignore eclipse
+project files (&#64;cgzones)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/61">#61</a> correct deploy
+to s3 so that we can test win32 agents. (&#64;jrossi)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/59">#59</a> Readme update
+(&#64;jrossi)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/58">#58</a> Make
+remoted.debug in internal_options.conf work (&#64;awiddersheim)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/57">#57</a> removing hg
+files (&#64;jrossi)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/56">#56</a> Cherry-picking
+in &#64;cgzones geoip clean (&#64;jrossi)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/55">#55</a> Merging in
+changes from &#64;cgzones (&#64;jrossi)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/53">#53</a> Travis ci build
+windows and fix for setenv not being avaiable on win32 (&#64;jrossi)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/49">#49</a> Use cJSON
+instead of writing a custom JSON output format. (&#64;reyjrar)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/44">#44</a> Feature:
+activeresponse with filename (&#64;reyjrar)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/45">#45</a> Disable
+/var/ossec/queue/diff/*state.$epoch files, they were not used.
+(&#64;reyjrar)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/43">#43</a> Adding some
+additional sshd rules (&#64;joshgarnett)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/16">#16</a> Allow NIX agent
+to use &#8220;-f&#8221; option and run in foreground (&#64;jrossi)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/11">#11</a> Fix the removal
+of start menu shortcuts for windows agent (&#64;jrossi)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/8">#8</a> Add remove agent
+cmd line option to manage_agents (&#64;jrossi)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/7">#7</a> Fix potential
+infinite loop when adding new agent using file input (&#64;jrossi)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/9">#9</a> Add TimeGenerated
+to the output of Windows Event Logs (&#64;jrossi)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/21">#21</a> HandleClient
+should try to open the m_queue in WRITE mode instead of READ
+(&#64;jrossi)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/20">#20</a> Labrown remoted
+child pid (&#64;jrossi)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/17">#17</a> Fix timeout
+comment in receiver-win.c (&#64;jrossi)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/40">#40</a> eventchannel:
+fix bug with bookmarks (&#64;gaelmuller)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/34">#34</a> better install
+for eventchannel support (now only 1 installer) (&#64;gaelmuller)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/38">#38</a> Output
+unformatted JSON and include the file path for syscheck alerts in
+ZeroMQ JSON output (&#64;justintime32)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/35">#35</a> Removed
+keepalive message from win_agent.c when not in debug (&#64;awiddersheim)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/33">#33</a> Fix debug level
+message used by NIX daemons to be more clear (&#64;awiddersheim)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/14">#14</a> Make
+syscheck.debug in internal_options.conf work (&#64;jrossi)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/13">#13</a> Awiddersheim
+fix ossec agent debug internal option nix (&#64;jrossi)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/18">#18</a> Make
+analysisd.debug in internal_options.conf work (&#64;jrossi)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/2">#2</a> ZeroMQ Json
+Output (&#64;jrossi)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/4">#4</a> fix openssl
+operations on non blocking socket (&#64;jrossi)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/28">#28</a> add
+eventchannel support for ossec agent on windows vista or greater
+(&#64;gaelmuller)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/25">#25</a> Validate if a
+file is readable text when report_changes is set (&#64;northox)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/12">#12</a> Made the
+command line debug level take precedence over what is specified
+(&#64;jrossi)</li>
+<li><a class="reference external" href="https://github.com/ossec/ossec-hids/pull/6">#6</a> agent_config
+profiles for windows (&#64;jrossi)</li>
+</ul>
+</div>
+</div>
+
+  <div class="section">
+  
+  
+  </div>
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2010-2015, OSSEC Project Team - OSSEC trademark and domain owned by Trend Micro, Inc. - Home page images courtesy of Pixbay.com.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>
