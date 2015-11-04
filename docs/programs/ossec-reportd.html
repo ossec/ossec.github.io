@@ -48,7 +48,7 @@
   </style>
 
   </head>
-  <body>
+  <body role="document">
 
   <div id="navbar" class="navbar navbar-inverse navbar-default ">
     <div class="container">
@@ -116,31 +116,31 @@
   <div class="section" id="ossec-reportd">
 <span id="id1"></span><h1>ossec-reportd<a class="headerlink" href="#ossec-reportd" title="Permalink to this headline">¶</a></h1>
 <blockquote>
-<div><p><tt class="docutils literal"><span class="pre">ossec-reportd</span></tt> is a program to create reports from OSSEC alerts.
-<tt class="docutils literal"><span class="pre">ossec-reportd</span></tt> accepts alerts on <tt class="docutils literal"><span class="pre">stdin</span></tt>, and outputs a report on <tt class="docutils literal"><span class="pre">stderr</span></tt>.</p>
+<div><p><code class="docutils literal"><span class="pre">ossec-reportd</span></code> is a program to create reports from OSSEC alerts.
+<code class="docutils literal"><span class="pre">ossec-reportd</span></code> accepts alerts on <code class="docutils literal"><span class="pre">stdin</span></code>, and outputs a report on <code class="docutils literal"><span class="pre">stderr</span></code>.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">Since <tt class="docutils literal"><span class="pre">ossec-reportd</span></tt> outputs to stderr some utilities like <tt class="docutils literal"><span class="pre">less</span></tt> will not work if you do not redirect the output.
-End the ossec-reportd with <tt class="docutils literal"><span class="pre">2&gt;&amp;1</span></tt> to redirect stderr to stdout. <tt class="docutils literal"><span class="pre">more</span></tt> or <tt class="docutils literal"><span class="pre">less</span></tt> can be easily used after the stderr redirect.</p>
+<p class="last">Since <code class="docutils literal"><span class="pre">ossec-reportd</span></code> outputs to stderr some utilities like <code class="docutils literal"><span class="pre">less</span></code> will not work if you do not redirect the output.
+End the ossec-reportd with <code class="docutils literal"><span class="pre">2&gt;&amp;1</span></code> to redirect stderr to stdout. <code class="docutils literal"><span class="pre">more</span></code> or <code class="docutils literal"><span class="pre">less</span></code> can be easily used after the stderr redirect.</p>
 </div>
 </div></blockquote>
 <div class="section" id="ossec-reportd-argument-options">
 <h2>ossec-reportd argument options<a class="headerlink" href="#ossec-reportd-argument-options" title="Permalink to this headline">¶</a></h2>
 <dl class="option">
 <dt id="cmdoption-ossec-reportd-D">
-<tt class="descname">-D</tt><tt class="descclassname"> &lt;dir&gt;</tt><a class="headerlink" href="#cmdoption-ossec-reportd-D" title="Permalink to this definition">¶</a></dt>
-<dd><p>chroot to <tt class="docutils literal"><span class="pre">&lt;dir&gt;</span></tt>.</p>
+<code class="descname">-D</code><code class="descclassname"> &lt;dir&gt;</code><a class="headerlink" href="#cmdoption-ossec-reportd-D" title="Permalink to this definition">¶</a></dt>
+<dd><p>chroot to <code class="docutils literal"><span class="pre">&lt;dir&gt;</span></code>.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-ossec-reportd-d">
-<tt class="descname">-d</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-ossec-reportd-d" title="Permalink to this definition">¶</a></dt>
+<code class="descname">-d</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ossec-reportd-d" title="Permalink to this definition">¶</a></dt>
 <dd><p>Execute ossec-reportd in debug mode. This option can be used multiple times to increase the verbosity of the debug messages.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-ossec-reportd-f">
-<tt class="descname">-f</tt><tt class="descclassname"> &lt;filter&gt; &lt;value&gt;</tt><a class="headerlink" href="#cmdoption-ossec-reportd-f" title="Permalink to this definition">¶</a></dt>
+<code class="descname">-f</code><code class="descclassname"> &lt;filter&gt; &lt;value&gt;</code><a class="headerlink" href="#cmdoption-ossec-reportd-f" title="Permalink to this definition">¶</a></dt>
 <dd><p>Filter the results.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -150,31 +150,31 @@ End the ossec-reportd with <tt class="docutils literal"><span class="pre">2&gt;&
 
 <dl class="option">
 <dt id="cmdoption-ossec-reportd-h">
-<tt class="descname">-h</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-ossec-reportd-h" title="Permalink to this definition">¶</a></dt>
+<code class="descname">-h</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ossec-reportd-h" title="Permalink to this definition">¶</a></dt>
 <dd><p>Display the help message</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-ossec-reportd-n">
-<tt class="descname">-n</tt><tt class="descclassname"> &lt;string&gt;</tt><a class="headerlink" href="#cmdoption-ossec-reportd-n" title="Permalink to this definition">¶</a></dt>
+<code class="descname">-n</code><code class="descclassname"> &lt;string&gt;</code><a class="headerlink" href="#cmdoption-ossec-reportd-n" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a description for the report.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-ossec-reportd-r">
-<tt class="descname">-r</tt><tt class="descclassname"> &lt;filter&gt; &lt;value&gt;</tt><a class="headerlink" href="#cmdoption-ossec-reportd-r" title="Permalink to this definition">¶</a></dt>
+<code class="descname">-r</code><code class="descclassname"> &lt;filter&gt; &lt;value&gt;</code><a class="headerlink" href="#cmdoption-ossec-reportd-r" title="Permalink to this definition">¶</a></dt>
 <dd><p>Show related entries.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-ossec-reportd-s">
-<tt class="descname">-s</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-ossec-reportd-s" title="Permalink to this definition">¶</a></dt>
+<code class="descname">-s</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ossec-reportd-s" title="Permalink to this definition">¶</a></dt>
 <dd><p>Show the alerts related to the summary.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-ossec-reportd-V">
-<tt class="descname">-V</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-ossec-reportd-V" title="Permalink to this definition">¶</a></dt>
+<code class="descname">-V</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ossec-reportd-V" title="Permalink to this definition">¶</a></dt>
 <dd><p>Display OSSEC Version and license information.</p>
 </dd></dl>
 
@@ -288,7 +288,7 @@ Top entries for &#39;Rule&#39;:
     </p>
     <p>
         &copy; Copyright 2010-2015, OSSEC Project Team - OSSEC trademark and domain owned by Trend Micro, Inc. - Home page images courtesy of Pixbay.com.<br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.3.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1.<br/>
     </p>
   </div>
 </footer>

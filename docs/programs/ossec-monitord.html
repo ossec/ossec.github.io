@@ -48,7 +48,7 @@
   </style>
 
   </head>
-  <body>
+  <body role="document">
 
   <div id="navbar" class="navbar navbar-inverse navbar-default ">
     <div class="container">
@@ -115,64 +115,64 @@
       
   <div class="section" id="ossec-monitord">
 <span id="id1"></span><h1>ossec-monitord<a class="headerlink" href="#ossec-monitord" title="Permalink to this headline">¶</a></h1>
-<p>The <tt class="docutils literal"><span class="pre">ossec-monitord</span></tt> daemon monitors agent connectivity and compress daily log files.
-<tt class="docutils literal"><span class="pre">ossec-monitord</span></tt> is configured in ossec.conf.  (see <a class="reference internal" href="../syntax/head_ossec_config.localfile.html#ossec-config-localfile"><em>ossec.conf: Localfile options</em></a>)</p>
+<p>The <code class="docutils literal"><span class="pre">ossec-monitord</span></code> daemon monitors agent connectivity and compress daily log files.
+<code class="docutils literal"><span class="pre">ossec-monitord</span></code> is configured in ossec.conf.  (see <a class="reference internal" href="../syntax/head_ossec_config.localfile.html#ossec-config-localfile"><span>ossec.conf: Localfile options</span></a>)</p>
 <div class="section" id="ossec-monitord-argument-options">
 <h2>ossec-monitord argument options<a class="headerlink" href="#ossec-monitord-argument-options" title="Permalink to this headline">¶</a></h2>
 <dl class="option">
 <dt id="cmdoption-ossec-monitord-c">
-<tt class="descname">-c</tt><tt class="descclassname"> &lt;config&gt;</tt><a class="headerlink" href="#cmdoption-ossec-monitord-c" title="Permalink to this definition">¶</a></dt>
-<dd><p>Run <tt class="docutils literal"><span class="pre">ossec-monitord</span></tt> using &lt;config&gt; as the configuration file.</p>
+<code class="descname">-c</code><code class="descclassname"> &lt;config&gt;</code><a class="headerlink" href="#cmdoption-ossec-monitord-c" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run <code class="docutils literal"><span class="pre">ossec-monitord</span></code> using &lt;config&gt; as the configuration file.</p>
 <p><strong>Default:</strong> /var/ossec/etc/ossec.conf</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-ossec-monitord-D">
-<tt class="descname">-D</tt><tt class="descclassname"> &lt;dir&gt;</tt><a class="headerlink" href="#cmdoption-ossec-monitord-D" title="Permalink to this definition">¶</a></dt>
+<code class="descname">-D</code><code class="descclassname"> &lt;dir&gt;</code><a class="headerlink" href="#cmdoption-ossec-monitord-D" title="Permalink to this definition">¶</a></dt>
 <dd><p>Chroot to &lt;dir&gt;.</p>
 <p><strong>Default:</strong> /var/ossec</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-ossec-monitord-d">
-<tt class="descname">-d</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-ossec-monitord-d" title="Permalink to this definition">¶</a></dt>
+<code class="descname">-d</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ossec-monitord-d" title="Permalink to this definition">¶</a></dt>
 <dd><p>Execute ossec-monitord in debug mode. This option can be used multiple times to increase the verbosity of the debug messages.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-ossec-monitord-f">
-<tt class="descname">-f</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-ossec-monitord-f" title="Permalink to this definition">¶</a></dt>
-<dd><p>Run <tt class="docutils literal"><span class="pre">ossec-monitord</span></tt> in the foreground.</p>
+<code class="descname">-f</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ossec-monitord-f" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run <code class="docutils literal"><span class="pre">ossec-monitord</span></code> in the foreground.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-ossec-monitord-g">
-<tt class="descname">-g</tt><tt class="descclassname"> &lt;group&gt;</tt><a class="headerlink" href="#cmdoption-ossec-monitord-g" title="Permalink to this definition">¶</a></dt>
-<dd><p>Run <tt class="docutils literal"><span class="pre">ossec-monitord</span></tt> as &lt;group&gt;.</p>
+<code class="descname">-g</code><code class="descclassname"> &lt;group&gt;</code><a class="headerlink" href="#cmdoption-ossec-monitord-g" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run <code class="docutils literal"><span class="pre">ossec-monitord</span></code> as &lt;group&gt;.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-ossec-monitord-h">
-<tt class="descname">-h</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-ossec-monitord-h" title="Permalink to this definition">¶</a></dt>
+<code class="descname">-h</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ossec-monitord-h" title="Permalink to this definition">¶</a></dt>
 <dd><p>Display the help message.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-ossec-monitord-t">
-<tt class="descname">-t</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-ossec-monitord-t" title="Permalink to this definition">¶</a></dt>
+<code class="descname">-t</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ossec-monitord-t" title="Permalink to this definition">¶</a></dt>
 <dd><p>Test configuration.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-ossec-monitord-u">
-<tt class="descname">-u</tt><tt class="descclassname"> &lt;user&gt;</tt><a class="headerlink" href="#cmdoption-ossec-monitord-u" title="Permalink to this definition">¶</a></dt>
-<dd><p>Run <tt class="docutils literal"><span class="pre">ossec-monitord</span></tt> as &lt;user&gt;.</p>
+<code class="descname">-u</code><code class="descclassname"> &lt;user&gt;</code><a class="headerlink" href="#cmdoption-ossec-monitord-u" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run <code class="docutils literal"><span class="pre">ossec-monitord</span></code> as &lt;user&gt;.</p>
 <p><strong>Default:</strong> ossecm</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-ossec-monitord-V">
-<tt class="descname">-V</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-ossec-monitord-V" title="Permalink to this definition">¶</a></dt>
+<code class="descname">-V</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ossec-monitord-V" title="Permalink to this definition">¶</a></dt>
 <dd><p>Version and license information.</p>
 </dd></dl>
 
@@ -196,7 +196,7 @@
     </p>
     <p>
         &copy; Copyright 2010-2015, OSSEC Project Team - OSSEC trademark and domain owned by Trend Micro, Inc. - Home page images courtesy of Pixbay.com.<br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.3.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1.<br/>
     </p>
   </div>
 </footer>

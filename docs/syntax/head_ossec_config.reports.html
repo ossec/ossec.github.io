@@ -48,7 +48,7 @@
   </style>
 
   </head>
-  <body>
+  <body role="document">
 
   <div id="navbar" class="navbar navbar-inverse navbar-default ">
     <div class="container">
@@ -145,19 +145,19 @@ and used within the &lt;ossec_config&gt; tag.</p>
 <h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
 <dl class="element">
 <dt id="element-reports">
-<tt class="descname">reports</tt><a class="headerlink" href="#element-reports" title="Permalink to this definition">¶</a></dt>
+<code class="descname">reports</code><a class="headerlink" href="#element-reports" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="element">
 <dt id="element-group">
-<tt class="descname">group</tt><a class="headerlink" href="#element-group" title="Permalink to this definition">¶</a></dt>
+<code class="descname">group</code><a class="headerlink" href="#element-group" title="Permalink to this definition">¶</a></dt>
 <dd><p>Filter by group/category.</p>
 <p><strong>Allowed:</strong> Any category used within OSSEC Rules.</p>
 </dd></dl>
 
 <dl class="element">
 <dt id="element-categories">
-<tt class="descname">categories</tt><a class="headerlink" href="#element-categories" title="Permalink to this definition">¶</a></dt>
+<code class="descname">categories</code><a class="headerlink" href="#element-categories" title="Permalink to this definition">¶</a></dt>
 <dd><p>Filter by group/category.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -168,14 +168,14 @@ and used within the &lt;ossec_config&gt; tag.</p>
 
 <dl class="element">
 <dt id="element-rule">
-<tt class="descname">rule</tt><a class="headerlink" href="#element-rule" title="Permalink to this definition">¶</a></dt>
+<code class="descname">rule</code><a class="headerlink" href="#element-rule" title="Permalink to this definition">¶</a></dt>
 <dd><p>Rule ID to Filter for.</p>
 <p><strong>Allowed:</strong> Any Rule ID in OSSEC Rules.</p>
 </dd></dl>
 
 <dl class="element">
 <dt id="element-level">
-<tt class="descname">level</tt><a class="headerlink" href="#element-level" title="Permalink to this definition">¶</a></dt>
+<code class="descname">level</code><a class="headerlink" href="#element-level" title="Permalink to this definition">¶</a></dt>
 <dd><p>Alert level to filter for.  This is an inclusive option so all higher level
 alerts will also match.</p>
 <p><strong>Allowed:</strong> Any Alert level 1 to 16</p>
@@ -183,28 +183,28 @@ alerts will also match.</p>
 
 <dl class="element">
 <dt id="element-location">
-<tt class="descname">location</tt><a class="headerlink" href="#element-location" title="Permalink to this definition">¶</a></dt>
+<code class="descname">location</code><a class="headerlink" href="#element-location" title="Permalink to this definition">¶</a></dt>
 <dd><p>Filter by the log location or agent name.</p>
 <p><strong>Allowed:</strong> Any file path or hostname or network.</p>
 </dd></dl>
 
 <dl class="element">
 <dt id="element-srcip">
-<tt class="descname">srcip</tt><a class="headerlink" href="#element-srcip" title="Permalink to this definition">¶</a></dt>
+<code class="descname">srcip</code><a class="headerlink" href="#element-srcip" title="Permalink to this definition">¶</a></dt>
 <dd><p>Filter by the source ip of the event.</p>
 <p><strong>Allowed:</strong> Any hostname or network</p>
 </dd></dl>
 
 <dl class="element">
 <dt id="element-user">
-<tt class="descname">user</tt><a class="headerlink" href="#element-user" title="Permalink to this definition">¶</a></dt>
+<code class="descname">user</code><a class="headerlink" href="#element-user" title="Permalink to this definition">¶</a></dt>
 <dd><p>Filter by the user name.  This will match on either srcuser or dstuser</p>
 <p><strong>Allowed:</strong> Any username</p>
 </dd></dl>
 
 <dl class="element">
 <dt id="element-title">
-<tt class="descname">title</tt><a class="headerlink" href="#element-title" title="Permalink to this definition">¶</a></dt>
+<code class="descname">title</code><a class="headerlink" href="#element-title" title="Permalink to this definition">¶</a></dt>
 <dd><p>The name of the report.</p>
 <p>This is a required field for reports to function.</p>
 <p><strong>Allowed:</strong> Any Text</p>
@@ -212,7 +212,7 @@ alerts will also match.</p>
 
 <dl class="element">
 <dt id="element-email_to">
-<tt class="descname">email_to</tt><a class="headerlink" href="#element-email_to" title="Permalink to this definition">¶</a></dt>
+<code class="descname">email_to</code><a class="headerlink" href="#element-email_to" title="Permalink to this definition">¶</a></dt>
 <dd><p>The email address to send the completed report.</p>
 <p>This is a required field for a report to function.</p>
 <p><strong>Allowed:</strong> Any email address</p>
@@ -220,7 +220,7 @@ alerts will also match.</p>
 
 <dl class="element">
 <dt id="element-showlogs">
-<tt class="descname">showlogs</tt><a class="headerlink" href="#element-showlogs" title="Permalink to this definition">¶</a></dt>
+<code class="descname">showlogs</code><a class="headerlink" href="#element-showlogs" title="Permalink to this definition">¶</a></dt>
 <dd><p>Include logs when creating the report</p>
 <p><strong>Allowed:</strong> yes/no</p>
 <p><strong>Default:</strong> no</p>
@@ -246,7 +246,7 @@ alerts will also match.</p>
     </p>
     <p>
         &copy; Copyright 2010-2015, OSSEC Project Team - OSSEC trademark and domain owned by Trend Micro, Inc. - Home page images courtesy of Pixbay.com.<br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.3.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1.<br/>
     </p>
   </div>
 </footer>

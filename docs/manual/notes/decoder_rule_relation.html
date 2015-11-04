@@ -48,7 +48,7 @@
   </style>
 
   </head>
-  <body>
+  <body role="document">
 
   <div id="navbar" class="navbar navbar-inverse navbar-default ">
     <div class="container">
@@ -131,7 +131,7 @@
 <span class="go">&lt;/rule&gt;</span>
 </pre></div>
 </div>
-<p>The first rule acts as a &#8220;collector&#8221; for specific log messages.  As part of the rule construct, the <tt class="docutils literal"><span class="pre">&lt;decoded_as&gt;&lt;/decoded_as&gt;</span></tt> tags are used to determine how the log entry will be decoded, and aspects of it captured.  In this case, it will be a web-accesslog.  The corresponding construct in decoder.xml (shown below) matches the log entry and captures certain parts of the entry to be used later.</p>
+<p>The first rule acts as a &#8220;collector&#8221; for specific log messages.  As part of the rule construct, the <code class="docutils literal"><span class="pre">&lt;decoded_as&gt;&lt;/decoded_as&gt;</span></code> tags are used to determine how the log entry will be decoded, and aspects of it captured.  In this case, it will be a web-accesslog.  The corresponding construct in decoder.xml (shown below) matches the log entry and captures certain parts of the entry to be used later.</p>
 <div class="highlight-console"><div class="highlight"><pre><span class="go">&lt;decoder name=&quot;web-accesslog&quot;&gt;</span>
 <span class="go">  &lt;type&gt;web-log&lt;/type&gt;</span>
 <span class="go">  &lt;prematch&gt;^\d+.\d+.\d+.\d+ - &lt;/prematch&gt;</span>
@@ -141,7 +141,7 @@
 <span class="go">&lt;/decoder&gt;</span>
 </pre></div>
 </div>
-<p>Looking at the regular expression we can see that the source IP, the URL, and the HTTP Result Code are captured.  The first set of parentheses denotes that this part of the expression is the source IP, the second set denotes the URL, and the last set is the ID code, which for the example is the HTTP result code.  Going back to the second rule above, its construct contains the <tt class="docutils literal"><span class="pre">&lt;id&gt;&lt;/id&gt;</span></tt> tags, which, in this case (rule #3101), is used to match a 400 HTTP result code.  Something else worth noting is the multiple &lt;regex&gt; tags in this example.  This is simply done to provide enhanced clarity and preventing lines over 80 characters.  The values inside both tags are concatenated before being processed by ossec.</p>
+<p>Looking at the regular expression we can see that the source IP, the URL, and the HTTP Result Code are captured.  The first set of parentheses denotes that this part of the expression is the source IP, the second set denotes the URL, and the last set is the ID code, which for the example is the HTTP result code.  Going back to the second rule above, its construct contains the <code class="docutils literal"><span class="pre">&lt;id&gt;&lt;/id&gt;</span></code> tags, which, in this case (rule #3101), is used to match a 400 HTTP result code.  Something else worth noting is the multiple &lt;regex&gt; tags in this example.  This is simply done to provide enhanced clarity and preventing lines over 80 characters.  The values inside both tags are concatenated before being processed by ossec.</p>
 <p>These regex variables can also be passed to active-response command constructs like the one show below:</p>
 <div class="highlight-console"><div class="highlight"><pre><span class="go">&lt;command&gt;</span>
 <span class="go">  &lt;name&gt;host-deny&lt;/name&gt;</span>
@@ -151,7 +151,7 @@
 <span class="go">&lt;/command&gt;</span>
 </pre></div>
 </div>
-<p>The <tt class="docutils literal"><span class="pre">&lt;expect&gt;&lt;/expect&gt;</span></tt> tags are used here to specify which variable is expected as an argument to the executable being used for the active-response action.  A list of available variables is shown below:</p>
+<p>The <code class="docutils literal"><span class="pre">&lt;expect&gt;&lt;/expect&gt;</span></code> tags are used here to specify which variable is expected as an argument to the executable being used for the active-response action.  A list of available variables is shown below:</p>
 <ul class="simple">
 <li>location</li>
 <li>hostname</li>
@@ -194,7 +194,7 @@
     </p>
     <p>
         &copy; Copyright 2010-2015, OSSEC Project Team - OSSEC trademark and domain owned by Trend Micro, Inc. - Home page images courtesy of Pixbay.com.<br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.3.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1.<br/>
     </p>
   </div>
 </footer>

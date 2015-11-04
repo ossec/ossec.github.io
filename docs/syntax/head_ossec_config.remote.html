@@ -48,7 +48,7 @@
   </style>
 
   </head>
-  <body>
+  <body role="document">
 
   <div id="navbar" class="navbar navbar-inverse navbar-default ">
     <div class="container">
@@ -144,12 +144,12 @@ and used within the &lt;ossec_config&gt; tag.</p>
 <h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
 <dl class="element">
 <dt id="element-remote">
-<tt class="descname">remote</tt><a class="headerlink" href="#element-remote" title="Permalink to this definition">¶</a></dt>
+<code class="descname">remote</code><a class="headerlink" href="#element-remote" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="element">
 <dt id="element-connection">
-<tt class="descname">connection</tt><a class="headerlink" href="#element-connection" title="Permalink to this definition">¶</a></dt>
+<code class="descname">connection</code><a class="headerlink" href="#element-connection" title="Permalink to this definition">¶</a></dt>
 <dd><p>Specify the type of connection being enabled: secure or using syslog.</p>
 <p><strong>Default:</strong> secure</p>
 <p><strong>Allowed:</strong> secure/syslog</p>
@@ -157,7 +157,7 @@ and used within the &lt;ossec_config&gt; tag.</p>
 
 <dl class="element">
 <dt id="element-port">
-<tt class="descname">port</tt><a class="headerlink" href="#element-port" title="Permalink to this definition">¶</a></dt>
+<code class="descname">port</code><a class="headerlink" href="#element-port" title="Permalink to this definition">¶</a></dt>
 <dd><p>Specifies the port to listen for events.</p>
 <p><strong>Default:</strong></p>
 <ul class="simple">
@@ -169,7 +169,7 @@ and used within the &lt;ossec_config&gt; tag.</p>
 
 <dl class="element">
 <dt id="element-protocol">
-<tt class="descname">protocol</tt><a class="headerlink" href="#element-protocol" title="Permalink to this definition">¶</a></dt>
+<code class="descname">protocol</code><a class="headerlink" href="#element-protocol" title="Permalink to this definition">¶</a></dt>
 <dd><p>Specifies the protocol to use for syslog events.</p>
 <p><strong>Default:</strong> udp</p>
 <p><strong>Allowed:</strong> udp or tcp</p>
@@ -177,7 +177,7 @@ and used within the &lt;ossec_config&gt; tag.</p>
 
 <dl class="element">
 <dt id="element-allowed-ips">
-<tt class="descname">allowed-ips</tt><a class="headerlink" href="#element-allowed-ips" title="Permalink to this definition">¶</a></dt>
+<code class="descname">allowed-ips</code><a class="headerlink" href="#element-allowed-ips" title="Permalink to this definition">¶</a></dt>
 <dd><p>List of IP addresses that are allowed to send syslog messages to the server (one per element).</p>
 <p><strong>Allowed:</strong> Any IP address or network</p>
 <div class="admonition note">
@@ -188,14 +188,14 @@ and used within the &lt;ossec_config&gt; tag.</p>
 
 <dl class="element">
 <dt id="element-deny-ips">
-<tt class="descname">deny-ips</tt><a class="headerlink" href="#element-deny-ips" title="Permalink to this definition">¶</a></dt>
+<code class="descname">deny-ips</code><a class="headerlink" href="#element-deny-ips" title="Permalink to this definition">¶</a></dt>
 <dd><p>List of IP addresses that are not allowed to send syslog messages to the server(one per element).</p>
 <p><strong>Allowed:</strong> Any IP address or network</p>
 </dd></dl>
 
 <dl class="element">
 <dt id="element-local_ip">
-<tt class="descname">local_ip</tt><a class="headerlink" href="#element-local_ip" title="Permalink to this definition">¶</a></dt>
+<code class="descname">local_ip</code><a class="headerlink" href="#element-local_ip" title="Permalink to this definition">¶</a></dt>
 <dd><p>Local ip address to listen for connections.</p>
 <p><strong>Default:</strong> all interfaces</p>
 <p><strong>Allowed:</strong> Any internal ip address</p>
@@ -203,7 +203,7 @@ and used within the &lt;ossec_config&gt; tag.</p>
 
 <dl class="element">
 <dt id="element-ipv6">
-<tt class="descname">ipv6</tt><a class="headerlink" href="#element-ipv6" title="Permalink to this definition">¶</a></dt>
+<code class="descname">ipv6</code><a class="headerlink" href="#element-ipv6" title="Permalink to this definition">¶</a></dt>
 <dd><p>Local ipv6 address to listen for connections.</p>
 <p><strong>Default:</strong> None</p>
 <p><strong>Allowed:</strong> Any IPv6 address.</p>
@@ -233,7 +233,7 @@ and used within the &lt;ossec_config&gt; tag.</p>
     </p>
     <p>
         &copy; Copyright 2010-2015, OSSEC Project Team - OSSEC trademark and domain owned by Trend Micro, Inc. - Home page images courtesy of Pixbay.com.<br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.3.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1.<br/>
     </p>
   </div>
 </footer>

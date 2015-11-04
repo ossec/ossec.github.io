@@ -48,7 +48,7 @@
   </style>
 
   </head>
-  <body>
+  <body role="document">
 
   <div id="navbar" class="navbar navbar-inverse navbar-default ">
     <div class="container">
@@ -119,7 +119,7 @@
 <a class="reference external" href="../../programs/ossec-authd.html">ossec-authd</a> and <a class="reference external" href="../../programs/agent-auth.html">agent-auth</a> provide this functionality.</p>
 <div class="section" id="id2">
 <h2>ossec-authd<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
-<p><tt class="docutils literal"><span class="pre">ossec-authd</span></tt> will run on the server adding agents and distributing authentication keys.</p>
+<p><code class="docutils literal"><span class="pre">ossec-authd</span></code> will run on the server adding agents and distributing authentication keys.</p>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
 <p class="last">There is currently no authentication, so any host that can cannot to the port ossec-authd listens to can obtain an OSSEC agent key.
@@ -132,7 +132,7 @@ It is recommended that the OSSEC manager&#8217;s firewall be used to help limit 
 </div>
 <div class="section" id="id3">
 <h2>agent-auth<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
-<p><tt class="docutils literal"><span class="pre">agent-auth</span></tt> will connect to an ossec-authd instance to receive, and install an agent key.</p>
+<p><code class="docutils literal"><span class="pre">agent-auth</span></code> will connect to an ossec-authd instance to receive, and install an agent key.</p>
 <p>Run agent-auth connecting to the manager on IP 192.168.1.12 port 1515:</p>
 <div class="highlight-console"><div class="highlight"><pre><span class="go">/var/ossec/bin/agent-auth -m 192.168.1.12 -p 1515</span>
 </pre></div>
@@ -157,7 +157,7 @@ It is recommended that the OSSEC manager&#8217;s firewall be used to help limit 
     </p>
     <p>
         &copy; Copyright 2010-2015, OSSEC Project Team - OSSEC trademark and domain owned by Trend Micro, Inc. - Home page images courtesy of Pixbay.com.<br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.3.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1.<br/>
     </p>
   </div>
 </footer>

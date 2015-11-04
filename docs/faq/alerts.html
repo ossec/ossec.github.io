@@ -48,7 +48,7 @@
   </style>
 
   </head>
-  <body>
+  <body role="document">
 
   <div id="navbar" class="navbar navbar-inverse navbar-default ">
     <div class="container">
@@ -123,13 +123,13 @@
 <li><a class="reference internal" href="#how-do-i-ignore-rule-1002" id="id4">How do I ignore rule 1002?</a></li>
 <li><a class="reference internal" href="#i-set-the-email-alert-level-to-10-why-do-i-keep-seeing-rules-with-lower-levels" id="id5">I set the &lt;email_alert_level&gt; to 10, why do I keep seeing rules with lower levels?</a></li>
 <li><a class="reference internal" href="#why-are-all-of-my-windows-alerts-showing-up-as-rule-1002" id="id6">Why are all of my Windows alerts showing up as rule 1002?</a></li>
-<li><a class="reference internal" href="#i-keep-getting-log-messages-that-start-with-mark-what-do-i-do" id="id7">I keep getting log messages that start with <tt class="docutils literal"><span class="pre">--MARK</span></tt>, what do I do?</a></li>
+<li><a class="reference internal" href="#i-keep-getting-log-messages-that-start-with-mark-what-do-i-do" id="id7">I keep getting log messages that start with <code class="docutils literal"><span class="pre">--MARK</span></code>, what do I do?</a></li>
 </ul>
 </div>
 <div class="section" id="how-do-you-monitor-for-usb-storage">
 <span id="usb-storage"></span><h2><a class="toc-backref" href="#id1">How do you monitor for usb storage?</a><a class="headerlink" href="#how-do-you-monitor-for-usb-storage" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><p>The first step is to configure the agents to check a registry entry with the <tt class="docutils literal"><span class="pre">reg</span></tt> command:</p>
+<div><p>The first step is to configure the agents to check a registry entry with the <code class="docutils literal"><span class="pre">reg</span></code> command:</p>
 <div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;agent_config</span> <span class="na">os=</span><span class="s">&quot;Windows&quot;</span><span class="nt">&gt;</span>
   <span class="nt">&lt;localfile&gt;</span>
     <span class="nt">&lt;log_format&gt;</span>full_command<span class="nt">&lt;/log_format&gt;</span>
@@ -158,9 +158,9 @@ The alert will contain a diff of the registry entry before the USB device was in
 <span id="grouped-email-alerts"></span><h2><a class="toc-backref" href="#id2">Why do I see alerts for agent2 in an email about agent1?</a><a class="headerlink" href="#why-do-i-see-alerts-for-agent2-in-an-email-about-agent1" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p>When an email is being prepared alerts will be grouped together. The only real criteria for grouping alerts together is the timeframe.
-To prevent alerts from being grouped together you can set <tt class="docutils literal"><span class="pre">maild.groupping</span></tt> to 0 in <tt class="docutils literal"><span class="pre">/var/ossec/etc/internal_options.conf</span></tt>.
+To prevent alerts from being grouped together you can set <code class="docutils literal"><span class="pre">maild.groupping</span></code> to 0 in <code class="docutils literal"><span class="pre">/var/ossec/etc/internal_options.conf</span></code>.
 If this is set, alerts will be sent out individually. By default OSSEC will only send 12 emails per hour.
-To increase this limit, modify or add the &lt;email_maxperhour&gt; setting in the <tt class="docutils literal"><span class="pre">&lt;global&gt;</span></tt> section of the <tt class="docutils literal"><span class="pre">ossec.conf</span></tt>.
+To increase this limit, modify or add the &lt;email_maxperhour&gt; setting in the <code class="docutils literal"><span class="pre">&lt;global&gt;</span></code> section of the <code class="docutils literal"><span class="pre">ossec.conf</span></code>.
 (see: <a class="reference external" href="../syntax/head_ossec_config.global.html#element-email_maxperhour">email_maxperhour</a> .)</p>
 <div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;global&gt;</span>
   <span class="nt">&lt;email_maxperhour&gt;</span>100<span class="nt">&lt;/email_maxperhour&gt;</span>
@@ -186,9 +186,9 @@ Unless the application creating the log is an internal application, someone else
 <div class="section" id="i-set-the-email-alert-level-to-10-why-do-i-keep-seeing-rules-with-lower-levels">
 <span id="too-many-emails"></span><h2><a class="toc-backref" href="#id5">I set the &lt;email_alert_level&gt; to 10, why do I keep seeing rules with lower levels?</a><a class="headerlink" href="#i-set-the-email-alert-level-to-10-why-do-i-keep-seeing-rules-with-lower-levels" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div>Some rules have an option set to force OSSEC into sending an alert email. This option is <tt class="docutils literal"><span class="pre">&lt;options&gt;alert_by_email&lt;/options&gt;</span></tt>.
+<div>Some rules have an option set to force OSSEC into sending an alert email. This option is <code class="docutils literal"><span class="pre">&lt;options&gt;alert_by_email&lt;/options&gt;</span></code>.
 One of these rules is 1002. To ignore these rules you will have to create a rule to specifically ignore it,
-or overwrite the rule without the <tt class="docutils literal"><span class="pre">alert_by_email</span></tt> option.</div></blockquote>
+or overwrite the rule without the <code class="docutils literal"><span class="pre">alert_by_email</span></code> option.</div></blockquote>
 </div>
 <div class="section" id="why-are-all-of-my-windows-alerts-showing-up-as-rule-1002">
 <span id="too-much-1002"></span><h2><a class="toc-backref" href="#id6">Why are all of my Windows alerts showing up as rule 1002?</a><a class="headerlink" href="#why-are-all-of-my-windows-alerts-showing-up-as-rule-1002" title="Permalink to this headline">¶</a></h2>
@@ -198,7 +198,7 @@ The manager should never be an older version than the agents. Using the same ver
 that is not possible, the manager should be the newest version.</div></blockquote>
 </div>
 <div class="section" id="i-keep-getting-log-messages-that-start-with-mark-what-do-i-do">
-<span id="mark"></span><h2><a class="toc-backref" href="#id7">I keep getting log messages that start with <tt class="docutils literal"><span class="pre">--MARK</span></tt>, what do I do?</a><a class="headerlink" href="#i-keep-getting-log-messages-that-start-with-mark-what-do-i-do" title="Permalink to this headline">¶</a></h2>
+<span id="mark"></span><h2><a class="toc-backref" href="#id7">I keep getting log messages that start with <code class="docutils literal"><span class="pre">--MARK</span></code>, what do I do?</a><a class="headerlink" href="#i-keep-getting-log-messages-that-start-with-mark-what-do-i-do" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p><strong>Example:</strong></p>
 <div class="highlight-console"><div class="highlight"><pre><span class="go">OSSEC HIDS Notification.</span>
@@ -211,7 +211,7 @@ that is not possible, the manager should be the newest version.</div></blockquot
 <span class="go">--MARK--: cB82L!#&#39;zr%lQfGUE))-7Q#Tj4fp+KG=@Wbq^wXiN)7L;ha!JB0kA_mJT5g-j[v_R@TAbk-,/fHEnHjerroRgAIh?OLWJ6LIL/q[Wg-cl#H#n/&amp;(3NDr$@#v8r*l;!b*qru$@YxEE4Zak=(wEqN0JuDlLo!*HtlXKF(3.kQ&amp;wj&amp;+aklF%YNsA&amp;*#Mef)xq&#39;qd@)P+Dz0[jP]70%Q6vqbfbv?fA)D?#bc?_R+6y.i+MdXUzhucx9V#MV($-3uk4!ja!MocJx;D%P=We0Y^DoV&amp;r+fha$rmRA1v$^y4U4cD1&#39;H5T?OF1R3(Hq&#39;H.YcO&#39;3soM/(P2_A@w7K^6G2C=z2#.W2[24=VBXrvVe!5;eKotCM[8W!hE_CB;/!Vk1k&#39;sCov_H[u&#39;(=no*VEH$&#39;@1vVU7zj*I7s0RHD)w@ipX?&amp;@y)X50Q&#39;w#OyN$+$pW?xW_0JYFRwK/g3wIuKc!D#Q*eMg&#39;79/oaURi.j].))JIQ6&amp;!k(O]ZN#lHATidRwRTvhQFQ]6DFiBT;fltbg(OALDi/LlPqkcL5bypK?axVByOGJp+.P(@[p)&#39;j</span>
 </pre></div>
 </div>
-<p>This is a keep alive message, sent from an OSSEC agent to the manager. Thie prevents the manager from marking the agent as disconnected. These log messages should be filtered out, but sometimes one slips through (this one has the string <tt class="docutils literal"><span class="pre">erroR</span></tt> which may be the cause). These should be safe to ignore.</p>
+<p>This is a keep alive message, sent from an OSSEC agent to the manager. Thie prevents the manager from marking the agent as disconnected. These log messages should be filtered out, but sometimes one slips through (this one has the string <code class="docutils literal"><span class="pre">erroR</span></code> which may be the cause). These should be safe to ignore.</p>
 </div></blockquote>
 </div>
 </div>
@@ -233,7 +233,7 @@ that is not possible, the manager should be the newest version.</div></blockquot
     </p>
     <p>
         &copy; Copyright 2010-2015, OSSEC Project Team - OSSEC trademark and domain owned by Trend Micro, Inc. - Home page images courtesy of Pixbay.com.<br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.3.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1.<br/>
     </p>
   </div>
 </footer>

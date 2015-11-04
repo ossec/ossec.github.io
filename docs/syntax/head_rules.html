@@ -48,7 +48,7 @@
   </style>
 
   </head>
-  <body>
+  <body role="document">
 
   <div id="navbar" class="navbar navbar-inverse navbar-default ">
     <div class="container">
@@ -122,7 +122,7 @@
 <h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
 <dl class="element">
 <dt id="element-rule">
-<tt class="descname">rule</tt><a class="headerlink" href="#element-rule" title="Permalink to this definition">¶</a></dt>
+<code class="descname">rule</code><a class="headerlink" href="#element-rule" title="Permalink to this definition">¶</a></dt>
 <dd><p>Defines a rule</p>
 <p><strong>Attributes:</strong></p>
 <ul id="level">
@@ -207,43 +207,43 @@
 
 <dl class="element">
 <dt id="element-match">
-<tt class="descname">match</tt><a class="headerlink" href="#element-match" title="Permalink to this definition">¶</a></dt>
+<code class="descname">match</code><a class="headerlink" href="#element-match" title="Permalink to this definition">¶</a></dt>
 <dd><ul class="simple">
 <li>Any string to match against the log event.</li>
-<li><strong>Allowed:</strong> Any <a class="reference internal" href="regex.html#os-match"><em>OS_Match/sregex Syntax</em></a></li>
+<li><strong>Allowed:</strong> Any <a class="reference internal" href="regex.html#os-match"><span>OS_Match/sregex Syntax</span></a></li>
 </ul>
 </dd></dl>
 
 <dl class="element">
 <dt id="element-regex">
-<tt class="descname">regex</tt><a class="headerlink" href="#element-regex" title="Permalink to this definition">¶</a></dt>
+<code class="descname">regex</code><a class="headerlink" href="#element-regex" title="Permalink to this definition">¶</a></dt>
 <dd><ul class="simple">
 <li>Any regex to match against the log event.</li>
-<li><strong>Allowed:</strong> Any <a class="reference internal" href="regex.html#os-regex"><em>OR_Regex/regex Syntax</em></a></li>
+<li><strong>Allowed:</strong> Any <a class="reference internal" href="regex.html#os-regex"><span>OR_Regex/regex Syntax</span></a></li>
 </ul>
 </dd></dl>
 
 <dl class="element">
 <dt id="element-decoded_as">
-<tt class="descname">decoded_as</tt><a class="headerlink" href="#element-decoded_as" title="Permalink to this definition">¶</a></dt>
+<code class="descname">decoded_as</code><a class="headerlink" href="#element-decoded_as" title="Permalink to this definition">¶</a></dt>
 <dd><ul class="simple">
-<li>Any decoder name (see <a class="reference internal" href="head_decoders.html#rules-decoders"><em>Decoders Syntax</em></a>)</li>
+<li>Any decoder name (see <a class="reference internal" href="head_decoders.html#rules-decoders"><span>Decoders Syntax</span></a>)</li>
 <li><strong>Allowed:</strong> Any decoder name</li>
 </ul>
 </dd></dl>
 
 <dl class="element">
 <dt id="element-category">
-<tt class="descname">category</tt><a class="headerlink" href="#element-category" title="Permalink to this definition">¶</a></dt>
+<code class="descname">category</code><a class="headerlink" href="#element-category" title="Permalink to this definition">¶</a></dt>
 <dd><ul class="simple">
 <li>The decoded category to match (ids, syslog, firewall, web-log, squid or windows).</li>
-<li><strong>Allowed:</strong> Any category <em class="xref std std-ref">categories</em></li>
+<li><strong>Allowed:</strong> Any category <span class="xref std std-ref">categories</span></li>
 </ul>
 </dd></dl>
 
 <dl class="element">
 <dt id="element-srcip">
-<tt class="descname">srcip</tt><a class="headerlink" href="#element-srcip" title="Permalink to this definition">¶</a></dt>
+<code class="descname">srcip</code><a class="headerlink" href="#element-srcip" title="Permalink to this definition">¶</a></dt>
 <dd><ul class="simple">
 <li>Any IP address or CIDR block to be compared to an IP decoded as srcip.</li>
 <li>Use &#8221;!&#8221; to negate it.</li>
@@ -253,7 +253,7 @@
 
 <dl class="element">
 <dt id="element-dstip">
-<tt class="descname">dstip</tt><a class="headerlink" href="#element-dstip" title="Permalink to this definition">¶</a></dt>
+<code class="descname">dstip</code><a class="headerlink" href="#element-dstip" title="Permalink to this definition">¶</a></dt>
 <dd><ul class="simple">
 <li>Any IP address or CIDR block to be compared to an IP decoded as dstip.</li>
 <li>Use &#8221;!&#8221; to negate it.</li>
@@ -263,53 +263,53 @@
 
 <dl class="element">
 <dt id="element-extra_data">
-<tt class="descname">extra_data</tt><a class="headerlink" href="#element-extra_data" title="Permalink to this definition">¶</a></dt>
+<code class="descname">extra_data</code><a class="headerlink" href="#element-extra_data" title="Permalink to this definition">¶</a></dt>
 <dd><ul class="simple">
-<li>Any string that is decoded into the <tt class="docutils literal"><span class="pre">extra_data</span></tt> field.</li>
+<li>Any string that is decoded into the <code class="docutils literal"><span class="pre">extra_data</span></code> field.</li>
 <li><strong>Allowed:</strong> Any string.</li>
 </ul>
 </dd></dl>
 
 <dl class="element">
 <dt id="element-user">
-<tt class="descname">user</tt><a class="headerlink" href="#element-user" title="Permalink to this definition">¶</a></dt>
+<code class="descname">user</code><a class="headerlink" href="#element-user" title="Permalink to this definition">¶</a></dt>
 <dd><ul class="simple">
 <li>Any username (decoded as the username).</li>
-<li><strong>Allowed:</strong> any <a class="reference internal" href="regex.html#os-match"><em>OS_Match/sregex Syntax</em></a></li>
+<li><strong>Allowed:</strong> any <a class="reference internal" href="regex.html#os-match"><span>OS_Match/sregex Syntax</span></a></li>
 </ul>
 </dd></dl>
 
 <dl class="element">
 <dt id="element-program_name">
-<tt class="descname">program_name</tt><a class="headerlink" href="#element-program_name" title="Permalink to this definition">¶</a></dt>
+<code class="descname">program_name</code><a class="headerlink" href="#element-program_name" title="Permalink to this definition">¶</a></dt>
 <dd><ul class="simple">
 <li>Program name is decoded from syslog process name.</li>
-<li><strong>Allowed:</strong> any <a class="reference internal" href="regex.html#os-match"><em>OS_Match/sregex Syntax</em></a></li>
+<li><strong>Allowed:</strong> any <a class="reference internal" href="regex.html#os-match"><span>OS_Match/sregex Syntax</span></a></li>
 </ul>
 </dd></dl>
 
 <dl class="element">
 <dt id="element-hostname">
-<tt class="descname">hostname</tt><a class="headerlink" href="#element-hostname" title="Permalink to this definition">¶</a></dt>
+<code class="descname">hostname</code><a class="headerlink" href="#element-hostname" title="Permalink to this definition">¶</a></dt>
 <dd><ul class="simple">
 <li>Any hostname (decoded as the syslog hostname) or log file.</li>
-<li><strong>Allowed:</strong> any <a class="reference internal" href="regex.html#os-match"><em>OS_Match/sregex Syntax</em></a></li>
+<li><strong>Allowed:</strong> any <a class="reference internal" href="regex.html#os-match"><span>OS_Match/sregex Syntax</span></a></li>
 </ul>
 </dd></dl>
 
 <dl class="element">
 <dt id="element-time">
-<tt class="descname">time</tt><a class="headerlink" href="#element-time" title="Permalink to this definition">¶</a></dt>
+<code class="descname">time</code><a class="headerlink" href="#element-time" title="Permalink to this definition">¶</a></dt>
 <dd><ul class="simple">
 <li>Time that the event was generated.</li>
 <li><strong>Allowed:</strong> Any time range (hh:mm-hh:mm)</li>
-<li><strong>Example:</strong> <tt class="docutils literal"><span class="pre">&lt;time&gt;6</span> <span class="pre">am</span> <span class="pre">-</span> <span class="pre">6</span> <span class="pre">pm&lt;/time&gt;</span></tt></li>
+<li><strong>Example:</strong> <code class="docutils literal"><span class="pre">&lt;time&gt;6</span> <span class="pre">am</span> <span class="pre">-</span> <span class="pre">6</span> <span class="pre">pm&lt;/time&gt;</span></code></li>
 </ul>
 </dd></dl>
 
 <dl class="element">
 <dt id="element-weekday">
-<tt class="descname">weekday</tt><a class="headerlink" href="#element-weekday" title="Permalink to this definition">¶</a></dt>
+<code class="descname">weekday</code><a class="headerlink" href="#element-weekday" title="Permalink to this definition">¶</a></dt>
 <dd><ul class="simple">
 <li>Week day that the event was generated.</li>
 <li><strong>Allowed:</strong> monday - sunday, weekday, weekend</li>
@@ -318,25 +318,25 @@
 
 <dl class="element">
 <dt id="element-id">
-<tt class="descname">id</tt><a class="headerlink" href="#element-id" title="Permalink to this definition">¶</a></dt>
+<code class="descname">id</code><a class="headerlink" href="#element-id" title="Permalink to this definition">¶</a></dt>
 <dd><ul class="simple">
 <li>Any ID (decoded as the ID).</li>
-<li><strong>Allowed:</strong> any <a class="reference internal" href="regex.html#os-match"><em>OS_Match/sregex Syntax</em></a></li>
+<li><strong>Allowed:</strong> any <a class="reference internal" href="regex.html#os-match"><span>OS_Match/sregex Syntax</span></a></li>
 </ul>
 </dd></dl>
 
 <dl class="element">
 <dt id="element-url">
-<tt class="descname">url</tt><a class="headerlink" href="#element-url" title="Permalink to this definition">¶</a></dt>
+<code class="descname">url</code><a class="headerlink" href="#element-url" title="Permalink to this definition">¶</a></dt>
 <dd><ul class="simple">
 <li>Any URL (decoded as the URL).</li>
-<li><strong>Allowed:</strong> any <a class="reference internal" href="regex.html#os-match"><em>OS_Match/sregex Syntax</em></a></li>
+<li><strong>Allowed:</strong> any <a class="reference internal" href="regex.html#os-match"><span>OS_Match/sregex Syntax</span></a></li>
 </ul>
 </dd></dl>
 
 <dl class="element">
 <dt id="element-if_sid">
-<tt class="descname">if_sid</tt><a class="headerlink" href="#element-if_sid" title="Permalink to this definition">¶</a></dt>
+<code class="descname">if_sid</code><a class="headerlink" href="#element-if_sid" title="Permalink to this definition">¶</a></dt>
 <dd><ul class="simple">
 <li>Matches if the ID has matched.</li>
 <li><strong>Allowed:</strong> Any rule id</li>
@@ -345,7 +345,7 @@
 
 <dl class="element">
 <dt id="element-if_group">
-<tt class="descname">if_group</tt><a class="headerlink" href="#element-if_group" title="Permalink to this definition">¶</a></dt>
+<code class="descname">if_group</code><a class="headerlink" href="#element-if_group" title="Permalink to this definition">¶</a></dt>
 <dd><ul class="simple">
 <li>Matches if the group has matched before.</li>
 <li><strong>Allowed:</strong> Any Group</li>
@@ -354,7 +354,7 @@
 
 <dl class="element">
 <dt id="element-if_level">
-<tt class="descname">if_level</tt><a class="headerlink" href="#element-if_level" title="Permalink to this definition">¶</a></dt>
+<code class="descname">if_level</code><a class="headerlink" href="#element-if_level" title="Permalink to this definition">¶</a></dt>
 <dd><ul class="simple">
 <li>Matches if the level has matched before.</li>
 <li><strong>Allowed:</strong> Any level from 1 to 16</li>
@@ -363,14 +363,14 @@
 
 <dl class="element">
 <dt id="element-if_matched_sid">
-<tt class="descname">if_matched_sid</tt><a class="headerlink" href="#element-if_matched_sid" title="Permalink to this definition">¶</a></dt>
+<code class="descname">if_matched_sid</code><a class="headerlink" href="#element-if_matched_sid" title="Permalink to this definition">¶</a></dt>
 <dd><ul class="simple">
 <li>Matches if an alert of the defined ID has been triggered in a set number of seconds.</li>
 <li>This option is used in conjunction with <a class="reference internal" href="#frequency">frequency</a> and <a class="reference internal" href="#timeframe">timeframe</a>.</li>
 </ul>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">Rules at level 0 are discarded immediately and will not be used with the <tt class="docutils literal"><span class="pre">if_matched_</span></tt> rules. The level must be at least <tt class="docutils literal"><span class="pre">1</span></tt>, but the <tt class="docutils literal"><span class="pre">&lt;no_log&gt;</span></tt> option can be added to the rule to make sure it does not get logged.</p>
+<p class="last">Rules at level 0 are discarded immediately and will not be used with the <code class="docutils literal"><span class="pre">if_matched_</span></code> rules. The level must be at least <code class="docutils literal"><span class="pre">1</span></code>, but the <code class="docutils literal"><span class="pre">&lt;no_log&gt;</span></code> option can be added to the rule to make sure it does not get logged.</p>
 </div>
 <ul class="simple">
 <li><strong>Allowed:</strong> Any rule id</li>
@@ -379,7 +379,7 @@
 
 <dl class="element">
 <dt id="element-if_matched_group">
-<tt class="descname">if_matched_group</tt><a class="headerlink" href="#element-if_matched_group" title="Permalink to this definition">¶</a></dt>
+<code class="descname">if_matched_group</code><a class="headerlink" href="#element-if_matched_group" title="Permalink to this definition">¶</a></dt>
 <dd><ul class="simple">
 <li>Matches if an alert of the defined group has been triggered in a set number of seconds.</li>
 <li>This option is used in conjunction with <a class="reference internal" href="#frequency">frequency</a> and <a class="reference internal" href="#timeframe">timeframe</a>.</li>
@@ -389,7 +389,7 @@
 
 <dl class="element">
 <dt id="element-same_id">
-<tt class="descname">same_id</tt><a class="headerlink" href="#element-same_id" title="Permalink to this definition">¶</a></dt>
+<code class="descname">same_id</code><a class="headerlink" href="#element-same_id" title="Permalink to this definition">¶</a></dt>
 <dd><ul class="simple">
 <li>Specifies that the decoded id must be the same.</li>
 <li>This option is used in conjunction with <a class="reference internal" href="#frequency">frequency</a> and <a class="reference internal" href="#timeframe">timeframe</a>.</li>
@@ -399,7 +399,7 @@
 
 <dl class="element">
 <dt id="element-same_source_ip">
-<tt class="descname">same_source_ip</tt><a class="headerlink" href="#element-same_source_ip" title="Permalink to this definition">¶</a></dt>
+<code class="descname">same_source_ip</code><a class="headerlink" href="#element-same_source_ip" title="Permalink to this definition">¶</a></dt>
 <dd><ul class="simple">
 <li>Specifies that the decoded source ip must be the same.</li>
 <li>This option is used in conjunction with <a class="reference internal" href="#frequency">frequency</a> and <a class="reference internal" href="#timeframe">timeframe</a>.</li>
@@ -409,7 +409,7 @@
 
 <dl class="element">
 <dt id="element-same_source_port">
-<tt class="descname">same_source_port</tt><a class="headerlink" href="#element-same_source_port" title="Permalink to this definition">¶</a></dt>
+<code class="descname">same_source_port</code><a class="headerlink" href="#element-same_source_port" title="Permalink to this definition">¶</a></dt>
 <dd><ul class="simple">
 <li>Specifies that the decoded source port must be the same.</li>
 <li>This option is used in conjunction with <a class="reference internal" href="#frequency">frequency</a> and <a class="reference internal" href="#timeframe">timeframe</a>.</li>
@@ -419,7 +419,7 @@
 
 <dl class="element">
 <dt id="element-same_dst_port">
-<tt class="descname">same_dst_port</tt><a class="headerlink" href="#element-same_dst_port" title="Permalink to this definition">¶</a></dt>
+<code class="descname">same_dst_port</code><a class="headerlink" href="#element-same_dst_port" title="Permalink to this definition">¶</a></dt>
 <dd><ul class="simple">
 <li>Specifies that the decoded destination port must be the same.</li>
 <li>This option is used in conjunction with <a class="reference internal" href="#frequency">frequency</a> and <a class="reference internal" href="#timeframe">timeframe</a>.</li>
@@ -429,7 +429,7 @@
 
 <dl class="element">
 <dt id="element-same_location">
-<tt class="descname">same_location</tt><a class="headerlink" href="#element-same_location" title="Permalink to this definition">¶</a></dt>
+<code class="descname">same_location</code><a class="headerlink" href="#element-same_location" title="Permalink to this definition">¶</a></dt>
 <dd><ul class="simple">
 <li>Specifies that the location must be the same.</li>
 <li>This option is used in conjunction with <a class="reference internal" href="#frequency">frequency</a> and <a class="reference internal" href="#timeframe">timeframe</a>.</li>
@@ -439,7 +439,7 @@
 
 <dl class="element">
 <dt id="element-same_user">
-<tt class="descname">same_user</tt><a class="headerlink" href="#element-same_user" title="Permalink to this definition">¶</a></dt>
+<code class="descname">same_user</code><a class="headerlink" href="#element-same_user" title="Permalink to this definition">¶</a></dt>
 <dd><ul class="simple">
 <li>Specifies that the decoded user must be the same.</li>
 <li>This option is used in conjunction with <a class="reference internal" href="#frequency">frequency</a> an <a class="reference internal" href="#timeframe">timeframe</a>.</li>
@@ -449,7 +449,7 @@
 
 <dl class="element">
 <dt id="element-description">
-<tt class="descname">description</tt><a class="headerlink" href="#element-description" title="Permalink to this definition">¶</a></dt>
+<code class="descname">description</code><a class="headerlink" href="#element-description" title="Permalink to this definition">¶</a></dt>
 <dd><ul class="simple">
 <li>Rule description.</li>
 <li><strong>Allowed:</strong> Any string</li>
@@ -458,7 +458,7 @@
 
 <dl class="element">
 <dt id="element-list">
-<tt class="descname">list</tt><a class="headerlink" href="#element-list" title="Permalink to this definition">¶</a></dt>
+<code class="descname">list</code><a class="headerlink" href="#element-list" title="Permalink to this definition">¶</a></dt>
 <dd><p>Preform a CDB lookup using an ossec list.  This is a fast on disk database which will
 always find keys within two seeks of the file.</p>
 <p><strong>Attributes:</strong></p>
@@ -566,7 +566,7 @@ always find keys within two seeks of the file.</p>
 
 <dl class="element">
 <dt id="element-info">
-<tt class="descname">info</tt><a class="headerlink" href="#element-info" title="Permalink to this definition">¶</a></dt>
+<code class="descname">info</code><a class="headerlink" href="#element-info" title="Permalink to this definition">¶</a></dt>
 <dd><p>Extra information may be added through the following attributes:</p>
 <p><strong>Attributes:</strong></p>
 <ul>
@@ -617,7 +617,7 @@ information about the alert/event.</p>
 
 <dl class="element">
 <dt id="element-options">
-<tt class="descname">options</tt><a class="headerlink" href="#element-options" title="Permalink to this definition">¶</a></dt>
+<code class="descname">options</code><a class="headerlink" href="#element-options" title="Permalink to this definition">¶</a></dt>
 <dd><p>Additional rule options</p>
 <p><strong>Allowed:</strong></p>
 <ul>
@@ -653,7 +653,7 @@ information about the alert/event.</p>
 
 <dl class="element">
 <dt id="element-check_diff">
-<tt class="descname">check_diff</tt><a class="headerlink" href="#element-check_diff" title="Permalink to this definition">¶</a></dt>
+<code class="descname">check_diff</code><a class="headerlink" href="#element-check_diff" title="Permalink to this definition">¶</a></dt>
 <dd><p>Used to determine when the output of a command changes.</p>
 <p><strong>Usage:</strong> &lt;check_diff /&gt;</p>
 <p><strong>Additional info:</strong> <a class="reference external" href="http://dcid.me/blog/2010/03/alerting-when-a-log-or-output-of-a-command-changes/">Daniel Cid</a> has written a blog post about the feature.</p>
@@ -661,9 +661,9 @@ information about the alert/event.</p>
 
 <dl class="element">
 <dt id="element-group">
-<tt class="descname">group</tt><a class="headerlink" href="#element-group" title="Permalink to this definition">¶</a></dt>
+<code class="descname">group</code><a class="headerlink" href="#element-group" title="Permalink to this definition">¶</a></dt>
 <dd><ul class="simple">
-<li>Add additional groups to the alert. Groups are optional tags added to alerts. They can be used by other rules by using <tt class="docutils literal"><span class="pre">if_group</span></tt> or <tt class="docutils literal"><span class="pre">if_matched_group</span></tt>, or by alert parsing tools to categorize alerts.</li>
+<li>Add additional groups to the alert. Groups are optional tags added to alerts. They can be used by other rules by using <code class="docutils literal"><span class="pre">if_group</span></code> or <code class="docutils literal"><span class="pre">if_matched_group</span></code>, or by alert parsing tools to categorize alerts.</li>
 </ul>
 <blockquote>
 <div><em>Example:</em> &lt;group&gt;group1, group2&lt;/group&gt;</div></blockquote>
@@ -689,7 +689,7 @@ information about the alert/event.</p>
     </p>
     <p>
         &copy; Copyright 2010-2015, OSSEC Project Team - OSSEC trademark and domain owned by Trend Micro, Inc. - Home page images courtesy of Pixbay.com.<br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.3.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1.<br/>
     </p>
   </div>
 </footer>

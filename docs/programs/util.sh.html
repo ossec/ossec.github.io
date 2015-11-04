@@ -48,7 +48,7 @@
   </style>
 
   </head>
-  <body>
+  <body role="document">
 
   <div id="navbar" class="navbar navbar-inverse navbar-default ">
     <div class="container">
@@ -115,21 +115,21 @@
       
   <div class="section" id="util-sh">
 <span id="id1"></span><h1>util.sh<a class="headerlink" href="#util-sh" title="Permalink to this headline">¶</a></h1>
-<p>The <tt class="docutils literal"><span class="pre">util.sh</span></tt> shell script can add a file to be monitored by <tt class="docutils literal"><span class="pre">ossec-logcollector</span></tt>.
+<p>The <code class="docutils literal"><span class="pre">util.sh</span></code> shell script can add a file to be monitored by <code class="docutils literal"><span class="pre">ossec-logcollector</span></code>.
 It can also add a full_command to check for changes to a website, or for changes to the name server of a domain.</p>
 <p>A <a class="reference external" href="http://dcid.me/blog/2011/10/3woo-alerting-on-dns-ip-address-changes/">blogpost</a> from Daniel Cid (for 3WoO) introduced this utility.</p>
 <div class="section" id="util-sh-argument-options">
 <h2>util.sh argument options<a class="headerlink" href="#util-sh-argument-options" title="Permalink to this headline">¶</a></h2>
 <dl class="option">
 <dt id="cmdoption-util.sh-arg-addfile">
-<tt class="descname">addfile</tt><tt class="descclassname"> &lt;filename&gt; [&lt;format&gt;]</tt><a class="headerlink" href="#cmdoption-util.sh-arg-addfile" title="Permalink to this definition">¶</a></dt>
-<dd><p>Add a file to be monitored by <tt class="docutils literal"><span class="pre">ossec-logtest</span></tt>. A <tt class="docutils literal"><span class="pre">localfile</span></tt> will be added to the ossec.conf.</p>
+<code class="descname">addfile</code><code class="descclassname"> &lt;filename&gt; [&lt;format&gt;]</code><a class="headerlink" href="#cmdoption-util.sh-arg-addfile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a file to be monitored by <code class="docutils literal"><span class="pre">ossec-logtest</span></code>. A <code class="docutils literal"><span class="pre">localfile</span></code> will be added to the ossec.conf.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-util.sh-arg-addsite">
-<tt class="descname">addsite</tt><tt class="descclassname"> &lt;domain&gt;</tt><a class="headerlink" href="#cmdoption-util.sh-arg-addsite" title="Permalink to this definition">¶</a></dt>
-<dd><p>Monitor a website for changes. A <tt class="docutils literal"><span class="pre">full_command</span></tt> will be added to the <tt class="docutils literal"><span class="pre">ossec.conf</span></tt> using lynx to dump the initial page.
+<code class="descname">addsite</code><code class="descclassname"> &lt;domain&gt;</code><a class="headerlink" href="#cmdoption-util.sh-arg-addsite" title="Permalink to this definition">¶</a></dt>
+<dd><p>Monitor a website for changes. A <code class="docutils literal"><span class="pre">full_command</span></code> will be added to the <code class="docutils literal"><span class="pre">ossec.conf</span></code> using lynx to dump the initial page.
 A rule can be written to monitor this output for changes.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -143,11 +143,11 @@ A rule can be written to monitor this output for changes.</p>
 
 <dl class="option">
 <dt id="cmdoption-util.sh-arg-adddns">
-<tt class="descname">adddns</tt><tt class="descclassname"> &lt;domain&gt;</tt><a class="headerlink" href="#cmdoption-util.sh-arg-adddns" title="Permalink to this definition">¶</a></dt>
-<dd><p>Monitor the name server of a domain for changes. A <tt class="docutils literal"><span class="pre">full_command</span></tt> will be added to the ossec.conf using host</p>
+<code class="descname">adddns</code><code class="descclassname"> &lt;domain&gt;</code><a class="headerlink" href="#cmdoption-util.sh-arg-adddns" title="Permalink to this definition">¶</a></dt>
+<dd><p>Monitor the name server of a domain for changes. A <code class="docutils literal"><span class="pre">full_command</span></code> will be added to the ossec.conf using host</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">Requites the <tt class="docutils literal"><span class="pre">host</span></tt> command.</p>
+<p class="last">Requites the <code class="docutils literal"><span class="pre">host</span></code> command.</p>
 </div>
 </dd></dl>
 
@@ -160,7 +160,7 @@ A rule can be written to monitor this output for changes.</p>
 <div class="highlight-console"><div class="highlight"><pre><span class="gp">#</span> /var/ossec/bin/util.sh adddns ossec.net
 </pre></div>
 </div>
-<p>will add the folling to that system&#8217;s <tt class="docutils literal"><span class="pre">ossec.conf</span></tt>:</p>
+<p>will add the folling to that system&#8217;s <code class="docutils literal"><span class="pre">ossec.conf</span></code>:</p>
 <div class="highlight-console"><div class="highlight"><pre><span class="go">&lt;ossec_config&gt;</span>
 <span class="go">   &lt;localfile&gt;</span>
 <span class="go">     &lt;log_format&gt;full_command&lt;/log_format&gt;</span>
@@ -190,7 +190,7 @@ A rule can be written to monitor this output for changes.</p>
     </p>
     <p>
         &copy; Copyright 2010-2015, OSSEC Project Team - OSSEC trademark and domain owned by Trend Micro, Inc. - Home page images courtesy of Pixbay.com.<br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.3.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1.<br/>
     </p>
   </div>
 </footer>

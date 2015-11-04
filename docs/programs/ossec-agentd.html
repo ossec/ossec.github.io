@@ -48,7 +48,7 @@
   </style>
 
   </head>
-  <body>
+  <body role="document">
 
   <div id="navbar" class="navbar navbar-inverse navbar-default ">
     <div class="container">
@@ -115,64 +115,64 @@
       
   <div class="section" id="ossec-agentd">
 <span id="id1"></span><h1>ossec-agentd<a class="headerlink" href="#ossec-agentd" title="Permalink to this headline">¶</a></h1>
-<p><tt class="docutils literal"><span class="pre">ossec-agentd</span></tt> is the client side daemon that communicates with the server.
-It runs as ossec and is chrooted to <tt class="docutils literal"><span class="pre">/var/ossec</span></tt> by default.</p>
+<p><code class="docutils literal"><span class="pre">ossec-agentd</span></code> is the client side daemon that communicates with the server.
+It runs as ossec and is chrooted to <code class="docutils literal"><span class="pre">/var/ossec</span></code> by default.</p>
 <div class="section" id="ossec-agentd-argument-options">
 <h2>ossec-agentd argument options<a class="headerlink" href="#ossec-agentd-argument-options" title="Permalink to this headline">¶</a></h2>
 <dl class="option">
 <dt id="cmdoption-ossec-agentd-c">
-<tt class="descname">-c</tt><tt class="descclassname"> &lt;config&gt;</tt><a class="headerlink" href="#cmdoption-ossec-agentd-c" title="Permalink to this definition">¶</a></dt>
-<dd><p>Run <tt class="docutils literal"><span class="pre">ossec-agentd</span></tt> using &lt;config&gt; as the configuration file.</p>
+<code class="descname">-c</code><code class="descclassname"> &lt;config&gt;</code><a class="headerlink" href="#cmdoption-ossec-agentd-c" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run <code class="docutils literal"><span class="pre">ossec-agentd</span></code> using &lt;config&gt; as the configuration file.</p>
 <p><strong>Default:</strong> /var/ossec/etc/ossec.conf</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-ossec-agentd-D">
-<tt class="descname">-D</tt><tt class="descclassname"> &lt;dir&gt;</tt><a class="headerlink" href="#cmdoption-ossec-agentd-D" title="Permalink to this definition">¶</a></dt>
+<code class="descname">-D</code><code class="descclassname"> &lt;dir&gt;</code><a class="headerlink" href="#cmdoption-ossec-agentd-D" title="Permalink to this definition">¶</a></dt>
 <dd><p>Chroot to &lt;dir&gt;.</p>
 <p><strong>Default:</strong> /var/ossec</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-ossec-agentd-d">
-<tt class="descname">-d</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-ossec-agentd-d" title="Permalink to this definition">¶</a></dt>
+<code class="descname">-d</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ossec-agentd-d" title="Permalink to this definition">¶</a></dt>
 <dd><p>Run in debug mode. This option can be used multiple times to increase the verbosity of the debug messages.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-ossec-agentd-f">
-<tt class="descname">-f</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-ossec-agentd-f" title="Permalink to this definition">¶</a></dt>
-<dd><p>Run <tt class="docutils literal"><span class="pre">ossec-agentd</span></tt> in the foreground.</p>
+<code class="descname">-f</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ossec-agentd-f" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run <code class="docutils literal"><span class="pre">ossec-agentd</span></code> in the foreground.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-ossec-agentd-g">
-<tt class="descname">-g</tt><tt class="descclassname"> &lt;group&gt;</tt><a class="headerlink" href="#cmdoption-ossec-agentd-g" title="Permalink to this definition">¶</a></dt>
-<dd><p>Run <tt class="docutils literal"><span class="pre">ossec-agentd</span></tt> as &lt;group&gt;.</p>
+<code class="descname">-g</code><code class="descclassname"> &lt;group&gt;</code><a class="headerlink" href="#cmdoption-ossec-agentd-g" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run <code class="docutils literal"><span class="pre">ossec-agentd</span></code> as &lt;group&gt;.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-ossec-agentd-h">
-<tt class="descname">-h</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-ossec-agentd-h" title="Permalink to this definition">¶</a></dt>
+<code class="descname">-h</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ossec-agentd-h" title="Permalink to this definition">¶</a></dt>
 <dd><p>Display the help message.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-ossec-agentd-t">
-<tt class="descname">-t</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-ossec-agentd-t" title="Permalink to this definition">¶</a></dt>
+<code class="descname">-t</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ossec-agentd-t" title="Permalink to this definition">¶</a></dt>
 <dd><p>Test configuration.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-ossec-agentd-u">
-<tt class="descname">-u</tt><tt class="descclassname"> &lt;user&gt;</tt><a class="headerlink" href="#cmdoption-ossec-agentd-u" title="Permalink to this definition">¶</a></dt>
-<dd><p>Run <tt class="docutils literal"><span class="pre">ossec-agentd</span></tt> as &lt;user&gt;.</p>
+<code class="descname">-u</code><code class="descclassname"> &lt;user&gt;</code><a class="headerlink" href="#cmdoption-ossec-agentd-u" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run <code class="docutils literal"><span class="pre">ossec-agentd</span></code> as &lt;user&gt;.</p>
 <p><strong>Default:</strong> ossecm</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-ossec-agentd-V">
-<tt class="descname">-V</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-ossec-agentd-V" title="Permalink to this definition">¶</a></dt>
+<code class="descname">-V</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ossec-agentd-V" title="Permalink to this definition">¶</a></dt>
 <dd><p>Version and license information.</p>
 </dd></dl>
 
@@ -196,7 +196,7 @@ It runs as ossec and is chrooted to <tt class="docutils literal"><span class="pr
     </p>
     <p>
         &copy; Copyright 2010-2015, OSSEC Project Team - OSSEC trademark and domain owned by Trend Micro, Inc. - Home page images courtesy of Pixbay.com.<br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.3.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1.<br/>
     </p>
   </div>
 </footer>

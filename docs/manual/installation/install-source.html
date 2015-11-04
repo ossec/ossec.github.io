@@ -48,7 +48,7 @@
   </style>
 
   </head>
-  <body>
+  <body role="document">
 
   <div id="navbar" class="navbar navbar-inverse navbar-default ">
     <div class="container">
@@ -115,14 +115,14 @@
       
   <div class="section" id="manager-agent-installation">
 <span id="install"></span><h1>Manager/Agent Installation<a class="headerlink" href="#manager-agent-installation" title="Permalink to this headline">¶</a></h1>
-<p>Installation of OSSEC HIDS is very simple, the <tt class="docutils literal"><span class="pre">install.sh</span></tt> shell script automating most of it.
+<p>Installation of OSSEC HIDS is very simple, the <code class="docutils literal"><span class="pre">install.sh</span></code> shell script automating most of it.
 There are a few questions to be answered before the installation will occur, one of the most
 important being which type of installation is desired.
 It is important to choose the correct installation type: server, agent, local, or hybrid.
 More information on thse can be found on the <a class="reference external" href="../ossec-architecture.html">OSSEC Architecture page</a>.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">In the following installation the commands follow the <tt class="docutils literal"><span class="pre">#</span></tt>.
+<p class="last">In the following installation the commands follow the <code class="docutils literal"><span class="pre">#</span></code>.
 Everything else is either comments out output.</p>
 </div>
 <ol class="arabic simple">
@@ -136,7 +136,7 @@ or lynx respectively instead.</p>
 </div>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
-<p class="last">wget may not be able to pull files from the OSSEC site. Use the <tt class="docutils literal"><span class="pre">-U</span></tt> flag to add a UserAgent,
+<p class="last">wget may not be able to pull files from the OSSEC site. Use the <code class="docutils literal"><span class="pre">-U</span></code> flag to add a UserAgent,
 or obtain the checksum file by some other manner.</p>
 </div>
 <div class="highlight-console"><div class="highlight"><pre><span class="gp">#</span> wget -U ossec http://www.ossec.net/files/ossec-hids-2.8.1.tar.gz
@@ -152,7 +152,7 @@ or obtain the checksum file by some other manner.</p>
 </div>
 </div></blockquote>
 <ol class="arabic" start="2">
-<li><p class="first">Extract the compressed package and run the <tt class="docutils literal"><span class="pre">install.sh</span></tt> script. It will guide you
+<li><p class="first">Extract the compressed package and run the <code class="docutils literal"><span class="pre">install.sh</span></code> script. It will guide you
 through the installation.</p>
 <blockquote>
 <div><div class="highlight-console"><div class="highlight"><pre><span class="gp">#</span> tar -zxvf ossec-hids-*.tar.gz <span class="o">(</span>or gunzip -d<span class="p">;</span> tar -xvf<span class="o">)</span>
@@ -195,7 +195,7 @@ More information can be found on the <a class="reference external" href="../agen
     </p>
     <p>
         &copy; Copyright 2010-2015, OSSEC Project Team - OSSEC trademark and domain owned by Trend Micro, Inc. - Home page images courtesy of Pixbay.com.<br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.3.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1.<br/>
     </p>
   </div>
 </footer>

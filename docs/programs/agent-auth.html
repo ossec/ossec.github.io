@@ -48,7 +48,7 @@
   </style>
 
   </head>
-  <body>
+  <body role="document">
 
   <div id="navbar" class="navbar navbar-inverse navbar-default ">
     <div class="container">
@@ -115,7 +115,7 @@
       
   <div class="section" id="agent-auth">
 <span id="id1"></span><h1>agent-auth<a class="headerlink" href="#agent-auth" title="Permalink to this headline">¶</a></h1>
-<p>The agent-auth program is the client application used with <a class="reference internal" href="ossec-authd.html#ossec-authd"><em>ossec-authd</em></a> to automatically add agents to an OSSEC manager.</p>
+<p>The agent-auth program is the client application used with <a class="reference internal" href="ossec-authd.html#ossec-authd"><span>ossec-authd</span></a> to automatically add agents to an OSSEC manager.</p>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
 <p class="last">By default there is no authentication or authorization involved in this transaction, so it is recommended that
@@ -125,64 +125,64 @@ this daemon only be run when a new agent is being added.</p>
 <h2>agent-auth argument options<a class="headerlink" href="#agent-auth-argument-options" title="Permalink to this headline">¶</a></h2>
 <dl class="option">
 <dt id="cmdoption-agent-auth-A">
-<tt class="descname">-A</tt><tt class="descclassname"> &lt;agent_name&gt;</tt><a class="headerlink" href="#cmdoption-agent-auth-A" title="Permalink to this definition">¶</a></dt>
+<code class="descname">-A</code><code class="descclassname"> &lt;agent_name&gt;</code><a class="headerlink" href="#cmdoption-agent-auth-A" title="Permalink to this definition">¶</a></dt>
 <dd><p>Agent name to be used.
 <strong>Default</strong> hostname</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-agent-auth-D">
-<tt class="descname">-D</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-agent-auth-D" title="Permalink to this definition">¶</a></dt>
+<code class="descname">-D</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-agent-auth-D" title="Permalink to this definition">¶</a></dt>
 <dd><p>Directory where OSSEC is installed.
 <strong>Default</strong> /var/ossec</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-agent-auth-d">
-<tt class="descname">-d</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-agent-auth-d" title="Permalink to this definition">¶</a></dt>
+<code class="descname">-d</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-agent-auth-d" title="Permalink to this definition">¶</a></dt>
 <dd><p>Execute agent-auth in debug mode. This option can be used multiple times to increase the verbosity of the debug messages.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-agent-auth-g">
-<tt class="descname">-g</tt><tt class="descclassname"> &lt;group&gt;</tt><a class="headerlink" href="#cmdoption-agent-auth-g" title="Permalink to this definition">¶</a></dt>
-<dd><p>Run as <tt class="docutils literal"><span class="pre">group</span></tt>.</p>
+<code class="descname">-g</code><code class="descclassname"> &lt;group&gt;</code><a class="headerlink" href="#cmdoption-agent-auth-g" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run as <code class="docutils literal"><span class="pre">group</span></code>.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-agent-auth-h">
-<tt class="descname">-h</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-agent-auth-h" title="Permalink to this definition">¶</a></dt>
+<code class="descname">-h</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-agent-auth-h" title="Permalink to this definition">¶</a></dt>
 <dd><p>Display the help message</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-agent-auth-k">
-<tt class="descname">-k</tt><tt class="descclassname"> &lt;path&gt;</tt><a class="headerlink" href="#cmdoption-agent-auth-k" title="Permalink to this definition">¶</a></dt>
+<code class="descname">-k</code><code class="descclassname"> &lt;path&gt;</code><a class="headerlink" href="#cmdoption-agent-auth-k" title="Permalink to this definition">¶</a></dt>
 <dd><p>Full path to the agent key.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-agent-auth-m">
-<tt class="descname">-m</tt><tt class="descclassname"> &lt;manager_ip&gt;</tt><a class="headerlink" href="#cmdoption-agent-auth-m" title="Permalink to this definition">¶</a></dt>
+<code class="descname">-m</code><code class="descclassname"> &lt;manager_ip&gt;</code><a class="headerlink" href="#cmdoption-agent-auth-m" title="Permalink to this definition">¶</a></dt>
 <dd><p>IP address of the manager.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-agent-auth-p">
-<tt class="descname">-p</tt><tt class="descclassname"> &lt;port&gt;</tt><a class="headerlink" href="#cmdoption-agent-auth-p" title="Permalink to this definition">¶</a></dt>
+<code class="descname">-p</code><code class="descclassname"> &lt;port&gt;</code><a class="headerlink" href="#cmdoption-agent-auth-p" title="Permalink to this definition">¶</a></dt>
 <dd><p>Port ossec-authd is running on.</p>
 <p><strong>Default</strong> 1515</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-agent-auth-V">
-<tt class="descname">-V</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-agent-auth-V" title="Permalink to this definition">¶</a></dt>
+<code class="descname">-V</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-agent-auth-V" title="Permalink to this definition">¶</a></dt>
 <dd><p>Display OSSEC Version and license information.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-agent-auth-v">
-<tt class="descname">-v</tt><tt class="descclassname"> &lt;path&gt;</tt><a class="headerlink" href="#cmdoption-agent-auth-v" title="Permalink to this definition">¶</a></dt>
+<code class="descname">-v</code><code class="descclassname"> &lt;path&gt;</code><a class="headerlink" href="#cmdoption-agent-auth-v" title="Permalink to this definition">¶</a></dt>
 <dd><blockquote>
 <div>Full path to the CA certificate used to verify the server.</div></blockquote>
 <div class="admonition note">
@@ -193,14 +193,14 @@ this daemon only be run when a new agent is being added.</p>
 
 <dl class="option">
 <dt id="cmdoption-agent-auth-x">
-<tt class="descname">-x</tt><tt class="descclassname"> &lt;path&gt;</tt><a class="headerlink" href="#cmdoption-agent-auth-x" title="Permalink to this definition">¶</a></dt>
+<code class="descname">-x</code><code class="descclassname"> &lt;path&gt;</code><a class="headerlink" href="#cmdoption-agent-auth-x" title="Permalink to this definition">¶</a></dt>
 <dd><p>Full path to the agent certificate.</p>
 </dd></dl>
 
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p>The following options are only necessary if verification of server or client certificates is desired. See <a class="reference internal" href="#optional-server-authentication"><em>Optional Server Authentication</em></a> and
-<a class="reference internal" href="ossec-authd.html#optional-client-authentication"><em>Optional Client Authentication</em></a> below.</p>
+<p>The following options are only necessary if verification of server or client certificates is desired. See <a class="reference internal" href="#optional-server-authentication"><span>Optional Server Authentication</span></a> and
+<a class="reference internal" href="ossec-authd.html#optional-client-authentication"><span>Optional Client Authentication</span></a> below.</p>
 <div class="last admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">This option was added after 2.8.1.</p>
@@ -208,8 +208,8 @@ this daemon only be run when a new agent is being added.</p>
 </div>
 <dl class="option">
 <dt id="cmdoption-agent-auth-x">
-<tt class="descname">-x</tt><tt class="descclassname"> &lt;/path/to/certificate&gt;</tt><a class="headerlink" href="#cmdoption-agent-auth-x" title="Permalink to this definition">¶</a></dt>
-<dd><p>Load the PEM encoded certificate that will be presented to <a class="reference internal" href="ossec-authd.html#ossec-authd"><em>ossec-authd</em></a> during establishment of the SSL connection.</p>
+<code class="descname">-x</code><code class="descclassname"> &lt;/path/to/certificate&gt;</code><a class="headerlink" href="#cmdoption-agent-auth-x" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load the PEM encoded certificate that will be presented to <a class="reference internal" href="ossec-authd.html#ossec-authd"><span>ossec-authd</span></a> during establishment of the SSL connection.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">This option was added after 2.8.1.</p>
@@ -218,7 +218,7 @@ this daemon only be run when a new agent is being added.</p>
 
 <dl class="option">
 <dt id="cmdoption-agent-auth-k">
-<tt class="descname">-k</tt><tt class="descclassname"> &lt;/path/to/private_key&gt;</tt><a class="headerlink" href="#cmdoption-agent-auth-k" title="Permalink to this definition">¶</a></dt>
+<code class="descname">-k</code><code class="descclassname"> &lt;/path/to/private_key&gt;</code><a class="headerlink" href="#cmdoption-agent-auth-k" title="Permalink to this definition">¶</a></dt>
 <dd><p>Load the certificate&#8217;s corresponding PEM encoded private key.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -228,9 +228,9 @@ this daemon only be run when a new agent is being added.</p>
 
 <dl class="option">
 <dt id="cmdoption-agent-auth-v">
-<tt class="descname">-v</tt><tt class="descclassname"> &lt;/path/to/CA_certificate&gt;</tt><a class="headerlink" href="#cmdoption-agent-auth-v" title="Permalink to this definition">¶</a></dt>
-<dd><p>Load the PEM encoded CA Certificate that will be used to verify <a class="reference internal" href="ossec-authd.html#ossec-authd"><em>ossec-authd</em></a> if desired. If this option is used then
-<a class="reference internal" href="ossec-authd.html#ossec-authd"><em>ossec-authd</em></a> must present a valid certificate signed by this CA.</p>
+<code class="descname">-v</code><code class="descclassname"> &lt;/path/to/CA_certificate&gt;</code><a class="headerlink" href="#cmdoption-agent-auth-v" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load the PEM encoded CA Certificate that will be used to verify <a class="reference internal" href="ossec-authd.html#ossec-authd"><span>ossec-authd</span></a> if desired. If this option is used then
+<a class="reference internal" href="ossec-authd.html#ossec-authd"><span>ossec-authd</span></a> must present a valid certificate signed by this CA.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">This option was added after 2.8.1.</p>
@@ -240,9 +240,9 @@ this daemon only be run when a new agent is being added.</p>
 </div>
 <div class="section" id="optional-server-authentication">
 <span id="id2"></span><h2>Optional Server Authentication<a class="headerlink" href="#optional-server-authentication" title="Permalink to this headline">¶</a></h2>
-<p><tt class="docutils literal"><span class="pre">agent-auth</span></tt> can verify that the server it&#8217;s connecting to presents a valid X.509 certificate when requesting
+<p><code class="docutils literal"><span class="pre">agent-auth</span></code> can verify that the server it&#8217;s connecting to presents a valid X.509 certificate when requesting
 a key. This is optional and is only useful if hosts in your environment have access to the root certificate of
-the CA that signed the certificate presented by <a class="reference internal" href="ossec-authd.html#ossec-authd"><em>ossec-authd</em></a>. If server certificate verification is desired
+the CA that signed the certificate presented by <a class="reference internal" href="ossec-authd.html#ossec-authd"><span>ossec-authd</span></a>. If server certificate verification is desired
 then the relevant CA certificate must be loaded with the -v option, then if the server does not present a valid
 certificate the agent will not be allocated a key.</p>
 <p>A certificate presented by the server may be found to be invalid for the following reasons:</p>
@@ -257,7 +257,7 @@ and agent-auth.</p>
 </div>
 <div class="section" id="optional-client-authentication">
 <span id="id3"></span><h2>Optional Client Authentication<a class="headerlink" href="#optional-client-authentication" title="Permalink to this headline">¶</a></h2>
-<p><tt class="docutils literal"><span class="pre">agent-auth</span></tt> can present its own certificate to the server for verification. This is mandatory if <a class="reference internal" href="ossec-authd.html#ossec-authd"><em>ossec-authd</em></a>
+<p><code class="docutils literal"><span class="pre">agent-auth</span></code> can present its own certificate to the server for verification. This is mandatory if <a class="reference internal" href="ossec-authd.html#ossec-authd"><span>ossec-authd</span></a>
 was run with the -v option and optional otherwise. This is only useful if hosts in your environment are assigned
 certificates when they&#8217;re provisioned (or at some point before being added to OSSEC). Use the -x and -k options
 to load a certificate and private key.</p>
@@ -315,7 +315,7 @@ to load a certificate and private key.</p>
     </p>
     <p>
         &copy; Copyright 2010-2015, OSSEC Project Team - OSSEC trademark and domain owned by Trend Micro, Inc. - Home page images courtesy of Pixbay.com.<br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.3.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1.<br/>
     </p>
   </div>
 </footer>

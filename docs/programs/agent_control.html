@@ -48,7 +48,7 @@
   </style>
 
   </head>
-  <body>
+  <body role="document">
 
   <div id="navbar" class="navbar navbar-inverse navbar-default ">
     <div class="container">
@@ -122,31 +122,31 @@ on your server and it also allows you to restart (run now) the syscheck/rootchec
 <h2>agent_control argument options<a class="headerlink" href="#agent-control-argument-options" title="Permalink to this headline">¶</a></h2>
 <dl class="option">
 <dt id="cmdoption-agent_control-h">
-<tt class="descname">-h</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-agent_control-h" title="Permalink to this definition">¶</a></dt>
+<code class="descname">-h</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-agent_control-h" title="Permalink to this definition">¶</a></dt>
 <dd><p>Display the help message</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-agent_control-l">
-<tt class="descname">-l</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-agent_control-l" title="Permalink to this definition">¶</a></dt>
+<code class="descname">-l</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-agent_control-l" title="Permalink to this definition">¶</a></dt>
 <dd><p>List available (active or not) agents</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-agent_control-lc">
-<tt class="descname">-lc</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-agent_control-lc" title="Permalink to this definition">¶</a></dt>
+<code class="descname">-lc</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-agent_control-lc" title="Permalink to this definition">¶</a></dt>
 <dd><p>List active agents</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-agent_control-i">
-<tt class="descname">-i</tt><tt class="descclassname"> &lt;agent_id&gt;</tt><a class="headerlink" href="#cmdoption-agent_control-i" title="Permalink to this definition">¶</a></dt>
+<code class="descname">-i</code><code class="descclassname"> &lt;agent_id&gt;</code><a class="headerlink" href="#cmdoption-agent_control-i" title="Permalink to this definition">¶</a></dt>
 <dd><p>Extracts information from an agent</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-agent_control-R">
-<tt class="descname">-R</tt><tt class="descclassname"> &lt;agent_id&gt;</tt><a class="headerlink" href="#cmdoption-agent_control-R" title="Permalink to this definition">¶</a></dt>
+<code class="descname">-R</code><code class="descclassname"> &lt;agent_id&gt;</code><a class="headerlink" href="#cmdoption-agent_control-R" title="Permalink to this definition">¶</a></dt>
 <dd><p>Restarts the OSSEC processes on the agent</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -156,9 +156,9 @@ on your server and it also allows you to restart (run now) the syscheck/rootchec
 
 <dl class="option">
 <dt id="cmdoption-agent_control-r">
-<tt class="descname">-r</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-agent_control-r" title="Permalink to this definition">¶</a></dt>
+<code class="descname">-r</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-agent_control-r" title="Permalink to this definition">¶</a></dt>
 <dd><p>Run the integrity/rootcheck checking on agents.  Must be utilized
-with <a class="reference internal" href="#cmdoption-agent_control-a"><em class="xref std std-option">agent_control -a</em></a> or <a class="reference internal" href="#cmdoption-agent_control-u"><em class="xref std std-option">agent_control -u</em></a></p>
+with <a class="reference internal" href="#cmdoption-agent_control-a"><code class="xref std std-option docutils literal"><span class="pre">agent_control</span> <span class="pre">-a</span></code></a> or <a class="reference internal" href="#cmdoption-agent_control-u"><code class="xref std std-option docutils literal"><span class="pre">agent_control</span> <span class="pre">-u</span></code></a></p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">Requires active response to be enabled.</p>
@@ -167,13 +167,13 @@ with <a class="reference internal" href="#cmdoption-agent_control-a"><em class="
 
 <dl class="option">
 <dt id="cmdoption-agent_control-a">
-<tt class="descname">-a</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-agent_control-a" title="Permalink to this definition">¶</a></dt>
+<code class="descname">-a</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-agent_control-a" title="Permalink to this definition">¶</a></dt>
 <dd><p>Utilizes all agents.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-agent_control-u">
-<tt class="descname">-u</tt><tt class="descclassname"> &lt;agent_id&gt;</tt><a class="headerlink" href="#cmdoption-agent_control-u" title="Permalink to this definition">¶</a></dt>
+<code class="descname">-u</code><code class="descclassname"> &lt;agent_id&gt;</code><a class="headerlink" href="#cmdoption-agent_control-u" title="Permalink to this definition">¶</a></dt>
 <dd><p>&lt;agent_id&gt; that will perform the requested action.</p>
 </dd></dl>
 
@@ -182,8 +182,8 @@ with <a class="reference internal" href="#cmdoption-agent_control-a"><em class="
 <h2>agent_control example usage<a class="headerlink" href="#agent-control-example-usage" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="example-1-listing-all-active-agents">
 <h3>Example 1: Listing all active agents<a class="headerlink" href="#example-1-listing-all-active-agents" title="Permalink to this headline">¶</a></h3>
-<p>The first interesting argument is <a class="reference internal" href="#cmdoption-agent_control-lc"><em class="xref std std-option">agent_control -lc</em></a>, to list the connected (active agents). To list
-all of them, use <a class="reference internal" href="#cmdoption-agent_control-l"><em class="xref std std-option">agent_control -l</em></a> only.</p>
+<p>The first interesting argument is <a class="reference internal" href="#cmdoption-agent_control-lc"><code class="xref std std-option docutils literal"><span class="pre">agent_control</span> <span class="pre">-lc</span></code></a>, to list the connected (active agents). To list
+all of them, use <a class="reference internal" href="#cmdoption-agent_control-l"><code class="xref std std-option docutils literal"><span class="pre">agent_control</span> <span class="pre">-l</span></code></a> only.</p>
 <div class="highlight-console"><div class="highlight"><pre><span class="gp">#</span> /var/ossec/bin/agent_control -lc
 <span class="go">OSSEC HIDS agent_control. List of available agents:</span>
 <span class="go">ID: 000, Name: enigma.ossec.net (server), IP: 127.0.0.1, Active/Local</span>
@@ -196,7 +196,7 @@ all of them, use <a class="reference internal" href="#cmdoption-agent_control-l"
 </div>
 <div class="section" id="example-2-querying-information-from-agent-002">
 <h3>Example 2: Querying information from agent 002<a class="headerlink" href="#example-2-querying-information-from-agent-002" title="Permalink to this headline">¶</a></h3>
-<p>To query an agent, just use the <a class="reference internal" href="#cmdoption-agent_control-i"><em class="xref std std-option">agent_control -i</em></a> option followed by the agent id.</p>
+<p>To query an agent, just use the <a class="reference internal" href="#cmdoption-agent_control-i"><code class="xref std std-option docutils literal"><span class="pre">agent_control</span> <span class="pre">-i</span></code></a> option followed by the agent id.</p>
 <div class="highlight-console"><div class="highlight"><pre><span class="gp">#</span> /var/ossec/bin/agent_control -i 002
 
 <span class="go">OSSEC HIDS agent_control. Agent information:</span>
@@ -216,8 +216,8 @@ all of them, use <a class="reference internal" href="#cmdoption-agent_control-l"
 </div>
 <div class="section" id="example-3-executing-syscheck-and-rootcheck-scan-immediately">
 <h3>Example 3: Executing syscheck and rootcheck scan immediately<a class="headerlink" href="#example-3-executing-syscheck-and-rootcheck-scan-immediately" title="Permalink to this headline">¶</a></h3>
-<p>To execute the syscheck/rootcheck scan immediately, use the <a class="reference internal" href="#cmdoption-agent_control-r"><em class="xref std std-option">agent_control -r</em></a>
-option followed by the <a class="reference internal" href="#cmdoption-agent_control-u"><em class="xref std std-option">agent_control -u</em></a> with the agent id.</p>
+<p>To execute the syscheck/rootcheck scan immediately, use the <a class="reference internal" href="#cmdoption-agent_control-r"><code class="xref std std-option docutils literal"><span class="pre">agent_control</span> <span class="pre">-r</span></code></a>
+option followed by the <a class="reference internal" href="#cmdoption-agent_control-u"><code class="xref std std-option docutils literal"><span class="pre">agent_control</span> <span class="pre">-u</span></code></a> with the agent id.</p>
 <div class="highlight-console"><div class="highlight"><pre><span class="gp">#</span> /var/ossec/bin/agent_control -r -u 000
 
 <span class="go">OSSEC HIDS agent_control: Restarting Syscheck/Rootcheck locally.</span>
@@ -244,7 +244,7 @@ option followed by the <a class="reference internal" href="#cmdoption-agent_cont
     </p>
     <p>
         &copy; Copyright 2010-2015, OSSEC Project Team - OSSEC trademark and domain owned by Trend Micro, Inc. - Home page images courtesy of Pixbay.com.<br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.3.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1.<br/>
     </p>
   </div>
 </footer>

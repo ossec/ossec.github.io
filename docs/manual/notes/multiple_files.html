@@ -48,7 +48,7 @@
   </style>
 
   </head>
-  <body>
+  <body role="document">
 
   <div id="navbar" class="navbar navbar-inverse navbar-default ">
     <div class="container">
@@ -140,7 +140,7 @@ posix regular expressions.</p>
 <div class="section" id="for-windows-agents">
 <h2>For Windows Agents<a class="headerlink" href="#for-windows-agents" title="Permalink to this headline">¶</a></h2>
 <p>For the Windows agent, the built-in globing doesn&#8217;t work. At time of writing (OSSEC
-version 1.5) you have to use a script to auto-generate <tt class="docutils literal"><span class="pre">ossec.conf</span></tt> if you want to
+version 1.5) you have to use a script to auto-generate <code class="docutils literal"><span class="pre">ossec.conf</span></code> if you want to
 monitor many log files without having to manually enter them. Here&#8217;s an example
 batch file to get you started:</p>
 <div class="highlight-console"><div class="highlight"><pre><span class="go">@echo off</span>
@@ -159,9 +159,9 @@ batch file to get you started:</p>
 </div>
 <p>Adjust the &#8220;for..in&#8221; globbing line as needed. In this example, I&#8217;m monitoring logs for multiple
 IIS sites which are all in D:Logs. Save it into a file with a .bat extension and put it
-somewhere on your hard drive. Create a file named <tt class="docutils literal"><span class="pre">ossec_template.conf</span></tt> in
+somewhere on your hard drive. Create a file named <code class="docutils literal"><span class="pre">ossec_template.conf</span></code> in
 the <strong>`same directory</strong> as the batch file. You can probably just copy your current
-<tt class="docutils literal"><span class="pre">ossec.conf</span></tt> for this file, as this script will only append to it. You can then set
+<code class="docutils literal"><span class="pre">ossec.conf</span></code> for this file, as this script will only append to it. You can then set
 up a scheduled task to run the batch file to automatically keep your ossec.conf up to date.</p>
 </div>
 </div>
@@ -183,7 +183,7 @@ up a scheduled task to run the batch file to automatically keep your ossec.conf 
     </p>
     <p>
         &copy; Copyright 2010-2015, OSSEC Project Team - OSSEC trademark and domain owned by Trend Micro, Inc. - Home page images courtesy of Pixbay.com.<br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.3.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1.<br/>
     </p>
   </div>
 </footer>

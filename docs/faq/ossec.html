@@ -48,7 +48,7 @@
   </style>
 
   </head>
-  <body>
+  <body role="document">
 
   <div id="navbar" class="navbar navbar-inverse navbar-default ">
     <div class="container">
@@ -139,9 +139,9 @@ To change the maximum number of agents, cd into the src directory and run the fo
 </div>
 <p>You should be prompted for the number of agents to allow.</p>
 <p>One issue you may face after changing this setting is the number of files allowed to be open for a single user.
-The users <tt class="docutils literal"><span class="pre">ossec</span></tt> and <tt class="docutils literal"><span class="pre">ossecr</span></tt> both open at least 1 file (syscheck database and rids file) per agent.
+The users <code class="docutils literal"><span class="pre">ossec</span></code> and <code class="docutils literal"><span class="pre">ossecr</span></code> both open at least 1 file (syscheck database and rids file) per agent.
 Raising this limit is operating system specific.</p>
-<p>Some Linux distributions support a <tt class="docutils literal"><span class="pre">/etc/security/limits.conf</span></tt>. Set the limits to be at least a few files above what the max agents is set to.</p>
+<p>Some Linux distributions support a <code class="docutils literal"><span class="pre">/etc/security/limits.conf</span></code>. Set the limits to be at least a few files above what the max agents is set to.</p>
 <div class="highlight-console"><div class="highlight"><pre><span class="go">ossec            soft    nofile          2048</span>
 <span class="go">ossec            hard    nofile          2048</span>
 <span class="go">ossecr           soft    nofile          2048</span>
@@ -156,20 +156,20 @@ Raising this limit is operating system specific.</p>
 <div><p>On OSSEC server and local installs there are several classes of OSSEC logs.
 There are the logs created by the OSSEC daemons, the log messages from the agents, and the alerts.
 Agent installs do not have logs from other agents or alerts, but do have logs created by the OSSEC processes.</p>
-<p>All logs are stored in subdirectories of <tt class="docutils literal"><span class="pre">/var/ossec/logs</span></tt>.
-OSSEC&#8217;s log messages are stored in <tt class="docutils literal"><span class="pre">/var/ossec/logs/ossec.log</span></tt>.</p>
+<p>All logs are stored in subdirectories of <code class="docutils literal"><span class="pre">/var/ossec/logs</span></code>.
+OSSEC&#8217;s log messages are stored in <code class="docutils literal"><span class="pre">/var/ossec/logs/ossec.log</span></code>.</p>
 <p>Log messages from the agents are not stored by default. After analysis they are deleted unless the &lt;logall&gt; option is included in the manager&#8217;s ossec.conf.
-If set all log messages sent to the manager are stored in <tt class="docutils literal"><span class="pre">/var/ossec/logs/archives/archives.log</span></tt> and rotated daily.</p>
-<p>Alerts are stored in <tt class="docutils literal"><span class="pre">/var/ossec/logs/alerts/alerts.log</span></tt>, and rotated daily.</p>
+If set all log messages sent to the manager are stored in <code class="docutils literal"><span class="pre">/var/ossec/logs/archives/archives.log</span></code> and rotated daily.</p>
+<p>Alerts are stored in <code class="docutils literal"><span class="pre">/var/ossec/logs/alerts/alerts.log</span></code>, and rotated daily.</p>
 </div></blockquote>
 </div>
 <div class="section" id="where-can-i-view-the-logs-sent-to-an-ossec-manager-or-on-a-local-install">
 <h2><a class="toc-backref" href="#id3">Where can I view the logs sent to an OSSEC manager (or on a local install)?</a><a class="headerlink" href="#where-can-i-view-the-logs-sent-to-an-ossec-manager-or-on-a-local-install" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><p>OSSEC does not store the logs sent to it by default. If a log does not trigger an alert it is discarded, and logs that do trigger alerts are stored with the alerts in <tt class="docutils literal"><span class="pre">/var/ossec/logs/alerts</span></tt>.</p>
-<p>The <tt class="docutils literal"><span class="pre">&lt;log-all&gt;</span></tt> option can be added to the <tt class="docutils literal"><span class="pre">&lt;global&gt;</span></tt> section (see: <a class="reference internal" href="../syntax/head_ossec_config.global.html#ossec-config-global"><em>ossec.conf: Global options</em></a>) of the manager&#8217;s ossec.conf. The manager&#8217;s OSSEC processes should be restarted.
-The raw logs will then be saved to files, organized by date, in <tt class="docutils literal"><span class="pre">/var/ossec/logs/archives</span></tt>.</p>
-<p>The headers attached to these log messages are in the format of <tt class="docutils literal"><span class="pre">&quot;YYYY</span> <span class="pre">Month</span> <span class="pre">dd</span> <span class="pre">HH:MM:ss</span> <span class="pre">agent_name-&gt;/path/to/log/file</span> <span class="pre">&quot;</span></tt>.</p>
+<div><p>OSSEC does not store the logs sent to it by default. If a log does not trigger an alert it is discarded, and logs that do trigger alerts are stored with the alerts in <code class="docutils literal"><span class="pre">/var/ossec/logs/alerts</span></code>.</p>
+<p>The <code class="docutils literal"><span class="pre">&lt;log-all&gt;</span></code> option can be added to the <code class="docutils literal"><span class="pre">&lt;global&gt;</span></code> section (see: <a class="reference internal" href="../syntax/head_ossec_config.global.html#ossec-config-global"><span>ossec.conf: Global options</span></a>) of the manager&#8217;s ossec.conf. The manager&#8217;s OSSEC processes should be restarted.
+The raw logs will then be saved to files, organized by date, in <code class="docutils literal"><span class="pre">/var/ossec/logs/archives</span></code>.</p>
+<p>The headers attached to these log messages are in the format of <code class="docutils literal"><span class="pre">&quot;YYYY</span> <span class="pre">Month</span> <span class="pre">dd</span> <span class="pre">HH:MM:ss</span> <span class="pre">agent_name-&gt;/path/to/log/file</span> <span class="pre">&quot;</span></code>.</p>
 <div class="highlight-console"><div class="highlight"><pre><span class="go">2011 Aug 04 00:00:01 server-&gt;/var/log/local7 Aug  4 00:00:26 server named[29909]: client 192.168.1.7#39323: query: fake.example.net IN AAAA +</span>
 </pre></div>
 </div>
@@ -178,10 +178,10 @@ The raw logs will then be saved to files, organized by date, in <tt class="docut
 <div class="section" id="can-ossec-s-logs-be-saved-to-a-different-directory">
 <h2><a class="toc-backref" href="#id4">Can OSSEC&#8217;s logs be saved to a different directory?</a><a class="headerlink" href="#can-ossec-s-logs-be-saved-to-a-different-directory" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><p>As a protection mechanism, OSSEC chroots most of its processes to the install directory (typically <tt class="docutils literal"><span class="pre">/var/ossec</span></tt>).
-Due to this chroot, logs must be saved to a location under <tt class="docutils literal"><span class="pre">/var/ossec</span></tt>.
-OSSEC does rotate its logs, but will not be able to move them from <tt class="docutils literal"><span class="pre">/var/ossec</span></tt>.</p>
-<p>Be sure to allocate enough space to <tt class="docutils literal"><span class="pre">/var/ossec</span></tt>.</p>
+<div><p>As a protection mechanism, OSSEC chroots most of its processes to the install directory (typically <code class="docutils literal"><span class="pre">/var/ossec</span></code>).
+Due to this chroot, logs must be saved to a location under <code class="docutils literal"><span class="pre">/var/ossec</span></code>.
+OSSEC does rotate its logs, but will not be able to move them from <code class="docutils literal"><span class="pre">/var/ossec</span></code>.</p>
+<p>Be sure to allocate enough space to <code class="docutils literal"><span class="pre">/var/ossec</span></code>.</p>
 </div></blockquote>
 </div>
 <div class="section" id="i-m-getting-an-error-when-starting-ossec-ossec-analysisd-testing-rules-failed-configuration-error-exiting-why">
@@ -209,7 +209,7 @@ Agents do not send alerts to the manager, they only send the raw logs.</div></bl
 <div class="section" id="how-can-i-get-ossec-log-to-rotate-daily">
 <h2><a class="toc-backref" href="#id8">How can I get ossec.log to rotate daily?</a><a class="headerlink" href="#how-can-i-get-ossec-log-to-rotate-daily" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div>Currently OSSEC does not rotate the <tt class="docutils literal"><span class="pre">ossec.log</span></tt>, use logrotate.d or newsyslog to rotate it for now.</div></blockquote>
+<div>Currently OSSEC does not rotate the <code class="docutils literal"><span class="pre">ossec.log</span></code>, use logrotate.d or newsyslog to rotate it for now.</div></blockquote>
 </div>
 </div>
 
@@ -230,7 +230,7 @@ Agents do not send alerts to the manager, they only send the raw logs.</div></bl
     </p>
     <p>
         &copy; Copyright 2010-2015, OSSEC Project Team - OSSEC trademark and domain owned by Trend Micro, Inc. - Home page images courtesy of Pixbay.com.<br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.3.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1.<br/>
     </p>
   </div>
 </footer>

@@ -48,7 +48,7 @@
   </style>
 
   </head>
-  <body>
+  <body role="document">
 
   <div id="navbar" class="navbar navbar-inverse navbar-default ">
     <div class="container">
@@ -115,14 +115,14 @@
       
   <div class="section" id="unattended-source-installation">
 <h1>Unattended Source Installation<a class="headerlink" href="#unattended-source-installation" title="Permalink to this headline">¶</a></h1>
-<p>OSSEC has the capability to be compiled and installed without the interactivity of <tt class="docutils literal"><span class="pre">install.sh</span></tt>.
-The install script can collect the answers to its questions from the <tt class="docutils literal"><span class="pre">etc/preloaded-vars.conf</span></tt> configuration file.</p>
+<p>OSSEC has the capability to be compiled and installed without the interactivity of <code class="docutils literal"><span class="pre">install.sh</span></code>.
+The install script can collect the answers to its questions from the <code class="docutils literal"><span class="pre">etc/preloaded-vars.conf</span></code> configuration file.</p>
 <p>Most of the questions asked by the installer are present in the configuration file, along with the default answers.
 Uncommenting each variable will allow the script to know the answer. Any changes from the default install should be
 made in the configuration file.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">If <tt class="docutils literal"><span class="pre">USER_NO_STOP=&quot;y&quot;</span></tt> is not set, install.sh may prompt for confirmation.</p>
+<p class="last">If <code class="docutils literal"><span class="pre">USER_NO_STOP=&quot;y&quot;</span></code> is not set, install.sh may prompt for confirmation.</p>
 </div>
 <p>Example preloaded-vars.conf:</p>
 <div class="highlight-console"><div class="highlight"><pre># preloaded-vars.conf, Daniel B. Cid (dcid @ ossec.net).
@@ -273,7 +273,7 @@ made in the configuration file.</p>
     </p>
     <p>
         &copy; Copyright 2010-2015, OSSEC Project Team - OSSEC trademark and domain owned by Trend Micro, Inc. - Home page images courtesy of Pixbay.com.<br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.3.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1.<br/>
     </p>
   </div>
 </footer>

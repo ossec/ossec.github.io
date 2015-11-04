@@ -48,7 +48,7 @@
   </style>
 
   </head>
-  <body>
+  <body role="document">
 
   <div id="navbar" class="navbar navbar-inverse navbar-default ">
     <div class="container">
@@ -157,7 +157,7 @@ will then be processed accordingly.</li>
 <div class="section" id="periodic-diff-specification">
 <h3><a class="toc-backref" href="#id3">Periodic diff Specification</a><a class="headerlink" href="#periodic-diff-specification" title="Permalink to this headline">¶</a></h3>
 <p>The output for periodic_diff is very simple, any and all output after the agentless
-command <tt class="samp docutils literal"><span class="pre">STORE:</span> <span class="pre">now</span></tt> and before the next OSSEC Command will be stored and compared
+command <code class="samp docutils literal"><span class="pre">STORE:</span> <span class="pre">now</span></code> and before the next OSSEC Command will be stored and compared
 for differences. This type of script is mostly used for hardware devices such as
 Cisco IOS, Juniper JunOS, and other products.</p>
 <p>Scripts that use the periodic_diff make use of the following commands:</p>
@@ -263,8 +263,8 @@ to function correctly.)</p>
 <span class="go">INFO: Finished.</span>
 </pre></div>
 </div>
-<p>In this example above the script would store the contents between <tt class="samp docutils literal"><span class="pre">STORE:</span> <span class="pre">now</span></tt>
-and <tt class="samp docutils literal"><span class="pre">INFO:</span> <span class="pre">Finished.</span></tt>. If this is the first time that OSSEC agentless has run
+<p>In this example above the script would store the contents between <code class="samp docutils literal"><span class="pre">STORE:</span> <span class="pre">now</span></code>
+and <code class="samp docutils literal"><span class="pre">INFO:</span> <span class="pre">Finished.</span></code>. If this is the first time that OSSEC agentless has run
 this command no alerts would be generated and the contents would have been saved for
 later comparisons. If OSSEC agentless has a stored copy from a previous execution it
 will compare the files and if there are any differences it will generate an alert.</p>
@@ -361,7 +361,7 @@ New sha1sum is : &#39;d9518ea9022b10d07f81925c6d7f2abb4364b548&#39;
 <h2><a class="toc-backref" href="#id6">Agentless Script: ssh_integrity_check_linux</a><a class="headerlink" href="#agentless-script-ssh-integrity-check-linux" title="Permalink to this headline">¶</a></h2>
 <p>Now that we have an understanding of how agentless scripts communicate with the parent
 OSSEC process, let’s move on to a working example. The OSSEC supplied script
-<tt class="docutils literal"><span class="pre">ssh_integrity_check_linux</span></tt> is a great place to start, so lets open it up and see
+<code class="docutils literal"><span class="pre">ssh_integrity_check_linux</span></code> is a great place to start, so lets open it up and see
 what is going on.</p>
 <div class="highlight-console"><div class="highlight"><pre><span class="go">obsd46# cat /var/ossec/agentless/ssh_integrity_check_linux</span>
 <span class="go"> #!/usr/bin/env expect</span>
@@ -436,7 +436,7 @@ characters in this way when we begin writing our own script.</p>
 <p>While special characters were being handled by expect it also looked for variables to
 replace, in this case it will find $args and replace it with what ever arguments were
 passed to the script by the OSSEC agentless process. If we specified the following in
-<tt class="docutils literal"><span class="pre">/var/ossec/etc/ossec.conf</span></tt> the $args variable would be replaced with <tt class="docutils literal"><span class="pre">/bin</span> <span class="pre">/etc</span> <span class="pre">/sbin</span></tt>.</p>
+<code class="docutils literal"><span class="pre">/var/ossec/etc/ossec.conf</span></code> the $args variable would be replaced with <code class="docutils literal"><span class="pre">/bin</span> <span class="pre">/etc</span> <span class="pre">/sbin</span></code>.</p>
 <div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;agentless&gt;</span>
     <span class="nt">&lt;type&gt;</span>ssh_integrity_check_linux<span class="nt">&lt;/type&gt;</span>
     <span class="nt">&lt;frequency&gt;</span>3600<span class="nt">&lt;/frequency&gt;</span>
@@ -737,7 +737,7 @@ script as we do not make use of the $arg variable.</p>
     </p>
     <p>
         &copy; Copyright 2010-2015, OSSEC Project Team - OSSEC trademark and domain owned by Trend Micro, Inc. - Home page images courtesy of Pixbay.com.<br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.3.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1.<br/>
     </p>
   </div>
 </footer>

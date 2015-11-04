@@ -48,7 +48,7 @@
   </style>
 
   </head>
-  <body>
+  <body role="document">
 
   <div id="navbar" class="navbar navbar-inverse navbar-default ">
     <div class="container">
@@ -317,7 +317,7 @@ and then the agent after that.</li>
 <h2><a class="toc-backref" href="#id5">What does &#8220;1210 - Queue not accessible?&#8221; mean?</a><a class="headerlink" href="#what-does-1210-queue-not-accessible-mean" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="check-queue-ossec-queue">
 <h3><a class="toc-backref" href="#id6">Check queue/ossec/queue</a><a class="headerlink" href="#check-queue-ossec-queue" title="Permalink to this headline">¶</a></h3>
-<p>If you have logs similar to the following in <tt class="docutils literal"><span class="pre">/var/ossec/queue/ossec/queue</span></tt>:</p>
+<p>If you have logs similar to the following in <code class="docutils literal"><span class="pre">/var/ossec/queue/ossec/queue</span></code>:</p>
 <div class="highlight-python"><div class="highlight"><pre>2008/04/29 15:40:39 ossec-syscheckd(1210): ERROR: Queue &#39;/var/ossec/queue/ossec/queue&#39; not accessible: &#39;Connection refused&#39;.
 2008/04/29 15:40:39 ossec-rootcheck(1210): ERROR: Queue &#39;/var/ossec/queue/ossec/queue&#39; not accessible: &#39;Connection refused&#39;.
 2008/04/29 15:40:45 ossec-logcollector(1210): ERROR: Queue &#39;/var/ossec/queue/ossec/queue&#39; not accessible: &#39;Connection refused&#39;.
@@ -326,14 +326,14 @@ and then the agent after that.</li>
 2008/04/29 15:41:00 ossec-rootcheck(1211): ERROR: Unable to access queue: &#39;/var/ossec/queue/ossec/queue&#39;. Giving up..
 </pre></div>
 </div>
-<p>It means that <a class="reference internal" href="../programs/ossec-analysisd.html#ossec-analysisd"><em>ossec-analysisd</em></a> is not running for some reason.</p>
+<p>It means that <a class="reference internal" href="../programs/ossec-analysisd.html#ossec-analysisd"><span>ossec-analysisd</span></a> is not running for some reason.</p>
 <p><strong>The main reasons for this to happen are:</strong></p>
 <ul class="simple">
-<li><a class="reference internal" href="../programs/ossec-analysisd.html#ossec-analysisd"><em>ossec-analysisd</em></a> didn&#8217;t start properly. Look at the logs for any error from it.</li>
-<li><a class="reference internal" href="../programs/ossec-analysisd.html#ossec-analysisd"><em>ossec-analysisd</em></a> didn&#8217;t start at all. There is a bug in the init scripts that
+<li><a class="reference internal" href="../programs/ossec-analysisd.html#ossec-analysisd"><span>ossec-analysisd</span></a> didn&#8217;t start properly. Look at the logs for any error from it.</li>
+<li><a class="reference internal" href="../programs/ossec-analysisd.html#ossec-analysisd"><span>ossec-analysisd</span></a> didn&#8217;t start at all. There is a bug in the init scripts that
 during system reboot, it may not start if the PID is already in use (we are working
 to fix it).</li>
-<li><a class="reference internal" href="../programs/ossec-analysisd.html#ossec-analysisd"><em>ossec-analysisd</em></a> cannot access <tt class="docutils literal"><span class="pre">/queue/fts/fts-queue</span></tt>. Look for the error message <tt class="docutils literal"><span class="pre">ossec-analysisd(1103):</span> <span class="pre">ERROR:</span> <span class="pre">Unable</span> <span class="pre">to</span> <span class="pre">open</span> <span class="pre">file</span> <span class="pre">'/queue/fts/fts-queue'.</span></tt> This can be fixed by ensuring that the ossec user owns <tt class="docutils literal"><span class="pre">/var/ossec/queue/fts/fts-queue</span></tt>.</li>
+<li><a class="reference internal" href="../programs/ossec-analysisd.html#ossec-analysisd"><span>ossec-analysisd</span></a> cannot access <code class="docutils literal"><span class="pre">/queue/fts/fts-queue</span></code>. Look for the error message <code class="docutils literal"><span class="pre">ossec-analysisd(1103):</span> <span class="pre">ERROR:</span> <span class="pre">Unable</span> <span class="pre">to</span> <span class="pre">open</span> <span class="pre">file</span> <span class="pre">'/queue/fts/fts-queue'.</span></code> This can be fixed by ensuring that the ossec user owns <code class="docutils literal"><span class="pre">/var/ossec/queue/fts/fts-queue</span></code>.</li>
 </ul>
 <p><strong>How to fix it:</strong></p>
 <p>Stop OSSEC and start it back again:</p>
@@ -346,24 +346,24 @@ to fix it).</li>
 </div>
 <div class="section" id="check-queue-alerts-ar">
 <h3><a class="toc-backref" href="#id7">Check queue/alerts/ar</a><a class="headerlink" href="#check-queue-alerts-ar" title="Permalink to this headline">¶</a></h3>
-<p>If you have logs similar to the following in <tt class="docutils literal"><span class="pre">/var/ossec/queue/alerts/ar</span></tt>:</p>
+<p>If you have logs similar to the following in <code class="docutils literal"><span class="pre">/var/ossec/queue/alerts/ar</span></code>:</p>
 <div class="highlight-python"><div class="highlight"><pre>2009/02/17 12:03:04 ossec-analysisd(1210): ERROR: Queue &#39;/queue/alerts/ar&#39; not accessible: &#39;Connection refused&#39;.
 2009/02/17 12:03:04 ossec-analysisd(1301): ERROR: Unable to connect to active response queue.
 </pre></div>
 </div>
 <p>It means that there is nothing listening on the other end of the socket the
-<a class="reference internal" href="../programs/ossec-analysisd.html#ossec-analysisd"><em>ossec-analysisd</em></a> deamon would want to write to. This can happen in an ossec
+<a class="reference internal" href="../programs/ossec-analysisd.html#ossec-analysisd"><span>ossec-analysisd</span></a> deamon would want to write to. This can happen in an ossec
 server installation. The deamon that should be listening on this socket is
-<a class="reference internal" href="../programs/ossec-remoted.html#ossec-remoted"><em>ossec-remoted</em></a>.</p>
+<a class="reference internal" href="../programs/ossec-remoted.html#ossec-remoted"><span>ossec-remoted</span></a>.</p>
 <p><strong>How to fix it:</strong></p>
-<p>Add an OSSEC client (agent) with the <a class="reference internal" href="../programs/manage_agents.html#manage-agents"><em>manage_agents</em></a> utility on both agent
-and server. Then restart OSSEC. <a class="reference internal" href="../programs/ossec-remoted.html#ossec-remoted"><em>ossec-remoted</em></a> should now be listening on
+<p>Add an OSSEC client (agent) with the <a class="reference internal" href="../programs/manage_agents.html#manage-agents"><span>manage_agents</span></a> utility on both agent
+and server. Then restart OSSEC. <a class="reference internal" href="../programs/ossec-remoted.html#ossec-remoted"><span>ossec-remoted</span></a> should now be listening on
 the socket.</p>
 </div>
 </div>
 <div class="section" id="remote-commands-are-not-accepted-from-the-manager-ignoring-it-on-the-agent-conf">
 <h2><a class="toc-backref" href="#id8">Remote commands are not accepted from the manager. Ignoring it on the agent.conf</a><a class="headerlink" href="#remote-commands-are-not-accepted-from-the-manager-ignoring-it-on-the-agent-conf" title="Permalink to this headline">¶</a></h2>
-<p>This error message is caused by <tt class="docutils literal"><span class="pre">command</span></tt> or <tt class="docutils literal"><span class="pre">full_command</span></tt> log types in the agent.conf.
+<p>This error message is caused by <code class="docutils literal"><span class="pre">command</span></code> or <code class="docutils literal"><span class="pre">full_command</span></code> log types in the agent.conf.
 Originally OSSEC supported running commands from the agent.conf by default. Thie was later changed as a security
 precaution due to the commands being run as root. When a command is encountered on an agent in the agent.conf
 this error will be produced and the agent may not fully start. This error may also accompany the above error
@@ -438,7 +438,7 @@ The fix for this problem is:</p>
 </div>
 <div class="section" id="agent-won-t-connect-to-the-manager-or-the-agent-always-shows-never-connected">
 <h2><a class="toc-backref" href="#id11">Agent won&#8217;t connect to the manager or the agent always shows never connected</a><a class="headerlink" href="#agent-won-t-connect-to-the-manager-or-the-agent-always-shows-never-connected" title="Permalink to this headline">¶</a></h2>
-<p>The following log messages may appear in the <tt class="docutils literal"><span class="pre">ossec.log</span></tt> file on an agent when it is having issues connecting to a manager:</p>
+<p>The following log messages may appear in the <code class="docutils literal"><span class="pre">ossec.log</span></code> file on an agent when it is having issues connecting to a manager:</p>
 <div class="highlight-console"><div class="highlight"><pre><span class="go">2011/11/13 18:05:13 ossec-agent: WARN: Process locked. Waiting for permission...</span>
 <span class="go">2011/11/13 18:05:24 ossec-agent(4101): WARN: Waiting for server reply (not started). Tried: &#39;10.10.134.241&#39;.</span>
 <span class="go">2011/11/13 18:05:26 ossec-agent: INFO: Trying to connect to server (10.10.134.241:1514).</span>
@@ -446,10 +446,10 @@ The fix for this problem is:</p>
 <span class="go">2011/11/13 18:05:47 ossec-agent(4101): WARN: Waiting for server reply (not started). Tried: &#39;10.10.134.241&#39;.</span>
 </pre></div>
 </div>
-<p>If the agent&#8217;s packets are making it to the manager, the manager will also include error messages in its <tt class="docutils literal"><span class="pre">ossec.log</span></tt> related to that agent. Some possible issues:</p>
+<p>If the agent&#8217;s packets are making it to the manager, the manager will also include error messages in its <code class="docutils literal"><span class="pre">ossec.log</span></code> related to that agent. Some possible issues:</p>
 <ul class="simple">
-<li>The agent may not be using the correct IP address. Some systems with multiple IP addresses may not choose the correct one to communicate with the OSSEC manager. Using <tt class="docutils literal"><span class="pre">any</span></tt> or a CIDR address (192.168.1.0/24) for the agent may be one solution, and adjusting the system&#8217;s route settings is another.</li>
-<li>Every agent must be using a unique key. If 2 agents look like they&#8217;re coming from the same IP (possibly from a NAT gateway), then <tt class="docutils literal"><span class="pre">any</span></tt> or the CIDR address should be used to identify them on the manager.</li>
+<li>The agent may not be using the correct IP address. Some systems with multiple IP addresses may not choose the correct one to communicate with the OSSEC manager. Using <code class="docutils literal"><span class="pre">any</span></code> or a CIDR address (192.168.1.0/24) for the agent may be one solution, and adjusting the system&#8217;s route settings is another.</li>
+<li>Every agent must be using a unique key. If 2 agents look like they&#8217;re coming from the same IP (possibly from a NAT gateway), then <code class="docutils literal"><span class="pre">any</span></code> or the CIDR address should be used to identify them on the manager.</li>
 <li>There may be a firewall blocking the OSSEC traffic, udp 1514 should be allowed to and from the manager.</li>
 <li>UAC may be blocking the OSSEC service from communicating with the manager on Windows 7.</li>
 </ul>
@@ -477,7 +477,7 @@ The fix for this problem is:</p>
 <div class="section" id="my-etc-hosts-deny-file-is-blank-after-install-2-8-1">
 <h2><a class="toc-backref" href="#id13">My /etc/hosts.deny file is blank after install 2.8.1!</a><a class="headerlink" href="#my-etc-hosts-deny-file-is-blank-after-install-2-8-1" title="Permalink to this headline">¶</a></h2>
 <p>There was a bug introduced to the host-deny.sh script that would empty the file. It has been fixed for 2.9.
-Some variable declarations in the script have a space between the variable name, the <tt class="docutils literal"><span class="pre">=</span></tt>, and the value.
+Some variable declarations in the script have a space between the variable name, the <code class="docutils literal"><span class="pre">=</span></code>, and the value.
 Removing these spaces allows the script to work as planned.
 If you are using a system that is still using tcpwrappers, either use the current <a class="reference external" href="https://raw.githubusercontent.com/ossec/ossec-hids/master/active-response/host-deny.sh">host-deny.sh</a>, or remove the spaces from the script before installation.</p>
 </div>
@@ -500,7 +500,7 @@ If you are using a system that is still using tcpwrappers, either use the curren
     </p>
     <p>
         &copy; Copyright 2010-2015, OSSEC Project Team - OSSEC trademark and domain owned by Trend Micro, Inc. - Home page images courtesy of Pixbay.com.<br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.3.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1.<br/>
     </p>
   </div>
 </footer>

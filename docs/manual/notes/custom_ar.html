@@ -48,7 +48,7 @@
   </style>
 
   </head>
-  <body>
+  <body role="document">
 
   <div id="navbar" class="navbar navbar-inverse navbar-default ">
     <div class="container">
@@ -133,7 +133,7 @@ e-mail the alert to a specific address.</p>
 </div>
 <p>Since our script does not need a timeout, we set it to no. We also don&#8217;t expect any input (like srcip or
 username), so we leave the &#8220;expect&#8221; tag empty. In the executable tag, we specify the name of the script
-to be executed (it must be inside <tt class="docutils literal"><span class="pre">/var/ossec/active-response/bin/</span></tt> ).</p>
+to be executed (it must be inside <code class="docutils literal"><span class="pre">/var/ossec/active-response/bin/</span></code> ).</p>
 <p><em>If you do need a srcip or username, just add it, eg: ``&lt;expect&gt;srcip&lt;/expect&gt;``</em></p>
 <p>===2- Configure the Active response===</p>
 <p>Next, we need to configure ossec to run the active response. In my case, I want to run it on the ossec server
@@ -149,8 +149,8 @@ the level or different locations.</p>
 </div>
 <div class="section" id="create-active-response-script">
 <h2>Create active response script:<a class="headerlink" href="#create-active-response-script" title="Permalink to this headline">¶</a></h2>
-<p>With that done, we can create the active response script. The <tt class="docutils literal"><span class="pre">mail-test.sh</span></tt> must be inside the
-<tt class="docutils literal"><span class="pre">/var/ossec/active-response/bin/</span></tt> with the execution permissions set.</p>
+<p>With that done, we can create the active response script. The <code class="docutils literal"><span class="pre">mail-test.sh</span></code> must be inside the
+<code class="docutils literal"><span class="pre">/var/ossec/active-response/bin/</span></code> with the execution permissions set.</p>
 <p><strong>What are the arguments are passed to the script?</strong></p>
 <ul class="simple">
 <li>action (delete or add)</li>
@@ -239,7 +239,7 @@ I can run the logger command to simular a segmentation fault message.</p>
     </p>
     <p>
         &copy; Copyright 2010-2015, OSSEC Project Team - OSSEC trademark and domain owned by Trend Micro, Inc. - Home page images courtesy of Pixbay.com.<br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.3.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1.<br/>
     </p>
   </div>
 </footer>

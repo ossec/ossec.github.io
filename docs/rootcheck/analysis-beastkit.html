@@ -48,7 +48,7 @@
   </style>
 
   </head>
-  <body>
+  <body role="document">
 
   <div id="navbar" class="navbar navbar-inverse navbar-default ">
     <div class="container">
@@ -222,7 +222,7 @@ prw - SSHd-Patchscript (update to ssh-1.2.32)
 </div>
 <p>A SSHd backdoor named &#8220;arobia&#8221; was installed. The config files were
 found in /usr/lib/elm/arobia/. A new password for the backdoor was generated
-with the command <tt class="docutils literal"><span class="pre">sed</span> <span class="pre">s/08e7592e361de6fd59d4d126b29fe6ea/`md5sum</span> <span class="pre">--string=$1|awk</span> <span class="pre">'{print</span> <span class="pre">$1}'`/g</span> <span class="pre">elm\</span> <span class="pre">&gt;</span> <span class="pre">arobia</span></tt>,
+with the command <code class="docutils literal"><span class="pre">sed</span> <span class="pre">s/08e7592e361de6fd59d4d126b29fe6ea/`md5sum</span> <span class="pre">--string=$1|awk</span> <span class="pre">'{print</span> <span class="pre">$1}'`/g</span> <span class="pre">elm\</span> <span class="pre">&gt;</span> <span class="pre">arobia</span></code>,
 which replaces the default password (08e7592e361de6fd59d4d126b29fe6ea=arobia)
 of the original backdoor &#8220;elm&#8221; and generates the new backdoor &#8220;arobia&#8221;.
 After that, &#8220;arobia&#8221; was moved to /usr/sbin. The backdoor start-up is done
@@ -279,7 +279,7 @@ port 33333 at system startup:</p>
     </p>
     <p>
         &copy; Copyright 2010-2015, OSSEC Project Team - OSSEC trademark and domain owned by Trend Micro, Inc. - Home page images courtesy of Pixbay.com.<br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.3.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1.<br/>
     </p>
   </div>
 </footer>

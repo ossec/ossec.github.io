@@ -48,7 +48,7 @@
   </style>
 
   </head>
-  <body>
+  <body role="document">
 
   <div id="navbar" class="navbar navbar-inverse navbar-default ">
     <div class="container">
@@ -145,14 +145,14 @@ and used within the &lt;ossec_config&gt; tag.</p>
 <h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
 <dl class="element">
 <dt id="element-include">
-<tt class="descname">include</tt><a class="headerlink" href="#element-include" title="Permalink to this definition">¶</a></dt>
+<code class="descname">include</code><a class="headerlink" href="#element-include" title="Permalink to this definition">¶</a></dt>
 <dd><p>Load a single rule file.</p>
 <p><strong>Allowed:</strong> Path and file name of rule to load example: rules/config.xml</p>
 </dd></dl>
 
 <dl class="element">
 <dt id="element-rule">
-<tt class="descname">rule</tt><a class="headerlink" href="#element-rule" title="Permalink to this definition">¶</a></dt>
+<code class="descname">rule</code><a class="headerlink" href="#element-rule" title="Permalink to this definition">¶</a></dt>
 <dd><p>Load a single rule file.</p>
 <p><strong>Allowed:</strong> Path and file name of rule to load example: rules/config.xml</p>
 <div class="admonition note">
@@ -164,7 +164,7 @@ other sections of the rules config.</p>
 
 <dl class="element">
 <dt id="element-rule_dir">
-<tt class="descname">rule_dir</tt><a class="headerlink" href="#element-rule_dir" title="Permalink to this definition">¶</a></dt>
+<code class="descname">rule_dir</code><a class="headerlink" href="#element-rule_dir" title="Permalink to this definition">¶</a></dt>
 <dd><p>Load a directory of rules.  The order of loaded files will be in alphebical order
 and will not load any files that have been loaded before.</p>
 <p><strong>Attributes:</strong></p>
@@ -208,26 +208,26 @@ loaded.</p>
 
 <dl class="element">
 <dt id="element-decoder">
-<tt class="descname">decoder</tt><a class="headerlink" href="#element-decoder" title="Permalink to this definition">¶</a></dt>
-<dd><p>Load a single decoder file. The path should be relative to the install directory, typically <tt class="docutils literal"><span class="pre">/var/ossec</span></tt>.</p>
+<code class="descname">decoder</code><a class="headerlink" href="#element-decoder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load a single decoder file. The path should be relative to the install directory, typically <code class="docutils literal"><span class="pre">/var/ossec</span></code>.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">If no decoders are specified in ossec.conf the legacy <tt class="docutils literal"><span class="pre">etc/decoder.xml</span></tt> and
-<tt class="docutils literal"><span class="pre">etc/local_decoder.xml</span></tt> are loaded</p>
+<p class="last">If no decoders are specified in ossec.conf the legacy <code class="docutils literal"><span class="pre">etc/decoder.xml</span></code> and
+<code class="docutils literal"><span class="pre">etc/local_decoder.xml</span></code> are loaded</p>
 </div>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
-<p class="last">If <tt class="docutils literal"><span class="pre">&lt;decoder&gt;</span></tt> or <tt class="docutils literal"><span class="pre">&lt;decoder_dir&gt;</span></tt> are used, the default decoder.xml will not be used. It must be specified explicitly.</p>
+<p class="last">If <code class="docutils literal"><span class="pre">&lt;decoder&gt;</span></code> or <code class="docutils literal"><span class="pre">&lt;decoder_dir&gt;</span></code> are used, the default decoder.xml will not be used. It must be specified explicitly.</p>
 </div>
 <p><strong>Allowed:</strong> Path and file name of decoder to load example: rules/decoder/decoder.xml</p>
 </dd></dl>
 
 <dl class="element">
 <dt id="element-decoder_dir">
-<tt class="descname">decoder_dir</tt><a class="headerlink" href="#element-decoder_dir" title="Permalink to this definition">¶</a></dt>
+<code class="descname">decoder_dir</code><a class="headerlink" href="#element-decoder_dir" title="Permalink to this definition">¶</a></dt>
 <dd><p>Load a directory of decoders.  The order of loaded files will be in alphebics order
 and will not load any files that have been loaded before.
-The path should be relative to the install directory, typically <tt class="docutils literal"><span class="pre">/var/ossec</span></tt>.</p>
+The path should be relative to the install directory, typically <code class="docutils literal"><span class="pre">/var/ossec</span></code>.</p>
 <p><strong>Attributes:</strong></p>
 <ul>
 <li><p class="first"><em>pattern</em>: is a regex match string use to detemine if a file needs to be
@@ -268,13 +268,13 @@ ending with .xml</p>
 </ol>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
-<p class="last">If <tt class="docutils literal"><span class="pre">&lt;decoder&gt;</span></tt> or <tt class="docutils literal"><span class="pre">&lt;decoder_dir&gt;</span></tt> are used, the default decoder.xml will not be used. It must be specified explicitly.</p>
+<p class="last">If <code class="docutils literal"><span class="pre">&lt;decoder&gt;</span></code> or <code class="docutils literal"><span class="pre">&lt;decoder_dir&gt;</span></code> are used, the default decoder.xml will not be used. It must be specified explicitly.</p>
 </div>
 </dd></dl>
 
 <dl class="element">
 <dt id="element-list">
-<tt class="descname">list</tt><a class="headerlink" href="#element-list" title="Permalink to this definition">¶</a></dt>
+<code class="descname">list</code><a class="headerlink" href="#element-list" title="Permalink to this definition">¶</a></dt>
 <dd><p>Load a single cdb references for inclusion by other rules.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -310,7 +310,7 @@ tools will correctly append the correct .cdb or .txt extension as needed.</p>
     </p>
     <p>
         &copy; Copyright 2010-2015, OSSEC Project Team - OSSEC trademark and domain owned by Trend Micro, Inc. - Home page images courtesy of Pixbay.com.<br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.3.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1.<br/>
     </p>
   </div>
 </footer>

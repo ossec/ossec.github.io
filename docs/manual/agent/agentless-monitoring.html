@@ -48,7 +48,7 @@
   </style>
 
   </head>
-  <body>
+  <body role="document">
 
   <div id="navbar" class="navbar navbar-inverse navbar-default ">
     <div class="container">
@@ -124,19 +124,19 @@ exactly what has changed.</p>
 <h2>Agentless configuration options<a class="headerlink" href="#agentless-configuration-options" title="Permalink to this headline">¶</a></h2>
 <dl class="element">
 <dt id="element-agentless">
-<tt class="descname">agentless</tt><a class="headerlink" href="#element-agentless" title="Permalink to this definition">¶</a></dt>
+<code class="descname">agentless</code><a class="headerlink" href="#element-agentless" title="Permalink to this definition">¶</a></dt>
 <dd><p>This is the section that will contain the agentless configuration.</p>
 </dd></dl>
 
 <dl class="element">
 <dt id="element-frequency">
-<tt class="descname">frequency</tt><a class="headerlink" href="#element-frequency" title="Permalink to this definition">¶</a></dt>
+<code class="descname">frequency</code><a class="headerlink" href="#element-frequency" title="Permalink to this definition">¶</a></dt>
 <dd><p>This controls the number of seconds between each run.</p>
 </dd></dl>
 
 <dl class="element">
 <dt id="element-host">
-<tt class="descname">host</tt><a class="headerlink" href="#element-host" title="Permalink to this definition">¶</a></dt>
+<code class="descname">host</code><a class="headerlink" href="#element-host" title="Permalink to this definition">¶</a></dt>
 <dd><p>This defines the username and agentless host.</p>
 <p><strong>Example:</strong></p>
 <div class="highlight-console"><div class="highlight"><pre><span class="go">&lt;host&gt;root@linux.server.example.com&lt;/host&gt;</span>
@@ -146,7 +146,7 @@ exactly what has changed.</p>
 
 <dl class="element">
 <dt id="element-state">
-<tt class="descname">state</tt><a class="headerlink" href="#element-state" title="Permalink to this definition">¶</a></dt>
+<code class="descname">state</code><a class="headerlink" href="#element-state" title="Permalink to this definition">¶</a></dt>
 <dd><p>This determines whether the checks are periodic or periodic_diff.</p>
 <ul class="simple">
 <li>periodic: The output from the scripts is processed by the OSSEC processes.</li>
@@ -156,11 +156,11 @@ exactly what has changed.</p>
 
 <dl class="element">
 <dt id="element-arguments">
-<tt class="descname">arguments</tt><a class="headerlink" href="#element-arguments" title="Permalink to this definition">¶</a></dt>
+<code class="descname">arguments</code><a class="headerlink" href="#element-arguments" title="Permalink to this definition">¶</a></dt>
 <dd><p>This defines the arguments passed to the script.</p>
 </dd></dl>
 
-<p>Check <em class="xref std std-ref">_manual-agentless-scripts</em> for more information.</p>
+<p>Check <span class="xref std std-ref">_manual-agentless-scripts</span> for more information.</p>
 </div>
 <div class="section" id="getting-started-with-agentless">
 <h2>Getting started with agentless<a class="headerlink" href="#getting-started-with-agentless" title="Permalink to this headline">¶</a></h2>
@@ -186,7 +186,7 @@ parameter. In this example, I am adding a Linux box (example.net) and a PIX fire
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last"><tt class="docutils literal"><span class="pre">register_host.sh</span></tt> is a shell script, special characters may need to be escaped to not be interpreted by the shell.</p>
+<p class="last"><code class="docutils literal"><span class="pre">register_host.sh</span></code> is a shell script, special characters may need to be escaped to not be interpreted by the shell.</p>
 </div>
 <p>If you want to use public key authentication instead of
 passwords, you need to provide NOPASS as the password and
@@ -336,7 +336,7 @@ More changes..
     </p>
     <p>
         &copy; Copyright 2010-2015, OSSEC Project Team - OSSEC trademark and domain owned by Trend Micro, Inc. - Home page images courtesy of Pixbay.com.<br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.3.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1.<br/>
     </p>
   </div>
 </footer>

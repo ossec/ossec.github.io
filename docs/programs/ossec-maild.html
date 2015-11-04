@@ -48,7 +48,7 @@
   </style>
 
   </head>
-  <body>
+  <body role="document">
 
   <div id="navbar" class="navbar navbar-inverse navbar-default ">
     <div class="container">
@@ -115,65 +115,65 @@
       
   <div class="section" id="ossec-maild">
 <span id="id1"></span><h1>ossec-maild<a class="headerlink" href="#ossec-maild" title="Permalink to this headline">¶</a></h1>
-<p>The <tt class="docutils literal"><span class="pre">ossec-maild</span></tt> daemon sends OSSEC alerts via email.
-<tt class="docutils literal"><span class="pre">ossec-maild</span></tt> is started by ossec-control.
-Configuration for ossec-maild is handled in the ossec.conf. (see <a class="reference internal" href="../syntax/head_ossec_config.global.html#ossec-config-global"><em>ossec.conf: Global options</em></a>)</p>
+<p>The <code class="docutils literal"><span class="pre">ossec-maild</span></code> daemon sends OSSEC alerts via email.
+<code class="docutils literal"><span class="pre">ossec-maild</span></code> is started by ossec-control.
+Configuration for ossec-maild is handled in the ossec.conf. (see <a class="reference internal" href="../syntax/head_ossec_config.global.html#ossec-config-global"><span>ossec.conf: Global options</span></a>)</p>
 <div class="section" id="ossec-maild-argument-options">
 <h2>ossec-maild argument options<a class="headerlink" href="#ossec-maild-argument-options" title="Permalink to this headline">¶</a></h2>
 <dl class="option">
 <dt id="cmdoption-ossec-maild-c">
-<tt class="descname">-c</tt><tt class="descclassname"> &lt;config&gt;</tt><a class="headerlink" href="#cmdoption-ossec-maild-c" title="Permalink to this definition">¶</a></dt>
-<dd><p>Run <tt class="docutils literal"><span class="pre">ossec-maild</span></tt> using &lt;config&gt; as the configuration file.</p>
+<code class="descname">-c</code><code class="descclassname"> &lt;config&gt;</code><a class="headerlink" href="#cmdoption-ossec-maild-c" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run <code class="docutils literal"><span class="pre">ossec-maild</span></code> using &lt;config&gt; as the configuration file.</p>
 <p><strong>Default:</strong> /var/ossec/etc/ossec.conf</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-ossec-maild-D">
-<tt class="descname">-D</tt><tt class="descclassname"> &lt;dir&gt;</tt><a class="headerlink" href="#cmdoption-ossec-maild-D" title="Permalink to this definition">¶</a></dt>
+<code class="descname">-D</code><code class="descclassname"> &lt;dir&gt;</code><a class="headerlink" href="#cmdoption-ossec-maild-D" title="Permalink to this definition">¶</a></dt>
 <dd><p>Chroot to &lt;dir&gt;.</p>
 <p><strong>Default:</strong> /var/ossec</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-ossec-maild-d">
-<tt class="descname">-d</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-ossec-maild-d" title="Permalink to this definition">¶</a></dt>
+<code class="descname">-d</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ossec-maild-d" title="Permalink to this definition">¶</a></dt>
 <dd><p>Execute ossec-maild in debug mode. This option can be used multiple times to increase the verbosity of the debug messages.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-ossec-maild-f">
-<tt class="descname">-f</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-ossec-maild-f" title="Permalink to this definition">¶</a></dt>
-<dd><p>Run <tt class="docutils literal"><span class="pre">ossec-maild</span></tt> in the foreground.</p>
+<code class="descname">-f</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ossec-maild-f" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run <code class="docutils literal"><span class="pre">ossec-maild</span></code> in the foreground.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-ossec-maild-g">
-<tt class="descname">-g</tt><tt class="descclassname"> &lt;group&gt;</tt><a class="headerlink" href="#cmdoption-ossec-maild-g" title="Permalink to this definition">¶</a></dt>
-<dd><p>Run <tt class="docutils literal"><span class="pre">ossec-maild</span></tt> as &lt;group&gt;.</p>
+<code class="descname">-g</code><code class="descclassname"> &lt;group&gt;</code><a class="headerlink" href="#cmdoption-ossec-maild-g" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run <code class="docutils literal"><span class="pre">ossec-maild</span></code> as &lt;group&gt;.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-ossec-maild-h">
-<tt class="descname">-h</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-ossec-maild-h" title="Permalink to this definition">¶</a></dt>
+<code class="descname">-h</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ossec-maild-h" title="Permalink to this definition">¶</a></dt>
 <dd><p>Display the help message.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-ossec-maild-t">
-<tt class="descname">-t</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-ossec-maild-t" title="Permalink to this definition">¶</a></dt>
+<code class="descname">-t</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ossec-maild-t" title="Permalink to this definition">¶</a></dt>
 <dd><p>Test configuration.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-ossec-maild-u">
-<tt class="descname">-u</tt><tt class="descclassname"> &lt;user&gt;</tt><a class="headerlink" href="#cmdoption-ossec-maild-u" title="Permalink to this definition">¶</a></dt>
-<dd><p>Run <tt class="docutils literal"><span class="pre">ossec-maild</span></tt> as &lt;user&gt;.</p>
+<code class="descname">-u</code><code class="descclassname"> &lt;user&gt;</code><a class="headerlink" href="#cmdoption-ossec-maild-u" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run <code class="docutils literal"><span class="pre">ossec-maild</span></code> as &lt;user&gt;.</p>
 <p><strong>Default:</strong> ossecm</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-ossec-maild-V">
-<tt class="descname">-V</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-ossec-maild-V" title="Permalink to this definition">¶</a></dt>
+<code class="descname">-V</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ossec-maild-V" title="Permalink to this definition">¶</a></dt>
 <dd><p>Version and license information.</p>
 </dd></dl>
 
@@ -197,7 +197,7 @@ Configuration for ossec-maild is handled in the ossec.conf. (see <a class="refer
     </p>
     <p>
         &copy; Copyright 2010-2015, OSSEC Project Team - OSSEC trademark and domain owned by Trend Micro, Inc. - Home page images courtesy of Pixbay.com.<br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.3.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1.<br/>
     </p>
   </div>
 </footer>

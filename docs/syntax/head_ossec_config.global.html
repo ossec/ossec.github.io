@@ -48,7 +48,7 @@
   </style>
 
   </head>
-  <body>
+  <body role="document">
 
   <div id="navbar" class="navbar navbar-inverse navbar-default ">
     <div class="container">
@@ -145,12 +145,12 @@ and used within the &lt;ossec_config&gt; tag.</p>
 <h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
 <dl class="element">
 <dt id="element-global">
-<tt class="descname">global</tt><a class="headerlink" href="#element-global" title="Permalink to this definition">¶</a></dt>
+<code class="descname">global</code><a class="headerlink" href="#element-global" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="element">
 <dt id="element-email_notification">
-<tt class="descname">email_notification</tt><a class="headerlink" href="#element-email_notification" title="Permalink to this definition">¶</a></dt>
+<code class="descname">email_notification</code><a class="headerlink" href="#element-email_notification" title="Permalink to this definition">¶</a></dt>
 <dd><p>Enable or disable e-mail alerting.</p>
 <p><strong>Default:</strong> no</p>
 <p><strong>Allowed:</strong> yes/no</p>
@@ -158,32 +158,32 @@ and used within the &lt;ossec_config&gt; tag.</p>
 
 <dl class="element">
 <dt id="element-email_to">
-<tt class="descname">email_to</tt><a class="headerlink" href="#element-email_to" title="Permalink to this definition">¶</a></dt>
+<code class="descname">email_to</code><a class="headerlink" href="#element-email_to" title="Permalink to this definition">¶</a></dt>
 <dd><p>E-mail recipient of the alerts.</p>
 <p><strong>Allowed:</strong> Any valid e-mail address</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">To use granular email configurations, a base configuration is necessary in the <tt class="docutils literal"><span class="pre">&lt;global&gt;</span></tt> section.</p>
+<p class="last">To use granular email configurations, a base configuration is necessary in the <code class="docutils literal"><span class="pre">&lt;global&gt;</span></code> section.</p>
 </div>
 </dd></dl>
 
 <dl class="element">
 <dt id="element-email_from">
-<tt class="descname">email_from</tt><a class="headerlink" href="#element-email_from" title="Permalink to this definition">¶</a></dt>
+<code class="descname">email_from</code><a class="headerlink" href="#element-email_from" title="Permalink to this definition">¶</a></dt>
 <dd><p>E-mail &#8220;source&#8221; of the alerts.</p>
 <p><strong>Allowed:</strong> Any valid e-mail address</p>
 </dd></dl>
 
 <dl class="element">
 <dt id="element-smtp_server">
-<tt class="descname">smtp_server</tt><a class="headerlink" href="#element-smtp_server" title="Permalink to this definition">¶</a></dt>
+<code class="descname">smtp_server</code><a class="headerlink" href="#element-smtp_server" title="Permalink to this definition">¶</a></dt>
 <dd><p>SMTP server.</p>
 <p><strong>Allowed:</strong> Any valid hostname or IP Address</p>
 </dd></dl>
 
 <dl class="element">
 <dt id="element-email_maxperhour">
-<tt class="descname">email_maxperhour</tt><a class="headerlink" href="#element-email_maxperhour" title="Permalink to this definition">¶</a></dt>
+<code class="descname">email_maxperhour</code><a class="headerlink" href="#element-email_maxperhour" title="Permalink to this definition">¶</a></dt>
 <dd><p>Specifies the maximum number of e-mails to be sent per hour. All emails in excess of this setting will be queued for later distribution.</p>
 <p><strong>Default:</strong> 12</p>
 <p><strong>Allowed:</strong> Any number from 1 to 9999</p>
@@ -196,7 +196,7 @@ This is true whether the mail grouping is enabled or disabled.</p>
 
 <dl class="element">
 <dt id="element-email_idsname">
-<tt class="descname">email_idsname</tt><a class="headerlink" href="#element-email_idsname" title="Permalink to this definition">¶</a></dt>
+<code class="descname">email_idsname</code><a class="headerlink" href="#element-email_idsname" title="Permalink to this definition">¶</a></dt>
 <dd><p>If set, &#8220;X-IDS-OSSEC: &#8221; will be added to the email headers with the specified value.</p>
 <p><strong>Allowed:</strong> Any name</p>
 <div class="admonition note">
@@ -207,7 +207,7 @@ This is true whether the mail grouping is enabled or disabled.</p>
 
 <dl class="element">
 <dt id="element-custom_alert_output">
-<tt class="descname">custom_alert_output</tt><a class="headerlink" href="#element-custom_alert_output" title="Permalink to this definition">¶</a></dt>
+<code class="descname">custom_alert_output</code><a class="headerlink" href="#element-custom_alert_output" title="Permalink to this definition">¶</a></dt>
 <dd><p>Specifies the format of alerts written to the logfile.</p>
 <div class="highlight-console"><div class="highlight"><pre><span class="go">Variables:</span>
 <span class="go">&quot;$TIMESTAMP&quot;    -       The time the event was processed by OSSEC.</span>
@@ -228,7 +228,7 @@ This is true whether the mail grouping is enabled or disabled.</p>
 
 <dl class="element">
 <dt id="element-stats">
-<tt class="descname">stats</tt><a class="headerlink" href="#element-stats" title="Permalink to this definition">¶</a></dt>
+<code class="descname">stats</code><a class="headerlink" href="#element-stats" title="Permalink to this definition">¶</a></dt>
 <dd><p>Alerting level for the events generated by the statistical analysis.</p>
 <p><strong>Default:</strong> 8</p>
 <p><strong>Allowed:</strong> Any level from 0 to 16</p>
@@ -236,7 +236,7 @@ This is true whether the mail grouping is enabled or disabled.</p>
 
 <dl class="element">
 <dt id="element-logall">
-<tt class="descname">logall</tt><a class="headerlink" href="#element-logall" title="Permalink to this definition">¶</a></dt>
+<code class="descname">logall</code><a class="headerlink" href="#element-logall" title="Permalink to this definition">¶</a></dt>
 <dd><p>States if we should store all the events received.</p>
 <p><strong>Default:</strong> no</p>
 <p><strong>Allowed:</strong> yes/no</p>
@@ -244,7 +244,7 @@ This is true whether the mail grouping is enabled or disabled.</p>
 
 <dl class="element">
 <dt id="element-memory_size">
-<tt class="descname">memory_size</tt><a class="headerlink" href="#element-memory_size" title="Permalink to this definition">¶</a></dt>
+<code class="descname">memory_size</code><a class="headerlink" href="#element-memory_size" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sets the memory size for the event correlation.</p>
 <p><strong>Default:</strong> 1024</p>
 <p><strong>Allowed:</strong> Any size from 16 to 5096</p>
@@ -252,7 +252,7 @@ This is true whether the mail grouping is enabled or disabled.</p>
 
 <dl class="element">
 <dt id="element-white_list">
-<tt class="descname">white_list</tt><a class="headerlink" href="#element-white_list" title="Permalink to this definition">¶</a></dt>
+<code class="descname">white_list</code><a class="headerlink" href="#element-white_list" title="Permalink to this definition">¶</a></dt>
 <dd><p>List of IP addresses that should never be blocked by the active response (one per element). This option is only valid in server and local installs.</p>
 <p><strong>Multiples Allowed:</strong> yes</p>
 <p><strong>Allowed:</strong> Any IP address or netblock</p>
@@ -260,7 +260,7 @@ This is true whether the mail grouping is enabled or disabled.</p>
 
 <dl class="element">
 <dt id="element-host_infomation">
-<tt class="descname">host_infomation</tt><a class="headerlink" href="#element-host_infomation" title="Permalink to this definition">¶</a></dt>
+<code class="descname">host_infomation</code><a class="headerlink" href="#element-host_infomation" title="Permalink to this definition">¶</a></dt>
 <dd><p>Alerting level for the events generated by the host change monitor.</p>
 <p><strong>Default:</strong> 8</p>
 <p><strong>Allowed:</strong> Any level from 0 to 16</p>
@@ -268,7 +268,7 @@ This is true whether the mail grouping is enabled or disabled.</p>
 
 <dl class="element">
 <dt id="element-jsonout_output">
-<tt class="descname">jsonout_output</tt><a class="headerlink" href="#element-jsonout_output" title="Permalink to this definition">¶</a></dt>
+<code class="descname">jsonout_output</code><a class="headerlink" href="#element-jsonout_output" title="Permalink to this definition">¶</a></dt>
 <dd><p>Enable or disable writing of json-formated alerts at /var/ossec/logs/alerts/alerts.json</p>
 <p><strong>Default:</strong> no
 <strong>Allowed:</strong> yes/no</p>
@@ -280,7 +280,7 @@ This is true whether the mail grouping is enabled or disabled.</p>
 </div>
 <dl class="element">
 <dt id="element-prelude_output">
-<tt class="descname">prelude_output</tt><a class="headerlink" href="#element-prelude_output" title="Permalink to this definition">¶</a></dt>
+<code class="descname">prelude_output</code><a class="headerlink" href="#element-prelude_output" title="Permalink to this definition">¶</a></dt>
 <dd><p>Enables or disables prelude output.</p>
 <p><strong>Default:</strong> no</p>
 <p><strong>Allowed:</strong> yes/no</p>
@@ -288,7 +288,7 @@ This is true whether the mail grouping is enabled or disabled.</p>
 
 <dl class="element">
 <dt id="element-picviz_output">
-<tt class="descname">picviz_output</tt><a class="headerlink" href="#element-picviz_output" title="Permalink to this definition">¶</a></dt>
+<code class="descname">picviz_output</code><a class="headerlink" href="#element-picviz_output" title="Permalink to this definition">¶</a></dt>
 <dd><p>Enable picviz output.</p>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
@@ -299,7 +299,7 @@ This is true whether the mail grouping is enabled or disabled.</p>
 
 <dl class="element">
 <dt id="element-picviz_socket">
-<tt class="descname">picviz_socket</tt><a class="headerlink" href="#element-picviz_socket" title="Permalink to this definition">¶</a></dt>
+<code class="descname">picviz_socket</code><a class="headerlink" href="#element-picviz_socket" title="Permalink to this definition">¶</a></dt>
 <dd><p>The full path of the socket that ossec will write alerts/events to.  This will
 then be read by picviz for processing.</p>
 <p><strong>Allowed:</strong> File and path that ossec will create and feed events to.</p>
@@ -307,7 +307,7 @@ then be read by picviz for processing.</p>
 
 <dl class="element">
 <dt id="element-zeromq_output">
-<tt class="descname">zeromq_output</tt><a class="headerlink" href="#element-zeromq_output" title="Permalink to this definition">¶</a></dt>
+<code class="descname">zeromq_output</code><a class="headerlink" href="#element-zeromq_output" title="Permalink to this definition">¶</a></dt>
 <dd><p>Enable ZeroMQ Output</p>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
@@ -319,7 +319,7 @@ version.</p>
 
 <dl class="element">
 <dt id="element-zeromq_uri">
-<tt class="descname">zeromq_uri</tt><a class="headerlink" href="#element-zeromq_uri" title="Permalink to this definition">¶</a></dt>
+<code class="descname">zeromq_uri</code><a class="headerlink" href="#element-zeromq_uri" title="Permalink to this definition">¶</a></dt>
 <dd><p>This is zeromq URI that the publisher socket will bind to.</p>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
@@ -341,7 +341,7 @@ version.</p>
 
 <dl class="element">
 <dt id="element-geoip_db_path">
-<tt class="descname">geoip_db_path</tt><a class="headerlink" href="#element-geoip_db_path" title="Permalink to this definition">¶</a></dt>
+<code class="descname">geoip_db_path</code><a class="headerlink" href="#element-geoip_db_path" title="Permalink to this definition">¶</a></dt>
 <dd><p>The full path to the GeoIP IPv4 database file location.</p>
 <p><strong>Example:</strong></p>
 <div class="highlight-console"><div class="highlight"><pre><span class="go">&lt;geoip_db_path&gt;/etc/GeoLiteCity.dat&lt;/geoip_db_path&gt;</span>
@@ -369,7 +369,7 @@ version.</p>
     </p>
     <p>
         &copy; Copyright 2010-2015, OSSEC Project Team - OSSEC trademark and domain owned by Trend Micro, Inc. - Home page images courtesy of Pixbay.com.<br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.3.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1.<br/>
     </p>
   </div>
 </footer>

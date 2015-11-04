@@ -48,7 +48,7 @@
   </style>
 
   </head>
-  <body>
+  <body role="document">
 
   <div id="navbar" class="navbar navbar-inverse navbar-default ">
     <div class="container">
@@ -166,7 +166,7 @@ configuration will be pushed much quicker.</p>
 </div>
 <div class="section" id="restart-the-agent">
 <h2>Restart the agent<a class="headerlink" href="#restart-the-agent" title="Permalink to this headline">¶</a></h2>
-<p>Once the configuration file is pushed, you can run the command <a class="reference internal" href="../../programs/agent_control.html#agent-control"><em>agent_control</em></a> to
+<p>Once the configuration file is pushed, you can run the command <a class="reference internal" href="../../programs/agent_control.html#agent-control"><span>agent_control</span></a> to
 see if the agent received the config and restart the agent remotely.</p>
 <div class="highlight-console"><div class="highlight"><pre><span class="gp">#</span> md5sum /var/ossec/etc/shared/agent.conf
 <span class="go">MD5 (/var/ossec/etc/shared/agent.conf) = ee1882236893df851bd9e4842007e7e7</span>
@@ -190,7 +190,7 @@ see if the agent received the config and restart the agent remotely.</p>
 the md5sum of the agent.conf file.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">Linux systems generally use <tt class="docutils literal"><span class="pre">md5sum</span></tt>, but other systems may use <tt class="docutils literal"><span class="pre">md5</span></tt> as the name of the application to check the hash of the file.</p>
+<p class="last">Linux systems generally use <code class="docutils literal"><span class="pre">md5sum</span></code>, but other systems may use <code class="docutils literal"><span class="pre">md5</span></code> as the name of the application to check the hash of the file.</p>
 </div>
 <p>To restart the agent:</p>
 <div class="highlight-console"><div class="highlight"><pre><span class="gp">#</span> /var/ossec/bin/agent_control -R <span class="m">200</span> <span class="o">(</span>where <span class="m">200</span> is the agent id<span class="o">)</span>
@@ -218,7 +218,7 @@ the md5sum of the agent.conf file.</p>
     </p>
     <p>
         &copy; Copyright 2010-2015, OSSEC Project Team - OSSEC trademark and domain owned by Trend Micro, Inc. - Home page images courtesy of Pixbay.com.<br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.3.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1.<br/>
     </p>
   </div>
 </footer>

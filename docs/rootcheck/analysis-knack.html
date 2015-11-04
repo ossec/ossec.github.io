@@ -48,7 +48,7 @@
   </style>
 
   </head>
-  <body>
+  <body role="document">
 
   <div id="navbar" class="navbar navbar-inverse navbar-default ">
     <div class="container">
@@ -210,7 +210,7 @@ hidden.</li>
 machine to fail at boot up.</li>
 </ol>
 <p>The first thing I did after installation is pull out NMAP and run
-<tt class="docutils literal"><span class="pre">nmap</span> <span class="pre">-sS</span> <span class="pre">-p</span> <span class="pre">1-65535</span> <span class="pre">192.168.0.20</span></tt> and waited to see what NMAP had too say.</p>
+<code class="docutils literal"><span class="pre">nmap</span> <span class="pre">-sS</span> <span class="pre">-p</span> <span class="pre">1-65535</span> <span class="pre">192.168.0.20</span></code> and waited to see what NMAP had too say.</p>
 <div class="highlight-python"><div class="highlight"><pre>Starting nmap V. 2.53 by fyodor@insecure.org ( www.insecure.org/nmap/ )
 Interesting ports on sec-linux.lab.sec (192.168.0.20):
 (The 65523 ports scanned but not shown below are in state: closed)
@@ -270,7 +270,7 @@ unix  0      [ ]         DGRAM                    383
 </pre></div>
 </div>
 <p>Figure 2: Netstat results</p>
-<p>Figure 2 is the results of a <tt class="docutils literal"><span class="pre">netstat</span> <span class="pre">-a</span> <span class="pre">-n</span></tt>. The output of netstat tells us that
+<p>Figure 2 is the results of a <code class="docutils literal"><span class="pre">netstat</span> <span class="pre">-a</span> <span class="pre">-n</span></code>. The output of netstat tells us that
 the two ports were not identified, so off we go to check the netstat binary.
 Checking netstat binary required three steps:</p>
 <ol class="arabic simple">
@@ -288,7 +288,7 @@ to do this by using Loadable Kernel Modules (LKM). For anybody who has been
 in the Linux world you know that LKM.s are pieces of code that can be loaded
 into the operating system on demand. As a matter of fact it is encouraged that you
 use LKM.s in order to update your hardware for your OS. BTW, inserting modules
-into Linux is not that difficult, in fact <tt class="docutils literal"><span class="pre">insmod</span> <span class="pre">-f</span></tt> will do the job.</li>
+into Linux is not that difficult, in fact <code class="docutils literal"><span class="pre">insmod</span> <span class="pre">-f</span></code> will do the job.</li>
 </ol>
 <p>KNARK comes with some a few good exploits as well.</p>
 <ol class="arabic">
@@ -512,7 +512,7 @@ for FREEBSD, Linux (RH 6.2 and SuSe 6.3&amp;6.4).</p>
     </p>
     <p>
         &copy; Copyright 2010-2015, OSSEC Project Team - OSSEC trademark and domain owned by Trend Micro, Inc. - Home page images courtesy of Pixbay.com.<br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.3.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1.<br/>
     </p>
   </div>
 </footer>

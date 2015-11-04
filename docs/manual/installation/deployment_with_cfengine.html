@@ -48,7 +48,7 @@
   </style>
 
   </head>
-  <body>
+  <body role="document">
 
   <div id="navbar" class="navbar navbar-inverse navbar-default ">
     <div class="container">
@@ -122,7 +122,7 @@
 </div>
 <div class="section" id="configuring-the-cfengine-clients">
 <h2>Configuring the cfengine clients:<a class="headerlink" href="#configuring-the-cfengine-clients" title="Permalink to this headline">¶</a></h2>
-<p>I added a group to my <tt class="docutils literal"><span class="pre">cfagent.conf</span></tt> for my ossec server named: <tt class="docutils literal"><span class="pre">hg_ossec_server</span></tt> (host group). I then created an <tt class="docutils literal"><span class="pre">ossec-hids.cf</span></tt> containing the following:</p>
+<p>I added a group to my <code class="docutils literal"><span class="pre">cfagent.conf</span></code> for my ossec server named: <code class="docutils literal"><span class="pre">hg_ossec_server</span></code> (host group). I then created an <code class="docutils literal"><span class="pre">ossec-hids.cf</span></code> containing the following:</p>
 <ul class="simple">
 <li>control</li>
 </ul>
@@ -155,7 +155,7 @@
 <ul class="simple">
 <li>copy</li>
 </ul>
-<p>I manage the <tt class="docutils literal"><span class="pre">ossec-agent.conf</span></tt> in cfengine, because my cfengine configurations are all stored in a subversion repository.  The first stanza in copy just pushes the most recent copy of the <tt class="docutils literal"><span class="pre">ossec-agent.conf</span></tt> file to my network, setting the dynamic class <tt class="docutils literal"><span class="pre">dc_restart_ossec</span></tt> if the copy occurs.</p>
+<p>I manage the <code class="docutils literal"><span class="pre">ossec-agent.conf</span></code> in cfengine, because my cfengine configurations are all stored in a subversion repository.  The first stanza in copy just pushes the most recent copy of the <code class="docutils literal"><span class="pre">ossec-agent.conf</span></code> file to my network, setting the dynamic class <code class="docutils literal"><span class="pre">dc_restart_ossec</span></code> if the copy occurs.</p>
 <div class="highlight-console"><div class="highlight"><pre><span class="go">copy:</span>
 <span class="go">  !hg_ossec_server::</span>
 <span class="go">      $(distribute)/ossec-agent.conf      dest=/var/ossec/etc/ossec-agent.conf</span>
@@ -166,7 +166,7 @@
 <span class="go">                                          define=dc_restart_ossec</span>
 </pre></div>
 </div>
-<p>This second stanza in the <tt class="docutils literal"><span class="pre">copy</span></tt> section copies a file from our ossec key directory to the client.keys file on the client.  This copy only happens if the two files are different.  It also sets <tt class="docutils literal"><span class="pre">dc_restart_ossec</span></tt> if the copy occurs.</p>
+<p>This second stanza in the <code class="docutils literal"><span class="pre">copy</span></code> section copies a file from our ossec key directory to the client.keys file on the client.  This copy only happens if the two files are different.  It also sets <code class="docutils literal"><span class="pre">dc_restart_ossec</span></code> if the copy occurs.</p>
 <div class="highlight-console"><div class="highlight"><pre><span class="gp">$</span><span class="o">(</span>ossec_key_dir<span class="o">)</span>/<span class="k">$(</span>host<span class="k">)</span>.ossec    <span class="nv">dest</span><span class="o">=</span>/var/ossec/etc/client.keys
 <span class="go">                                  server=$(policyhost)</span>
 <span class="go">                                  mode=640</span>
@@ -189,13 +189,13 @@
 <ul class="simple">
 <li>shellcommands</li>
 </ul>
-<p>This section is where the certificate request occurs through some devious mechanisms I designed for no other reason than to amuse myself.  Hopefully, it amuses others as well.  The first thing it does is issue a command that echo&#8217;s the client eth0 ipv4 address to a file named &#8216;&#8217;host.ossec&#8217;&#8217; in the ossec request directory I defined.   The <tt class="docutils literal"><span class="pre">hg_ossec_server</span></tt> class will use this to generate a cert to place in the aforementioned copy block.</p>
+<p>This section is where the certificate request occurs through some devious mechanisms I designed for no other reason than to amuse myself.  Hopefully, it amuses others as well.  The first thing it does is issue a command that echo&#8217;s the client eth0 ipv4 address to a file named &#8216;&#8217;host.ossec&#8217;&#8217; in the ossec request directory I defined.   The <code class="docutils literal"><span class="pre">hg_ossec_server</span></code> class will use this to generate a cert to place in the aforementioned copy block.</p>
 <div class="highlight-console"><div class="highlight"><pre><span class="go">shellcommands:</span>
 <span class="go">  !hg_ossec_server::</span>
 <span class="go">      &quot;/usr/bin/ssh util@$(policyhost) -i $(util_privkey) &#39;echo $(global.ipv4[eth0]) &gt; $(ossec_req_dir)/$(host).ossec&#39;&quot;</span>
 </pre></div>
 </div>
-<p>The last statement checks to see if anyone defined <tt class="docutils literal"><span class="pre">dc_restart_ossec</span></tt>, and restart ossec-hids if it was defined.</p>
+<p>The last statement checks to see if anyone defined <code class="docutils literal"><span class="pre">dc_restart_ossec</span></code>, and restart ossec-hids if it was defined.</p>
 <div class="highlight-console"><div class="highlight"><pre><span class="go">dc_restart_ossec::</span>
 <span class="go">    &quot;/sbin/service ossec-hids restart&quot;</span>
 </pre></div>
@@ -207,7 +207,7 @@
 </div>
 <div class="section" id="configuring-the-ossec-server-w-cfengine">
 <h2>Configuring the OSSEC Server w/cfengine<a class="headerlink" href="#configuring-the-ossec-server-w-cfengine" title="Permalink to this headline">¶</a></h2>
-<p>The cfengine part of this was a pain for me because of the order of the actions I had defined and the extent of work I had done incorrectly in the past.  I could have figured out an interesting way to handle this, but I didn&#8217;t want to scrap my entire cfengine config and start from scratch.  So I created a perl script that allowed me to use the <tt class="docutils literal"><span class="pre">manage_agents</span></tt> script without interaction.  It does require the <tt class="docutils literal"><span class="pre">Expect.pm</span></tt> &amp; <tt class="docutils literal"><span class="pre">Regexp::Common</span></tt> from CPAN, but is otherwise stock Perl 5.8.x.  I also wrote a shell script wrapper to handle running the perl script and culminating the results.  I saved these two scripts in <tt class="docutils literal"><span class="pre">/root/security</span></tt>, so if you put them elsewhere, make sure to update the shell script wrapper.</p>
+<p>The cfengine part of this was a pain for me because of the order of the actions I had defined and the extent of work I had done incorrectly in the past.  I could have figured out an interesting way to handle this, but I didn&#8217;t want to scrap my entire cfengine config and start from scratch.  So I created a perl script that allowed me to use the <code class="docutils literal"><span class="pre">manage_agents</span></code> script without interaction.  It does require the <code class="docutils literal"><span class="pre">Expect.pm</span></code> &amp; <code class="docutils literal"><span class="pre">Regexp::Common</span></code> from CPAN, but is otherwise stock Perl 5.8.x.  I also wrote a shell script wrapper to handle running the perl script and culminating the results.  I saved these two scripts in <code class="docutils literal"><span class="pre">/root/security</span></code>, so if you put them elsewhere, make sure to update the shell script wrapper.</p>
 <p>The scripts for managing keys can be downloaded <a href="#id1"><span class="problematic" id="id2">`here &lt; http://db0.us/~brad/cfengine-ossec-scripts.tar.gz&gt;`_</span></a></p>
 <p>The cfengine bit was really simple, it just had to call my wrapper shell script and set the class.  I did this with a control block:</p>
 <div class="highlight-console"><div class="highlight"><pre><span class="go">control:</span>
@@ -215,7 +215,7 @@
 <span class="go">   AddClasses = ( ExecResult(/root/security/ossec-scan.sh) )</span>
 </pre></div>
 </div>
-<p>The combination of the two scripts and this one line in the cfengine configuration handle creating, removing, and exporting the keys, as well as configuring the <tt class="docutils literal"><span class="pre">dc_restart_ossec</span></tt> class if there have been changes.</p>
+<p>The combination of the two scripts and this one line in the cfengine configuration handle creating, removing, and exporting the keys, as well as configuring the <code class="docutils literal"><span class="pre">dc_restart_ossec</span></code> class if there have been changes.</p>
 </div>
 </div>
 
@@ -236,7 +236,7 @@
     </p>
     <p>
         &copy; Copyright 2010-2015, OSSEC Project Team - OSSEC trademark and domain owned by Trend Micro, Inc. - Home page images courtesy of Pixbay.com.<br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.3.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1.<br/>
     </p>
   </div>
 </footer>

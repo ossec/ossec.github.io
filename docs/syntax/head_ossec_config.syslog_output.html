@@ -48,7 +48,7 @@
   </style>
 
   </head>
-  <body>
+  <body role="document">
 
   <div id="navbar" class="navbar navbar-inverse navbar-default ">
     <div class="container">
@@ -144,12 +144,12 @@
 <h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
 <dl class="element">
 <dt id="element-syslog_output">
-<tt class="descname">syslog_output</tt><a class="headerlink" href="#element-syslog_output" title="Permalink to this definition">¶</a></dt>
+<code class="descname">syslog_output</code><a class="headerlink" href="#element-syslog_output" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="element">
 <dt id="element-server">
-<tt class="descname">server</tt><a class="headerlink" href="#element-server" title="Permalink to this definition">¶</a></dt>
+<code class="descname">server</code><a class="headerlink" href="#element-server" title="Permalink to this definition">¶</a></dt>
 <dd><ul class="simple">
 <li>IP Address of the syslog server.</li>
 <li><strong>Allowed:</strong> any valid IP address</li>
@@ -158,7 +158,7 @@
 
 <dl class="element">
 <dt id="element-port">
-<tt class="descname">port</tt><a class="headerlink" href="#element-port" title="Permalink to this definition">¶</a></dt>
+<code class="descname">port</code><a class="headerlink" href="#element-port" title="Permalink to this definition">¶</a></dt>
 <dd><ul class="simple">
 <li>Port to forward alerts to.</li>
 <li><strong>Default</strong> 514</li>
@@ -168,7 +168,7 @@
 
 <dl class="element">
 <dt id="element-level">
-<tt class="descname">level</tt><a class="headerlink" href="#element-level" title="Permalink to this definition">¶</a></dt>
+<code class="descname">level</code><a class="headerlink" href="#element-level" title="Permalink to this definition">¶</a></dt>
 <dd><ul class="simple">
 <li>Minimum alert level of the alerts to be forwarded.</li>
 <li><strong>Allowed:</strong> 1 - 16</li>
@@ -177,10 +177,10 @@
 
 <dl class="element">
 <dt id="element-group">
-<tt class="descname">group</tt><a class="headerlink" href="#element-group" title="Permalink to this definition">¶</a></dt>
+<code class="descname">group</code><a class="headerlink" href="#element-group" title="Permalink to this definition">¶</a></dt>
 <dd><ul class="simple">
 <li>Alerts belonging to this group will be forwarded.</li>
-<li><strong>Allowed:</strong> Any valid group. Separate multiple groups with the pipe (<tt class="docutils literal"><span class="pre">|</span></tt>) character.</li>
+<li><strong>Allowed:</strong> Any valid group. Separate multiple groups with the pipe (<code class="docutils literal"><span class="pre">|</span></code>) character.</li>
 <li><strong>Examples:</strong></li>
 </ul>
 <div class="highlight-console"><div class="highlight"><pre><span class="go">&lt;group&gt;syscheck&lt;/group&gt;</span>
@@ -191,7 +191,7 @@
 
 <dl class="element">
 <dt id="element-rule_id">
-<tt class="descname">rule_id</tt><a class="headerlink" href="#element-rule_id" title="Permalink to this definition">¶</a></dt>
+<code class="descname">rule_id</code><a class="headerlink" href="#element-rule_id" title="Permalink to this definition">¶</a></dt>
 <dd><ul class="simple">
 <li>Alerts matching this rule_id will be forwarded.</li>
 <li><strong>Allowed:</strong> Any valid rule_id</li>
@@ -200,7 +200,7 @@
 
 <dl class="element">
 <dt id="element-location">
-<tt class="descname">location</tt><a class="headerlink" href="#element-location" title="Permalink to this definition">¶</a></dt>
+<code class="descname">location</code><a class="headerlink" href="#element-location" title="Permalink to this definition">¶</a></dt>
 <dd><ul class="simple">
 <li>Alerts from this location will be forwarded.</li>
 <li><strong>Allowed:</strong> Any valid logfile location</li>
@@ -209,7 +209,7 @@
 
 <dl class="element">
 <dt id="element-use_fqdn">
-<tt class="descname">use_fqdn</tt><a class="headerlink" href="#element-use_fqdn" title="Permalink to this definition">¶</a></dt>
+<code class="descname">use_fqdn</code><a class="headerlink" href="#element-use_fqdn" title="Permalink to this definition">¶</a></dt>
 <dd><ul class="simple">
 <li>By default, ossec truncates the hostname at the first period (&#8216;.&#8217;) when generating syslog messages. Setting this option to &#8216;yes&#8217; will cause it to use the full hostname configured on the server.</li>
 <li><strong>Default</strong> no</li>
@@ -219,7 +219,7 @@
 
 <dl class="element">
 <dt id="element-format">
-<tt class="descname">format</tt><a class="headerlink" href="#element-format" title="Permalink to this definition">¶</a></dt>
+<code class="descname">format</code><a class="headerlink" href="#element-format" title="Permalink to this definition">¶</a></dt>
 <dd><ul class="simple">
 <li>Format of alert output. The default format is &#8220;default&#8221;, or full syslog output.</li>
 <li>CEF is the ArcSight Common Event Format.</li>
@@ -257,7 +257,7 @@
     </p>
     <p>
         &copy; Copyright 2010-2015, OSSEC Project Team - OSSEC trademark and domain owned by Trend Micro, Inc. - Home page images courtesy of Pixbay.com.<br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.3.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1.<br/>
     </p>
   </div>
 </footer>

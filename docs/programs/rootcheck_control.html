@@ -48,7 +48,7 @@
   </style>
 
   </head>
-  <body>
+  <body role="document">
 
   <div id="navbar" class="navbar navbar-inverse navbar-default ">
     <div class="container">
@@ -120,61 +120,61 @@
 <h2>rootcheck_control argument options<a class="headerlink" href="#rootcheck-control-argument-options" title="Permalink to this headline">¶</a></h2>
 <dl class="option">
 <dt id="cmdoption-rootcheck_control-h">
-<tt class="descname">-h</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-rootcheck_control-h" title="Permalink to this definition">¶</a></dt>
+<code class="descname">-h</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-rootcheck_control-h" title="Permalink to this definition">¶</a></dt>
 <dd><p>Display the help message.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-rootcheck_control-l">
-<tt class="descname">-l</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-rootcheck_control-l" title="Permalink to this definition">¶</a></dt>
+<code class="descname">-l</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-rootcheck_control-l" title="Permalink to this definition">¶</a></dt>
 <dd><p>List available agents.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-rootcheck_control-lc">
-<tt class="descname">-lc</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-rootcheck_control-lc" title="Permalink to this definition">¶</a></dt>
+<code class="descname">-lc</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-rootcheck_control-lc" title="Permalink to this definition">¶</a></dt>
 <dd><p>List only currently connected agents.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-rootcheck_control-u">
-<tt class="descname">-u</tt><tt class="descclassname"> &lt;id&gt;</tt><a class="headerlink" href="#cmdoption-rootcheck_control-u" title="Permalink to this definition">¶</a></dt>
+<code class="descname">-u</code><code class="descclassname"> &lt;id&gt;</code><a class="headerlink" href="#cmdoption-rootcheck_control-u" title="Permalink to this definition">¶</a></dt>
 <dd><p>Updates (clear) the database for the agent.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-rootcheck_control-u">
-<tt class="descname">-u</tt><tt class="descclassname"> all</tt><a class="headerlink" href="#cmdoption-rootcheck_control-u" title="Permalink to this definition">¶</a></dt>
+<code class="descname">-u</code><code class="descclassname"> all</code><a class="headerlink" href="#cmdoption-rootcheck_control-u" title="Permalink to this definition">¶</a></dt>
 <dd><p>Updates (clear) the database for all agents.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-rootcheck_control-i">
-<tt class="descname">-i</tt><tt class="descclassname"> &lt;agent_id&gt;</tt><a class="headerlink" href="#cmdoption-rootcheck_control-i" title="Permalink to this definition">¶</a></dt>
+<code class="descname">-i</code><code class="descclassname"> &lt;agent_id&gt;</code><a class="headerlink" href="#cmdoption-rootcheck_control-i" title="Permalink to this definition">¶</a></dt>
 <dd><p>Prints database for the agent.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-rootcheck_control-r">
-<tt class="descname">-r</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-rootcheck_control-r" title="Permalink to this definition">¶</a></dt>
+<code class="descname">-r</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-rootcheck_control-r" title="Permalink to this definition">¶</a></dt>
 <dd><p>Used with -i, prints all the resolved issues.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-rootcheck_control-q">
-<tt class="descname">-q</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-rootcheck_control-q" title="Permalink to this definition">¶</a></dt>
+<code class="descname">-q</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-rootcheck_control-q" title="Permalink to this definition">¶</a></dt>
 <dd><p>Used with -i, prints all the outstanding issues.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-rootcheck_control-L">
-<tt class="descname">-L</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-rootcheck_control-L" title="Permalink to this definition">¶</a></dt>
+<code class="descname">-L</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-rootcheck_control-L" title="Permalink to this definition">¶</a></dt>
 <dd><p>Used with -i, prints the last scan.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-rootcheck_control-s">
-<tt class="descname">-s</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-rootcheck_control-s" title="Permalink to this definition">¶</a></dt>
+<code class="descname">-s</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-rootcheck_control-s" title="Permalink to this definition">¶</a></dt>
 <dd><p>Changes the output to CSV (comma delimited).</p>
 </dd></dl>
 
@@ -183,13 +183,13 @@
 <h2>rootcheck_control example usage<a class="headerlink" href="#rootcheck-control-example-usage" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="example-1-getting-a-list-of-system-auditing-policy-monitoring-events">
 <h3>Example 1: Getting a list of system auditing/policy monitoring events<a class="headerlink" href="#example-1-getting-a-list-of-system-auditing-policy-monitoring-events" title="Permalink to this headline">¶</a></h3>
-<p>To get a list of all auditing/policy monitoring events for a specific agent, you can run <em class="xref std std-option">rootcheck_control -i</em>. To retrieve the agent id you can use any of the following commands:</p>
+<p>To get a list of all auditing/policy monitoring events for a specific agent, you can run <code class="xref std std-option docutils literal"><span class="pre">rootcheck_control</span> <span class="pre">-i</span></code>. To retrieve the agent id you can use any of the following commands:</p>
 <ul class="simple">
-<li><a class="reference internal" href="#cmdoption-rootcheck_control-l"><em class="xref std std-option">rootcheck_control -l</em></a>,</li>
-<li><a class="reference internal" href="agent_control.html#cmdoption-agent_control-l"><em class="xref std std-option">agent_control -l</em></a></li>
-<li><a class="reference internal" href="syscheck_control.html#cmdoption-syscheck_control-l"><em class="xref std std-option">syscheck_control -l</em></a></li>
-<li><a class="reference internal" href="syscheck_update.html#cmdoption-syscheck_update-l"><em class="xref std std-option">syscheck_update -l</em></a></li>
-<li><a class="reference internal" href="manage_agents.html#cmdoption-manage_agents-l"><em class="xref std std-option">manage_agents -l</em></a></li>
+<li><a class="reference internal" href="#cmdoption-rootcheck_control-l"><code class="xref std std-option docutils literal"><span class="pre">rootcheck_control</span> <span class="pre">-l</span></code></a>,</li>
+<li><a class="reference internal" href="agent_control.html#cmdoption-agent_control-l"><code class="xref std std-option docutils literal"><span class="pre">agent_control</span> <span class="pre">-l</span></code></a></li>
+<li><a class="reference internal" href="syscheck_control.html#cmdoption-syscheck_control-l"><code class="xref std std-option docutils literal"><span class="pre">syscheck_control</span> <span class="pre">-l</span></code></a></li>
+<li><a class="reference internal" href="syscheck_update.html#cmdoption-syscheck_update-l"><code class="xref std std-option docutils literal"><span class="pre">syscheck_update</span> <span class="pre">-l</span></code></a></li>
+<li><a class="reference internal" href="manage_agents.html#cmdoption-manage_agents-l"><code class="xref std std-option docutils literal"><span class="pre">manage_agents</span> <span class="pre">-l</span></code></a></li>
 </ul>
 <div class="highlight-console"><div class="highlight"><pre><span class="gp">#</span> /var/ossec/bin/rootcheck_control -i 002
 
@@ -213,10 +213,10 @@
 <span class="go">System Audit: System Audit: CIS - Debian Linux 2.3 - SSH Configuration - Root login allowed. File: /etc/ssh/sshd_config. Reference: http://www.ossec.net/wiki/index.php/CIS_DebianLinux .</span>
 </pre></div>
 </div>
-<p>As you can see the detected events are shown in two categories, resolved events and outstanding event. To only show resolved events, run <em class="xref std std-option">rootcheck_control -ri</em>.
-To only show outstanding events, run <em class="xref std std-option">rootcheck_control -qi</em>.
-To only show the results of the last scan and time of that scan, run <em class="xref std std-option">rootcheck_control -Li</em>.</p>
-<p>To gain that kind of information for the OSSEC server, run <em class="xref std std-option">rootcheck_control -i 000</em>.</p>
+<p>As you can see the detected events are shown in two categories, resolved events and outstanding event. To only show resolved events, run <code class="xref std std-option docutils literal"><span class="pre">rootcheck_control</span> <span class="pre">-ri</span></code>.
+To only show outstanding events, run <code class="xref std std-option docutils literal"><span class="pre">rootcheck_control</span> <span class="pre">-qi</span></code>.
+To only show the results of the last scan and time of that scan, run <code class="xref std std-option docutils literal"><span class="pre">rootcheck_control</span> <span class="pre">-Li</span></code>.</p>
+<p>To gain that kind of information for the OSSEC server, run <code class="xref std std-option docutils literal"><span class="pre">rootcheck_control</span> <span class="pre">-i</span> <span class="pre">000</span></code>.</p>
 </div>
 <div class="section" id="example-2-clearing-the-system-auditing-policy-database">
 <h3>Example 2: Clearing the system auditing/policy database<a class="headerlink" href="#example-2-clearing-the-system-auditing-policy-database" title="Permalink to this headline">¶</a></h3>
@@ -254,7 +254,7 @@ To only show the results of the last scan and time of that scan, run <em class="
     </p>
     <p>
         &copy; Copyright 2010-2015, OSSEC Project Team - OSSEC trademark and domain owned by Trend Micro, Inc. - Home page images courtesy of Pixbay.com.<br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.3.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.1.<br/>
     </p>
   </div>
 </footer>
