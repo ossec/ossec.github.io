@@ -17,7 +17,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../',
-        VERSION:     '2.8.2',
+        VERSION:     '2.8.3',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -61,7 +61,7 @@
         </button>
         <a class="navbar-brand" href="../../../index.html"><img src="../../../_static/ossec_logo_bare_small.png">
           OSSEC</a>
-        <span class="navbar-text navbar-version pull-left"><b></b></span>
+        <span class="navbar-text navbar-version pull-left"><b>2.8</b></span>
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
@@ -130,20 +130,17 @@ or lynx respectively instead.</p>
 <p class="last">wget may not be able to pull files from the OSSEC site. Use the <code class="docutils literal"><span class="pre">-U</span></code> flag to add a UserAgent,
 or obtain the checksum file by some other manner.</p>
 </div>
-<div class="highlight-console"><div class="highlight"><pre><span class="gp">#</span> wget -U ossec http://www.ossec.net/files/ossec-hids-2.8.1.tar.gz
-<span class="gp">#</span> wget -U ossec http://www.ossec.net/files/ossec-hids-2.8.1-checksum.txt
-<span class="gp">#</span> cat ossec-hids-2.8.1-checksum.txt
-<span class="go">MD5(ossec-hids-2.8.1.tar.gz)= c2ffd25180f760e366ab16eeb82ae382</span>
-<span class="go">SHA1(ossec-hids-2.8.1.tar.gz)= 0ecf1df09558dc8bb4b6f65e1fb2ca7a7df9817c</span>
-<span class="gp">#</span> md5sum ossec-hids-2.8.1.tar.gz
-<span class="go">MD5(ossec-hids-2.8.1.tar.gz)= c2ffd25180f760e366ab16eeb82ae382</span>
-<span class="gp">#</span> sha1sum ossec-hids-2.8.1.tar.gz
-<span class="go">SHA1(ossec-hids-2.8.1.tar.gz)= 0ecf1df09558dc8bb4b6f65e1fb2ca7a7df9817c</span>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">#</span> wget -U ossec https://bintray.com/artifact/download/ossec/ossec-hids/ossec-hids-2.8.3.tar.gz
+<span class="gp">#</span> wget -U ossec https://bintray.com/artifact/download/ossec/ossec-hids/ossec-hids-2.8.3.tar.gz.sha256
+<span class="gp">#</span> cat ossec-hids-2.8.3.tar.gz.sha256
+<span class="go">SHA256 (ossec-hids-2.8.3.tar.gz) = 917989e23330d18b0d900e8722392cdbe4f17364a547508742c0fd005a1df7dd</span>
+<span class="gp">#</span> sha256sum -C  ossec-hids-2.8.3.tar.gz.sha256 ossec-hids-2.8.3.tar.gz
+<span class="go">(SHA256) ossec-hids-2.8.3.tar.gz: OK</span>
 </pre></div>
 </div>
 </div></blockquote>
 <p>And generate the Windows package directory:</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="gp">#</span> <span class="nb">cd </span>ossec-hids-2.8.1/src/win32
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">#</span> <span class="nb">cd </span>ossec-hids-2.8.3/src/win32
 <span class="gp">#</span> ./gen-win.sh
 </pre></div>
 </div>
