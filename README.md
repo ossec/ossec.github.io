@@ -1,7 +1,7 @@
 # ossec.github.io
 
 These are the files for the official OSSEC Project website. They are built automatically 
-from the ossec/ossec-docs repo by Travis when pull requests are made to the that repo 
+from the ossec/ossec-docs repo by Travis when pull requests are made for that repo 
 after the website source files are updated.
 
 ## Requirements
