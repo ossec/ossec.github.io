@@ -29,12 +29,18 @@ added.
 2. cd into the ossec-docs directory
 3. Add your blog entry to the blog/posts directory. The naming convention is *YYYY-MM-DD-title.rst*.
 4. Add the following code to your blank file: 
-<pre>
-.. post:: MMM DD, YYYY
-   :tags: 'your tags'
-   :category: 'your categories'
-   :author: 'your name'
-<pre>
+```
+    .. post:: MMM DD, YYYY
+      :tags: 'your tags'
+      :category: 'your categories'
+      :author: 'your name'
+      
+   ======================
+   'your title goes here'
+   ======================
+   
+   'your content goes here'
+```
 5. Put your date, tags, categories, and name in the corresponding fields.
 6. Add a title below this section that has a row of '=' before and after the title that are the same charter length as the title.
 7. Add and edit your content below the title.
@@ -44,8 +50,3 @@ added.
 11. Repeat steps 7-10 until you have it the way you want.
 12. Push your changes to your fork of ossec-docs.
 13. Create a pull request for your changes.
-
- 
-
-
-
