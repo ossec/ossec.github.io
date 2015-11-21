@@ -2,13 +2,15 @@
 
 These are the files for the official OSSEC Project website. They are built automatically 
 from the ossec/ossec-docs repo by Travis when pull requests are made for that repo 
-after the website source files are updated.
+after the website source files are updated.  **DO NOT MAKE CHANGES TO FILES IN THIS REPO.**
+If you want to update the website, edit the files in ossec/ossec-docs and let Travis do the
+rest.
 
 ## Requirements
 
-The main website files consist of Sphinx and HTML template files, so you require 
-the Python and sphinx-build to update the website. In most cases you will need to 
-modify the website when a new OSSEC release has been created or a blog entry is 
+The source website files in ossec/ossec-docs consist of Sphinx and HTML template files, 
+so you require Python and sphinx-build to update the website. In most cases you will 
+need to modify the website when a new OSSEC release has been created or a blog entry is 
 added.
 
 ## Updating the Downloads page
