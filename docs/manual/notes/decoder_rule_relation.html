@@ -134,8 +134,8 @@
 <p>The first rule acts as a &#8220;collector&#8221; for specific log messages.  As part of the rule construct, the <code class="docutils literal"><span class="pre">&lt;decoded_as&gt;&lt;/decoded_as&gt;</span></code> tags are used to determine how the log entry will be decoded, and aspects of it captured.  In this case, it will be a web-accesslog.  The corresponding construct in decoder.xml (shown below) matches the log entry and captures certain parts of the entry to be used later.</p>
 <div class="highlight-console"><div class="highlight"><pre><span class="go">&lt;decoder name=&quot;web-accesslog&quot;&gt;</span>
 <span class="go">  &lt;type&gt;web-log&lt;/type&gt;</span>
-<span class="go">  &lt;prematch&gt;^\d+.\d+.\d+.\d+ - &lt;/prematch&gt;</span>
-<span class="go">  &lt;regex&gt;^(\d+.\d+.\d+.\d+) - \S+ [\S+ -\d+] &lt;/regex&gt;</span>
+<span class="go">  &lt;prematch&gt;^\S+ - &lt;/prematch&gt;</span>
+<span class="go">  &lt;regex&gt;^(\S+) - \S+ [\S+ -\d+] &lt;/regex&gt;</span>
 <span class="go">  &lt;regex&gt;&quot;\w+ (\S+) HTTP\S+ (\d+) &lt;/regex&gt;</span>
 <span class="go">  &lt;order&gt;srcip,url,id&lt;/order&gt;</span>
 <span class="go">&lt;/decoder&gt;</span>
