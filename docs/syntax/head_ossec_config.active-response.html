@@ -119,11 +119,12 @@
 <h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="supported-types">
 <h3>Supported types<a class="headerlink" href="#supported-types" title="Permalink to this headline">¶</a></h3>
-<p>Active-reponse options are available in the the following installation types:</p>
+<p>Most active-reponse options are available in the the following installation types:</p>
 <ul class="simple">
 <li>server</li>
 <li>local</li>
 </ul>
+<p>The <code class="docutils literal"><span class="pre">disabled</span></code> option is available on all installation types.</p>
 </div>
 <div class="section" id="configuration-pieces">
 <h3>Configuration pieces<a class="headerlink" href="#configuration-pieces" title="Permalink to this headline">¶</a></h3>
@@ -207,7 +208,10 @@ You can have as many responses as you want. Each one should be inside their own
 <dl class="element">
 <dt id="element-disabled">
 <code class="descname">disabled</code><a class="headerlink" href="#element-disabled" title="Permalink to this definition">¶</a></dt>
-<dd><p>Disables active response if set to yes. If this is not defined active response is enabled.</p>
+<dd><p>Disables active response if set to yes. If this is not defined active response is enabled on unix systems, and disabled on Windows systems.
+This option is available on server, local, and agent installations.
+Setting it to <code class="docutils literal"><span class="pre">yes</span></code> on an agent will disable active-response for that agent only,
+while setting it on the server will disable all active-response.</p>
 </dd></dl>
 
 <dl class="element">
