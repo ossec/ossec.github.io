@@ -203,6 +203,31 @@ alerts will also match.</p>
 </dd></dl>
 
 </div>
+<div class="section" id="receive-a-summary-of-all-authentication-success-alerts">
+<span id="report-output-examples"></span><h2>Receive a summary of all authentication success alerts<a class="headerlink" href="#receive-a-summary-of-all-authentication-success-alerts" title="Permalink to this headline">¶</a></h2>
+<p>The following example will send a daily report  of all
+authentication_success alerts, sorted by the related field srcip.</p>
+<div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;ossec_config&gt;</span>
+    <span class="nt">&lt;reports&gt;</span>
+        <span class="nt">&lt;category&gt;</span>authentication_success<span class="nt">&lt;/category&gt;</span>
+        <span class="nt">&lt;user</span> <span class="na">type=</span><span class="s">&quot;relation&quot;</span><span class="nt">&gt;</span>srcip<span class="nt">&lt;/user&gt;</span>
+        <span class="nt">&lt;title&gt;</span>Daily report: Successful logins<span class="nt">&lt;/title&gt;</span>
+        <span class="nt">&lt;email_to&gt;</span>me@example.com<span class="nt">&lt;/email_to&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="receive-summary-of-all-file-integrity-monitoring-alerts">
+<h2>Receive summary of all File integrity monitoring alerts<a class="headerlink" href="#receive-summary-of-all-file-integrity-monitoring-alerts" title="Permalink to this headline">¶</a></h2>
+<p>The following example will send a report
+of all events related to syscheck.</p>
+<div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;ossec_config&gt;</span>
+    <span class="nt">&lt;reports&gt;</span>
+        <span class="nt">&lt;category&gt;</span>syscheck<span class="nt">&lt;/category&gt;</span>
+        <span class="nt">&lt;title&gt;</span>Daily report: File changes<span class="nt">&lt;/title&gt;</span>
+        <span class="nt">&lt;email_to&gt;</span>me@example.com<span class="nt">&lt;/email_to&gt;</span>
+</pre></div>
+</div>
+</div>
 </div>
 
   <div class="section">

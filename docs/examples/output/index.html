@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Granular E-Mail alerts to many E-Mail addresses &mdash; OSSEC</title>
+    <title>Examples &mdash; OSSEC</title>
     
     <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
@@ -113,16 +113,16 @@
   <div class="row">
     <div class="col-md-12">
       
-  <div class="section" id="granular-e-mail-alerts-to-many-e-mail-addresses">
-<h1>Granular E-Mail alerts to many E-Mail addresses<a class="headerlink" href="#granular-e-mail-alerts-to-many-e-mail-addresses" title="Permalink to this headline">¶</a></h1>
-<p>OSSEC allows very granular options for the e-mail alerting and its format (full or SMS).</p>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Note that there must be at least one &lt;email_to&gt; recipient mentioned in the &lt;global&gt;
-section of the configuration or no emails will be sent at all.</p>
+  <div class="section" id="examples">
+<h1>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul class="simple">
+</ul>
 </div>
+<div class="section" id="granular-email-examples">
+<h2>Granular Email Examples<a class="headerlink" href="#granular-email-examples" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="example-1-group-alerts">
-<span id="granular-email-examples"></span><h2>Example 1: Group alerts<a class="headerlink" href="#example-1-group-alerts" title="Permalink to this headline">¶</a></h2>
+<span id="id1"></span><h3>Example 1: Group alerts<a class="headerlink" href="#example-1-group-alerts" title="Permalink to this headline">¶</a></h3>
 <p>If you want to e-mail <em>xx&#64;y.z</em> for every event in the group syslog you can add the following to ossec</p>
 <div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;email_alerts&gt;</span>
     <span class="nt">&lt;email_to&gt;</span>xx@y.z<span class="nt">&lt;/email_to&gt;</span>
@@ -132,7 +132,7 @@ section of the configuration or no emails will be sent at all.</p>
 </div>
 </div>
 <div class="section" id="example-2-message-format">
-<h2>Example 2: Message Format<a class="headerlink" href="#example-2-message-format" title="Permalink to this headline">¶</a></h2>
+<h3>Example 2: Message Format<a class="headerlink" href="#example-2-message-format" title="Permalink to this headline">¶</a></h3>
 <p>To e-mail (in the SMS format) <em>aa&#64;y.z</em> for every event with severity higher than 10</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -147,7 +147,7 @@ section of the configuration or no emails will be sent at all.</p>
 </div>
 </div>
 <div class="section" id="example-3-email-based-on-rule-id-s">
-<h2>Example 3: Email based on Rule ID&#8217;s<a class="headerlink" href="#example-3-email-based-on-rule-id-s" title="Permalink to this headline">¶</a></h2>
+<h3>Example 3: Email based on Rule ID&#8217;s<a class="headerlink" href="#example-3-email-based-on-rule-id-s" title="Permalink to this headline">¶</a></h3>
 <p>To e-mail <em>bb&#64;y.z</em> for every event from rule 123 or rule 124 (without grouping):</p>
 <div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;email_alerts&gt;</span>
     <span class="nt">&lt;email_to&gt;</span>bb@y.z<span class="nt">&lt;/email_to&gt;</span>
@@ -159,7 +159,7 @@ section of the configuration or no emails will be sent at all.</p>
 </div>
 </div>
 <div class="section" id="example-4-email-based-on-severity-and-agent">
-<h2>Example 4: Email based on severity and agent<a class="headerlink" href="#example-4-email-based-on-severity-and-agent" title="Permalink to this headline">¶</a></h2>
+<h3>Example 4: Email based on severity and agent<a class="headerlink" href="#example-4-email-based-on-severity-and-agent" title="Permalink to this headline">¶</a></h3>
 <p>To e-mail <em>cc&#64;y.z</em> for every event with severity higher than 12, from agent qwert or agt1, without any delay (immediately):=====</p>
 <div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;email_alerts&gt;</span>
     <span class="nt">&lt;email_to&gt;</span>cc@y.z<span class="nt">&lt;/email_to&gt;</span>
@@ -171,7 +171,7 @@ section of the configuration or no emails will be sent at all.</p>
 </div>
 </div>
 <div class="section" id="example-5-multiple-granular-options-together">
-<h2>Example 5: Multiple granular options together<a class="headerlink" href="#example-5-multiple-granular-options-together" title="Permalink to this headline">¶</a></h2>
+<h3>Example 5: Multiple granular options together<a class="headerlink" href="#example-5-multiple-granular-options-together" title="Permalink to this headline">¶</a></h3>
 <p>You can have as many granular options as you want. In this example, we want the following:</p>
 <ul class="simple">
 <li>Email <a class="reference external" href="mailto:cc&#37;&#52;&#48;y&#46;z">cc<span>&#64;</span>y<span>&#46;</span>z</a> for every alert from agents qwerty and agt1</li>
@@ -206,6 +206,65 @@ section of the configuration or no emails will be sent at all.</p>
         <span class="nt">&lt;level&gt;</span>12<span class="nt">&lt;/level&gt;</span>
     <span class="nt">&lt;/email_alerts&gt;</span>
 <span class="nt">&lt;/ossec_config&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="report-output-examples">
+<h2>Report Output Examples<a class="headerlink" href="#report-output-examples" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="receive-a-summary-of-all-authentication-success-alerts">
+<span id="id2"></span><h2>Receive a summary of all authentication success alerts<a class="headerlink" href="#receive-a-summary-of-all-authentication-success-alerts" title="Permalink to this headline">¶</a></h2>
+<p>The following example will send a daily report  of all
+authentication_success alerts, sorted by the related field srcip.</p>
+<div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;ossec_config&gt;</span>
+    <span class="nt">&lt;reports&gt;</span>
+        <span class="nt">&lt;category&gt;</span>authentication_success<span class="nt">&lt;/category&gt;</span>
+        <span class="nt">&lt;user</span> <span class="na">type=</span><span class="s">&quot;relation&quot;</span><span class="nt">&gt;</span>srcip<span class="nt">&lt;/user&gt;</span>
+        <span class="nt">&lt;title&gt;</span>Daily report: Successful logins<span class="nt">&lt;/title&gt;</span>
+        <span class="nt">&lt;email_to&gt;</span>me@example.com<span class="nt">&lt;/email_to&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="receive-summary-of-all-file-integrity-monitoring-alerts">
+<h2>Receive summary of all File integrity monitoring alerts<a class="headerlink" href="#receive-summary-of-all-file-integrity-monitoring-alerts" title="Permalink to this headline">¶</a></h2>
+<p>The following example will send a report
+of all events related to syscheck.</p>
+<div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;ossec_config&gt;</span>
+    <span class="nt">&lt;reports&gt;</span>
+        <span class="nt">&lt;category&gt;</span>syscheck<span class="nt">&lt;/category&gt;</span>
+        <span class="nt">&lt;title&gt;</span>Daily report: File changes<span class="nt">&lt;/title&gt;</span>
+        <span class="nt">&lt;email_to&gt;</span>me@example.com<span class="nt">&lt;/email_to&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="syslog-output-examples">
+<h2>Syslog Output Examples<a class="headerlink" href="#syslog-output-examples" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="send-all-alerts-to-10-10-10-125">
+<h2>Send all alerts to 10.10.10.125:<a class="headerlink" href="#send-all-alerts-to-10-10-10-125" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;syslog_output&gt;</span>
+  <span class="nt">&lt;server&gt;</span>10.10.10.125<span class="nt">&lt;/server&gt;</span>
+<span class="nt">&lt;/syslog_output&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="send-all-alerts-to-10-10-10-126-in-cef">
+<h2>Send all alerts to 10.10.10.126 in CEF:<a class="headerlink" href="#send-all-alerts-to-10-10-10-126-in-cef" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;syslog_output&gt;</span>
+  <span class="nt">&lt;server&gt;</span>10.10.10.126<span class="nt">&lt;/server&gt;</span>
+  <span class="nt">&lt;format&gt;</span>cef<span class="nt">&lt;/format&gt;</span>
+<span class="nt">&lt;/syslog_output&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="send-all-alerts-level-6-and-above-to-10-10-10-127-on-port-515">
+<h2>Send all alerts level 6 and above to 10.10.10.127 on port 515:<a class="headerlink" href="#send-all-alerts-level-6-and-above-to-10-10-10-127-on-port-515" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;syslog_output&gt;</span>
+  <span class="nt">&lt;server&gt;</span>10.10.10.127<span class="nt">&lt;/server&gt;</span>
+  <span class="nt">&lt;port&gt;</span>515<span class="nt">&lt;/port&gt;</span>
+  <span class="nt">&lt;level&gt;</span>6<span class="nt">&lt;/level&gt;</span>
+<span class="nt">&lt;/syslog_output&gt;</span>
 </pre></div>
 </div>
 </div>
