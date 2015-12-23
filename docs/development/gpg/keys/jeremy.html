@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Jeremy &mdash; OSSEC</title>
+    
+    <link rel="stylesheet" href="../../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/parallax.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../../',
+        VERSION:     '2.8.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../../../_static/bootstrap-sphinx.js"></script>
+    <link rel="author" title="About these documents" href="../../../../about.html" />
+    <link rel="top" title="OSSEC" href="../../../../index.html" />
+  
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  
+  
+  <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+  
+  <style type="text/css">
+    ul.ablog-archive {list-style: none; overflow: auto; margin-left: 0px}
+    ul.ablog-archive li {float: left; margin-right: 5px; font-size: 80%}
+  </style>
+
+  </head>
+  <body role="document">
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../../../index.html"><img src="../../../../_static/ossec_logo_bare_small.png">
+          OSSEC</a>
+        <span class="navbar-text navbar-version pull-left"><b>2.8</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="../../../../about.html">About <i class="fa fa-info-circle"></i></a></li>
+                <li><a href="../../../../blog.html">Blog <i class="fa fa-archive"></i></a></li>
+                <li><a href="../../../">Documentaton <i class="fa fa-book"></i></a></li>
+                <li><a href="../../../../downloads.html">Downloads <i class="fa fa-download"></i></a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../../../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"></ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="section" id="jeremy">
+<h1>Jeremy<a class="headerlink" href="#jeremy" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">-----BEGIN PGP PUBLIC KEY BLOCK-----</span>
+<span class="go">Version: Keybase OpenPGP v2.0.8</span>
+<span class="go">Comment: https://keybase.io/crypto</span>
+
+<span class="go">xsFNBFWDE1wBEADRwy4vDEZvWvBqHx88KzHldopngYAEJCOvn+ZegwCYWZXwm+7F</span>
+<span class="go">TQB0/qhpdpqDXfuNwQLa2oqomV4UtmTaK+6rNEOl7QVCXs7PMYzkiLUcICstE1VF</span>
+<span class="go">IvBWuCfY71fZ8EUcsiPnP6JqbKOITrEluMN3IAYDSeK7j6AkKMssrI4yMphwoPQJ</span>
+<span class="go">ljlnoUWB5ao4XYdVEWBvUDjhA+RvBoG4Fw5Eu1TahXINV/Cspfdiz35BBJe2XTlh</span>
+<span class="go">n9uHQEPFaA6i04POUaLI5QC7S2UI/3X/wOYnYBIOcdhfJi1aeZJaqQpt8+CMxXsJ</span>
+<span class="go">LOGjJhwFvGQLaoNKnPMWWj/FO7TrDhQlp5vUXsYH6xNiSw3G6hgacj8huBv6fMQm</span>
+<span class="go">X1JGgMzBEbWbvegRytY2Qla6G9Hnp8wsZ/BqCM16dRWNG/zRjm/xtoQCTfpjXc4y</span>
+<span class="go">Bu4CD2RiXVQ6RxXR/uSe8PiTwLZ9E4GjccbaYgX4cuojLsaLy7aDVsOkFdQGBpum</span>
+<span class="go">ciVi3SjsjDufGNhXFlXzsPeR4TohnfXKpnbOgbu6zyhMjlA0DilfEO85btFMT/oi</span>
+<span class="go">uIe32HObnkPSXtKbCVAgD551nfZp7rJvUc7WL7cNuzQVQdZZADim1jCwIOt6M+Us</span>
+<span class="go">pFwkkN3k8u1zeOyCJwnPYts6UaHc1E2+avl4ors2pvhhGcg7jMka43QxBwARAQAB</span>
+<span class="go">zSVrZXliYXNlLmlvL2pyb3NzaSA8anJvc3NpQGtleWJhc2UuaW8+wsFwBBMBCgAa</span>
+<span class="go">BQJVgxNcAhsvAwsJBwMVCggCHgECF4ACGQEACgkQtwtKcuHIMMUf7g//aXi77E8o</span>
+<span class="go">ZH9CXHF4hkL55avpaawc0I9D9L/9zfZ5KzExpfEaBG41rM/qNStZ8tjLLUv5MFFL</span>
+<span class="go">Qg9cIZEA66/oOp4vf8FeDPsvS51zEHrgQtOP+/6OK+qd6Qn8Y89psw3vGUuiMtFO</span>
+<span class="go">SmZRNuLHRNooWiKcQUMudy+xIgGiniR6a6PFhy8XBQoo+BOdbBq+pSKvds4Uby+6</span>
+<span class="go">WUyrwbsZyyYHu6eNLfjjp5SS1EZSk96pPw/IYxmthhrjhAxgBXA/lfrUnEfdlMkq</span>
+<span class="go">8sp0OEagBvAGa7N/Ii2SvDHpzVw5QFga34OsmqehjHptk+MNlB3xyo5d5ghRv/Fb</span>
+<span class="go">mTRQjO7zAJGSTNs8yu+2Cyk7UBVHT87vizuxa5b5fvCf+gR1/1ASY+Sq2y/CsrxG</span>
+<span class="go">U4i/XBh0TDXmq7sA/tunM+S5ohXEfdC/eQPVb/nUCJTAxGajePRoHjICdAAdmVGb</span>
+<span class="go">hugVQw6Vijbn5pT55I419sxeRCm39syR6rz7IelbLDXX3IBzuWE9E8V5Lp3zqjk3</span>
+<span class="go">ZcNHANA+xZWdPhD1m0m4ULxe+xmNxDf7We0AsQ1nF+gwh0jolsNndsKfQ0YwpcFn</span>
+<span class="go">6MifsTkmOCmmlnk5PRGcABHdv3omUByp7doUhSwTQ3AvRucc6zhgHKnpefqsMIPg</span>
+<span class="go">Ge95aevT8CRN2D/zmhkBwLFFHV29I8FOi+DOwE0EVYMTXAEIALdrXjcMNiIBDGPG</span>
+<span class="go">gWlzqr5e2fCJCXOKhJZ9T4d9L+B5J/gBaHDzVqaa8m0o0yARl5FJSaoXVJQiHTxk</span>
+<span class="go">YGwAyF/BPiPtQNgqctMXvlI5gc/5p4vIuboFrc5VxZUp9IQCh78UgLiGfUmvDKG+</span>
+<span class="go">DKMoJb7JvDlyHpi4b8l1YiY36ta3BVs+T0XVdm6VrjwpNnz0eIG06AnCd/aGBu0s</span>
+<span class="go">doimiAKK5QX+PMTLAqhNn1kHqWqXhRKgU4yFeql7iGxxzmDsSpMj2ImBlVjPBv2y</span>
+<span class="go">mnMhbIUTob7XeK2H0yqPJslsItVkPZCAgUYzNlpxyIbR3d55tMG2lQxspFF7T+w/</span>
+<span class="go">4sNU/7UAEQEAAcLChAQYAQoADwUCVYMTXAUJDwmcAAIbAgEpCRC3C0py4cgwxcBd</span>
+<span class="go">IAQZAQoABgUCVYMTXAAKCRAlMOVRw7QN9SnPCACAe61r+Vc8AwX8C3BXIpM9tokY</span>
+<span class="go">TeYH2lARzknZ25VkN1k1kkDkMsX9nAQWbmZFWtnlM2NCWynLvhvG9S05o4lTMuCU</span>
+<span class="go">Mbh1fwNvVBHDWEhCpKMqhpVDE/wkj5/Pb8atpeiRE+SSHX/FXfJGEhxkzaoQemsb</span>
+<span class="go">f/xNfYA5wSAFmndvVpAHVsbZa5n8MU62fZfsXIjZKGxZ5DiS96/0ah9c0QKtfG/j</span>
+<span class="go">1TEXLOfibVTMLsnmKJA1KFvs/rdNQ8AkPLwBRnYfZk2steGn5FSy/ldFsHoC0wIu</span>
+<span class="go">cLNYb4BrEUMqBEUq5027v/7S6bGptWScUu+XobqGMTImpjQYAtH2v87bxx2JAkcP</span>
+<span class="go">/0K9FHKTW98tkR+GS9n5J3wM/0wEY3qvzNtgl/2hqnDG6KmxLGluJbh2Ma9eilqR</span>
+<span class="go">Qjnzi3FubfjYzBQvILMd1FSM7QWqkWsAF+FDA7QwOalhtwGu/uALDVD9EH84jn5r</span>
+<span class="go">I+8MiGlpOfzkffqzDDk41+DS67cP07pwhyf0dRVp63nV4Y6B4LRb/vOt0014Jd56</span>
+<span class="go">QkS3UZBEbAfYBLDfYGrK2lB0Y/r6vxEVe4EphhLtL6N0dhpQGdC9u8so5tejFS62</span>
+<span class="go">O2AZI33QI/qq4KiWcEAQmS/XhlRme6srcJPXDLh0G+N+5BwSM2a30I04TxxbXSRP</span>
+<span class="go">fGM4HYe1dWwbdw+AWmHWNx6fz7jNw7FZ4GV0P3+qEl+oKlCv/nfkHkIEzayeRRwe</span>
+<span class="go">uEA3zH9QKYDE0XB6Wd9tkNTafFwaQjKGmDmxTLAly9PZGG9aTMNPtEysBhbM0sxe</span>
+<span class="go">GYhgD634v5xBnY5WIn5hqPNJ36OlYlkU9vaFtUqb5h7t3YxWbM226dEbdj9v5wJ3</span>
+<span class="go">q5HH+gjTdx6+r7Qtmkdgeiy8TBdTwgOj70JRo7Q4e2YbzL1X/RJslUW+nGur6kmb</span>
+<span class="go">RRYAg/6SCnbWvaa7hH3SB49iIwUQjhDal0kaDg5TtvoXDJSBTI0Wq42qRfsmf3mN</span>
+<span class="go">k3VIN4ZKDP9/ZD1maSKc1JAnZVrUp7CdOtrtQelmxAzbzsBNBFWDE1wBCACbUjJW</span>
+<span class="go">PZA/vjSba+tsT53zxaWYmJWm9WEkqJfETNuWnDeVHZs4hxjXz4DSqNyaF7Yqzi4B</span>
+<span class="go">hSBF9d2DqI3YFkoWScMs2EsAkUD5IR36hXtsHAsw6rOZJqR1+HxT3cBA06gImvtV</span>
+<span class="go">6k0TFTsf/PY8i9dORrURW0GwTLbeIK6oCPhWNUTjWS3gF5s7GHRbvYRlgLyL2Fs+</span>
+<span class="go">OOll5x1XLWszJAi15LL36Ycos29rMHkBXIhuGU5mCroFWi4ujcWXWqtO46iJYfoe</span>
+<span class="go">Nd7uwzGfAP3X/BtjB6rZuWutZA2z5VlE3G3pm+xj+EPNm1Idbu7KigKRcdJ2NhIo</span>
+<span class="go">Dken/fQ8lKirhko1ABEBAAHCwoQEGAEKAA8FAlWDE1wFCQ8JnAACGwwBKQkQtwtK</span>
+<span class="go">cuHIMMXAXSAEGQEKAAYFAlWDE1wACgkQPe9yxcc84R00Wwf/cy341Vf/r5SOuOCx</span>
+<span class="go">CZ5Sjg+LT8lYlw2leyxuz4NtL8XgwMlK7vCPRiiV/03HErjcQXyWFAX3HCIzbqjd</span>
+<span class="go">cbPZOQIdZvt2QhU6WpkbI4DzNAtW+GwWcIzv5daGviFQySLASNS1txNoC6FC0hM/</span>
+<span class="go">hU0Ss6kRwyy8wWSpfTbZ5s3JkDJPVzeo6Kf+UQ1PtSURbINjCgMXJVhMNqETcs1c</span>
+<span class="go">FxvvsAH1UrFU1CW421KN9RtyC+qrb6VWwl7ULibSow+yRJrITTekmTr4cLyhqFLl</span>
+<span class="go">rZekMu83LXUBWQEQFZ79kUBklW1kmZizSJYFGFdidRja6qbaOSwqenmuWhzFGssI</span>
+<span class="go">L+6oDcNwEACPwU6QSogXVNQcJYGTDGw19fzoLTmuDp6DV1bdVi7OBtzTvsHRkKlD</span>
+<span class="go">Iepdf35Pauy2y1v0jmdBp5rWfIk02Eu++XIPHWBNs+HKoCcqURQt+GMLsNnTnxLW</span>
+<span class="go">ICIkp0vMO4YyWpIvo10OOgPRhXGYR6qjYylAcBsHy4dn8CM5++rHtgmKJwfgD1m/</span>
+<span class="go">D/KK6UKTW8tXxf5zYfxh88kUHwez+s13A7o1ArOe1Sj2jYBbsWsEBuH4oF8+aOlq</span>
+<span class="go">aPcz4cT5fgaF+CZ9A1+Jq8pvkHz+FOLcyjFIE4DwQ24b9QiOBy6GJHUafFAVzVfh</span>
+<span class="go">Ry6ljhWH9TimyWAyfUkJMqZH2bZd//SOhTE8yWduCNERVF9DvnJeDdMWILfCx1pu</span>
+<span class="go">fitktg+z1nFviGDV+M3tTKNVMrNCbMbfqtRu1Ys8o0A4tHPTqenitpKqQzNHbHj+</span>
+<span class="go">qy8A9q1IcTUUf1UST0IfrRKmoQAX3fx/fgpSTTg5EKawhiW6rp8Spa+qQmKL9FFl</span>
+<span class="go">hPnnSkP3tb4ZG/Hzt4o1hglnBuKCxyKba2o/y595nZeiRQzinTUOA92aJywxgWHH</span>
+<span class="go">Ev2yREEQc60VnU2WKtgC8dLzW+S70n+cecl4/dIHbaUR3tua2PYwLbUzyF2kVm1U</span>
+<span class="go">+yVbKpxFJdpMxO55mPz4k+mND9OhtoYPSrl6Qxdp+s2uLkVJIwmnHw==</span>
+<span class="go">=m8g3</span>
+<span class="go">-----END PGP PUBLIC KEY BLOCK-----</span>
+</pre></div>
+</div>
+<p><a class="reference external" href="https://keybase.io/jrossi">keybase</a></p>
+</div>
+
+  <div class="section">
+  
+  
+  </div>
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2010-2015, OSSEC Project Team.<br/>
+    OSSEC trademark and <b>ossec.net</b> domain owned by <a href="http://www.trendmicro.com" target="_blank">Trend Micro, Inc.</a><br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.3 - 
+    Home page graphics courtesy of <a href="https://pixabay.com" target="_blank">pixabay</a>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>
