@@ -535,15 +535,15 @@ Nov 14 18:30:30 TCP: Xmas scan detected [ports 636,256,554,389,1723,53,443,21,33
 <span class="go">  if [ $? != 0 ]; then</span>
 <span class="go">      exit 0;</span>
 <span class="go">  fi</span>
-<span class="go">  # Check if our table is set</span>
+<span class="gp">  #</span> Check <span class="k">if</span> our table is <span class="nb">set</span>
 <span class="go">  &lt;font color=&quot;red&quot;&gt; ${IPFW} show | grep &quot;^00001&quot; | grep &quot;table(2)&quot; &gt;/dev/null 2&gt;&amp;1&lt;/font&gt;</span>
 <span class="go">  if [ ! $? = 0 ]; then</span>
-<span class="go">       # We need to add the table</span>
-<span class="go">       ${IPFW} -q 00001 add deny ip from table\(${TABLE_ID}\) to any</span>
-<span class="go">       ${IPFW} -q 00001 add deny ip from any to table\(${TABLE_ID}\)</span>
+<span class="gp">       #</span> We need to add the table
+<span class="gp">       $</span><span class="o">{</span>IPFW<span class="o">}</span> -q <span class="m">00001</span> add deny ip from table<span class="se">\(</span><span class="si">${</span><span class="nv">TABLE_ID</span><span class="si">}</span><span class="se">\)</span> to any
+<span class="gp">       $</span><span class="o">{</span>IPFW<span class="o">}</span> -q <span class="m">00001</span> add deny ip from any to table<span class="se">\(</span><span class="si">${</span><span class="nv">TABLE_ID</span><span class="si">}</span><span class="se">\)</span>
 <span class="go">  fi</span>
-<span class="go">  # Executing and exiting</span>
-<span class="go">  ${IPFW} -q table ${TABLE_ID} ${ACTION} ${IP}</span>
+<span class="gp">  #</span> Executing and exiting
+<span class="gp">  $</span><span class="o">{</span>IPFW<span class="o">}</span> -q table <span class="si">${</span><span class="nv">TABLE_ID</span><span class="si">}</span> <span class="si">${</span><span class="nv">ACTION</span><span class="si">}</span> <span class="si">${</span><span class="nv">IP</span><span class="si">}</span>
 <span class="go">  exit 0;</span>
 <span class="go">fi</span>
 <span class="gp">#</span> Not FreeBSD
@@ -637,7 +637,7 @@ Nov 14 18:30:30 TCP: Xmas scan detected [ports 636,256,554,389,1723,53,443,21,33
     <p>
         &copy; Copyright 2010-2015, OSSEC Project Team.<br/>
     OSSEC trademark and <b>ossec.net</b> domain owned by <a href="http://www.trendmicro.com" target="_blank">Trend Micro, Inc.</a><br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.3 - 
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.4 - 
     Home page graphics courtesy of <a href="https://pixabay.com" target="_blank">pixabay</a>
     </p>
   </div>

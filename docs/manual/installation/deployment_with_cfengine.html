@@ -158,7 +158,7 @@
 <p>I manage the <code class="docutils literal"><span class="pre">ossec-agent.conf</span></code> in cfengine, because my cfengine configurations are all stored in a subversion repository.  The first stanza in copy just pushes the most recent copy of the <code class="docutils literal"><span class="pre">ossec-agent.conf</span></code> file to my network, setting the dynamic class <code class="docutils literal"><span class="pre">dc_restart_ossec</span></code> if the copy occurs.</p>
 <div class="highlight-console"><div class="highlight"><pre><span class="go">copy:</span>
 <span class="go">  !hg_ossec_server::</span>
-<span class="go">      $(distribute)/ossec-agent.conf      dest=/var/ossec/etc/ossec-agent.conf</span>
+<span class="gp">      $</span><span class="o">(</span>distribute<span class="o">)</span>/ossec-agent.conf      <span class="nv">dest</span><span class="o">=</span>/var/ossec/etc/ossec-agent.conf
 <span class="go">                                          server=$(policyhost)</span>
 <span class="go">                                          mode=640</span>
 <span class="go">                                          group=ossec</span>
@@ -237,7 +237,7 @@
     <p>
         &copy; Copyright 2010-2015, OSSEC Project Team.<br/>
     OSSEC trademark and <b>ossec.net</b> domain owned by <a href="http://www.trendmicro.com" target="_blank">Trend Micro, Inc.</a><br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.3 - 
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.4 - 
     Home page graphics courtesy of <a href="https://pixabay.com" target="_blank">pixabay</a>
     </p>
   </div>

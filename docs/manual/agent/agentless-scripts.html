@@ -364,25 +364,25 @@ OSSEC process, let’s move on to a working example. The OSSEC supplied script
 <code class="docutils literal"><span class="pre">ssh_integrity_check_linux</span></code> is a great place to start, so lets open it up and see
 what is going on.</p>
 <div class="highlight-console"><div class="highlight"><pre><span class="go">obsd46# cat /var/ossec/agentless/ssh_integrity_check_linux</span>
-<span class="go"> #!/usr/bin/env expect</span>
+<span class="gp"> #</span>!/usr/bin/env expect
 
-<span class="go"> # @(#) $Id: ssh_integrity_check_linux,v 1.11 2009/06/24 17:06:21 dcid Exp $</span>
-<span class="go"> # Agentless monitoring</span>
-<span class="go"> #</span>
-<span class="go"> # Copyright (C) 2009 Trend Micro Inc.</span>
-<span class="go"> # All rights reserved.</span>
-<span class="go"> #</span>
-<span class="go"> # This program is a free software; you can redistribute it</span>
-<span class="go"> # and/or modify it under the terms of the GNU General Public</span>
-<span class="go"> # License (version 3) as published by the FSF - Free Software</span>
-<span class="go"> # Foundation.</span>
+<span class="gp"> #</span> @<span class="o">(</span><span class="c1">#) $Id: ssh_integrity_check_linux,v 1.11 2009/06/24 17:06:21 dcid Exp $</span>
+<span class="gp"> #</span> Agentless monitoring
+<span class="gp"> #</span>
+<span class="gp"> #</span> Copyright <span class="o">(</span>C<span class="o">)</span> <span class="m">2009</span> Trend Micro Inc.
+<span class="gp"> #</span> All rights reserved.
+<span class="gp"> #</span>
+<span class="gp"> #</span> This program is a free software<span class="p">;</span> you can redistribute it
+<span class="gp"> #</span> and/or modify it under the terms of the GNU General Public
+<span class="gp"> #</span> License <span class="o">(</span>version 3<span class="o">)</span> as published by the FSF - Free Software
+<span class="gp"> #</span> Foundation.
 
 
-<span class="go"> # Main script.</span>
+<span class="gp"> #</span> Main script.
 <span class="go">source &quot;agentless/main.exp&quot;</span>
 
 
-<span class="go"> # SSHing to the box and passing the directories to check.</span>
+<span class="gp"> #</span> SSHing to the box and passing the directories to check.
 <span class="go">if [catch {</span>
 <span class="go">    spawn ssh $hostname</span>
 <span class="go">} loc_error] {</span>
@@ -419,7 +419,7 @@ including set timeout 600 is related to setting up the expect functions and code
 for handling the ssh subprocess and connecting to the remote host. I am not going
 to spend any time with this section, I am just going to make use of it.</p>
 <p>The meat of what is getting processed on the remote end all happens in two lines.</p>
-<div class="highlight-sh"><div class="highlight"><pre>send <span class="s2">&quot;echo \&quot;INFO: Starting.\&quot;; for i in `find </span><span class="nv">$args</span><span class="s2"> 2&gt;/dev/null`;do tail \$i &gt;/dev/null 2&gt;&amp;1 &amp;&amp;</span>
+<div class="highlight-sh"><div class="highlight"><pre>send <span class="s2">&quot;echo \&quot;INFO: Starting.\&quot;; for i in `find </span><span class="nv">$a</span><span class="s2">rgs 2&gt;/dev/null`;do tail \$i &gt;/dev/null 2&gt;&amp;1 &amp;&amp;</span>
 <span class="s2">md5=`md5sum \$i | cut -d \&quot; \&quot; -f 1` &amp;&amp; sha1=`sha1sum \$i | cut -d \&quot; \&quot; -f</span>
 <span class="s2"> 1` &amp;&amp; echo FWD: `stat --printf \&quot;%s:%a:%u:%g\&quot; \$i`:\$md5:\$sha1 \$i; done; exit\r&quot;</span>
 </pre></div>
@@ -448,10 +448,10 @@ passed to the script by the OSSEC agentless process. If we specified the followi
 </div>
 <p>Back to the commands that get run. Once expect has completed replacement we are
 left with this command.</p>
-<div class="highlight-sh"><div class="highlight"><pre><span class="nb">echo</span> <span class="s2">&quot;INFO: Starting.&quot;</span><span class="p">;</span> <span class="k">for</span> i in <span class="sb">`</span>find /bin /etc /sbin 2&gt;/dev/null<span class="sb">`</span><span class="p">;</span><span class="k">do</span> tail <span class="nv">$i</span> &gt;/dev/null 2&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="o">&amp;&amp;</span>
-<span class="nv">md5</span><span class="o">=</span><span class="sb">`</span>md5sum <span class="nv">$i</span> <span class="p">|</span> cut -d <span class="s2">&quot; &quot;</span> -f 1<span class="sb">`</span> <span class="o">&amp;&amp;</span> <span class="nv">sha1</span><span class="o">=</span><span class="sb">`</span>sha1sum <span class="nv">$i</span> <span class="p">|</span> cut -d <span class="s2">&quot; &quot;</span> -f
- 1<span class="sb">`</span> <span class="o">&amp;&amp;</span> <span class="nb">echo </span>FWD: <span class="sb">`</span>stat --printf <span class="s2">&quot;%s:%a:%u:%g&quot;</span> <span class="nv">$i</span><span class="sb">`</span>:<span class="nv">$md5</span>:<span class="nv">$sha1</span> <span class="nv">$i</span><span class="p">;</span> <span class="k">done</span><span class="p">;</span> <span class="nb">exit</span>
-<span class="nb">    exit</span>
+<div class="highlight-sh"><div class="highlight"><pre><span class="nb">echo</span> <span class="s2">&quot;INFO: Starting.&quot;</span><span class="p">;</span> <span class="k">for</span> i in <span class="sb">`</span>find /bin /etc /sbin 2&gt;/dev/null<span class="sb">`</span><span class="p">;</span><span class="k">do</span> tail $i &gt;/dev/null 2&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="o">&amp;&amp;</span>
+<span class="nv">md5</span><span class="o">=</span><span class="sb">`</span>md5sum $i <span class="p">|</span> cut -d <span class="s2">&quot; &quot;</span> -f 1<span class="sb">`</span> <span class="o">&amp;&amp;</span> <span class="nv">sha1</span><span class="o">=</span><span class="sb">`</span>sha1sum $i <span class="p">|</span> cut -d <span class="s2">&quot; &quot;</span> -f
+ 1<span class="sb">`</span> <span class="o">&amp;&amp;</span> <span class="nb">echo</span> FWD: <span class="sb">`</span>stat --printf <span class="s2">&quot;%s:%a:%u:%g&quot;</span> $i<span class="sb">`</span>:$md5:$sha1 $i<span class="p">;</span> <span class="k">done</span><span class="p">;</span> <span class="nb">exit</span>
+    <span class="nb">exit</span>
 </pre></div>
 </div>
 <p>This script then goes and uses the Unix find command to locate all files in
@@ -460,7 +460,7 @@ for each one and prints it to stdout. Making use of the commands stat, md5sum, a
 sha1sum to generate the data needed. Here is an example of the output checking.</p>
 <div class="highlight-console"><div class="highlight"><pre><span class="go">spawn ssh root@172.17.20.20</span>
 <span class="go">Last login: Wed Nov  4 11:32:51 2009 from 172.17.20.131^M</span>
-<span class="go">[linux26 ~]#</span>
+<span class="gp">[linux26 ~]#</span>
 <span class="go">INFO: Started.</span>
 <span class="go">echo &quot;INFO: Starting.&quot;; for i in `find {/bin /etc /sbin} 2&gt;/dev/null`;do tail $i &gt;/dev/null 2&gt;&amp;1 &amp;&amp;</span>
 <span class="go">md5=`md5sum $i | cut -d &quot; &quot; -f 1` &amp;&amp; sha1=`sh a1sum $i | cut -d &quot; &quot; -f</span>
@@ -545,7 +545,7 @@ and use find to locate the files.</p>
 authentication is more involved. This of course will vary from system to system, but
 this should be good starting point.</p>
 <div class="highlight-console"><div class="highlight"><pre><span class="go">obsd46# sudo -u ossec ssh root@172.17.20.20</span>
-<span class="go">[linux26 ~]# find / \( -name &quot;.ssh&quot; -o -name &quot;ssh&quot; -o -name &quot;sshd&quot; -o -name &quot;httpd&quot; -o -name &quot;.htaccess&quot;</span>
+<span class="gp">[linux26 ~]#</span> find / <span class="se">\(</span> -name <span class="s2">&quot;.ssh&quot;</span> -o -name <span class="s2">&quot;ssh&quot;</span> -o -name <span class="s2">&quot;sshd&quot;</span> -o -name <span class="s2">&quot;httpd&quot;</span> -o -name <span class="s2">&quot;.htaccess&quot;</span>
 <span class="go">-o -name &quot;pam.d&quot; \) -exec find {} \;</span>
 <span class="go">/var/www/html/admin/modules/framework/var/www/html/admin/modules/.htaccess</span>
 <span class="go">/etc/httpd</span>
@@ -628,25 +628,25 @@ all / and &#8221; by proceeding them with . Once we are done escaping we just in
 our new line in place of find $args 2&gt;/dev/null in our new file.</p>
 <p>Here is what the completed script will look like.</p>
 <div class="highlight-console"><div class="highlight"><pre><span class="go">obsd56# cat /var/ossec/agentless/ssh_dmz_linux</span>
-<span class="go"> #!/usr/bin/env expect</span>
+<span class="gp"> #</span>!/usr/bin/env expect
 
-<span class="go"> # @(#) $Id: ssh_integrity_check_linux,v 1.11 2009/06/24 17:06:21 dcid Exp $</span>
-<span class="go"> # Agentless monitoring</span>
-<span class="go"> #</span>
-<span class="go"> # Copyright (C) 2009 Trend Micro Inc.</span>
-<span class="go"> # All rights reserved.</span>
-<span class="go"> #</span>
-<span class="go"> # This program is a free software; you can redistribute it</span>
-<span class="go"> # and/or modify it under the terms of the GNU General Public</span>
-<span class="go"> # License (version 3) as published by the FSF - Free Software</span>
-<span class="go"> # Foundation.</span>
+<span class="gp"> #</span> @<span class="o">(</span><span class="c1">#) $Id: ssh_integrity_check_linux,v 1.11 2009/06/24 17:06:21 dcid Exp $</span>
+<span class="gp"> #</span> Agentless monitoring
+<span class="gp"> #</span>
+<span class="gp"> #</span> Copyright <span class="o">(</span>C<span class="o">)</span> <span class="m">2009</span> Trend Micro Inc.
+<span class="gp"> #</span> All rights reserved.
+<span class="gp"> #</span>
+<span class="gp"> #</span> This program is a free software<span class="p">;</span> you can redistribute it
+<span class="gp"> #</span> and/or modify it under the terms of the GNU General Public
+<span class="gp"> #</span> License <span class="o">(</span>version 3<span class="o">)</span> as published by the FSF - Free Software
+<span class="gp"> #</span> Foundation.
 
 
-<span class="go"> # Main script.</span>
+<span class="gp"> #</span> Main script.
 <span class="go">source &quot;agentless/main.exp&quot;</span>
 
 
-<span class="go"> # SSHing to the box and passing the directories to check.</span>
+<span class="gp"> #</span> SSHing to the box and passing the directories to check.
 <span class="go">if [catch {</span>
 <span class="go">    spawn ssh $hostname</span>
 <span class="go">} loc_error] {</span>
@@ -695,7 +695,7 @@ script as we do not make use of the $arg variable.</p>
 <div class="highlight-console"><div class="highlight"><pre><span class="go">obsd46# (cd /var/ossec &amp;&amp; sudo -u ossec ./agentless/ssh_dmz_linux root@172.17.20.20 NOTUSED)</span>
 <span class="go">spawn ssh root@172.17.20.20</span>
 <span class="go">Last login: Wed Nov  4 13:46:32 2009 from 172.17.20.131^M</span>
-<span class="go">[linux26 ~]#</span>
+<span class="gp">[linux26 ~]#</span>
 <span class="go">INFO: Started.</span>
 <span class="go">echo &quot;INFO: Starting.&quot;; for i in `(find / \( -name &quot;.ssh&quot; -o -name &quot;ssh&quot; -o -name &quot;sshd&quot; -o -name &quot;httpd&quot;</span>
 <span class="go">-o -name &quot;.htaccess&quot; -o -name &quot;pam.d&quot; \)  -exec find {} \; &amp;&amp; find / -type f \( -perm -4000 -o -perm -2000</span>
@@ -738,7 +738,7 @@ script as we do not make use of the $arg variable.</p>
     <p>
         &copy; Copyright 2010-2015, OSSEC Project Team.<br/>
     OSSEC trademark and <b>ossec.net</b> domain owned by <a href="http://www.trendmicro.com" target="_blank">Trend Micro, Inc.</a><br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.3 - 
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.4 - 
     Home page graphics courtesy of <a href="https://pixabay.com" target="_blank">pixabay</a>
     </p>
   </div>
