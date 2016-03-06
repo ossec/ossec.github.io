@@ -118,7 +118,7 @@
 <p><a href="#id1"><span class="problematic" id="id2">*</span></a>submited by Charles (kef_list &lt;<a class="reference external" href="mailto:kef_list&#37;&#52;&#48;ibacom&#46;es">kef_list<span>&#64;</span>ibacom<span>&#46;</span>es</a>&gt;) to the Ossec List.</p>
 <div class="section" id="good-login">
 <h2>Good login:<a class="headerlink" href="#good-login" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">2006-08-10 19:22:40: INFO: respond new phase 1 negotiation:</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">2006-08-10 19:22:40: INFO: respond new phase 1 negotiation:</span>
 </pre></div>
 </div>
 <dl class="docutils">
@@ -146,13 +146,13 @@
 </div>
 <div class="section" id="this-line-indicates-that-the-initial-phase-1-auth-pskeys-or-certificates-have-been-exchanged-correctly">
 <h2>This line indicates that the initial phase 1 auth (pskeys or certificates) have been exchanged correctly:<a class="headerlink" href="#this-line-indicates-that-the-initial-phase-1-auth-pskeys-or-certificates-have-been-exchanged-correctly" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">2006-08-10 19:22:41: INFO: ISAKMP-SA established 111.111.111.194 [500]-83.36.51.44[500] spi:3ac2d5023f433d3e:e2d682b6f4fc4830</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">2006-08-10 19:22:41: INFO: ISAKMP-SA established 111.111.111.194 [500]-83.36.51.44[500] spi:3ac2d5023f433d3e:e2d682b6f4fc4830</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="the-other-two-lines-to-notice-and-the-ones-that-definetly-say-we-have-a-new-vpn-established-are">
 <h2>The other two lines to notice, and the ones that definetly say we have a new VPN established are:<a class="headerlink" href="#the-other-two-lines-to-notice-and-the-ones-that-definetly-say-we-have-a-new-vpn-established-are" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">2006-08-10 19:22:42: INFO: IPsec-SA established: ESP/Tunnel 83.36.51.44-&gt;111.111.111.194 spi=188599340(0xb3dcc2c)</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">2006-08-10 19:22:42: INFO: IPsec-SA established: ESP/Tunnel 83.36.51.44-&gt;111.111.111.194 spi=188599340(0xb3dcc2c)</span>
 <span class="go">2006-08-10 19:22:42: INFO: IPsec-SA established: ESP/Tunnel 111.111.111.194-&gt;83.36.51.44 spi=19221256(0x1254b08)</span>
 </pre></div>
 </div>
@@ -165,7 +165,7 @@ tipical VPN between two static IPs. They simply indicate that racoon
 as automatically created security policies for those IPs (and both
 sides are behind NAT).</p>
 <p>Another sample of GOOD login (in this case between two static IPs)</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">2006-02-19 11:09:25: INFO: respond new phase 1 negotiation: 80.34.246.154[500]&lt;=&gt;217.127.190.50[500]</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">2006-02-19 11:09:25: INFO: respond new phase 1 negotiation: 80.34.246.154[500]&lt;=&gt;217.127.190.50[500]</span>
 <span class="go">2006-02-19 11:09:25: INFO: begin Identity Protection mode.</span>
 <span class="go">2006-02-19 11:09:26: WARNING: ignore INITIAL-CONTACT notification, because it is only accepted after phase1.</span>
 <span class="go">2006-02-19 11:09:26: INFO: ISAKMP-SA established 80.34.246.154 [500]-217.127.190.50[500] spi:bc013ca51d1a8745:9b95e47f6705088b</span>
@@ -180,7 +180,7 @@ do not know what they would look like in &#8220;transport&#8221; mode....</p>
 </div>
 <div class="section" id="now-here-are-some-samples-of-failled-logins-from-hackers-trying-to-get-in">
 <h2>Now here are some samples of FAILLED logins from hackers trying to get in:<a class="headerlink" href="#now-here-are-some-samples-of-failled-logins-from-hackers-trying-to-get-in" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">2006-08-08 01:42:08: INFO: respond new phase 1 negotiation: 111.111.111.194[500]&lt;=&gt;222.155.15.88[500]</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">2006-08-08 01:42:08: INFO: respond new phase 1 negotiation: 111.111.111.194[500]&lt;=&gt;222.155.15.88[500]</span>
 <span class="go">2006-08-08 01:42:08: INFO: begin Identity Protection mode.</span>
 <span class="go">2006-08-08 01:42:08: INFO: received Vendor ID: MS NT5 ISAKMPOAKLEY</span>
 <span class="go">2006-08-08 01:42:09: ERROR: couldn&#39;t find the pskey for 222.155.15.88.</span>
@@ -190,7 +190,7 @@ do not know what they would look like in &#8220;transport&#8221; mode....</p>
 </pre></div>
 </div>
 <p>The interesting line is:</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">2006-08-08 01:42:09: ERROR: couldn&#39;t find the pskey for 222.155.15.88.</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">2006-08-08 01:42:09: ERROR: couldn&#39;t find the pskey for 222.155.15.88.</span>
 </pre></div>
 </div>
 <p>Also, there is no INFO: ISAKMP-SA established... line because phase 1
@@ -199,7 +199,7 @@ has failed.</p>
 caused because the hacker has used different settings for the many
 options that need to be set the same way on both sides to establish a
 VPN</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">2006-07-22 08:19:43: INFO: respond new phase 1 negotiation:</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">2006-07-22 08:19:43: INFO: respond new phase 1 negotiation:</span>
 <span class="go">2006-07-22 08:19:43: INFO: begin Identity Protection mode.</span>
 <span class="go">2006-07-22 08:19:43: INFO: received Vendor ID: MS NT5 ISAKMPOAKLEY</span>
 <span class="go">2006-07-22 08:19:43: ERROR: invalid attribute type 32001.</span>
@@ -242,7 +242,7 @@ VPN</p>
     <p>
         &copy; Copyright 2010-2015, OSSEC Project Team.<br/>
     OSSEC trademark and <b>ossec.net</b> domain owned by <a href="http://www.trendmicro.com" target="_blank">Trend Micro, Inc.</a><br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.4 - 
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.6 - 
     Home page graphics courtesy of <a href="https://pixabay.com" target="_blank">pixabay</a>
     </p>
   </div>

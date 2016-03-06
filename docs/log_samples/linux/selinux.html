@@ -116,7 +116,7 @@
   <p>I enabled SELinux on my Kubuntu workstation and almost immediately received notifications from OSSEC. It has been a while since I reviewed the [<a class="reference external" href="http://www.centos.org/docs/4/html/rhel-selg-en-4/">http://www.centos.org/docs/4/html/rhel-selg-en-4/</a> RHEL SELinux documentation] that explains these log entries from /var/log/messages. There&#8217;s a very real possibility that I did not set SELinux up properly, it is not very well supported by Ubuntu at the moment. I may change this entry after I re-review the SELinux docs.</p>
 <p>Anyway, here&#8217;s something to chew on FWIW ...</p>
 <hr class="docutils" />
-<div class="highlight-console"><div class="highlight"><pre><span class="go">Feb 20 16:57:43 localhost kernel: [17180270.076000] audit(1172015863.889:2): avc:  denied  { append } for  pid=5621 comm=&quot;syslogd&quot; name=&quot;syslog&quot; dev=sda6 ino=2101168 scontext=system_u:system_r:kernel_t tcontext=system_u:object_r:file_t tclass=file</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Feb 20 16:57:43 localhost kernel: [17180270.076000] audit(1172015863.889:2): avc:  denied  { append } for  pid=5621 comm=&quot;syslogd&quot; name=&quot;syslog&quot; dev=sda6 ino=2101168 scontext=system_u:system_r:kernel_t tcontext=system_u:object_r:file_t tclass=file</span>
 <span class="go">Feb 20 16:57:43 localhost kernel: [17180270.076000] audit(1172015863.889:3): avc:  denied  { write } for  pid=5621 comm=&quot;syslogd&quot; name=&quot;psadfifo&quot; dev=sda6 ino=1466559 scontext=system_u:system_r:kernel_t tcontext=system_u:object_r:file_t tclass=fifo_file</span>
 <span class="go">Feb 20 16:57:43 localhost kernel: [17180270.076000] audit(1172015863.889:4): avc:  denied  { read } for  pid=6140 comm=&quot;kmsgsd&quot; name=&quot;psadfifo&quot; dev=sda6 ino=1466559 scontext=system_u:system_r:kernel_t tcontext=system_u:object_r:file_t tclass=fifo_file</span>
 <span class="go">Feb 20 16:57:43 localhost kernel: [17180270.100000] audit(1172015863.913:5): avc:  denied  { write } for  pid=5653 comm=&quot;dd&quot; name=&quot;kmsg&quot; dev=tmpfs ino=13022 scontext=system_u:system_r:kernel_t tcontext=system_u:object_r:tmpfs_t tclass=fifo_file</span>
@@ -206,7 +206,7 @@
     <p>
         &copy; Copyright 2010-2015, OSSEC Project Team.<br/>
     OSSEC trademark and <b>ossec.net</b> domain owned by <a href="http://www.trendmicro.com" target="_blank">Trend Micro, Inc.</a><br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.4 - 
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.6 - 
     Home page graphics courtesy of <a href="https://pixabay.com" target="_blank">pixabay</a>
     </p>
   </div>

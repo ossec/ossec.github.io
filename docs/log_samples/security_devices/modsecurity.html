@@ -117,13 +117,13 @@
 <h1>Modsecurity samples<a class="headerlink" href="#modsecurity-samples" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="access-denied">
 <h2>Access denied:<a class="headerlink" href="#access-denied" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">[Sun Jan 16 10:56:49 2005] [error] [client 192.168.2.10] mod_security: Access denied with code 403. Pattern match &quot;111&quot; at THE_REQUEST [hostname &quot;192.168.2.101&quot;] [uri &quot;/index.html?111&quot;]</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">[Sun Jan 16 10:56:49 2005] [error] [client 192.168.2.10] mod_security: Access denied with code 403. Pattern match &quot;111&quot; at THE_REQUEST [hostname &quot;192.168.2.101&quot;] [uri &quot;/index.html?111&quot;]</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="access-denied-by-pattern">
 <h2>Access denied by pattern:<a class="headerlink" href="#access-denied-by-pattern" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">mod_security-message: Access denied with code 412. Pattern match &quot;flashget&quot; at HEADER</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">mod_security-message: Access denied with code 412. Pattern match &quot;flashget&quot; at HEADER</span>
 <span class="go">mod_security-message: Access denied with code 412. Pattern match &quot;getright&quot; at HEADER</span>
 <span class="go">mod_security-message: Access denied with code 412. Pattern match &quot;^Download&quot; at HEADER</span>
 <span class="go">mod_security-message: Access denied with code 412. Pattern match &quot;^DA d.d+&quot; at HEADER</span>
@@ -132,7 +132,7 @@
 </div>
 <div class="section" id="access-denied-by-pattern-invalid-user-agent">
 <h2>Access denied by pattern (invalid user agent):<a class="headerlink" href="#access-denied-by-pattern-invalid-user-agent" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">[Mon Jun 11 03:17:22 2007] [error] [client 68.76.16.11] mod_security: Access denied with code 406. Pattern match &quot;^$&quot; at HEADER(&quot;USER-AGENT&quot;) [severity &quot;EMERGENCY&quot;] [hostname &quot;192.168.1.1&quot;] [uri &quot;/admin/pma/main.php&quot;]</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">[Mon Jun 11 03:17:22 2007] [error] [client 68.76.16.11] mod_security: Access denied with code 406. Pattern match &quot;^$&quot; at HEADER(&quot;USER-AGENT&quot;) [severity &quot;EMERGENCY&quot;] [hostname &quot;192.168.1.1&quot;] [uri &quot;/admin/pma/main.php&quot;]</span>
 <span class="go">[Mon Jun 11 03:17:22 2007] [error] [client 68.76.16.11] mod_security: Access denied with code 406. Pattern match &quot;^$&quot; at HEADER(&quot;USER-AGENT&quot;) [severity &quot;EMERGENCY&quot;] [hostname &quot;192.168.1.1&quot;] [uri &quot;/web/phpMyAdmin/main.php&quot;]</span>
 <span class="go">[Mon Jun 11 03:17:22 2007] [error] [client 68.76.16.11] mod_security: Access denied with code 406. Pattern match &quot;^$&quot; at HEADER(&quot;USER-AGENT&quot;) [severity &quot;EMERGENCY&quot;] [hostname &quot;192.168.1.1&quot;] [uri &quot;/dbadmin/main.php&quot;]</span>
 <span class="go">[Mon Jun 11 03:17:22 2007] [error] [client 68.76.16.11] mod_security: Access denied with code 406. Pattern match &quot;^$&quot; at HEADER(&quot;USER-AGENT&quot;) [severity &quot;EMERGENCY&quot;] [hostname &quot;192.168.1.1&quot;] [uri &quot;/db/main.php&quot;]</span>
@@ -162,7 +162,7 @@
     <p>
         &copy; Copyright 2010-2015, OSSEC Project Team.<br/>
     OSSEC trademark and <b>ossec.net</b> domain owned by <a href="http://www.trendmicro.com" target="_blank">Trend Micro, Inc.</a><br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.4 - 
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.6 - 
     Home page graphics courtesy of <a href="https://pixabay.com" target="_blank">pixabay</a>
     </p>
   </div>

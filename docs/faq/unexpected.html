@@ -149,7 +149,7 @@ e-mail to one of our mailing lists with the following information:</p>
 <li><p class="first">OSSEC version number.</p>
 <blockquote>
 <div><p>Run the following to get the version installation.</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="gp">#</span> /var/ossec/bin/ossec-analysisd -V
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> /var/ossec/bin/ossec-analysisd -V
 </pre></div>
 </div>
 </div></blockquote>
@@ -184,7 +184,7 @@ C:\Program Files\ossec-agent\internal_options.conf on Windows) and change
 the debug level from the default &#8220;0&#8221; to &#8220;1&#8221; or &#8220;2&#8221;.</p>
 <p>For example, if you wish to debug your windows agent, just change the option
 windows.debug from 0 to 2. Bellow is the list of all the debug options:</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="gp">#</span> Debug options.
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> Debug options.
 <span class="gp">#</span> Debug <span class="m">0</span> -&gt; no debug
 <span class="gp">#</span> Debug <span class="m">1</span> -&gt; first level of debug
 <span class="gp">#</span> Debug <span class="m">2</span> -&gt; full debugging
@@ -209,7 +209,7 @@ windows.debug from 0 to 2. Bellow is the list of all the debug options:</p>
 </pre></div>
 </div>
 <p>If this is on an OSSEC server you can enable debug by running:</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="gp">#</span> /var/ossec/bin/ossec-control <span class="nb">enable</span> debug
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> /var/ossec/bin/ossec-control <span class="nb">enable</span> debug
 </pre></div>
 </div>
 <p>Enable debug mode and restart the OSSEC processes to view more verbose logs.</p>
@@ -218,7 +218,7 @@ windows.debug from 0 to 2. Bellow is the list of all the debug options:</p>
 function to add entries to the log. This has been helpful on at least one occasion
 to help pinpoint where a problem was occurring. Something along these lines should
 work (at least in 1.3):</p>
-<div class="highlight-c"><div class="highlight"><pre><span class="n">verbose</span><span class="p">(</span><span class="s">&quot;MyName: inside the_file.c the_function() %s ..&quot;</span><span class="p">,</span> <span class="n">the_string</span><span class="p">);</span>
+<div class="highlight-c"><div class="highlight"><pre><span></span><span class="n">verbose</span><span class="p">(</span><span class="s">&quot;MyName: inside the_file.c the_function() %s ..&quot;</span><span class="p">,</span> <span class="n">the_string</span><span class="p">);</span>
 </pre></div>
 </div>
 <ul class="simple">
@@ -245,7 +245,7 @@ are, go to our Troubleshooting page for more information.</p>
 the authentication keys.</p>
 <p><strong>There is a firewall between the agent and the server.</strong></p>
 <p>If you have the following message on the agent log:</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">2007/04/19 12:42:54 ossec-agentd(4101): Waiting for server reply (not started).</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">2007/04/19 12:42:54 ossec-agentd(4101): Waiting for server reply (not started).</span>
 <span class="go">2007/04/19 12:43:10 ossec-agentd(4101): Waiting for server reply (not started).</span>
 <span class="go">2007/04/19 12:43:41 ossec-agentd(4101): Waiting for server reply (not started).</span>
 <span class="go">2007/04/19 12:44:27 ossec-agentd(4101): Waiting for server reply (not started).</span>
@@ -264,7 +264,7 @@ where the DNS client connects to UDP port 53 and expects a reply back.</p>
 <p><strong>Wrong authentication keys configured (you imported a key from a different agent).</strong></p>
 <p>If that&#8217;s the case, you would be getting logs similar to the above on the agent
 and the following on the server (see also Errors:1403):</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">2007/05/23 09:27:35 ossec-remoted(1403): Incorrectly formated message from &#39;xxx.xxx.xxx.xxx&#39;.</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">2007/05/23 09:27:35 ossec-remoted(1403): Incorrectly formated message from &#39;xxx.xxx.xxx.xxx&#39;.</span>
 <span class="go">2007/05/23 09:27:35 ossec-remoted(1403): Incorrectly formated message from &#39;xxx.xxx.xxx.xxx&#39;.&#39;&#39;</span>
 </pre></div>
 </div>
@@ -318,7 +318,7 @@ and then the agent after that.</li>
 <div class="section" id="check-queue-ossec-queue">
 <h3><a class="toc-backref" href="#id6">Check queue/ossec/queue</a><a class="headerlink" href="#check-queue-ossec-queue" title="Permalink to this headline">¶</a></h3>
 <p>If you have logs similar to the following in <code class="docutils literal"><span class="pre">/var/ossec/queue/ossec/queue</span></code>:</p>
-<div class="highlight-python"><div class="highlight"><pre>2008/04/29 15:40:39 ossec-syscheckd(1210): ERROR: Queue &#39;/var/ossec/queue/ossec/queue&#39; not accessible: &#39;Connection refused&#39;.
+<div class="highlight-python"><div class="highlight"><pre><span></span>2008/04/29 15:40:39 ossec-syscheckd(1210): ERROR: Queue &#39;/var/ossec/queue/ossec/queue&#39; not accessible: &#39;Connection refused&#39;.
 2008/04/29 15:40:39 ossec-rootcheck(1210): ERROR: Queue &#39;/var/ossec/queue/ossec/queue&#39; not accessible: &#39;Connection refused&#39;.
 2008/04/29 15:40:45 ossec-logcollector(1210): ERROR: Queue &#39;/var/ossec/queue/ossec/queue&#39; not accessible: &#39;Connection refused&#39;.
 2008/04/29 15:40:45 ossec-logcollector(1211): ERROR: Unable to access queue: &#39;/var/ossec/queue/ossec/queue&#39;. Giving up..
@@ -337,7 +337,7 @@ to fix it).</li>
 </ul>
 <p><strong>How to fix it:</strong></p>
 <p>Stop OSSEC and start it back again:</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="gp">#</span> /var/ossec/bin/ossec-control stop
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> /var/ossec/bin/ossec-control stop
 <span class="go">(you can also check at /var/ossec/var/run that there is not PID file in there)</span>
 <span class="gp">#</span> /var/ossec/bin/ossec-control start
 </pre></div>
@@ -347,7 +347,7 @@ to fix it).</li>
 <div class="section" id="check-queue-alerts-ar">
 <h3><a class="toc-backref" href="#id7">Check queue/alerts/ar</a><a class="headerlink" href="#check-queue-alerts-ar" title="Permalink to this headline">¶</a></h3>
 <p>If you have logs similar to the following in <code class="docutils literal"><span class="pre">/var/ossec/queue/alerts/ar</span></code>:</p>
-<div class="highlight-python"><div class="highlight"><pre>2009/02/17 12:03:04 ossec-analysisd(1210): ERROR: Queue &#39;/queue/alerts/ar&#39; not accessible: &#39;Connection refused&#39;.
+<div class="highlight-python"><div class="highlight"><pre><span></span>2009/02/17 12:03:04 ossec-analysisd(1210): ERROR: Queue &#39;/queue/alerts/ar&#39; not accessible: &#39;Connection refused&#39;.
 2009/02/17 12:03:04 ossec-analysisd(1301): ERROR: Unable to connect to active response queue.
 </pre></div>
 </div>
@@ -368,7 +368,7 @@ Originally OSSEC supported running commands from the agent.conf by default. Thie
 precaution due to the commands being run as root. When a command is encountered on an agent in the agent.conf
 this error will be produced and the agent may not fully start. This error may also accompany the above error
 message:</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">ERROR: Configuration error at &#39;/var/ossec-agent/etc/shared/agent.conf&#39;. Exiting.</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">ERROR: Configuration error at &#39;/var/ossec-agent/etc/shared/agent.conf&#39;. Exiting.</span>
 </pre></div>
 </div>
 </div>
@@ -378,7 +378,7 @@ message:</p>
 properly by default. There are a few changes that you will need to do:</p>
 <p><strong>Increase maximum number of allowed agents</strong></p>
 <p>To increase the number of agents, before you install (or update OSSEC), just do:</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="gp">#</span><span class="nb">cd</span> src<span class="p">;</span> make setmaxagents <span class="o">(</span>it will ask how many <span class="k">do</span> you want.. <span class="o">)</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span><span class="nb">cd</span> src<span class="p">;</span> make setmaxagents <span class="o">(</span>it will ask how many <span class="k">do</span> you want.. <span class="o">)</span>
 
 <span class="go">Specify maximum number of agents: 2048 (to increase to 2048)</span>
 <span class="go">Maximum number of agents set to 20.</span>
@@ -389,7 +389,7 @@ properly by default. There are a few changes that you will need to do:</p>
 <p><strong>Increase your system&#8217;s limits</strong></p>
 <p>Most systems have limits regarding the maximum number of files you can have.
 A few commands you should try are (to increase to 2048):</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="gp">#</span> <span class="nb">ulimit</span> -n 2048
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> <span class="nb">ulimit</span> -n 2048
 <span class="gp">#</span> sysctl -w kern.maxfiles<span class="o">=</span>2048
 </pre></div>
 </div>
@@ -398,7 +398,7 @@ A few commands you should try are (to increase to 2048):</p>
 <h2><a class="toc-backref" href="#id10">Fixing Duplicate Errors</a><a class="headerlink" href="#fixing-duplicate-errors" title="Permalink to this headline">¶</a></h2>
 <p>Ossec agents and server keep a counter of each message sent and received in files in .../ossec/queue/rids.
 This is a technique to prevent replay attacks. If the counters between agent and server don&#8217;t match you&#8217;ll see errors like this in the agents ossec.log file:</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">2007/10/24 11:19:21 ossec-agentd: Duplicate error:  global: 12, local: 3456, saved global: 78, saved local: 91011</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">2007/10/24 11:19:21 ossec-agentd: Duplicate error:  global: 12, local: 3456, saved global: 78, saved local: 91011</span>
 <span class="go">2007/10/24 11:19:21 ossec-agentd(&lt;pid&gt;): Duplicated counter for &#39;&lt;host name&gt;&#39;.</span>
 <span class="go">2007/10/24 11:19:21 ossec-agentd(&lt;pid&gt;): Problem receiving message from www.xxx.yyy.zzz.</span>
 </pre></div>
@@ -439,7 +439,7 @@ The fix for this problem is:</p>
 <div class="section" id="agent-won-t-connect-to-the-manager-or-the-agent-always-shows-never-connected">
 <h2><a class="toc-backref" href="#id11">Agent won&#8217;t connect to the manager or the agent always shows never connected</a><a class="headerlink" href="#agent-won-t-connect-to-the-manager-or-the-agent-always-shows-never-connected" title="Permalink to this headline">¶</a></h2>
 <p>The following log messages may appear in the <code class="docutils literal"><span class="pre">ossec.log</span></code> file on an agent when it is having issues connecting to a manager:</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">2011/11/13 18:05:13 ossec-agent: WARN: Process locked. Waiting for permission...</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">2011/11/13 18:05:13 ossec-agent: WARN: Process locked. Waiting for permission...</span>
 <span class="go">2011/11/13 18:05:24 ossec-agent(4101): WARN: Waiting for server reply (not started). Tried: &#39;10.10.134.241&#39;.</span>
 <span class="go">2011/11/13 18:05:26 ossec-agent: INFO: Trying to connect to server (10.10.134.241:1514).</span>
 <span class="go">2011/11/13 18:05:26 ossec-agent: INFO: Using IPv4 for: 10.10.134.241 .</span>
@@ -458,7 +458,7 @@ The fix for this problem is:</p>
 <h2><a class="toc-backref" href="#id12">I am seeing high CPU utilization on a Windows agent</a><a class="headerlink" href="#i-am-seeing-high-cpu-utilization-on-a-windows-agent" title="Permalink to this headline">¶</a></h2>
 <p>Some OSSEC HIDS users who have deployed the Windows agent have experienced situations where the windows OSSEC agent causes high CPU utilization. In some cases, this may be due to syscheck having to do integrity checking on a large number of files and the frequency with which this is done. The high CPU utilization could also take place when the OSSEC agent has to analyze Windows Event logs with very large numbers of generated events.</p>
 <p>A clue to what may be happening are alerts like these:</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">OSSEC HIDS Notification.</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">OSSEC HIDS Notification.</span>
 <span class="go">2006 Oct 24 03:18:07</span>
 
 <span class="go">Received From: (ACME-5) 10.23.54.40-&gt;WinEvtLog</span>
@@ -501,7 +501,7 @@ If you are using a system that is still using tcpwrappers, either use the curren
     <p>
         &copy; Copyright 2010-2015, OSSEC Project Team.<br/>
     OSSEC trademark and <b>ossec.net</b> domain owned by <a href="http://www.trendmicro.com" target="_blank">Trend Micro, Inc.</a><br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.4 - 
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.6 - 
     Home page graphics courtesy of <a href="https://pixabay.com" target="_blank">pixabay</a>
     </p>
   </div>

@@ -117,7 +117,7 @@
 <h1>Log Samples from the Netscreen Firewall<a class="headerlink" href="#log-samples-from-the-netscreen-firewall" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="traffic-denied">
 <h2>Traffic denied:<a class="headerlink" href="#traffic-denied" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">Jun  2 14:55:46 fire00 fire00: NetScreen device_id=fire00  [Root]system-notification-00257(traffic): start_time=&quot;2006-06-02 14:55:45&quot; duration=0 policy_id=119 service=udp/port:7001 proto=17 src zone=Trust dst zone=Untrust action=Deny sent=0 rcvd=0 src=192.168.2.1 dst=1.2.3.4 src_port=3036 dst_port=7001</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Jun  2 14:55:46 fire00 fire00: NetScreen device_id=fire00  [Root]system-notification-00257(traffic): start_time=&quot;2006-06-02 14:55:45&quot; duration=0 policy_id=119 service=udp/port:7001 proto=17 src zone=Trust dst zone=Untrust action=Deny sent=0 rcvd=0 src=192.168.2.1 dst=1.2.3.4 src_port=3036 dst_port=7001</span>
 <span class="go">Jun  2 14:53:31 fire00 aka1: NetScreen device_id=aka1  [Root]system-notification-00257(traffic): start_time=&quot;2006-06-02 14:53:30&quot; duration=0 policy_id=120 service=udp/port:20721 proto=17 src zone=Trust dst zone=DMZ action=Deny sent=0 rcvd=0 src=192.168.2.2 dst=1.2.3.4 src_port=53 dst_port=20721</span>
 <span class="go">Jun  2 14:53:31 fire00 aka1: NetScreen device_id=aka1  [Root]system-notification-00257(traffic): start_time=&quot;2006-06-02 14:53:30&quot; duration=0 policy_id=120 service=udp/port:17210 proto=17 src zone=Trust dst zone=DMZ action=Deny sent=0 rcvd=0 src=192.168.2.2 dst=1.2.3.4 src_port=53 dst_port=17210</span>
 <span class="go">Mar 16 15:27:56 172.16.10.42 ns5gt: NetScreen device_id=ns5gt  [No Name]system-notification-00257(traffic): start_time=\&quot;2005-03-16 16:33:22\&quot; duration=0 policy_id=320001 service=tcp/port:120 proto=6 src zone=Null dst zone=self action=Deny sent=0 rcvd=60 src=192.168.2.1 dst=1.2.3.4 src_port=31048 dst_port=12</span>
@@ -126,7 +126,7 @@
 </div>
 <div class="section" id="alert-messages">
 <h2>Alert messages:<a class="headerlink" href="#alert-messages" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">Jun  1 22:01:35 [xx] ns5gt: NetScreen device_id=ns5gt  [Root]system-alert-00016: Port scan! From 1.2.3.4:54886 to 2.3.4.5:406, proto TCP (zone Untrust, int untrust). Occurred 1 times. (2004-06-01 22:09:03)</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Jun  1 22:01:35 [xx] ns5gt: NetScreen device_id=ns5gt  [Root]system-alert-00016: Port scan! From 1.2.3.4:54886 to 2.3.4.5:406, proto TCP (zone Untrust, int untrust). Occurred 1 times. (2004-06-01 22:09:03)</span>
 <span class="go">Jun  1 22:01:57 [xx] ns5gt: NetScreen device_id=ns5gt  [Root]system-alert-00016: Port scan! From 1.2.3.4:55181 to 2.3.4.5:1358, proto TCP (zone Untrust, int untrust). Occurred 1 times. (2004-06-01 22:09:25)</span>
 <span class="go">Jun  1 22:02:10 [xx] ns5gt: NetScreen device_id=ns5gt  [Root]system-alert-00016: Port scan! From 1.2.3.4:55339 to 2.3.4.5:1515, proto TCP (zone Untrust, int untrust). Occurred 1 times. (2004-06-01 22:09:38)</span>
 </pre></div>
@@ -134,7 +134,7 @@
 </div>
 <div class="section" id="critical-messages">
 <h2>Critical messages:<a class="headerlink" href="#critical-messages" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">Jun  2 11:24:16 fire00 sav00: NetScreen device_id=sav00  [Root]system-critical-00436: Large ICMP packet! From 1.2.3.4 to 2.3.4.5, proto 1 (zone Untrust, int ethernet1/2). Occurred 1 times. (2006-06-02 11:24:16)</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Jun  2 11:24:16 fire00 sav00: NetScreen device_id=sav00  [Root]system-critical-00436: Large ICMP packet! From 1.2.3.4 to 2.3.4.5, proto 1 (zone Untrust, int ethernet1/2). Occurred 1 times. (2006-06-02 11:24:16)</span>
 <span class="go">[00001] 2007-04-01 15:32:00 [Root]system-critical-00031: arp req detected an IP conflict (IP 10.1.1.1, MAC 0027f2424c8c) on interface ethernet1</span>
 <span class="go">[00001] 2007-03-12 12:47:36 [Root]system-critical-00001(second traffic alarm):  Policy ID=14 Rate=180 bytes/sec exceeds threshold</span>
 <span class="go">[00008] 2006-06-30 13:10:09 [Root]system-critical-00041: VPN &#39;zzz-primary-vpn&#39; from a.b.c.d is down.</span>
@@ -146,7 +146,7 @@
 </div>
 <div class="section" id="admin-login">
 <h2>Admin login:<a class="headerlink" href="#admin-login" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">Jun  1 22:02:12 [xx] ns5gt: NetScreen device_id=ns5gt  [Root]system-notification-00002: Admin user &quot;baby&quot; logged in for Web(http) management (port 8080) from 1.2.3.4:2150 (2004-06-01 22:09:40)</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Jun  1 22:02:12 [xx] ns5gt: NetScreen device_id=ns5gt  [Root]system-notification-00002: Admin user &quot;baby&quot; logged in for Web(http) management (port 8080) from 1.2.3.4:2150 (2004-06-01 22:09:40)</span>
 </pre></div>
 </div>
 </div>
@@ -170,7 +170,7 @@
     <p>
         &copy; Copyright 2010-2015, OSSEC Project Team.<br/>
     OSSEC trademark and <b>ossec.net</b> domain owned by <a href="http://www.trendmicro.com" target="_blank">Trend Micro, Inc.</a><br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.4 - 
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.6 - 
     Home page graphics courtesy of <a href="https://pixabay.com" target="_blank">pixabay</a>
     </p>
   </div>

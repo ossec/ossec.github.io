@@ -125,7 +125,7 @@
 </div>
 <div class="section" id="apache-entry-with-command-execution-succeeded">
 <h2>Apache entry with command execution succeeded:<a class="headerlink" href="#apache-entry-with-command-execution-succeeded" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">a.b.c.d - - [13/Jan/2006:01:07:21 -0200] &quot;GET /awstats/awstats.pl?configdir=|echo;echo%20YYY;cd%20%2ftmp%3bwget...;echo%20YYY;echo|HTTP/1.0&quot; 404 291</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">a.b.c.d - - [13/Jan/2006:01:07:21 -0200] &quot;GET /awstats/awstats.pl?configdir=|echo;echo%20YYY;cd%20%2ftmp%3bwget...;echo%20YYY;echo|HTTP/1.0&quot; 404 291</span>
 </pre></div>
 </div>
 </div>
@@ -141,7 +141,7 @@
 </div>
 <div class="section" id="squid-access-log-worm-scans">
 <h2>Squid access log (worm scans):<a class="headerlink" href="#squid-access-log-worm-scans" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">524 192.168.2.204 TCP_MISS/404 590 GET http://www.ordendeslichts.de/intern/xxx3.php? - DIRECT/81.201.107.6 text/html</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">524 192.168.2.204 TCP_MISS/404 590 GET http://www.ordendeslichts.de/intern/xxx3.php? - DIRECT/81.201.107.6 text/html</span>
 
 <span class="go">3571 192.168.2.204 TCP_MISS/404 470 GET http://www.levada.ru/htmlarea/images/xxx3.php? - DIRECT/62.118.252.213</span>
 
@@ -157,7 +157,7 @@
 </div>
 <div class="section" id="squid-proxy-misuse-attempt-to-proxy-smtp-over-the-proxy">
 <h2>Squid proxy misuse &#8211; Attempt to proxy SMTP over the proxy:<a class="headerlink" href="#squid-proxy-misuse-attempt-to-proxy-smtp-over-the-proxy" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">0 192.168.2.135 TCP_DENIED/403 1382 CONNECT 65.54.245.104:25 - NONE/- text/html</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">0 192.168.2.135 TCP_DENIED/403 1382 CONNECT 65.54.245.104:25 - NONE/- text/html</span>
 
 <span class="go">2 192.168.2.135 TCP_DENIED/403 1378 CONNECT 4.79.181.14:25 - NONE/- text/html</span>
 
@@ -171,7 +171,7 @@
 </div>
 <div class="section" id="ssh-bruteforce-login">
 <h2>SSH bruteforce login:<a class="headerlink" href="#ssh-bruteforce-login" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">Oct  2 01:13:19 host sshd[19618]: Illegal user test from ::ffff:69.10.144.194&lt;br&gt;</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Oct  2 01:13:19 host sshd[19618]: Illegal user test from ::ffff:69.10.144.194&lt;br&gt;</span>
 <span class="go">Oct  2 01:13:19 host sshd[19618]: Address 69.10.144.194 maps to unknown.rackforce.com, but this does not map back to the address - POSSIBLE BREAKIN ATTEMPT!&lt;br&gt;</span>
 <span class="go">Oct  2 01:13:20 host sshd[19620]: Illegal user test from ::ffff:69.10.144.194&lt;br&gt;</span>
 <span class="go">Oct  2 01:13:20 host sshd[19620]: Address 69.10.144.194 maps to unknown.rackforce.com, but this does not map back to the address - POSSIBLE BREAKIN ATTEMPT!&lt;br&gt;</span>
@@ -184,7 +184,7 @@
 </div>
 <div class="section" id="attempt-to-exploit-frontpage-with-payload-truncated">
 <h2>Attempt to exploit Frontpage with payload truncated:<a class="headerlink" href="#attempt-to-exploit-frontpage-with-payload-truncated" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">74.74.126.250 - - [02/Aug/2007:15:53:46 -0400] &quot;SEARCH /\x90................................................................</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">74.74.126.250 - - [02/Aug/2007:15:53:46 -0400] &quot;SEARCH /\x90................................................................</span>
 <span class="go">............................................................................................................................</span>
 <span class="go">............................................................................................................................</span>
 <span class="go">............................................................................................................................</span>
@@ -243,7 +243,7 @@
     <p>
         &copy; Copyright 2010-2015, OSSEC Project Team.<br/>
     OSSEC trademark and <b>ossec.net</b> domain owned by <a href="http://www.trendmicro.com" target="_blank">Trend Micro, Inc.</a><br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.4 - 
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.6 - 
     Home page graphics courtesy of <a href="https://pixabay.com" target="_blank">pixabay</a>
     </p>
   </div>

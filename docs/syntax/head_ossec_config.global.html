@@ -130,7 +130,7 @@
 <p>All global options must be configured in the /var/ossec/etc/ossec.conf
 and used within the &lt;ossec_config&gt; tag.</p>
 <p>XML excerpt to show location:</p>
-<div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;ossec_config&gt;</span>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;ossec_config&gt;</span>
     <span class="nt">&lt;global&gt;</span>
         <span class="c">&lt;!--</span>
 <span class="c">        Global options here</span>
@@ -209,7 +209,7 @@ This is true whether the mail grouping is enabled or disabled.</p>
 <dt id="element-custom_alert_output">
 <code class="descname">custom_alert_output</code><a class="headerlink" href="#element-custom_alert_output" title="Permalink to this definition">¶</a></dt>
 <dd><p>Specifies the format of alerts written to the logfile.</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">Variables:</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Variables:</span>
 <span class="go">&quot;$TIMESTAMP&quot;    -       The time the event was processed by OSSEC.</span>
 <span class="go">&quot;$FTELL&quot;        -       Unknown</span>
 <span class="go">&quot;$RULEALERT&quot;    -       Unknown</span>
@@ -328,15 +328,15 @@ version.</p>
 <p class="first admonition-title">Warning</p>
 <p class="last">This URI format is defined by the ZeroMQ project.</p>
 </div>
-<div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;zeromq_uri&gt;</span>tcp://localhost:11111/<span class="nt">&lt;/zeromq_uri&gt;</span>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;zeromq_uri&gt;</span>tcp://localhost:11111/<span class="nt">&lt;/zeromq_uri&gt;</span>
 </pre></div>
 </div>
 <p>This will listen for zeromq subscribers on ip address 127.0.0.1 port 11111</p>
-<div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;zeromq_uri&gt;</span>tcp://eth0:21212/<span class="nt">&lt;/zeromq_uri&gt;</span>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;zeromq_uri&gt;</span>tcp://eth0:21212/<span class="nt">&lt;/zeromq_uri&gt;</span>
 </pre></div>
 </div>
 <p>This will listen for zeromq subscribers on the ip address assiged to eth0 port 21212</p>
-<div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;zeromq_uri&gt;</span>ipc:///alerts-zmq<span class="nt">&lt;/zeromq_uri&gt;</span>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;zeromq_uri&gt;</span>ipc:///alerts-zmq<span class="nt">&lt;/zeromq_uri&gt;</span>
 </pre></div>
 </div>
 <p>This will listen for zeromq on the Unix Domain socket /alerts-zmq.</p>
@@ -347,7 +347,7 @@ version.</p>
 <code class="descname">geoip_db_path</code><a class="headerlink" href="#element-geoip_db_path" title="Permalink to this definition">¶</a></dt>
 <dd><p>The full path to the GeoIP IPv4 database file location.</p>
 <p><strong>Example:</strong></p>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">&lt;geoip_db_path&gt;/etc/GeoLiteCity.dat&lt;/geoip_db_path&gt;</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">&lt;geoip_db_path&gt;/etc/GeoLiteCity.dat&lt;/geoip_db_path&gt;</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -373,7 +373,7 @@ version.</p>
     <p>
         &copy; Copyright 2010-2015, OSSEC Project Team.<br/>
     OSSEC trademark and <b>ossec.net</b> domain owned by <a href="http://www.trendmicro.com" target="_blank">Trend Micro, Inc.</a><br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.4 - 
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.6 - 
     Home page graphics courtesy of <a href="https://pixabay.com" target="_blank">pixabay</a>
     </p>
   </div>

@@ -152,7 +152,7 @@ huh?!) to look at and analyze.  After unzipping the file, I was presented with
 a bunch of files to look through and analyze.  Table 1 lists the files that come
 with KNARK:</p>
 <p>List of files that come with KNARK:</p>
-<div class="highlight-python"><div class="highlight"><pre>Makefile
+<div class="highlight-python"><div class="highlight"><pre><span></span>Makefile
 apache.c
 Apache.cgi
  backup
@@ -211,7 +211,7 @@ machine to fail at boot up.</li>
 </ol>
 <p>The first thing I did after installation is pull out NMAP and run
 <code class="docutils literal"><span class="pre">nmap</span> <span class="pre">-sS</span> <span class="pre">-p</span> <span class="pre">1-65535</span> <span class="pre">192.168.0.20</span></code> and waited to see what NMAP had too say.</p>
-<div class="highlight-python"><div class="highlight"><pre>Starting nmap V. 2.53 by fyodor@insecure.org ( www.insecure.org/nmap/ )
+<div class="highlight-python"><div class="highlight"><pre><span></span>Starting nmap V. 2.53 by fyodor@insecure.org ( www.insecure.org/nmap/ )
 Interesting ports on sec-linux.lab.sec (192.168.0.20):
 (The 65523 ports scanned but not shown below are in state: closed)
 Port       State       Service
@@ -237,7 +237,7 @@ Second, we see that this box is lucky it hasn&#8217;t been rooted at least a doz
 <p>The next step was to run netstat.  Why?  Well, we want to see if netstat
 will call out the same ports as NMAP.  If netstat does not call out the same
 ports then we check the binary for netstat.:</p>
-<div class="highlight-python"><div class="highlight"><pre>Active Internet connections (servers and established)
+<div class="highlight-python"><div class="highlight"><pre><span></span>Active Internet connections (servers and established)
 Proto Recv-Q Send-Q Local Address           Foreign Address         State
 tcp        0      0 0.0.0.0:79              0.0.0.0:*               LISTEN
 tcp        0      0 0.0.0.0:512             0.0.0.0:*               LISTEN
@@ -295,7 +295,7 @@ into Linux is not that difficult, in fact <code class="docutils literal"><span c
 <li><p class="first"><em>Lpdx</em> - This is used to exploit the LPR service of Red Hat boxes. Here
 is what a IDS might see:</p>
 <p>Figure 3: Lpr Signature:</p>
-<div class="highlight-python"><div class="highlight"><pre>09:06:19.991789 &gt; 192.168.1.13.2894 &gt; 192.168.0.40.printer: S 4221747912:4221747912(0) win 32120 &lt;mss 1460,sackOK,timestamp 4058996 0,nop,wscale 0&gt; (DF) (ttl 64, id 11263)
+<div class="highlight-python"><div class="highlight"><pre><span></span>09:06:19.991789 &gt; 192.168.1.13.2894 &gt; 192.168.0.40.printer: S 4221747912:4221747912(0) win 32120 &lt;mss 1460,sackOK,timestamp 4058996 0,nop,wscale 0&gt; (DF) (ttl 64, id 11263)
 09:06:19.993434 &lt; 192.168.1.13.printer &gt; 192.168.0.40.2894: S 397480959:397480959(0) ack 4221747913 win 32120 &lt;mss 1460,sackOK,timestamp 393475 4058996,nop,wscale 0&gt; (DF) (ttl 64, id 3278)
 09:06:19.993514 &gt; 192.168.1.13.2894 &gt; 192.168.0.40.printer: . 1:1(0) ack 1 win 32120 &lt;nop,nop,timestamp 4058996 393475&gt; (DF) (ttl 64, id 11264)
 </pre></div>
@@ -513,7 +513,7 @@ for FREEBSD, Linux (RH 6.2 and SuSe 6.3&amp;6.4).</p>
     <p>
         &copy; Copyright 2010-2015, OSSEC Project Team.<br/>
     OSSEC trademark and <b>ossec.net</b> domain owned by <a href="http://www.trendmicro.com" target="_blank">Trend Micro, Inc.</a><br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.4 - 
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.6 - 
     Home page graphics courtesy of <a href="https://pixabay.com" target="_blank">pixabay</a>
     </p>
   </div>

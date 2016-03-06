@@ -180,7 +180,7 @@ previous runs of the script</li>
 <p>Here is an example of a periodic_diff script that comes with OSSEC. (Please note
 with all agentless scripts you must be in the root of the OSSEC install for them
 to function correctly.)</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">obsd46#( cd /var/ossec &amp;&amp; ./agentless/ssh_pixconfig_diff cisco@172.17.0.1 &#39;show hardware&#39; )</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">obsd46#( cd /var/ossec &amp;&amp; ./agentless/ssh_pixconfig_diff cisco@172.17.0.1 &#39;show hardware&#39; )</span>
 <span class="go">spawn ssh -c des cisco@172.17.0.1</span>
 <span class="go">No valid ciphers for protocol version 2 given, using defaults.</span>
 <span class="go">Password:</span>
@@ -297,7 +297,7 @@ all other log messages.</li>
 </ul>
 <div class="section" id="example-of-real-fwd-command">
 <h4><a class="toc-backref" href="#id5">Example of real FWD: command.</a><a class="headerlink" href="#example-of-real-fwd-command" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">FWD: 19419:600:0:0:fb30de5b02029950ae05885a3d407c8c:017cd6118cdc166ee8eba8af1b7fdad6763203d3 ./.bash_history</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">FWD: 19419:600:0:0:fb30de5b02029950ae05885a3d407c8c:017cd6118cdc166ee8eba8af1b7fdad6763203d3 ./.bash_history</span>
 </pre></div>
 </div>
 <p>The Fields break down in to the following:</p>
@@ -338,7 +338,7 @@ all other log messages.</li>
 <p>Using this format OSSEC can store the information about a file and then in the future run
 compare that they are the same. If for some reason they are not the same an alert will be
 generated. Here is an example of a password change on a linux system:</p>
-<div class="highlight-python"><div class="highlight"><pre>OSSEC HIDS Notification.
+<div class="highlight-python"><div class="highlight"><pre><span></span>OSSEC HIDS Notification.
 2009 Sep 21 15:19:00
 
 Received From: (ssh_integrity_check_linux) root@172.17.20.20-&gt;syscheck
@@ -363,7 +363,7 @@ New sha1sum is : &#39;d9518ea9022b10d07f81925c6d7f2abb4364b548&#39;
 OSSEC process, let’s move on to a working example. The OSSEC supplied script
 <code class="docutils literal"><span class="pre">ssh_integrity_check_linux</span></code> is a great place to start, so lets open it up and see
 what is going on.</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">obsd46# cat /var/ossec/agentless/ssh_integrity_check_linux</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">obsd46# cat /var/ossec/agentless/ssh_integrity_check_linux</span>
 <span class="gp"> #</span>!/usr/bin/env expect
 
 <span class="gp"> #</span> @<span class="o">(</span><span class="c1">#) $Id: ssh_integrity_check_linux,v 1.11 2009/06/24 17:06:21 dcid Exp $</span>
@@ -419,7 +419,7 @@ including set timeout 600 is related to setting up the expect functions and code
 for handling the ssh subprocess and connecting to the remote host. I am not going
 to spend any time with this section, I am just going to make use of it.</p>
 <p>The meat of what is getting processed on the remote end all happens in two lines.</p>
-<div class="highlight-sh"><div class="highlight"><pre>send <span class="s2">&quot;echo \&quot;INFO: Starting.\&quot;; for i in `find </span><span class="nv">$a</span><span class="s2">rgs 2&gt;/dev/null`;do tail \$i &gt;/dev/null 2&gt;&amp;1 &amp;&amp;</span>
+<div class="highlight-sh"><div class="highlight"><pre><span></span>send <span class="s2">&quot;echo \&quot;INFO: Starting.\&quot;; for i in `find </span><span class="nv">$args</span><span class="s2"> 2&gt;/dev/null`;do tail \$i &gt;/dev/null 2&gt;&amp;1 &amp;&amp;</span>
 <span class="s2">md5=`md5sum \$i | cut -d \&quot; \&quot; -f 1` &amp;&amp; sha1=`sha1sum \$i | cut -d \&quot; \&quot; -f</span>
 <span class="s2"> 1` &amp;&amp; echo FWD: `stat --printf \&quot;%s:%a:%u:%g\&quot; \$i`:\$md5:\$sha1 \$i; done; exit\r&quot;</span>
 </pre></div>
@@ -437,7 +437,7 @@ characters in this way when we begin writing our own script.</p>
 replace, in this case it will find $args and replace it with what ever arguments were
 passed to the script by the OSSEC agentless process. If we specified the following in
 <code class="docutils literal"><span class="pre">/var/ossec/etc/ossec.conf</span></code> the $args variable would be replaced with <code class="docutils literal"><span class="pre">/bin</span> <span class="pre">/etc</span> <span class="pre">/sbin</span></code>.</p>
-<div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;agentless&gt;</span>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;agentless&gt;</span>
     <span class="nt">&lt;type&gt;</span>ssh_integrity_check_linux<span class="nt">&lt;/type&gt;</span>
     <span class="nt">&lt;frequency&gt;</span>3600<span class="nt">&lt;/frequency&gt;</span>
     <span class="nt">&lt;host&gt;</span>root@172.17.20.20<span class="nt">&lt;/host&gt;</span>
@@ -448,9 +448,9 @@ passed to the script by the OSSEC agentless process. If we specified the followi
 </div>
 <p>Back to the commands that get run. Once expect has completed replacement we are
 left with this command.</p>
-<div class="highlight-sh"><div class="highlight"><pre><span class="nb">echo</span> <span class="s2">&quot;INFO: Starting.&quot;</span><span class="p">;</span> <span class="k">for</span> i in <span class="sb">`</span>find /bin /etc /sbin 2&gt;/dev/null<span class="sb">`</span><span class="p">;</span><span class="k">do</span> tail $i &gt;/dev/null 2&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="o">&amp;&amp;</span>
-<span class="nv">md5</span><span class="o">=</span><span class="sb">`</span>md5sum $i <span class="p">|</span> cut -d <span class="s2">&quot; &quot;</span> -f 1<span class="sb">`</span> <span class="o">&amp;&amp;</span> <span class="nv">sha1</span><span class="o">=</span><span class="sb">`</span>sha1sum $i <span class="p">|</span> cut -d <span class="s2">&quot; &quot;</span> -f
- 1<span class="sb">`</span> <span class="o">&amp;&amp;</span> <span class="nb">echo</span> FWD: <span class="sb">`</span>stat --printf <span class="s2">&quot;%s:%a:%u:%g&quot;</span> $i<span class="sb">`</span>:$md5:$sha1 $i<span class="p">;</span> <span class="k">done</span><span class="p">;</span> <span class="nb">exit</span>
+<div class="highlight-sh"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;INFO: Starting.&quot;</span><span class="p">;</span> <span class="k">for</span> i in <span class="sb">`</span>find /bin /etc /sbin 2&gt;/dev/null<span class="sb">`</span><span class="p">;</span><span class="k">do</span> tail <span class="nv">$i</span> &gt;/dev/null 2&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="o">&amp;&amp;</span>
+<span class="nv">md5</span><span class="o">=</span><span class="sb">`</span>md5sum <span class="nv">$i</span> <span class="p">|</span> cut -d <span class="s2">&quot; &quot;</span> -f 1<span class="sb">`</span> <span class="o">&amp;&amp;</span> <span class="nv">sha1</span><span class="o">=</span><span class="sb">`</span>sha1sum <span class="nv">$i</span> <span class="p">|</span> cut -d <span class="s2">&quot; &quot;</span> -f
+ 1<span class="sb">`</span> <span class="o">&amp;&amp;</span> <span class="nb">echo</span> FWD: <span class="sb">`</span>stat --printf <span class="s2">&quot;%s:%a:%u:%g&quot;</span> <span class="nv">$i</span><span class="sb">`</span>:<span class="nv">$md5</span>:<span class="nv">$sha1</span> <span class="nv">$i</span><span class="p">;</span> <span class="k">done</span><span class="p">;</span> <span class="nb">exit</span>
     <span class="nb">exit</span>
 </pre></div>
 </div>
@@ -458,7 +458,7 @@ left with this command.</p>
 the specified path (from the arguments passed) and generates an OSSEC FWD: command
 for each one and prints it to stdout. Making use of the commands stat, md5sum, and
 sha1sum to generate the data needed. Here is an example of the output checking.</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">spawn ssh root@172.17.20.20</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">spawn ssh root@172.17.20.20</span>
 <span class="go">Last login: Wed Nov  4 11:32:51 2009 from 172.17.20.131^M</span>
 <span class="gp">[linux26 ~]#</span>
 <span class="go">INFO: Started.</span>
@@ -499,7 +499,7 @@ on the following criteria:</p>
 <p>Let’s first start by identifying a method to locate all files with their
 setuid or setgid bits enabled. To do this we will ssh to the host 172.17.20.20
 and use find to locate the files.</p>
-<div class="highlight-xml"><div class="highlight"><pre>obsd46# sudo -u ossec ssh root@172.17.20.20
+<div class="highlight-xml"><div class="highlight"><pre><span></span>obsd46# sudo -u ossec ssh root@172.17.20.20
 [linux26 ~]# find / -type f \( -perm -4000 -o -perm -2000 \)
 /sbin/umount.nfs
 /sbin/netreport
@@ -544,7 +544,7 @@ and use find to locate the files.</p>
 <p>Finding all files with setuid and setgid was simple, but finding all files related to
 authentication is more involved. This of course will vary from system to system, but
 this should be good starting point.</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">obsd46# sudo -u ossec ssh root@172.17.20.20</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">obsd46# sudo -u ossec ssh root@172.17.20.20</span>
 <span class="gp">[linux26 ~]#</span> find / <span class="se">\(</span> -name <span class="s2">&quot;.ssh&quot;</span> -o -name <span class="s2">&quot;ssh&quot;</span> -o -name <span class="s2">&quot;sshd&quot;</span> -o -name <span class="s2">&quot;httpd&quot;</span> -o -name <span class="s2">&quot;.htaccess&quot;</span>
 <span class="go">-o -name &quot;pam.d&quot; \) -exec find {} \;</span>
 <span class="go">/var/www/html/admin/modules/framework/var/www/html/admin/modules/.htaccess</span>
@@ -609,7 +609,7 @@ command line argument which tells egrep NOT to print any matching items.</p>
 of the sort command with -u argument to remove any duplicates.</p>
 <p>Here is how we would put together both finds, egrep, and sort to locate and
 filter what is needed.</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">( find / -type f \( -perm -4000 -o -perm -2000 \) &amp;&amp; \find / \( -name &quot;.ssh&quot; -o -name &quot;ssh&quot; -o -name &quot;sshd&quot;</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">( find / -type f \( -perm -4000 -o -perm -2000 \) &amp;&amp; \find / \( -name &quot;.ssh&quot; -o -name &quot;ssh&quot; -o -name &quot;sshd&quot;</span>
 <span class="go">-o -name &quot;httpd&quot; -o -name &quot;.htaccess&quot; -o -name &quot;pam.d&quot; \) -exec find {} \; ) 2&gt;/dev/null | egrep</span>
 <span class="go">-v &quot;known_hosts|moduli|var\/log|var\/lock&quot; | sort -u</span>
 </pre></div>
@@ -619,7 +619,7 @@ but this still needs to be integrated into a script on the OSSEC server.</p>
 <p><strong>Creating ssh_dmz_linux</strong></p>
 <p>We don’t want to make changes to ssh_integrity_check_linux directly so we will need
 to make a copy.</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">obsd46# (cd /var/ossec/agentless &amp;&amp; cp ssh_integrity_check_linux ssh_dmz_linux)</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">obsd46# (cd /var/ossec/agentless &amp;&amp; cp ssh_integrity_check_linux ssh_dmz_linux)</span>
 </pre></div>
 </div>
 <p>Integrating our new command line into the script we must pay close attention to
@@ -627,7 +627,7 @@ special characters that expect will process. Due to this we will need to escape
 all / and &#8221; by proceeding them with . Once we are done escaping we just insert
 our new line in place of find $args 2&gt;/dev/null in our new file.</p>
 <p>Here is what the completed script will look like.</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">obsd56# cat /var/ossec/agentless/ssh_dmz_linux</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">obsd56# cat /var/ossec/agentless/ssh_dmz_linux</span>
 <span class="gp"> #</span>!/usr/bin/env expect
 
 <span class="gp"> #</span> @<span class="o">(</span><span class="c1">#) $Id: ssh_integrity_check_linux,v 1.11 2009/06/24 17:06:21 dcid Exp $</span>
@@ -682,7 +682,7 @@ our new line in place of find $args 2&gt;/dev/null in our new file.</p>
 </div>
 <p><strong>Testing</strong></p>
 <p>Before we add this new script to OSSEC configuration we need to test it.</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">obsd46# (cd /var/ossec &amp;&amp; sudo -u ossec ./agentless/ssh_dmz_linux root@172.17.20.20 )</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">obsd46# (cd /var/ossec &amp;&amp; sudo -u ossec ./agentless/ssh_dmz_linux root@172.17.20.20 )</span>
 
 <span class="go">ERROR: ssh_integrity_check &lt;hostname&gt; &lt;arguments&gt;</span>
 </pre></div>
@@ -692,7 +692,7 @@ wants use too, this caused this the problem above. Solving this problem would re
 making changes to files that will affect other built in scripts. So a quick solution is
 to just pass anything as an argument to the script. This will have no effect on our
 script as we do not make use of the $arg variable.</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">obsd46# (cd /var/ossec &amp;&amp; sudo -u ossec ./agentless/ssh_dmz_linux root@172.17.20.20 NOTUSED)</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">obsd46# (cd /var/ossec &amp;&amp; sudo -u ossec ./agentless/ssh_dmz_linux root@172.17.20.20 NOTUSED)</span>
 <span class="go">spawn ssh root@172.17.20.20</span>
 <span class="go">Last login: Wed Nov  4 13:46:32 2009 from 172.17.20.131^M</span>
 <span class="gp">[linux26 ~]#</span>
@@ -738,7 +738,7 @@ script as we do not make use of the $arg variable.</p>
     <p>
         &copy; Copyright 2010-2015, OSSEC Project Team.<br/>
     OSSEC trademark and <b>ossec.net</b> domain owned by <a href="http://www.trendmicro.com" target="_blank">Trend Micro, Inc.</a><br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.4 - 
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.6 - 
     Home page graphics courtesy of <a href="https://pixabay.com" target="_blank">pixabay</a>
     </p>
   </div>

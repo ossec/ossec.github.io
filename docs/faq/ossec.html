@@ -134,7 +134,7 @@
 Depending on the event load, a manager running on modern hardware can handle many more agents.
 Some users have more than 1000 agents on a single manager.
 To change the maximum number of agents, cd into the src directory and run the following command:</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">make setmaxagents</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">make setmaxagents</span>
 </pre></div>
 </div>
 <p>You should be prompted for the number of agents to allow.</p>
@@ -142,7 +142,7 @@ To change the maximum number of agents, cd into the src directory and run the fo
 The users <code class="docutils literal"><span class="pre">ossec</span></code> and <code class="docutils literal"><span class="pre">ossecr</span></code> both open at least 1 file (syscheck database and rids file) per agent.
 Raising this limit is operating system specific.</p>
 <p>Some Linux distributions support a <code class="docutils literal"><span class="pre">/etc/security/limits.conf</span></code>. Set the limits to be at least a few files above what the max agents is set to.</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">ossec            soft    nofile          2048</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">ossec            soft    nofile          2048</span>
 <span class="go">ossec            hard    nofile          2048</span>
 <span class="go">ossecr           soft    nofile          2048</span>
 <span class="go">ossecr           hard    nofile          2048</span>
@@ -170,7 +170,7 @@ If set all log messages sent to the manager are stored in <code class="docutils 
 <p>The <code class="docutils literal"><span class="pre">&lt;log-all&gt;</span></code> option can be added to the <code class="docutils literal"><span class="pre">&lt;global&gt;</span></code> section (see: <a class="reference internal" href="../syntax/head_ossec_config.global.html#ossec-config-global"><span>ossec.conf: Global options</span></a>) of the manager&#8217;s ossec.conf. The manager&#8217;s OSSEC processes should be restarted.
 The raw logs will then be saved to files, organized by date, in <code class="docutils literal"><span class="pre">/var/ossec/logs/archives</span></code>.</p>
 <p>The headers attached to these log messages are in the format of <code class="docutils literal"><span class="pre">&quot;YYYY</span> <span class="pre">Month</span> <span class="pre">dd</span> <span class="pre">HH:MM:ss</span> <span class="pre">agent_name-&gt;/path/to/log/file</span> <span class="pre">&quot;</span></code>.</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">2011 Aug 04 00:00:01 server-&gt;/var/log/local7 Aug  4 00:00:26 server named[29909]: client 192.168.1.7#39323: query: fake.example.net IN AAAA +</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">2011 Aug 04 00:00:01 server-&gt;/var/log/local7 Aug  4 00:00:26 server named[29909]: client 192.168.1.7#39323: query: fake.example.net IN AAAA +</span>
 </pre></div>
 </div>
 </div></blockquote>
@@ -190,7 +190,7 @@ OSSEC does rotate its logs, but will not be able to move them from <code class="
 <div><p>There was a small bug in the ossec-control script that was not caught in time for 2.6.
 The error comes from the script trying to run ossec-logtest from the wrong directory.
 The solution is to change the line where ossec-logtest is running to look like this:</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">echo | ${DIR}/bin/ossec-logtest &gt; /dev/null 2&gt;&amp;1;</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">echo | ${DIR}/bin/ossec-logtest &gt; /dev/null 2&gt;&amp;1;</span>
 </pre></div>
 </div>
 </div></blockquote>
@@ -231,7 +231,7 @@ Agents do not send alerts to the manager, they only send the raw logs.</div></bl
     <p>
         &copy; Copyright 2010-2015, OSSEC Project Team.<br/>
     OSSEC trademark and <b>ossec.net</b> domain owned by <a href="http://www.trendmicro.com" target="_blank">Trend Micro, Inc.</a><br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.4 - 
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.6 - 
     Home page graphics courtesy of <a href="https://pixabay.com" target="_blank">pixabay</a>
     </p>
   </div>

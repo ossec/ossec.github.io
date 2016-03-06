@@ -119,7 +119,7 @@
 <div class="section" id="configuring-the-syslog-servers">
 <h2>Configuring the Syslog servers<a class="headerlink" href="#configuring-the-syslog-servers" title="Permalink to this headline">¶</a></h2>
 <p>In this example here, I am sending everything to server 192.168.4.1 and only the alerts above level 10 to 10.1.1.1:</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">&lt;syslog_output&gt;</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">&lt;syslog_output&gt;</span>
 <span class="go">&lt;server&gt;192.168.4.1&lt;/server&gt;</span>
 <span class="go">&lt;/syslog_output&gt;</span>
 
@@ -133,7 +133,7 @@
 <div class="section" id="enabling-client-syslog">
 <h2>Enabling client-syslog<a class="headerlink" href="#enabling-client-syslog" title="Permalink to this headline">¶</a></h2>
 <p>After your configured the servers (as above), run the following command and restart OSSEC:</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="gp">#</span> /var/ossec/bin/ossec-control <span class="nb">enable</span> client-syslog
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> /var/ossec/bin/ossec-control <span class="nb">enable</span> client-syslog
 <span class="gp">#</span> /var/ossec/bin/ossec-control start
 </pre></div>
 </div>
@@ -141,21 +141,21 @@
 <div class="section" id="checking-the-configuration">
 <h2>Checking the configuration<a class="headerlink" href="#checking-the-configuration" title="Permalink to this headline">¶</a></h2>
 <p>After you restart, you should see ossec-csyslog starting:</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">OSSEC HIDS v1.6 Stopped</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">OSSEC HIDS v1.6 Stopped</span>
 <span class="go">Starting OSSEC HIDS v1.6 (by Third Brigade, Inc.).</span>
 <span class="go">Started ossec-csyslogd.</span>
 <span class="go">..</span>
 </pre></div>
 </div>
 <p>and on the logs:</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="gp">#</span> tail -n <span class="m">1000</span> /var/ossec/logs/ossec.log <span class="p">|</span>grep csyslog
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> tail -n <span class="m">1000</span> /var/ossec/logs/ossec.log <span class="p">|</span>grep csyslog
 <span class="go">2008/07/25 12:55:16 ossec-csyslogd: INFO: Started (pid: 19412).</span>
 <span class="go">2008/07/25 12:55:16 ossec-csyslogd: INFO: Forwarding alerts via syslog to: .192.168.4.1:514..</span>
 <span class="go">2008/07/25 12:55:16 ossec-csyslogd: INFO: Forwarding alerts via syslog to: .10.1.1.1:514..</span>
 </pre></div>
 </div>
 <p>On the syslog server, this is what you should get (every log separated by level, rule, location and the actual event that generated it):</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">Jul 25 12:17:41 enigma ossec: Alert Level: 3; Rule: 5715 - SSHD authentication success.; Location: (jul) 192.168.2.0-&gt;/var/log/messages; srcip: 192.168.2.190; user: root; Jul 25 13:26:24 slacker sshd[20440]: Accepted password for root from 192.168.2.190 port 49737 ssh2</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Jul 25 12:17:41 enigma ossec: Alert Level: 3; Rule: 5715 - SSHD authentication success.; Location: (jul) 192.168.2.0-&gt;/var/log/messages; srcip: 192.168.2.190; user: root; Jul 25 13:26:24 slacker sshd[20440]: Accepted password for root from 192.168.2.190 port 49737 ssh2</span>
 </pre></div>
 </div>
 </div>
@@ -179,7 +179,7 @@
     <p>
         &copy; Copyright 2010-2015, OSSEC Project Team.<br/>
     OSSEC trademark and <b>ossec.net</b> domain owned by <a href="http://www.trendmicro.com" target="_blank">Trend Micro, Inc.</a><br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.4 - 
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.6 - 
     Home page graphics courtesy of <a href="https://pixabay.com" target="_blank">pixabay</a>
     </p>
   </div>

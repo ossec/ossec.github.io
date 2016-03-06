@@ -165,7 +165,7 @@
 </tbody>
 </table>
 <p>Here is an example of a periodic_diff script that comes with OSSEC. (Please note with all agentless scripts you must be in the root of the OSSEC install for them to function correctly.)</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">obsd46#( cd /var/ossec &amp;&amp; ./agentless/ssh_pixconfig_diff cisco@172.17.0.1 &#39;show hardware&#39; )</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">obsd46#( cd /var/ossec &amp;&amp; ./agentless/ssh_pixconfig_diff cisco@172.17.0.1 &#39;show hardware&#39; )</span>
 <span class="go">spawn ssh -c des cisco@172.17.0.1</span>
 <span class="go">No valid ciphers for protocol version 2 given, using defaults.</span>
 <span class="go">Password:</span>
@@ -281,7 +281,7 @@
 </div>
 <div class="section" id="example-of-real-fwd-command">
 <h1>Example of real FWD: command.<a class="headerlink" href="#example-of-real-fwd-command" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">FWD: 19419:600:0:0:fb30de5b02029950ae05885a3d407c8c:017cd6118cdc166ee8eba8af1b7fdad6763203d3 ./.bash_history</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">FWD: 19419:600:0:0:fb30de5b02029950ae05885a3d407c8c:017cd6118cdc166ee8eba8af1b7fdad6763203d3 ./.bash_history</span>
 </pre></div>
 </div>
 <p>The Fields break down in to the following</p>
@@ -323,7 +323,7 @@
 </tbody>
 </table>
 <p>Using this format OSSEC can store the information about a file and then in the future run compare that they are the same. If for some reason they are not the same an alert will be generated. Here is an example of a password change on a linux system:</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">OSSEC HIDS Notification.</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">OSSEC HIDS Notification.</span>
 <span class="go">2009 Sep 21 15:19:00</span>
 
 <span class="go">Received From: (ssh_integrity_check_linux) root@172.17.20.20-&gt;syscheck</span>
@@ -359,7 +359,7 @@
     <p>
         &copy; Copyright 2010-2015, OSSEC Project Team.<br/>
     OSSEC trademark and <b>ossec.net</b> domain owned by <a href="http://www.trendmicro.com" target="_blank">Trend Micro, Inc.</a><br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.4 - 
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.6 - 
     Home page graphics courtesy of <a href="https://pixabay.com" target="_blank">pixabay</a>
     </p>
   </div>

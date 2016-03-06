@@ -130,7 +130,7 @@
 <p>All global options must be configured in the /var/ossec/etc/ossec.conf
 and used within the &lt;ossec_config&gt; tag.</p>
 <p>XML excerpt to show location:</p>
-<div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;ossec_config&gt;</span>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;ossec_config&gt;</span>
     <span class="nt">&lt;rules&gt;</span>
         <span class="c">&lt;!--</span>
 <span class="c">        Rules options here</span>
@@ -183,7 +183,7 @@ loaded.</p>
 <ol class="arabic">
 <li><p class="first">Loading all rules in directory /var/ossec/rules ending ending with _rules.xml</p>
 <blockquote>
-<div><div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;ossec_config&gt;</span>
+<div><div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;ossec_config&gt;</span>
     <span class="nt">&lt;rules&gt;</span>
         <span class="nt">&lt;rule_dir&gt;</span>rules<span class="nt">&lt;/rule_dir&gt;</span>
     <span class="nt">&lt;/rules&gt;</span>
@@ -194,7 +194,7 @@ loaded.</p>
 </li>
 <li><p class="first">Loading all rules in directory /var/ossec/rules/plugins ending with .xml</p>
 <blockquote>
-<div><div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;ossec_config&gt;</span>
+<div><div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;ossec_config&gt;</span>
     <span class="nt">&lt;rules&gt;</span>
         <span class="nt">&lt;rule_dir</span> <span class="na">pattern=</span><span class="s">&quot;.xml$&quot;</span><span class="nt">&gt;</span>rules<span class="nt">&lt;/rule_dir&gt;</span>
     <span class="nt">&lt;/rules&gt;</span>
@@ -244,7 +244,7 @@ loaded.</p>
 <ol class="arabic">
 <li><p class="first">Loading all decoders in directory /var/ossec/rules ending ending with _decoder.xml</p>
 <blockquote>
-<div><div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;ossec_config&gt;</span>
+<div><div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;ossec_config&gt;</span>
     <span class="nt">&lt;rules&gt;</span>
         <span class="nt">&lt;decoder_dir&gt;</span>rules<span class="nt">&lt;/decoder_dir&gt;</span>
     <span class="nt">&lt;/rules&gt;</span>
@@ -256,7 +256,7 @@ loaded.</p>
 <li><p class="first">Loading all decoders in directory /var/ossec/rules/plugins/plugins/decoders
 ending with .xml</p>
 <blockquote>
-<div><div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;ossec_config&gt;</span>
+<div><div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;ossec_config&gt;</span>
     <span class="nt">&lt;rules&gt;</span>
         <span class="nt">&lt;decoder_dir</span> <span class="na">pattern=</span><span class="s">&quot;.xml$&quot;</span><span class="nt">&gt;</span>rules/plugins/decoders<span class="nt">&lt;/decoder_dir&gt;</span>
     <span class="nt">&lt;/rules&gt;</span>
@@ -283,7 +283,7 @@ program the file extension should not be include in this directive.  ossec&#8217
 tools will correctly append the correct .cdb or .txt extension as needed.</p>
 </div>
 <p><strong>Allowed:</strong> Path to a list file to be loaded and compiled.</p>
-<div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;rules&gt;</span>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;rules&gt;</span>
    <span class="nt">&lt;list&gt;</span>rules/lists/blocked_hosts<span class="nt">&lt;/list&gt;</span>
 <span class="nt">&lt;/rules&gt;</span>
 </pre></div>
@@ -311,7 +311,7 @@ tools will correctly append the correct .cdb or .txt extension as needed.</p>
     <p>
         &copy; Copyright 2010-2015, OSSEC Project Team.<br/>
     OSSEC trademark and <b>ossec.net</b> domain owned by <a href="http://www.trendmicro.com" target="_blank">Trend Micro, Inc.</a><br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.4 - 
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.6 - 
     Home page graphics courtesy of <a href="https://pixabay.com" target="_blank">pixabay</a>
     </p>
   </div>

@@ -134,7 +134,7 @@
 <p>All global options must be configured in the /var/ossec/etc/ossec.conf
 and used within the &lt;ossec_config&gt; tag.</p>
 <p>XML excerpt to show location:</p>
-<div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;ossec_config&gt;</span>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;ossec_config&gt;</span>
     <span class="nt">&lt;email_alerts&gt;</span>
         <span class="c">&lt;!--</span>
 <span class="c">        Email_alerts options here</span>
@@ -202,7 +202,7 @@ and used within the &lt;ossec_config&gt; tag.</p>
 <dd><p>Option to send granular emails based on rule id.</p>
 <p><em>Allowed:*</em>  One or more rule IDs can be used here, separated by a comma and space (<a href="#id1"><span class="problematic" id="id2">``</span></a>, <a href="#id3"><span class="problematic" id="id4">``</span></a>).</p>
 <p><strong>Example:</strong></p>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">&lt;rule_id&gt;5701, 5702&lt;/rule_id&gt;</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">&lt;rule_id&gt;5701, 5702&lt;/rule_id&gt;</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -212,7 +212,7 @@ and used within the &lt;ossec_config&gt; tag.</p>
 <code class="descname">do_not_delay</code><a class="headerlink" href="#element-do_not_delay" title="Permalink to this definition">¶</a></dt>
 <dd><p>Option to send the e-mail right away (no delay).</p>
 <p><strong>Example:</strong></p>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">&lt;do_not_delay /&gt;</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">&lt;do_not_delay /&gt;</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -222,7 +222,7 @@ and used within the &lt;ossec_config&gt; tag.</p>
 <code class="descname">do_not_group</code><a class="headerlink" href="#element-do_not_group" title="Permalink to this definition">¶</a></dt>
 <dd><p>Option to do not group alerts for this e-mail.</p>
 <p><strong>Example:</strong></p>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">&lt;do_not_group /&gt;</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">&lt;do_not_group /&gt;</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -235,7 +235,7 @@ and used within the &lt;ossec_config&gt; tag.</p>
 <span id="example-email-configuration"></span><h2>Example email alerts configurations:<a class="headerlink" href="#example-email-alerts-configurations" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="global-configuration">
 <h3>Global Configuration:<a class="headerlink" href="#global-configuration" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">&lt;global&gt;</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">&lt;global&gt;</span>
 <span class="go">  &lt;email_notification&gt;yes&lt;/email_notification&gt;</span>
 <span class="go">  &lt;email_to&gt;admin@example.com&lt;/email_to&gt;</span>
 <span class="go">  &lt;smtp_server&gt;127.0.0.1&lt;/smtp_server&gt;</span>
@@ -246,7 +246,7 @@ and used within the &lt;ossec_config&gt; tag.</p>
 </div>
 <div class="section" id="global-configuration-with-a-larger-maximum-emails-per-hour">
 <h3>Global Configuration with a larger maximum emails per hour:<a class="headerlink" href="#global-configuration-with-a-larger-maximum-emails-per-hour" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">&lt;global&gt;</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">&lt;global&gt;</span>
 <span class="go">  &lt;email_notification&gt;yes&lt;/email_notification&gt;</span>
 <span class="go">  &lt;email_to&gt;admin@example.com&lt;/email_to&gt;</span>
 <span class="go">  &lt;smtp_server&gt;127.0.0.1&lt;/smtp_server&gt;</span>
@@ -258,7 +258,7 @@ and used within the &lt;ossec_config&gt; tag.</p>
 </div>
 <div class="section" id="granular-email-alert-level-12-and-above">
 <h3>Granular Email alert: Level 12 and above:<a class="headerlink" href="#granular-email-alert-level-12-and-above" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">&lt;email_alerts&gt;</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">&lt;email_alerts&gt;</span>
 <span class="go">  &lt;email_to&gt;other_admin@example.com&lt;/email_to&gt;</span>
 <span class="go">  &lt;level&gt;12&lt;/level&gt;</span>
 <span class="go">&lt;/email_alerts&gt;</span>
@@ -267,7 +267,7 @@ and used within the &lt;ossec_config&gt; tag.</p>
 </div>
 <div class="section" id="syscheck-alerts-to-syscheck-admin-address">
 <h3>Syscheck alerts to syscheck admin address:<a class="headerlink" href="#syscheck-alerts-to-syscheck-admin-address" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">&lt;email_alerts&gt;</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">&lt;email_alerts&gt;</span>
 <span class="go">  &lt;email_to&gt;syscheck-admin@example.com&lt;/email_to&gt;</span>
 <span class="go">  &lt;group&gt;syscheck&lt;/group&gt;</span>
 <span class="go">&lt;/email_alerts&gt;</span>
@@ -276,7 +276,7 @@ and used within the &lt;ossec_config&gt; tag.</p>
 </div>
 <div class="section" id="level-15-alerts-from-agent007-without-delay-or-grouping">
 <h3>Level 15 alerts from agent007 without delay or grouping:<a class="headerlink" href="#level-15-alerts-from-agent007-without-delay-or-grouping" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">&lt;email_alerts&gt;</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">&lt;email_alerts&gt;</span>
 <span class="go">  &lt;email_to&gt;bond@example.com&lt;/email_to&gt;</span>
 <span class="go">  &lt;event_location&gt;agent007&lt;/event_location&gt;</span>
 <span class="go">  &lt;level&gt;15&lt;/level&gt;</span>
@@ -307,7 +307,7 @@ and used within the &lt;ossec_config&gt; tag.</p>
     <p>
         &copy; Copyright 2010-2015, OSSEC Project Team.<br/>
     OSSEC trademark and <b>ossec.net</b> domain owned by <a href="http://www.trendmicro.com" target="_blank">Trend Micro, Inc.</a><br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.4 - 
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.6 - 
     Home page graphics courtesy of <a href="https://pixabay.com" target="_blank">pixabay</a>
     </p>
   </div>

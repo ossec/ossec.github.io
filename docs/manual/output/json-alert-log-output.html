@@ -132,7 +132,7 @@ These configurations options require a server or local installation.</p>
 <h2>Enabling json output<a class="headerlink" href="#enabling-json-output" title="Permalink to this headline">¶</a></h2>
 <p>An OSSEC server can be configured to write the alerts in json format.</p>
 <p>File: /var/ossec/logs/ossec.conf</p>
-<div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;ossec_config&gt;</span>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;ossec_config&gt;</span>
   <span class="nt">&lt;global&gt;</span>
     <span class="nt">&lt;jsonout_output&gt;</span>yes<span class="nt">&lt;/jsonout_output&gt;</span>
     ...
@@ -142,7 +142,7 @@ These configurations options require a server or local installation.</p>
 </pre></div>
 </div>
 <p>After this change is made, the alerts are written to alerts.json side-by-side with the legacy alerts.log file.</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="gp">#</span> tail /var/ossec/logs/alerts/alerts.json
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> tail /var/ossec/logs/alerts/alerts.json
 </pre></div>
 </div>
 <p>You will still have the legacy alerts.log and any custom log formats you&#8217;ve created will remain.
@@ -169,7 +169,7 @@ The files are md5 and sha1 checksummed and compressed once daily (just like the 
     <p>
         &copy; Copyright 2010-2015, OSSEC Project Team.<br/>
     OSSEC trademark and <b>ossec.net</b> domain owned by <a href="http://www.trendmicro.com" target="_blank">Trend Micro, Inc.</a><br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.4 - 
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.6 - 
     Home page graphics courtesy of <a href="https://pixabay.com" target="_blank">pixabay</a>
     </p>
   </div>

@@ -121,7 +121,7 @@
 <ol class="arabic simple">
 <li>Add the nmap output file on <code class="docutils literal"><span class="pre">/var/ossec/etc/ossec.conf</span></code>:</li>
 </ol>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">&lt;ossec_config&gt;</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">&lt;ossec_config&gt;</span>
 <span class="go"> &lt;localfile&gt;</span>
 <span class="go">    &lt;log_format&gt;nmapg&lt;/log_format&gt;</span>
 <span class="go">    &lt;location&gt;/var/log/nmap-out.log&lt;/location&gt;</span>
@@ -132,33 +132,33 @@
 <ol class="arabic simple" start="2">
 <li>If the file does not exist, touch it:</li>
 </ol>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">ossec-test# touch /var/log/nmap-out.log</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">ossec-test# touch /var/log/nmap-out.log</span>
 </pre></div>
 </div>
 <ol class="arabic simple" start="3">
 <li>Restart ossec:</li>
 </ol>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">ossec-test# /var/ossec/bin/ossec-control restart</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">ossec-test# /var/ossec/bin/ossec-control restart</span>
 </pre></div>
 </div>
 <ol class="arabic simple" start="4">
 <li>Run your nmap scans (example scanning 192.168.2.0/24 network):</li>
 </ol>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">ossec-test# nmap --append_output -sU -sT -oG /var/log/nmap-out.log 192.168.2.0-255</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">ossec-test# nmap --append_output -sU -sT -oG /var/log/nmap-out.log 192.168.2.0-255</span>
 </pre></div>
 </div>
 <p>I&#8217;ve found that this is handiest when paired with a routine nmap scan.</p>
 <ol class="arabic simple" start="5">
 <li>So add the above line to your crontab.</li>
 </ol>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">ossec-test#crontab -e</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">ossec-test#crontab -e</span>
 <span class="go">15 * * * * nmap --append_output -sU -sT -oG /var/log/nmap-out.log 192.168.2.0-255</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="example-of-alert-when-a-new-host-is-found">
 <h2>Example of alert when a new host is found:<a class="headerlink" href="#example-of-alert-when-a-new-host-is-found" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">** Alert 1152058913.238: mail</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">** Alert 1152058913.238: mail</span>
 <span class="go">2006 Jul 04 20:21:53 /var/log/nmap-out.log</span>
 <span class="go">Rule: 15 (level 8) -&gt; &#39;New host information added.&#39;</span>
 <span class="go">Src IP: (none)</span>
@@ -169,7 +169,7 @@
 </div>
 <div class="section" id="example-of-alert-when-a-new-a-host-information-is-changed">
 <h2>Example of alert when a new a host information is changed:<a class="headerlink" href="#example-of-alert-when-a-new-a-host-information-is-changed" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">** Alert 1152058983.487: mail</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">** Alert 1152058983.487: mail</span>
 <span class="go">2006 Jul 04 20:23:03 /var/log/nmap-out.log</span>
 <span class="go">Rule: 15 (level 8) -&gt; &#39;Host information changed.&#39;</span>
 <span class="go">Src IP: (none)</span>
@@ -199,7 +199,7 @@
     <p>
         &copy; Copyright 2010-2015, OSSEC Project Team.<br/>
     OSSEC trademark and <b>ossec.net</b> domain owned by <a href="http://www.trendmicro.com" target="_blank">Trend Micro, Inc.</a><br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.4 - 
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.6 - 
     Home page graphics courtesy of <a href="https://pixabay.com" target="_blank">pixabay</a>
     </p>
   </div>

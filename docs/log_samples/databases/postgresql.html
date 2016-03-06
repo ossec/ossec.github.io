@@ -117,7 +117,7 @@
 <h1>Log Samples for PostgreSQL<a class="headerlink" href="#log-samples-for-postgresql" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="login-logout">
 <h2>Login/Logout:<a class="headerlink" href="#login-logout" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">[2007-08-31 19:22:21.469 ADT] :[unknown] LOG:  connection received: host=192.168.2.99 port=52136</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">[2007-08-31 19:22:21.469 ADT] :[unknown] LOG:  connection received: host=192.168.2.99 port=52136</span>
 <span class="go">[2007-08-31 19:22:21.485 ADT] 192.168.2.99:ossecdb LOG:  connection authorized: user=ossec_user database=ossecdb</span>
 <span class="go">[2007-08-31 19:22:22.427 ADT] 192.168.2.99:ossecdb LOG:  disconnection: session time: 0:00:00.95 user=ossec_user database=ossecdb host=192.168.2.99 port=52136</span>
 <span class="go">[2007-09-27 11:02:44.941 ADT] 192.168.2.10:ossecdb ERROR:  relation &quot;lala&quot; does not exist</span>
@@ -127,14 +127,14 @@
 </div>
 <div class="section" id="log-messages">
 <h2>Log messages:<a class="headerlink" href="#log-messages" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">[2007-09-01 07:14:41.062 ADT] : LOG:  autovacuum: processing database &quot;template1&quot;</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">[2007-09-01 07:14:41.062 ADT] : LOG:  autovacuum: processing database &quot;template1&quot;</span>
 <span class="go">[2007-09-01 07:15:41.079 ADT] : LOG:  autovacuum: processing database &quot;ossecdb&quot;</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="query-log">
 <h2>Query log:<a class="headerlink" href="#query-log" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">[2007-09-01 16:44:49.244 ADT] 192.168.2.10:ossecdb LOG:  duration: 4.550 ms  statement: SELECT id FROM location WHERE name = &#39;enigma-&gt;/var/log/messages&#39; AND server_id = &#39;1&#39;</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">[2007-09-01 16:44:49.244 ADT] 192.168.2.10:ossecdb LOG:  duration: 4.550 ms  statement: SELECT id FROM location WHERE name = &#39;enigma-&gt;/var/log/messages&#39; AND server_id = &#39;1&#39;</span>
 <span class="go">[2007-09-01 16:44:49.251 ADT] 192.168.2.10:ossecdb LOG:  duration: 5.252 ms  statement: INSERT INTO location(server_id, name) VALUES (&#39;1&#39;, &#39;enigma-&gt;/var/log/messages&#39;)</span>
 <span class="go">[2007-09-01 16:44:49.252 ADT] 192.168.2.10:ossecdb LOG:  duration: 0.016 ms  statement: SELECT id FROM location WHERE name = &#39;enigma-&gt;/var/log/messages&#39; AND server_id = &#39;1&#39;</span>
 <span class="go">[2007-09-27 11:02:51.611 ADT] 192.168.2.10:ossecdb LOG:  statement: INSERT INTO alert(id,server_id,rule_id,timestamp,location_id,src_ip) VALUES (&#39;3577&#39;, &#39;1&#39;, &#39;50503&#39;,&#39;1190916566&#39;, &#39;140&#39;, &#39;0&#39;)</span>
@@ -143,7 +143,7 @@
 </div>
 <div class="section" id="query-error">
 <h2>Query error:<a class="headerlink" href="#query-error" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">[2007-08-31 19:17:42.128 ADT] 192.168.2.99:test ERROR:  relation &quot;alertaaa&quot; does not exist</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">[2007-08-31 19:17:42.128 ADT] 192.168.2.99:test ERROR:  relation &quot;alertaaa&quot; does not exist</span>
 <span class="go">[2007-08-31 19:17:46.375 ADT] 192.168.2.99:test ERROR:  syntax error at or near &quot;a&quot; at character 1</span>
 <span class="go">[2007-09-27 11:02:44.941 ADT] 192.168.2.10:ossecdb ERROR:  relation &quot;lala&quot; does not exist</span>
 </pre></div>
@@ -151,7 +151,7 @@
 </div>
 <div class="section" id="authentication-error">
 <h2>Authentication error:<a class="headerlink" href="#authentication-error" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">[2007-09-01 19:08:49.862 ADT] : LOG:  connection received: host=192.168.2.99 port=37142</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">[2007-09-01 19:08:49.862 ADT] : LOG:  connection received: host=192.168.2.99 port=37142</span>
 <span class="go">[2007-09-01 19:08:49.869 ADT] 192.168.2.99: FATAL:  password authentication failed for user &quot;ossec_user&quot;</span>
 </pre></div>
 </div>
@@ -176,7 +176,7 @@
     <p>
         &copy; Copyright 2010-2015, OSSEC Project Team.<br/>
     OSSEC trademark and <b>ossec.net</b> domain owned by <a href="http://www.trendmicro.com" target="_blank">Trend Micro, Inc.</a><br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.4 - 
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.6 - 
     Home page graphics courtesy of <a href="https://pixabay.com" target="_blank">pixabay</a>
     </p>
   </div>

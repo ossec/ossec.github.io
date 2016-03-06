@@ -556,7 +556,7 @@ always find keys within two seeks of the file.</p>
 <blockquote>
 <div>Path to the CDB file to be used for lookup from the OSSEC directory.  This file must also be included in the ossec.conf file.</div></blockquote>
 <p><strong>Example:</strong></p>
-<div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;rule</span> <span class="na">id=</span><span class="s">&quot;100000&quot;</span> <span class="na">level=</span><span class="s">&quot;7&quot;</span><span class="nt">&gt;</span>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;rule</span> <span class="na">id=</span><span class="s">&quot;100000&quot;</span> <span class="na">level=</span><span class="s">&quot;7&quot;</span><span class="nt">&gt;</span>
   <span class="nt">&lt;list</span> <span class="na">lookup=</span><span class="s">&quot;match_key&quot;</span> <span class="na">field=</span><span class="s">&quot;srcip&quot;</span><span class="nt">&gt;</span>path/to/list/file<span class="nt">&lt;/list&gt;</span>
   <span class="nt">&lt;description&gt;</span>Checking srcip against cdb list file<span class="nt">&lt;/description&gt;</span>
 <span class="nt">&lt;/rule&gt;</span>
@@ -600,7 +600,7 @@ information about the alert/event.</p>
 </ul>
 <p><strong>Allowed:</strong> String but content is dependent on the type attribute.</p>
 <p><strong>Example:</strong></p>
-<div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;rule</span> <span class="na">id=</span><span class="s">&quot;502&quot;</span> <span class="na">level=</span><span class="s">&quot;3&quot;</span><span class="nt">&gt;</span>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;rule</span> <span class="na">id=</span><span class="s">&quot;502&quot;</span> <span class="na">level=</span><span class="s">&quot;3&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;if_sid&gt;</span>500<span class="nt">&lt;/if_sid&gt;</span>
     <span class="nt">&lt;options&gt;</span>alert_by_email<span class="nt">&lt;/options&gt;</span>
     <span class="nt">&lt;match&gt;</span>Ossec started<span class="nt">&lt;/match&gt;</span>
@@ -690,7 +690,7 @@ information about the alert/event.</p>
     <p>
         &copy; Copyright 2010-2015, OSSEC Project Team.<br/>
     OSSEC trademark and <b>ossec.net</b> domain owned by <a href="http://www.trendmicro.com" target="_blank">Trend Micro, Inc.</a><br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.4 - 
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.6 - 
     Home page graphics courtesy of <a href="https://pixabay.com" target="_blank">pixabay</a>
     </p>
   </div>

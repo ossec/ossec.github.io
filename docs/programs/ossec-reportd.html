@@ -183,32 +183,32 @@ End the ossec-reportd with <code class="docutils literal"><span class="pre">2&gt
 <h2>ossec-reportd example usage<a class="headerlink" href="#ossec-reportd-example-usage" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="example-1-show-successful-logins">
 <h3>Example 1: Show Successful Logins<a class="headerlink" href="#example-1-show-successful-logins" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-console"><div class="highlight"><pre><span class="gp">#</span> cat /var/ossec/logs/alerts/alerts.log <span class="p">|</span> /var/ossec/bin/ossec-reportd -f group authentication_success
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> cat /var/ossec/logs/alerts/alerts.log <span class="p">|</span> /var/ossec/bin/ossec-reportd -f group authentication_success
 </pre></div>
 </div>
 </div>
 <div class="section" id="example-2-show-alerts-level-10-and-greater">
 <h3>Example 2: Show Alerts Level 10 and Greater<a class="headerlink" href="#example-2-show-alerts-level-10-and-greater" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-console"><div class="highlight"><pre><span class="gp">#</span> cat /var/ossec/logs/alerts/alerts.log <span class="p">|</span> /var/ossec/bin/ossec-reportd -f level 10
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> cat /var/ossec/logs/alerts/alerts.log <span class="p">|</span> /var/ossec/bin/ossec-reportd -f level 10
 </pre></div>
 </div>
 </div>
 <div class="section" id="example-3-show-the-srcip-for-all-users">
 <h3>Example 3: Show the srcip for all users<a class="headerlink" href="#example-3-show-the-srcip-for-all-users" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-console"><div class="highlight"><pre><span class="gp">#</span> cat /var/ossec/logs/alerts/alerts.log <span class="p">|</span> /var/ossec/bin/ossec-reportd -f group authentication -r user srcip
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> cat /var/ossec/logs/alerts/alerts.log <span class="p">|</span> /var/ossec/bin/ossec-reportd -f group authentication -r user srcip
 </pre></div>
 </div>
 </div>
 <div class="section" id="example-4-show-changed-files-as-reported-by-syscheck">
 <h3>Example 4: Show Changed files as reported by Syscheck<a class="headerlink" href="#example-4-show-changed-files-as-reported-by-syscheck" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-console"><div class="highlight"><pre><span class="gp">#</span> cat /var/ossec/logs/alerts/alerts.log <span class="p">|</span> /var/ossec/bin/ossec-reportd -f group syscheck -r location filename
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> cat /var/ossec/logs/alerts/alerts.log <span class="p">|</span> /var/ossec/bin/ossec-reportd -f group syscheck -r location filename
 </pre></div>
 </div>
 </div>
 </div>
 <div class="section" id="example-output">
 <h2>Example output<a class="headerlink" href="#example-output" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-none"><div class="highlight"><pre># cat /var/ossec/logs/alerts/alerts.log | /var/ossec/bin/ossec-reportd 2&gt;&amp;1 | more
+<div class="highlight-none"><div class="highlight"><pre><span></span># cat /var/ossec/logs/alerts/alerts.log | /var/ossec/bin/ossec-reportd 2&gt;&amp;1 | more
 2011/07/11 21:01:36 ossec-reportd: INFO: Started (pid: 1444).
 2011/07/11 21:01:41 ossec-reportd: INFO: Report completed. Creating output...
 
@@ -289,7 +289,7 @@ Top entries for &#39;Rule&#39;:
     <p>
         &copy; Copyright 2010-2015, OSSEC Project Team.<br/>
     OSSEC trademark and <b>ossec.net</b> domain owned by <a href="http://www.trendmicro.com" target="_blank">Trend Micro, Inc.</a><br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.4 - 
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.6 - 
     Home page graphics courtesy of <a href="https://pixabay.com" target="_blank">pixabay</a>
     </p>
   </div>

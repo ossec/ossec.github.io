@@ -117,12 +117,12 @@
 <h1>Log Samples from sshd<a class="headerlink" href="#log-samples-from-sshd" title="Permalink to this headline">¶</a></h1>
 <p>If the system is using pam, authentication events from sshd may also be logged in the <a class="reference external" href="../auth/pam.html">pam format</a></p>
 <p>Always make sure to disable DNS lookup to have the IP address logged instead of the hostname (sshd_config):</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">UseDNS no</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">UseDNS no</span>
 </pre></div>
 </div>
 <div class="section" id="did-not-receive-identification-string-occurs-during-some-forms-of-sshd-dos">
 <h2>Did not receive identification string (occurs during some forms of sshd DoS):<a class="headerlink" href="#did-not-receive-identification-string-occurs-during-some-forms-of-sshd-dos" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">Mar  8 06:08:23 stamina sshd[7713]: Did not receive identification string from 190.97.xx.199</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Mar  8 06:08:23 stamina sshd[7713]: Did not receive identification string from 190.97.xx.199</span>
 <span class="go">Mar  8 06:08:26 stamina sshd[7758]: Did not receive identification string from 190.97.xx.199</span>
 <span class="go">Mar  8 06:08:26 stamina sshd[7739]: Did not receive identification string from 190.97.xx.199</span>
 <span class="go">Mar  8 06:08:27 stamina sshd[7770]: Did not receive identification string from 190.97.xx.199</span>
@@ -131,7 +131,7 @@
 </div>
 <div class="section" id="rule-to-catch-multiple-instances-insert-into-local-rules-xml">
 <h2>Rule to catch multiple instances (insert into local_rules.xml):<a class="headerlink" href="#rule-to-catch-multiple-instances-insert-into-local-rules-xml" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">&lt;rule id=&quot;100031&quot; level=&quot;10&quot; frequency=&quot;4&quot; timeframe=&quot;360&quot;&gt;</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">&lt;rule id=&quot;100031&quot; level=&quot;10&quot; frequency=&quot;4&quot; timeframe=&quot;360&quot;&gt;</span>
 <span class="go">  &lt;if_matched_sid&gt;5706&lt;/if_matched_sid&gt;</span>
 <span class="go">  &lt;description&gt;Possible DDoS attempt &lt;/description&gt;</span>
 <span class="go">  &lt;description&gt;(high number of non-existent identification strings).&lt;/description&gt;</span>
@@ -141,7 +141,7 @@
 </div>
 <div class="section" id="software-caused-connection-abort-occurs-during-some-forms-of-sshd-dos">
 <h2>Software caused connection abort (occurs during some forms of sshd DoS):<a class="headerlink" href="#software-caused-connection-abort-occurs-during-some-forms-of-sshd-dos" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">Mar  8 06:09:56 stamina sshd[82181]: error: accept: Software caused connection abort</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Mar  8 06:09:56 stamina sshd[82181]: error: accept: Software caused connection abort</span>
 <span class="go">Mar  8 06:13:11 stamina sshd[82181]: error: accept: Software caused connection abort</span>
 <span class="go">Mar  8 06:13:42 stamina sshd[82181]: error: accept: Software caused connection abort</span>
 </pre></div>
@@ -149,7 +149,7 @@
 </div>
 <div class="section" id="rule-to-help-ossec-recognise-this-error-as-nothing-serious">
 <h2>Rule to help OSSEC recognise this error as nothing serious:<a class="headerlink" href="#rule-to-help-ossec-recognise-this-error-as-nothing-serious" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">&lt;rule id=&quot;100032&quot; level=&quot;0&quot;&gt;</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">&lt;rule id=&quot;100032&quot; level=&quot;0&quot;&gt;</span>
 <span class="go">  &lt;if_sid&gt;5700&lt;/if_sid&gt;</span>
 <span class="go">  &lt;match&gt;Software caused connection abort&lt;/match&gt;</span>
 <span class="go">  &lt;description&gt;Software caused connection abort.&lt;/description&gt;</span>
@@ -159,7 +159,7 @@
 </div>
 <div class="section" id="login-sucessful">
 <h2>Login sucessful:<a class="headerlink" href="#login-sucessful" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">May 21 20:22:28 slacker2 sshd[8813]: Accepted password for root from 192.168.20.185 port 1066 ssh2</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">May 21 20:22:28 slacker2 sshd[8813]: Accepted password for root from 192.168.20.185 port 1066 ssh2</span>
 <span class="go">May 21 20:22:28 sol2 sshd[23857]: [ID 702911 auth.notice] User test1, coming from 192.168.2.185,  -  authenticated.</span>
 <span class="go">Oct 11 08:05:46 hostname auth|security:info sshd[323808]: Accepted publickey for usr1 from 2.3.4.5 port 37909 ssh2</span>
 </pre></div>
@@ -167,13 +167,13 @@
 </div>
 <div class="section" id="login-failed">
 <h2>Login failed:<a class="headerlink" href="#login-failed" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">May 21 20:22:28 slacker sshd[21487]: Failed password for root from 192.168.20.185 port 1045 ssh2</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">May 21 20:22:28 slacker sshd[21487]: Failed password for root from 192.168.20.185 port 1045 ssh2</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="invalid-user-login-attempt">
 <h2>Invalid user login attempt:<a class="headerlink" href="#invalid-user-login-attempt" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">Jul  7 10:51:24 chaves sshd[19537]: Invalid user admin from spongebob.lab.ossec.net</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Jul  7 10:51:24 chaves sshd[19537]: Invalid user admin from spongebob.lab.ossec.net</span>
 <span class="go">Jul  7 10:53:24 chaves sshd[12914]: Failed password for invalid user test-inv from spongebob.lab.ossec.net</span>
 <span class="go">Jul  7 10:53:24 kiko sshd[3251]: User dcid not allowed because listed in DenyUsers</span>
 </pre></div>
@@ -181,7 +181,7 @@
 </div>
 <div class="section" id="full-scan-sample">
 <h2>Full scan sample:<a class="headerlink" href="#full-scan-sample" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">Aug  1 18:27:45 knight sshd[20325]: Illegal user test from 218.49.183.17</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Aug  1 18:27:45 knight sshd[20325]: Illegal user test from 218.49.183.17</span>
 <span class="go">Aug  1 18:27:46 knight sshd[20325]: Failed password for illegal user test from 218.49.183.17 port 48849 ssh2</span>
 <span class="go">Aug  1 18:27:46 knight sshd[20325]: error: Could not get shadow information for NOUSER</span>
 <span class="go">Aug  1 18:27:48 knight sshd[20327]: Illegal user guest from 218.49.183.17</span>
@@ -272,7 +272,7 @@
     <p>
         &copy; Copyright 2010-2015, OSSEC Project Team.<br/>
     OSSEC trademark and <b>ossec.net</b> domain owned by <a href="http://www.trendmicro.com" target="_blank">Trend Micro, Inc.</a><br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.4 - 
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.6 - 
     Home page graphics courtesy of <a href="https://pixabay.com" target="_blank">pixabay</a>
     </p>
   </div>

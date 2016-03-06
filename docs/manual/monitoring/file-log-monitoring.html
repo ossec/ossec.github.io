@@ -131,7 +131,7 @@ The syntax can be found in the <a class="reference external" href="../../syntax/
 <h3>Simple example<a class="headerlink" href="#simple-example" title="Permalink to this headline">¶</a></h3>
 <p>Configuring a log file to be monitored is simple. Just provide the name of the
 file to be monitored and the format:</p>
-<div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;localfile&gt;</span>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;localfile&gt;</span>
     <span class="nt">&lt;location&gt;</span>/var/log/messages<span class="nt">&lt;/location&gt;</span>
     <span class="nt">&lt;log_format&gt;</span>syslog<span class="nt">&lt;/log_format&gt;</span>
 <span class="nt">&lt;/localfile&gt;</span>
@@ -142,7 +142,7 @@ file to be monitored and the format:</p>
 <h3>Windows EventLog Example<a class="headerlink" href="#windows-eventlog-example" title="Permalink to this headline">¶</a></h3>
 <p>To monitor a Windows event log, you need to provide the format as &#8220;eventlog&#8221;
 and the location is the name of the event log. Example:</p>
-<div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;localfile&gt;</span>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;localfile&gt;</span>
     <span class="nt">&lt;location&gt;</span>Security<span class="nt">&lt;/location&gt;</span>
     <span class="nt">&lt;log_format&gt;</span>eventlog<span class="nt">&lt;/log_format&gt;</span>
 <span class="nt">&lt;/localfile&gt;</span>
@@ -154,7 +154,7 @@ and the location is the name of the event log. Example:</p>
 <p>To monitor a Windows event log on Windows Vista or later, you have the possibility to use the &#8220;eventchannel&#8221; log format.
 The location is the name of the event log. This is the only way to monitor Applications and Services logs.
 If the file name contains a &#8220;%4&#8221;, replace it with &#8220;/&#8221;. Example:</p>
-<div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;localfile&gt;</span>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;localfile&gt;</span>
     <span class="nt">&lt;location&gt;</span>Microsoft-Windows-PrintService/Operational<span class="nt">&lt;/location&gt;</span>
     <span class="nt">&lt;log_format&gt;</span>eventchannel<span class="nt">&lt;/log_format&gt;</span>
 <span class="nt">&lt;/localfile&gt;</span>
@@ -166,7 +166,7 @@ If the file name contains a &#8220;%4&#8221;, replace it with &#8220;/&#8221;. E
 <p>To check multiple files, OSSEC supports posix regular expressions.
 For example, to analyze every file that ends with a .log inside the /var/log directory,
 use the following configuration:</p>
-<div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;localfile&gt;</span>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;localfile&gt;</span>
     <span class="nt">&lt;location&gt;</span>/var/log/*.log<span class="nt">&lt;/location&gt;</span>
     <span class="nt">&lt;log_format&gt;</span>syslog<span class="nt">&lt;/log_format&gt;</span>
 <span class="nt">&lt;/localfile&gt;</span>
@@ -179,7 +179,7 @@ use the following configuration:</p>
 to replace the day, month, year, etc. For example, to monitor the log
 C:\Windows\app\log-08-12-15.log, where 08 is the year, 12 is the month and 15 the
 day (and it is rolled over every day), do:</p>
-<div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;localfile&gt;</span>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;localfile&gt;</span>
     <span class="nt">&lt;location&gt;</span>C:\Windows\app\log-%y-%m-%d.log<span class="nt">&lt;/location&gt;</span>
     <span class="nt">&lt;log_format&gt;</span>syslog<span class="nt">&lt;/log_format&gt;</span>
 <span class="nt">&lt;/localfile&gt;</span>
@@ -206,7 +206,7 @@ all the extended properties.</p>
 <img alt="../../../_images/w3c-opt2.jpg" src="../../../_images/w3c-opt2.jpg" />
 <p>The following is an example of configuration to monitor the virtual server 2
 of IIS web</p>
-<div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;localfile&gt;</span>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;localfile&gt;</span>
     <span class="nt">&lt;location&gt;</span>%WinDir%\System32\LogFiles\W3SVC3\ex%y%m%d.log<span class="nt">&lt;/location&gt;</span>
     <span class="nt">&lt;log_format&gt;</span>iis<span class="nt">&lt;/log_format&gt;</span>
 <span class="nt">&lt;/localfile&gt;</span>
@@ -234,7 +234,7 @@ of IIS web</p>
     <p>
         &copy; Copyright 2010-2015, OSSEC Project Team.<br/>
     OSSEC trademark and <b>ossec.net</b> domain owned by <a href="http://www.trendmicro.com" target="_blank">Trend Micro, Inc.</a><br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.4 - 
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.6 - 
     Home page graphics courtesy of <a href="https://pixabay.com" target="_blank">pixabay</a>
     </p>
   </div>

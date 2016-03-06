@@ -128,24 +128,24 @@ but binaries for other systems should be built on a system of the same OS and CP
 <span id="manual-install-binary-build"></span><h2>Compiling OSSEC for install on a second server<a class="headerlink" href="#compiling-ossec-for-install-on-a-second-server" title="Permalink to this headline">¶</a></h2>
 <p>First download the OSSEC package corresponding to the version you want to
 install and unpack it (on the system with a compiler).</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="gp">#</span> wget -U ossec http://www.ossec.net/files/ossec-hids-2.8.1.tar.gz
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> wget -U ossec http://www.ossec.net/files/ossec-hids-2.8.1.tar.gz
 <span class="gp">#</span> tar -zxvf ossec-hids-latest.tar.gz
 </pre></div>
 </div>
 <p>Enter in the source directory of the downloaded package, and configure OSSEC to build the <code class="docutils literal"><span class="pre">agent</span></code> version.
 The <code class="docutils literal"><span class="pre">make</span></code> commands should compile the correct binaries.</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="gp">#</span> <span class="nb">cd</span> ossec-*/src
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> <span class="nb">cd</span> ossec-*/src
 <span class="gp">#</span> make setagent
 <span class="gp">#</span> make all
 <span class="gp">#</span> make build
 </pre></div>
 </div>
 <p>Modify ossec-hids-<a href="#id1"><span class="problematic" id="id2">*</span></a>/etc/preloaded-vars.conf to set BINARY_INSTALL to yes.</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="gp">#</span> <span class="nb">echo</span> <span class="s2">&quot;USER_BINARYINSTALL=\&quot;y\&quot;&quot;</span> &gt;&gt; ossec-hids*/etc/preloaded-vars.conf
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> <span class="nb">echo</span> <span class="s2">&quot;USER_BINARYINSTALL=\&quot;y\&quot;&quot;</span> &gt;&gt; ossec-hids*/etc/preloaded-vars.conf
 </pre></div>
 </div>
 <p>Finally create an OSSEC package.</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="gp">#</span> tar -cvf ossec-binary.tar ossec-hids*
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> tar -cvf ossec-binary.tar ossec-hids*
 </pre></div>
 </div>
 </div>
@@ -154,7 +154,7 @@ The <code class="docutils literal"><span class="pre">make</span></code> commands
 <p>On the target system (that does not have a C compiler) download your ossec-binary.tar
 created in the steps above.</p>
 <p>Complete the installation by unarchiving the binary package and running ./install.sh.</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="gp">#</span> tar xfv ossec-binary.tar
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> tar xfv ossec-binary.tar
 <span class="gp">#</span> <span class="nb">cd</span> ossec-*
 <span class="gp">#</span> ./install.sh
 </pre></div>
@@ -181,7 +181,7 @@ created in the steps above.</p>
     <p>
         &copy; Copyright 2010-2015, OSSEC Project Team.<br/>
     OSSEC trademark and <b>ossec.net</b> domain owned by <a href="http://www.trendmicro.com" target="_blank">Trend Micro, Inc.</a><br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.4 - 
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.6 - 
     Home page graphics courtesy of <a href="https://pixabay.com" target="_blank">pixabay</a>
     </p>
   </div>

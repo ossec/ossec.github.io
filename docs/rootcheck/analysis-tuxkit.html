@@ -127,7 +127,7 @@
 <div class="section" id="packages">
 <h2>Packages<a class="headerlink" href="#packages" title="Permalink to this headline">¶</a></h2>
 <p>Listing:</p>
-<div class="highlight-python"><div class="highlight"><pre>[root@angel tuxkit-1.0]# ls -l ../tuxkit  (tuxkit.tgz)
+<div class="highlight-python"><div class="highlight"><pre><span></span>[root@angel tuxkit-1.0]# ls -l ../tuxkit  (tuxkit.tgz)
 total 2600
 -rw-------    1 sfork   sfork     502884 Dec  5 07:55 bin.tgz
 -rw-------    1 sfork   sfork        406 Dec  5 07:55 cfg.tgz
@@ -198,7 +198,7 @@ script, and four tarred/zipped files.</p>
 <dd><ul class="first">
 <li><p class="first">contains an arsenal of tools (duh!) for the skrip kiddie
 who don&#8217;t know how to get their own tools. The tools are:</p>
-<div class="highlight-python"><div class="highlight"><pre>[root@angel tools]# ls -la
+<div class="highlight-python"><div class="highlight"><pre><span></span>[root@angel tools]# ls -la
 total 44
 drwxr-xr-x   11 root     root         4096 Mar  1 13:14 .
 drwxr-xr-x    4 root     root         4096 Mar  1 13:14 ..
@@ -300,12 +300,12 @@ that of the original binaries. &#8220;sz&#8221; basically pads the trojan with z
 <h2>Backdooring process<a class="headerlink" href="#backdooring-process" title="Permalink to this headline">¶</a></h2>
 <p>The backdoored SSH is installed in /usr/bin/xsf. The trojaned sshcheck is
 installed in /usr/bin/xchk. Both are invoked the following way:</p>
-<div class="highlight-python"><div class="highlight"><pre>/usr/bin/xsf -q 1&gt;/dev/null 2&gt;/dev/null
+<div class="highlight-python"><div class="highlight"><pre><span></span>/usr/bin/xsf -q 1&gt;/dev/null 2&gt;/dev/null
 /usr/bin/xchk -q 1&gt;/dev/null 2&gt;/dev/null
 </pre></div>
 </div>
 <p>The /etc/rc.d/rc.sysinit is also edited to include the following lines:</p>
-<div class="highlight-python"><div class="highlight"><pre>echo &quot;# Running Xsf ...&quot; &gt;&gt; /etc/rc.d/rc.sysinit
+<div class="highlight-python"><div class="highlight"><pre><span></span>echo &quot;# Running Xsf ...&quot; &gt;&gt; /etc/rc.d/rc.sysinit
 echo &quot;/usr/bin/xsf -q 1&gt;/dev/null 2&gt;/dev/null&quot; &gt;&gt; /etc/rc.d/rc.sysinit
 echo &quot;# Running Xchk ...&quot; &gt;&gt; /etc/rc.d/rc.sysinit
 echo &quot;/usr/bin/xchk 1&gt;/dev/null 2&gt;/dev/null&quot; &gt;&gt; /etc/rc.d/rc.sysinit
@@ -344,7 +344,7 @@ critical file change.</dd>
 <div>fact your ssh config files are still there.</div></blockquote>
 <p>The following are the size difference between tuxkit and Redhat 7.1 binaries.
 (before installation):</p>
-<div class="highlight-python"><div class="highlight"><pre>files        tuxkit        Redhat 7.1
+<div class="highlight-python"><div class="highlight"><pre><span></span>files        tuxkit        Redhat 7.1
 ------------------------------------------
 crontab      29052               21280
 df           27112               26812
@@ -392,7 +392,7 @@ directory after installation. skripkids seems incapable of doing this.
 The config files should be kept somewhere else other than /dev/tux.</li>
 </ul>
 <p>For skripkidz - vi tuxkit, type the following:</p>
-<div class="highlight-python"><div class="highlight"><pre>:%s//dev/tux/installation_dir_of_your_choice/g
+<div class="highlight-python"><div class="highlight"><pre><span></span>:%s//dev/tux/installation_dir_of_your_choice/g
 </pre></div>
 </div>
 <p>where installation_dir_of_your_choice is, uh, the installation directory
@@ -409,7 +409,7 @@ install.</p>
 <div class="section" id="appendix-contents-of-each-packages">
 <h2>Appendix - Contents of each packages<a class="headerlink" href="#appendix-contents-of-each-packages" title="Permalink to this headline">¶</a></h2>
 <p>Contents:</p>
-<div class="highlight-python"><div class="highlight"><pre>[root@angel tuxkit-1.0]# less bin.tgz
+<div class="highlight-python"><div class="highlight"><pre><span></span>[root@angel tuxkit-1.0]# less bin.tgz
 -rwx------ root/root     29052 2001-12-26 21:37:57 bin/crontab
 -rwx------ root/root     27112 2001-12-26 21:37:57 bin/df
 -rwx------ root/root     42952 2001-12-26 21:37:57 bin/dir
@@ -474,7 +474,7 @@ lrwxrwxrwx root/root         0 2001-11-11 02:49:02 lib/libproc.so -&gt; libproc.
     <p>
         &copy; Copyright 2010-2015, OSSEC Project Team.<br/>
     OSSEC trademark and <b>ossec.net</b> domain owned by <a href="http://www.trendmicro.com" target="_blank">Trend Micro, Inc.</a><br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.4 - 
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.6 - 
     Home page graphics courtesy of <a href="https://pixabay.com" target="_blank">pixabay</a>
     </p>
   </div>

@@ -129,7 +129,7 @@
 <h3>Location<a class="headerlink" href="#location" title="Permalink to this headline">¶</a></h3>
 <p>All syslog_output options must be configured in the /var/ossec/etc/ossec.conf and used within the &lt;ossec_config&gt; tag.</p>
 <p>XML excerpt to show location:</p>
-<div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;ossec_config&gt;</span>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;ossec_config&gt;</span>
     <span class="nt">&lt;syslog_output&gt;</span>
         <span class="c">&lt;!--</span>
 <span class="c">        Syslog Output options here</span>
@@ -183,7 +183,7 @@
 <li><strong>Allowed:</strong> Any valid group. Separate multiple groups with the pipe (<code class="docutils literal"><span class="pre">|</span></code>) character.</li>
 <li><strong>Examples:</strong></li>
 </ul>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">&lt;group&gt;syscheck&lt;/group&gt;</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">&lt;group&gt;syscheck&lt;/group&gt;</span>
 <span class="go">&lt;group&gt;authentication_failure|authentication_success&lt;/group&gt;</span>
 </pre></div>
 </div>
@@ -235,7 +235,7 @@
 <li><strong>Allowed</strong> default, cef, splunk, json</li>
 <li><strong>Example:</strong></li>
 </ul>
-<div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;syslog_output&gt;</span>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;syslog_output&gt;</span>
   <span class="nt">&lt;server&gt;</span>10.0.0.1<span class="nt">&lt;/server&gt;</span>
   <span class="nt">&lt;port&gt;</span>514<span class="nt">&lt;/port&gt;</span>
   <span class="nt">&lt;format&gt;</span>cef<span class="nt">&lt;/format&gt;</span>
@@ -265,7 +265,7 @@
     <p>
         &copy; Copyright 2010-2015, OSSEC Project Team.<br/>
     OSSEC trademark and <b>ossec.net</b> domain owned by <a href="http://www.trendmicro.com" target="_blank">Trend Micro, Inc.</a><br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.4 - 
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.6 - 
     Home page graphics courtesy of <a href="https://pixabay.com" target="_blank">pixabay</a>
     </p>
   </div>

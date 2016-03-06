@@ -127,15 +127,15 @@ them, you need to set the <code class="docutils literal"><span class="pre">log-p
 <blockquote>
 <div>-j LOG &#8211;log-prefix=&#8221;ACCEPT &#8220;</div></blockquote>
 <p>They will generate the following log (or similar):</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">Jan 11 20:44:49 hostname kernel: [89463.101343] ACCEPT IN=lo OUT= MAC=00:00:00:00:00:00:00:00:00:00:00:00:08:00 SRC=127.0.0.1 DST=127.0.0.1 LEN=60 TOS=0x10 PREC=0x00 TTL=64 ID=33772 DF PROTO=TCP SPT=43961 DPT=81 WINDOW=32767 RES=0x00 SYN URGP=0</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Jan 11 20:44:49 hostname kernel: [89463.101343] ACCEPT IN=lo OUT= MAC=00:00:00:00:00:00:00:00:00:00:00:00:08:00 SRC=127.0.0.1 DST=127.0.0.1 LEN=60 TOS=0x10 PREC=0x00 TTL=64 ID=33772 DF PROTO=TCP SPT=43961 DPT=81 WINDOW=32767 RES=0x00 SYN URGP=0</span>
 </pre></div>
 </div>
 <p>For deny rules, the following action should be set:</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">-j LOG --log-prefix=&quot;DROP &quot;</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">-j LOG --log-prefix=&quot;DROP &quot;</span>
 </pre></div>
 </div>
 <p>They will generate the following log (or similar):</p>
-<div class="highlight-console"><div class="highlight"><pre>
+<div class="highlight-console"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 <p>Jan 11 20:44:49 xxx kernel: [89463.101343] DROP IN=lo OUT= MAC=00:00:00:00:00:00:00:00:00:00:00:00:08:00 SRC=127.0.0.1 DST=127.0.0.1 LEN=60 TOS=0x10 PREC=0x00 TTL=64 ID=33772 DF PROTO=TCP SPT=43961 DPT=81 WINDOW=32767 RES=0x00 SYN URGP=0</p>
@@ -161,7 +161,7 @@ For more information about iptables log, take a look <a class="reference externa
     <p>
         &copy; Copyright 2010-2015, OSSEC Project Team.<br/>
     OSSEC trademark and <b>ossec.net</b> domain owned by <a href="http://www.trendmicro.com" target="_blank">Trend Micro, Inc.</a><br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.4 - 
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.6 - 
     Home page graphics courtesy of <a href="https://pixabay.com" target="_blank">pixabay</a>
     </p>
   </div>

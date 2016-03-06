@@ -125,7 +125,7 @@ detection (rootcheck) and log analysis.</p>
 <p>First Create the file /var/ossec/etc/shared/agent.conf.</p>
 <p>Inside the file you can configure the agent just as you would normally at
 ossec.conf</p>
-<div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;agent_config&gt;</span>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;agent_config&gt;</span>
     <span class="nt">&lt;localfile&gt;</span>
         <span class="nt">&lt;location&gt;</span>/var/log/my.log<span class="nt">&lt;/location&gt;</span>
         <span class="nt">&lt;log_format&gt;</span>syslog<span class="nt">&lt;/log_format&gt;</span>
@@ -135,7 +135,7 @@ ossec.conf</p>
 </div>
 <p>But you have a few more options. You can restrict the config by agent name,
 operating system, or profile:</p>
-<div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;agent_config</span> <span class="na">name=</span><span class="s">&quot;agent1&quot;</span><span class="nt">&gt;</span>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;agent_config</span> <span class="na">name=</span><span class="s">&quot;agent1&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;localfile&gt;</span>
         <span class="nt">&lt;location&gt;</span>/var/log/my.log<span class="nt">&lt;/location&gt;</span>
         <span class="nt">&lt;log_format&gt;</span>syslog<span class="nt">&lt;/log_format&gt;</span>
@@ -168,7 +168,7 @@ configuration will be pushed much quicker.</p>
 <h2>Restart the agent<a class="headerlink" href="#restart-the-agent" title="Permalink to this headline">¶</a></h2>
 <p>Once the configuration file is pushed, you can run the command <a class="reference internal" href="../../programs/agent_control.html#agent-control"><span>agent_control</span></a> to
 see if the agent received the config and restart the agent remotely.</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="gp">#</span> md5sum /var/ossec/etc/shared/agent.conf
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> md5sum /var/ossec/etc/shared/agent.conf
 <span class="go">MD5 (/var/ossec/etc/shared/agent.conf) = ee1882236893df851bd9e4842007e7e7</span>
 <span class="gp">#</span> /var/ossec/bin/agent_control -i 200
 
@@ -193,7 +193,7 @@ the md5sum of the agent.conf file.</p>
 <p class="last">Linux systems generally use <code class="docutils literal"><span class="pre">md5sum</span></code>, but other systems may use <code class="docutils literal"><span class="pre">md5</span></code> as the name of the application to check the hash of the file.</p>
 </div>
 <p>To restart the agent:</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="gp">#</span> /var/ossec/bin/agent_control -R <span class="m">200</span> <span class="o">(</span>where <span class="m">200</span> is the agent id<span class="o">)</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> /var/ossec/bin/agent_control -R <span class="m">200</span> <span class="o">(</span>where <span class="m">200</span> is the agent id<span class="o">)</span>
 
 <span class="go">OSSEC HIDS agent_control: Restarting agent: 200</span>
 </pre></div>
@@ -219,7 +219,7 @@ the md5sum of the agent.conf file.</p>
     <p>
         &copy; Copyright 2010-2015, OSSEC Project Team.<br/>
     OSSEC trademark and <b>ossec.net</b> domain owned by <a href="http://www.trendmicro.com" target="_blank">Trend Micro, Inc.</a><br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.4 - 
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.6 - 
     Home page graphics courtesy of <a href="https://pixabay.com" target="_blank">pixabay</a>
     </p>
   </div>

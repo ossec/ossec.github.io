@@ -122,7 +122,7 @@ need additional functionality not present in there.</p>
 <h2>How do they work?<a class="headerlink" href="#how-do-they-work" title="Permalink to this headline">¶</a></h2>
 <p>Inside the OSSEC package you will find the directory <code class="docutils literal"><span class="pre">src/analysisd/compiled_rules/</span></code> , with the
 default compiled rules. To see a list of rules, run the command (inside that directory):</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="gp">$</span> <span class="sb">``</span><span class="nb">pwd</span><span class="sb">``</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> <span class="sb">``</span><span class="nb">pwd</span><span class="sb">``</span>
 <span class="go">../src/analysisd/compiled_rules</span>
 <span class="gp">$</span> <span class="sb">``</span>./register_rule.sh list<span class="sb">``</span>
 <span class="go">*Available functions:</span>
@@ -133,7 +133,7 @@ default compiled rules. To see a list of rules, run the command (inside that dir
 </div>
 <p>To use any of them inside a rule, just add the &lt;compiled_rule&gt; tag with the function you want
 to use. Ex:</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">&lt;rule id=&quot;100155&quot; level=&quot;10&quot;&gt;</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">&lt;rule id=&quot;100155&quot; level=&quot;10&quot;&gt;</span>
 <span class="go">  &lt;if_sid&gt;18111&lt;/if_sid&gt;</span>
 <span class="go">  ``&lt;compiled_rule&gt;comp_mswin_targetuser_calleruser_diff&lt;/compiled_rule&gt;``</span>
 <span class="go">  &lt;description&gt;User changed someone else password.&lt;/description&gt;</span>
@@ -145,12 +145,12 @@ to use. Ex:</p>
 <h2>How to write my own rule:<a class="headerlink" href="#how-to-write-my-own-rule" title="Permalink to this headline">¶</a></h2>
 <p>To create your own rule, first open a new <strong>.c</strong> file (don&#8217;t use the generic one, since it is modified during
 upgrades).</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="gp">$</span> touch myownrules.c
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> touch myownrules.c
 </pre></div>
 </div>
 <p>And create your function inside of it. In this example here we added a function to check if the url field
 is longer than 1024:</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">void *myosrule_check_url_size1024(Eventinfo *lf)</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">void *myosrule_check_url_size1024(Eventinfo *lf)</span>
 <span class="go">{</span>
 <span class="go">    if(!lf-&gt;url)</span>
 <span class="go">    {</span>
@@ -166,18 +166,18 @@ is longer than 1024:</p>
 </pre></div>
 </div>
 <p>After that, register your function:</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="gp">$</span> ./register_rule.sh add myosrule_check_url_size1024
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> ./register_rule.sh add myosrule_check_url_size1024
 </pre></div>
 </div>
 <p>You can also save it (if you have ossec installed) so that during the next upgrade it will reuse them:</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="gp">$</span> ./register_rule.sh save
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> ./register_rule.sh save
 <span class="go">*Save completed at /var/ossec/compiled_rules/</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="available-fields-in-the-event-structure">
 <h2>Available fields in the Event structure:<a class="headerlink" href="#available-fields-in-the-event-structure" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">typedef struct _Eventinfo</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">typedef struct _Eventinfo</span>
 <span class="go">{</span>
 <span class="go">    /* Extracted from the event */</span>
 <span class="go">    char *log;</span>
@@ -235,7 +235,7 @@ is longer than 1024:</p>
     <p>
         &copy; Copyright 2010-2015, OSSEC Project Team.<br/>
     OSSEC trademark and <b>ossec.net</b> domain owned by <a href="http://www.trendmicro.com" target="_blank">Trend Micro, Inc.</a><br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.4 - 
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.6 - 
     Home page graphics courtesy of <a href="https://pixabay.com" target="_blank">pixabay</a>
     </p>
   </div>

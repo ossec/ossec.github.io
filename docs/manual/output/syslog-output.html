@@ -162,7 +162,7 @@ Because OSSEC only sends the alerts via syslog, these options are for server or 
 <li><strong>Allowed:</strong> Any valid group. Separate multiple groups with the pipe (<code class="docutils literal"><span class="pre">|</span></code>) character.</li>
 <li><strong>Examples:</strong></li>
 </ul>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">&lt;group&gt;syscheck&lt;/group&gt;</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">&lt;group&gt;syscheck&lt;/group&gt;</span>
 <span class="go">&lt;group&gt;authentication_failure|authentication_success&lt;/group&gt;</span>
 </pre></div>
 </div>
@@ -214,7 +214,7 @@ Because OSSEC only sends the alerts via syslog, these options are for server or 
 <li><strong>Allowed</strong> default, cef, splunk, json</li>
 <li><strong>Example:</strong></li>
 </ul>
-<div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;syslog_output&gt;</span>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;syslog_output&gt;</span>
   <span class="nt">&lt;server&gt;</span>10.0.0.1<span class="nt">&lt;/server&gt;</span>
   <span class="nt">&lt;port&gt;</span>514<span class="nt">&lt;/port&gt;</span>
   <span class="nt">&lt;format&gt;</span>cef<span class="nt">&lt;/format&gt;</span>
@@ -229,7 +229,7 @@ Because OSSEC only sends the alerts via syslog, these options are for server or 
 <p>An OSSEC server can be configured to send the alerts via syslog.
 In this example all alerts are sent to 192.168.4.1, and alerts of level 10 and
 above are also sent to 10.1.1.1:</p>
-<div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;ossec_config&gt;</span>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;ossec_config&gt;</span>
   ...
 
   <span class="nt">&lt;syslog_output&gt;</span>
@@ -246,22 +246,22 @@ above are also sent to 10.1.1.1:</p>
 </pre></div>
 </div>
 <p>After this change is made, the client-syslog process should be enabled:</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="gp">#</span> /var/ossec/bin/ossec-control <span class="nb">enable</span> client-syslog
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> /var/ossec/bin/ossec-control <span class="nb">enable</span> client-syslog
 </pre></div>
 </div>
 <p>And finally restart the OSSEC processes:</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="gp">#</span> /var/ossec/bin/ossec-control restart
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> /var/ossec/bin/ossec-control restart
 </pre></div>
 </div>
 <p>ossec-csyslog should start along with the other OSSEC processes:</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">Starting OSSEC HIDS v2.8 (by Trend Micro Inc.)...</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Starting OSSEC HIDS v2.8 (by Trend Micro Inc.)...</span>
 <span class="go">...</span>
 <span class="go">Started ossec-csyslogd...</span>
 <span class="go">...</span>
 </pre></div>
 </div>
 <p>And in the logs:</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="gp">#</span> tail -n <span class="m">1000</span> /var/ossec/logs/ossec.log <span class="p">|</span> grep csyslog
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> tail -n <span class="m">1000</span> /var/ossec/logs/ossec.log <span class="p">|</span> grep csyslog
 <span class="go">2008/07/25 12:55:16 ossec-csyslogd: INFO: Started (pid: 19412).</span>
 <span class="go">2008/07/25 12:55:16 ossec-csyslogd: INFO: Forwarding alerts via syslog to: ‘192.168.4.1:514′.</span>
 <span class="go">2008/07/25 12:55:16 ossec-csyslogd: INFO: Forwarding alerts via syslog to: ‘10.1.1.1:514′.</span>
@@ -269,13 +269,13 @@ above are also sent to 10.1.1.1:</p>
 </div>
 <p>Here is an example of what the listening syslog daemon should receive (every log separated by level,
 rule, location and the actual event that generated it):</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">Jul 25 12:17:41 enigma ossec: Alert Level: 3; Rule: 5715 - SSHD authentication success.; Location: (jul) 192.168.2.0-&gt;/var/log/messages;</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Jul 25 12:17:41 enigma ossec: Alert Level: 3; Rule: 5715 - SSHD authentication success.; Location: (jul) 192.168.2.0-&gt;/var/log/messages;</span>
 <span class="go">srcip: 192.168.2.190; user: root; Jul 25 13:26:24 slacker sshd[20440]: Accepted password for root from 192.168.2.190 port 49737 ssh2</span>
 </pre></div>
 </div>
 <div class="section" id="send-all-alerts-to-10-10-10-125">
 <h3>Send all alerts to 10.10.10.125:<a class="headerlink" href="#send-all-alerts-to-10-10-10-125" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;syslog_output&gt;</span>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;syslog_output&gt;</span>
   <span class="nt">&lt;server&gt;</span>10.10.10.125<span class="nt">&lt;/server&gt;</span>
 <span class="nt">&lt;/syslog_output&gt;</span>
 </pre></div>
@@ -283,7 +283,7 @@ rule, location and the actual event that generated it):</p>
 </div>
 <div class="section" id="send-all-alerts-to-10-10-10-126-in-cef">
 <h3>Send all alerts to 10.10.10.126 in CEF:<a class="headerlink" href="#send-all-alerts-to-10-10-10-126-in-cef" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;syslog_output&gt;</span>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;syslog_output&gt;</span>
   <span class="nt">&lt;server&gt;</span>10.10.10.126<span class="nt">&lt;/server&gt;</span>
   <span class="nt">&lt;format&gt;</span>cef<span class="nt">&lt;/format&gt;</span>
 <span class="nt">&lt;/syslog_output&gt;</span>
@@ -292,7 +292,7 @@ rule, location and the actual event that generated it):</p>
 </div>
 <div class="section" id="send-all-alerts-level-6-and-above-to-10-10-10-127-on-port-515">
 <h3>Send all alerts level 6 and above to 10.10.10.127 on port 515:<a class="headerlink" href="#send-all-alerts-level-6-and-above-to-10-10-10-127-on-port-515" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;syslog_output&gt;</span>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;syslog_output&gt;</span>
   <span class="nt">&lt;server&gt;</span>10.10.10.127<span class="nt">&lt;/server&gt;</span>
   <span class="nt">&lt;port&gt;</span>515<span class="nt">&lt;/port&gt;</span>
   <span class="nt">&lt;level&gt;</span>6<span class="nt">&lt;/level&gt;</span>
@@ -321,7 +321,7 @@ rule, location and the actual event that generated it):</p>
     <p>
         &copy; Copyright 2010-2015, OSSEC Project Team.<br/>
     OSSEC trademark and <b>ossec.net</b> domain owned by <a href="http://www.trendmicro.com" target="_blank">Trend Micro, Inc.</a><br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.4 - 
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.6 - 
     Home page graphics courtesy of <a href="https://pixabay.com" target="_blank">pixabay</a>
     </p>
   </div>

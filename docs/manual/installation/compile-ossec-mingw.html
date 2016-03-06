@@ -130,7 +130,7 @@ or lynx respectively instead.</p>
 <p class="last">wget may not be able to pull files from the OSSEC site. Use the <code class="docutils literal"><span class="pre">-U</span></code> flag to add a UserAgent,
 or obtain the checksum file by some other manner.</p>
 </div>
-<div class="highlight-console"><div class="highlight"><pre><span class="gp">#</span> wget -U ossec https://bintray.com/artifact/download/ossec/ossec-hids/ossec-hids-2.8.3.tar.gz
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> wget -U ossec https://bintray.com/artifact/download/ossec/ossec-hids/ossec-hids-2.8.3.tar.gz
 <span class="gp">#</span> wget -U ossec https://bintray.com/artifact/download/ossec/ossec-hids/ossec-hids-2.8.3.tar.gz.sha256
 <span class="gp">#</span> cat ossec-hids-2.8.3.tar.gz.sha256
 <span class="go">SHA256 (ossec-hids-2.8.3.tar.gz) = 917989e23330d18b0d900e8722392cdbe4f17364a547508742c0fd005a1df7dd</span>
@@ -140,7 +140,7 @@ or obtain the checksum file by some other manner.</p>
 </div>
 </div></blockquote>
 <p>And generate the Windows package directory:</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="gp">#</span> <span class="nb">cd</span> ossec-hids-2.8.3/src/win32
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> <span class="nb">cd</span> ossec-hids-2.8.3/src/win32
 <span class="gp">#</span> ./gen-win.sh
 </pre></div>
 </div>
@@ -149,12 +149,12 @@ or obtain the checksum file by some other manner.</p>
 <p class="first admonition-title">Note</p>
 <p class="last">The <code class="docutils literal"><span class="pre">make.sh</span></code> script may require modification depending on the Linux distribution used.</p>
 </div>
-<div class="highlight-console"><div class="highlight"><pre><span class="gp">#</span> <span class="nb">cd</span> ../win-pkg
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> <span class="nb">cd</span> ../win-pkg
 <span class="gp">#</span> sh ./make.sh
 </pre></div>
 </div>
 <p>You will see the following in the screen:</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">Making windows agent</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Making windows agent</span>
 <span class="go">rootcheck/win-common.c: In function &quot;__os_winreg_querykey&quot;:</span>
 <span class="go">rootcheck/win-common.c:279: warning: pointer targets in passing argument 7 of &quot;RegEnumValueA&quot; differ in signedness</span>
 <span class="go">win-registry.c: In function &quot;os_winreg_querykey&quot;:</span>
@@ -188,7 +188,7 @@ or obtain the checksum file by some other manner.</p>
     <p>
         &copy; Copyright 2010-2015, OSSEC Project Team.<br/>
     OSSEC trademark and <b>ossec.net</b> domain owned by <a href="http://www.trendmicro.com" target="_blank">Trend Micro, Inc.</a><br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.4 - 
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.6 - 
     Home page graphics courtesy of <a href="https://pixabay.com" target="_blank">pixabay</a>
     </p>
   </div>

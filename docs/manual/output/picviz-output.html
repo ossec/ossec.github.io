@@ -129,7 +129,7 @@ svn is required for PicViz to work with OSSEC.</p>
 <h2>Setup OSSEC for PicViz<a class="headerlink" href="#setup-ossec-for-picviz" title="Permalink to this headline">¶</a></h2>
 <p>Configure OSSEC to send events to PicViz.  The following configuation
 needs to be added to /var/ossec/etc/ossec.conf.</p>
-<div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;ossec_config&gt;</span>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;ossec_config&gt;</span>
     <span class="nt">&lt;global&gt;</span>
         <span class="nt">&lt;picviz_output&gt;</span>yes<span class="nt">&lt;/picviz_output&gt;</span>
         <span class="nt">&lt;picviz_socket&gt;</span>/var/ossec/picviz.socket<span class="nt">&lt;/picviz_socket&gt;</span>
@@ -140,7 +140,7 @@ needs to be added to /var/ossec/etc/ossec.conf.</p>
 <div class="section" id="start-up-picviz">
 <h2>Start up PicViz<a class="headerlink" href="#start-up-picviz" title="Permalink to this headline">¶</a></h2>
 <p>On the picviz side, an OSSEC template is available in the template directory and Picviz should be run like this:</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="gp">#</span> pcv -Tpngcairo -o ossec.png -s /var/ossec/picviz.socket -t templates/ossec.pgdt -a
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> pcv -Tpngcairo -o ossec.png -s /var/ossec/picviz.socket -t templates/ossec.pgdt -a
 </pre></div>
 </div>
 </div>
@@ -164,7 +164,7 @@ needs to be added to /var/ossec/etc/ossec.conf.</p>
     <p>
         &copy; Copyright 2010-2015, OSSEC Project Team.<br/>
     OSSEC trademark and <b>ossec.net</b> domain owned by <a href="http://www.trendmicro.com" target="_blank">Trend Micro, Inc.</a><br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.4 - 
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.6 - 
     Home page graphics courtesy of <a href="https://pixabay.com" target="_blank">pixabay</a>
     </p>
   </div>

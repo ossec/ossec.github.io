@@ -124,12 +124,12 @@ it on one system and move the binaries to the final box.</p>
 <p>On Ubuntu you will need the <em>build-essential</em> package in order to
 compile and install OSSEC.</p>
 <p>To install the package run the following command.</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="gp">#</span> apt-get install build-essential
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> apt-get install build-essential
 </pre></div>
 </div>
 <p>If database support is needed <em>mysql-dev</em> or <em>postgresql-dev</em> should be
 installed. Run the following command to install these packages.</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="gp">#</span> apt-get install mysql-dev postgresql-dev
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> apt-get install mysql-dev postgresql-dev
 </pre></div>
 </div>
 </div>
@@ -138,7 +138,7 @@ installed. Run the following command to install these packages.</p>
 <p>RedHat should have all packages needed by default, but if database
 support is needed the package mysql-devel and/or postgresql-devel will
 need to be installed.</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="gp">#</span> yum install mysql-devel postgresql-devel
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> yum install mysql-devel postgresql-devel
 </pre></div>
 </div>
 </div>
@@ -151,14 +151,14 @@ the server&#8217;s IP address on an agent system. The error can be ignored,
 but the server ip address will need to be set.</p>
 <p>Do this by making sure something like the following information is in
 the agent&#8217;s ossec.conf:</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">&lt;ossec_config&gt;</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">&lt;ossec_config&gt;</span>
 <span class="go">  &lt;client&gt;</span>
 <span class="go">    &lt;server-ip&gt;SERVER&#39;S IP&lt;/server-ip&gt;</span>
 <span class="go">  &lt;/client&gt;</span>
 </pre></div>
 </div>
 <p>This can also be avoided by using bash to run <code class="docutils literal"><span class="pre">install.sh</span></code>:</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="gp">#</span> bash ./install.sh
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> bash ./install.sh
 </pre></div>
 </div>
 </div>
@@ -182,7 +182,7 @@ the agent&#8217;s ossec.conf:</p>
     <p>
         &copy; Copyright 2010-2015, OSSEC Project Team.<br/>
     OSSEC trademark and <b>ossec.net</b> domain owned by <a href="http://www.trendmicro.com" target="_blank">Trend Micro, Inc.</a><br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.4 - 
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.6 - 
     Home page graphics courtesy of <a href="https://pixabay.com" target="_blank">pixabay</a>
     </p>
   </div>

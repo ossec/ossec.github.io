@@ -122,7 +122,7 @@
 </ol>
 <p>PIX 6.3 commands
 <a class="reference external" href="http://www.cisco.com/en/US/products/sw/secursw/ps2120/products_system_message_guide_chapter09186a008051a0cc.html#wp1029066">http://www.cisco.com/en/US/products/sw/secursw/ps2120/products_system_message_guide_chapter09186a008051a0cc.html#wp1029066</a></p>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">logging on</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">logging on</span>
 <span class="go">no logging device-id</span>
 <span class="go">no logging timestamp</span>
 <span class="go">logging trap warning (see note 1.1 below for options)</span>
@@ -130,7 +130,7 @@
 </pre></div>
 </div>
 <p>1.1 Logging Trap Options</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">Level Number</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Level Number</span>
 
 <span class="go">Level         Keyword</span>
 <span class="go">0             emergency</span>
@@ -146,14 +146,14 @@
 <ol class="arabic simple" start="2">
 <li>Ensure your OSSEC host is seeing the PIX syslog messages</li>
 </ol>
-<div class="highlight-console"><div class="highlight"><pre><span class="gp">#</span> tcpdump -i eth0 -A -s <span class="m">0</span> udp port <span class="m">514</span> and host &lt;pix_ip&gt;
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> tcpdump -i eth0 -A -s <span class="m">0</span> udp port <span class="m">514</span> and host &lt;pix_ip&gt;
 </pre></div>
 </div>
 <ol class="arabic simple" start="3">
 <li>Configure OSSEC to listen</li>
 </ol>
 <p>Add the following to ossec.conf</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">&lt;remote&gt;</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">&lt;remote&gt;</span>
 <span class="go">   &lt;connection&gt;syslog&lt;/connection&gt;</span>
 <span class="go">   &lt;allowed-ips&gt;192.168.2.1&lt;/allowed-ips&gt;  &lt;!--ip addr of the device--&gt;</span>
 <span class="go">   &lt;port&gt;514&lt;/port&gt;</span>
@@ -163,7 +163,7 @@
 <ol class="arabic simple" start="4">
 <li>Restart the ossec service to begin listening</li>
 </ol>
-<div class="highlight-console"><div class="highlight"><pre><span class="gp">#</span> /var/ossec/bin/ossec-control restart
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> /var/ossec/bin/ossec-control restart
 </pre></div>
 </div>
 </div>
@@ -186,7 +186,7 @@
     <p>
         &copy; Copyright 2010-2015, OSSEC Project Team.<br/>
     OSSEC trademark and <b>ossec.net</b> domain owned by <a href="http://www.trendmicro.com" target="_blank">Trend Micro, Inc.</a><br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.4 - 
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.6 - 
     Home page graphics courtesy of <a href="https://pixabay.com" target="_blank">pixabay</a>
     </p>
   </div>

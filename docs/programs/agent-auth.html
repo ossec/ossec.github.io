@@ -266,7 +266,7 @@ to load a certificate and private key.</p>
 <h2>agent-auth example usage<a class="headerlink" href="#agent-auth-example-usage" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="example-adding-an-agent-with-a-hostname">
 <h3>Example: Adding an agent with a hostname<a class="headerlink" href="#example-adding-an-agent-with-a-hostname" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-console"><div class="highlight"><pre><span class="gp">#</span> /var/ossec/bin/agent-auth -m 192.168.1.1 -p <span class="m">1515</span> -A example-agent
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> /var/ossec/bin/agent-auth -m 192.168.1.1 -p <span class="m">1515</span> -A example-agent
 <span class="go">INFO: Connected to 192.168.1.1:1515</span>
 <span class="go">INFO: Using agent name as: melancia</span>
 <span class="go">INFO: Send request to manager. Waiting for reply.</span>
@@ -278,7 +278,7 @@ to load a certificate and private key.</p>
 </div>
 <div class="section" id="example-adding-an-agent-and-verifying-the-certificate-presented-by-ossec-authd">
 <h3>Example: Adding an agent and verifying the certificate presented by ossec-authd<a class="headerlink" href="#example-adding-an-agent-and-verifying-the-certificate-presented-by-ossec-authd" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-console"><div class="highlight"><pre><span class="gp">#</span> /var/ossec/bin/agent-auth -m ossec-manager.localdomain -p <span class="m">1515</span> -v /etc/pki/CA/certs/internal_CA.cert
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> /var/ossec/bin/agent-auth -m ossec-manager.localdomain -p <span class="m">1515</span> -v /etc/pki/CA/certs/internal_CA.cert
 <span class="go">INFO: Connected to 192.168.1.1:1515</span>
 <span class="go">INFO: Verifing manager&#39;s certificate</span>
 <span class="go">INFO: Using agent name as: melancia</span>
@@ -288,7 +288,7 @@ to load a certificate and private key.</p>
 </div>
 <div class="section" id="example-adding-an-agent-and-presenting-a-certificate-to-ossec-authd">
 <h3>Example: Adding an agent and presenting a certificate to ossec-authd<a class="headerlink" href="#example-adding-an-agent-and-presenting-a-certificate-to-ossec-authd" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-console"><div class="highlight"><pre><span class="gp">#</span> /var/ossec/bin/agent-auth -m ossec-manager.localdomain -p <span class="m">1515</span> -x /var/ossec/etc/client.cert -k /var/ossec/etc/client.key
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> /var/ossec/bin/agent-auth -m ossec-manager.localdomain -p <span class="m">1515</span> -x /var/ossec/etc/client.cert -k /var/ossec/etc/client.key
 <span class="go">INFO: Connected to 192.168.1.1:1515</span>
 <span class="go">INFO: Using agent name as: melancia</span>
 <span class="go">...</span>
@@ -316,7 +316,7 @@ to load a certificate and private key.</p>
     <p>
         &copy; Copyright 2010-2015, OSSEC Project Team.<br/>
     OSSEC trademark and <b>ossec.net</b> domain owned by <a href="http://www.trendmicro.com" target="_blank">Trend Micro, Inc.</a><br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.4 - 
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.6 - 
     Home page graphics courtesy of <a href="https://pixabay.com" target="_blank">pixabay</a>
     </p>
   </div>

@@ -140,11 +140,11 @@
 <p><code class="docutils literal"><span class="pre">manage_agents</span></code> should be run as a user with
 the appropriate privileges (e.g. root).</p>
 <p>Run <code class="docutils literal"><span class="pre">manage_agents</span></code>:</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="gp">#</span> /var/ossec/bin/manage_agents
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> /var/ossec/bin/manage_agents
 </pre></div>
 </div>
 <p>The manage_agents menu:</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">****************************************</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">****************************************</span>
 <span class="go">* OSSEC HIDS v2.5-SNP-100809 Agent manager.     *</span>
 <span class="go">* The following options are available: *</span>
 <span class="go">****************************************</span>
@@ -161,13 +161,13 @@ the appropriate privileges (e.g. root).</p>
 <div class="section" id="adding-an-agent">
 <h3>Adding an agent<a class="headerlink" href="#adding-an-agent" title="Permalink to this headline">¶</a></h3>
 <p>To add an agent type <code class="docutils literal"><span class="pre">a</span></code> in the start screen:</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">Choose your action: A,E,L,R or Q: a</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Choose your action: A,E,L,R or Q: a</span>
 </pre></div>
 </div>
 <p>You are then prompted to provide a name for the new agent.
 This can be the hostname or another string to identify the system.
 In this example the agent name will be agent1.</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">- Adding a new agent (use &#39;\q&#39; to return to the main menu).</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">- Adding a new agent (use &#39;\q&#39; to return to the main menu).</span>
 <span class="go">  Please provide the following:</span>
 <span class="go">   * A name for the new agent: agent1</span>
 </pre></div>
@@ -176,7 +176,7 @@ In this example the agent name will be agent1.</p>
 IP address (e.g. 192.168.1.25), a range of IPs (e.g. 192.168.2.0/24), or <code class="docutils literal"><span class="pre">any</span></code>. Using a
 network range or <code class="docutils literal"><span class="pre">any</span></code> is preferable when the IP of the agent may change frequently
 (DHCP), or multiple systems will appear to come from the same IP address (NAT).</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">* The IP Address of the new agent: 192.168.2.0/24</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">* The IP Address of the new agent: 192.168.2.0/24</span>
 </pre></div>
 </div>
 <div class="admonition warning">
@@ -189,11 +189,11 @@ Multiple systems can use the same IP range or <code class="docutils literal"><sp
 number that is not already assigned to another agent. The ID 000 is assigned to the
 OSSEC server. To accept the suggestion, simply press ENTER. To choose another value,
 type it in and press ENTER.</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">* An ID for the new agent[001]:</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">* An ID for the new agent[001]:</span>
 </pre></div>
 </div>
 <p>As the final step in creating an agent, you have to confirm adding the agent:</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">Agent information:</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Agent information:</span>
 <span class="go">   ID:002</span>
 <span class="go">   Name:agent1</span>
 <span class="go">   IP Address:192.168.2.0/24</span>
@@ -217,7 +217,7 @@ To extract the key, use the <code class="docutils literal"><span class="pre">e</
 given a list of all agents on the server. To extract the key for an agent,
 simply type in the agent ID. It is important to note that you have
 to enter all digits of the ID.</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">Choose your action: A,E,L,R or Q: e</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Choose your action: A,E,L,R or Q: e</span>
 
 <span class="go">Available agents:</span>
 <span class="go">   ID: 001, Name: agent1, IP: 192.168.2.0/24</span>
@@ -240,7 +240,7 @@ and includes information about the agent. This string can be added to the agent 
 start screen. You will be given a list of all agents already added to the server. To remove
 an agent, simply type in the ID of the agent, press enter, and finally confirm the deletion.
 It is important to note that you have to enter all digits of the ID.</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">Choose your action: A,E,L,R or Q: r</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Choose your action: A,E,L,R or Q: r</span>
 
 <span class="go">Available agents:</span>
 <span class="go">   ID: 001, Name: agent1, IP: 192.168.2.0/24</span>
@@ -257,7 +257,7 @@ communicate with the OSSEC server.</p>
 <div class="section" id="manage-agents-on-ossec-agents">
 <h2>manage_agents on OSSEC agents<a class="headerlink" href="#manage-agents-on-ossec-agents" title="Permalink to this headline">¶</a></h2>
 <p>The agent version provides an interface for importing authentication keys.</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">****************************************</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">****************************************</span>
 <span class="go">* OSSEC HIDS v2.5-SNP-100809 Agent manager.     *</span>
 <span class="go">* The following options are available: *</span>
 <span class="go">****************************************</span>
@@ -304,7 +304,7 @@ restart the server and start the agent.</p>
     <p>
         &copy; Copyright 2010-2015, OSSEC Project Team.<br/>
     OSSEC trademark and <b>ossec.net</b> domain owned by <a href="http://www.trendmicro.com" target="_blank">Trend Micro, Inc.</a><br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.4 - 
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.6 - 
     Home page graphics courtesy of <a href="https://pixabay.com" target="_blank">pixabay</a>
     </p>
   </div>

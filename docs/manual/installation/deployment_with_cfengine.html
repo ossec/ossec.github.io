@@ -127,7 +127,7 @@
 <li>control</li>
 </ul>
 <p>My control sections sets up the variables I&#8217;ll be using in the rest of the file.</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">control:</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">control:</span>
 <span class="go">  any::</span>
 <span class="go">    ossec_key_dir = (/usr/local/cfkeys/ossec)</span>
 <span class="go">    ossec_req_dir = ( $(util_updir)/ossec )</span>
@@ -137,7 +137,7 @@
 <li>package</li>
 </ul>
 <p>I&#8217;m using yum to automatically install OSSEC-HIDS from my local RPM Repository.</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">packages:</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">packages:</span>
 <span class="go">  !hg_ossec_server::</span>
 <span class="go">      ossec-hids                  action=install</span>
 <span class="go">      ossec-hids-client           action=install</span>
@@ -147,7 +147,7 @@
 <li>links</li>
 </ul>
 <p>The Links section just links ossec-agent.conf to ossec.conf on the clients.</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">links:</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">links:</span>
 <span class="go">  !hg_ossec_server::</span>
 <span class="go">    /var/ossec/etc/ossec.conf -&gt; /var/ossec/etc/ossec-agent.conf</span>
 </pre></div>
@@ -156,7 +156,7 @@
 <li>copy</li>
 </ul>
 <p>I manage the <code class="docutils literal"><span class="pre">ossec-agent.conf</span></code> in cfengine, because my cfengine configurations are all stored in a subversion repository.  The first stanza in copy just pushes the most recent copy of the <code class="docutils literal"><span class="pre">ossec-agent.conf</span></code> file to my network, setting the dynamic class <code class="docutils literal"><span class="pre">dc_restart_ossec</span></code> if the copy occurs.</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">copy:</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">copy:</span>
 <span class="go">  !hg_ossec_server::</span>
 <span class="gp">      $</span><span class="o">(</span>distribute<span class="o">)</span>/ossec-agent.conf      <span class="nv">dest</span><span class="o">=</span>/var/ossec/etc/ossec-agent.conf
 <span class="go">                                          server=$(policyhost)</span>
@@ -167,7 +167,7 @@
 </pre></div>
 </div>
 <p>This second stanza in the <code class="docutils literal"><span class="pre">copy</span></code> section copies a file from our ossec key directory to the client.keys file on the client.  This copy only happens if the two files are different.  It also sets <code class="docutils literal"><span class="pre">dc_restart_ossec</span></code> if the copy occurs.</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="gp">$</span><span class="o">(</span>ossec_key_dir<span class="o">)</span>/<span class="k">$(</span>host<span class="k">)</span>.ossec    <span class="nv">dest</span><span class="o">=</span>/var/ossec/etc/client.keys
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span><span class="o">(</span>ossec_key_dir<span class="o">)</span>/<span class="k">$(</span>host<span class="k">)</span>.ossec    <span class="nv">dest</span><span class="o">=</span>/var/ossec/etc/client.keys
 <span class="go">                                  server=$(policyhost)</span>
 <span class="go">                                  mode=640</span>
 <span class="go">                                  group=ossec</span>
@@ -179,7 +179,7 @@
 <li>processes</li>
 </ul>
 <p>My processes block checks to ensure that OSSEC-HIDS is running the correct daemons.</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">processes:</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">processes:</span>
 <span class="go">  !hg_ossec_server::</span>
 <span class="go">      &quot;ossec-agentd&quot; elsedefine=dc_restart_ossec</span>
 <span class="go">  ``hg_ossec_server``::</span>
@@ -190,13 +190,13 @@
 <li>shellcommands</li>
 </ul>
 <p>This section is where the certificate request occurs through some devious mechanisms I designed for no other reason than to amuse myself.  Hopefully, it amuses others as well.  The first thing it does is issue a command that echo&#8217;s the client eth0 ipv4 address to a file named &#8216;&#8217;host.ossec&#8217;&#8217; in the ossec request directory I defined.   The <code class="docutils literal"><span class="pre">hg_ossec_server</span></code> class will use this to generate a cert to place in the aforementioned copy block.</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">shellcommands:</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">shellcommands:</span>
 <span class="go">  !hg_ossec_server::</span>
 <span class="go">      &quot;/usr/bin/ssh util@$(policyhost) -i $(util_privkey) &#39;echo $(global.ipv4[eth0]) &gt; $(ossec_req_dir)/$(host).ossec&#39;&quot;</span>
 </pre></div>
 </div>
 <p>The last statement checks to see if anyone defined <code class="docutils literal"><span class="pre">dc_restart_ossec</span></code>, and restart ossec-hids if it was defined.</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">dc_restart_ossec::</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">dc_restart_ossec::</span>
 <span class="go">    &quot;/sbin/service ossec-hids restart&quot;</span>
 </pre></div>
 </div>
@@ -210,7 +210,7 @@
 <p>The cfengine part of this was a pain for me because of the order of the actions I had defined and the extent of work I had done incorrectly in the past.  I could have figured out an interesting way to handle this, but I didn&#8217;t want to scrap my entire cfengine config and start from scratch.  So I created a perl script that allowed me to use the <code class="docutils literal"><span class="pre">manage_agents</span></code> script without interaction.  It does require the <code class="docutils literal"><span class="pre">Expect.pm</span></code> &amp; <code class="docutils literal"><span class="pre">Regexp::Common</span></code> from CPAN, but is otherwise stock Perl 5.8.x.  I also wrote a shell script wrapper to handle running the perl script and culminating the results.  I saved these two scripts in <code class="docutils literal"><span class="pre">/root/security</span></code>, so if you put them elsewhere, make sure to update the shell script wrapper.</p>
 <p>The scripts for managing keys can be downloaded <a href="#id1"><span class="problematic" id="id2">`here &lt; http://db0.us/~brad/cfengine-ossec-scripts.tar.gz&gt;`_</span></a></p>
 <p>The cfengine bit was really simple, it just had to call my wrapper shell script and set the class.  I did this with a control block:</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">control:</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">control:</span>
 <span class="go"> hg_ossec_server::</span>
 <span class="go">   AddClasses = ( ExecResult(/root/security/ossec-scan.sh) )</span>
 </pre></div>
@@ -237,7 +237,7 @@
     <p>
         &copy; Copyright 2010-2015, OSSEC Project Team.<br/>
     OSSEC trademark and <b>ossec.net</b> domain owned by <a href="http://www.trendmicro.com" target="_blank">Trend Micro, Inc.</a><br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.4 - 
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.6 - 
     Home page graphics courtesy of <a href="https://pixabay.com" target="_blank">pixabay</a>
     </p>
   </div>

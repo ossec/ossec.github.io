@@ -125,7 +125,7 @@ through an crc32 compensation attack against SSH-1.5-1.2.27.</p>
 <p>To ensure unmodified results of common programs (like ps) we used a mounted
 Stand-alone shell (sash) and static binaries.</p>
 <p>results of unmodified netstat shows following interesting connections:</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">Proto Recv-Q Send-Q Local Address           Foreign Address         State</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Proto Recv-Q Send-Q Local Address           Foreign Address         State</span>
 <span class="go">tcp        0      0 0.0.0.0:56493           0.0.0.0:*               LISTEN</span>
 
 <span class="go">results of unmodified ps shows following interesting proceses:</span>
@@ -175,7 +175,7 @@ Stand-alone shell (sash) and static binaries.</p>
 <h2>Beastkit properties<a class="headerlink" href="#beastkit-properties" title="Permalink to this headline">¶</a></h2>
 <p>Beastkit 7.0 replaces common binaries that can be used to monitor system operation (like ps).
 List of programs included in the rootkit (bin.tgz):</p>
-<div class="highlight-python"><div class="highlight"><pre>md5sum                            Filename             Size
+<div class="highlight-python"><div class="highlight"><pre><span></span>md5sum                            Filename             Size
 98bf3bd30914773e50060a7f56eda4f4  encrypt             14808
 ae060f54e8f3a8e79dc95867171811ef  pg                   3552
 f2e3b130a937af92ff507315406589b1  sz                   1382
@@ -198,7 +198,7 @@ f7acbc61f8715bdda41989683bc8e8a8  /usr/bin/md5sum     31452
 change, because the rootkit use touch -acmr to transmit the timestamp to the
 rootkit files.</p>
 <p>Beastkit contains some tools (bktools) (placed at /lib/ldd.so/bktools):</p>
-<div class="highlight-python"><div class="highlight"><pre>md5sum                            Filename             Size
+<div class="highlight-python"><div class="highlight"><pre><span></span>md5sum                            Filename             Size
 b0812b62c9c3307161c5400870d7d230  bkget               25664
 926784667fa921b38fceb124644f6568  bkp                  7578
 63c6a53e779c06923344b15a0e8f1799  bks                 16070
@@ -227,7 +227,7 @@ which replaces the default password (08e7592e361de6fd59d4d126b29fe6ea=arobia)
 of the original backdoor &#8220;elm&#8221; and generates the new backdoor &#8220;arobia&#8221;.
 After that, &#8220;arobia&#8221; was moved to /usr/sbin. The backdoor start-up is done
 by /usr/sbin/arobia -q -p 56493, whereby &#8220;56493&#8221; is the portnumber.</p>
-<div class="highlight-python"><div class="highlight"><pre>md5sum                            Filename                              Size
+<div class="highlight-python"><div class="highlight"><pre><span></span>md5sum                            Filename                              Size
 f7820a858bceee09246f4454e3c24e95  /usr/sbin/arobia                    206760
 f78fa4c346287a3af35656a9ac33e733  /usr/lib/elm/arobia/elm             206760
 a5d7227117841d0518a6be3510dabb57  /usr/lib/elm/arobia/elm/hk             529
@@ -241,7 +241,7 @@ a604bd841806dd5abe543a3281eb5a78  /usr/lib/elm/arobia/elm/srsd           512
 <div class="section" id="more-rootkit-properties">
 <h3>More rootkit properties:<a class="headerlink" href="#more-rootkit-properties" title="Permalink to this headline">¶</a></h3>
 <p>The program bktd was placed at /usr/local/bin/.../, furthermore some libraries at /lib/:</p>
-<div class="highlight-python"><div class="highlight"><pre>md5sum                            Filename                      Size
+<div class="highlight-python"><div class="highlight"><pre><span></span>md5sum                            Filename                      Size
 00846ffcc2ed7fa23b42089e92273964  bktd                         93924
 2aed58986303584c96edd16f6195e797  /lib/libproc.a               33848
 8581544643145cd159e93df986539ce8  /lib/libproc.so.2.0.6        37984
@@ -254,7 +254,7 @@ dcf6a1cb6fd162461195294904c078f8  /lib/lidps1.so                   9
 </div>
 <p>The following lines were added in /etc/rc.d/rc.sysinit to start a backdoor at
 port 33333 at system startup:</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="gp">#</span> Arobia daemon startup..
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> Arobia daemon startup..
 <span class="go">/usr/sbin/xntps -q -p 33333</span>
 </pre></div>
 </div>
@@ -280,7 +280,7 @@ port 33333 at system startup:</p>
     <p>
         &copy; Copyright 2010-2015, OSSEC Project Team.<br/>
     OSSEC trademark and <b>ossec.net</b> domain owned by <a href="http://www.trendmicro.com" target="_blank">Trend Micro, Inc.</a><br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.4 - 
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.6 - 
     Home page graphics courtesy of <a href="https://pixabay.com" target="_blank">pixabay</a>
     </p>
   </div>

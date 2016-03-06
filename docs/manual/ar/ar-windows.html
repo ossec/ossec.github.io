@@ -117,7 +117,7 @@
 <span id="manual-ar-windows"></span><h1>Windows: Active Response Configuration<a class="headerlink" href="#windows-active-response-configuration" title="Permalink to this headline">¶</a></h1>
 <p>To start, you need to enable active response on Windows (disabled by default).
 To do that, just add the following to the agent’s ossec.conf:</p>
-<div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;active-response&gt;</span>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;active-response&gt;</span>
     <span class="nt">&lt;disabled&gt;</span>no<span class="nt">&lt;/disabled&gt;</span>
 <span class="nt">&lt;/active-response&gt;</span>
 </pre></div>
@@ -125,7 +125,7 @@ To do that, just add the following to the agent’s ossec.conf:</p>
 <p>After that, you need to go to the manager and specify when to run the response.
 Adding the following to ossec.conf will enable the responses for alerts above
 level 6:</p>
-<div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;command&gt;</span>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;command&gt;</span>
     <span class="nt">&lt;name&gt;</span>win_nullroute<span class="nt">&lt;/name&gt;</span>
     <span class="nt">&lt;executable&gt;</span>route-null.cmd<span class="nt">&lt;/executable&gt;</span>
     <span class="nt">&lt;expect&gt;</span>srcip<span class="nt">&lt;/expect&gt;</span>
@@ -143,7 +143,7 @@ level 6:</p>
 <p>With the configuration completed (and the manager restarted), you can test the
 active response by running the agent-control script (in this case, I am running
 it on agent id 185 to block ip 2.3.4.5):</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="gp">#</span> /var/ossec/bin/agent_control -L
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> /var/ossec/bin/agent_control -L
 
 <span class="go">OSSEC HIDS agent_control. Available active responses:</span>
 
@@ -157,7 +157,7 @@ it on agent id 185 to block ip 2.3.4.5):</p>
 </pre></div>
 </div>
 <p>And looking at the agent you should see the new entry in the route table:</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">C:\&gt;route print</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">C:\&gt;route print</span>
 <span class="go">..</span>
 <span class="go">Active Routes:</span>
 <span class="go">Network Destination Netmask Gateway Interface Metric</span>
@@ -167,7 +167,7 @@ it on agent id 185 to block ip 2.3.4.5):</p>
 </div>
 <p>If you run into any issues, look at the ossec.log file (on the agent) for any
 entry for ossec-execd. If you enabled it correctly, you will see:</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">2008/08/20 11:53:49 ossec-execd: INFO: Started (pid: 3896).</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">2008/08/20 11:53:49 ossec-execd: INFO: Started (pid: 3896).</span>
 </pre></div>
 </div>
 </div>
@@ -190,7 +190,7 @@ entry for ossec-execd. If you enabled it correctly, you will see:</p>
     <p>
         &copy; Copyright 2010-2015, OSSEC Project Team.<br/>
     OSSEC trademark and <b>ossec.net</b> domain owned by <a href="http://www.trendmicro.com" target="_blank">Trend Micro, Inc.</a><br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.4 - 
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.6 - 
     Home page graphics courtesy of <a href="https://pixabay.com" target="_blank">pixabay</a>
     </p>
   </div>
