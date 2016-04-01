@@ -248,7 +248,7 @@
 <div class="section" id="rpm-installation">
 <h3>RPM Installation<a class="headerlink" href="#rpm-installation" title="Permalink to this headline">¶</a></h3>
 <p>To install with yum do the following:</p>
-<div class="code console highlight-python"><div class="highlight"><pre><span></span><span class="c1"># wget -q -O – https://www.atomicorp.com/installers/atomic | sh</span>
+<div class="code console highlight-default"><div class="highlight"><pre><span></span><span class="c1"># wget -q -O – https://www.atomicorp.com/installers/atomic | sh</span>
 <span class="c1"># yum install ossec-hids ossec-hids-server (or ossec-hids-client for the agent)</span>
 </pre></div>
 </div>
@@ -279,27 +279,27 @@
 <h3>DEB Installation<a class="headerlink" href="#deb-installation" title="Permalink to this headline">¶</a></h3>
 <p>To install with apt-get do the following:</p>
 <p>Step 1. Install the apt-get repository key:</p>
-<div class="code console highlight-python"><div class="highlight"><pre><span></span><span class="c1"># apt-key adv --fetch-keys http://ossec.wazuh.com/repos/apt/conf/ossec-key.gpg.key</span>
+<div class="code console highlight-default"><div class="highlight"><pre><span></span><span class="c1"># apt-key adv --fetch-keys http://ossec.wazuh.com/repos/apt/conf/ossec-key.gpg.key</span>
 </pre></div>
 </div>
 <p>Step 2. Add the repository for Debian, chaging <code class="docutils literal"><span class="pre">wheezy</span></code> by your distribution name (available ones are <code class="docutils literal"><span class="pre">wheezy</span></code>, <code class="docutils literal"><span class="pre">jessie</span></code>, <code class="docutils literal"><span class="pre">strectch</span></code> or <code class="docutils literal"><span class="pre">sid</span></code>):</p>
-<div class="code console highlight-python"><div class="highlight"><pre><span></span><span class="c1"># echo &quot;deb http://ossec.wazuh.com/repos/apt/debian wheezy main&quot; &gt;&gt; /etc/apt/sources.list</span>
+<div class="code console highlight-default"><div class="highlight"><pre><span></span><span class="c1"># echo &quot;deb http://ossec.wazuh.com/repos/apt/debian wheezy main&quot; &gt;&gt; /etc/apt/sources.list</span>
 </pre></div>
 </div>
 <p>Or add the repository for Ubuntu, changing <code class="docutils literal"><span class="pre">precise</span></code> by your distribution name (available ones are <code class="docutils literal"><span class="pre">precise</span></code>, <code class="docutils literal"><span class="pre">trusty</span></code>, <code class="docutils literal"><span class="pre">vivid</span></code> or <code class="docutils literal"><span class="pre">wily</span></code>):</p>
-<div class="code console highlight-python"><div class="highlight"><pre><span></span><span class="c1"># echo &quot;deb http://ossec.wazuh.com/repos/apt/ubuntu precise main&quot; &gt;&gt; /etc/apt/sources.list</span>
+<div class="code console highlight-default"><div class="highlight"><pre><span></span><span class="c1"># echo &quot;deb http://ossec.wazuh.com/repos/apt/ubuntu precise main&quot; &gt;&gt; /etc/apt/sources.list</span>
 </pre></div>
 </div>
 <p>Step 3. Update the repository:</p>
-<div class="code console highlight-python"><div class="highlight"><pre><span></span><span class="c1"># apt-get update</span>
+<div class="code console highlight-default"><div class="highlight"><pre><span></span><span class="c1"># apt-get update</span>
 </pre></div>
 </div>
 <p>Step 4. Install OSSEC HIDS server/manager:</p>
-<div class="code console highlight-python"><div class="highlight"><pre><span></span><span class="c1"># apt-get install ossec-hids</span>
+<div class="code console highlight-default"><div class="highlight"><pre><span></span><span class="c1"># apt-get install ossec-hids</span>
 </pre></div>
 </div>
 <p>Or install OSSEC HIDS agent:</p>
-<div class="code console highlight-python"><div class="highlight"><pre><span></span><span class="c1"># apt-get install ossec-hids-agent</span>
+<div class="code console highlight-default"><div class="highlight"><pre><span></span><span class="c1"># apt-get install ossec-hids-agent</span>
 </pre></div>
 </div>
 </div>
@@ -309,16 +309,16 @@
 <p>Before you install any package from our project, we recommend that you
 verify it using our PGP key. Follow these two steps if you are not used
 to using gpg. You first need to import our public key:</p>
-<div class="code console highlight-python"><div class="highlight"><pre><span></span><span class="n">ossec</span><span class="o">-</span><span class="n">test</span><span class="c1"># wget http://ossec.github.io/files/OSSEC-PGP-KEY.asc</span>
+<div class="code console highlight-default"><div class="highlight"><pre><span></span><span class="n">ossec</span><span class="o">-</span><span class="n">test</span><span class="c1"># wget http://ossec.github.io/files/OSSEC-PGP-KEY.asc</span>
 <span class="n">ossec</span><span class="o">-</span><span class="n">test</span><span class="c1"># gpg –import OSSEC-PGP-KEY.asc</span>
 </pre></div>
 </div>
 <p>And then verify each file against its signature:</p>
-<div class="code console highlight-python"><div class="highlight"><pre><span></span><span class="n">ossec</span><span class="o">-</span><span class="n">test</span><span class="c1"># gpg –verify file.sig file</span>
+<div class="code console highlight-default"><div class="highlight"><pre><span></span><span class="n">ossec</span><span class="o">-</span><span class="n">test</span><span class="c1"># gpg –verify file.sig file</span>
 </pre></div>
 </div>
 <p>You should get the following result:</p>
-<div class="code console highlight-python"><div class="highlight"><pre><span></span>gpg: Signature made Tue 19 Jul 2011 03:13:58 PM BRT using RSA key ID A3901351
+<div class="code console highlight-default"><div class="highlight"><pre><span></span>gpg: Signature made Tue 19 Jul 2011 03:13:58 PM BRT using RSA key ID A3901351
 gpg: Good signature from “Daniel B. Cid ”
 Primary key fingerprint: 6F11 9E06 487A AF17 C84C E48A 456B 17CF A390 1351
 </pre></div>
@@ -392,7 +392,7 @@ is appreciated.</p>
     <p>
         &copy; Copyright 2010-2015, OSSEC Project Team.<br/>
     OSSEC trademark and <b>ossec.net</b> domain owned by <a href="http://www.trendmicro.com" target="_blank">Trend Micro, Inc.</a><br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.6 - 
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4 - 
     Home page graphics courtesy of <a href="https://pixabay.com" target="_blank">pixabay</a>
     </p>
   </div>

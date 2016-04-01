@@ -152,51 +152,51 @@ huh?!) to look at and analyze.  After unzipping the file, I was presented with
 a bunch of files to look through and analyze.  Table 1 lists the files that come
 with KNARK:</p>
 <p>List of files that come with KNARK:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>Makefile
-apache.c
-Apache.cgi
- backup
-Bj.c
- caine
-Clearmail
- dmesg
-Dmsg
- ered
-Exec
- fix
-Fixtext
- ftpt
-Gib
- gib.c
-Hds0
- hidef
-Inc.h
- init
-Lesa
- login
-Lpdx
- lpdx.c
-Make-ssh-host-key
- make-ssh-known-hosts
-Module
- nethide
-Pgr
- removeme
-Rexec
- rkhelp
- sl2
-Sl2.c
- snap
-Ssh_config
- sshd_config
-Ssht
- statdx2
-Sysmod.o
- sz
-T666
- unhidef
-Wugod
- zap
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Makefile</span>
+<span class="n">apache</span><span class="o">.</span><span class="n">c</span>
+<span class="n">Apache</span><span class="o">.</span><span class="n">cgi</span>
+ <span class="n">backup</span>
+<span class="n">Bj</span><span class="o">.</span><span class="n">c</span>
+ <span class="n">caine</span>
+<span class="n">Clearmail</span>
+ <span class="n">dmesg</span>
+<span class="n">Dmsg</span>
+ <span class="n">ered</span>
+<span class="n">Exec</span>
+ <span class="n">fix</span>
+<span class="n">Fixtext</span>
+ <span class="n">ftpt</span>
+<span class="n">Gib</span>
+ <span class="n">gib</span><span class="o">.</span><span class="n">c</span>
+<span class="n">Hds0</span>
+ <span class="n">hidef</span>
+<span class="n">Inc</span><span class="o">.</span><span class="n">h</span>
+ <span class="n">init</span>
+<span class="n">Lesa</span>
+ <span class="n">login</span>
+<span class="n">Lpdx</span>
+ <span class="n">lpdx</span><span class="o">.</span><span class="n">c</span>
+<span class="n">Make</span><span class="o">-</span><span class="n">ssh</span><span class="o">-</span><span class="n">host</span><span class="o">-</span><span class="n">key</span>
+ <span class="n">make</span><span class="o">-</span><span class="n">ssh</span><span class="o">-</span><span class="n">known</span><span class="o">-</span><span class="n">hosts</span>
+<span class="n">Module</span>
+ <span class="n">nethide</span>
+<span class="n">Pgr</span>
+ <span class="n">removeme</span>
+<span class="n">Rexec</span>
+ <span class="n">rkhelp</span>
+ <span class="n">sl2</span>
+<span class="n">Sl2</span><span class="o">.</span><span class="n">c</span>
+ <span class="n">snap</span>
+<span class="n">Ssh_config</span>
+ <span class="n">sshd_config</span>
+<span class="n">Ssht</span>
+ <span class="n">statdx2</span>
+<span class="n">Sysmod</span><span class="o">.</span><span class="n">o</span>
+ <span class="n">sz</span>
+<span class="n">T666</span>
+ <span class="n">unhidef</span>
+<span class="n">Wugod</span>
+ <span class="n">zap</span>
 </pre></div>
 </div>
 <p>After looking through some of the files, I decided to install the rootkit. Knark
@@ -211,23 +211,23 @@ machine to fail at boot up.</li>
 </ol>
 <p>The first thing I did after installation is pull out NMAP and run
 <code class="docutils literal"><span class="pre">nmap</span> <span class="pre">-sS</span> <span class="pre">-p</span> <span class="pre">1-65535</span> <span class="pre">192.168.0.20</span></code> and waited to see what NMAP had too say.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>Starting nmap V. 2.53 by fyodor@insecure.org ( www.insecure.org/nmap/ )
-Interesting ports on sec-linux.lab.sec (192.168.0.20):
-(The 65523 ports scanned but not shown below are in state: closed)
-Port       State       Service
-21/tcp     open        ftp
-79/tcp     open        finger
-111/tcp    open        sunrpc
-113/tcp    open        auth
-512/tcp    open        exec
-513/tcp    open        login
-514/tcp    open        shell
-515/tcp    open        printer
-3001/tcp   open        nessusd
-18667/tcp  open        unknown
-31221/tcp  open        unknown
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Starting</span> <span class="n">nmap</span> <span class="n">V</span><span class="o">.</span> <span class="mf">2.53</span> <span class="n">by</span> <span class="n">fyodor</span><span class="nd">@insecure</span><span class="o">.</span><span class="n">org</span> <span class="p">(</span> <span class="n">www</span><span class="o">.</span><span class="n">insecure</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">nmap</span><span class="o">/</span> <span class="p">)</span>
+<span class="n">Interesting</span> <span class="n">ports</span> <span class="n">on</span> <span class="n">sec</span><span class="o">-</span><span class="n">linux</span><span class="o">.</span><span class="n">lab</span><span class="o">.</span><span class="n">sec</span> <span class="p">(</span><span class="mf">192.168</span><span class="o">.</span><span class="mf">0.20</span><span class="p">):</span>
+<span class="p">(</span><span class="n">The</span> <span class="mi">65523</span> <span class="n">ports</span> <span class="n">scanned</span> <span class="n">but</span> <span class="ow">not</span> <span class="n">shown</span> <span class="n">below</span> <span class="n">are</span> <span class="ow">in</span> <span class="n">state</span><span class="p">:</span> <span class="n">closed</span><span class="p">)</span>
+<span class="n">Port</span>       <span class="n">State</span>       <span class="n">Service</span>
+<span class="mi">21</span><span class="o">/</span><span class="n">tcp</span>     <span class="nb">open</span>        <span class="n">ftp</span>
+<span class="mi">79</span><span class="o">/</span><span class="n">tcp</span>     <span class="nb">open</span>        <span class="n">finger</span>
+<span class="mi">111</span><span class="o">/</span><span class="n">tcp</span>    <span class="nb">open</span>        <span class="n">sunrpc</span>
+<span class="mi">113</span><span class="o">/</span><span class="n">tcp</span>    <span class="nb">open</span>        <span class="n">auth</span>
+<span class="mi">512</span><span class="o">/</span><span class="n">tcp</span>    <span class="nb">open</span>        <span class="n">exec</span>
+<span class="mi">513</span><span class="o">/</span><span class="n">tcp</span>    <span class="nb">open</span>        <span class="n">login</span>
+<span class="mi">514</span><span class="o">/</span><span class="n">tcp</span>    <span class="nb">open</span>        <span class="n">shell</span>
+<span class="mi">515</span><span class="o">/</span><span class="n">tcp</span>    <span class="nb">open</span>        <span class="n">printer</span>
+<span class="mi">3001</span><span class="o">/</span><span class="n">tcp</span>   <span class="nb">open</span>        <span class="n">nessusd</span>
+<span class="mi">18667</span><span class="o">/</span><span class="n">tcp</span>  <span class="nb">open</span>        <span class="n">unknown</span>
+<span class="mi">31221</span><span class="o">/</span><span class="n">tcp</span>  <span class="nb">open</span>        <span class="n">unknown</span>
 
-Nmap run completed -- 1 IP address (1 host up) scanned in 33 seconds
+<span class="n">Nmap</span> <span class="n">run</span> <span class="n">completed</span> <span class="o">--</span> <span class="mi">1</span> <span class="n">IP</span> <span class="n">address</span> <span class="p">(</span><span class="mi">1</span> <span class="n">host</span> <span class="n">up</span><span class="p">)</span> <span class="n">scanned</span> <span class="ow">in</span> <span class="mi">33</span> <span class="n">seconds</span>
 </pre></div>
 </div>
 <p>Figure 1. NMAP results</p>
@@ -237,36 +237,36 @@ Second, we see that this box is lucky it hasn&#8217;t been rooted at least a doz
 <p>The next step was to run netstat.  Why?  Well, we want to see if netstat
 will call out the same ports as NMAP.  If netstat does not call out the same
 ports then we check the binary for netstat.:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>Active Internet connections (servers and established)
-Proto Recv-Q Send-Q Local Address           Foreign Address         State
-tcp        0      0 0.0.0.0:79              0.0.0.0:*               LISTEN
-tcp        0      0 0.0.0.0:512             0.0.0.0:*               LISTEN
-tcp        0      0 0.0.0.0:513             0.0.0.0:*               LISTEN
-tcp        0      0 0.0.0.0:514             0.0.0.0:*               LISTEN
-tcp        0      0 0.0.0.0:21              0.0.0.0:*               LISTEN
-tcp        0      0 0.0.0.0:3001            0.0.0.0:*               LISTEN
-tcp        0      0 0.0.0.0:515             0.0.0.0:*               LISTEN
-tcp        0      0 0.0.0.0:113             0.0.0.0:*               LISTEN
-tcp        0      0 0.0.0.0:111             0.0.0.0:*               LISTEN
-udp        0      0 0.0.0.0:518             0.0.0.0:*
-udp        0      0 0.0.0.0:517             0.0.0.0:*
-udp        0      0 0.0.0.0:512             0.0.0.0:*
-udp        0      0 0.0.0.0:111             0.0.0.0:*
-raw        0      0 0.0.0.0:1               0.0.0.0:*
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Active</span> <span class="n">Internet</span> <span class="n">connections</span> <span class="p">(</span><span class="n">servers</span> <span class="ow">and</span> <span class="n">established</span><span class="p">)</span>
+<span class="n">Proto</span> <span class="n">Recv</span><span class="o">-</span><span class="n">Q</span> <span class="n">Send</span><span class="o">-</span><span class="n">Q</span> <span class="n">Local</span> <span class="n">Address</span>           <span class="n">Foreign</span> <span class="n">Address</span>         <span class="n">State</span>
+<span class="n">tcp</span>        <span class="mi">0</span>      <span class="mi">0</span> <span class="mf">0.0</span><span class="o">.</span><span class="mf">0.0</span><span class="p">:</span><span class="mi">79</span>              <span class="mf">0.0</span><span class="o">.</span><span class="mf">0.0</span><span class="p">:</span><span class="o">*</span>               <span class="n">LISTEN</span>
+<span class="n">tcp</span>        <span class="mi">0</span>      <span class="mi">0</span> <span class="mf">0.0</span><span class="o">.</span><span class="mf">0.0</span><span class="p">:</span><span class="mi">512</span>             <span class="mf">0.0</span><span class="o">.</span><span class="mf">0.0</span><span class="p">:</span><span class="o">*</span>               <span class="n">LISTEN</span>
+<span class="n">tcp</span>        <span class="mi">0</span>      <span class="mi">0</span> <span class="mf">0.0</span><span class="o">.</span><span class="mf">0.0</span><span class="p">:</span><span class="mi">513</span>             <span class="mf">0.0</span><span class="o">.</span><span class="mf">0.0</span><span class="p">:</span><span class="o">*</span>               <span class="n">LISTEN</span>
+<span class="n">tcp</span>        <span class="mi">0</span>      <span class="mi">0</span> <span class="mf">0.0</span><span class="o">.</span><span class="mf">0.0</span><span class="p">:</span><span class="mi">514</span>             <span class="mf">0.0</span><span class="o">.</span><span class="mf">0.0</span><span class="p">:</span><span class="o">*</span>               <span class="n">LISTEN</span>
+<span class="n">tcp</span>        <span class="mi">0</span>      <span class="mi">0</span> <span class="mf">0.0</span><span class="o">.</span><span class="mf">0.0</span><span class="p">:</span><span class="mi">21</span>              <span class="mf">0.0</span><span class="o">.</span><span class="mf">0.0</span><span class="p">:</span><span class="o">*</span>               <span class="n">LISTEN</span>
+<span class="n">tcp</span>        <span class="mi">0</span>      <span class="mi">0</span> <span class="mf">0.0</span><span class="o">.</span><span class="mf">0.0</span><span class="p">:</span><span class="mi">3001</span>            <span class="mf">0.0</span><span class="o">.</span><span class="mf">0.0</span><span class="p">:</span><span class="o">*</span>               <span class="n">LISTEN</span>
+<span class="n">tcp</span>        <span class="mi">0</span>      <span class="mi">0</span> <span class="mf">0.0</span><span class="o">.</span><span class="mf">0.0</span><span class="p">:</span><span class="mi">515</span>             <span class="mf">0.0</span><span class="o">.</span><span class="mf">0.0</span><span class="p">:</span><span class="o">*</span>               <span class="n">LISTEN</span>
+<span class="n">tcp</span>        <span class="mi">0</span>      <span class="mi">0</span> <span class="mf">0.0</span><span class="o">.</span><span class="mf">0.0</span><span class="p">:</span><span class="mi">113</span>             <span class="mf">0.0</span><span class="o">.</span><span class="mf">0.0</span><span class="p">:</span><span class="o">*</span>               <span class="n">LISTEN</span>
+<span class="n">tcp</span>        <span class="mi">0</span>      <span class="mi">0</span> <span class="mf">0.0</span><span class="o">.</span><span class="mf">0.0</span><span class="p">:</span><span class="mi">111</span>             <span class="mf">0.0</span><span class="o">.</span><span class="mf">0.0</span><span class="p">:</span><span class="o">*</span>               <span class="n">LISTEN</span>
+<span class="n">udp</span>        <span class="mi">0</span>      <span class="mi">0</span> <span class="mf">0.0</span><span class="o">.</span><span class="mf">0.0</span><span class="p">:</span><span class="mi">518</span>             <span class="mf">0.0</span><span class="o">.</span><span class="mf">0.0</span><span class="p">:</span><span class="o">*</span>
+<span class="n">udp</span>        <span class="mi">0</span>      <span class="mi">0</span> <span class="mf">0.0</span><span class="o">.</span><span class="mf">0.0</span><span class="p">:</span><span class="mi">517</span>             <span class="mf">0.0</span><span class="o">.</span><span class="mf">0.0</span><span class="p">:</span><span class="o">*</span>
+<span class="n">udp</span>        <span class="mi">0</span>      <span class="mi">0</span> <span class="mf">0.0</span><span class="o">.</span><span class="mf">0.0</span><span class="p">:</span><span class="mi">512</span>             <span class="mf">0.0</span><span class="o">.</span><span class="mf">0.0</span><span class="p">:</span><span class="o">*</span>
+<span class="n">udp</span>        <span class="mi">0</span>      <span class="mi">0</span> <span class="mf">0.0</span><span class="o">.</span><span class="mf">0.0</span><span class="p">:</span><span class="mi">111</span>             <span class="mf">0.0</span><span class="o">.</span><span class="mf">0.0</span><span class="p">:</span><span class="o">*</span>
+<span class="n">raw</span>        <span class="mi">0</span>      <span class="mi">0</span> <span class="mf">0.0</span><span class="o">.</span><span class="mf">0.0</span><span class="p">:</span><span class="mi">1</span>               <span class="mf">0.0</span><span class="o">.</span><span class="mf">0.0</span><span class="p">:</span><span class="o">*</span>
 
-Active UNIX domain sockets (servers and established)
-Proto RefCnt Flags       Type       State         I-Node Path
-unix  0      [ ACC ]     STREAM     LISTENING     468    /dev/printer
-unix  6      [ ]         DGRAM                    371    /dev/log
-unix  0      [ ACC ]     STREAM     LISTENING     503    /dev/gpmctl
-unix  0      [ ACC ]     STREAM     LISTENING     2126   /tmp/.font-unix/fs-1
-unix  0      [ ]         STREAM     CONNECTED     173    @00000015
-unix  0      [ ]         DGRAM                    2711
-unix  0      [ ]         DGRAM                    2161
-unix  0      [ ]         DGRAM                    2130
-unix  0      [ ]         DGRAM                    462
-unix  0      [ ]         DGRAM                    394
-unix  0      [ ]         DGRAM                    383
+<span class="n">Active</span> <span class="n">UNIX</span> <span class="n">domain</span> <span class="n">sockets</span> <span class="p">(</span><span class="n">servers</span> <span class="ow">and</span> <span class="n">established</span><span class="p">)</span>
+<span class="n">Proto</span> <span class="n">RefCnt</span> <span class="n">Flags</span>       <span class="n">Type</span>       <span class="n">State</span>         <span class="n">I</span><span class="o">-</span><span class="n">Node</span> <span class="n">Path</span>
+<span class="n">unix</span>  <span class="mi">0</span>      <span class="p">[</span> <span class="n">ACC</span> <span class="p">]</span>     <span class="n">STREAM</span>     <span class="n">LISTENING</span>     <span class="mi">468</span>    <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">printer</span>
+<span class="n">unix</span>  <span class="mi">6</span>      <span class="p">[</span> <span class="p">]</span>         <span class="n">DGRAM</span>                    <span class="mi">371</span>    <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">log</span>
+<span class="n">unix</span>  <span class="mi">0</span>      <span class="p">[</span> <span class="n">ACC</span> <span class="p">]</span>     <span class="n">STREAM</span>     <span class="n">LISTENING</span>     <span class="mi">503</span>    <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">gpmctl</span>
+<span class="n">unix</span>  <span class="mi">0</span>      <span class="p">[</span> <span class="n">ACC</span> <span class="p">]</span>     <span class="n">STREAM</span>     <span class="n">LISTENING</span>     <span class="mi">2126</span>   <span class="o">/</span><span class="n">tmp</span><span class="o">/.</span><span class="n">font</span><span class="o">-</span><span class="n">unix</span><span class="o">/</span><span class="n">fs</span><span class="o">-</span><span class="mi">1</span>
+<span class="n">unix</span>  <span class="mi">0</span>      <span class="p">[</span> <span class="p">]</span>         <span class="n">STREAM</span>     <span class="n">CONNECTED</span>     <span class="mi">173</span>    <span class="nd">@00000015</span>
+<span class="n">unix</span>  <span class="mi">0</span>      <span class="p">[</span> <span class="p">]</span>         <span class="n">DGRAM</span>                    <span class="mi">2711</span>
+<span class="n">unix</span>  <span class="mi">0</span>      <span class="p">[</span> <span class="p">]</span>         <span class="n">DGRAM</span>                    <span class="mi">2161</span>
+<span class="n">unix</span>  <span class="mi">0</span>      <span class="p">[</span> <span class="p">]</span>         <span class="n">DGRAM</span>                    <span class="mi">2130</span>
+<span class="n">unix</span>  <span class="mi">0</span>      <span class="p">[</span> <span class="p">]</span>         <span class="n">DGRAM</span>                    <span class="mi">462</span>
+<span class="n">unix</span>  <span class="mi">0</span>      <span class="p">[</span> <span class="p">]</span>         <span class="n">DGRAM</span>                    <span class="mi">394</span>
+<span class="n">unix</span>  <span class="mi">0</span>      <span class="p">[</span> <span class="p">]</span>         <span class="n">DGRAM</span>                    <span class="mi">383</span>
 </pre></div>
 </div>
 <p>Figure 2: Netstat results</p>
@@ -295,9 +295,9 @@ into Linux is not that difficult, in fact <code class="docutils literal"><span c
 <li><p class="first"><em>Lpdx</em> - This is used to exploit the LPR service of Red Hat boxes. Here
 is what a IDS might see:</p>
 <p>Figure 3: Lpr Signature:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>09:06:19.991789 &gt; 192.168.1.13.2894 &gt; 192.168.0.40.printer: S 4221747912:4221747912(0) win 32120 &lt;mss 1460,sackOK,timestamp 4058996 0,nop,wscale 0&gt; (DF) (ttl 64, id 11263)
-09:06:19.993434 &lt; 192.168.1.13.printer &gt; 192.168.0.40.2894: S 397480959:397480959(0) ack 4221747913 win 32120 &lt;mss 1460,sackOK,timestamp 393475 4058996,nop,wscale 0&gt; (DF) (ttl 64, id 3278)
-09:06:19.993514 &gt; 192.168.1.13.2894 &gt; 192.168.0.40.printer: . 1:1(0) ack 1 win 32120 &lt;nop,nop,timestamp 4058996 393475&gt; (DF) (ttl 64, id 11264)
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="mi">09</span><span class="p">:</span><span class="mi">06</span><span class="p">:</span><span class="mf">19.991789</span> <span class="o">&gt;</span> <span class="mf">192.168</span><span class="o">.</span><span class="mf">1.13</span><span class="o">.</span><span class="mi">2894</span> <span class="o">&gt;</span> <span class="mf">192.168</span><span class="o">.</span><span class="mf">0.40</span><span class="o">.</span><span class="n">printer</span><span class="p">:</span> <span class="n">S</span> <span class="mi">4221747912</span><span class="p">:</span><span class="mi">4221747912</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="n">win</span> <span class="mi">32120</span> <span class="o">&lt;</span><span class="n">mss</span> <span class="mi">1460</span><span class="p">,</span><span class="n">sackOK</span><span class="p">,</span><span class="n">timestamp</span> <span class="mi">4058996</span> <span class="mi">0</span><span class="p">,</span><span class="n">nop</span><span class="p">,</span><span class="n">wscale</span> <span class="mi">0</span><span class="o">&gt;</span> <span class="p">(</span><span class="n">DF</span><span class="p">)</span> <span class="p">(</span><span class="n">ttl</span> <span class="mi">64</span><span class="p">,</span> <span class="nb">id</span> <span class="mi">11263</span><span class="p">)</span>
+<span class="mi">09</span><span class="p">:</span><span class="mi">06</span><span class="p">:</span><span class="mf">19.993434</span> <span class="o">&lt;</span> <span class="mf">192.168</span><span class="o">.</span><span class="mf">1.13</span><span class="o">.</span><span class="n">printer</span> <span class="o">&gt;</span> <span class="mf">192.168</span><span class="o">.</span><span class="mf">0.40</span><span class="o">.</span><span class="mi">2894</span><span class="p">:</span> <span class="n">S</span> <span class="mi">397480959</span><span class="p">:</span><span class="mi">397480959</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="n">ack</span> <span class="mi">4221747913</span> <span class="n">win</span> <span class="mi">32120</span> <span class="o">&lt;</span><span class="n">mss</span> <span class="mi">1460</span><span class="p">,</span><span class="n">sackOK</span><span class="p">,</span><span class="n">timestamp</span> <span class="mi">393475</span> <span class="mi">4058996</span><span class="p">,</span><span class="n">nop</span><span class="p">,</span><span class="n">wscale</span> <span class="mi">0</span><span class="o">&gt;</span> <span class="p">(</span><span class="n">DF</span><span class="p">)</span> <span class="p">(</span><span class="n">ttl</span> <span class="mi">64</span><span class="p">,</span> <span class="nb">id</span> <span class="mi">3278</span><span class="p">)</span>
+<span class="mi">09</span><span class="p">:</span><span class="mi">06</span><span class="p">:</span><span class="mf">19.993514</span> <span class="o">&gt;</span> <span class="mf">192.168</span><span class="o">.</span><span class="mf">1.13</span><span class="o">.</span><span class="mi">2894</span> <span class="o">&gt;</span> <span class="mf">192.168</span><span class="o">.</span><span class="mf">0.40</span><span class="o">.</span><span class="n">printer</span><span class="p">:</span> <span class="o">.</span> <span class="mi">1</span><span class="p">:</span><span class="mi">1</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="n">ack</span> <span class="mi">1</span> <span class="n">win</span> <span class="mi">32120</span> <span class="o">&lt;</span><span class="n">nop</span><span class="p">,</span><span class="n">nop</span><span class="p">,</span><span class="n">timestamp</span> <span class="mi">4058996</span> <span class="mi">393475</span><span class="o">&gt;</span> <span class="p">(</span><span class="n">DF</span><span class="p">)</span> <span class="p">(</span><span class="n">ttl</span> <span class="mi">64</span><span class="p">,</span> <span class="nb">id</span> <span class="mi">11264</span><span class="p">)</span>
 </pre></div>
 </div>
 </li>
@@ -513,7 +513,7 @@ for FREEBSD, Linux (RH 6.2 and SuSe 6.3&amp;6.4).</p>
     <p>
         &copy; Copyright 2010-2015, OSSEC Project Team.<br/>
     OSSEC trademark and <b>ossec.net</b> domain owned by <a href="http://www.trendmicro.com" target="_blank">Trend Micro, Inc.</a><br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.6 - 
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4 - 
     Home page graphics courtesy of <a href="https://pixabay.com" target="_blank">pixabay</a>
     </p>
   </div>

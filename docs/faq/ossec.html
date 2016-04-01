@@ -167,7 +167,7 @@ If set all log messages sent to the manager are stored in <code class="docutils 
 <h2><a class="toc-backref" href="#id3">Where can I view the logs sent to an OSSEC manager (or on a local install)?</a><a class="headerlink" href="#where-can-i-view-the-logs-sent-to-an-ossec-manager-or-on-a-local-install" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p>OSSEC does not store the logs sent to it by default. If a log does not trigger an alert it is discarded, and logs that do trigger alerts are stored with the alerts in <code class="docutils literal"><span class="pre">/var/ossec/logs/alerts</span></code>.</p>
-<p>The <code class="docutils literal"><span class="pre">&lt;log-all&gt;</span></code> option can be added to the <code class="docutils literal"><span class="pre">&lt;global&gt;</span></code> section (see: <a class="reference internal" href="../syntax/head_ossec_config.global.html#ossec-config-global"><span>ossec.conf: Global options</span></a>) of the manager&#8217;s ossec.conf. The manager&#8217;s OSSEC processes should be restarted.
+<p>The <code class="docutils literal"><span class="pre">&lt;log-all&gt;</span></code> option can be added to the <code class="docutils literal"><span class="pre">&lt;global&gt;</span></code> section (see: <a class="reference internal" href="../syntax/head_ossec_config.global.html#ossec-config-global"><span class="std std-ref">ossec.conf: Global options</span></a>) of the manager&#8217;s ossec.conf. The manager&#8217;s OSSEC processes should be restarted.
 The raw logs will then be saved to files, organized by date, in <code class="docutils literal"><span class="pre">/var/ossec/logs/archives</span></code>.</p>
 <p>The headers attached to these log messages are in the format of <code class="docutils literal"><span class="pre">&quot;YYYY</span> <span class="pre">Month</span> <span class="pre">dd</span> <span class="pre">HH:MM:ss</span> <span class="pre">agent_name-&gt;/path/to/log/file</span> <span class="pre">&quot;</span></code>.</p>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">2011 Aug 04 00:00:01 server-&gt;/var/log/local7 Aug  4 00:00:26 server named[29909]: client 192.168.1.7#39323: query: fake.example.net IN AAAA +</span>
@@ -231,7 +231,7 @@ Agents do not send alerts to the manager, they only send the raw logs.</div></bl
     <p>
         &copy; Copyright 2010-2015, OSSEC Project Team.<br/>
     OSSEC trademark and <b>ossec.net</b> domain owned by <a href="http://www.trendmicro.com" target="_blank">Trend Micro, Inc.</a><br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.6 - 
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4 - 
     Home page graphics courtesy of <a href="https://pixabay.com" target="_blank">pixabay</a>
     </p>
   </div>

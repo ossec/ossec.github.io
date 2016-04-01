@@ -338,20 +338,20 @@ all other log messages.</li>
 <p>Using this format OSSEC can store the information about a file and then in the future run
 compare that they are the same. If for some reason they are not the same an alert will be
 generated. Here is an example of a password change on a linux system:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>OSSEC HIDS Notification.
-2009 Sep 21 15:19:00
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">OSSEC</span> <span class="n">HIDS</span> <span class="n">Notification</span><span class="o">.</span>
+<span class="mi">2009</span> <span class="n">Sep</span> <span class="mi">21</span> <span class="mi">15</span><span class="p">:</span><span class="mi">19</span><span class="p">:</span><span class="mi">00</span>
 
-Received From: (ssh_integrity_check_linux) root@172.17.20.20-&gt;syscheck
-Rule: 550 fired (level 7) -&gt; &quot;Integrity checksum changed.&quot;
-Portion of the log(s):
+<span class="n">Received</span> <span class="n">From</span><span class="p">:</span> <span class="p">(</span><span class="n">ssh_integrity_check_linux</span><span class="p">)</span> <span class="n">root</span><span class="nd">@172</span><span class="o">.</span><span class="mf">17.20</span><span class="o">.</span><span class="mi">20</span><span class="o">-&gt;</span><span class="n">syscheck</span>
+<span class="n">Rule</span><span class="p">:</span> <span class="mi">550</span> <span class="n">fired</span> <span class="p">(</span><span class="n">level</span> <span class="mi">7</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;Integrity checksum changed.&quot;</span>
+<span class="n">Portion</span> <span class="n">of</span> <span class="n">the</span> <span class="n">log</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
 
-Integrity checksum changed for: &#39;/etc/shadow&#39;
-Old md5sum was: &#39;0d92e12c92f3edcf9d8876ea57c5f677&#39;
-New md5sum is : &#39;2bd51b61dea17c5682fb2c0cf4f92c63&#39;
-Old sha1sum was: &#39;2270c03a920ef8dd50e11cefdef046a8660f7a29&#39;
-New sha1sum is : &#39;d9518ea9022b10d07f81925c6d7f2abb4364b548&#39;
+<span class="n">Integrity</span> <span class="n">checksum</span> <span class="n">changed</span> <span class="k">for</span><span class="p">:</span> <span class="s1">&#39;/etc/shadow&#39;</span>
+<span class="n">Old</span> <span class="n">md5sum</span> <span class="n">was</span><span class="p">:</span> <span class="s1">&#39;0d92e12c92f3edcf9d8876ea57c5f677&#39;</span>
+<span class="n">New</span> <span class="n">md5sum</span> <span class="ow">is</span> <span class="p">:</span> <span class="s1">&#39;2bd51b61dea17c5682fb2c0cf4f92c63&#39;</span>
+<span class="n">Old</span> <span class="n">sha1sum</span> <span class="n">was</span><span class="p">:</span> <span class="s1">&#39;2270c03a920ef8dd50e11cefdef046a8660f7a29&#39;</span>
+<span class="n">New</span> <span class="n">sha1sum</span> <span class="ow">is</span> <span class="p">:</span> <span class="s1">&#39;d9518ea9022b10d07f81925c6d7f2abb4364b548&#39;</span>
 
---END OF NOTIFICATION
+<span class="o">--</span><span class="n">END</span> <span class="n">OF</span> <span class="n">NOTIFICATION</span>
 </pre></div>
 </div>
 </div>
@@ -738,7 +738,7 @@ script as we do not make use of the $arg variable.</p>
     <p>
         &copy; Copyright 2010-2015, OSSEC Project Team.<br/>
     OSSEC trademark and <b>ossec.net</b> domain owned by <a href="http://www.trendmicro.com" target="_blank">Trend Micro, Inc.</a><br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.6 - 
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4 - 
     Home page graphics courtesy of <a href="https://pixabay.com" target="_blank">pixabay</a>
     </p>
   </div>

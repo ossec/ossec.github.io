@@ -139,13 +139,13 @@ following configuration (in /var/ossec/etc/ossec.conf):</p>
 </div>
 <p>Since we already have a sample rule for df -h included with OSSEC you would see
 the following when any partition reached 100%:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>** Alert 1257451341.28290: mail - ossec,low_diskspace,
-2009 Nov 05 16:02:21 (home-ubuntu) 192.168.0.0-&gt;df -h
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">**</span> <span class="n">Alert</span> <span class="mf">1257451341.28290</span><span class="p">:</span> <span class="n">mail</span> <span class="o">-</span> <span class="n">ossec</span><span class="p">,</span><span class="n">low_diskspace</span><span class="p">,</span>
+<span class="mi">2009</span> <span class="n">Nov</span> <span class="mi">05</span> <span class="mi">16</span><span class="p">:</span><span class="mi">02</span><span class="p">:</span><span class="mi">21</span> <span class="p">(</span><span class="n">home</span><span class="o">-</span><span class="n">ubuntu</span><span class="p">)</span> <span class="mf">192.168</span><span class="o">.</span><span class="mf">0.0</span><span class="o">-&gt;</span><span class="n">df</span> <span class="o">-</span><span class="n">h</span>
 
-Rule: 531 (level 7) -&gt; &quot;Partition usage reached 100% (disk space monitor).&quot;
-Src IP: (none)
-User: (none)
-ossec: output: &#39;df -h&#39;: /dev/sdb1 24G 12G 11G 100% /var/backup
+<span class="n">Rule</span><span class="p">:</span> <span class="mi">531</span> <span class="p">(</span><span class="n">level</span> <span class="mi">7</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;Partition usage reached 100% (disk space monitor).&quot;</span>
+<span class="n">Src</span> <span class="n">IP</span><span class="p">:</span> <span class="p">(</span><span class="n">none</span><span class="p">)</span>
+<span class="n">User</span><span class="p">:</span> <span class="p">(</span><span class="n">none</span><span class="p">)</span>
+<span class="n">ossec</span><span class="p">:</span> <span class="n">output</span><span class="p">:</span> <span class="s1">&#39;df -h&#39;</span><span class="p">:</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">sdb1</span> <span class="mi">24</span><span class="n">G</span> <span class="mi">12</span><span class="n">G</span> <span class="mi">11</span><span class="n">G</span> <span class="mi">100</span><span class="o">%</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">backup</span>
 </pre></div>
 </div>
 </div>
@@ -202,21 +202,21 @@ event, it will compare against what we have store and only alert if the output
 changes.</p>
 <p>In our example, after configuring OSSEC, I started netcat to listen on port
 23456 and that’s the alert I got:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>OSSEC HIDS Notification.
-2010 Mar 11 19:56:30
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">OSSEC</span> <span class="n">HIDS</span> <span class="n">Notification</span><span class="o">.</span>
+<span class="mi">2010</span> <span class="n">Mar</span> <span class="mi">11</span> <span class="mi">19</span><span class="p">:</span><span class="mi">56</span><span class="p">:</span><span class="mi">30</span>
 
-Received From: XYZ-&gt;netstat -tan |grep LISTEN|grep -v 127.0.0.1
-Rule: 140123 fired (level 7) -&gt; &quot;Listened ports have changed.&quot;
-Portion of the log(s):
+<span class="n">Received</span> <span class="n">From</span><span class="p">:</span> <span class="n">XYZ</span><span class="o">-&gt;</span><span class="n">netstat</span> <span class="o">-</span><span class="n">tan</span> <span class="o">|</span><span class="n">grep</span> <span class="n">LISTEN</span><span class="o">|</span><span class="n">grep</span> <span class="o">-</span><span class="n">v</span> <span class="mf">127.0</span><span class="o">.</span><span class="mf">0.1</span>
+<span class="n">Rule</span><span class="p">:</span> <span class="mi">140123</span> <span class="n">fired</span> <span class="p">(</span><span class="n">level</span> <span class="mi">7</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;Listened ports have changed.&quot;</span>
+<span class="n">Portion</span> <span class="n">of</span> <span class="n">the</span> <span class="n">log</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
 
-ossec: output: &#39;netstat -tan |grep LISTEN|grep -v 127.0.0.1&#39;:
-tcp4       0      0 *.23456           *.*               LISTEN
-tcp4       0      0 *.3306            *.*               LISTEN
-tcp4       0      0 *.25              *.*               LISTEN
-Previous output:
-ossec: output: &#39;netstat -tan |grep LISTEN|grep -v 127.0.0.1&#39;:
-tcp4       0      0 *.3306            *.*               LISTEN
-tcp4       0      0 *.25              *.*               LISTEN
+<span class="n">ossec</span><span class="p">:</span> <span class="n">output</span><span class="p">:</span> <span class="s1">&#39;netstat -tan |grep LISTEN|grep -v 127.0.0.1&#39;</span><span class="p">:</span>
+<span class="n">tcp4</span>       <span class="mi">0</span>      <span class="mi">0</span> <span class="o">*.</span><span class="mi">23456</span>           <span class="o">*.*</span>               <span class="n">LISTEN</span>
+<span class="n">tcp4</span>       <span class="mi">0</span>      <span class="mi">0</span> <span class="o">*.</span><span class="mi">3306</span>            <span class="o">*.*</span>               <span class="n">LISTEN</span>
+<span class="n">tcp4</span>       <span class="mi">0</span>      <span class="mi">0</span> <span class="o">*.</span><span class="mi">25</span>              <span class="o">*.*</span>               <span class="n">LISTEN</span>
+<span class="n">Previous</span> <span class="n">output</span><span class="p">:</span>
+<span class="n">ossec</span><span class="p">:</span> <span class="n">output</span><span class="p">:</span> <span class="s1">&#39;netstat -tan |grep LISTEN|grep -v 127.0.0.1&#39;</span><span class="p">:</span>
+<span class="n">tcp4</span>       <span class="mi">0</span>      <span class="mi">0</span> <span class="o">*.</span><span class="mi">3306</span>            <span class="o">*.*</span>               <span class="n">LISTEN</span>
+<span class="n">tcp4</span>       <span class="mi">0</span>      <span class="mi">0</span> <span class="o">*.</span><span class="mi">25</span>              <span class="o">*.*</span>               <span class="n">LISTEN</span>
 </pre></div>
 </div>
 </div>
@@ -247,7 +247,7 @@ registry entry using the reg command:</p>
 <p>Now after a few minutes you will see a directory at
 <code class="docutils literal"><span class="pre">/var/ossec/queue/diff/[agent_name]/[rule_id]</span></code> with the current snapshot of this
 command. Once someone adds a new USB device you will get this alert:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>** Alert 1268687754.35062: mail  - local,syslog,
+<div class="highlight-default"><div class="highlight"><pre><span></span>** Alert 1268687754.35062: mail  - local,syslog,
 2010 Mar 15 18:15:54 (xx-netbook) any-&gt;reg QUERY HKLMSYSTEMCurrentControlSetEnumUSBSTOR
 Rule: 140125 (level 7) -&gt; &#39;New USB device connected&#39;
 Src IP: (none)
@@ -300,7 +300,7 @@ HKEY_LOCAL_MACHINESYSTEMCurrentControlSetEnumUSBSTORDisk&amp;Ven_USB_2.0&amp;Pro
     <p>
         &copy; Copyright 2010-2015, OSSEC Project Team.<br/>
     OSSEC trademark and <b>ossec.net</b> domain owned by <a href="http://www.trendmicro.com" target="_blank">Trend Micro, Inc.</a><br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.6 - 
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4 - 
     Home page graphics courtesy of <a href="https://pixabay.com" target="_blank">pixabay</a>
     </p>
   </div>

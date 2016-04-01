@@ -199,9 +199,9 @@ Using the following syntax:</p>
 </div>
 <div class="section" id="commands">
 <h3>Commands<a class="headerlink" href="#commands" title="Permalink to this headline">¶</a></h3>
-<p>CDB files must be compiled before they can be used.  <a class="reference internal" href="../../programs/ossec-makelists.html#ossec-makelists"><span>ossec-makelists</span></a> is used
+<p>CDB files must be compiled before they can be used.  <a class="reference internal" href="../../programs/ossec-makelists.html#ossec-makelists"><span class="std std-ref">ossec-makelists</span></a> is used
 to compile lists.</p>
-<p>The command <a class="reference internal" href="../../programs/ossec-makelists.html#ossec-makelists"><span>ossec-makelists</span></a> will process and compile all lists if the master text
+<p>The command <a class="reference internal" href="../../programs/ossec-makelists.html#ossec-makelists"><span class="std std-ref">ossec-makelists</span></a> will process and compile all lists if the master text
 rules have been changed. Basicly logic is as follows:</p>
 <ul class="simple">
 <li>Read ossec.conf for all lists</li>
@@ -215,39 +215,39 @@ data as needed</li>
 <div class="section" id="list-text-file-format">
 <h3>List text file format<a class="headerlink" href="#list-text-file-format" title="Permalink to this headline">¶</a></h3>
 <p>Creating cdb lists the following file format is specified:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>key1:value
-key2:value
-key3:diff value
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">key1</span><span class="p">:</span><span class="n">value</span>
+<span class="n">key2</span><span class="p">:</span><span class="n">value</span>
+<span class="n">key3</span><span class="p">:</span><span class="n">diff</span> <span class="n">value</span>
 </pre></div>
 </div>
 <p>Each key must be unique and is terminated with a colon <code class="docutils literal"><span class="pre">:</span></code>.</p>
 <p>For IP addresses the dot notation is used for subnet matches</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>key         CIDR             Possible matches
-10.1.1.1    10.1.1.1/32      10.1.1.1
-192.168.    192.168.0.0/16   192.168.0.0 - 192.168.255.255
-172.16.19.  172.16.19.0/24   172.16.19.0 - 172.16.19.255
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">key</span>         <span class="n">CIDR</span>             <span class="n">Possible</span> <span class="n">matches</span>
+<span class="mf">10.1</span><span class="o">.</span><span class="mf">1.1</span>    <span class="mf">10.1</span><span class="o">.</span><span class="mf">1.1</span><span class="o">/</span><span class="mi">32</span>      <span class="mf">10.1</span><span class="o">.</span><span class="mf">1.1</span>
+<span class="mf">192.168</span><span class="o">.</span>    <span class="mf">192.168</span><span class="o">.</span><span class="mf">0.0</span><span class="o">/</span><span class="mi">16</span>   <span class="mf">192.168</span><span class="o">.</span><span class="mf">0.0</span> <span class="o">-</span> <span class="mf">192.168</span><span class="o">.</span><span class="mf">255.255</span>
+<span class="mf">172.16</span><span class="o">.</span><span class="mf">19.</span>  <span class="mf">172.16</span><span class="o">.</span><span class="mf">19.0</span><span class="o">/</span><span class="mi">24</span>   <span class="mf">172.16</span><span class="o">.</span><span class="mf">19.0</span> <span class="o">-</span> <span class="mf">172.16</span><span class="o">.</span><span class="mf">19.255</span>
 </pre></div>
 </div>
 <p>Due to address lookups being based on the class boundary extra scripts are suggested
 for creating lists that need fine control. Example of IP address list file:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>192.168.: RFC 1918 Address space
-172.16.:RFC 1918 Address space
-172.17.:RFC 1918 Address space
-172.18.:RFC 1918 Address space
-172.19.:RFC 1918 Address space
-172.20.:RFC 1918 Address space
-172.21.:RFC 1918 Address space
-172.22.:RFC 1918 Address space
-172.23.:RFC 1918 Address space
-172.24.:RFC 1918 Address space
-172.25.:RFC 1918 Address space
-172.26.:RFC 1918 Address space
-172.27.:RFC 1918 Address space
-172.28.:RFC 1918 Address space
-172.29.:RFC 1918 Address space
-172.30.:RFC 1918 Address space
-172.31.:RFC 1918 Address space
-10.:RFC 1918 Address space
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="mf">192.168</span><span class="o">.</span><span class="p">:</span> <span class="n">RFC</span> <span class="mi">1918</span> <span class="n">Address</span> <span class="n">space</span>
+<span class="mf">172.16</span><span class="o">.</span><span class="p">:</span><span class="n">RFC</span> <span class="mi">1918</span> <span class="n">Address</span> <span class="n">space</span>
+<span class="mf">172.17</span><span class="o">.</span><span class="p">:</span><span class="n">RFC</span> <span class="mi">1918</span> <span class="n">Address</span> <span class="n">space</span>
+<span class="mf">172.18</span><span class="o">.</span><span class="p">:</span><span class="n">RFC</span> <span class="mi">1918</span> <span class="n">Address</span> <span class="n">space</span>
+<span class="mf">172.19</span><span class="o">.</span><span class="p">:</span><span class="n">RFC</span> <span class="mi">1918</span> <span class="n">Address</span> <span class="n">space</span>
+<span class="mf">172.20</span><span class="o">.</span><span class="p">:</span><span class="n">RFC</span> <span class="mi">1918</span> <span class="n">Address</span> <span class="n">space</span>
+<span class="mf">172.21</span><span class="o">.</span><span class="p">:</span><span class="n">RFC</span> <span class="mi">1918</span> <span class="n">Address</span> <span class="n">space</span>
+<span class="mf">172.22</span><span class="o">.</span><span class="p">:</span><span class="n">RFC</span> <span class="mi">1918</span> <span class="n">Address</span> <span class="n">space</span>
+<span class="mf">172.23</span><span class="o">.</span><span class="p">:</span><span class="n">RFC</span> <span class="mi">1918</span> <span class="n">Address</span> <span class="n">space</span>
+<span class="mf">172.24</span><span class="o">.</span><span class="p">:</span><span class="n">RFC</span> <span class="mi">1918</span> <span class="n">Address</span> <span class="n">space</span>
+<span class="mf">172.25</span><span class="o">.</span><span class="p">:</span><span class="n">RFC</span> <span class="mi">1918</span> <span class="n">Address</span> <span class="n">space</span>
+<span class="mf">172.26</span><span class="o">.</span><span class="p">:</span><span class="n">RFC</span> <span class="mi">1918</span> <span class="n">Address</span> <span class="n">space</span>
+<span class="mf">172.27</span><span class="o">.</span><span class="p">:</span><span class="n">RFC</span> <span class="mi">1918</span> <span class="n">Address</span> <span class="n">space</span>
+<span class="mf">172.28</span><span class="o">.</span><span class="p">:</span><span class="n">RFC</span> <span class="mi">1918</span> <span class="n">Address</span> <span class="n">space</span>
+<span class="mf">172.29</span><span class="o">.</span><span class="p">:</span><span class="n">RFC</span> <span class="mi">1918</span> <span class="n">Address</span> <span class="n">space</span>
+<span class="mf">172.30</span><span class="o">.</span><span class="p">:</span><span class="n">RFC</span> <span class="mi">1918</span> <span class="n">Address</span> <span class="n">space</span>
+<span class="mf">172.31</span><span class="o">.</span><span class="p">:</span><span class="n">RFC</span> <span class="mi">1918</span> <span class="n">Address</span> <span class="n">space</span>
+<span class="mf">10.</span><span class="p">:</span><span class="n">RFC</span> <span class="mi">1918</span> <span class="n">Address</span> <span class="n">space</span>
 </pre></div>
 </div>
 </div>
@@ -272,7 +272,7 @@ for creating lists that need fine control. Example of IP address list file:</p>
     <p>
         &copy; Copyright 2010-2015, OSSEC Project Team.<br/>
     OSSEC trademark and <b>ossec.net</b> domain owned by <a href="http://www.trendmicro.com" target="_blank">Trend Micro, Inc.</a><br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.3.6 - 
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4 - 
     Home page graphics courtesy of <a href="https://pixabay.com" target="_blank">pixabay</a>
     </p>
   </div>
