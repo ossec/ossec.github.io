@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Compiling OSSEC for a Binary Installation &mdash; OSSEC</title>
+    <title>Package Installation &mdash; OSSEC</title>
     
     <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
@@ -113,53 +113,53 @@
   <div class="row">
     <div class="col-md-12">
       
-  <div class="section" id="compiling-ossec-for-a-binary-installation">
-<span id="manual-install-binary"></span><h1>Compiling OSSEC for a Binary Installation<a class="headerlink" href="#compiling-ossec-for-a-binary-installation" title="Permalink to this headline">¶</a></h1>
-<p>OSSEC is typically compiled on each system it is installed on, but this may not always be easy.
-To help in these cases there are a few methods of binary installation available. OSSEC can be
-compiled on one system, and copied to the destination systems. There ar RPM and deb packages
-available.</p>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">OSSEC has very limited cross compiling facilities. Windows binaries can be built on Linux systems,
-but binaries for other systems should be built on a system of the same OS and CPU platform.</p>
-</div>
-<div class="section" id="compiling-ossec-for-install-on-a-second-server">
-<span id="manual-install-binary-build"></span><h2>Compiling OSSEC for install on a second server<a class="headerlink" href="#compiling-ossec-for-install-on-a-second-server" title="Permalink to this headline">¶</a></h2>
-<p>First download the OSSEC package corresponding to the version you want to
-install and unpack it (on the system with a compiler).</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> wget -U ossec http://www.ossec.net/files/ossec-hids-2.8.1.tar.gz
-<span class="gp">#</span> tar -zxvf ossec-hids-latest.tar.gz
+  <div class="section" id="package-installation">
+<span id="manual-install-package"></span><h1>Package Installation<a class="headerlink" href="#package-installation" title="Permalink to this headline">¶</a></h1>
+<p>The OSSEC project has made RPM and deb packages available.
+Links to the packages can be found on the OSSEC <a class="reference external" href="http://www.ossec.net/?page_id=19">download page</a></p>
+<div class="section" id="rpm-installation">
+<h2>RPM Installation<a class="headerlink" href="#rpm-installation" title="Permalink to this headline">¶</a></h2>
+<p>OSSEC&#8217;s RPMs are made available by <a class="reference external" href="http://www.atomicorp.com">AtomiCorp</a>.</p>
+<p>The RPMs can be installed by adding the AtomiCorp yum repository:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> wget -q -O - https://updates.atomicorp.com/installers/atomic <span class="p">|</span>sh
 </pre></div>
 </div>
-<p>Enter in the source directory of the downloaded package, and configure OSSEC to build the <code class="docutils literal"><span class="pre">agent</span></code> version.
-The <code class="docutils literal"><span class="pre">make</span></code> commands should compile the correct binaries.</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> <span class="nb">cd</span> ossec-*/src
-<span class="gp">#</span> make setagent
-<span class="gp">#</span> make all
-<span class="gp">#</span> make build
+<p>Next use <code class="docutils literal"><span class="pre">yum</span></code> to install the specific packages. For an OSSEC server run:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> yum install ossec-hids ossec-hids-server
 </pre></div>
 </div>
-<p>Modify ossec-hids-<a href="#id1"><span class="problematic" id="id2">*</span></a>/etc/preloaded-vars.conf to set BINARY_INSTALL to yes.</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> <span class="nb">echo</span> <span class="s2">&quot;USER_BINARYINSTALL=\&quot;y\&quot;&quot;</span> &gt;&gt; ossec-hids*/etc/preloaded-vars.conf
-</pre></div>
-</div>
-<p>Finally create an OSSEC package.</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> tar -cvf ossec-binary.tar ossec-hids*
+<p>And for an agent run:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> yum install ossec-hids ossec-hids-client
 </pre></div>
 </div>
 </div>
-<div class="section" id="installation-of-the-binary-ossec-package">
-<span id="manual-install-binary-install"></span><h2>Installation of the binary OSSEC package<a class="headerlink" href="#installation-of-the-binary-ossec-package" title="Permalink to this headline">¶</a></h2>
-<p>On the target system (that does not have a C compiler) download your ossec-binary.tar
-created in the steps above.</p>
-<p>Complete the installation by unarchiving the binary package and running ./install.sh.</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> tar xfv ossec-binary.tar
-<span class="gp">#</span> <span class="nb">cd</span> ossec-*
-<span class="gp">#</span> ./install.sh
+<div class="section" id="deb-installation">
+<h2>Deb Installation<a class="headerlink" href="#deb-installation" title="Permalink to this headline">¶</a></h2>
+<p>OSSEC&#8217;s deb packages are available in the Wazuh repository.</p>
+<p>Install the apt-get repository key:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> apt-key adv --fetch-keys http://ossec.wazuh.com/repos/apt/conf/ossec-key.gpg.key
 </pre></div>
 </div>
-<p>After following the installation prompts the install will be complete.</p>
+<p>Add the repository for Debian (available distributions are Sid, Jessie and Wheezy):</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> <span class="nb">echo</span> <span class="s1">&#39;deb http://ossec.wazuh.com/repos/apt/debian wheezy main&#39;</span> &gt;&gt; /etc/apt/sources.list
+</pre></div>
+</div>
+<p>Or add the repository for Ubuntu (available distributions are Precise, Trusty and Utopic):</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> <span class="nb">echo</span> <span class="s1">&#39;deb http://ossec.wazuh.com/repos/apt/ubuntu precise main&#39;</span> &gt;&gt; /etc/apt/sources.list
+</pre></div>
+</div>
+<p>Update the repository:</p>
+<p>Install OSSEC HIDS server/manager:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> apt-get install ossec-hids
+</pre></div>
+</div>
+<div class="highlight-console"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<p>Or install OSSEC HIDS agent:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> apt-get install ossec-hids-agent
+</pre></div>
+</div>
 </div>
 </div>
 
