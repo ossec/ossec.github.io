@@ -261,6 +261,26 @@ On windows this will only check the POSIX permissions.</li>
 
 <dl class="object">
 <dt>
+<code class="descname">nodiff</code></dt>
+<dd><div class="versionadded">
+<p><span class="versionmodified">New in version 3.0.</span></p>
+</div>
+<p>List of files to not attach a diff. The files are still checked, but no diff is computed. This allows to monitor sensible files like private key or database configuration without leaking sensible data through alerts.</p>
+<p><strong>Attributes:</strong></p>
+<ul>
+<li><p class="first"><strong>type</strong>: Value=sregex</p>
+<blockquote>
+<div><ul class="simple">
+<li>This is a simple regex pattern to filter out files so alerts are not generated.</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<p><strong>Allowed:</strong> Any directory or file name</p>
+</dd></dl>
+
+<dl class="object">
+<dt>
 <code class="descname">frequency</code></dt>
 <dd><p>Frequency that the syscheck is going to be executed (in seconds).</p>
 <p>The default is 6 hours or 21600 seconds</p>
