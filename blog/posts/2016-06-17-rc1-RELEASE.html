@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>CVE-2014-5284 Vulnerability Fixed in OSSEC 2.8.1 &mdash; OSSEC</title>
+    <title>OSSEC 2.9.0 RC1 &mdash; OSSEC</title>
     
     <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -121,7 +121,7 @@
   
     </li>
   <i class="fa fa-calendar"></i>
-    Oct 09, 2014
+    Jun 17, 2016
   
     
 
@@ -129,7 +129,7 @@
   <li>
     
       
-      <a href="../author/vic-hargrave.html"><i class="fa-fw fa fa-user"></i>Vic Hargrave</a>
+      <a href="../author/scott-r-shinn.html"><i class="fa-fw fa fa-user"></i>Scott R. Shinn</a>
       
     </li>
   
@@ -151,15 +151,7 @@
     <ul>
     <li>
         
-        <a href="../tag/ossec.html"><i class="fa-fw fa fa-tag"></i>ossec</a>
-        
-      
-        
-        <a href="../tag/security.html"><i class="fa-fw fa fa-tag"></i>security</a>
-        
-      
-        
-        <a href="../tag/cve.html"><i class="fa-fw fa fa-tag"></i>cve</a>
+        <a href="../tag/beta.html"><i class="fa-fw fa fa-tag"></i>beta</a>
         
       </li>
     </ul>
@@ -179,8 +171,6 @@
     <ul class="nav nav-list">
       
       
-      <li><a class="reference internal" href="2016-06-17-rc1-RELEASE.html">Jun 17 - OSSEC 2.9.0 RC1</a></li>
-      
       <li><a class="reference internal" href="2016-04-29-OSSEC-2.9.0-beta5-RELEASE.html">Apr 29 - OSSEC 2.9.0 Beta05</a></li>
       
       <li><a class="reference internal" href="2015-11-05-OSSEC-2.8.3-Released.html">Nov 05 - OSSEC 2.8.3 Released</a></li>
@@ -188,6 +178,8 @@
       <li><a class="reference internal" href="2015-06-11-cve-2015-3222-fix.markdown.html">Jun 11 - CVE-2015-3222 Vulnerability Fixed in OSSEC 2.8.2</a></li>
       
       <li><a class="reference internal" href="2014-10-09-ossec-ova-2_8_1.markdown.html">Oct 09 - OSSEC Virtual Appliance 2.8.1 Available</a></li>
+      
+      <li><a class="reference internal" href="2014-10-09-ossec-con-2014-recap.markdown.html">Oct 09 - OSSEC CON 2014 Recap</a></li>
       
     </ul>
   </li>
@@ -254,19 +246,23 @@
       </div>
     <div class="col-md-9">
       
-  <div class="section" id="cve-2014-5284-vulnerability-fixed-in-ossec-2-8-1">
-<h1>CVE-2014-5284 Vulnerability Fixed in OSSEC 2.8.1<a class="headerlink" href="#cve-2014-5284-vulnerability-fixed-in-ossec-2-8-1" title="Permalink to this headline">¶</a></h1>
-<p>OSSEC 2.8.1 has been released to address the security issue identified
-by Jeff Petersen of Roka Security LLC. Full details of the issue can be
-found on the OSSEC Github repository –
-<a class="reference external" href="https://github.com/ossec/ossec-hids/releases/tag/2.8.1">https://github.com/ossec/ossec-hids/releases/tag/2.8.1</a>.</p>
-<p>This correction will create the temp file for the hosts deny file in
-/var/ossec and will use mktemp where available to create NON-predictable
-temp file name. In cases where mktemp is not available we have written a
-BAD version of mktemp, but should be a little better then just process
-id.</p>
-<p>In terms of features this release is the same as OSSEC 2.8. The OSSEC
-2.8 Windows agent has not been updated.</p>
+  <div class="section" id="ossec-2-9-0-rc1">
+<h1>OSSEC 2.9.0 RC1<a class="headerlink" href="#ossec-2-9-0-rc1" title="Permalink to this headline">¶</a></h1>
+<p>This release marks our first (and possibly only if all goes well) release candidate for OSSEC 2.9.
+Assuming no issues are reported, this release will become the final OSSEC release.</p>
+<p>Now is when we need really your help! As a community driven project, we need all the testing a release this size can get. Let us know in the OSSEC mailing list, Github bug tracker, the official OSSEC irc channel (#ossec irc.freenode.net) or on our new Facebook Group: <a class="reference external" href="https://www.facebook.com/ossechids/">https://www.facebook.com/ossechids/</a></p>
+<p><strong>Download</strong></p>
+<p><a class="reference external" href="https://github.com/ossec/ossec-hids/releases">https://github.com/ossec/ossec-hids/releases</a></p>
+<p><strong>Changelog</strong></p>
+<ul class="simple">
+<li>Fixed some memory leaks at analysisd</li>
+<li>Fixed memory error on CDB lists management</li>
+<li>Fixed bug at logcollector that inhibited alerts about file reduction</li>
+<li>Fixed compilation issue at Win32</li>
+<li>Fix for the mysql/postgres insert condition</li>
+<li>ossec_rules_list script: Attached GPLv2 license</li>
+<li>Fixed bug at logcollector that inhibited alerts about file reduction</li>
+</ul>
 </div>
 
   <div class="section">
@@ -278,21 +274,14 @@ id.</p>
   <span style="float: left;">
   
   
-  <a href="2014-06-04-2_8-release.markdown.html">
+  <a href="2016-04-29-OSSEC-2.9.0-beta5-RELEASE.html">
     <i class="fa fa-arrow-circle-left"></i>
-    OSSEC 2.8 Released
+    OSSEC 2.9.0 Beta05
   </a>
   
   </span>
   <span>&nbsp;</span>
   <span style="float: right;">
-  
-  
-  <a href="2014-10-09-ossec-con-2014-recap.markdown.html">
-    OSSEC CON 2014 Recap
-    <i class="fa fa-arrow-circle-right"></i>
-  </a>
-  </span>
   
 </div>
 
