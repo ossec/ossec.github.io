@@ -267,9 +267,14 @@ agent_id to use)</li>
 <dl class="element">
 <dt id="element-repeated_offenders">
 <code class="descname">repeated_offenders</code><a class="headerlink" href="#element-repeated_offenders" title="Permalink to this definition">¶</a></dt>
-<dd><p>A comma separated list of increasing timeouts in minutes for repeat offenders. There can be a maximum of 5 entries.
-This should be set in the <code class="docutils literal"><span class="pre">ossec.conf</span></code> of an agent in an agent/server setup.</p>
-<p><strong>Example:</strong></p>
+<dd><p>A comma separated list of increasing timeouts in minutes for repeat offenders. There can be a maximum of 5 entries.</p>
+<blockquote>
+<div><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This must be set in the <code class="docutils literal"><span class="pre">ossec.conf</span></code> of the <strong>agent</strong> in an agent/server setup.</p>
+</div>
+</div></blockquote>
+<p><strong>Example of a local/standalone:</strong></p>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">&lt;active-response&gt;</span>
 <span class="go">  &lt;command&gt;firewall-block&lt;/command&gt;</span>
 <span class="go">  &lt;location&gt;defined-agent&lt;/location&gt;</span>
@@ -280,6 +285,7 @@ This should be set in the <code class="docutils literal"><span class="pre">ossec
 <span class="go">&lt;/active-response&gt;</span>
 </pre></div>
 </div>
+<p><strong>Example of an agent:</strong></p>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">&lt;active-response&gt;</span>
 <span class="go">  &lt;repeated_offenders&gt;30,60,120&lt;/repeated_offenders&gt;</span>
 <span class="go">&lt;/active-response&gt;</span>
