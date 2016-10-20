@@ -31,6 +31,8 @@
     <script type="text/javascript" src="_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
     <link rel="author" title="About these documents" href="about.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
     <link rel="top" title="OSSEC" href="index.html" />
   
 <meta charset='utf-8'>
@@ -117,10 +119,6 @@
 <li><a class="reference internal" href="#source-downloads">Source Downloads</a></li>
 <li><a class="reference internal" href="#rpms-for-rhel-centos-fedora-and-others">RPMs for RHEL, CentOS, Fedora and others</a><ul>
 <li><a class="reference internal" href="#rpm-installation">RPM Installation</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#debs-for-debian-and-ubuntu">DEBs for Debian and Ubuntu</a><ul>
-<li><a class="reference internal" href="#deb-installation">DEB Installation</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#pgp-key">PGP key</a></li>
@@ -259,56 +257,6 @@
 </div>
 </div>
 </div>
-<div class="section" id="debs-for-debian-and-ubuntu">
-<h2>DEBs for Debian and Ubuntu<a class="headerlink" href="#debs-for-debian-and-ubuntu" title="Permalink to this headline">¶</a></h2>
-<p>Available in the <a class="reference external" href="http://ossec.wazuh.com/">Wazuh repository</a>.</p>
-<table border="1" class="docutils">
-<colgroup>
-<col width="19%" />
-<col width="81%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head" colspan="2">Debian/Ubuntu</th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr class="row-even"><td>OSSEC Server</td>
-<td><a class="reference external" href="http://ossec.wazuh.com/repos/apt/debian/pool/main/o/ossec-hids/">Debian server</a>, <a class="reference external" href="http://ossec.wazuh.com/repos/apt/ubuntu/pool/main/o/ossec-hids/">Ubuntu server</a></td>
-</tr>
-<tr class="row-odd"><td>OSSEC Agent</td>
-<td><a class="reference external" href="http://ossec.wazuh.com/repos/apt/debian/pool/main/o/ossec-hids-agent/">Debian agent</a>, <a class="reference external" href="http://ossec.wazuh.com/repos/apt/ubuntu/pool/main/o/ossec-hids-agent/">Ubuntu agent</a></td>
-</tr>
-</tbody>
-</table>
-<div class="section" id="deb-installation">
-<h3>DEB Installation<a class="headerlink" href="#deb-installation" title="Permalink to this headline">¶</a></h3>
-<p>To install with apt-get do the following:</p>
-<p>Step 1. Install the apt-get repository key:</p>
-<div class="code console highlight-default"><div class="highlight"><pre><span></span><span class="c1"># apt-key adv --fetch-keys http://ossec.wazuh.com/repos/apt/conf/ossec-key.gpg.key</span>
-</pre></div>
-</div>
-<p>Step 2. Add the repository for Debian, chaging <code class="docutils literal"><span class="pre">wheezy</span></code> by your distribution name (available ones are <code class="docutils literal"><span class="pre">wheezy</span></code>, <code class="docutils literal"><span class="pre">jessie</span></code>, <code class="docutils literal"><span class="pre">strectch</span></code> or <code class="docutils literal"><span class="pre">sid</span></code>):</p>
-<div class="code console highlight-default"><div class="highlight"><pre><span></span><span class="c1"># echo &quot;deb http://ossec.wazuh.com/repos/apt/debian wheezy main&quot; &gt;&gt; /etc/apt/sources.list</span>
-</pre></div>
-</div>
-<p>Or add the repository for Ubuntu, changing <code class="docutils literal"><span class="pre">precise</span></code> by your distribution name (available ones are <code class="docutils literal"><span class="pre">precise</span></code>, <code class="docutils literal"><span class="pre">trusty</span></code>, <code class="docutils literal"><span class="pre">vivid</span></code>, <code class="docutils literal"><span class="pre">wily</span></code> or <code class="docutils literal"><span class="pre">xenial</span></code>):</p>
-<div class="code console highlight-default"><div class="highlight"><pre><span></span><span class="c1"># echo &quot;deb http://ossec.wazuh.com/repos/apt/ubuntu precise main&quot; &gt;&gt; /etc/apt/sources.list</span>
-</pre></div>
-</div>
-<p>Step 3. Update the repository:</p>
-<div class="code console highlight-default"><div class="highlight"><pre><span></span><span class="c1"># apt-get update</span>
-</pre></div>
-</div>
-<p>Step 4. Install OSSEC HIDS server/manager:</p>
-<div class="code console highlight-default"><div class="highlight"><pre><span></span><span class="c1"># apt-get install ossec-hids</span>
-</pre></div>
-</div>
-<p>Or install OSSEC HIDS agent:</p>
-<div class="code console highlight-default"><div class="highlight"><pre><span></span><span class="c1"># apt-get install ossec-hids-agent</span>
-</pre></div>
-</div>
-</div>
-</div>
 <div class="section" id="pgp-key">
 <h2>PGP key<a class="headerlink" href="#pgp-key" title="Permalink to this headline">¶</a></h2>
 <p>Before you install any package from our project, we recommend that you
@@ -397,7 +345,7 @@ is appreciated.</p>
     <p>
         &copy; Copyright 2010-2016, OSSEC Project Team.<br/>
     OSSEC trademark and <b>ossec.net</b> domain owned by <a href="http://www.trendmicro.com" target="_blank">Trend Micro, Inc.</a><br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.6 - 
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.8 - 
     Home page graphics courtesy of <a href="https://pixabay.com" target="_blank">pixabay</a>
     </p>
   </div>
