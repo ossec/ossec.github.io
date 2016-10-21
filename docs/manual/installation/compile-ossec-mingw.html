@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Compiling OSSEC with MinGW: &#8212; OSSEC</title>
+    <title>Compiling OSSEC 2.9 with MinGW: &#8212; OSSEC</title>
     
     <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
@@ -115,12 +115,14 @@
   <div class="row">
     <div class="col-md-12">
       
-  <div class="section" id="compiling-ossec-with-mingw">
-<span id="compile-ossec-mingw"></span><h1>Compiling OSSEC with MinGW:<a class="headerlink" href="#compiling-ossec-with-mingw" title="Permalink to this headline">¶</a></h1>
-<p>OSSEC&#8217;s Windows agent is compiled using <a class="reference external" href="http://www.mingw.org/">MinGW</a></p>
+  <p id="compile-ossec-mingw">OSSEC&#8217;s Windows agent is compiled using <a class="reference external" href="http://www.mingw.org/">MinGW</a></p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This documentation assumes you have MinGW installed, and it is usable.</p>
+</div>
 <p>It has always been a pain to generate snapshots for Windows because it required me to open up my Windows VM (slow), push the code there, compile, etc. Well, until this week when I started to play with MinGW cross-compilation feature to completely build an Windows agent from Linux.</p>
 <p>How it works? First, you need to install MinGW and <a class="reference external" href="http://nsis.sourceforge.net/Main_Page">nsis</a> (to build the installer). For OpenSSL support, an OpenSSL MinGW package will also be necessary.</p>
-<p>After that, download the source and generate the Windows package directory (replace 2.6 with the latest version or download the latest source <a class="reference external" href="https://bitbucket.org/dcid/ossec-hids/get/tip.tar.gz">here</a>):</p>
+<p>After that, download the source and generate the Windows package directory (replace 2.6 with the latest version or download the latest source from the github <a class="reference external" href="https://github.com/ossec/ossec-hids">repository</a>):</p>
 <blockquote>
 <div><div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -141,7 +143,82 @@ or obtain the checksum file by some other manner.</p>
 </pre></div>
 </div>
 </div></blockquote>
-<p>And generate the Windows package directory:</p>
+<div class="section" id="compiling-ossec-2-9-with-mingw">
+<h1>Compiling OSSEC 2.9 with MinGW:<a class="headerlink" href="#compiling-ossec-2-9-with-mingw" title="Permalink to this headline">¶</a></h1>
+<p>Change directory to the src directory:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> <span class="nb">cd</span> ossec-hids-2.9.0/src
+</pre></div>
+</div>
+<p>Now run <code class="docutils literal"><span class="pre">make</span> <span class="pre">TARGET=winagent</span></code>:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> make <span class="nv">TARGET</span><span class="o">=</span>winagent
+</pre></div>
+</div>
+<p>This should produce a good amount of compilation output that ends with:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Output: &quot;ossec-win32-agent.exe&quot;</span>
+<span class="go">Install: 7 pages (448 bytes), 3 sections (3144 bytes), 769 instructions (21532 bytes), 318 strings (32350 bytes), 1 language table (346 bytes).</span>
+<span class="go">Uninstall: 5 pages (320 bytes),</span>
+<span class="go">1 section (1048 bytes), 350 instructions (9800 bytes), 184 strings (3360 bytes), 1 language table (290 bytes).</span>
+<span class="go">Datablock optimizer saved 100205 bytes (~8.1%).</span>
+
+<span class="go">Using zlib compression.</span>
+
+<span class="go">EXE header size:               57856 / 56320 bytes</span>
+<span class="go">Install code:                  14832 / 58196 bytes</span>
+<span class="go">Install data:                1045670 / 3116385 bytes</span>
+<span class="go">Uninstall code+data:           21058 / 21474 bytes</span>
+<span class="go">CRC (0x239C5E6F):                  4 / 4 bytes</span>
+
+<span class="go">Total size:                  1139420 / 3252379 bytes (35.0%)</span>
+<span class="go">make settings</span>
+<span class="go">make[1]: Entering directory `/home/ddp/src/projects/git/github/ddpbsd/ossec-hids/src&#39;</span>
+
+<span class="go">General settings:</span>
+<span class="go">    TARGET:           winagent</span>
+<span class="go">    V:</span>
+<span class="go">    DEBUG:</span>
+<span class="go">    DEBUGAD</span>
+<span class="go">    PREFIX:           /var/ossec</span>
+<span class="go">    MAXAGENTS:        2048</span>
+<span class="go">    DATABASE:</span>
+<span class="go">    ONEWAY:           no</span>
+<span class="go">    CLEANFULL:        no</span>
+<span class="go">User settings:</span>
+<span class="go">    OSSEC_GROUP:      ossec</span>
+<span class="go">    OSSEC_USER:       ossec</span>
+<span class="go">    OSSEC_USER_MAIL:  ossecm</span>
+<span class="go">    OSSEC_USER_REM:   ossecr</span>
+<span class="go">Lua settings:</span>
+<span class="go">    LUA_PLAT:         posix</span>
+<span class="go">USE settings:</span>
+<span class="go">    USE_ZEROMQ:       no</span>
+<span class="go">    USE_GEOIP:        no</span>
+<span class="go">    USE_PRELUDE:      no</span>
+<span class="go">    USE_OPENSSL:      no</span>
+<span class="go">    USE_PICVIZ:       no</span>
+<span class="go">    USE_INOTIFY:      no</span>
+<span class="go">Mysql settings:</span>
+<span class="go">    includes:</span>
+<span class="go">    libs:</span>
+<span class="go">Pgsql settings:</span>
+<span class="go">    includes:</span>
+<span class="go">    libs:</span>
+<span class="go">Defines:</span>
+<span class="go">    -DMAX_AGENTS=2048 -DOSSECHIDS -DDEFAULTDIR=&quot;/var/ossec&quot; -DUSER=&quot;ossec&quot; -DREMUSER=&quot;ossecr&quot; -DGROUPGLOBAL=&quot;ossec&quot; -DMAILUSER=&quot;ossecm&quot; -DLinux</span>
+<span class="go"> Compiler:</span>
+<span class="go">    CFLAGS           -O2 -DMAX_AGENTS=2048 -DOSSECHIDS -DDEFAULTDIR=&quot;/var/ossec&quot; -DUSER=&quot;ossec&quot; -DREMUSER=&quot;ossecr&quot; -DGROUPGLOBAL=&quot;ossec&quot; -DMAILUSER=&quot;ossecm&quot; -DLinux -Wall -Wextra -I./ -I./headers/</span>
+<span class="go">    LDFLAGS          -lm</span>
+<span class="go">    CC              gcc</span>
+<span class="go">    MAKE            make</span>
+<span class="go">make[1]: Leaving directory `/home/ddp/src/projects/git/github/ddpbsd/ossec-hids/src&#39;</span>
+
+<span class="go">Done building winagent</span>
+</pre></div>
+</div>
+<p>The final output will be saved to <code class="docutils literal"><span class="pre">./win32/ossec-win32-agent.exe</span></code>.</p>
+</div>
+<div class="section" id="compiling-ossec-2-8-x-with-mingw">
+<h1>Compiling OSSEC 2.8.x with MinGW:<a class="headerlink" href="#compiling-ossec-2-8-x-with-mingw" title="Permalink to this headline">¶</a></h1>
+<p>Generate the Windows package directory:</p>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> <span class="nb">cd</span> ossec-hids-2.8.3/src/win32
 <span class="gp">#</span> ./gen-win.sh
 </pre></div>
