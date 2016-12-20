@@ -196,28 +196,34 @@
 </div>
 <div class="section" id="rpms-for-rhel-centos-fedora-and-others">
 <h2>RPMs for RHEL, CentOS, Fedora and others<a class="headerlink" href="#rpms-for-rhel-centos-fedora-and-others" title="Permalink to this headline">¶</a></h2>
-<p>Available in the <a class="reference external" href="http://www5.atomicorp.com/channels/ossec/">Atomicorp repository</a>.</p>
+<p>Available in the <a class="reference external" href="http://updates.atomicorp.com/channels/ossec/">Atomicorp repository</a>.</p>
 <table border="1" class="docutils">
 <colgroup>
 <col width="15%" />
 <col width="85%" />
 </colgroup>
 <thead valign="bottom">
-<tr class="row-odd"><th class="head" colspan="2">CentOS</th>
+<tr class="row-odd"><th class="head" colspan="2">CentOS / Redhat</th>
 </tr>
 </thead>
 <tbody valign="top">
 <tr class="row-even"><td>el5</td>
-<td><a class="reference external" href="http://www5.atomicorp.com/channels/ossec/centos/5/i386/RPMS/">i386</a></td>
+<td><a class="reference external" href="http://updates.atomicorp.com/channels/ossec/centos/5/i386/RPMS/">i386</a></td>
 </tr>
 <tr class="row-odd"><td>el5</td>
-<td><a class="reference external" href="http://www5.atomicorp.com/channels/ossec/centos/5/x86_64/RPMS/">x86_64</a></td>
+<td><a class="reference external" href="http://updates.atomicorp.com/channels/ossec/centos/5/x86_64/RPMS/">x86_64</a></td>
 </tr>
 <tr class="row-even"><td>el6</td>
-<td><a class="reference external" href="http://www5.atomicorp.com/channels/ossec/centos/5/i386/RPMS/">i386</a></td>
+<td><a class="reference external" href="http://updates.atomicorp.com/channels/ossec/centos/6/i386/RPMS/">i386</a></td>
 </tr>
 <tr class="row-odd"><td>el6</td>
-<td><a class="reference external" href="http://www5.atomicorp.com/channels/ossec/centos/6/x86_64/RPMS/">x86_64</a></td>
+<td><a class="reference external" href="http://updates.atomicorp.com/channels/ossec/centos/6/x86_64/RPMS/">x86_64</a></td>
+</tr>
+<tr class="row-even"><td>el7</td>
+<td><a class="reference external" href="http://updates.atomicorp.com/channels/ossec/centos/7/i386/RPMS/">i386</a></td>
+</tr>
+<tr class="row-odd"><td>el7</td>
+<td><a class="reference external" href="http://updates.atomicorp.com/channels/ossec/centos/7/x86_64/RPMS/">x86_64</a></td>
 </tr>
 </tbody>
 </table>
@@ -231,26 +237,23 @@
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><td>el5</td>
-<td><a class="reference external" href="http://www5.atomicorp.com/channels/ossec/fedora/20/i386/RPMS/">i386</a></td>
+<tr class="row-even"><td>fc23</td>
+<td><a class="reference external" href="http://updates.atomicorp.com/channels/ossec/fedora/23/x86_64/RPMS/">x86_64</a></td>
 </tr>
-<tr class="row-odd"><td>el5</td>
-<td><a class="reference external" href="http://www5.atomicorp.com/channels/ossec/fedora/5/x86_64/RPMS/">x86_64</a></td>
+<tr class="row-odd"><td>fc24</td>
+<td><a class="reference external" href="http://updates.atomicorp.com/channels/ossec/fedora/24/x86_64/RPMS/">x86_64</a></td>
 </tr>
-<tr class="row-even"><td>el6</td>
-<td><a class="reference external" href="http://www5.atomicorp.com/channels/ossec/fedora/5/i386/RPMS/">i386</a></td>
+<tr class="row-even"><td>fc25</td>
+<td><a class="reference external" href="http://updates.atomicorp.com/channels/ossec/fedora/25/x86_64/RPMS/">x86_64</a></td>
 </tr>
-<tr class="row-odd"><td>el6</td>
-<td><a class="reference external" href="http://www5.atomicorp.com/channels/ossec/fedora/6/x86_64/RPMS/">x86_64</a></td>
-</tr>
-<tr class="row-even"><td>All</td>
-<td><a class="reference external" href="http://www5.atomicorp.com/channels/ossec/fedora/">6 - 20</a></td>
+<tr class="row-odd"><td>Legacy</td>
+<td><a class="reference external" href="http://updates.atomicorp.com/channels/ossec/fedora/">6 - 22</a></td>
 </tr>
 </tbody>
 </table>
 <div class="section" id="rpm-installation">
 <h3>RPM Installation<a class="headerlink" href="#rpm-installation" title="Permalink to this headline">¶</a></h3>
-<p>To install with yum do the following:</p>
+<p>Automated installer:</p>
 <div class="code console highlight-default"><div class="highlight"><pre><span></span><span class="c1"># wget -q -O – https://www.atomicorp.com/installers/atomic | sh</span>
 <span class="c1"># yum install ossec-hids ossec-hids-server (or ossec-hids-client for the agent)</span>
 </pre></div>
