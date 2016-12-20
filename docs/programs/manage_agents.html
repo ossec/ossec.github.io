@@ -20,7 +20,8 @@
         VERSION:     '2.8.3',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
@@ -33,7 +34,6 @@
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="top" title="OSSEC" href="../../index.html" />
   
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
@@ -128,44 +128,44 @@ authenticated) communication between the OSSEC server and its affiliated agent i
 <div class="section" id="manage-agents-argument-options">
 <h2>manage_agents argument options<a class="headerlink" href="#manage-agents-argument-options" title="Permalink to this headline">¶</a></h2>
 <dl class="option">
-<dt id="cmdoption-manage_agents-V">
-<code class="descname">-V</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-manage_agents-V" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-manage-agents-v">
+<code class="descname">-V</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-manage-agents-v" title="Permalink to this definition">¶</a></dt>
 <dd><p>Display OSSEC Version.</p>
 </dd></dl>
 
 <dl class="option">
-<dt id="cmdoption-manage_agents-h">
-<code class="descname">-h</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-manage_agents-h" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-manage-agents-h">
+<code class="descname">-h</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-manage-agents-h" title="Permalink to this definition">¶</a></dt>
 <dd><p>Display the help message.</p>
 </dd></dl>
 
 <dl class="option">
-<dt id="cmdoption-manage_agents-l">
-<code class="descname">-l</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-manage_agents-l" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-manage-agents-l">
+<code class="descname">-l</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-manage-agents-l" title="Permalink to this definition">¶</a></dt>
 <dd><p>List available agents.</p>
 </dd></dl>
 
 <dl class="option">
-<dt id="cmdoption-manage_agents-e">
-<code class="descname">-e</code><code class="descclassname"> &lt;agent_id&gt;</code><a class="headerlink" href="#cmdoption-manage_agents-e" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-manage-agents-e">
+<code class="descname">-e</code><code class="descclassname"> &lt;agent_id&gt;</code><a class="headerlink" href="#cmdoption-manage-agents-e" title="Permalink to this definition">¶</a></dt>
 <dd><p>Extracts key for an agent (Manager only).</p>
 </dd></dl>
 
 <dl class="option">
-<dt id="cmdoption-manage_agents-r">
-<code class="descname">-r</code><code class="descclassname"> &lt;agent_id&gt;</code><a class="headerlink" href="#cmdoption-manage_agents-r" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-manage-agents-r">
+<code class="descname">-r</code><code class="descclassname"> &lt;agent_id&gt;</code><a class="headerlink" href="#cmdoption-manage-agents-r" title="Permalink to this definition">¶</a></dt>
 <dd><p>Remove an agent (Manager only).</p>
 </dd></dl>
 
 <dl class="option">
-<dt id="cmdoption-manage_agents-i">
-<code class="descname">-i</code><code class="descclassname"> &lt;key&gt;</code><a class="headerlink" href="#cmdoption-manage_agents-i" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-manage-agents-i">
+<code class="descname">-i</code><code class="descclassname"> &lt;key&gt;</code><a class="headerlink" href="#cmdoption-manage-agents-i" title="Permalink to this definition">¶</a></dt>
 <dd><p>Import authentication key (Agent only).</p>
 </dd></dl>
 
 <dl class="option">
-<dt id="cmdoption-manage_agents-f">
-<code class="descname">-f</code><code class="descclassname">  &lt;file&gt;</code><a class="headerlink" href="#cmdoption-manage_agents-f" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-manage-agents-f">
+<code class="descname">-f</code><code class="descclassname">  &lt;file&gt;</code><a class="headerlink" href="#cmdoption-manage-agents-f" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate clients in bulk from &lt;file&gt; (Manager only). The file is a comma delimited file containing the IP addresses and agent names to be added.
 This file should be located within <code class="docutils literal"><span class="pre">/var/ossec</span></code>, and referenced by its path relative to <code class="docutils literal"><span class="pre">/var/ossec</span></code>.</p>
 </dd></dl>
@@ -217,7 +217,7 @@ This file should be located within <code class="docutils literal"><span class="p
     <p>
         &copy; Copyright 2010-2016, OSSEC Project Team.<br/>
     OSSEC trademark and <b>ossec.net</b> domain owned by <a href="http://www.trendmicro.com" target="_blank">Trend Micro, Inc.</a><br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.8 - 
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.5.1 - 
     Home page graphics courtesy of <a href="https://pixabay.com" target="_blank">pixabay</a>
     </p>
   </div>

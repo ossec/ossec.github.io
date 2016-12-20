@@ -20,7 +20,8 @@
         VERSION:     '2.8.3',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
@@ -33,7 +34,6 @@
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="top" title="OSSEC" href="../../index.html" />
   
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
@@ -256,12 +256,11 @@ your help! As a community driven project, we need all the testing a release
 this size can get. Let us know in the OSSEC mailing list, Github bug tracker,
 or the official OSSEC irc channel.</p>
 <p><strong>Highlights in 2.9 beta05</strong></p>
-<ul>
-<li><p class="first">Alert Output support for JSON and ZeroMQ</p>
-</li>
+<ul class="simple">
+<li>Alert Output support for JSON and ZeroMQ</li>
 <li><dl class="first docutils">
 <dt>Syscheck improvements</dt>
-<dd><ul class="first last simple">
+<dd><ul class="first last">
 <li>Report file deletion, even without realtime enabled</li>
 <li>Report modifications made on directories</li>
 <li>Corrects bug so that files created between the first and second scan are reported as new files</li>
@@ -273,12 +272,9 @@ or the official OSSEC irc channel.</p>
 </dd>
 </dl>
 </li>
-<li><p class="first">IPv6 support</p>
-</li>
-<li><p class="first">Support to call an external mailer. This solves the problem of supporting encryption when sending mail alerts in OSSEC. The &lt;smtp_server&gt; field can now be prepended with &#8220;/&#8221; to designate a local binary. Example: &#8220;&lt;smtp_server&gt;/usr/sbin/sendmail -t&lt;/smtp_server&gt;&#8221;.</p>
-</li>
-<li><p class="first">Slack notification support</p>
-</li>
+<li>IPv6 support</li>
+<li>Support to call an external mailer. This solves the problem of supporting encryption when sending mail alerts in OSSEC. The &lt;smtp_server&gt; field can now be prepended with &#8220;/&#8221; to designate a local binary. Example: &#8220;&lt;smtp_server&gt;/usr/sbin/sendmail -t&lt;/smtp_server&gt;&#8221;.</li>
+<li>Slack notification support</li>
 </ul>
 <p><strong>Download</strong></p>
 <p><a class="reference external" href="https://github.com/ossec/ossec-hids/releases">https://github.com/ossec/ossec-hids/releases</a></p>
@@ -391,7 +387,7 @@ or the official OSSEC irc channel.</p>
     <p>
         &copy; Copyright 2010-2016, OSSEC Project Team.<br/>
     OSSEC trademark and <b>ossec.net</b> domain owned by <a href="http://www.trendmicro.com" target="_blank">Trend Micro, Inc.</a><br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.8 - 
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.5.1 - 
     Home page graphics courtesy of <a href="https://pixabay.com" target="_blank">pixabay</a>
     </p>
   </div>

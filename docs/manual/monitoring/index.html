@@ -20,7 +20,8 @@
         VERSION:     '2.8.3',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="../../../_static/jquery.js"></script>
@@ -33,7 +34,6 @@
     <link rel="author" title="About these documents" href="../../../about.html" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="top" title="OSSEC" href="../../../index.html" />
   
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
@@ -194,27 +194,24 @@ It will not automatically begin monitoring new log files. <code class="docutils 
 <p><strong>Default:</strong> syslog</p>
 <p><strong>Allowed:</strong></p>
 <blockquote>
-<div><ul id="logformat-syslog">
+<div><ul class="simple" id="logformat-syslog">
 <li><dl class="first docutils">
 <dt>syslog</dt>
-<dd><p class="first last">This format is for plain text files in a syslog-like format. It can also be used when there is no support for the logging format, and the logs are single line messages.</p>
-</dd>
+<dd>This format is for plain text files in a syslog-like format. It can also be used when there is no support for the logging format, and the logs are single line messages.</dd>
 </dl>
 </li>
 </ul>
-<ul id="logformat-snort-full">
+<ul class="simple" id="logformat-snort-full">
 <li><dl class="first docutils">
 <dt>snort-full</dt>
-<dd><p class="first last">This is used for Snort&#8217;s full output format.</p>
-</dd>
+<dd>This is used for Snort&#8217;s full output format.</dd>
 </dl>
 </li>
 </ul>
-<ul id="logformat-snort-fast">
+<ul class="simple" id="logformat-snort-fast">
 <li><dl class="first docutils">
 <dt>snort-fast</dt>
-<dd><p class="first last">This is used for Snort&#8217;s fast output format.</p>
-</dd>
+<dd>This is used for Snort&#8217;s fast output format.</dd>
 </dl>
 </li>
 </ul>
@@ -224,19 +221,17 @@ It will not automatically begin monitoring new log files. <code class="docutils 
 <ul class="simple" id="logformat-iis">
 <li>iis</li>
 </ul>
-<ul id="logformat-eventlog">
+<ul class="simple" id="logformat-eventlog">
 <li><dl class="first docutils">
 <dt>eventlog</dt>
-<dd><p class="first last">This is used for Microsoft Windows eventlog format.</p>
-</dd>
+<dd>This is used for Microsoft Windows eventlog format.</dd>
 </dl>
 </li>
 </ul>
-<ul id="logformat-eventchannel">
+<ul class="simple" id="logformat-eventchannel">
 <li><dl class="first docutils">
 <dt>eventchannel</dt>
-<dd><p class="first last">This is used for Microsoft Windows eventlogs, using the new EventApi. This allows OSSEC to monitor both standard &#8220;Windows&#8221; eventlogs and more recent &#8220;Application and Services&#8221; logs. This support was added in 2.8.</p>
-</dd>
+<dd>This is used for Microsoft Windows eventlogs, using the new EventApi. This allows OSSEC to monitor both standard &#8220;Windows&#8221; eventlogs and more recent &#8220;Application and Services&#8221; logs. This support was added in 2.8.</dd>
 </dl>
 </li>
 </ul>
@@ -244,27 +239,24 @@ It will not automatically begin monitoring new log files. <code class="docutils 
 <p class="first admonition-title">Warning</p>
 <p class="last"><code class="docutils literal"><span class="pre">eventchannel</span></code> cannot be used on Windows systems older than Vista.</p>
 </div>
-<ul id="logformat-mysql">
+<ul class="simple" id="logformat-mysql">
 <li><dl class="first docutils">
 <dt>mysql_log</dt>
-<dd><p class="first last">This is used for <a class="reference external" href="http://dev.mysql.com/">MySQL</a> logs. It does not support multi-line logs.</p>
-</dd>
+<dd>This is used for <a class="reference external" href="http://dev.mysql.com/">MySQL</a> logs. It does not support multi-line logs.</dd>
 </dl>
 </li>
 </ul>
-<ul id="logformat-postgresql">
+<ul class="simple" id="logformat-postgresql">
 <li><dl class="first docutils">
 <dt>postgresql_log</dt>
-<dd><p class="first last">This is used for <a class="reference external" href="http://www.postgresql.org">PostgreSQL</a> logs. It does not support multi-line logs.</p>
-</dd>
+<dd>This is used for <a class="reference external" href="http://www.postgresql.org">PostgreSQL</a> logs. It does not support multi-line logs.</dd>
 </dl>
 </li>
 </ul>
-<ul id="logformat-nmapg">
+<ul class="simple" id="logformat-nmapg">
 <li><dl class="first docutils">
 <dt>nmapg</dt>
-<dd><p class="first last">This is used for monitoring files conforming to the grepable output from <a class="reference external" href="http://nmap.org">nmap</a>.</p>
-</dd>
+<dd>This is used for monitoring files conforming to the grepable output from <a class="reference external" href="http://nmap.org">nmap</a>.</dd>
 </dl>
 </li>
 </ul>
@@ -283,19 +275,17 @@ It will not automatically begin monitoring new log files. <code class="docutils 
 </div></blockquote>
 </li>
 </ul>
-<ul id="logformat-command">
+<ul class="simple" id="logformat-command">
 <li><dl class="first docutils">
 <dt>command</dt>
-<dd><p class="first last">This format will be the output from the command (as run by root) defined by <a class="reference internal" href="#command">command</a>. Each line of output will be treated as a separate log.</p>
-</dd>
+<dd>This format will be the output from the command (as run by root) defined by <a class="reference internal" href="#command">command</a>. Each line of output will be treated as a separate log.</dd>
 </dl>
 </li>
 </ul>
-<ul id="full-command">
+<ul class="simple" id="full-command">
 <li><dl class="first docutils">
 <dt>full_command</dt>
-<dd><p class="first last">This format will be the output from the command (as run by root) defined by <a class="reference internal" href="#command">command</a>. The entire output will be treated as a single log.</p>
-</dd>
+<dd>This format will be the output from the command (as run by root) defined by <a class="reference internal" href="#command">command</a>. The entire output will be treated as a single log.</dd>
 </dl>
 </li>
 </ul>
@@ -454,7 +444,7 @@ method has its own page and examples.</p>
     <p>
         &copy; Copyright 2010-2016, OSSEC Project Team.<br/>
     OSSEC trademark and <b>ossec.net</b> domain owned by <a href="http://www.trendmicro.com" target="_blank">Trend Micro, Inc.</a><br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.8 - 
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.5.1 - 
     Home page graphics courtesy of <a href="https://pixabay.com" target="_blank">pixabay</a>
     </p>
   </div>

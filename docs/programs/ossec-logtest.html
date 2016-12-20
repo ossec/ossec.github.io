@@ -20,7 +20,8 @@
         VERSION:     '2.8.3',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
@@ -33,7 +34,6 @@
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="top" title="OSSEC" href="../../index.html" />
   
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
@@ -140,15 +140,15 @@ to test and verify log files in the exact same way that <cite>ossec-anaylistd</c
 </dd></dl>
 
 <dl class="option">
-<dt id="cmdoption-ossec-logtest-D">
-<code class="descname">-D</code><code class="descclassname"> &lt;dir&gt;</code><a class="headerlink" href="#cmdoption-ossec-logtest-D" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-ossec-logtest-d">
+<code class="descname">-D</code><code class="descclassname"> &lt;dir&gt;</code><a class="headerlink" href="#cmdoption-ossec-logtest-d" title="Permalink to this definition">¶</a></dt>
 <dd><p>This is the path that ossec-logtest will chroot to before it completes loading all rules,
 decoders, and lists and processing standard input.</p>
 </dd></dl>
 
 <dl class="option">
-<dt id="cmdoption-ossec-logtest-d">
-<code class="descname">-d</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ossec-logtest-d" title="Permalink to this definition">¶</a></dt>
+<dt id="id2">
+<code class="descname">-d</code><code class="descclassname"></code><a class="headerlink" href="#id2" title="Permalink to this definition">¶</a></dt>
 <dd><p>Print debug output to the terminal. This option can be used multiple times to increase the verbosity of the debug messages.</p>
 </dd></dl>
 
@@ -166,8 +166,8 @@ decoders, and lists as they are loaded and the order they were processed.</p>
 </dd></dl>
 
 <dl class="option">
-<dt id="cmdoption-ossec-logtest-U">
-<code class="descname">-U</code><code class="descclassname"> &lt;rule-id:alert-level:decoder-name&gt;</code><a class="headerlink" href="#cmdoption-ossec-logtest-U" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-ossec-logtest-u">
+<code class="descname">-U</code><code class="descclassname"> &lt;rule-id:alert-level:decoder-name&gt;</code><a class="headerlink" href="#cmdoption-ossec-logtest-u" title="Permalink to this definition">¶</a></dt>
 <dd><p>This option will cause ossec-logtest to return with an exit status other then zero unless
 the last line tested matches the arguments passed.</p>
 <div class="admonition note">
@@ -191,14 +191,14 @@ This is a bug and will be corrected. It is documented in issue #`61 &lt;<a class
 </dd></dl>
 
 <dl class="option">
-<dt id="cmdoption-ossec-logtest-V">
-<code class="descname">-V</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ossec-logtest-V" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-ossec-logtest-v">
+<code class="descname">-V</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ossec-logtest-v" title="Permalink to this definition">¶</a></dt>
 <dd><p>Print the Version and license message for OSSEC and ossec-logtest.</p>
 </dd></dl>
 
 <dl class="option">
-<dt id="cmdoption-ossec-logtest-v">
-<code class="descname">-v</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ossec-logtest-v" title="Permalink to this definition">¶</a></dt>
+<dt id="id3">
+<code class="descname">-v</code><code class="descclassname"></code><a class="headerlink" href="#id3" title="Permalink to this definition">¶</a></dt>
 <dd><p>Full output of all details and matches.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -214,7 +214,7 @@ in all version before version 2.5</p>
 </div>
 <div class="section" id="caveats">
 <h2>Caveats<a class="headerlink" href="#caveats" title="Permalink to this headline">¶</a></h2>
-<p>Some log formats will be processed differently than they appear in the log file. MySQL log files for instance will have <a href="#id2"><span class="problematic" id="id3">``</span></a>MySQL log: `` prepended to the log message before analysis. If using ossec-logtest to test MySQL logs, please add this string to the beginning.</p>
+<p>Some log formats will be processed differently than they appear in the log file. MySQL log files for instance will have <a href="#id4"><span class="problematic" id="id5">``</span></a>MySQL log: `` prepended to the log message before analysis. If using ossec-logtest to test MySQL logs, please add this string to the beginning.</p>
 <p>Example:</p>
 <p>Given the following MySQL log message:</p>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">130218 12:07:52 [Warning] Unsafe statement written to the binary log using statement format since BINLOG_FORMAT = STATEMENT. The statement is unsafe because it uses a LIMIT clause. This is unsafe because the set of rows included cannot be predicted. Statement: DELETE FROM `emailQueue` WHERE `emailQueueID` = &#39;12207&#39; LIMIT 1</span>
@@ -441,7 +441,7 @@ box:</p>
     <p>
         &copy; Copyright 2010-2016, OSSEC Project Team.<br/>
     OSSEC trademark and <b>ossec.net</b> domain owned by <a href="http://www.trendmicro.com" target="_blank">Trend Micro, Inc.</a><br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.8 - 
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.5.1 - 
     Home page graphics courtesy of <a href="https://pixabay.com" target="_blank">pixabay</a>
     </p>
   </div>

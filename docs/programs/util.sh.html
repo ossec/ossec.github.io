@@ -20,7 +20,8 @@
         VERSION:     '2.8.3',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
@@ -33,7 +34,6 @@
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="top" title="OSSEC" href="../../index.html" />
   
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
@@ -123,14 +123,14 @@ It can also add a full_command to check for changes to a website, or for changes
 <div class="section" id="util-sh-argument-options">
 <h2>util.sh argument options<a class="headerlink" href="#util-sh-argument-options" title="Permalink to this headline">¶</a></h2>
 <dl class="option">
-<dt id="cmdoption-util.sh-arg-addfile">
-<code class="descname">addfile</code><code class="descclassname"> &lt;filename&gt; [&lt;format&gt;]</code><a class="headerlink" href="#cmdoption-util.sh-arg-addfile" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-util-sh-arg-addfile">
+<code class="descname">addfile</code><code class="descclassname"> &lt;filename&gt; [&lt;format&gt;]</code><a class="headerlink" href="#cmdoption-util-sh-arg-addfile" title="Permalink to this definition">¶</a></dt>
 <dd><p>Add a file to be monitored by <code class="docutils literal"><span class="pre">ossec-logtest</span></code>. A <code class="docutils literal"><span class="pre">localfile</span></code> will be added to the ossec.conf.</p>
 </dd></dl>
 
 <dl class="option">
-<dt id="cmdoption-util.sh-arg-addsite">
-<code class="descname">addsite</code><code class="descclassname"> &lt;domain&gt;</code><a class="headerlink" href="#cmdoption-util.sh-arg-addsite" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-util-sh-arg-addsite">
+<code class="descname">addsite</code><code class="descclassname"> &lt;domain&gt;</code><a class="headerlink" href="#cmdoption-util-sh-arg-addsite" title="Permalink to this definition">¶</a></dt>
 <dd><p>Monitor a website for changes. A <code class="docutils literal"><span class="pre">full_command</span></code> will be added to the <code class="docutils literal"><span class="pre">ossec.conf</span></code> using lynx to dump the initial page.
 A rule can be written to monitor this output for changes.</p>
 <div class="admonition note">
@@ -144,8 +144,8 @@ A rule can be written to monitor this output for changes.</p>
 </dd></dl>
 
 <dl class="option">
-<dt id="cmdoption-util.sh-arg-adddns">
-<code class="descname">adddns</code><code class="descclassname"> &lt;domain&gt;</code><a class="headerlink" href="#cmdoption-util.sh-arg-adddns" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-util-sh-arg-adddns">
+<code class="descname">adddns</code><code class="descclassname"> &lt;domain&gt;</code><a class="headerlink" href="#cmdoption-util-sh-arg-adddns" title="Permalink to this definition">¶</a></dt>
 <dd><p>Monitor the name server of a domain for changes. A <code class="docutils literal"><span class="pre">full_command</span></code> will be added to the ossec.conf using host</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -193,7 +193,7 @@ A rule can be written to monitor this output for changes.</p>
     <p>
         &copy; Copyright 2010-2016, OSSEC Project Team.<br/>
     OSSEC trademark and <b>ossec.net</b> domain owned by <a href="http://www.trendmicro.com" target="_blank">Trend Micro, Inc.</a><br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.8 - 
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.5.1 - 
     Home page graphics courtesy of <a href="https://pixabay.com" target="_blank">pixabay</a>
     </p>
   </div>

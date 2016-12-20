@@ -20,7 +20,8 @@
         VERSION:     '2.8.3',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
@@ -33,7 +34,6 @@
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="top" title="OSSEC" href="../../index.html" />
   
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
@@ -121,62 +121,62 @@
 <div class="section" id="rootcheck-control-argument-options">
 <h2>rootcheck_control argument options<a class="headerlink" href="#rootcheck-control-argument-options" title="Permalink to this headline">¶</a></h2>
 <dl class="option">
-<dt id="cmdoption-rootcheck_control-h">
-<code class="descname">-h</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-rootcheck_control-h" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-rootcheck-control-h">
+<code class="descname">-h</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-rootcheck-control-h" title="Permalink to this definition">¶</a></dt>
 <dd><p>Display the help message.</p>
 </dd></dl>
 
 <dl class="option">
-<dt id="cmdoption-rootcheck_control-l">
-<code class="descname">-l</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-rootcheck_control-l" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-rootcheck-control-l">
+<code class="descname">-l</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-rootcheck-control-l" title="Permalink to this definition">¶</a></dt>
 <dd><p>List available agents.</p>
 </dd></dl>
 
 <dl class="option">
-<dt id="cmdoption-rootcheck_control-lc">
-<code class="descname">-lc</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-rootcheck_control-lc" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-rootcheck-control-lc">
+<code class="descname">-lc</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-rootcheck-control-lc" title="Permalink to this definition">¶</a></dt>
 <dd><p>List only currently connected agents.</p>
 </dd></dl>
 
 <dl class="option">
-<dt id="cmdoption-rootcheck_control-u">
-<code class="descname">-u</code><code class="descclassname"> &lt;id&gt;</code><a class="headerlink" href="#cmdoption-rootcheck_control-u" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-rootcheck-control-u">
+<code class="descname">-u</code><code class="descclassname"> &lt;id&gt;</code><a class="headerlink" href="#cmdoption-rootcheck-control-u" title="Permalink to this definition">¶</a></dt>
 <dd><p>Updates (clear) the database for the agent.</p>
 </dd></dl>
 
 <dl class="option">
-<dt id="cmdoption-rootcheck_control-u">
-<code class="descname">-u</code><code class="descclassname"> all</code><a class="headerlink" href="#cmdoption-rootcheck_control-u" title="Permalink to this definition">¶</a></dt>
+<dt id="id2">
+<code class="descname">-u</code><code class="descclassname"> all</code><a class="headerlink" href="#id2" title="Permalink to this definition">¶</a></dt>
 <dd><p>Updates (clear) the database for all agents.</p>
 </dd></dl>
 
 <dl class="option">
-<dt id="cmdoption-rootcheck_control-i">
-<code class="descname">-i</code><code class="descclassname"> &lt;agent_id&gt;</code><a class="headerlink" href="#cmdoption-rootcheck_control-i" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-rootcheck-control-i">
+<code class="descname">-i</code><code class="descclassname"> &lt;agent_id&gt;</code><a class="headerlink" href="#cmdoption-rootcheck-control-i" title="Permalink to this definition">¶</a></dt>
 <dd><p>Prints database for the agent.</p>
 </dd></dl>
 
 <dl class="option">
-<dt id="cmdoption-rootcheck_control-r">
-<code class="descname">-r</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-rootcheck_control-r" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-rootcheck-control-r">
+<code class="descname">-r</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-rootcheck-control-r" title="Permalink to this definition">¶</a></dt>
 <dd><p>Used with -i, prints all the resolved issues.</p>
 </dd></dl>
 
 <dl class="option">
-<dt id="cmdoption-rootcheck_control-q">
-<code class="descname">-q</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-rootcheck_control-q" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-rootcheck-control-q">
+<code class="descname">-q</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-rootcheck-control-q" title="Permalink to this definition">¶</a></dt>
 <dd><p>Used with -i, prints all the outstanding issues.</p>
 </dd></dl>
 
 <dl class="option">
-<dt id="cmdoption-rootcheck_control-L">
-<code class="descname">-L</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-rootcheck_control-L" title="Permalink to this definition">¶</a></dt>
+<dt id="id3">
+<code class="descname">-L</code><code class="descclassname"></code><a class="headerlink" href="#id3" title="Permalink to this definition">¶</a></dt>
 <dd><p>Used with -i, prints the last scan.</p>
 </dd></dl>
 
 <dl class="option">
-<dt id="cmdoption-rootcheck_control-s">
-<code class="descname">-s</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-rootcheck_control-s" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-rootcheck-control-s">
+<code class="descname">-s</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-rootcheck-control-s" title="Permalink to this definition">¶</a></dt>
 <dd><p>Changes the output to CSV (comma delimited).</p>
 </dd></dl>
 
@@ -187,11 +187,11 @@
 <h3>Example 1: Getting a list of system auditing/policy monitoring events<a class="headerlink" href="#example-1-getting-a-list-of-system-auditing-policy-monitoring-events" title="Permalink to this headline">¶</a></h3>
 <p>To get a list of all auditing/policy monitoring events for a specific agent, you can run <code class="xref std std-option docutils literal"><span class="pre">rootcheck_control</span> <span class="pre">-i</span></code>. To retrieve the agent id you can use any of the following commands:</p>
 <ul class="simple">
-<li><a class="reference internal" href="#cmdoption-rootcheck_control-l"><code class="xref std std-option docutils literal"><span class="pre">rootcheck_control</span> <span class="pre">-l</span></code></a>,</li>
-<li><a class="reference internal" href="agent_control.html#cmdoption-agent_control-l"><code class="xref std std-option docutils literal"><span class="pre">agent_control</span> <span class="pre">-l</span></code></a></li>
-<li><a class="reference internal" href="syscheck_control.html#cmdoption-syscheck_control-l"><code class="xref std std-option docutils literal"><span class="pre">syscheck_control</span> <span class="pre">-l</span></code></a></li>
-<li><a class="reference internal" href="syscheck_update.html#cmdoption-syscheck_update-l"><code class="xref std std-option docutils literal"><span class="pre">syscheck_update</span> <span class="pre">-l</span></code></a></li>
-<li><a class="reference internal" href="manage_agents.html#cmdoption-manage_agents-l"><code class="xref std std-option docutils literal"><span class="pre">manage_agents</span> <span class="pre">-l</span></code></a></li>
+<li><a class="reference internal" href="#cmdoption-rootcheck-control-l"><code class="xref std std-option docutils literal"><span class="pre">rootcheck_control</span> <span class="pre">-l</span></code></a>,</li>
+<li><a class="reference internal" href="agent_control.html#cmdoption-agent-control-l"><code class="xref std std-option docutils literal"><span class="pre">agent_control</span> <span class="pre">-l</span></code></a></li>
+<li><a class="reference internal" href="syscheck_control.html#cmdoption-syscheck-control-l"><code class="xref std std-option docutils literal"><span class="pre">syscheck_control</span> <span class="pre">-l</span></code></a></li>
+<li><a class="reference internal" href="syscheck_update.html#cmdoption-syscheck-update-l"><code class="xref std std-option docutils literal"><span class="pre">syscheck_update</span> <span class="pre">-l</span></code></a></li>
+<li><a class="reference internal" href="manage_agents.html#cmdoption-manage-agents-l"><code class="xref std std-option docutils literal"><span class="pre">manage_agents</span> <span class="pre">-l</span></code></a></li>
 </ul>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> /var/ossec/bin/rootcheck_control -i 002
 
@@ -257,7 +257,7 @@ To only show the results of the last scan and time of that scan, run <code class
     <p>
         &copy; Copyright 2010-2016, OSSEC Project Team.<br/>
     OSSEC trademark and <b>ossec.net</b> domain owned by <a href="http://www.trendmicro.com" target="_blank">Trend Micro, Inc.</a><br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.8 - 
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.5.1 - 
     Home page graphics courtesy of <a href="https://pixabay.com" target="_blank">pixabay</a>
     </p>
   </div>

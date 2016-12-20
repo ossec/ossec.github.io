@@ -20,7 +20,8 @@
         VERSION:     '2.8.3',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
@@ -33,7 +34,6 @@
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="top" title="OSSEC" href="../../index.html" />
   
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
@@ -193,10 +193,10 @@
 </div></blockquote>
 </li>
 </ul>
-<ul id="overwrite">
+<ul class="simple" id="overwrite">
 <li><dl class="first docutils">
 <dt><em>overwrite</em></dt>
-<dd><ul class="first last simple">
+<dd><ul class="first last">
 <li>Used to supercede an OSSEC rule with local changes.</li>
 <li>This is useful to change the level or other options of rules included with OSSEC.</li>
 <li><strong>Allowed</strong> yes</li>
@@ -313,7 +313,7 @@
 <dt id="element-weekday">
 <code class="descname">weekday</code><a class="headerlink" href="#element-weekday" title="Permalink to this definition">¶</a></dt>
 <dd><ul class="simple">
-<li>Week day that the event was generated.</li>
+<li>Week day that the event was generated. Multiple entries can be separated by commas.</li>
 <li><strong>Allowed:</strong> monday - sunday, weekdays, weekends</li>
 </ul>
 </dd></dl>
@@ -622,10 +622,10 @@ information about the alert/event.</p>
 <code class="descname">options</code><a class="headerlink" href="#element-options" title="Permalink to this definition">¶</a></dt>
 <dd><p>Additional rule options</p>
 <p><strong>Allowed:</strong></p>
-<ul>
+<ul class="simple">
 <li><dl class="first docutils">
 <dt><em>alert_by_email</em></dt>
-<dd><ul class="first last simple">
+<dd><ul class="first last">
 <li>Always alert by email.</li>
 <li><em>Example:</em> &lt;options&gt;alert_by_email&lt;/options&gt;</li>
 </ul>
@@ -634,7 +634,7 @@ information about the alert/event.</p>
 </li>
 <li><dl class="first docutils">
 <dt><em>no_email_alert</em></dt>
-<dd><ul class="first last simple">
+<dd><ul class="first last">
 <li>Never alert by email.</li>
 <li><em>Example:</em> &lt;options&gt;no_email_alert&lt;/options&gt;</li>
 </ul>
@@ -643,7 +643,7 @@ information about the alert/event.</p>
 </li>
 <li><dl class="first docutils">
 <dt>no_log</dt>
-<dd><ul class="first last simple">
+<dd><ul class="first last">
 <li>Do not log this alert.</li>
 <li><em>Example:</em> &lt;options&gt;no_log&lt;/options&gt;</li>
 </ul>
@@ -691,7 +691,7 @@ information about the alert/event.</p>
     <p>
         &copy; Copyright 2010-2016, OSSEC Project Team.<br/>
     OSSEC trademark and <b>ossec.net</b> domain owned by <a href="http://www.trendmicro.com" target="_blank">Trend Micro, Inc.</a><br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.8 - 
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.5.1 - 
     Home page graphics courtesy of <a href="https://pixabay.com" target="_blank">pixabay</a>
     </p>
   </div>

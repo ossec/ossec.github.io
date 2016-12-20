@@ -20,7 +20,8 @@
         VERSION:     '2.8.3',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
@@ -33,7 +34,6 @@
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="top" title="OSSEC" href="../../index.html" />
   
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
@@ -129,15 +129,15 @@
 </dd></dl>
 
 <dl class="option">
-<dt id="cmdoption-ossec-monitord-D">
-<code class="descname">-D</code><code class="descclassname"> &lt;dir&gt;</code><a class="headerlink" href="#cmdoption-ossec-monitord-D" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-ossec-monitord-d">
+<code class="descname">-D</code><code class="descclassname"> &lt;dir&gt;</code><a class="headerlink" href="#cmdoption-ossec-monitord-d" title="Permalink to this definition">¶</a></dt>
 <dd><p>Chroot to &lt;dir&gt;.</p>
 <p><strong>Default:</strong> /var/ossec</p>
 </dd></dl>
 
 <dl class="option">
-<dt id="cmdoption-ossec-monitord-d">
-<code class="descname">-d</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ossec-monitord-d" title="Permalink to this definition">¶</a></dt>
+<dt id="id2">
+<code class="descname">-d</code><code class="descclassname"></code><a class="headerlink" href="#id2" title="Permalink to this definition">¶</a></dt>
 <dd><p>Execute ossec-monitord in debug mode. This option can be used multiple times to increase the verbosity of the debug messages.</p>
 </dd></dl>
 
@@ -173,8 +173,8 @@
 </dd></dl>
 
 <dl class="option">
-<dt id="cmdoption-ossec-monitord-V">
-<code class="descname">-V</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ossec-monitord-V" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-ossec-monitord-v">
+<code class="descname">-V</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ossec-monitord-v" title="Permalink to this definition">¶</a></dt>
 <dd><p>Version and license information.</p>
 </dd></dl>
 
@@ -199,7 +199,7 @@
     <p>
         &copy; Copyright 2010-2016, OSSEC Project Team.<br/>
     OSSEC trademark and <b>ossec.net</b> domain owned by <a href="http://www.trendmicro.com" target="_blank">Trend Micro, Inc.</a><br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.8 - 
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.5.1 - 
     Home page graphics courtesy of <a href="https://pixabay.com" target="_blank">pixabay</a>
     </p>
   </div>
