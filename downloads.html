@@ -160,10 +160,10 @@
 </table>
 <table border="1" class="docutils">
 <colgroup>
-<col width="20%" />
+<col width="19%" />
 <col width="44%" />
-<col width="25%" />
-<col width="11%" />
+<col width="24%" />
+<col width="13%" />
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head" colspan="3">Latest Stable Release (2.8.3)</th>
@@ -174,7 +174,7 @@
 <tr class="row-even"><td>Server/Agent Unix</td>
 <td><a class="reference external" href="https://bintray.com/artifact/download/ossec/ossec-hids/ossec-hids-2.8.3.tar.gz">ossec-hids-2.8.3.tar.gz</a> – <a class="reference external" href="https://bintray.com/ossec/ossec-hids/ossec-hids/view#release">Release Notes</a></td>
 <td><a class="reference external" href="https://github.com/ossec/ossec-docs/blob/master/docs/whatsnew/checksums/2.8.3/ossec-hids-2.8.3.tar.gz.sha256">Unix Checksum</a></td>
-<td>&nbsp;</td>
+<td><a class="reference external" href="https://github.com/ossec/ossec-hids/releases/download/v2.8.3/ossec-hids-2.8.3.tar.gz.asc">signature</a></td>
 </tr>
 <tr class="row-odd"><td>Agent Windows</td>
 <td><a class="reference external" href="https://bintray.com/artifact/download/ossec/ossec-hids/ossec-agent-win32-2.8.3.exe">ossec-agent-win32-2.8.3.exe</a></td>
@@ -265,23 +265,24 @@
 <p>Before you install any package from our project, we recommend that you
 verify it using our PGP key. Follow these two steps if you are not used
 to using gpg. You first need to import our public key:</p>
-<div class="code console highlight-default"><div class="highlight"><pre><span></span><span class="n">ossec</span><span class="o">-</span><span class="n">test</span><span class="c1"># wget https://ossec.github.io/files/OSSEC-PGP-KEY.asc</span>
-<span class="n">ossec</span><span class="o">-</span><span class="n">test</span><span class="c1"># gpg –import OSSEC-PGP-KEY.asc</span>
+<div class="code console highlight-default"><div class="highlight"><pre><span></span><span class="c1"># wget https://ossec.github.io/files/OSSEC-ARCHIVE-KEY.asc</span>
+<span class="c1"># gpg –import OSSEC-ARCHIVE-KEY.asc</span>
 </pre></div>
 </div>
 <p>And then verify each file against its signature:</p>
-<div class="code console highlight-default"><div class="highlight"><pre><span></span><span class="n">ossec</span><span class="o">-</span><span class="n">test</span><span class="c1"># gpg –verify file.sig file</span>
+<div class="code console highlight-default"><div class="highlight"><pre><span></span><span class="n">ossec</span><span class="o">-</span><span class="n">test</span><span class="c1"># gpg –verify file.asc</span>
 </pre></div>
 </div>
 <p>You should get the following result:</p>
-<div class="code console highlight-default"><div class="highlight"><pre><span></span>gpg: Signature made Tue 19 Jul 2011 03:13:58 PM BRT using RSA key ID A3901351
-gpg: Good signature from “Daniel B. Cid ”
-Primary key fingerprint: 6F11 9E06 487A AF17 C84C E48A 456B 17CF A390 1351
+<div class="code console highlight-default"><div class="highlight"><pre><span></span><span class="n">gpg</span><span class="p">:</span> <span class="n">Signature</span> <span class="n">made</span> <span class="n">Tue</span> <span class="mi">20</span> <span class="n">Dec</span> <span class="mi">2016</span> <span class="mi">11</span><span class="p">:</span><span class="mi">35</span><span class="p">:</span><span class="mi">58</span> <span class="n">AM</span> <span class="n">EST</span> <span class="n">using</span> <span class="n">RSA</span> <span class="n">key</span> <span class="n">ID</span> <span class="mi">2</span><span class="n">D8387B7</span>
+<span class="n">gpg</span><span class="p">:</span> <span class="n">Good</span> <span class="n">signature</span> <span class="kn">from</span> <span class="s2">&quot;Scott R. Shinn &lt;scott@atomicorp.com&gt;&quot;</span>
+<span class="n">Primary</span> <span class="n">key</span> <span class="n">fingerprint</span><span class="p">:</span> <span class="n">B50F</span> <span class="n">B194</span> <span class="mi">7</span><span class="n">A0A</span> <span class="n">E311</span> <span class="mi">45</span><span class="n">D0</span>  <span class="mi">5</span><span class="n">FAD</span> <span class="n">EE1B</span> <span class="mi">0</span><span class="n">E6B</span> <span class="mi">2</span><span class="n">D83</span> <span class="mi">87</span><span class="n">B7</span>
 </pre></div>
 </div>
-<p>Note that the key expiration date was changed lately. If you get an
-warning saying “gpg: Note: This key has expired!”, make sure to update
-the key and run the “import” command again (as specified above).</p>
+<p>Note that the signing key was changed in December 2016. The previous signing key
+&#8220;6F11 9E06 487A AF17 C84C E48A 456B 17CF A390 1351&#8221; has expired. If you get an warning
+saying “gpg: Note: This key has expired!”, make sure to update the key and run the
+“import” command again (as specified above).</p>
 </div>
 <div class="section" id="presentation-slides">
 <h2>Presentation Slides<a class="headerlink" href="#presentation-slides" title="Permalink to this headline">¶</a></h2>
