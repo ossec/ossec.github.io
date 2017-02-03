@@ -391,8 +391,8 @@ properly by default. There are a few changes that you will need to do:</p>
 <p><strong>Increase your system&#8217;s limits</strong></p>
 <p>Most systems have limits regarding the maximum number of files you can have.
 A few commands you should try are (to increase to 2048):</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> <span class="nb">ulimit</span> -n 2048
-<span class="gp">#</span> sysctl -w kern.maxfiles<span class="o">=</span>2048
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> <span class="nb">ulimit</span> -n <span class="m">2048</span>
+<span class="gp">#</span> sysctl -w kern.maxfiles<span class="o">=</span><span class="m">2048</span>
 </pre></div>
 </div>
 </div>
@@ -503,7 +503,7 @@ If you are using a system that is still using tcpwrappers, either use the curren
     <p>
         &copy; Copyright 2010-2017, OSSEC Project Team.<br/>
     OSSEC trademark and <b>ossec.net</b> domain owned by <a href="http://www.trendmicro.com" target="_blank">Trend Micro, Inc.</a><br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.5.1 - 
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.5.2 - 
     Home page graphics courtesy of <a href="https://pixabay.com" target="_blank">pixabay</a>
     </p>
   </div>

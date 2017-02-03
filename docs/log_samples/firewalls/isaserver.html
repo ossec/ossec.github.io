@@ -124,9 +124,9 @@
 is used, the times stamped on events are in Coordinated Universal Time
 (UTC) otherwise known as Greenwich Mean Time. So adjustments would have
 to be made during analysis for the particular time zone you are in.</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span>Software: Microsoft Internet Security and Acceleration Server 2004
-<span class="gp">#</span>Version: 2.0
-<span class="gp">#</span>Date: 2006-10-27 00:00:00
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span>Software: Microsoft Internet Security and Acceleration Server <span class="m">2004</span>
+<span class="gp">#</span>Version: <span class="m">2</span>.0
+<span class="gp">#</span>Date: <span class="m">2006</span>-10-27 <span class="m">00</span>:00:00
 <span class="gp">#</span>Fields: computer     date    <span class="nb">time</span>    IP protocol     <span class="nb">source</span>  destination     original client IP      <span class="nb">source</span> network  destination network     action  status  rule    application protocol    bytes sent      bytes sent intermediate bytes received  bytes received intermediate     connection <span class="nb">time</span> connection <span class="nb">time</span> intermediate    <span class="nb">source</span> name     destination name        username        agent   session ID      connection ID   interface       IP header       protocol payload
 <span class="go">ACME-PROXY    2006-10-27      00:00:00        UDP     192.168.100.115:61683   255.255.255.255:14000   192.168.100.115 Internal        Local Host      Denied  0xc004000d      -       Unidentified IP Traffic 0       0       0       0       -       -       -       -       -       -       0       0       -       -       -</span>
 <span class="go">ACME-PROXY    2006-10-27      00:00:00        IGMP    192.168.80.148  224.0.0.1       192.168.80.148  Internal        Local Host      Denied  0xc004000d      -       Unidentified IP Traffic 0       0       0       0       -       -       -       -       -       -       0       0       -       -       -</span>
@@ -164,9 +164,9 @@ to be made during analysis for the particular time zone you are in.</p>
 </pre></div>
 </div>
 <p>Here is a sample of the web proxy log from ISA Server 2004. It is in W3C extended format.</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span>Software: Microsoft Internet Security and Acceleration Server 2004
-<span class="gp">#</span>Version: 2.0
-<span class="gp">#</span>Date: 2006-11-12 00:00:00
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span>Software: Microsoft Internet Security and Acceleration Server <span class="m">2004</span>
+<span class="gp">#</span>Version: <span class="m">2</span>.0
+<span class="gp">#</span>Date: <span class="m">2006</span>-11-12 <span class="m">00</span>:00:00
 <span class="gp">#</span>Fields: c-ip cs-username     c-agent sc-authenticated        date    <span class="nb">time</span>    s-svcname       s-computername  cs-referred     r-host  r-ip    r-port  time-taken      cs-bytes        sc-bytes        cs-protocol     cs-transport    s-operation     cs-uri  cs-mime-type    s-object-source sc-status       s-cache-info    rule    FilterInfo      cs-Network      sc-Network      error-info      action
 <span class="go">10.25.34.65   ACME\sstorm     kh_lt/LT3.0.0762        Y       2006-11-12      00:00:00        w3proxy ACME-PROXY      -       gt.shaffle.com  57.145.187.93   80      78      489     5591    http    TCP     GET     http://gt.shaffle.com/newstyle?f1-0310023013311323133-i.109     application/octet-stream        Inet    200     0x40000005      Allow Web Access        -       Internal        External        0xd80   Allowed</span>
 <span class="go">10.25.34.65   ACME\sstorm     kh_lt/LT3.0.0762        Y       2006-11-12      00:00:00        w3proxy ACME-PROXY      -       gt.shaffle.com  57.145.187.93   80      438     488     6862    http    TCP     GET     http://gt.shaffle.com/newstyle?f1-031002301331132331-i.109      application/octet-stream        Inet    200     0x40000005      Allow Web Access        -       Internal        External        0xd80   Allowed</span>
@@ -210,9 +210,9 @@ to be made during analysis for the particular time zone you are in.</p>
 </div>
 <p>Here are log samples from ISA Server 2000</p>
 <p>IP Packet Filter log in W3C Extended format</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span>Software: Microsoft<span class="o">(</span>R<span class="o">)</span> Internet Security and Acceleration Server 2000
-<span class="gp">#</span>Version: 1.0
-<span class="gp">#</span>Date: 2006-11-16 00:04:45
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span>Software: Microsoft<span class="o">(</span>R<span class="o">)</span> Internet Security and Acceleration Server <span class="m">2000</span>
+<span class="gp">#</span>Version: <span class="m">1</span>.0
+<span class="gp">#</span>Date: <span class="m">2006</span>-11-16 <span class="m">00</span>:04:45
 <span class="gp">#</span>Fields: date <span class="nb">time</span>    source-ip       destination-ip  protocol        param#1 param#2 tcp-flags       filter-rule     interface       ip-header       payload
 <span class="go">2006-11-16    00:04:45        10.45.1.1       10.45.2.4       Udp     1675    137     -       BLOCKED 10.45.1.1       23 44 44 4e yu bf 44 44 80 11 44 44 c0 a8 01 01 c0 a8 02 04     06 8b 44 89 44 3a 82 37</span>
 <span class="go">2006-11-16    00:04:46        10.45.1.1       10.45.2.4       Udp     1675    137     -       BLOCKED 10.45.1.1       23 44 44 4e yu c1 44 44 80 11 44 44 c0 a8 01 01 c0 a8 02 04     06 8b 44 89 44 3a 82 35</span>
@@ -280,9 +280,9 @@ to be made during analysis for the particular time zone you are in.</p>
 </pre></div>
 </div>
 <p>Here is a sample of the ISA Server 2000 web proxy log in W3C Extended format</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span>Software: Microsoft<span class="o">(</span>R<span class="o">)</span> Internet Security and Acceleration Server 2000
-<span class="gp">#</span>Version: 1.0
-<span class="gp">#</span>Date: 2006-11-16 00:00:01
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span>Software: Microsoft<span class="o">(</span>R<span class="o">)</span> Internet Security and Acceleration Server <span class="m">2000</span>
+<span class="gp">#</span>Version: <span class="m">1</span>.0
+<span class="gp">#</span>Date: <span class="m">2006</span>-11-16 <span class="m">00</span>:00:01
 <span class="gp">#</span>Fields: c-ip cs-username     c-agent sc-authenticated        date    <span class="nb">time</span>    s-svcname       s-computername  cs-referred     r-host  r-ip    r-port  time-taken      cs-bytes        sc-bytes        cs-protocol     cs-transport    s-operation     cs-uri  cs-mime-type    s-object-source sc-status       s-cache-info    rule#1  rule#2
 <span class="go">10.54.80.151  anonymous       Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.0)      N       2006-11-16      00:00:01        w3proxy ACME-PROXY      -       web.freemail.com        -       80      -       992     3292    http    TCP     POST    http://web.freemail.com/mail/channel/bind?at=3fed1555f6851887-10ee843eb7e&amp;VER=2&amp;SID=ABDB48E0D064E6E7&amp;RID=83189&amp;zx=f5lvq4-uftwvt&amp;t=1     -       -       407     -       -       -</span>
 <span class="go">10.54.80.151  anonymous       Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.0)      N       2006-11-16      00:00:01        w3proxy ACME-PROXY      -       web.freemail.com        -       80      -       52      1980    http    TCP     POST    http://web.freemail.com/mail/channel/bind?at=3fed1555f6851887-10ee843eb7e&amp;VER=2&amp;SID=ABDB48E0D064E6E7&amp;RID=83189&amp;zx=f5lvq4-uftwvt&amp;t=1     -       -       407     -       -       -</span>
@@ -411,7 +411,7 @@ to be made during analysis for the particular time zone you are in.</p>
     <p>
         &copy; Copyright 2010-2017, OSSEC Project Team.<br/>
     OSSEC trademark and <b>ossec.net</b> domain owned by <a href="http://www.trendmicro.com" target="_blank">Trend Micro, Inc.</a><br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.5.1 - 
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.5.2 - 
     Home page graphics courtesy of <a href="https://pixabay.com" target="_blank">pixabay</a>
     </p>
   </div>

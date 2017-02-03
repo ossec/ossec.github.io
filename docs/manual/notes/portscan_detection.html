@@ -501,12 +501,12 @@ Nov 14 18:30:30 TCP: Xmas scan detected [ports 636,256,554,389,1723,53,443,21,33
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span>!/bin/sh
 <span class="gp">#</span> Adds an IP to the IPFW drop list.
 <span class="gp">#</span> Only works with IPFW.
-<span class="gp">#</span> We use TABLE 00001. If you use this table <span class="k">for</span> anything <span class="k">else</span>,
+<span class="gp">#</span> We use TABLE <span class="m">00001</span>. If you use this table <span class="k">for</span> anything <span class="k">else</span>,
 <span class="gp">#</span> please change it here.
 <span class="gp">#</span> Expect: srcip
 <span class="gp">#</span> Author: Rafael Capovilla - under @ <span class="o">(</span> at <span class="o">)</span> underlinux.com.br
 <span class="gp">#</span> Author: Daniel B. Cid - dcid @ <span class="o">(</span> at <span class="o">)</span> ossec.net
-<span class="gp">#</span> Last modified: May 07, 2006
+<span class="gp">#</span> Last modified: May <span class="m">07</span>, <span class="m">2006</span>
 <span class="go">UNAME=`uname`</span>
 <span class="go">IPFW=&quot;/sbin/ipfw&quot;</span>
 <span class="go">ARG1=&quot;&quot;</span>
@@ -531,7 +531,7 @@ Nov 14 18:30:30 TCP: Xmas scan detected [ports 636,256,554,389,1723,53,443,21,33
 <span class="go">   exit 1;</span>
 <span class="go">fi</span>
 <span class="gp">#</span> We should run on FreeBSD
-<span class="gp">#</span> We always use table <span class="m">00001</span> and rule id 00001.
+<span class="gp">#</span> We always use table <span class="m">00001</span> and rule id <span class="m">00001</span>.
 <span class="go">if [ &quot;X${UNAME}&quot; = &quot;XFreeBSD&quot; ]; then</span>
 <span class="go">  ls ${IPFW} &gt;&gt; /dev/null 2&gt;&amp;1</span>
 <span class="go">  if [ $? != 0 ]; then</span>
@@ -639,7 +639,7 @@ Nov 14 18:30:30 TCP: Xmas scan detected [ports 636,256,554,389,1723,53,443,21,33
     <p>
         &copy; Copyright 2010-2017, OSSEC Project Team.<br/>
     OSSEC trademark and <b>ossec.net</b> domain owned by <a href="http://www.trendmicro.com" target="_blank">Trend Micro, Inc.</a><br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.5.1 - 
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.5.2 - 
     Home page graphics courtesy of <a href="https://pixabay.com" target="_blank">pixabay</a>
     </p>
   </div>

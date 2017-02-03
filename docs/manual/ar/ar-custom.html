@@ -193,10 +193,10 @@ be inside the /var/ossec/active-response/bin/ with the execution permissions set
 
 
 <span class="c1"># Getting alert time</span>
-<span class="nv">ALERTTIME</span><span class="o">=</span><span class="sb">`</span><span class="nb">echo</span> <span class="s2">&quot;</span><span class="nv">$ALERTID</span><span class="s2">&quot;</span> <span class="p">|</span> cut -d  <span class="s2">&quot;.&quot;</span> -f 1<span class="sb">`</span>
+<span class="nv">ALERTTIME</span><span class="o">=</span><span class="sb">`</span><span class="nb">echo</span> <span class="s2">&quot;</span><span class="nv">$ALERTID</span><span class="s2">&quot;</span> <span class="p">|</span> cut -d  <span class="s2">&quot;.&quot;</span> -f <span class="m">1</span><span class="sb">`</span>
 
 <span class="c1"># Getting end of alert</span>
-<span class="nv">ALERTLAST</span><span class="o">=</span><span class="sb">`</span><span class="nb">echo</span> <span class="s2">&quot;</span><span class="nv">$ALERTID</span><span class="s2">&quot;</span> <span class="p">|</span> cut -d  <span class="s2">&quot;.&quot;</span> -f 2<span class="sb">`</span>
+<span class="nv">ALERTLAST</span><span class="o">=</span><span class="sb">`</span><span class="nb">echo</span> <span class="s2">&quot;</span><span class="nv">$ALERTID</span><span class="s2">&quot;</span> <span class="p">|</span> cut -d  <span class="s2">&quot;.&quot;</span> -f <span class="m">2</span><span class="sb">`</span>
 
 <span class="c1"># Getting full alert</span>
 grep -A <span class="m">10</span> <span class="s2">&quot;</span><span class="nv">$ALERTTIME</span><span class="s2">&quot;</span> <span class="si">${</span><span class="nv">PWD</span><span class="si">}</span>/../logs/alerts/alerts.log <span class="p">|</span> grep -v <span class="s2">&quot;.</span><span class="nv">$ALERTLAST</span><span class="s2">: &quot;</span> -A <span class="m">10</span> <span class="p">|</span> mail <span class="nv">$MAILADDRESS</span> -s <span class="s2">&quot;OSSEC Alert&quot;</span>
@@ -250,7 +250,7 @@ thee above example, I can run the logger command to similar a segmentation fault
     <p>
         &copy; Copyright 2010-2017, OSSEC Project Team.<br/>
     OSSEC trademark and <b>ossec.net</b> domain owned by <a href="http://www.trendmicro.com" target="_blank">Trend Micro, Inc.</a><br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.5.1 - 
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.5.2 - 
     Home page graphics courtesy of <a href="https://pixabay.com" target="_blank">pixabay</a>
     </p>
   </div>
