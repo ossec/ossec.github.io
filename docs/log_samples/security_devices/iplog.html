@@ -117,6 +117,10 @@
       
   <div class="section" id="log-samples-for-iplog">
 <h1>Log samples for Iplog<a class="headerlink" href="#log-samples-for-iplog" title="Permalink to this headline">¶</a></h1>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">This document is extracted directly from the old wiki. It is probably out of date, and definitely not formatted properly.</p>
+</div>
 <p>Some log samples for <a class="reference external" href="http://freshmeat.net/projects/iplog/">iplog</a></p>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Nov  9 16:24:47 TCP: ftp connection attempt from mail.derkeiler.com (195.140.232.116):52516</span>
 <span class="go">Nov  9 16:24:47 TCP: pptp connection attempt from mail.derkeiler.com (195.140.232.116):51624</span>
@@ -381,96 +385,78 @@ add to your ipfw script the follow lines, if you are using the 00001 rule number
 <div>/sbin/ipfw add 00001 deny ip from table(00002) to any
 /sbin/ipfw add 00001 deny ip from any to table(00002)</div></blockquote>
 <p>Change  ~/ossec/active-response/bin/firewall-drop.sh to adjust to the red lines</p>
-<blockquote>
-<div><p>&lt;nowiki&gt;#!/bin/sh&lt;/nowiki&gt;
-&lt;nowiki&gt;# Adds an IP to the IPFW drop list.&lt;/nowiki&gt;
-&lt;nowiki&gt;# Only works with IPFW.&lt;/nowiki&gt;
-&lt;nowiki&gt;# We use TABLE 00001. If you use this table for anything else,&lt;/nowiki&gt;
-&lt;nowiki&gt;# please change it here.&lt;/nowiki&gt;
-&lt;nowiki&gt;# Expect: srcip&lt;/nowiki&gt;
-&lt;nowiki&gt;# Author: Rafael Capovilla - under &#64; ( at ) underlinux.com.br&lt;/nowiki&gt;
-&lt;nowiki&gt;# Author: Daniel B. Cid - dcid &#64; ( at ) ossec.net&lt;/nowiki&gt;
-&lt;nowiki&gt;# Last modified: May 07, 2006&lt;/nowiki&gt;
-UNAME=`uname`
-IPFW=&#8221;/sbin/ipfw&#8221;
-ARG1=&#8221;&#8221;
-ARG2=&#8221;&#8221;
-ACTION=$1
-USER=$2
-IP=$3
-&lt;font color=&#8221;red&#8221;&gt;TABLE_ID=00002&lt;/font&gt;
-LOCAL=`dirname $0`;
-cd $LOCAL
-cd ../
-PWD=`pwd`
-echo &#8220;<cite>date</cite> $0 $1 $2 $3&#8221; &gt;&gt; ${PWD}/ossec-hids-responses.log
-&lt;nowiki&gt;# Checking for an IP&lt;/nowiki&gt;
-if [ &#8220;x${IP}&#8221; = &#8220;x&#8221; ]; then</p>
-<blockquote>
-<div>echo &#8220;$0: &lt;action&gt; &lt;username&gt; &lt;ip&gt;&#8221;
-exit 1;</div></blockquote>
-<p>fi
-&lt;nowiki&gt;# Blocking IP&lt;/nowiki&gt;
-if [ &#8220;x${ACTION}&#8221; != &#8220;xadd&#8221; -a &#8220;x${ACTION}&#8221; != &#8220;xdelete&#8221; ]; then</p>
-<blockquote>
-<div>echo &#8220;$0: Invalid action: ${ACTION}&#8221;
-exit 1;</div></blockquote>
-<p>fi
-&lt;nowiki&gt;# We should run on FreeBSD&lt;/nowiki&gt;
-&lt;nowiki&gt;# We always use table 00001 and rule id 00001.&lt;/nowiki&gt;
-if [ &#8220;X${UNAME}&#8221; = &#8220;XFreeBSD&#8221; ]; then</p>
-<blockquote>
-<div><blockquote>
-<div><p>ls ${IPFW} &gt;&gt; /dev/null 2&gt;&amp;1
-if [ $? != 0 ]; then</p>
-<blockquote>
-<div>exit 0;</div></blockquote>
-<p>fi</p>
-</div></blockquote>
-<p>&lt;nowiki&gt; # Check if our table is set&lt;/nowiki&gt;
-&lt;font color=&#8221;red&#8221;&gt; ${IPFW} show | grep &#8220;^00001&#8221; | grep &#8220;table(2)&#8221; &gt;/dev/null 2&gt;&amp;1&lt;/font&gt;</p>
-<blockquote>
-<div><dl class="docutils">
-<dt>if [ ! $? = 0 ]; then</dt>
-<dd># We need to add the table
-${IPFW} -q 00001 add deny ip from table(${TABLE_ID}) to any
-${IPFW} -q 00001 add deny ip from any to table(${TABLE_ID})</dd>
-</dl>
-<p>fi</p>
-</div></blockquote>
-</div></blockquote>
-<dl class="docutils">
-<dt>&lt;nowiki&gt;   # Executing and exiting&lt;/nowiki&gt;</dt>
-<dd>${IPFW} -q table ${TABLE_ID} ${ACTION} ${IP}
-exit 0;</dd>
-</dl>
-<p>fi
-&lt;nowiki&gt;# Not FreeBSD&lt;/nowiki&gt;
-exit 1;</p>
-</div></blockquote>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">&lt;nowiki&gt;#!/bin/sh&lt;/nowiki&gt;</span>
+<span class="go">&lt;nowiki&gt;# Adds an IP to the IPFW drop list.&lt;/nowiki&gt;</span>
+<span class="go">&lt;nowiki&gt;# Only works with IPFW.&lt;/nowiki&gt;</span>
+<span class="go">&lt;nowiki&gt;# We use TABLE 00001. If you use this table for anything else,&lt;/nowiki&gt;</span>
+<span class="go">&lt;nowiki&gt;# please change it here.&lt;/nowiki&gt;</span>
+<span class="go">&lt;nowiki&gt;# Expect: srcip&lt;/nowiki&gt;</span>
+<span class="go">&lt;nowiki&gt;# Author: Rafael Capovilla - under @ ( at ) underlinux.com.br&lt;/nowiki&gt;</span>
+<span class="go">&lt;nowiki&gt;# Author: Daniel B. Cid - dcid @ ( at ) ossec.net&lt;/nowiki&gt;</span>
+<span class="go">&lt;nowiki&gt;# Last modified: May 07, 2006&lt;/nowiki&gt;</span>
+<span class="go">UNAME=`uname`</span>
+<span class="go">IPFW=&quot;/sbin/ipfw&quot;</span>
+<span class="go">ARG1=&quot;&quot;</span>
+<span class="go">ARG2=&quot;&quot;</span>
+<span class="go">ACTION=$1</span>
+<span class="go">USER=$2</span>
+<span class="go">IP=$3</span>
+<span class="go">&lt;font color=&quot;red&quot;&gt;TABLE_ID=00002&lt;/font&gt;</span>
+<span class="go">LOCAL=`dirname $0`;</span>
+<span class="go">cd $LOCAL</span>
+<span class="go">cd ../</span>
+<span class="go">PWD=`pwd`</span>
+<span class="go">echo &quot;`date` $0 $1 $2 $3&quot; &gt;&gt; ${PWD}/ossec-hids-responses.log</span>
+<span class="go">&lt;nowiki&gt;# Checking for an IP&lt;/nowiki&gt;</span>
+<span class="go">if [ &quot;x${IP}&quot; = &quot;x&quot; ]; then</span>
+<span class="go">  echo &quot;$0: &lt;action&gt; &lt;username&gt; &lt;ip&gt;&quot;</span>
+<span class="go">  exit 1;</span>
+<span class="go">fi</span>
+<span class="go">&lt;nowiki&gt;# Blocking IP&lt;/nowiki&gt;</span>
+<span class="go">if [ &quot;x${ACTION}&quot; != &quot;xadd&quot; -a &quot;x${ACTION}&quot; != &quot;xdelete&quot; ]; then</span>
+<span class="go">  echo &quot;$0: Invalid action: ${ACTION}&quot;</span>
+<span class="go">  exit 1;</span>
+<span class="go">fi</span>
+<span class="go">&lt;nowiki&gt;# We should run on FreeBSD&lt;/nowiki&gt;</span>
+<span class="go">&lt;nowiki&gt;# We always use table 00001 and rule id 00001.&lt;/nowiki&gt;</span>
+<span class="go">if [ &quot;X${UNAME}&quot; = &quot;XFreeBSD&quot; ]; then</span>
+<span class="go">  ls ${IPFW} &gt;&gt; /dev/null 2&gt;&amp;1</span>
+<span class="go">  if [ $? != 0 ]; then</span>
+<span class="go">     exit 0;</span>
+<span class="go">  fi</span>
+<span class="go">  &lt;nowiki&gt; # Check if our table is set&lt;/nowiki&gt;</span>
+<span class="go">  &lt;font color=&quot;red&quot;&gt; ${IPFW} show | grep &quot;^00001&quot; | grep &quot;table(2)&quot; &gt;/dev/null 2&gt;&amp;1&lt;/font&gt;</span>
+<span class="go">  if [ ! $? = 0 ]; then</span>
+<span class="gp">      #</span> We need to add the table
+<span class="gp">      $</span><span class="o">{</span>IPFW<span class="o">}</span> -q <span class="m">00001</span> add deny ip from table<span class="se">\(</span><span class="si">${</span><span class="nv">TABLE_ID</span><span class="si">}</span><span class="se">\)</span> to any
+<span class="gp">      $</span><span class="o">{</span>IPFW<span class="o">}</span> -q <span class="m">00001</span> add deny ip from any to table<span class="se">\(</span><span class="si">${</span><span class="nv">TABLE_ID</span><span class="si">}</span><span class="se">\)</span>
+<span class="go">  fi</span>
+<span class="go">&lt;nowiki&gt;   # Executing and exiting&lt;/nowiki&gt;</span>
+<span class="gp">  $</span><span class="o">{</span>IPFW<span class="o">}</span> -q table <span class="si">${</span><span class="nv">TABLE_ID</span><span class="si">}</span> <span class="si">${</span><span class="nv">ACTION</span><span class="si">}</span> <span class="si">${</span><span class="nv">IP</span><span class="si">}</span>
+<span class="go">  exit 0;</span>
+<span class="go">fi</span>
+<span class="go">&lt;nowiki&gt;# Not FreeBSD&lt;/nowiki&gt;</span>
+<span class="go">exit 1;</span>
+</pre></div>
+</div>
 <p>Include in ~/ossec/etc/ossec.conf:</p>
-<blockquote>
-<div><dl class="docutils">
-<dt>&lt;command&gt;</dt>
-<dd>&lt;name&gt;firewall-drop&lt;/name&gt;
-&lt;executable&gt;firewall-drop.sh&lt;/executable&gt;
-&lt;expect&gt;srcip&lt;/expect&gt;</dd>
-</dl>
-<p>&lt;/command&gt;</p>
-<dl class="docutils">
-<dt>&lt;active-response&gt;</dt>
-<dd><p class="first">&lt;disabled&gt;no&lt;/disabled&gt;
-&lt;command&gt;firewall-drop&lt;/command&gt;
-&lt;location&gt;local&lt;/location&gt;</p>
-<blockquote class="last">
-<div>&lt;rules_id&gt;99990&lt;/rules_id&gt;</div></blockquote>
-</dd>
-</dl>
-<p>&lt;/active-response&gt;</p>
-</div></blockquote>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">&lt;command&gt;</span>
+<span class="go">  &lt;name&gt;firewall-drop&lt;/name&gt;</span>
+<span class="go">  &lt;executable&gt;firewall-drop.sh&lt;/executable&gt;</span>
+<span class="go">  &lt;expect&gt;srcip&lt;/expect&gt;</span>
+<span class="go">&lt;/command&gt;</span>
+
+<span class="go">&lt;active-response&gt;</span>
+<span class="go">  &lt;disabled&gt;no&lt;/disabled&gt;</span>
+<span class="go">  &lt;command&gt;firewall-drop&lt;/command&gt;</span>
+<span class="go">  &lt;location&gt;local&lt;/location&gt;</span>
+<span class="go">     &lt;rules_id&gt;99990&lt;/rules_id&gt;</span>
+<span class="go">&lt;/active-response&gt;</span>
+</pre></div>
+</div>
 <dl class="docutils">
 <dt>restart ossec:</dt>
-<dd>~/ossec/bin/ossec-control restart</dd>
+<dd><cite>~/ossec/bin/ossec-control restart</cite></dd>
 <dt>Scan your machine (caution OSSEC will block the scanner IP) from online scanner server like: <a class="reference external" href="http://www.derkeiler.com/Service/PortScan/">http://www.derkeiler.com/Service/PortScan/</a>, or from a remote machine with:</dt>
 <dd>nmap -sT -PI -PT 1.2.3.4</dd>
 <dt>look if the active-response works with:</dt>
