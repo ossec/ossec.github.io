@@ -239,7 +239,7 @@ If not, we probably have a rootkit installed.</li>
 <dl class="element">
 <dt id="element-check_dev">
 <code class="descname">check_dev</code><a class="headerlink" href="#element-check_dev" title="Permalink to this definition">¶</a></dt>
-<dd><p><strong>Enable or disable the checking of something</strong></p>
+<dd><p><strong>Enable or disable the checking for files in the `/dev` filesystem</strong></p>
 <p><strong>Default:</strong> yes</p>
 <p><strong>Allowed:</strong> yes or no</p>
 </dd></dl>
@@ -247,7 +247,7 @@ If not, we probably have a rootkit installed.</li>
 <dl class="element">
 <dt id="element-check_files">
 <code class="descname">check_files</code><a class="headerlink" href="#element-check_files" title="Permalink to this definition">¶</a></dt>
-<dd><p><strong>Enable or disable the checking of something</strong></p>
+<dd><p><strong>Enable or disable the checking based on the rootkit files</strong></p>
 <p><strong>Default:</strong> yes</p>
 <p><strong>Allowed:</strong> yes or no</p>
 </dd></dl>
@@ -255,7 +255,7 @@ If not, we probably have a rootkit installed.</li>
 <dl class="element">
 <dt id="element-check_if">
 <code class="descname">check_if</code><a class="headerlink" href="#element-check_if" title="Permalink to this definition">¶</a></dt>
-<dd><p><strong>Enable or disable the checking of something</strong></p>
+<dd><p><strong>Enable or disable the checking the network interfaces</strong></p>
 <p><strong>Default:</strong> yes</p>
 <p><strong>Allowed:</strong> yes or no</p>
 </dd></dl>
@@ -263,15 +263,7 @@ If not, we probably have a rootkit installed.</li>
 <dl class="element">
 <dt id="element-check_pids">
 <code class="descname">check_pids</code><a class="headerlink" href="#element-check_pids" title="Permalink to this definition">¶</a></dt>
-<dd><p><strong>Enable or disable the checking of something</strong></p>
-<p><strong>Default:</strong> yes</p>
-<p><strong>Allowed:</strong> yes or no</p>
-</dd></dl>
-
-<dl class="element">
-<dt id="element-check_policy">
-<code class="descname">check_policy</code><a class="headerlink" href="#element-check_policy" title="Permalink to this definition">¶</a></dt>
-<dd><p><strong>Enable or disable the checking of something</strong></p>
+<dd><p><strong>Enable or disable the checking of process IDs</strong></p>
 <p><strong>Default:</strong> yes</p>
 <p><strong>Allowed:</strong> yes or no</p>
 </dd></dl>
@@ -287,7 +279,7 @@ If not, we probably have a rootkit installed.</li>
 <dl class="element">
 <dt id="element-check_sys">
 <code class="descname">check_sys</code><a class="headerlink" href="#element-check_sys" title="Permalink to this definition">¶</a></dt>
-<dd><p><strong>Enable or disable the checking of something</strong></p>
+<dd><p><strong>Enable or disable the checking the filesystem looking for possible issues</strong></p>
 <p><strong>Default:</strong> yes</p>
 <p><strong>Allowed:</strong> yes or no</p>
 </dd></dl>
@@ -303,7 +295,7 @@ If not, we probably have a rootkit installed.</li>
 <dl class="element">
 <dt id="element-check_unixaudit">
 <code class="descname">check_unixaudit</code><a class="headerlink" href="#element-check_unixaudit" title="Permalink to this definition">¶</a></dt>
-<dd><p><strong>Enable or disable the checking of something</strong></p>
+<dd><p><strong>Enable or disable the checking of unix issues</strong></p>
 <p><strong>Default:</strong> yes</p>
 <p><strong>Allowed:</strong> yes or no</p>
 </dd></dl>
@@ -311,7 +303,7 @@ If not, we probably have a rootkit installed.</li>
 <dl class="element">
 <dt id="element-check_winapps">
 <code class="descname">check_winapps</code><a class="headerlink" href="#element-check_winapps" title="Permalink to this definition">¶</a></dt>
-<dd><p><strong>Enable or disable the checking of something</strong></p>
+<dd><p><strong>Enable or disable the checking of Windows apps</strong></p>
 <p><strong>Default:</strong> yes</p>
 <p><strong>Allowed:</strong> yes or no</p>
 </dd></dl>
@@ -319,7 +311,7 @@ If not, we probably have a rootkit installed.</li>
 <dl class="element">
 <dt id="element-check_winaudit">
 <code class="descname">check_winaudit</code><a class="headerlink" href="#element-check_winaudit" title="Permalink to this definition">¶</a></dt>
-<dd><p><strong>Enable or disable the checking of something</strong></p>
+<dd><p><strong>Enable or disable the checking of Windows issues</strong></p>
 <p><strong>Default:</strong> 1</p>
 <p><strong>Allowed:</strong> 1 or 0</p>
 </dd></dl>
@@ -368,7 +360,7 @@ If not, we probably have a rootkit installed.</li>
     <p>
         &copy; Copyright 2010-2017, OSSEC Project Team.<br/>
     OSSEC trademark and <b>ossec.net</b> domain owned by <a href="http://www.trendmicro.com" target="_blank">Trend Micro, Inc.</a><br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.5.5 - 
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.5.2 - 
     Home page graphics courtesy of <a href="https://pixabay.com" target="_blank">pixabay</a>
     </p>
   </div>

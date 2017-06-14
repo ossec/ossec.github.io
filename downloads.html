@@ -118,10 +118,13 @@
 <li><a class="reference internal" href="#">Downloads</a><ul>
 <li><a class="reference internal" href="#source-downloads">Source Downloads</a></li>
 <li><a class="reference internal" href="#rpms-for-rhel-centos-fedora-and-others">RPMs for RHEL, CentOS, Fedora and others</a><ul>
-<li><a class="reference internal" href="#rpm-installation">RPM Installation</a></li>
+<li><a class="reference internal" href="#yum-dnf-automated-installation-on-centos-redhat-or-fedora">Yum/DNF Automated Installation on Centos, Redhat, or Fedora</a></li>
+<li><a class="reference internal" href="#manual-yum-dnf-installation-on-centos-redhat-amazon-linux-or-fedora">Manual Yum/DNF installation on Centos, Redhat, Amazon Linux or Fedora</a></li>
+<li><a class="reference internal" href="#apt-automated-installation-on-ubuntu-and-debian">APT Automated Installation on Ubuntu and Debian</a></li>
+<li><a class="reference internal" href="#manual-apt-installation-on-ubuntu-and-debian">Manual APT Installation on Ubuntu and Debian</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#pgp-key">PGP key</a></li>
+<li><a class="reference internal" href="#gpg-pgp-key">GPG / PGP key</a></li>
 <li><a class="reference internal" href="#presentation-slides">Presentation Slides</a></li>
 <li><a class="reference internal" href="#contribute-back">Contribute back!</a></li>
 </ul>
@@ -161,107 +164,218 @@
 <table border="1" class="docutils">
 <colgroup>
 <col width="19%" />
-<col width="44%" />
+<col width="43%" />
 <col width="24%" />
-<col width="13%" />
+<col width="15%" />
 </colgroup>
 <thead valign="bottom">
-<tr class="row-odd"><th class="head" colspan="3">Latest Stable Release (2.8.3)</th>
-<th class="head">&#160;</th>
+<tr class="row-odd"><th class="head" colspan="2">Latest Stable Release (2.9.0)</th>
+<th class="head">Checksum</th>
+<th class="head">Signature</th>
 </tr>
 </thead>
 <tbody valign="top">
 <tr class="row-even"><td>Server/Agent Unix</td>
-<td><a class="reference external" href="https://bintray.com/artifact/download/ossec/ossec-hids/ossec-hids-2.8.3.tar.gz">ossec-hids-2.8.3.tar.gz</a> – <a class="reference external" href="https://bintray.com/ossec/ossec-hids/ossec-hids/view#release">Release Notes</a></td>
-<td><a class="reference external" href="https://github.com/ossec/ossec-docs/blob/master/docs/whatsnew/checksums/2.8.3/ossec-hids-2.8.3.tar.gz.sha256">Unix Checksum</a></td>
-<td><a class="reference external" href="https://github.com/ossec/ossec-hids/releases/download/v2.8.3/ossec-hids-2.8.3.tar.gz.asc">signature</a></td>
+<td><a class="reference external" href="https://github.com/ossec/ossec-hids/archive/2.9.0.tar.gz">ossec-hids-2.9.0.tar.gz</a> – <a class="reference external" href="https://github.com/ossec/ossec-hids/releases/tag/2.9.0">Release Notes</a></td>
+<td>&nbsp;</td>
+<td><a class="reference external" href="https://github.com/ossec/ossec-hids/releases/download/2.9.0/ossec-hids-2.9.0.tar.gz.asc">GPG Unix</a></td>
 </tr>
 <tr class="row-odd"><td>Agent Windows</td>
-<td><a class="reference external" href="https://bintray.com/artifact/download/ossec/ossec-hids/ossec-agent-win32-2.8.3.exe">ossec-agent-win32-2.8.3.exe</a></td>
-<td><a class="reference external" href="https://github.com/ossec/ossec-docs/blob/master/docs/whatsnew/checksums/2.8.3/ossec-agent-win32-2.8.3.exe.sha256">Win Checksum</a></td>
-<td>&#160;</td>
+<td><a class="reference external" href="https://updates.atomicorp.com/channels/atomic/windows/ossec-agent-win32-2.9.0-1738.exe">ossec-agent-win32-2.9.0.exe</a></td>
+<td>&nbsp;</td>
+<td><a class="reference external" href="https://updates.atomicorp.com/channels/atomic/windows/ossec-agent-win32-2.9.0-1738.exe.asc">GPG Windows</a></td>
 </tr>
 <tr class="row-even"><td>Virtual Appliance</td>
 <td><a class="reference external" href="http://ossec.wazuh.com/vm/ossec-vm-2.8.3.ova">ossec-vm-2.8.3.ova</a> – <a class="reference external" href="http://ossec.wazuh.com/vm/ossec-vm-2.8.3.README">README</a></td>
 <td><a class="reference external" href="http://ossec.wazuh.com/vm/ossec-vm-2.8.3-checksum.txt">VA Checksum</a></td>
-<td>&#160;</td>
+<td>&nbsp;</td>
 </tr>
 <tr class="row-odd"><td>Docker Container</td>
 <td><a class="reference external" href="https://hub.docker.com/r/wazuh/docker-ossec/">wazuh/docker-ossec</a></td>
-<td>&#160;</td>
-<td>&#160;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="section" id="rpms-for-rhel-centos-fedora-and-others">
 <h2>RPMs for RHEL, CentOS, Fedora and others<a class="headerlink" href="#rpms-for-rhel-centos-fedora-and-others" title="Permalink to this headline">¶</a></h2>
-<p>Available in the <a class="reference external" href="http://updates.atomicorp.com/channels/ossec/">Atomicorp repository</a>.</p>
+<p>Available in the <a class="reference external" href="https://updates.atomicorp.com/channels/atomic/">Atomicorp repository</a>.</p>
 <table border="1" class="docutils">
 <colgroup>
-<col width="15%" />
-<col width="85%" />
+<col width="10%" />
+<col width="58%" />
+<col width="32%" />
 </colgroup>
 <thead valign="bottom">
-<tr class="row-odd"><th class="head" colspan="2">CentOS / Redhat</th>
+<tr class="row-odd"><th class="head" colspan="2">CentOS / Redhat / Amazon Linux</th>
+<th class="head">atomic-release</th>
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><td>el5</td>
-<td><a class="reference external" href="http://updates.atomicorp.com/channels/ossec/centos/5/i386/RPMS/">i386</a></td>
+<tr class="row-even"><td>el5 i386</td>
+<td><a class="reference external" href="https://updates.atomicorp.com/channels/atomic/centos/5/i386/RPMS/">https://updates.atomicorp.com/channels/atomic/centos/5/i386/RPMS/</a></td>
+<td><a class="reference external" href="https://updates.atomicorp.com/channels/atomic/centos/5/i386/RPMS/atomic-release-1.0-21.el5.art.noarch.rpm">atomic-release-1.0-21.el5.art.noarch.rpm</a></td>
 </tr>
-<tr class="row-odd"><td>el5</td>
-<td><a class="reference external" href="http://updates.atomicorp.com/channels/ossec/centos/5/x86_64/RPMS/">x86_64</a></td>
+<tr class="row-odd"><td>el5 x86_64</td>
+<td><a class="reference external" href="https://updates.atomicorp.com/channels/atomic/centos/5/x86_64/RPMS/">https://updates.atomicorp.com/channels/atomic/centos/5/x86_64/RPMS/</a></td>
+<td><a class="reference external" href="https://updates.atomicorp.com/channels/atomic/centos/5/i386/RPMS/atomic-release-1.0-21.el5.art.noarch.rpm">atomic-release-1.0-21.el5.art.noarch.rpm</a></td>
 </tr>
-<tr class="row-even"><td>el6</td>
-<td><a class="reference external" href="http://updates.atomicorp.com/channels/ossec/centos/6/i386/RPMS/">i386</a></td>
+<tr class="row-even"><td>el6 i386</td>
+<td><a class="reference external" href="https://updates.atomicorp.com/channels/atomic/centos/6/i386/RPMS/">https://updates.atomicorp.com/channels/atomic/centos/6/i386/RPMS/</a></td>
+<td><a class="reference external" href="https://updates.atomicorp.com/channels/atomic/centos/6/i386/RPMS/atomic-release-1.0-21.el6.art.noarch.rpm">atomic-release-1.0-21.el6.art.noarch.rpm</a></td>
 </tr>
-<tr class="row-odd"><td>el6</td>
-<td><a class="reference external" href="http://updates.atomicorp.com/channels/ossec/centos/6/x86_64/RPMS/">x86_64</a></td>
+<tr class="row-odd"><td>el6 x86_64</td>
+<td><a class="reference external" href="https://updates.atomicorp.com/channels/atomic/centos/6/x86_64/RPMS/">https://updates.atomicorp.com/channels/atomic/centos/6/x86_64/RPMS/</a></td>
+<td><a class="reference external" href="https://updates.atomicorp.com/channels/atomic/centos/6/i386/RPMS/atomic-release-1.0-21.el6.art.noarch.rpm">atomic-release-1.0-21.el6.art.noarch.rpm</a></td>
 </tr>
-<tr class="row-even"><td>el7</td>
-<td><a class="reference external" href="http://updates.atomicorp.com/channels/ossec/centos/7/i386/RPMS/">i386</a></td>
-</tr>
-<tr class="row-odd"><td>el7</td>
-<td><a class="reference external" href="http://updates.atomicorp.com/channels/ossec/centos/7/x86_64/RPMS/">x86_64</a></td>
+<tr class="row-even"><td>el7 x86_64</td>
+<td><a class="reference external" href="https://updates.atomicorp.com/channels/atomic/centos/7/x86_64/RPMS/">https://updates.atomicorp.com/channels/atomic/centos/7/x86_64/RPMS/</a></td>
+<td><a class="reference external" href="https://updates.atomicorp.com/channels/atomic/centos/7/x86_64/RPMS/atomic-release-1.0-21.el7.art.noarch.rpm">atomic-release-1.0-21.el7.art.noarch.rpm</a></td>
 </tr>
 </tbody>
 </table>
+<p>Note: Amazon Linux users are recommended to use the EL6 x86_64 repository</p>
 <table border="1" class="docutils">
 <colgroup>
-<col width="15%" />
-<col width="85%" />
+<col width="10%" />
+<col width="58%" />
+<col width="32%" />
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head" colspan="2">Fedora</th>
+<th class="head">atomic-release</th>
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><td>fc23</td>
-<td><a class="reference external" href="http://updates.atomicorp.com/channels/ossec/fedora/23/x86_64/RPMS/">x86_64</a></td>
+<tr class="row-even"><td>fc24 x86_64</td>
+<td><a class="reference external" href="https://updates.atomicorp.com/channels/atomic/fedora/24/x86_64/RPMS/">https://updates.atomicorp.com/channels/atomic/fedora/24/x86_64/RPMS/</a></td>
+<td><a class="reference external" href="https://updates.atomicorp.com/channels/atomic/fedora/24/x86_64/RPMS/atomic-release-1.0-21.fc24.art.noarch.rpm">atomic-release-1.0-21.fc24.art.noarch.rpm</a></td>
 </tr>
-<tr class="row-odd"><td>fc24</td>
-<td><a class="reference external" href="http://updates.atomicorp.com/channels/ossec/fedora/24/x86_64/RPMS/">x86_64</a></td>
+<tr class="row-odd"><td>fc25 x86_64</td>
+<td><a class="reference external" href="https://updates.atomicorp.com/channels/atomic/fedora/25/x86_64/RPMS/">https://updates.atomicorp.com/channels/atomic/fedora/25/x86_64/RPMS/</a></td>
+<td><a class="reference external" href="https://updates.atomicorp.com/channels/atomic/fedora/25/x86_64/RPMS/atomic-release-1.0-21.fc25.art.noarch.rpm">atomic-release-1.0-21.fc25.art.noarch.rpm</a></td>
 </tr>
-<tr class="row-even"><td>fc25</td>
-<td><a class="reference external" href="http://updates.atomicorp.com/channels/ossec/fedora/25/x86_64/RPMS/">x86_64</a></td>
+<tr class="row-even"><td>fc26 x86_64</td>
+<td><a class="reference external" href="https://updates.atomicorp.com/channels/atomic/fedora/26/x86_64/RPMS/">https://updates.atomicorp.com/channels/atomic/fedora/26/x86_64/RPMS/</a></td>
+<td><a class="reference external" href="https://updates.atomicorp.com/channels/atomic/fedora/26/x86_64/RPMS/atomic-release-1.0-21.fc26.art.noarch.rpm">atomic-release-1.0-21.fc26.art.noarch.rpm</a></td>
 </tr>
 <tr class="row-odd"><td>Legacy</td>
-<td><a class="reference external" href="http://updates.atomicorp.com/channels/ossec/fedora/">6 - 22</a></td>
+<td><a class="reference external" href="https://updates.atomicorp.com/channels/atomic/fedora/">https://updates.atomicorp.com/channels/atomic/fedora/</a></td>
+<td>&nbsp;</td>
 </tr>
 </tbody>
 </table>
-<div class="section" id="rpm-installation">
-<h3>RPM Installation<a class="headerlink" href="#rpm-installation" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="16%" />
+<col width="84%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head" colspan="2">Ubuntu</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>12 (precise)</td>
+<td><a class="reference external" href="https://updates.atomicorp.com/channels/ossec/ubuntu/pool/main/o/">https://updates.atomicorp.com/channels/ossec/ubuntu/pool/main/o/</a></td>
+</tr>
+<tr class="row-odd"><td>14 (precise)</td>
+<td><a class="reference external" href="https://updates.atomicorp.com/channels/ossec/ubuntu/pool/main/o/">https://updates.atomicorp.com/channels/ossec/ubuntu/pool/main/o/</a></td>
+</tr>
+<tr class="row-even"><td>16 (precise)</td>
+<td><a class="reference external" href="https://updates.atomicorp.com/channels/ossec/ubuntu/pool/main/o/">https://updates.atomicorp.com/channels/ossec/ubuntu/pool/main/o/</a></td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils">
+<colgroup>
+<col width="16%" />
+<col width="84%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head" colspan="2">Debian</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>7 (wheezy)</td>
+<td><a class="reference external" href="https://updates.atomicorp.com/channels/ossec/debian/pool/main/o/">https://updates.atomicorp.com/channels/ossec/debian/pool/main/o/</a></td>
+</tr>
+<tr class="row-odd"><td>8 (jessie)</td>
+<td><a class="reference external" href="https://updates.atomicorp.com/channels/ossec/debian/pool/main/o/">https://updates.atomicorp.com/channels/ossec/debian/pool/main/o/</a></td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="yum-dnf-automated-installation-on-centos-redhat-or-fedora">
+<h3>Yum/DNF Automated Installation on Centos, Redhat, or Fedora<a class="headerlink" href="#yum-dnf-automated-installation-on-centos-redhat-or-fedora" title="Permalink to this headline">¶</a></h3>
 <p>Automated installer:</p>
-<div class="code console highlight-default"><div class="highlight"><pre><span></span><span class="c1"># wget -q -O – https://www.atomicorp.com/installers/atomic | sh</span>
-<span class="c1"># yum install ossec-hids ossec-hids-server (or ossec-hids-client for the agent)</span>
+<div class="code console highlight-default"><div class="highlight"><pre><span></span><span class="c1"># Add Yum repo configuration</span>
+<span class="n">wget</span> <span class="o">-</span><span class="n">q</span> <span class="o">-</span><span class="n">O</span> <span class="o">-</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">updates</span><span class="o">.</span><span class="n">atomicorp</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">installers</span><span class="o">/</span><span class="n">atomic</span> <span class="o">|</span> <span class="n">sudo</span> <span class="n">bash</span>
+
+<span class="c1"># Server</span>
+<span class="n">sudo</span> <span class="n">yum</span> <span class="n">install</span> <span class="n">ossec</span><span class="o">-</span><span class="n">hids</span><span class="o">-</span><span class="n">server</span>
+
+<span class="c1"># Agent</span>
+<span class="n">sudo</span> <span class="n">yum</span> <span class="n">install</span> <span class="n">ossec</span><span class="o">-</span><span class="n">hids</span><span class="o">-</span><span class="n">agent</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="manual-yum-dnf-installation-on-centos-redhat-amazon-linux-or-fedora">
+<h3>Manual Yum/DNF installation on Centos, Redhat, Amazon Linux or Fedora<a class="headerlink" href="#manual-yum-dnf-installation-on-centos-redhat-amazon-linux-or-fedora" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Download the atomic-release file for your distribution</li>
+<li>Install the atomic-relase package (Note: This includes the OSSEC GPG key)</li>
+</ol>
+<div class="code console highlight-default"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">rpm</span> <span class="o">-</span><span class="n">Uvh</span> <span class="n">atomic</span><span class="o">-</span><span class="n">release</span><span class="o">*</span><span class="n">rpm</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li>Install ossec package</li>
+</ol>
+<div class="code console highlight-default"><div class="highlight"><pre><span></span><span class="c1"># Server</span>
+<span class="n">sudo</span> <span class="n">yum</span> <span class="n">install</span> <span class="n">ossec</span><span class="o">-</span><span class="n">hids</span> <span class="n">server</span>
+
+<span class="c1"># Agent</span>
+<span class="n">sudo</span> <span class="n">yum</span> <span class="n">install</span> <span class="n">ossec</span><span class="o">-</span><span class="n">hids</span><span class="o">-</span><span class="n">agent</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="apt-automated-installation-on-ubuntu-and-debian">
+<h3>APT Automated Installation on Ubuntu and Debian<a class="headerlink" href="#apt-automated-installation-on-ubuntu-and-debian" title="Permalink to this headline">¶</a></h3>
+<div class="code console highlight-default"><div class="highlight"><pre><span></span><span class="c1"># Add Apt sources.lst</span>
+<span class="n">wget</span> <span class="o">-</span><span class="n">q</span> <span class="o">-</span><span class="n">O</span> <span class="o">-</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">updates</span><span class="o">.</span><span class="n">atomicorp</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">installers</span><span class="o">/</span><span class="n">atomic</span> <span class="o">|</span> <span class="n">sudo</span> <span class="n">bash</span>
+
+<span class="c1"># Server</span>
+<span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">ossec</span><span class="o">-</span><span class="n">hids</span><span class="o">-</span><span class="n">server</span>
+
+<span class="c1"># Agent</span>
+<span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">ossec</span><span class="o">-</span><span class="n">hids</span><span class="o">-</span><span class="n">agent</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="manual-apt-installation-on-ubuntu-and-debian">
+<h3>Manual APT Installation on Ubuntu and Debian<a class="headerlink" href="#manual-apt-installation-on-ubuntu-and-debian" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Add the GPG key</li>
+</ol>
+<div class="code console highlight-default"><div class="highlight"><pre><span></span><span class="n">wget</span> <span class="o">-</span><span class="n">q</span> <span class="o">-</span><span class="n">O</span> <span class="o">-</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="o">.</span><span class="n">atomicorp</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">RPM</span><span class="o">-</span><span class="n">GPG</span><span class="o">-</span><span class="n">KEY</span><span class="o">.</span><span class="n">art</span><span class="o">.</span><span class="n">txt</span>  <span class="o">|</span> <span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">key</span> <span class="n">add</span> <span class="o">-</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li>Add the repo configuration to sources.list</li>
+</ol>
+<div class="code console highlight-default"><div class="highlight"><pre><span></span><span class="n">source</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">lsb</span><span class="o">-</span><span class="n">release</span>
+
+<span class="c1"># Ubuntu</span>
+<span class="n">echo</span> <span class="s2">&quot;deb https://updates.atomicorp.com/channels/atomic/ubuntu $DISTRIB_CODENAME main&quot;</span> <span class="o">&gt;&gt;</span>  <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">apt</span><span class="o">/</span><span class="n">sources</span><span class="o">.</span><span class="n">list</span><span class="o">.</span><span class="n">d</span><span class="o">/</span><span class="n">atomic</span><span class="o">.</span><span class="n">list</span>
+
+<span class="c1"># Debian</span>
+<span class="n">echo</span> <span class="s2">&quot;deb https://updates.atomicorp.com/channels/atomic/debian $DISTRIB_CODENAME main&quot;</span> <span class="o">&gt;&gt;</span>  <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">apt</span><span class="o">/</span><span class="n">sources</span><span class="o">.</span><span class="n">list</span><span class="o">.</span><span class="n">d</span><span class="o">/</span><span class="n">atomic</span><span class="o">.</span><span class="n">list</span>
 </pre></div>
 </div>
 </div>
 </div>
-<div class="section" id="pgp-key">
-<h2>PGP key<a class="headerlink" href="#pgp-key" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="gpg-pgp-key">
+<h2>GPG / PGP key<a class="headerlink" href="#gpg-pgp-key" title="Permalink to this headline">¶</a></h2>
 <table border="1" class="docutils">
 <colgroup>
 <col width="30%" />
@@ -276,6 +390,9 @@
 </tr>
 <tr class="row-odd"><td>OSSEC-PGP-KEY.asc</td>
 <td><a class="reference external" href="https://ossec.github.io/files/OSSEC-PGP-KEY.asc">https://ossec.github.io/files/OSSEC-PGP-KEY.asc</a></td>
+</tr>
+<tr class="row-even"><td>RPM-GPG-KEY.art.txt</td>
+<td><a class="reference external" href="https://www.atomicorp.com/RPM-GPG-KEY.art.txt">https://www.atomicorp.com/RPM-GPG-KEY.art.txt</a></td>
 </tr>
 </tbody>
 </table>
@@ -366,7 +483,7 @@ is appreciated.</p>
     <p>
         &copy; Copyright 2010-2017, OSSEC Project Team.<br/>
     OSSEC trademark and <b>ossec.net</b> domain owned by <a href="http://www.trendmicro.com" target="_blank">Trend Micro, Inc.</a><br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.5.5 - 
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.5.2 - 
     Home page graphics courtesy of <a href="https://pixabay.com" target="_blank">pixabay</a>
     </p>
   </div>
