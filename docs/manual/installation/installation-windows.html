@@ -122,6 +122,63 @@
 <p class="last">OSSEC only supports Windows systems as agents, and they
 will require an OSSEC server to function.</p>
 </div>
+<div class="section" id="step-1-opening-the-agent-manger-menu">
+<h2>Step 1: Opening the Agent Manger menu<a class="headerlink" href="#step-1-opening-the-agent-manger-menu" title="Permalink to this headline">¶</a></h2>
+<p>The first step of this process is to get into the Agent Manager menu. From the ossec server, type the following command:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">ossec</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">manage_agents</span>
+</pre></div>
+</div>
+<p>The menu should look like this:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">****************************************</span>
+<span class="o">*</span> <span class="n">OSSEC</span> <span class="n">HIDS</span> <span class="n">v2</span><span class="o">.</span><span class="mi">5</span><span class="o">-</span><span class="n">SNP</span><span class="o">-</span><span class="mi">100809</span> <span class="n">Agent</span> <span class="n">manager</span><span class="o">.*</span>
+<span class="o">*</span> <span class="n">The</span> <span class="n">following</span> <span class="n">options</span> <span class="n">are</span> <span class="n">available</span><span class="p">:</span><span class="o">*</span>
+<span class="o">***************************************</span>
+
+<span class="p">(</span><span class="n">A</span><span class="p">)</span><span class="n">dd</span> <span class="n">an</span> <span class="n">agent</span> <span class="p">(</span><span class="n">A</span><span class="p">)</span><span class="o">.</span>
+<span class="p">(</span><span class="n">E</span><span class="p">)</span><span class="n">xtract</span> <span class="n">key</span> <span class="k">for</span> <span class="n">an</span> <span class="n">agent</span> <span class="p">(</span><span class="n">E</span><span class="p">)</span><span class="o">.</span>
+<span class="p">(</span><span class="n">L</span><span class="p">)</span><span class="n">ist</span> <span class="n">already</span> <span class="n">added</span> <span class="n">agents</span> <span class="p">(</span><span class="n">L</span><span class="p">)</span><span class="o">.</span>
+<span class="p">(</span><span class="n">R</span><span class="p">)</span><span class="n">emove</span> <span class="n">an</span> <span class="n">agent</span> <span class="p">(</span><span class="n">R</span><span class="p">)</span><span class="o">.</span>
+<span class="p">(</span><span class="n">Q</span><span class="p">)</span><span class="n">uit</span><span class="o">.</span>
+<span class="n">Choose</span> <span class="n">your</span> <span class="n">action</span><span class="p">:</span> <span class="n">A</span><span class="p">,</span><span class="n">E</span><span class="p">,</span><span class="n">L</span><span class="p">,</span><span class="n">R</span> <span class="ow">or</span> <span class="n">Q</span><span class="p">:</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="step-2-adding-an-agent">
+<h2>Step 2: Adding an Agent<a class="headerlink" href="#step-2-adding-an-agent" title="Permalink to this headline">¶</a></h2>
+<p>Adding an agent is the first thing that needs to be done. Choose action &#8220;A&#8221;.</p>
+<p>The agent manager first asks for a name. This can be named anything.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Adding</span> <span class="n">a</span> <span class="n">new</span> <span class="n">agent</span> <span class="p">(</span><span class="n">use</span> <span class="s1">&#39;\q&#39;</span> <span class="n">to</span> <span class="k">return</span> <span class="n">to</span> <span class="n">the</span> <span class="n">main</span> <span class="n">menu</span><span class="p">)</span><span class="o">.</span>
+<span class="n">Please</span> <span class="n">provide</span> <span class="n">the</span> <span class="n">following</span><span class="p">:</span>   <span class="o">*</span> <span class="n">A</span> <span class="n">name</span> <span class="k">for</span> <span class="n">the</span> <span class="n">new</span> <span class="n">agent</span><span class="p">:</span>
+</pre></div>
+</div>
+<p>Next, it asks for the IP address of the windows client.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">IP</span> <span class="n">Address</span> <span class="n">of</span> <span class="n">the</span> <span class="n">new</span> <span class="n">agent</span><span class="p">:</span>
+</pre></div>
+</div>
+<p>After that, it asks for a unique ID to assign to the client. The ID must be all numerical with a maximum of eight digits. The agent manager also suggests ID&#8217;s for new agents.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">An</span> <span class="n">ID</span> <span class="k">for</span> <span class="n">the</span> <span class="n">new</span> <span class="n">agent</span><span class="p">[</span><span class="mi">001</span><span class="p">]:</span>
+</pre></div>
+</div>
+<p>Lastly, it asks for confirmation of all the information provided. Then it appends all of the agent information to /var/ossec/etc/client.keys and returns to the main menu.</p>
+</div>
+<div class="section" id="step-3-extracting-a-key">
+<h2>Step 3: Extracting a Key<a class="headerlink" href="#step-3-extracting-a-key" title="Permalink to this headline">¶</a></h2>
+<p>Now, the client key needs to be extracted. From the main menu, choose action &#8220;E&#8221;. A list of agents will be displayed:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Available</span> <span class="n">agents</span><span class="p">:</span>   <span class="n">ID</span><span class="p">:</span> <span class="mi">001</span><span class="p">,</span> <span class="n">Name</span><span class="p">:</span> <span class="n">agent1</span><span class="p">,</span> <span class="n">IP</span><span class="p">:</span> <span class="mf">10.10</span><span class="o">.</span><span class="mf">50.2</span>
+<span class="n">Provide</span> <span class="n">the</span> <span class="n">ID</span> <span class="n">of</span> <span class="n">the</span> <span class="n">agent</span> <span class="n">to</span> <span class="n">extract</span> <span class="n">the</span> <span class="n">key</span> <span class="p">(</span><span class="ow">or</span> <span class="s1">&#39;\q&#39;</span> <span class="n">to</span> <span class="n">quit</span><span class="p">):</span>
+</pre></div>
+</div>
+<p>Enter the full ID of the agent to extract the key for. It will display the entire key. Copy that to the clipboard, for it will be needed later.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Agent</span> <span class="n">key</span> <span class="n">information</span> <span class="k">for</span> <span class="s1">&#39;001&#39;</span> <span class="ow">is</span><span class="p">:</span><span class="n">MDAyIGFnZW50MSAxOTIuMTY4LjIuMC8yNCBlNmY3N2RiMTdmMTJjZGRmZjg5YzA4ZDk5m</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="step-4-the-windows-side">
+<h2>Step 4: The Windows Side<a class="headerlink" href="#step-4-the-windows-side" title="Permalink to this headline">¶</a></h2>
+<p>Next up, download the executable named Agent Windows from <a class="reference external" href="https://ossec.github.io/downloads.html">https://ossec.github.io/downloads.html</a>. Run through the install wizard with all defaults. It should launch the Ossec Agent Manager when it&#8217;s done. The Ossec Agent Manager looks like this:</p>
+<p><img alt="image0" src="https://github.com/Vendetta547/ossec-docs/blob/patch-1/OSSEC-Agent-Manager-Windows.png" /></p>
+<p>Enter the IP address of your ossec server in the first text field, and enter the extracted key that was copied to the clipboard earlier to the second textfield. Finally, click on the manage tab and hit restart.</p>
+</div>
 </div>
 
   <div class="section">
