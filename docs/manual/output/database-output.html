@@ -168,15 +168,22 @@
 </div>
 <div class="section" id="enabling-database-support">
 <h2>Enabling Database Support<a class="headerlink" href="#enabling-database-support" title="Permalink to this headline">¶</a></h2>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">You must have the MySQL or PgSQL Client libraries installed on the OSSEC server.</p>
+<p>You must have the MySQL or PgSQL Client libraries installed on the OSSEC server. Typically something like</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Ubuntu</span>
+<span class="gp">#</span> apt install mysql-server libmysqld-dev
+<span class="go">  or</span>
+<span class="gp">#</span> apt install postgresql libpq-dev
+
+<span class="go">RedHat / CentOS</span>
+<span class="gp">#</span> yum install mysql-devel
+<span class="go">  or</span>
+<span class="gp">#</span> yum install postgresql-devel
+</pre></div>
 </div>
-<p>Before you run the &#8221;./install.sh&#8221; script execute the following to compile OSSEC with
-database support.</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> <span class="nb">cd</span> ossec-hids-*
-<span class="gp">#</span> <span class="nb">cd</span> src<span class="p">;</span> make setdb<span class="p">;</span> <span class="nb">cd</span> ..
-<span class="gp">#</span> ./install.sh
+<p>You then need to set the DATABASE environment variable and run the &#8221;./install.sh&#8221; script, to compile OSSEC with the appropriate database support.</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> <span class="nv">DATABASE</span><span class="o">=</span>mysql ./install.sh
+<span class="go">  or</span>
+<span class="gp">#</span> <span class="nv">DATABASE</span><span class="o">=</span>pgsql ./install.sh
 </pre></div>
 </div>
 </div>
