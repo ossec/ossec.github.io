@@ -156,7 +156,7 @@ trojan program will be executed instead. To clear all exec-redirection
 entries, type:
 ./ered -c</dd>
 <dt>nethide Used to hide strings in /proc/net/tcp and /proc/net/udp. This is</dt>
-<dd><p class="first">where netstat gets it&#8217;s information. Type:
+<dd>where netstat gets it&#8217;s information. Type:
 ./nethide &#8221;:ABCD &#8221;
 to hide connections to/from port ABCD hex (43981 dec). This will
 &#8220;grep -v&#8221; the line &#8221;:ABCD &#8221; from /proc/net/[tcp|udp].
@@ -169,10 +169,9 @@ Proto Recv-Q Send-Q Local Address      Foreign Address  State
 tcp        0      0 localhost:ssh      localhost:1023   ESTABLISHED
 And now, lets check /proc/net/tcp. Type:
 cat /proc/net/tcp
-One of the lines looks like this:</p>
-<blockquote>
-<div>local_address rem_address   blablabla...</div></blockquote>
-<p class="last">0:0100007F:0016 0100007F:03FF 01 00000000:00000000 00:00000000 00000000
+One of the lines looks like this:
+local_address rem_address   blablabla...
+0:0100007F:0016 0100007F:03FF 01 00000000:00000000 00:00000000 00000000
 If we want to hide everything about ip-address 127.0.0.1, we have to
 translate it to this format. Start with 127: 7F in hex. Then 0: 00
 in hex, which gives us 007F. And 0 again: 00007F, and at last 1
@@ -182,8 +181,7 @@ everything about port 22 and ip-address 127.0.0.1 it looks like this:
 ./nethide &#8220;0100007F:0016&#8221; will hide connections to/from localhost
 port 22, and typing:
 ./nethide &#8221;:ABCD &#8221; will remove all lines containing &#8221;:ABCD &#8221;. It&#8217;s
-like &#8220;grep -v&#8221;. Do you get it? :-)</p>
-</dd>
+like &#8220;grep -v&#8221;. Do you get it? :-)</dd>
 <dt>rootme  Used to gain root-access without using suid programs. Type:</dt>
 <dd>./rootme /bin/sh
 to execute /bin/sh with root-privs. This will also work:

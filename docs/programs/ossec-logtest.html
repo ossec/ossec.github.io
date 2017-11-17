@@ -118,7 +118,7 @@
   <div class="section" id="ossec-logtest">
 <span id="id1"></span><h1>ossec-logtest<a class="headerlink" href="#ossec-logtest" title="Permalink to this headline">¶</a></h1>
 <p>ossec-logtest is the single most useful tool when working with ossec.  This tool allows oneself
-to test and verify log files in the exact same way that <cite>ossec-anaylistd</cite> does.</p>
+to test and verify log files in the exact same way that <code class="docutils literal"><span class="pre">ossec-anaylistd</span></code> does.</p>
 <p>Something ossec-logtest can help with:</p>
 <ul class="simple">
 <li>Writing rules (Debugging your custom rules)</li>
@@ -214,7 +214,7 @@ in all version before version 2.5</p>
 </div>
 <div class="section" id="caveats">
 <h2>Caveats<a class="headerlink" href="#caveats" title="Permalink to this headline">¶</a></h2>
-<p>Some log formats will be processed differently than they appear in the log file. MySQL log files for instance will have <a href="#id4"><span class="problematic" id="id5">``</span></a>MySQL log: `` prepended to the log message before analysis. If using ossec-logtest to test MySQL logs, please add this string to the beginning.</p>
+<p>Some log formats will be processed differently than they appear in the log file. MySQL log files for instance will have <cite>MySQL log:</cite> prepended to the log message before analysis. If using ossec-logtest to test MySQL logs, please add this string to the beginning.</p>
 <p>Example:</p>
 <p>Given the following MySQL log message:</p>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">130218 12:07:52 [Warning] Unsafe statement written to the binary log using statement format since BINLOG_FORMAT = STATEMENT. The statement is unsafe because it uses a LIMIT clause. This is unsafe because the set of rows included cannot be predicted. Statement: DELETE FROM `emailQueue` WHERE `emailQueueID` = &#39;12207&#39; LIMIT 1</span>
