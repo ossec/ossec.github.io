@@ -348,11 +348,14 @@
 <div class="code console highlight-default"><div class="highlight"><pre><span></span><span class="c1"># Add Apt sources.lst</span>
 <span class="n">wget</span> <span class="o">-</span><span class="n">q</span> <span class="o">-</span><span class="n">O</span> <span class="o">-</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">updates</span><span class="o">.</span><span class="n">atomicorp</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">installers</span><span class="o">/</span><span class="n">atomic</span> <span class="o">|</span> <span class="n">sudo</span> <span class="n">bash</span>
 
+<span class="c1"># Update apt data</span>
+<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">update</span>
+
 <span class="c1"># Server</span>
-<span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">ossec</span><span class="o">-</span><span class="n">hids</span><span class="o">-</span><span class="n">server</span>
+<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">ossec</span><span class="o">-</span><span class="n">hids</span><span class="o">-</span><span class="n">server</span>
 
 <span class="c1"># Agent</span>
-<span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">ossec</span><span class="o">-</span><span class="n">hids</span><span class="o">-</span><span class="n">agent</span>
+<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">ossec</span><span class="o">-</span><span class="n">hids</span><span class="o">-</span><span class="n">agent</span>
 </pre></div>
 </div>
 </div>
@@ -374,6 +377,19 @@
 
 <span class="c1"># Debian</span>
 <span class="n">echo</span> <span class="s2">&quot;deb https://updates.atomicorp.com/channels/atomic/debian $DISTRIB_CODENAME main&quot;</span> <span class="o">&gt;&gt;</span>  <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">apt</span><span class="o">/</span><span class="n">sources</span><span class="o">.</span><span class="n">list</span><span class="o">.</span><span class="n">d</span><span class="o">/</span><span class="n">atomic</span><span class="o">.</span><span class="n">list</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li>Install Agent or Server</li>
+</ol>
+<div class="code console highlight-default"><div class="highlight"><pre><span></span><span class="c1"># Update apt data</span>
+<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">update</span>
+
+<span class="c1"># Server</span>
+<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">ossec</span><span class="o">-</span><span class="n">hids</span><span class="o">-</span><span class="n">server</span>
+
+<span class="c1"># Agent</span>
+<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">ossec</span><span class="o">-</span><span class="n">hids</span><span class="o">-</span><span class="n">agent</span>
 </pre></div>
 </div>
 </div>
