@@ -122,11 +122,13 @@
 <li><a class="reference internal" href="#why-can-t-agent-ids-be-re-used" id="id1">Why can&#8217;t agent IDs be re-used?</a></li>
 <li><a class="reference internal" href="#ossec-logcollector-pid-error-unable-to-open-file-queue-ossec-agent-info" id="id2">ossec-logcollector(PID): ERROR: Unable to open file &#8216;/queue/ossec/.agent_info&#8217;</a></li>
 <li><a class="reference internal" href="#the-ossec-agent-is-unable-to-resolve-hostnames-from-etc-hosts" id="id3">The OSSEC agent is unable to resolve hostnames from /etc/hosts</a></li>
+<li><a class="reference internal" href="#using-a-hostname-for-the-server-does-not-work" id="id4">Using a hostname for the server does not work.</a></li>
 </ul>
 </div>
 <div class="section" id="why-can-t-agent-ids-be-re-used">
 <h2><a class="toc-backref" href="#id1">Why can&#8217;t agent IDs be re-used?</a><a class="headerlink" href="#why-can-t-agent-ids-be-re-used" title="Permalink to this headline">¶</a></h2>
-<p>When looking at historical alerts you don&#8217;t want to associate alerts from one system to be attributed to another, especially if the those alerts are from an unrelated and retired system.</p>
+<p>When looking at historical alerts you don&#8217;t want to associate alerts from one system to be attributed to another,
+especially if the those alerts are from an unrelated and retired system.</p>
 </div>
 <div class="section" id="ossec-logcollector-pid-error-unable-to-open-file-queue-ossec-agent-info">
 <h2><a class="toc-backref" href="#id2">ossec-logcollector(PID): ERROR: Unable to open file &#8216;/queue/ossec/.agent_info&#8217;</a><a class="headerlink" href="#ossec-logcollector-pid-error-unable-to-open-file-queue-ossec-agent-info" title="Permalink to this headline">¶</a></h2>
@@ -137,6 +139,11 @@
 <p>By default OSSEC chroots many of its daemons to <cite>/var/ossec</cite>. When this happens the <cite>/etc/hosts</cite> file is unreadable.
 To resolve this issue, copy <cite>/etc/hosts</cite> to <cite>/var/ossec/etc/</cite>. A hardlink to <cite>/etc/hosts</cite> can be used if the system
 is does not have a separate <cite>/var/</cite> partition.</p>
+</div>
+<div class="section" id="using-a-hostname-for-the-server-does-not-work">
+<h2><a class="toc-backref" href="#id4">Using a hostname for the server does not work.</a><a class="headerlink" href="#using-a-hostname-for-the-server-does-not-work" title="Permalink to this headline">¶</a></h2>
+<p><cite>ossec-agentd</cite> chroots to <cite>/var/ossec</cite> by default. In order to resolve hostnames, the agent will need some support.
+It could be as simple as copying <cite>/etc/resolv.conf</cite> to <cite>/var/ossec/etc/resolv.conf</cite>.</p>
 </div>
 </div>
 
