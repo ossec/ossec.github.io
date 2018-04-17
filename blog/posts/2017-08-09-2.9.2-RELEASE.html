@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>OSSEC CON 2014 Recap &#8212; OSSEC</title>
+    <title>OSSEC 2.9.2 &#8212; OSSEC</title>
     
     <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -123,7 +123,7 @@
   
     </li>
   <i class="fa fa-calendar"></i>
-    Oct 09, 2014
+    Aug 09, 2017
   
     
 
@@ -131,7 +131,7 @@
   <li>
     
       
-      <a href="../author/vic-hargrave.html"><i class="fa-fw fa fa-user"></i>Vic Hargrave</a>
+      <a href="../author/scott-r-shinn.html"><i class="fa-fw fa fa-user"></i>Scott R. Shinn</a>
       
     </li>
   
@@ -144,7 +144,7 @@
   <li><i class="fa-fw fa fa-folder-open"></i>Categories
     
       
-      <a href="../category/announcements.html"><i class="fa-fw fa fa-folder-open"></i>Announcements</a>
+      <a href="../category/releases.html"><i class="fa-fw fa fa-folder-open"></i>Releases</a>
       
     </li>
   
@@ -153,23 +153,7 @@
     <ul>
     <li>
         
-        <a href="../tag/ossec.html"><i class="fa-fw fa fa-tag"></i>ossec</a>
-        
-      
-        
-        <a href="../tag/osssecon.html"><i class="fa-fw fa fa-tag"></i>osssecon</a>
-        
-      
-        
-        <a href="../tag/conf.html"><i class="fa-fw fa fa-tag"></i>conf</a>
-        
-      
-        
-        <a href="../tag/aleinvault.html"><i class="fa-fw fa fa-tag"></i>aleinvault</a>
-        
-      
-        
-        <a href="../tag/atomicorp.html"><i class="fa-fw fa fa-tag"></i>atomicorp</a>
+        <a href="../tag/update.html"><i class="fa-fw fa fa-tag"></i>update</a>
         
       </li>
     </ul>
@@ -193,11 +177,11 @@
       
       <li><a class="reference internal" href="2017-12-23-2.9.3-RELEASE.html">Dec 23 - OSSEC 2.9.3</a></li>
       
-      <li><a class="reference internal" href="2017-08-09-2.9.2-RELEASE.html">Aug 09 - OSSEC 2.9.2</a></li>
-      
       <li><a class="reference internal" href="2017-06-19-2.9.1-RELEASE.html">Jun 19 - OSSEC 2.9.1</a></li>
       
       <li><a class="reference internal" href="2017-02-09-2.9.0-RELEASE.html">Feb 09 - OSSEC 2.9.0</a></li>
+      
+      <li><a class="reference internal" href="2016-06-30-OSSEC-2.9.0-rc2-RELEASE.html">Jun 30 - OSSEC 2.9.0 RC2</a></li>
       
     </ul>
   </li>
@@ -272,40 +256,40 @@
       </div>
     <div class="col-md-9">
       
-  <div class="section" id="ossec-con-2014-recap">
-<h1>OSSEC CON 2014 Recap<a class="headerlink" href="#ossec-con-2014-recap" title="Permalink to this headline">¶</a></h1>
-<p>OSSEC CON 2014 was held in Cork Ireland this year to promote OSSEC in
-EMEA where we have many users. This year we had several members of the
-current OSSEC Team speak to our audience.</p>
-<p>Jeremy Rossi, currently the OSSEC Development Manager, told us about
-some of the OSSEC open source history and shared the statistics on
-number of OSSEC contributions over the years. The good news is there are
-more lines of code and programmers contributing them than ever before.
-Jeremy did all the heavy lifting to move OSSEC over to Github which has
-really encouraged more people to work on it.</p>
-<p>Santiago Gonzales joined us again this year reviewed his work using
-Cuckoo in conjunction with OSSEC to detect malware that shows up on
-Windows based systems.</p>
-<p>New OSSEC Team member and author of <a class="reference external" href="https://www.packtpub.com/networking-and-servers/instant-ossec-host-based-intrusion-detection-system-instant">Instant OSSEC Host-based Intrusion
-Detection System Brad
-Lhotsky</a>
-talked to us about what he has done with OSSEC to help automate his
-security operations at Booking.com.</p>
-<p>Barry O’Meara from AleinVault shared his experiences with using OSSEC
-with Amazon CloudTrail to provide intrusion detection for AWS instances.</p>
-<p>I gave a talk on using Elasticsearch to manage OSSEC security alerts. I
-have posted all the slides from this and previous OSSEC conferences in
-the <a class="reference external" href="http://www.ossec.net/?page_id=1146">Documentation section</a> of
-this site.</p>
-<p>Finally, Cork was simply beautiful. The weather was great and the hotel
-accommodations at the
-<a class="reference external" href="http://www.gresham-hotels-cork.com/">Gresham-Metropole</a> were superb.
-thanks again to our good friends at
-<a class="reference external" href="https://www.alienvault.com/">AlienVault</a> for sponsoring OSSEC CON
-2014. And thanks to all of our conference attendees.</p>
-<p>Look for the conference next year to be held at one of the major Unix
-conferences – to be determined. Thanks to all who attended.</p>
-<p>See you next year.</p>
+  <div class="section" id="ossec-2-9-2">
+<h1>OSSEC 2.9.2<a class="headerlink" href="#ossec-2-9-2" title="Permalink to this headline">¶</a></h1>
+<p><strong>Changelog</strong></p>
+<p><strong>Release Maintainers</strong></p>
+<p>Dan Parriott</p>
+<p>Scott R. Shinn (Atomicorp, Inc.)</p>
+<p><strong>Whats New</strong></p>
+<p>New Rules / Decoders (Leo Feyer)</p>
+<ul class="simple">
+<li>OpenBDS decoder</li>
+<li>Exim decoder</li>
+<li>Dovecot Rules</li>
+<li>Exim Rules</li>
+<li>Chrome remote Desktop Rules (Kevin Branch)</li>
+<li>Netscreen Firewall Rules</li>
+<li>OpenBSD rules</li>
+</ul>
+<p>Updated Rules / Decoders (Leo Feyer)</p>
+<ul class="simple">
+<li>ssh decoder</li>
+<li>dropbear decoder</li>
+<li>su decoder</li>
+<li>vsftpd decoder</li>
+<li>dovecot decoder</li>
+<li>postfix decoder</li>
+<li>pix decoder</li>
+<li>apache decoder</li>
+<li>windows decoder</li>
+<li>Dovecot Rules</li>
+<li>SSHd Rules</li>
+<li>Syslog Rules</li>
+</ul>
+<p><strong>Download</strong></p>
+<p><a class="reference external" href="https://github.com/ossec/ossec-hids/releases">https://github.com/ossec/ossec-hids/releases</a></p>
 </div>
 
   <div class="section">
@@ -317,9 +301,9 @@ conferences – to be determined. Thanks to all who attended.</p>
   <span style="float: left;">
   
   
-  <a href="2014-09-09-cve-2014-5284-fix.markdown.html">
+  <a href="2017-06-19-2.9.1-RELEASE.html">
     <i class="fa fa-arrow-circle-left"></i>
-    CVE-2014-5284 Vulnerability Fixed in OSSEC 2.8.1
+    OSSEC 2.9.1
   </a>
   
   </span>
@@ -327,8 +311,8 @@ conferences – to be determined. Thanks to all who attended.</p>
   <span style="float: right;">
   
   
-  <a href="2014-10-09-ossec-ova-2_8_1.markdown.html">
-    OSSEC Virtual Appliance 2.8.1 Available
+  <a href="2017-12-23-2.9.3-RELEASE.html">
+    OSSEC 2.9.3
     <i class="fa fa-arrow-circle-right"></i>
   </a>
   </span>

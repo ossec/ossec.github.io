@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>OSSEC CON 2014 Recap &#8212; OSSEC</title>
+    <title>OSSEC 2.9.0 &#8212; OSSEC</title>
     
     <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -123,7 +123,7 @@
   
     </li>
   <i class="fa fa-calendar"></i>
-    Oct 09, 2014
+    Feb 09, 2017
   
     
 
@@ -131,7 +131,7 @@
   <li>
     
       
-      <a href="../author/vic-hargrave.html"><i class="fa-fw fa fa-user"></i>Vic Hargrave</a>
+      <a href="../author/scott-r-shinn.html"><i class="fa-fw fa fa-user"></i>Scott R. Shinn</a>
       
     </li>
   
@@ -144,7 +144,7 @@
   <li><i class="fa-fw fa fa-folder-open"></i>Categories
     
       
-      <a href="../category/announcements.html"><i class="fa-fw fa fa-folder-open"></i>Announcements</a>
+      <a href="../category/releases.html"><i class="fa-fw fa fa-folder-open"></i>Releases</a>
       
     </li>
   
@@ -153,23 +153,7 @@
     <ul>
     <li>
         
-        <a href="../tag/ossec.html"><i class="fa-fw fa fa-tag"></i>ossec</a>
-        
-      
-        
-        <a href="../tag/osssecon.html"><i class="fa-fw fa fa-tag"></i>osssecon</a>
-        
-      
-        
-        <a href="../tag/conf.html"><i class="fa-fw fa fa-tag"></i>conf</a>
-        
-      
-        
-        <a href="../tag/aleinvault.html"><i class="fa-fw fa fa-tag"></i>aleinvault</a>
-        
-      
-        
-        <a href="../tag/atomicorp.html"><i class="fa-fw fa fa-tag"></i>atomicorp</a>
+        <a href="../tag/update.html"><i class="fa-fw fa fa-tag"></i>update</a>
         
       </li>
     </ul>
@@ -197,7 +181,7 @@
       
       <li><a class="reference internal" href="2017-06-19-2.9.1-RELEASE.html">Jun 19 - OSSEC 2.9.1</a></li>
       
-      <li><a class="reference internal" href="2017-02-09-2.9.0-RELEASE.html">Feb 09 - OSSEC 2.9.0</a></li>
+      <li><a class="reference internal" href="2016-06-30-OSSEC-2.9.0-rc2-RELEASE.html">Jun 30 - OSSEC 2.9.0 RC2</a></li>
       
     </ul>
   </li>
@@ -272,40 +256,101 @@
       </div>
     <div class="col-md-9">
       
-  <div class="section" id="ossec-con-2014-recap">
-<h1>OSSEC CON 2014 Recap<a class="headerlink" href="#ossec-con-2014-recap" title="Permalink to this headline">¶</a></h1>
-<p>OSSEC CON 2014 was held in Cork Ireland this year to promote OSSEC in
-EMEA where we have many users. This year we had several members of the
-current OSSEC Team speak to our audience.</p>
-<p>Jeremy Rossi, currently the OSSEC Development Manager, told us about
-some of the OSSEC open source history and shared the statistics on
-number of OSSEC contributions over the years. The good news is there are
-more lines of code and programmers contributing them than ever before.
-Jeremy did all the heavy lifting to move OSSEC over to Github which has
-really encouraged more people to work on it.</p>
-<p>Santiago Gonzales joined us again this year reviewed his work using
-Cuckoo in conjunction with OSSEC to detect malware that shows up on
-Windows based systems.</p>
-<p>New OSSEC Team member and author of <a class="reference external" href="https://www.packtpub.com/networking-and-servers/instant-ossec-host-based-intrusion-detection-system-instant">Instant OSSEC Host-based Intrusion
-Detection System Brad
-Lhotsky</a>
-talked to us about what he has done with OSSEC to help automate his
-security operations at Booking.com.</p>
-<p>Barry O’Meara from AleinVault shared his experiences with using OSSEC
-with Amazon CloudTrail to provide intrusion detection for AWS instances.</p>
-<p>I gave a talk on using Elasticsearch to manage OSSEC security alerts. I
-have posted all the slides from this and previous OSSEC conferences in
-the <a class="reference external" href="http://www.ossec.net/?page_id=1146">Documentation section</a> of
-this site.</p>
-<p>Finally, Cork was simply beautiful. The weather was great and the hotel
-accommodations at the
-<a class="reference external" href="http://www.gresham-hotels-cork.com/">Gresham-Metropole</a> were superb.
-thanks again to our good friends at
-<a class="reference external" href="https://www.alienvault.com/">AlienVault</a> for sponsoring OSSEC CON
-2014. And thanks to all of our conference attendees.</p>
-<p>Look for the conference next year to be held at one of the major Unix
-conferences – to be determined. Thanks to all who attended.</p>
-<p>See you next year.</p>
+  <div class="section" id="ossec-2-9-0">
+<h1>OSSEC 2.9.0<a class="headerlink" href="#ossec-2-9-0" title="Permalink to this headline">¶</a></h1>
+<p><strong>Changelog</strong></p>
+<p><strong>Release Maintainers</strong></p>
+<p>Dan Parriott</p>
+<p>Scott R. Shinn (Atomicorp, Inc.)</p>
+<p><strong>Whats New</strong></p>
+<ul class="simple">
+<li>Alert Output support for JSON and ZeroMQ</li>
+<li>Syscheck improvements</li>
+<li>Report file deletion, even without realtime enabled</li>
+<li>Report modifications made on directories</li>
+<li>Corrects bug so that files created between the first and second scan are reported as new files</li>
+<li>Corrects bug that made changes reverting a file to the state it was in when ossec started unreported</li>
+<li>Avoids computing hashes multiple times to improve performance</li>
+<li>Make the time between two syscheck wakeups configurable in internal_options</li>
+<li>Add support for the “nodiff” option when using report_changes, sensitive files tagged with in ossec.conf will not have their contents included in an alert.</li>
+<li>IPv6 support</li>
+<li>Support to call an external mailer. This solves the problem of supporting encryption when sending mail alerts in OSSEC. The &lt;smtp_server&gt; field can now be prepended with “/” to designate a local binary. Example: “&lt;smtp_server&gt;/usr/sbin/sendmail -t&lt;/smtp_server&gt;”.</li>
+<li>Slack notification support</li>
+</ul>
+<p><strong>New Rules / Decoders</strong></p>
+<ul class="simple">
+<li>PR #572: Rules/Decoders, Better Dropbear events detection</li>
+<li>PR #602: Rules/Decoders, Add dropbear_rules and unbound_rules</li>
+<li>PR #604: Rules/Decoders,sid 5300 incorrectly alerts on OS X</li>
+<li>PR #607, Rules/Decoders, Update syslog_rules for OSX false positive</li>
+<li>PR #611: Rules/Decoders, Sysmon decoder update, This should better support Windows 2003 R2.</li>
+<li>PR #643, Rules/Decoders, update to IIS decoder</li>
+<li>PR #654, Rules/Decoders, update to the vsftpd decoder</li>
+<li>PR #668: Rules/Decoders, Fix for Cisco PIX decoder, ms-se_rules.xml, msauth_rules.xml</li>
+<li>PR #721: Rules/Decoders, Update for sytemd rules to add support for new program_name, systemctl</li>
+<li>PR #746: Rules/Decoders, Update to the apache decoders to handle Apache 2.4 events more gracefully</li>
+<li>PR #755: Rules/Decoders, Update to ssh rules. Adds rules 5750-5753 to dedect client, protocol, and hostkey events</li>
+<li>PR #762: Rules/Decoders, Update to ssh rules. Associates 5751 with 5700 instead of 1002</li>
+<li>PR #763: Rules/Decoders, Add rules for OpenBSD smtpd</li>
+<li>PR #774: Rules/Decoders, Add OpenBSD smtpd rules</li>
+<li>PR #787: Rules/Decoders, Update to OpenBSD smtpd decoder to not conflict with postfix</li>
+<li>PR #786: Rules/Decoders, SSH Rule improvements</li>
+<li>PR #799: Rules/Decoders, Add rule for users not in sudoers</li>
+<li>PR #803: Rules/Decoders, Add additional sshd decoders for ssh-pam &amp; ssh invalid auth requests</li>
+</ul>
+<p><strong>General</strong></p>
+<ul class="simple">
+<li>PR #2, Output, Adds ZeroMQ and Json output support</li>
+<li>PR #4, Authd, Bugfix for Openssl operations on non-blocking socket</li>
+<li>PR #563: IPv6 support</li>
+<li>PR #599, Allow for the log format in proftpd 1.3.5+</li>
+<li>PR #610: Execd, Reduce system load caused by simultaneous active response processes during ossec stop. #610</li>
+<li>PR #615: Adds support for Binding src IP to ‘local_ip’ config value in agentd. In mulihomed host environment we have a big problem with binding agent to correct ip. By default agentd used ip-addr of interface, from which sented ip-packets.</li>
+<li>PR #617: Agentd, Add CLIENT to DEFINES for winagent target #617 Bugfix #595</li>
+<li>PR #622: Fix for CVE-2015-3222</li>
+<li>PR #631, Log failure when ossec fails to remove a PID file</li>
+<li>PR #652, Syscheck, add support for the “-t” flag to display XML parsing errors in agent.conf on agents</li>
+<li>PR #657: Syscheck, Allows scanning of directories with , in the name. Let directory check_something=”no” options to work. This means you can do instead of listing out all the ones you want to use.</li>
+<li>PR #670: Syscheck, Bugfix for report_changes</li>
+<li>PR #689: Maild, add support to call an external MTA to send alert emails. The smtp_server setting can now be written as “/usr/sbin/sendmail -t”</li>
+<li>PR #690: Cleanup for building on OSX</li>
+<li>PR #691: adds support for syslog messages that prepend the year, ie: “2015 Nov 13 ....”</li>
+<li>PR #696: Bugfix for OpenBSD sendto() sockaddr length restrictions.</li>
+<li>PR #699: Encompassing only complete statements with conditional directives.</li>
+<li>PR #717: Active Response, add Slack (www.slack.com) notification support</li>
+<li>PR #720: Fixes for the statfs error spam</li>
+<li>PR #724: Authd, bugfix for issue #642, This brings ossec-authd into parity with whatever the MAX_AGENTS is set at build time</li>
+<li>PR #726: Make syslog/cef consistent with json/splunk and add classification field to alerts.</li>
+<li>PR #727: Maild, Add support for “email_reply_to”. This allows configuing the Reply-To: field in email alerts sent from ossec-maild</li>
+<li>PR #740: Remoted, bugfix for issue #739, Ossec will now report the agent ID of the agent that tries to conect</li>
+<li>PR #744: Syscheck, Bugfix for issue #42, corrects issue on windows that would produce an incorrect hash</li>
+<li>PR #749: Windows, Changed Makefile to use Windows subsystem only wth UI manager</li>
+<li>PR #750: Analysisd, Fixes glob() impelemtation bug, adds Hourly/Daily options to logcollector, improved dfalts to analysisd diff alerts.</li>
+<li>PR #751: Add simple python rule updater script</li>
+<li>PR #754: Install.sh, Bugfix for OpenBSD adduser support</li>
+<li>PR #765: Syscheck, add “nodiff” support. Sensitive data may leak through the diff attached to alerts when some file changes. This pull request add a nodiff option, which allows to explicitely set files for which we never want to output a diff.</li>
+<li>PR #768: Analysisd, Bugfix for Issue #767, increase of value for stats</li>
+<li>PR #770: Database support, Postgres support updates</li>
+<li>PR #781: Syscheck, Bugfix for Issue #780</li>
+<li>PR #788: System Audit, Add PCI DSS tags to RHEL/CentOS/Cloudlinux auditing tests</li>
+<li>PR #789: Install.sh, Use ls for file existance checks, for cross platform compatibility</li>
+<li>PR #791: Syscheck, add /boot to default directories. Fix for Issue #675</li>
+<li>PR #797: Rootcheck, Remove legacy rootcheck options</li>
+<li>PR #798: System Audit, Add RHEL/CentOS/Cloudlinux 7 CIS benchmarks</li>
+<li>PR #802: Database support, Allow for longer entries in the system informtaion column</li>
+<li>PR #849 Format string security fix</li>
+<li>PR #864 Fix ossec-logtest to chroot when testing check_diff rules</li>
+<li>PR #870 Fix installer permissions on the etc/shared directory</li>
+<li>PR #878 Fix version field to correctly report &#8220;2.9.0&#8221; instead of 2.8.3</li>
+<li>PR #909 Bugfix for decoders.d/rules.d logtest</li>
+<li>PR #920 Bugfixes for OS_IPFound, OS_IPFoundList, OS_IsValidIP</li>
+<li>PR #923 Security fix for SQLi in al_data-&gt;location</li>
+<li>PR #926 Rootcheck, updates or EL7</li>
+<li>PR #945 Remove debug message</li>
+<li>PR #986 - Prevent manage_agents from chrooting in bulk mode</li>
+</ul>
+<p><strong>Download</strong></p>
+<p><a class="reference external" href="https://github.com/ossec/ossec-hids/releases">https://github.com/ossec/ossec-hids/releases</a></p>
 </div>
 
   <div class="section">
@@ -317,9 +362,9 @@ conferences – to be determined. Thanks to all who attended.</p>
   <span style="float: left;">
   
   
-  <a href="2014-09-09-cve-2014-5284-fix.markdown.html">
+  <a href="2016-06-30-OSSEC-2.9.0-rc2-RELEASE.html">
     <i class="fa fa-arrow-circle-left"></i>
-    CVE-2014-5284 Vulnerability Fixed in OSSEC 2.8.1
+    OSSEC 2.9.0 RC2
   </a>
   
   </span>
@@ -327,8 +372,8 @@ conferences – to be determined. Thanks to all who attended.</p>
   <span style="float: right;">
   
   
-  <a href="2014-10-09-ossec-ova-2_8_1.markdown.html">
-    OSSEC Virtual Appliance 2.8.1 Available
+  <a href="2017-06-19-2.9.1-RELEASE.html">
+    OSSEC 2.9.1
     <i class="fa fa-arrow-circle-right"></i>
   </a>
   </span>
