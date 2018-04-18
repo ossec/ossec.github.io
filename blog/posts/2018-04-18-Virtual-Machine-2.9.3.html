@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>OSSEC Moving to Github &#8212; OSSEC</title>
+    <title>OSSEC Virtual Appliance 2.9.3 &#8212; OSSEC</title>
     
     <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -123,7 +123,7 @@
   
     </li>
   <i class="fa fa-calendar"></i>
-    Jan 01, 2014
+    Apr 18, 2018
   
     
 
@@ -131,7 +131,7 @@
   <li>
     
       
-      <a href="../author/vic-hargrave.html"><i class="fa-fw fa fa-user"></i>Vic Hargrave</a>
+      <a href="../author/scott-r-shinn.html"><i class="fa-fw fa fa-user"></i>Scott R. Shinn</a>
       
     </li>
   
@@ -144,7 +144,7 @@
   <li><i class="fa-fw fa fa-folder-open"></i>Categories
     
       
-      <a href="../category/anouncements.html"><i class="fa-fw fa fa-folder-open"></i>Anouncements</a>
+      <a href="../category/announcements.html"><i class="fa-fw fa fa-folder-open"></i>Announcements</a>
       
     </li>
   
@@ -153,15 +153,7 @@
     <ul>
     <li>
         
-        <a href="../tag/git.html"><i class="fa-fw fa fa-tag"></i>git</a>
-        
-      
-        
-        <a href="../tag/hg.html"><i class="fa-fw fa fa-tag"></i>hg</a>
-        
-      
-        
-        <a href="../tag/development.html"><i class="fa-fw fa fa-tag"></i>development</a>
+        <a href="../tag/appliance.html"><i class="fa-fw fa fa-tag"></i>appliance</a>
         
       </li>
     </ul>
@@ -181,8 +173,6 @@
     <ul class="nav nav-list">
       
       
-      <li><a class="reference internal" href="2018-04-18-Virtual-Machine-2.9.3.html">Apr 18 - OSSEC Virtual Appliance 2.9.3</a></li>
-      
       <li><a class="reference internal" href="2018-04-09-OSSECON-2018.html">Apr 09 - OSSEC CON 2018</a></li>
       
       <li><a class="reference internal" href="2017-12-23-2.9.3-RELEASE.html">Dec 23 - OSSEC 2.9.3</a></li>
@@ -190,6 +180,8 @@
       <li><a class="reference internal" href="2017-08-09-2.9.2-RELEASE.html">Aug 09 - OSSEC 2.9.2</a></li>
       
       <li><a class="reference internal" href="2017-06-19-2.9.1-RELEASE.html">Jun 19 - OSSEC 2.9.1</a></li>
+      
+      <li><a class="reference internal" href="2017-02-09-2.9.0-RELEASE.html">Feb 09 - OSSEC 2.9.0</a></li>
       
     </ul>
   </li>
@@ -264,63 +256,76 @@
       </div>
     <div class="col-md-9">
       
-  <div class="section" id="ossec-moving-to-github">
-<h1>OSSEC Moving to Github<a class="headerlink" href="#ossec-moving-to-github" title="Permalink to this headline">¶</a></h1>
-<p>OSSEC is moving from bitbucket to github, and in the process moving to a
-new method for accepting contributions. This is an exciting change that
-we feel will help push OSSEC forward in 2014 and further into the
-future.</p>
+  <div class="section" id="ossec-virtual-appliance-2-9-3">
+<h1>OSSEC Virtual Appliance 2.9.3<a class="headerlink" href="#ossec-virtual-appliance-2-9-3" title="Permalink to this headline">¶</a></h1>
+<p>Longtime OSSEC Contributor Vic Hargrave has released an update to the OSSEC Virtual appliance.</p>
+<p><strong>Download</strong></p>
+<p><a class="reference external" href="https://ossec.github.io/downloads.html">https://ossec.github.io/downloads.html</a></p>
+<p><strong>README</strong></p>
+<ol class="arabic">
+<li><p class="first">This virtual appliance contains the following facilities:</p>
 <ul class="simple">
-<li><a class="reference external" href="https://github.com/ossec/ossec-docs/blob/master/docs/oRFC/orfc-1.rst">oRFC:1 Collective Code Construction
-Contract</a>
-(Adapted from ZeroMQ&#8217;s <a class="reference external" href="http://rfc.zeromq.org/spec:22">C4</a>).</li>
-</ul>
-<p>The overall goals of the change are to allow OSSEC to be more dynamic,
-agile, and quicker to respond to the needs of the community.</p>
-<p>This change will not be without issues or problems, but we aim to make
-it as seamless as possible. To do this we are committing to the
-following task to be completed 7 days from now:</p>
-<ol class="arabic simple">
-<li>Port all code to github</li>
-<li>Port all Open Issues to github issues</li>
-<li>Port all Open Pull Requests to github Pull Requests</li>
-</ol>
-<div class="section" id="porting-code">
-<h2>1) Porting code<a class="headerlink" href="#porting-code" title="Permalink to this headline">¶</a></h2>
-<p>This is currently done every 30 minutes (when hg-git does not break). We
-have set up and enabled <a href="#id1"><span class="problematic" id="id2">`github.com/ossec/ossec-hids &lt;&gt;`__</span></a></p>
-<p>This will continue till to the cut over date of Feb 7th 2014.</p>
-</div>
-<div class="section" id="port-all-open-issues">
-<h2>2) Port all Open Issues<a class="headerlink" href="#port-all-open-issues" title="Permalink to this headline">¶</a></h2>
-<p>We will copy all open issues from Bitbucket to github. Due to the api
-avaiable, and reporting user and all comments on issues will show up as
-the user performing the migration. Test runs are being preformed to
-<a href="#id1"><span class="problematic" id="id3">`githib.com/jrossi/issue-migration-test &lt;&gt;`__</span></a></p>
-</div>
-<div class="section" id="port-all-open-pull-requests">
-<h2>3) Port all Open Pull Requests<a class="headerlink" href="#port-all-open-pull-requests" title="Permalink to this headline">¶</a></h2>
-<p>This process will be the hardest, and will be the hardest to detail, but
-we shall attempt it here.</p>
-<p>Contact pull request author to request they move to github and resubmit
-using github. If no response is recevied before the following:</p>
-<ul class="simple">
-<li>Create github.com/ossec/bitbucket-pull-requests as a fork of
-github.com/ossec/ossec-hids/</li>
-<li>Export each Pull Request as a patch bb-gh-pull-request-##.patch</li>
-<li>Import each patch into a branch named bb-gh-pull-request-##<ul>
-<li>Apply correct author/email git infomation so no infomation is
-lost.</li>
+<li>CentOS 7.4</li>
+<li>OSSEC 2.9.3</li>
+<li>Elasticsearch-Logstash-Kibana (ELK) 6.1.1</li>
+<li>Cerebro 0.7.2</li>
 </ul>
 </li>
-<li>Create a github pull request for each branch.</li>
+<li><p class="first">The virtual appliance is provided as an OVA which you can import into most virtual systems.
+We recommend using VirtualBox which can import the OVA image directly.  We used VirtualBox
+to create this appliance and the OVA.</p>
+</li>
+<li><p class="first">To unpack the appliance, unzip the package with gunzip then import the ossec-vm-2.9.3.ova
+into your virtualization application.  We recommend VirtualBox for running appliance.</p>
+</li>
+<li><p class="first">The appliance network interface is configured to use NAT mode.  To use this appliance as a
+regular OSSEC server you must configure the network interace on the appliance to use bridged
+mode and set a static IP address on the CentOS guest. See this UnixCraft article on how to do
+this <a class="reference external" href="https://www.cyberciti.biz/faq/howto-setting-rhel7-centos-7-static-ip-configuration/">https://www.cyberciti.biz/faq/howto-setting-rhel7-centos-7-static-ip-configuration/</a>.</p>
+</li>
+<li><p class="first">The appliance features a Kibana dashboard to visualize OSSEC alerts. Once in bridged mode,
+you can access Kibana from a browser externally with the static IP of the appliance using
+port 5601:</p>
+<blockquote>
+<div><p><a class="reference external" href="http:/">http:/</a>/&lt;appliance-static-ip&gt;:5601</p>
+</div></blockquote>
+<p>Click on &#8220;Dashboard&#8221; then select &#8220;OSSEC Dashboard&#8221; to display a dashboard that has 3 panels</p>
+<ul class="simple">
+<li>OSSEC Alerts Over Time: Bar graph displaying the number of events per unit time.</li>
+<li>Top Alerts Per Agent: Pie chart showing the top 20 alerts per each of the top 20 most active agents.</li>
+<li>OSSEC Alert Data: Table displaying individual alerts and their corresponding fields/values.</li>
 </ul>
-<p>For authors who email addresses match between githib and bitbucket
-everything will show up as expected. Authors can also use github email
-settings to add second or third email address.</p>
-<p>Once completed, each pull request will stand on its own and be reviewed
-for merging based on the Collective Code Construction Contract.</p>
-</div>
+</li>
+<li><p class="first">You can use Cerebro (formally Kopf) to manage the Elasticsearch instance on the appliance by
+opening this URL in a browser:</p>
+<blockquote>
+<div><p><a class="reference external" href="http:/">http:/</a>/&lt;appliance-static-ip&gt;:9000</p>
+</div></blockquote>
+<p>Enter the Elasticsearch URL, <a class="reference external" href="http://">http://</a>/&lt;vm-static-ip&gt;:9200, in the node address text box on the
+Cerebro startup screen then click on the &#8220;Connect&#8221; button.</p>
+</li>
+<li><p class="first">Two CentOS users are defined: &#8220;ossec&#8221; and &#8220;root&#8221;.  The root password is &#8220;_0ssec_&#8221;.  The &#8220;ossec&#8221;
+user does not have a password.  When you start up the VM and get to the login console, just hit
+ENTER if you want to login as &#8220;ossec&#8221;.</p>
+</li>
+<li><p class="first">OSSEC and ELK were installed with yum.  To upgrade either just run yum with the &#8220;upgrade&#8221; option:</p>
+<blockquote>
+<div><p>yum upgrade ossec-hids -y
+yum upgrade &lt;elasticsearch|logstash|kibana&gt; -y</p>
+</div></blockquote>
+</li>
+<li><p class="first">OSSEC is installed in /var/ossec.</p>
+</li>
+<li><p class="first">ELK and Cerebro components are installed in /usr/share/&lt;elasticsearch|logstash|kibana|cerebro&gt;.</p>
+</li>
+<li><p class="first">The Logstash pipeline ingestion file for OSSEC is /etc/logstash/conf.d/ossec.conf.</p>
+</li>
+<li><p class="first">You can start and stop OSSEC, ELK, and Cerebro services with the systemctl command:</p>
+<blockquote>
+<div><p>systemctl &lt;start|stop&gt; &lt;ossec-hids|elasticsearch|logstash|kibana|cerebro&gt;.service</p>
+</div></blockquote>
+</li>
+</ol>
 </div>
 
   <div class="section">
@@ -332,21 +337,14 @@ for merging based on the Collective Code Construction Contract.</p>
   <span style="float: left;">
   
   
-  <a href="2013-12-15-OSSEC-Log-Management-with-Elasticsearch.markdown.html">
+  <a href="2018-04-09-OSSECON-2018.html">
     <i class="fa fa-arrow-circle-left"></i>
-    OSSEC Log Management with Elasticsearch
+    OSSEC CON 2018
   </a>
   
   </span>
   <span>&nbsp;</span>
   <span style="float: right;">
-  
-  
-  <a href="2014-04-08-Debian-Packages-Now-Available.markdown.html">
-    Debian Packages Now Available
-    <i class="fa fa-arrow-circle-right"></i>
-  </a>
-  </span>
   
 </div>
 
