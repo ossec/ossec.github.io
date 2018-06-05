@@ -193,11 +193,7 @@
     <ul class="nav nav-list">
     
       
-      <li><a class="reference internal" href="../category/announcements.html">Announcements (10)</a></li>
-      
-    
-      
-      <li><a class="reference internal" href="../category/anouncements.html">Anouncements (1)</a></li>
+      <li><a class="reference internal" href="../category/announcements.html">Announcements (11)</a></li>
       
     
       
@@ -297,7 +293,7 @@ or the official OSSEC irc channel.</p>
 <li>PR#643, Rules/Decoders, update to IIS decoder</li>
 <li>PR#654, Rules/Decoders, update to the vsftpd decoder</li>
 <li>PR#668: Rules/Decoders, Fix for Cisco PIX decoder, ms-se_rules.xml, msauth_rules.xml</li>
-<li>PR#721: Rules/Decoders, Update for sytemd rules to add support for new program_name, systemctl</li>
+<li>PR#721: Rules/Decoders, Update for systemd rules to add support for new program_name, systemctl</li>
 <li>PR#746: Rules/Decoders, Update to the apache decoders to handle Apache 2.4 events more gracefully</li>
 <li>PR#755: Rules/Decoders, Update to ssh rules. Adds rules 5750-5753 to dedect client, protocol, and hostkey events</li>
 <li>PR#762: Rules/Decoders, Update to ssh rules. Associates 5751 with 5700 instead of 1002</li>
@@ -331,23 +327,23 @@ or the official OSSEC irc channel.</p>
 <li>PR#720: Fixes for the statfs error spam</li>
 <li>PR#724: Authd, bugfix for issue #642, This brings ossec-authd into parity with whatever the MAX_AGENTS is set at build time</li>
 <li>PR#726: Make syslog/cef consistent with json/splunk and add classification field to alerts.</li>
-<li>PR#727: Maild, Add support for &#8220;email_reply_to&#8221;. This allows configuing the Reply-To: field in email alerts sent from ossec-maild</li>
-<li>PR#740: Remoted, bugfix for issue #739, Ossec will now report the agent ID of the agent that tries to conect</li>
+<li>PR#727: Maild, Add support for &#8220;email_reply_to&#8221;. This allows configuring the Reply-To: field in email alerts sent from ossec-maild</li>
+<li>PR#740: Remoted, bugfix for issue #739, Ossec will now report the agent ID of the agent that tries to connect</li>
 <li>PR#744: Syscheck, Bugfix for issue #42, corrects issue on windows that would produce an incorrect hash</li>
-<li>PR#749: Windows, Changed Makefile to use Windows subsystem only wth UI manager</li>
+<li>PR#749: Windows, Changed Makefile to use Windows subsystem only with UI manager</li>
 <li>PR#750: Analysisd, Fixes glob() impelemtation bug, adds Hourly/Daily options to logcollector, improved dfalts to analysisd diff alerts.</li>
 <li>PR#751: Add simple python rule updater script</li>
 <li>PR#754: Install.sh, Bugfix for OpenBSD adduser support</li>
-<li>PR#765: Syscheck, add &#8220;nodiff&#8221; support. Sensitive data may leak through the diff attached to alerts when some file changes. This pull request add a nodiff option, which allows to explicitely set files for which we never want to output a diff.</li>
+<li>PR#765: Syscheck, add &#8220;nodiff&#8221; support. Sensitive data may leak through the diff attached to alerts when some file changes. This pull request add a nodiff option, which allows to explicitly set files for which we never want to output a diff.</li>
 <li>PR#768: Analysisd, Bugfix for Issue #767, increase of value for stats</li>
 <li>PR#770: Database support, Postgres support updates</li>
 <li>PR#781: Syscheck, Bugfix for Issue #780</li>
 <li>PR#788: System Audit, Add PCI DSS tags to RHEL/CentOS/Cloudlinux auditing tests</li>
-<li>PR#789: Install.sh, Use ls for file existance checks, for cross platform compatibility</li>
+<li>PR#789: Install.sh, Use ls for file existence checks, for cross platform compatibility</li>
 <li>PR#791: Syscheck, add /boot to default directories. Fix for Issue #675</li>
 <li>PR#797: Rootcheck, Remove legacy rootcheck options</li>
 <li>PR#798: System Audit, Add RHEL/CentOS/Cloudlinux 7 CIS benchmarks</li>
-<li>PR#802: Database support, Allow for longer entries in the system informtaion column</li>
+<li>PR#802: Database support, Allow for longer entries in the system information column</li>
 </ul>
 </div>
 

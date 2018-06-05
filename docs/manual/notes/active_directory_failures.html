@@ -130,7 +130,7 @@ This <a class="reference external" href="http://blog.scottlowe.org/2006/10/23/ev
 <span class="go">3. Logs the 675 error in the Event log.</span>
 </pre></div>
 </div>
-<p>To avoid receving multiple <code class="docutils literal"><span class="pre">18152</span> <span class="pre">fired</span> <span class="pre">(level</span> <span class="pre">10)</span> <span class="pre">-&gt;</span> <span class="pre">&quot;Multiple</span> <span class="pre">Windows</span> <span class="pre">Logon</span> <span class="pre">Failures.&quot;</span></code> on OSSEC, you can ignore this specific event id, with the following local rule (ignoring 675 error with Failure code 0x19):</p>
+<p>To avoid receiving multiple <code class="docutils literal"><span class="pre">18152</span> <span class="pre">fired</span> <span class="pre">(level</span> <span class="pre">10)</span> <span class="pre">-&gt;</span> <span class="pre">&quot;Multiple</span> <span class="pre">Windows</span> <span class="pre">Logon</span> <span class="pre">Failures.&quot;</span></code> on OSSEC, you can ignore this specific event id, with the following local rule (ignoring 675 error with Failure code 0x19):</p>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">&lt;rule id=&quot;xyz&quot; level=&quot;0&quot;&gt;</span>
 <span class="go">  &lt;if_sid&gt;18106&lt;/if_sid&gt;</span>
 <span class="go">  &lt;id&gt;^675&lt;/id&gt;</span>

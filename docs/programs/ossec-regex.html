@@ -122,8 +122,8 @@ The pattern should be enclosed in single quotes to help prevent any strange inte
 <p>The syntax for <code class="docutils literal"><span class="pre">ossec-regex</span></code> is simple: <code class="docutils literal"><span class="pre">/var/ossec/bin/ossec-regex</span> <span class="pre">'&lt;pattern&gt;'</span></code>
 It then reads strings from stdin and outputs matches to stdout.
 <code class="docutils literal"><span class="pre">+OSRegex_Execute</span></code> and <code class="docutils literal"><span class="pre">+OS_Regex</span></code> are printed if a match is successful.</p>
-<div class="section" id="example-1-a-siple-digit-match">
-<h2>Example 1: A siple digit match:<a class="headerlink" href="#example-1-a-siple-digit-match" title="Permalink to this headline">¶</a></h2>
+<p>Example 1: A simple digit match:
+^^^^^^^^^^^^^~^^^^^^^^^^^^^^^^^^</p>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> /var/ossec/bin/ossec-regex <span class="s1">&#39;^\d\d\d&#39;</span>
 <span class="go">333</span>
 <span class="go">+OSRegex_Execute: 333</span>
@@ -133,7 +133,6 @@ It then reads strings from stdin and outputs matches to stdout.
 <span class="go">+OSRegex_Execute: 222</span>
 <span class="go">+OS_Regex       : 222</span>
 </pre></div>
-</div>
 </div>
 </div>
 

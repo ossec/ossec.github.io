@@ -203,7 +203,7 @@ beyond a file or two per restart of the client. The log monitoring continues
 to work, so you know it&#8217;s not a communication issue, and you will often
 see a slight increase in syscheck database file size after the client has
 restarted (in one case about 20 minutes after). But the database will never be
-completely built; there will only be a couple files listed in datebase.</p>
+completely built; there will only be a couple files listed in database.</p>
 <p>The solution is to add an ignore clause to ossec.conf on the client:</p>
 <div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;ossec_config&gt;</span>
     <span class="nt">&lt;syscheck&gt;</span>
@@ -214,7 +214,7 @@ completely built; there will only be a couple files listed in datebase.</p>
 <div class="section" id="why-aren-t-new-files-creating-an-alert">
 <h2><a class="toc-backref" href="#id8">Why aren&#8217;t new files creating an alert?</a><a class="headerlink" href="#why-aren-t-new-files-creating-an-alert" title="Permalink to this headline">¶</a></h2>
 <p>By default OSSEC does not alert on new files.
-To enable this functionlity, &lt;alert_new_files&gt; must be set to yes inside the &lt;syscheck&gt; section of the manager&#8217;s ossec.conf.
+To enable this functionality, &lt;alert_new_files&gt; must be set to yes inside the &lt;syscheck&gt; section of the manager&#8217;s ossec.conf.
 Also, the rule to alert on new files (rule 554) is set to level 0 by default.
 The alert level will need to be raised in order to see the alert.
 Alerting on new files does not work in realtime, a full scan will be necessary to detect them.</p>

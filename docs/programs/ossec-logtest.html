@@ -177,7 +177,7 @@ this argument may not provide the desired results.</p>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">This ossec-logtest code requires access to all ossec configuation files.
+<p class="last">This ossec-logtest code requires access to all ossec configuration files.
 This is a bug and will be corrected. It is documented in issue #`61 &lt;<a class="reference external" href="https://bitbucket.org/jbcheng/ossec-hids/issue/61/ossec-logtest-must-be-used-with-a-full">https://bitbucket.org/jbcheng/ossec-hids/issue/61/ossec-logtest-must-be-used-with-a-full</a>&gt;`_</p>
 </div>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">%</span> <span class="nb">echo</span> <span class="s2">&quot;Aug 29 15:33:13 ns3 named[464]: client 217.148.39.3#1036: query (cache) denied&quot;</span> <span class="p">|</span> sudo /var/ossec/bin/ossec-logtest -U <span class="m">12108</span>:0:named <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span> &gt; /dev/null

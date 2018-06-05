@@ -121,9 +121,9 @@
 <div class="section" id="iplog-conf">
 <h2>iplog.conf:<a class="headerlink" href="#iplog-conf" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div>The syslog, user, group and internal network configuration is not show (OS dependient)
-iplog can log in diferets ways depending of the configuration parameters (DNS resolv, log_dest, etc), the proposed decoders and rules
-only work with the logs later described, this configuration file extract is functional with this requeriment, please read man iplog
+<div>The syslog, user, group and internal network configuration is not show (OS dependent)
+iplog can log in different ways depending of the configuration parameters (DNS resolv, log_dest, etc), the proposed decoders and rules
+only work with the logs later described, this configuration file extract is functional with this requirement, please read man iplog
 and man iplog.conf</div></blockquote>
 <ol class="arabic simple">
 <li>Log the IP address as well as the hostname of packets.</li>
@@ -144,7 +144,7 @@ and man iplog.conf</div></blockquote>
 </pre></div>
 </div>
 <ol class="arabic simple">
-<li>I dont want too many logs: ignore www, netbios, microsoft-ds loc-srv, 5900 tcp/port conecctions, not all the OS recognize the port alias, replace with de adecuate port number</li>
+<li>I dont want too many logs: ignore www, netbios, microsoft-ds loc-srv, 5900 tcp/port connections, not all the OS recognize the port alias, replace with the OS recognize the port alias, replace with the port number</li>
 </ol>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">ignore tcp dport 80</span>
 
@@ -380,8 +380,8 @@ Nov 14 18:30:30 TCP: Xmas scan detected [ports 636,256,554,389,1723,53,443,21,33
 </pre></div>
 </div>
 </div>
-<div class="section" id="a-proppossed-decoder-is-not-tested">
-<h2>a proppossed decoder is (not tested):<a class="headerlink" href="#a-proppossed-decoder-is-not-tested" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="a-proposed-decoder-is-not-tested">
+<h2>a proposed decoder is (not tested):<a class="headerlink" href="#a-proposed-decoder-is-not-tested" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">&lt;decoder name=&quot;iplog-flood&quot;&gt;</span>
 <span class="go"> &lt;prematch&gt;scan/flood detected&lt;/prematch&gt;</span>
 <span class="go"> &lt;regex offset=&quot;after_prematch&quot;&gt;\S+ \S+ from (\S+)&lt;/regex&gt;</span>
@@ -397,7 +397,7 @@ Nov 14 18:30:30 TCP: Xmas scan detected [ports 636,256,554,389,1723,53,443,21,33
 </div>
 </div>
 <div class="section" id="id8">
-<h2>a proppossed decoder is (not tested):<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
+<h2>a proposed decoder is (not tested):<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">&lt;decoder name=&quot;iplog-pingflood&quot;&gt;</span>
 <span class="go"> &lt;prematch&gt;ping flood detected from&lt;/prematch&gt;</span>
 <span class="go"> &lt;regex offset=&quot;after_prematch&quot;&gt;(\S+)&lt;/regex&gt;</span>
@@ -414,7 +414,7 @@ Nov 14 18:30:30 TCP: Xmas scan detected [ports 636,256,554,389,1723,53,443,21,33
 </div>
 </div>
 <div class="section" id="id10">
-<h2>a proppossed decoder is (not tested):<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h2>
+<h2>a proposed decoder is (not tested):<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">&lt;decoder name=&quot;iplog-traceroute&quot;&gt;</span>
 <span class="go"> &lt;prematch&gt;pingtraceroute from&lt;/prematch&gt;</span>
 <span class="go"> &lt;regex offset=&quot;after_prematch&quot;&gt;(\S+)&lt;/regex&gt;</span>
@@ -431,7 +431,7 @@ Nov 14 18:30:30 TCP: Xmas scan detected [ports 636,256,554,389,1723,53,443,21,33
 </div>
 </div>
 <div class="section" id="id12">
-<h2>a proppossed decoder is (not tested):<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h2>
+<h2>a proposed decoder is (not tested):<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><dl class="docutils">
 <dt>&lt;decoder name=&#8221;iplog-bogustcp&#8221;&gt;</dt>
@@ -610,9 +610,8 @@ Nov 14 18:30:30 TCP: Xmas scan detected [ports 636,256,554,389,1723,53,443,21,33
 </pre></div>
 </div>
 <p>As a side effect, enabling this option will also cause most of nmap&#8217;s stealth&#8221; scans to fail.</p>
-</div>
-<div class="section" id="bsd-s-sysctl-some-freebsd-especific">
-<h2>BSD&#8217;s sysctl (some FreeBSD especific):<a class="headerlink" href="#bsd-s-sysctl-some-freebsd-especific" title="Permalink to this headline">¶</a></h2>
+<p>BSD&#8217;s sysctl (some FreeBSD specific):
+^^^^^^^^^^^^^^^^^%^^^^^^^^^^^^^^^^^^^</p>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">tcp_drop_synfin</span>
 <span class="go">net.inet.tcp.blackhole</span>
 <span class="go">net.inet.udp.blackhole</span>
