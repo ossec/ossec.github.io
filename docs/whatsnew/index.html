@@ -118,12 +118,78 @@
   <div class="section" id="what-s-new">
 <h1>What&#8217;s new<a class="headerlink" href="#what-s-new" title="Permalink to this headline">¶</a></h1>
 <div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="checksums/index.html">Checksums</a></li>
-</ul>
 </div>
 <div class="section" id="id1">
-<h2>2.9.2<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<h2>2.9.4<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This is a maintenance update, and the last release in the 2.9 series</p>
+</div>
+<p>Released June 20, 2018</p>
+<p>General</p>
+<ul class="simple">
+<li>PR #1207, for issue #1205, Pushing merged.mg to Windows agents fails due to EOL conversion</li>
+<li>PR #1259, for issue #1145, fixes for RHEL getaddrinfo/ipv6</li>
+<li>PR #1428, for issue #1425, check owner option doesnt work on windows agent</li>
+<li>PR #1428, for issue #1425, check owner option doesnt work on windows agent</li>
+<li>PR #1421, for issue #1421, fixes for ossec-slack.sh alerts path</li>
+<li>PR #1422, for issue #1421, fixes for ossec-slack.sh active-response path</li>
+<li>PR #1421, for issue #1421, fixes for ossec-slack.sh path</li>
+<li>PR #1409 for issue #1402, Real-time file monitoring stops working if several files are encrypted at the same time</li>
+<li>PR #1100, fix for open received files in binary mode on windows</li>
+<li>PR #1350, fix for basename, Missing agent.conf messags are reportied as warnings</li>
+<li>PR #1334 for issue #210, do not add 12 to 12pm</li>
+<li>PR #1340 for issue #1065, fix for negating IP address</li>
+<li>PR #1088 for issue #1084, reportd double free</li>
+</ul>
+</div>
+<div class="section" id="id2">
+<h2>2.9.3<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>Released December 23, 2017</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This is a maintenance release, and includes a major rule &amp; decoder update</p>
+</div>
+<p>New Rules / Decoders</p>
+<ul class="simple">
+<li>NSD Rules and Decoders</li>
+<li>Owncloud Rules and Decoders</li>
+<li>ProxMox Rules and Decoders</li>
+<li>PSAD Rules and Decoders</li>
+</ul>
+<p>Updated Rules / Decoders</p>
+<ul class="simple">
+<li>Apache Rules</li>
+<li>Asterisk Rules</li>
+<li>Mailscanner Rules</li>
+<li>Mysql Rules</li>
+<li>Nginx Rules</li>
+<li>OpenBSD Rules</li>
+<li>Postfix Rules</li>
+<li>RoundCube Rules</li>
+<li>Sendmail Rules</li>
+<li>Syslog Rules</li>
+<li>WebAppSec Rules</li>
+</ul>
+<p>General</p>
+<ul class="simple">
+<li>Added authd init scripts for Debian and Redhat/Centos</li>
+<li>Added Rootcheck CIS Mysql communnity and enterprise auditing</li>
+<li>Added Rootcheck CIS SSH checks</li>
+<li>Added Rootcheck CIS SLES 12 checks</li>
+<li>Update Rootcheck CIS RHEL / CentOS 5 checks</li>
+<li>Update Rootcheck CIS RHEL / CentOS 6 checks</li>
+<li>Update Rootcheck CIS RHEL / CentOS 7 checks</li>
+<li>Update Rootcheck CIS Windows checks</li>
+<li>Update Rootcheck trojans / malware DB</li>
+<li>Update Rootcheck Windows application DB</li>
+<li>Backported rule unit tests from master</li>
+<li>PR #915 allows the filename attribute in decoders and active response</li>
+<li>PR #1275 allow IPv6 addresses in names</li>
+</ul>
+</div>
+<div class="section" id="id3">
+<h2>2.9.2<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
 <p>Released August 9, 2017:</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -155,8 +221,8 @@
 <li>Syslog Rules</li>
 </ul>
 </div>
-<div class="section" id="id2">
-<h2>2.9.1<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id4">
+<h2>2.9.1<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">This is a bug fix, and rule/decoder update.</p>
@@ -176,8 +242,8 @@
 <li>PR #1144: Fixes Issue #1142 for CEF support (&#64;mkvocka)</li>
 </ul>
 </div>
-<div class="section" id="id3">
-<h2>2.9.0<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id5">
+<h2>2.9.0<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">This is a major release</p>
@@ -270,8 +336,8 @@
 <li>PR #986 - Prevent manage_agents from chrooting in bulk mode</li>
 </ul>
 </div>
-<div class="section" id="id4">
-<h2>2.8.3<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id6">
+<h2>2.8.3<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
 <p>Released November 5, 2015:</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -290,8 +356,8 @@
 </pre></div>
 </div>
 </div>
-<div class="section" id="id5">
-<h2>2.8.2<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id7">
+<h2>2.8.2<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
 <p>Released June 10, 2015:</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -301,8 +367,8 @@
 <li>SECURITY fix for CVE-2015-322</li>
 </ul>
 </div>
-<div class="section" id="id6">
-<h2>2.8.1<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id8">
+<h2>2.8.1<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
 <p>Released Sept 9, 2014:</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -313,8 +379,8 @@
 <li>Bug fixes</li>
 </ul>
 </div>
-<div class="section" id="id7">
-<h2>2.8<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id9">
+<h2>2.8<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>Bug fixes</li>
 <li>manage_agents: Added manage_agents -r &lt;id&gt; to remove an agent (awiddersheim)</li>
@@ -330,8 +396,8 @@
 <li>contrib: ossec-eps.sh, a script to calculate events-per-second (mstarks01)</li>
 </ul>
 </div>
-<div class="section" id="id8">
-<h2>2.7.1<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id10">
+<h2>2.7.1<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>Bug fixes</li>
 <li>Extended filesize from an integer to a long integer in syscheck</li>
@@ -345,8 +411,8 @@
 <li>ossec2snorby scripts added to contrib</li>
 </ul>
 </div>
-<div class="section" id="id9">
-<h2>2.7<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id11">
+<h2>2.7<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>agent profiles<ul>
 <li><a class="reference external" href="../syntax/head_ossec_config.client.html#element-server-ip">ossec.conf</a></li>
