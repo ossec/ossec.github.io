@@ -17,7 +17,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../',
-        VERSION:     '2.9.2',
+        VERSION:     '3.0.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true,
@@ -63,7 +63,7 @@
         </button>
         <a class="navbar-brand" href="../../../index.html"><img src="../../../_static/ossec_logo_bare_small.png">
           OSSEC</a>
-        <span class="navbar-text navbar-version pull-left"><b>2.9</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>3.0</b></span>
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
@@ -201,6 +201,28 @@ may cause compilation or runtime issues.</p>
 </dd></dl>
 
 <dl class="envvar">
+<dt id="envvar-ZLIB_SYSTEM">
+<code class="descname">ZLIB_SYSTEM</code><a class="headerlink" href="#envvar-ZLIB_SYSTEM" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="versionadded">
+<p><span class="versionmodified">New in version 3.0: </span><code class="docutils literal"><span class="pre">ZLIB_SYSTEM</span></code> can enable OSSEC to use a pre-installed zlib instead of the bundled version.</p>
+<p><strong>Applies to Target:</strong> all</p>
+<p><strong>Default:</strong> no</p>
+<p><strong>Allowed:</strong> yes/no</p>
+</div>
+<dl class="envvar">
+<dt id="envvar-LUA_ENABLE">
+<code class="descname">LUA_ENABLE</code><a class="headerlink" href="#envvar-LUA_ENABLE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="versionadded">
+<p><span class="versionmodified">New in version 3.0: </span><code class="docutils literal"><span class="pre">LUA_ENABLE</span></code> can enable or disable the bundled lua support.</p>
+<p><strong>Applies to Target:</strong> all</p>
+<p><strong>Default:</strong> yes</p>
+<p><strong>Allowed:</strong> yes/no</p>
+</div>
+<dl class="envvar">
 <dt id="envvar-MAXAGENTS">
 <code class="descname">MAXAGENTS</code><a class="headerlink" href="#envvar-MAXAGENTS" title="Permalink to this definition">¶</a></dt>
 <dd><p>OSSEC is compiled with a maximum number of agents on the server/hybrid TARGETS.
@@ -285,6 +307,15 @@ looks on output.</p>
 <code class="descname">USE_ZEROMQ</code><a class="headerlink" href="#envvar-USE_ZEROMQ" title="Permalink to this definition">¶</a></dt>
 <dd><p><code class="docutils literal"><span class="pre">USE_ZEROMQ</span></code> enables support for zeromq output.</p>
 <p><strong>Applies to Target:</strong> server/hybrid/local</p>
+<p><strong>Default:</strong> 0</p>
+<p><strong>Allowed:</strong> 0/1</p>
+</dd></dl>
+
+<dl class="envvar">
+<dt id="envvar-USE_SQLITE">
+<code class="descname">USE_SQLITE</code><a class="headerlink" href="#envvar-USE_SQLITE" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal"><span class="pre">USE_SQLITE</span></code> enables support for sqlite3 databases.</p>
+<p><strong>Spplies to Target:</strong> server/hybrid/local</p>
 <p><strong>Default:</strong> 0</p>
 <p><strong>Allowed:</strong> 0/1</p>
 </dd></dl>

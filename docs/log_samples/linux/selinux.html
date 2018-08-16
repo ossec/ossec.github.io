@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>&lt;no title&gt; &#8212; OSSEC</title>
+    <title>SELinux &#8212; OSSEC</title>
     
     <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
@@ -17,7 +17,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../',
-        VERSION:     '2.9.2',
+        VERSION:     '3.0.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true,
@@ -63,7 +63,7 @@
         </button>
         <a class="navbar-brand" href="../../../index.html"><img src="../../../_static/ossec_logo_bare_small.png">
           OSSEC</a>
-        <span class="navbar-text navbar-version pull-left"><b>2.9</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>3.0</b></span>
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
@@ -115,7 +115,9 @@
   <div class="row">
     <div class="col-md-12">
       
-  <p>I enabled SELinux on my Kubuntu workstation and almost immediately received notifications from OSSEC. It has been a while since I reviewed the [<a class="reference external" href="http://www.centos.org/docs/4/html/rhel-selg-en-4/">http://www.centos.org/docs/4/html/rhel-selg-en-4/</a> RHEL SELinux documentation] that explains these log entries from /var/log/messages. There&#8217;s a very real possibility that I did not set SELinux up properly, it is not very well supported by Ubuntu at the moment. I may change this entry after I re-review the SELinux docs.</p>
+  <div class="section" id="selinux">
+<h1>SELinux<a class="headerlink" href="#selinux" title="Permalink to this headline">¶</a></h1>
+<p>I enabled SELinux on my Kubuntu workstation and almost immediately received notifications from OSSEC. It has been a while since I reviewed the [<a class="reference external" href="http://www.centos.org/docs/4/html/rhel-selg-en-4/">http://www.centos.org/docs/4/html/rhel-selg-en-4/</a> RHEL SELinux documentation] that explains these log entries from /var/log/messages. There&#8217;s a very real possibility that I did not set SELinux up properly, it is not very well supported by Ubuntu at the moment. I may change this entry after I re-review the SELinux docs.</p>
 <p>Anyway, here&#8217;s something to chew on FWIW ...</p>
 <hr class="docutils" />
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Feb 20 16:57:43 localhost kernel: [17180270.076000] audit(1172015863.889:2): avc:  denied  { append } for  pid=5621 comm=&quot;syslogd&quot; name=&quot;syslog&quot; dev=sda6 ino=2101168 scontext=system_u:system_r:kernel_t tcontext=system_u:object_r:file_t tclass=file</span>
@@ -188,6 +190,7 @@
 <span class="go">Feb 20 16:57:48 localhost kernel: [17180274.768000] audit(1172015868.581:35): avc:  denied  { read } for  pid=6142 comm=&quot;psadwatchd&quot; name=&quot;psad.pid&quot; dev=tmpfs ino=15493 scontext=system_u:system_r:kernel_t tcontext=system_u:object_r:tmpfs_t tclass=file</span>
 <span class="go">Feb 20 16:57:48 localhost kernel: [17180274.768000] audit(1172015868.581:36): avc:  denied  { getattr } for  pid=6142 comm=&quot;psadwatchd&quot; name=&quot;psad.pid&quot; dev=tmpfs ino=15493 scontext=system_u:system_r:kernel_t tcontext=system_u:object_r:tmpfs_t tclass=file</span>
 </pre></div>
+</div>
 </div>
 
   <div class="section">

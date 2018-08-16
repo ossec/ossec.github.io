@@ -17,7 +17,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../',
-        VERSION:     '2.9.2',
+        VERSION:     '3.0.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true,
@@ -63,7 +63,7 @@
         </button>
         <a class="navbar-brand" href="../../../index.html"><img src="../../../_static/ossec_logo_bare_small.png">
           OSSEC</a>
-        <span class="navbar-text navbar-version pull-left"><b>2.9</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>3.0</b></span>
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
@@ -493,6 +493,27 @@ inside <code class="docutils literal"><span class="pre">/var/ossec/queue/diff/lo
 <p class="last">If OSSEC has not been compiled with libmagic support, report_changes will copy any file
 designated, e.g. mp3, iso, executable, /chroot/dev/urandom (which would fill your hard drive).
 So unless libmagic is used, be very carefull on which directory you enable report_changes.</p>
+</div>
+</div>
+<div class="section" id="md5-whitelist-database">
+<h2>MD5 whitelist database<a class="headerlink" href="#md5-whitelist-database" title="Permalink to this headline">¶</a></h2>
+<p><cite>ossec-analysisd</cite> can query an sqlite database for known-good md5 hashes.
+The database should contain the hashes, file names, and an optional date.</p>
+<p>This feature uses code from <a class="reference external" href="https://blog.rootshell.be/2013/05/13/improving-file-integrity-monitoring-with-ossec/">Xavier Mertens.</a></p>
+<p>Configure the database in <cite>ossec.conf</cite>:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">&lt;/global&gt;</span>
+<span class="go">  &lt;md5_whitelist&gt;/rules/lists/md5whitelist.db&lt;/md5_whitelist&gt;</span>
+<span class="go">&lt;/global&gt;</span>
+</pre></div>
+</div>
+<p>Schema:</p>
+<div class="highlight-sql"><div class="highlight"><pre><span></span><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">files</span> <span class="p">(</span>
+    <span class="n">md5sum</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">32</span><span class="p">),</span>
+    <span class="n">file</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">256</span><span class="p">),</span>
+    <span class="n">time</span> <span class="n">DATETIME</span>
+<span class="p">);</span>
+<span class="k">CREATE</span> <span class="k">UNIQUE</span> <span class="k">INDEX</span> <span class="n">files_idx</span> <span class="k">ON</span> <span class="n">files</span><span class="p">(</span><span class="n">md5sum</span><span class="p">);</span>
+</pre></div>
 </div>
 </div>
 <div class="section" id="syscheck-faq">

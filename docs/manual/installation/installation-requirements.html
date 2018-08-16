@@ -17,7 +17,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../',
-        VERSION:     '2.9.2',
+        VERSION:     '3.0.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true,
@@ -63,7 +63,7 @@
         </button>
         <a class="navbar-brand" href="../../../index.html"><img src="../../../_static/ossec_logo_bare_small.png">
           OSSEC</a>
-        <span class="navbar-text navbar-version pull-left"><b>2.9</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>3.0</b></span>
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
@@ -134,6 +134,13 @@ installed. Run the following command to install these packages.</p>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> apt-get install mysql-dev postgresql-dev
 </pre></div>
 </div>
+<p>To use the SQLite features, the <cite>libsqlite3-dev</cite> package is necessary.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 3.0.</span></p>
+</div>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> apt-get install libsqlite3-dev
+</pre></div>
+</div>
 </div>
 <div class="section" id="redhat">
 <h2>RedHat<a class="headerlink" href="#redhat" title="Permalink to this headline">¶</a></h2>
@@ -141,6 +148,13 @@ installed. Run the following command to install these packages.</p>
 support is needed the package mysql-devel and/or postgresql-devel will
 need to be installed.</p>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> yum install mysql-devel postgresql-devel
+</pre></div>
+</div>
+<p>To use the SQLite features, the <cite>sqlite-devel</cite> package is necessary.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 3.0.</span></p>
+</div>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> yum install sqlite-devel
 </pre></div>
 </div>
 </div>

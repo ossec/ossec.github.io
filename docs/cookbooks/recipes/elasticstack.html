@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Modsecurity samples &#8212; OSSEC</title>
+    <title>Using filebeat, logstash, and elasticsearch: &#8212; OSSEC</title>
     
     <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
@@ -115,32 +115,54 @@
   <div class="row">
     <div class="col-md-12">
       
-  <div class="section" id="modsecurity-samples">
-<h1>Modsecurity samples<a class="headerlink" href="#modsecurity-samples" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="access-denied">
-<h2>Access denied:<a class="headerlink" href="#access-denied" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">[Sun Jan 16 10:56:49 2005] [error] [client 192.168.2.10] mod_security: Access denied with code 403. Pattern match &quot;111&quot; at THE_REQUEST [hostname &quot;192.168.2.101&quot;] [uri &quot;/index.html?111&quot;]</span>
+  <div class="section" id="using-filebeat-logstash-and-elasticsearch">
+<span id="cookbooks-recpies-elasticstack"></span><h1>Using filebeat, logstash, and elasticsearch:<a class="headerlink" href="#using-filebeat-logstash-and-elasticsearch" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="enable-json-alert-output-in-ossec-conf">
+<h2>Enable json alert output in ossec.conf:<a class="headerlink" href="#enable-json-alert-output-in-ossec-conf" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;global&gt;</span>
+  <span class="nt">&lt;jsonout_output&gt;</span>yes<span class="nt">&lt;/jsonout_output&gt;</span>
+<span class="nt">&lt;/global&gt;</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="access-denied-by-pattern">
-<h2>Access denied by pattern:<a class="headerlink" href="#access-denied-by-pattern" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">mod_security-message: Access denied with code 412. Pattern match &quot;flashget&quot; at HEADER</span>
-<span class="go">mod_security-message: Access denied with code 412. Pattern match &quot;getright&quot; at HEADER</span>
-<span class="go">mod_security-message: Access denied with code 412. Pattern match &quot;^Download&quot; at HEADER</span>
-<span class="go">mod_security-message: Access denied with code 412. Pattern match &quot;^DA d.d+&quot; at HEADER</span>
+<div class="section" id="configure-filebeat-to-read-alerts-json-in-filebeat-yml">
+<h2>Configure filebeat to read alerts.json in filebeat.yml:<a class="headerlink" href="#configure-filebeat-to-read-alerts-json-in-filebeat-yml" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">- input_type: log</span>
+<span class="go">paths:</span>
+<span class="go">  - /var/ossec/logs/alerts/alerts.json</span>
+
+<span class="go">json.keys_under_root: true</span>
+<span class="go">fields: {log_type: osseclogs}</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="access-denied-by-pattern-invalid-user-agent">
-<h2>Access denied by pattern (invalid user agent):<a class="headerlink" href="#access-denied-by-pattern-invalid-user-agent" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">[Mon Jun 11 03:17:22 2007] [error] [client 68.76.16.11] mod_security: Access denied with code 406. Pattern match &quot;^$&quot; at HEADER(&quot;USER-AGENT&quot;) [severity &quot;EMERGENCY&quot;] [hostname &quot;192.168.1.1&quot;] [uri &quot;/admin/pma/main.php&quot;]</span>
-<span class="go">[Mon Jun 11 03:17:22 2007] [error] [client 68.76.16.11] mod_security: Access denied with code 406. Pattern match &quot;^$&quot; at HEADER(&quot;USER-AGENT&quot;) [severity &quot;EMERGENCY&quot;] [hostname &quot;192.168.1.1&quot;] [uri &quot;/web/phpMyAdmin/main.php&quot;]</span>
-<span class="go">[Mon Jun 11 03:17:22 2007] [error] [client 68.76.16.11] mod_security: Access denied with code 406. Pattern match &quot;^$&quot; at HEADER(&quot;USER-AGENT&quot;) [severity &quot;EMERGENCY&quot;] [hostname &quot;192.168.1.1&quot;] [uri &quot;/dbadmin/main.php&quot;]</span>
-<span class="go">[Mon Jun 11 03:17:22 2007] [error] [client 68.76.16.11] mod_security: Access denied with code 406. Pattern match &quot;^$&quot; at HEADER(&quot;USER-AGENT&quot;) [severity &quot;EMERGENCY&quot;] [hostname &quot;192.168.1.1&quot;] [uri &quot;/db/main.php&quot;]</span>
-<span class="go">[Mon Jun 11 03:17:22 2007] [error] [client 68.76.16.11] mod_security: Access denied with code 406. Pattern match &quot;^$&quot; at HEADER(&quot;USER-AGENT&quot;) [severity &quot;EMERGENCY&quot;] [hostname &quot;192.168.1.1&quot;] [uri &quot;/admin/main.php&quot;]</span>
-<span class="go">[Mon Jun 11 03:17:22 2007] [error] [client 68.76.16.11] mod_security: Access denied with code 406. Pattern match &quot;^$&quot; at HEADER(&quot;USER-AGENT&quot;) [severity &quot;EMERGENCY&quot;] [hostname &quot;192.168.1.1&quot;] [uri &quot;/mysql/main.php&quot;]</span>
-<span class="go">[Mon Jun 11 03:17:22 2007] [error] [client 68.76.16.11] mod_security: Access denied with code 406. Pattern match &quot;^$&quot; at HEADER(&quot;USER-AGENT&quot;) [severity &quot;EMERGENCY&quot;] [hostname &quot;192.168.1.1&quot;] [uri &quot;/PMA/main.php&quot;]</span>
+<div class="section" id="configure-logstash">
+<h2>Configure logstash:<a class="headerlink" href="#configure-logstash" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">input {</span>
+<span class="go">  beats {</span>
+<span class="go">    id =&gt; &quot;beats_test&quot;</span>
+<span class="go">    port =&gt; 9001</span>
+<span class="go">    type =&gt; &quot;ossec&quot;</span>
+<span class="go">  }</span>
+<span class="go">}</span>
+
+<span class="go">filter {</span>
+<span class="go">  if([fields][log_type] == &quot;osseclogs&quot;) {</span>
+<span class="go">    mutate {</span>
+<span class="go">      replace =&gt; {</span>
+<span class="go">        &quot;[type]&quot; =&gt; &quot;osseclogs&quot;</span>
+<span class="go">      }</span>
+<span class="go">    }</span>
+<span class="go">}</span>
+
+<span class="go">output {</span>
+
+<span class="go">  if([type] == &quot;osseclogs&quot;) {</span>
+<span class="go">    elasticsearch {</span>
+<span class="go">      index =&gt; &quot;ossec-%{+YYYY.MM.dd}&quot;</span>
+<span class="go">    }</span>
+<span class="go">  }</span>
+<span class="go">}</span>
 </pre></div>
 </div>
 </div>
