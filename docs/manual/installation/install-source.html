@@ -125,7 +125,7 @@ More information on them can be found on the <a class="reference external" href=
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">In the following installation the commands follow the <code class="docutils literal"><span class="pre">#</span></code>.
-Everything else is either comments out output.</p>
+Everything else is either comments or output.</p>
 </div>
 <ol class="arabic simple">
 <li>Download the latest version and verify its checksum.</li>
@@ -175,6 +175,19 @@ More information can be found on the <a class="reference external" href="../agen
 </div></blockquote>
 </li>
 </ol>
+</div>
+<div class="section" id="manual-installation">
+<h1>Manual Installation<a class="headerlink" href="#manual-installation" title="Permalink to this headline">¶</a></h1>
+<p>OSSEC can also be installed in a more manual fashion.
+No modifications will be made to the <cite>ossec.conf</cite> file, so it will have to be configured after installation.
+The <cite>ossec</cite>, <cite>ossecm</cite> and <cite>ossecr</cite> users will still be created automatically.</p>
+<p>After the source tarball is downloaded and extracted:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">cd ossec-hids-*/src</span>
+<span class="go">make TARGET=&lt;server|local|agent&gt;</span>
+<span class="go">make install</span>
+</pre></div>
+</div>
+<p>Build options can still be passed to <cite>make</cite> (<cite>USE_ZEROMQ</cite>, <cite>USE_GEOIP</cite>, etc.).</p>
 </div>
 
   <div class="section">
