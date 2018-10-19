@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>OSSEC 2.9.0 &#8212; OSSEC</title>
+    <title>OSSEC 3.1.0 &#8212; OSSEC</title>
     
     <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -123,7 +123,7 @@
   
     </li>
   <i class="fa fa-calendar"></i>
-    Feb 09, 2017
+    Oct 19, 2018
   
     
 
@@ -173,8 +173,6 @@
     <ul class="nav nav-list">
       
       
-      <li><a class="reference internal" href="2018-10-19-3.1.0-RELEASE.html">Oct 19 - OSSEC 3.1.0</a></li>
-      
       <li><a class="reference internal" href="2018-08-01-3.0.0-RELEASE.html">Aug 01 - OSSEC 3.0.0</a></li>
       
       <li><a class="reference internal" href="2018-06-20-2.9.4-RELEASE.html">Jun 20 - OSSEC 2.9.4</a></li>
@@ -182,6 +180,8 @@
       <li><a class="reference internal" href="2018-05-15-ossec-3-repo.html">May 15 - OSSEC HIDS 3.0 Snapshots</a></li>
       
       <li><a class="reference internal" href="2018-04-23-slack.html">Apr 23 - Join us on Slack!</a></li>
+      
+      <li><a class="reference internal" href="2018-04-18-Virtual-Machine-2.9.3.html">Apr 18 - OSSEC Virtual Appliance 2.9.3</a></li>
       
     </ul>
   </li>
@@ -252,101 +252,73 @@
       </div>
     <div class="col-md-9">
       
-  <div class="section" id="ossec-2-9-0">
-<h1>OSSEC 2.9.0<a class="headerlink" href="#ossec-2-9-0" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="ossec-3-1-0">
+<h1>OSSEC 3.1.0<a class="headerlink" href="#ossec-3-1-0" title="Permalink to this headline">¶</a></h1>
 <p><strong>Changelog</strong></p>
 <p><strong>Release Maintainers</strong></p>
-<p>Dan Parriott</p>
-<p>Scott R. Shinn (Atomicorp, Inc.)</p>
+<p>Dan Parriott
+Scott R. Shinn (Atomicorp, Inc.)</p>
+<p><strong>Release Notes</strong></p>
+<p>Special thanks on this release go out to:</p>
+<ul class="simple">
+<li>davestoddard for an amazingly well thought out, and well documented update to the networking code</li>
+<li>Bob-Andrews for the largest update to the auditing system in the project history</li>
+<li>phamvoung for resolving some very subtle bugs and high profile issues with the authd daemon</li>
+</ul>
+<p>We&#8217;d also like to thank all the other fantastic contributors to the project, whom are referenced in parenthesis in the changelog. We cannot thank you enough!</p>
 <p><strong>Whats New</strong></p>
 <ul class="simple">
-<li>Alert Output support for JSON and ZeroMQ</li>
-<li>Syscheck improvements</li>
-<li>Report file deletion, even without realtime enabled</li>
-<li>Report modifications made on directories</li>
-<li>Corrects bug so that files created between the first and second scan are reported as new files</li>
-<li>Corrects bug that made changes reverting a file to the state it was in when ossec started unreported</li>
-<li>Avoids computing hashes multiple times to improve performance</li>
-<li>Make the time between two syscheck wakeups configurable in internal_options</li>
-<li>Add support for the “nodiff” option when using report_changes, sensitive files tagged with in ossec.conf will not have their contents included in an alert.</li>
-<li>IPv6 support</li>
-<li>Support to call an external mailer. This solves the problem of supporting encryption when sending mail alerts in OSSEC. The &lt;smtp_server&gt; field can now be prepended with “/” to designate a local binary. Example: “&lt;smtp_server&gt;/usr/sbin/sendmail -t&lt;/smtp_server&gt;”.</li>
-<li>Slack notification support</li>
+<li>(&#64;davestoddard) Modification to Correct IP Connectivity Issues on BSD Servers PR #1412</li>
 </ul>
 <p><strong>New Rules / Decoders</strong></p>
 <ul class="simple">
-<li>PR #572: Rules/Decoders, Better Dropbear events detection</li>
-<li>PR #602: Rules/Decoders, Add dropbear_rules and unbound_rules</li>
-<li>PR #604: Rules/Decoders,sid 5300 incorrectly alerts on OS X</li>
-<li>PR #607, Rules/Decoders, Update syslog_rules for OSX false positive</li>
-<li>PR #611: Rules/Decoders, Sysmon decoder update, This should better support Windows 2003 R2.</li>
-<li>PR #643, Rules/Decoders, update to IIS decoder</li>
-<li>PR #654, Rules/Decoders, update to the vsftpd decoder</li>
-<li>PR #668: Rules/Decoders, Fix for Cisco PIX decoder, ms-se_rules.xml, msauth_rules.xml</li>
-<li>PR #721: Rules/Decoders, Update for systemd rules to add support for new program_name, systemctl</li>
-<li>PR #746: Rules/Decoders, Update to the apache decoders to handle Apache 2.4 events more gracefully</li>
-<li>PR #755: Rules/Decoders, Update to ssh rules. Adds rules 5750-5753 to dedect client, protocol, and hostkey events</li>
-<li>PR #762: Rules/Decoders, Update to ssh rules. Associates 5751 with 5700 instead of 1002</li>
-<li>PR #763: Rules/Decoders, Add rules for OpenBSD smtpd</li>
-<li>PR #774: Rules/Decoders, Add OpenBSD smtpd rules</li>
-<li>PR #787: Rules/Decoders, Update to OpenBSD smtpd decoder to not conflict with postfix</li>
-<li>PR #786: Rules/Decoders, SSH Rule improvements</li>
-<li>PR #799: Rules/Decoders, Add rule for users not in sudoers</li>
-<li>PR #803: Rules/Decoders, Add additional sshd decoders for ssh-pam &amp; ssh invalid auth requests</li>
+<li>(&#64;Bob-Andrews) - linux_usbdetect_rules.xml, ms1016_usbdetect_rules.xml, ms_firewall_rules.xml</li>
+<li>(&#64;Bob-Andrews) - Added ms_ipsec_rules PR #1549</li>
+<li>(&#64;Bob-Andrews) - Rootchecks for Debian 7+8, cis_debianlinux7-8_L1_rcl.txt, cis_debianlinux7-8_L2_rcl.txt, cis_win10_enterprise_L1_rcl.txt, cis_win10_enterprise_L2_rcl.txt PR #1531</li>
+<li>(&#64;Bob-Andrews) - acsc_office2016_rcl.txt, Added rootcheck PR #1510</li>
+<li>(&#64;Bob-Andrews) - added cis_win2016_memberL1_rcl.txt, cis_win2016_memberL2_rcl.txt PR #1496</li>
+<li>(&#64;Bob-Andrews) - cis_win2012r2_memberL1_rcl.txt, Added Check Description/Alert PR #1495</li>
+<li>(&#64;ddpbsd) - additional sshd decoders PR #1480</li>
+<li>(&#64;ddpbsd) - basic support for Dnsmasq PR #1461</li>
 </ul>
 <p><strong>General</strong></p>
 <ul class="simple">
-<li>PR #2, Output, Adds ZeroMQ and Json output support</li>
-<li>PR #4, Authd, Bugfix for Openssl operations on non-blocking socket</li>
-<li>PR #563: IPv6 support</li>
-<li>PR #599, Allow for the log format in proftpd 1.3.5+</li>
-<li>PR #610: Execd, Reduce system load caused by simultaneous active response processes during ossec stop. #610</li>
-<li>PR #615: Adds support for Binding src IP to ‘local_ip’ config value in agentd. In mulihomed host environment we have a big problem with binding agent to correct ip. By default agentd used ip-addr of interface, from which sented ip-packets.</li>
-<li>PR #617: Agentd, Add CLIENT to DEFINES for winagent target #617 Bugfix #595</li>
-<li>PR #622: Fix for CVE-2015-3222</li>
-<li>PR #631, Log failure when ossec fails to remove a PID file</li>
-<li>PR #652, Syscheck, add support for the “-t” flag to display XML parsing errors in agent.conf on agents</li>
-<li>PR #657: Syscheck, Allows scanning of directories with , in the name. Let directory check_something=”no” options to work. This means you can do instead of listing out all the ones you want to use.</li>
-<li>PR #670: Syscheck, Bugfix for report_changes</li>
-<li>PR #689: Maild, add support to call an external MTA to send alert emails. The smtp_server setting can now be written as “/usr/sbin/sendmail -t”</li>
-<li>PR #690: Cleanup for building on OSX</li>
-<li>PR #691: adds support for syslog messages that prepend the year, ie: “2015 Nov 13 ....”</li>
-<li>PR #696: Bugfix for OpenBSD sendto() sockaddr length restrictions.</li>
-<li>PR #699: Encompassing only complete statements with conditional directives.</li>
-<li>PR #717: Active Response, add Slack (www.slack.com) notification support</li>
-<li>PR #720: Fixes for the statfs error spam</li>
-<li>PR #724: Authd, bugfix for issue #642, This brings ossec-authd into parity with whatever the MAX_AGENTS is set at build time</li>
-<li>PR #726: Make syslog/cef consistent with json/splunk and add classification field to alerts.</li>
-<li>PR #727: Maild, Add support for “email_reply_to”. This allows configuring the Reply-To: field in email alerts sent from ossec-maild</li>
-<li>PR #740: Remoted, bugfix for issue #739, Ossec will now report the agent ID of the agent that tries to connect</li>
-<li>PR #744: Syscheck, Bugfix for issue #42, corrects issue on windows that would produce an incorrect hash</li>
-<li>PR #749: Windows, Changed Makefile to use Windows subsystem only with UI manager</li>
-<li>PR #750: Analysisd, Fixes glob() impelemtation bug, adds Hourly/Daily options to logcollector, improved dfalts to analysisd diff alerts.</li>
-<li>PR #751: Add simple python rule updater script</li>
-<li>PR #754: Install.sh, Bugfix for OpenBSD adduser support</li>
-<li>PR #765: Syscheck, add “nodiff” support. Sensitive data may leak through the diff attached to alerts when some file changes. This pull request add a nodiff option, which allows to explicitly set files for which we never want to output a diff.</li>
-<li>PR #768: Analysisd, Bugfix for Issue #767, increase of value for stats</li>
-<li>PR #770: Database support, Postgres support updates</li>
-<li>PR #781: Syscheck, Bugfix for Issue #780</li>
-<li>PR #788: System Audit, Add PCI DSS tags to RHEL/CentOS/Cloudlinux auditing tests</li>
-<li>PR #789: Install.sh, Use ls for file existence checks, for cross platform compatibility</li>
-<li>PR #791: Syscheck, add /boot to default directories. Fix for Issue #675</li>
-<li>PR #797: Rootcheck, Remove legacy rootcheck options</li>
-<li>PR #798: System Audit, Add RHEL/CentOS/Cloudlinux 7 CIS benchmarks</li>
-<li>PR #802: Database support, Allow for longer entries in the system information column</li>
-<li>PR #849 Format string security fix</li>
-<li>PR #864 Fix ossec-logtest to chroot when testing check_diff rules</li>
-<li>PR #870 Fix installer permissions on the etc/shared directory</li>
-<li>PR #878 Fix version field to correctly report &#8220;2.9.0&#8221; instead of 2.8.3</li>
-<li>PR #909 Bugfix for decoders.d/rules.d logtest</li>
-<li>PR #920 Bugfixes for OS_IPFound, OS_IPFoundList, OS_IsValidIP</li>
-<li>PR #923 Security fix for SQLi in al_data-&gt;location</li>
-<li>PR #926 Rootcheck, updates or EL7</li>
-<li>PR #945 Remove debug message</li>
-<li>PR #986 - Prevent manage_agents from chrooting in bulk mode</li>
+<li>(&#64;iasdeoupxe) - host-deny.sh: Move duplicate entry check into the add action PR #1554</li>
+<li>(&#64;iasdeoupxe) - host-deny.sh: Use consistent indentation PR #1553</li>
+<li>(&#64;iasdeoupxe) - host-deny.sh: Remove unnecessary echo for duplicated entry PR #1552</li>
+<li>(&#64;Bob-Andrews) - Added new id ranges for linux usb detection rules, ms1016 usb detection rules and ms firewall rules from PR #1543</li>
+<li>(&#64;Bob-Andrews) - Corrected IDs to a non user defined range PR #1547 (psad_rules.xml, sysmon_rules.xml, unbound_rules.xml)</li>
+<li>(&#64;c0r3dump3d) - Correct and expand spanish translation PR #1541</li>
+<li>(&#64;ddpbsd) - Adjust the tests for sysmon rules PR #1548</li>
+<li>(&#64;MangyCoyote) - install.sh - case for s-nail patch can&#8217;t be applied if <cite>mail</cite> is not installed PR #1539</li>
+<li>(&#64;atomicturtle) - ossec-authd Fix for foreground flags PR #1538</li>
+<li>(&#64;atomicturtle) - ossec-authd Add -f foreground flag support PR #1537</li>
+<li>(&#64;featzor) - psad signature match level 6 PR #1517</li>
+<li>(&#64;Bob-Andrews) - Corrected rootcheck CIS tests for cis_win2012r2_domainL2_rcl.txt, is_win2012r2_memberL2_rcl.txt, cis_win2016_domainL2_rcl.txt PR #1521</li>
+<li>(&#64;franciosi) - Updated README.md, correts small typos PR #1519</li>
+<li>(&#64;ddpbsd) - Fix the subject handling. Issue submitted by Michael Starks #1370 PR #1377</li>
+<li>(&#64;foygl) - ossec-slack.sh, Fix and clean up output for Slack integration PR #1508</li>
+<li>(&#64;ddpbsd) - From issue #1514, a duplicate <cite>_gsid1 == 0</cite> -&gt; <cite>_gsid0 == 0</cite> PR #1515</li>
+<li>(&#64;Bob-Andrews) - cis_win2016_domainL1_rcl.txt, Corrected Check - Registry Hive PR #1511</li>
+<li>(&#64;ashley-dunn) - Fix &#8220;bellow&#8221; typos in ossec-[client|local|server].sh files PR #1512</li>
+<li>(&#64;ddpbsd) - Fix the log location in the ossec-slack AR script. PR #1422</li>
+<li>(&#64;phamvuong) - BUGFIX: remove default value for authpass PR #1464</li>
+<li>(&#64;calve) - Bump version definition in defs.h PR #1504</li>
+<li>(&#64;ddpbsd) - More coverity fixes PR #1497</li>
+<li>(&#64;ddpbsd) - Modify status() to not return 1 when maild is not running PR #1501</li>
+<li>(&#64;ddpbsd) - Coverity fixes PR #1490</li>
+<li>(&#64;Bob-Andrews) - Moved file to ossec-hids/ src/rootcheck/db/ PR #1493</li>
+<li>(&#64;ddpbsd) - Make sure there&#8217;s room for the full alert id in json alerts PR #1487</li>
+<li>(&#64;ddpbsd) - Fix an issue in the nodiff option which could ignore files it isn&#8217;t supposed to PR #1486</li>
+<li>(&#64;ddpbsd) - Hard coded user/group changed to appropriate variables PR #1484</li>
+<li>(&#64;ddpbsd) - Add FreeBSD&#8217;s php.ini location to rootcheck db PR #1483</li>
+<li>(&#64;ddpbsd) - Replace hard coded directories with the appropriate variables PR #1482</li>
+<li>(&#64;ddpbsd) - When trying to bind to a local address, present the error on failure. PR #1457</li>
+<li>(&#64;ddpbsd) - version_bump.sh Quick script to make version bumping easier PR #1532</li>
+<li>(&#64;phamvuong)  - Call select() before checking active socket PR #1529</li>
+<li>(&#64;stephengroat) - use nicer looking travis build badge PR #1460</li>
+<li>(&#64;stevhsu) - Correct lua version variable PR #1459</li>
 </ul>
-<p><strong>Download</strong></p>
-<p><a class="reference external" href="https://github.com/ossec/ossec-hids/releases">https://github.com/ossec/ossec-hids/releases</a></p>
 </div>
 
   <div class="section">
@@ -358,21 +330,14 @@
   <span style="float: left;">
   
   
-  <a href="2016-06-30-OSSEC-2.9.0-rc2-RELEASE.html">
+  <a href="2018-08-01-3.0.0-RELEASE.html">
     <i class="fa fa-arrow-circle-left"></i>
-    OSSEC 2.9.0 RC2
+    OSSEC 3.0.0
   </a>
   
   </span>
   <span>&nbsp;</span>
   <span style="float: right;">
-  
-  
-  <a href="2017-06-19-2.9.1-RELEASE.html">
-    OSSEC 2.9.1
-    <i class="fa fa-arrow-circle-right"></i>
-  </a>
-  </span>
   
 </div>
 
