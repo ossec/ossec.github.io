@@ -132,6 +132,11 @@ within ossec.conf</p>
 </pre></div>
 </div>
 <p>Full details on all the options are available at <a class="reference internal" href="../../syntax/head_ossec_config.global.html#ossec-config-global"><span class="std std-ref">ossec.conf: Global options</span></a></p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If the <cite>smtp_server</cite> entry contains a hostname, <cite>/etc/resolv.conf</cite> will probably have to be
+copied to OSSEC&#8217;s <cite>etc</cite> directory (<cite>/var/ossec/etc</cite> by default).</p>
+</div>
 </div>
 <div class="section" id="set-the-alert-levels-that-will-send-notifications">
 <h2>Set the alert levels that will send notifications<a class="headerlink" href="#set-the-alert-levels-that-will-send-notifications" title="Permalink to this headline">¶</a></h2>

@@ -193,6 +193,11 @@ and used within the &lt;ossec_config&gt; tag.</p>
 <p><strong>Allowed:</strong> Any valid hostname or IP Address</p>
 </dd></dl>
 
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If the <cite>smtp_server</cite> entry contains a hostname, <cite>/etc/resolv.conf</cite> will probably have to be
+copied to OSSEC&#8217;s <cite>etc</cite> directory (<cite>/var/ossec/etc</cite> by default).</p>
+</div>
 <dl class="element">
 <dt id="element-email_maxperhour">
 <code class="descname">email_maxperhour</code><a class="headerlink" href="#element-email_maxperhour" title="Permalink to this definition">¶</a></dt>
