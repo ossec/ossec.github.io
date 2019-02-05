@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>OSSEC 3.2.0 &#8212; OSSEC</title>
+    
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/parallax.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '3.2.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  
+  
+  <link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+  
+  <style type="text/css">
+    ul.ablog-archive {list-style: none; overflow: auto; margin-left: 0px}
+    ul.ablog-archive li {float: left; margin-right: 5px; font-size: 80%}
+  </style>
+
+  </head>
+  <body role="document">
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html"><img src="../../_static/ossec_logo_bare_small.png">
+          OSSEC</a>
+        <span class="navbar-text navbar-version pull-left"><b>3.2</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="../../about.html">About <i class="fa fa-info-circle"></i></a></li>
+                <li><a href="../../blog.html">Blog <i class="fa fa-archive"></i></a></li>
+                <li><a href="../../docs/">Documentation <i class="fa fa-book"></i></a></li>
+                <li><a href="../../downloads.html">Downloads <i class="fa fa-download"></i></a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"></ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary">
+  
+  
+<ul class="nav nav-list">
+  <li>
+  <ul class="nav nav-list">
+  
+    </li>
+  <i class="fa fa-calendar"></i>
+    Feb 02, 2019
+  
+    
+
+  
+  <li>
+    
+      
+      <a href="../author/scott-r-shinn.html"><i class="fa-fw fa fa-user"></i>Scott R. Shinn</a>
+      
+    </li>
+  
+
+  
+
+  
+
+  
+  <li><i class="fa-fw fa fa-folder-open"></i>Categories
+    
+      
+      <a href="../category/releases.html"><i class="fa-fw fa fa-folder-open"></i>Releases</a>
+      
+    </li>
+  
+
+    
+    <ul>
+    <li>
+        
+        <a href="../tag/update.html"><i class="fa-fw fa fa-tag"></i>update</a>
+        
+      </li>
+    </ul>
+    
+
+  
+  </ul>
+
+  </li>
+</ul>
+
+
+
+<ul class="nav nav-list">
+  <li> 
+    <a class="reference internal nav-header" href="../../blog.html">Recent Posts</a>
+    <ul class="nav nav-list">
+      
+      
+      <li><a class="reference internal" href="2018-10-19-3.1.0-RELEASE.html">Oct 19 - OSSEC 3.1.0</a></li>
+      
+      <li><a class="reference internal" href="2018-08-01-3.0.0-RELEASE.html">Aug 01 - OSSEC 3.0.0</a></li>
+      
+      <li><a class="reference internal" href="2018-06-20-2.9.4-RELEASE.html">Jun 20 - OSSEC 2.9.4</a></li>
+      
+      <li><a class="reference internal" href="2018-05-15-ossec-3-repo.html">May 15 - OSSEC HIDS 3.0 Snapshots</a></li>
+      
+      <li><a class="reference internal" href="2018-04-23-slack.html">Apr 23 - Join us on Slack!</a></li>
+      
+    </ul>
+  </li>
+</ul>
+
+<ul class="nav nav-list">
+  <li>
+    <a href="../category.html">Categories</a>
+    <ul class="nav nav-list">
+    
+      
+      <li><a class="reference internal" href="../category/announcements.html">Announcements (11)</a></li>
+      
+    
+      
+      <li><a class="reference internal" href="../category/integrations.html">Integrations (2)</a></li>
+      
+    
+      
+      <li><a class="reference internal" href="../category/releases.html">Releases (16)</a></li>
+      
+    
+    </ul>
+  </li>
+</ul>
+
+<ul class="nav nav-list">
+  <li>
+    <a href="../archive.html">Archives</a>
+    <ul>
+    
+      
+      <li><a href="../2019.html"><i class="fa fa-folder"></i> 2019 (1)</a></li>
+      
+    
+      
+      <li><a href="../2018.html"><i class="fa fa-folder"></i> 2018 (7)</a></li>
+      
+    
+      
+      <li><a href="../2017.html"><i class="fa fa-folder"></i> 2017 (4)</a></li>
+      
+    
+      
+      <li><a href="../2016.html"><i class="fa fa-folder"></i> 2016 (3)</a></li>
+      
+    
+      
+      <li><a href="../2015.html"><i class="fa fa-folder"></i> 2015 (2)</a></li>
+      
+    
+      
+      <li><a href="../2014.html"><i class="fa fa-folder"></i> 2014 (10)</a></li>
+      
+    
+      
+      <li><a href="../2013.html"><i class="fa fa-folder"></i> 2013 (1)</a></li>
+      
+    
+    </ul>
+  </li>
+</ul>
+
+<form action="../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+        </div>
+      </div>
+    <div class="col-md-9">
+      
+  <div class="section" id="ossec-3-2-0">
+<h1>OSSEC 3.2.0<a class="headerlink" href="#ossec-3-2-0" title="Permalink to this headline">¶</a></h1>
+<p><strong>Changelog</strong></p>
+<p><strong>Release Maintainers</strong></p>
+<p>Dan Parriott
+Scott R. Shinn (Atomicorp, Inc.)
+Dominik Lisiak</p>
+<p><strong>Contributors on this release</strong></p>
+<ul class="simple">
+<li>(&#64;atomicturtle) - OSSEC Foundation</li>
+<li>(&#64;Bob-Andrews) - Community</li>
+<li>(&#64;ddpbsd) - OSSEC Foundation</li>
+<li>(&#64;knqyf263) - Community</li>
+<li>(&#64;jubois) - Community</li>
+<li>(&#64;mig5) - Community</li>
+<li>(&#64;mwmahlberg) - Community</li>
+<li>(&#64;nhatking16591) - Community</li>
+<li>(&#64;pillarsdotnet) - Community</li>
+</ul>
+<p><strong>Release Notes</strong></p>
+<blockquote>
+<div><p>The great JSON-in-ing has begun! New features in this release focus on extending JSON output support to control commands like agent_control, syscheck_control, and rootcheck_control. Additional extensions add support for archives.log in native json format, and improving the alert.json output. This release also also brings some much needed enhancements to ossec-authd to streamline the agent registration experience (thanks nhatking16591!), Bob-Andrews continues on major auditing improvements plus support for Solaris 11.</p>
+<p>We&#8217;d like to thank all the great contributors (named and anonymous!) who continue to improve ossec and support our community. We&#8217;d also like to welcome all our new contributors to OSSEC on this release. They have helped us on bug testing, documentation, new features, rules, compliance checks, code and more. There are no small contributions to a project like OSSEC, and we continue to thrive with your support. Special thanks to security researchers A.P. and S.S. for their audit of the ossec project, your work has greatly benefited the community.</p>
+<p>If you&#8217;re interested in joining our team, or just interacting with us on slack email us at: <a class="reference external" href="mailto:invite&#37;&#52;&#48;ossec&#46;net">invite<span>&#64;</span>ossec<span>&#46;</span>net</a></p>
+</div></blockquote>
+<p><strong>Whats New</strong></p>
+<ul class="simple">
+<li>(&#64;atomicturtle) - add ossec-configure to contrib - PR #1559</li>
+<li>(&#64;atomicturtle) - add &lt;log_format&gt;audit&lt;/log_format&gt; for native audit.log support - PR #1589</li>
+<li>(&#64;nhatking16591) - authd, Allow reuse ID and improve search algorithm finding available ID key. Fixes issue #1587, PR #1594</li>
+<li>(&#64;ddpbsd) - syscheck, add &lt;no_recurse&gt; option to keep FIM from going down directories. Addresses Issue #1595 - PR #1597</li>
+<li>(&#64;atomicturtle) - archives.json, JSON support for archives.log with &lt;logall_json&gt;yes&lt;/logall_json&gt; - PR #1596, PR #1601, PR #1608</li>
+<li>(&#64;atomicturtle) - agent_control, -j for JSON output - PR #1625</li>
+<li>(&#64;atomicturtle) - syscheck/rootchec_control, add -j for JSON output - PR #1626</li>
+<li>(&#64;atomicturtle) - manage_agents, add -j for JSON output, -a to add new agent, -a -n add new agent with declared name - PR #1627</li>
+<li>(&#64;atomicturtle) - internal_options.conf, remoted.pass_empty_keyfile will toggle if remoted exits on an empty client.keys file - PR #1628</li>
+<li>(&#64;atomicturtle) - manage_agents, add -d modifier to -a (add) to remove an agent pinned to an already declared IP - PR #1632</li>
+<li>(&#64;atomicturtle) - manage_agents, add -F &lt;sec&gt; modifier to -a (add), this will delete an agent with the same IP if it has not been seen in -F &lt;secs&gt; - PR #1639</li>
+<li>(&#64;atomicturtle) - manage_agents, add -m flag to show the max agent limit - PR #1650</li>
+</ul>
+<p><strong>New Rules / Decoders</strong></p>
+<ul class="simple">
+<li>(&#64;Bob-Andrews) - rootcheck, add Solaris11 CIS checks - PR #1557</li>
+<li>(&#64;Bob-Andrews) - rootcheck, add password requirement checks - PR #1558, PR #1562</li>
+<li>(&#64;Bob-Andrews) - Kasperskey Endpoint Security rules/decoders - PR #1573</li>
+<li>(&#64;Bob-Andrews) - Cowrie / Dionaea Modern Honeypot Network rules/decoders - PR #1574</li>
+<li>(&#64;Bob-Andrews) - Dionaea/Cowrie decoder, Changed IPv4 to IPv4/IPv6 - PR #1578</li>
+<li>(&#64;Bob-Andrews) - Windows Powershell rules: ms_powershell_rules.xml, add powershell rules - PR #1579</li>
+<li>(&#64;jubois) - proftpd decoder: decoder simplification - PR #1657</li>
+<li>(&#64;ddpbsd) - nsd rules: nsd_rules.xml, detect zone transfer attempts - PR #1598</li>
+<li>(&#64;Bob-Andrews) - Windows Powershell rules: ms_powershell_rules.xml,  dangerous commands/background activity - PR #1646</li>
+</ul>
+<p><strong>General</strong>
+* (&#64;mig5) - firewall-drop.sh, modify to support non-bash environments - PR #1572
+* (&#64;mwmahlberg) - ossec-agent.conf, remove double hyphen in comment. Fixes issue #1582 - PR #1583
+* (&#64;ddpbsd) - ossec-maild, allow permission changes to make it into email alerts. Fixes issue #1571 - PR #1593
+* (&#64;ddpbsd) - installation, addresses issue #1570, allow installation as unpriv user - PR #1599
+* (&#64;atomicturtle) - JSON output, basic json functions for agent_control - PR #1600, PR #1602
+* (&#64;ddpbsd) - ossec-authd, use IPExist to check for duplicate IP addresses - PR #1603
+* (&#64;ddpbsd) - general, default to not setting the compiler optimization level - PR #1604
+* (&#64;ddpbsd) - general, default to showing verbose compiler output - PR #1605
+* (&#64;atomicturtle) - agent_control, JSON output prep work - PR #1606
+* (&#64;atomicturtle) - JSON output, adding functions for rootcheck compliance output in JSON - PR #1607
+* (&#64;atomicturtle) - JSON output, minor optimization - PR #1609
+* (&#64;atomicturtle) - agent_control, minor fixes for JSON output - PR #1610
+* (&#64;ddpbsd) - zlib, shifting dependencies to the system zlib - PR #1612
+* (&#64;ddpbsd) - LUA, disable lua by default, shifting dependencies to the system lua - PR #1613
+* (&#64;ddpbsd) - security review, coverity fixes - PR #1616
+* (&#64;atomicturtle) - JSON output, minor update for JSON log dirs/files - PR #1617
+* (&#64;atomicturtle) - JSON output, fix lf location array from unknown syslog - PR #1618
+* (&#64;atomicturtle) - manage_agents, bugfix  when generating keys from a file - PR #1619
+* (&#64;atomicturtle) - ossec-analysisd, increase default memory size from 1024 to 8192 (dcid) - PR #1620
+* (&#64;ddpbsd) - security review, coverity fixes - PR #1621
+* (&#64;atomicturtle) - JSON output, adding more groups, and clean up formatting - PR #1622
+* (&#64;ddpbsd) - security review, coverity fixes for PR #1624 - PR #1629
+* (&#64;ddpbsd) - manage_agents, add an error path for being unable to chmod authfile - PR #1629
+* (&#64;pillarsdotnet) - active-response, directory traversal fix - PR #1630
+* (&#64;ddpbsd) - ossec-control, remove author tag from output - PR #1633
+* (&#64;atomicturtle) - agent management cleanup, rootcheck/syscheck data is removed on a delete event - PR #1634
+* (&#64;ddpbsd) - json output, add prototype for function/ fixing compile warnings - PR #1636
+* (&#64;ddpbsd) - json output, cleanup for unused variables - PR #1637
+* (&#64;ddpbsd) - ossec-maild, remove legacy sms output type - PR #1638
+* (&#64;ddpbsd) - agent_control, usage output update - PR #1640
+* (&#64;jubois) - dotests.sh, Improved dotests.sh output - PR #1641
+* (&#64;jubois) - Correct tests in contrib/logtesting - PR #1645
+* (&#64;atomicturtle) - ossec-analysisd, fix for analysisd segfault in overwrite rule condition - PR #1649
+* (&#64;atomicturtle) - ossec-csyslogd, fix for size returned from a tcp syslog event - PR #1653
+* (&#64;jubois) - fix compilation warnings - PR #1654
+* (&#64;knqyf263) - ossec-maild, fix for email being sent infinitely - PR #1658</p>
+</div>
+
+  <div class="section">
+  
+    
+
+
+<div class="section">
+  <span style="float: left;">
+  
+  
+  <a href="2018-10-19-3.1.0-RELEASE.html">
+    <i class="fa fa-arrow-circle-left"></i>
+    OSSEC 3.1.0
+  </a>
+  
+  </span>
+  <span>&nbsp;</span>
+  <span style="float: right;">
+  
+</div>
+
+  
+  
+  </div>
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2010-2018, OSSEC Project Team.<br/>
+    OSSEC <b>ossec.net</b> domain owned and maintained by <a href="https://www.ossec.net" target="_blank">OSSEC Foundation</a><br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.5.2 - 
+    Home page graphics courtesy of <a href="https://pixabay.com" target="_blank">pixabay</a>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>
