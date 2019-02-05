@@ -308,43 +308,45 @@ Dominik Lisiak</p>
 <li>(&#64;ddpbsd) - nsd rules: nsd_rules.xml, detect zone transfer attempts - PR #1598</li>
 <li>(&#64;Bob-Andrews) - Windows Powershell rules: ms_powershell_rules.xml,  dangerous commands/background activity - PR #1646</li>
 </ul>
-<p><strong>General</strong>
-* (&#64;mig5) - firewall-drop.sh, modify to support non-bash environments - PR #1572
-* (&#64;mwmahlberg) - ossec-agent.conf, remove double hyphen in comment. Fixes issue #1582 - PR #1583
-* (&#64;ddpbsd) - ossec-maild, allow permission changes to make it into email alerts. Fixes issue #1571 - PR #1593
-* (&#64;ddpbsd) - installation, addresses issue #1570, allow installation as unpriv user - PR #1599
-* (&#64;atomicturtle) - JSON output, basic json functions for agent_control - PR #1600, PR #1602
-* (&#64;ddpbsd) - ossec-authd, use IPExist to check for duplicate IP addresses - PR #1603
-* (&#64;ddpbsd) - general, default to not setting the compiler optimization level - PR #1604
-* (&#64;ddpbsd) - general, default to showing verbose compiler output - PR #1605
-* (&#64;atomicturtle) - agent_control, JSON output prep work - PR #1606
-* (&#64;atomicturtle) - JSON output, adding functions for rootcheck compliance output in JSON - PR #1607
-* (&#64;atomicturtle) - JSON output, minor optimization - PR #1609
-* (&#64;atomicturtle) - agent_control, minor fixes for JSON output - PR #1610
-* (&#64;ddpbsd) - zlib, shifting dependencies to the system zlib - PR #1612
-* (&#64;ddpbsd) - LUA, disable lua by default, shifting dependencies to the system lua - PR #1613
-* (&#64;ddpbsd) - security review, coverity fixes - PR #1616
-* (&#64;atomicturtle) - JSON output, minor update for JSON log dirs/files - PR #1617
-* (&#64;atomicturtle) - JSON output, fix lf location array from unknown syslog - PR #1618
-* (&#64;atomicturtle) - manage_agents, bugfix  when generating keys from a file - PR #1619
-* (&#64;atomicturtle) - ossec-analysisd, increase default memory size from 1024 to 8192 (dcid) - PR #1620
-* (&#64;ddpbsd) - security review, coverity fixes - PR #1621
-* (&#64;atomicturtle) - JSON output, adding more groups, and clean up formatting - PR #1622
-* (&#64;ddpbsd) - security review, coverity fixes for PR #1624 - PR #1629
-* (&#64;ddpbsd) - manage_agents, add an error path for being unable to chmod authfile - PR #1629
-* (&#64;pillarsdotnet) - active-response, directory traversal fix - PR #1630
-* (&#64;ddpbsd) - ossec-control, remove author tag from output - PR #1633
-* (&#64;atomicturtle) - agent management cleanup, rootcheck/syscheck data is removed on a delete event - PR #1634
-* (&#64;ddpbsd) - json output, add prototype for function/ fixing compile warnings - PR #1636
-* (&#64;ddpbsd) - json output, cleanup for unused variables - PR #1637
-* (&#64;ddpbsd) - ossec-maild, remove legacy sms output type - PR #1638
-* (&#64;ddpbsd) - agent_control, usage output update - PR #1640
-* (&#64;jubois) - dotests.sh, Improved dotests.sh output - PR #1641
-* (&#64;jubois) - Correct tests in contrib/logtesting - PR #1645
-* (&#64;atomicturtle) - ossec-analysisd, fix for analysisd segfault in overwrite rule condition - PR #1649
-* (&#64;atomicturtle) - ossec-csyslogd, fix for size returned from a tcp syslog event - PR #1653
-* (&#64;jubois) - fix compilation warnings - PR #1654
-* (&#64;knqyf263) - ossec-maild, fix for email being sent infinitely - PR #1658</p>
+<p><strong>General</strong></p>
+<ul class="simple">
+<li>(&#64;mig5) - firewall-drop.sh, modify to support non-bash environments - PR #1572</li>
+<li>(&#64;mwmahlberg) - ossec-agent.conf, remove double hyphen in comment. Fixes issue #1582 - PR #1583</li>
+<li>(&#64;ddpbsd) - ossec-maild, allow permission changes to make it into email alerts. Fixes issue #1571 - PR #1593</li>
+<li>(&#64;ddpbsd) - installation, addresses issue #1570, allow installation as unpriv user - PR #1599</li>
+<li>(&#64;atomicturtle) - JSON output, basic json functions for agent_control - PR #1600, PR #1602</li>
+<li>(&#64;ddpbsd) - ossec-authd, use IPExist to check for duplicate IP addresses - PR #1603</li>
+<li>(&#64;ddpbsd) - general, default to not setting the compiler optimization level - PR #1604</li>
+<li>(&#64;ddpbsd) - general, default to showing verbose compiler output - PR #1605</li>
+<li>(&#64;atomicturtle) - agent_control, JSON output prep work - PR #1606</li>
+<li>(&#64;atomicturtle) - JSON output, adding functions for rootcheck compliance output in JSON - PR #1607</li>
+<li>(&#64;atomicturtle) - JSON output, minor optimization - PR #1609</li>
+<li>(&#64;atomicturtle) - agent_control, minor fixes for JSON output - PR #1610</li>
+<li>(&#64;ddpbsd) - zlib, shifting dependencies to the system zlib - PR #1612</li>
+<li>(&#64;ddpbsd) - LUA, disable lua by default, shifting dependencies to the system lua - PR #1613</li>
+<li>(&#64;ddpbsd) - security review, coverity fixes - PR #1616</li>
+<li>(&#64;atomicturtle) - JSON output, minor update for JSON log dirs/files - PR #1617</li>
+<li>(&#64;atomicturtle) - JSON output, fix lf location array from unknown syslog - PR #1618</li>
+<li>(&#64;atomicturtle) - manage_agents, bugfix  when generating keys from a file - PR #1619</li>
+<li>(&#64;atomicturtle) - ossec-analysisd, increase default memory size from 1024 to 8192 (dcid) - PR #1620</li>
+<li>(&#64;ddpbsd) - security review, coverity fixes - PR #1621</li>
+<li>(&#64;atomicturtle) - JSON output, adding more groups, and clean up formatting - PR #1622</li>
+<li>(&#64;ddpbsd) - security review, coverity fixes for PR #1624 - PR #1629</li>
+<li>(&#64;ddpbsd) - manage_agents, add an error path for being unable to chmod authfile - PR #1629</li>
+<li>(&#64;pillarsdotnet) - active-response, directory traversal fix - PR #1630</li>
+<li>(&#64;ddpbsd) - ossec-control, remove author tag from output - PR #1633</li>
+<li>(&#64;atomicturtle) - agent management cleanup, rootcheck/syscheck data is removed on a delete event - PR #1634</li>
+<li>(&#64;ddpbsd) - json output, add prototype for function/ fixing compile warnings - PR #1636</li>
+<li>(&#64;ddpbsd) - json output, cleanup for unused variables - PR #1637</li>
+<li>(&#64;ddpbsd) - ossec-maild, remove legacy sms output type - PR #1638</li>
+<li>(&#64;ddpbsd) - agent_control, usage output update - PR #1640</li>
+<li>(&#64;jubois) - dotests.sh, Improved dotests.sh output - PR #1641</li>
+<li>(&#64;jubois) - Correct tests in contrib/logtesting - PR #1645</li>
+<li>(&#64;atomicturtle) - ossec-analysisd, fix for analysisd segfault in overwrite rule condition - PR #1649</li>
+<li>(&#64;atomicturtle) - ossec-csyslogd, fix for size returned from a tcp syslog event - PR #1653</li>
+<li>(&#64;jubois) - fix compilation warnings - PR #1654</li>
+<li>(&#64;knqyf263) - ossec-maild, fix for email being sent infinitely - PR #1658</li>
+</ul>
 </div>
 
   <div class="section">
