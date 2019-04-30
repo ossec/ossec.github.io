@@ -63,7 +63,7 @@
         </button>
         <a class="navbar-brand" href="../../../index.html"><img src="../../../_static/ossec_logo_bare_small.png">
           OSSEC</a>
-        <span class="navbar-text navbar-version pull-left"><b>3.2</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>3.3</b></span>
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
@@ -121,12 +121,46 @@
 OpenSSL is a suggested, but optional, prerequisite.
 However, you always have the option to pre-compile
 it on one system and move the binaries to the final box.</p>
+<div class="section" id="pcre2">
+<h2>PCRE2<a class="headerlink" href="#pcre2" title="Permalink to this headline">¶</a></h2>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 3.3.</span></p>
+</div>
+<p>PCRE2 has been added to version 3.3. The build system can either use the system&#8217;s PCRE2 libraries,
+or the necessary bits can be built as part of the installation process.</p>
+<p>The default build process expects the <cite>pcre2-10.32</cite> source to be installed in <cite>src/external</cite>:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> <span class="nb">cd</span> ossec-hids-*/src
+<span class="gp">$</span> wget https://ftp.pcre.org/pub/pcre/pcre2-10.32.tar.gz
+<span class="gp">$</span> tar xzf pcre2-10.32.tar.gz -C src/external
+</pre></div>
+</div>
+<p>To use the system&#8217;s PCRE2, set the <cite>PCRE2_SYSTEM</cite> variable to yes:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> <span class="nb">cd</span> ossec-hids-*
+<span class="gp">#</span> <span class="nv">PCRE2_SYSTEM</span><span class="o">=</span>yes ./install.sh
+</pre></div>
+</div>
+</div>
+<div class="section" id="zlib">
+<h2>zlib<a class="headerlink" href="#zlib" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://www.zlib.net/">zlib</a> is included with OSSEC in <cite>src/external/zlib-1.2.11</cite>. In previous
+versions this included version was used by default during the build process, but this changed to
+using the system zlib. Ensure the correct zlib development packages are installed.</p>
+<p>To use the included version of zlib, simply set <cite>ZLIB_SYSTEM</cite> to <cite>no</cite>:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> <span class="nb">cd</span> ossec-hids-*
+<span class="gp">#</span> <span class="nv">ZLIB_SYSTEM</span><span class="o">=</span>no ./install.sh
+</pre></div>
+</div>
+</div>
 <div class="section" id="ubuntu">
 <h2>Ubuntu<a class="headerlink" href="#ubuntu" title="Permalink to this headline">¶</a></h2>
 <p>On Ubuntu you will need the <em>build-essential</em> package in order to
 compile and install OSSEC.</p>
 <p>To install the package run the following command.</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> apt-get install build-essential
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> apt-get install build-essential zlib1g-dev
+</pre></div>
+</div>
+<p>To use the system&#8217;s pcre2 libraries, install the libpcre2 development package:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> apt-get install libpcre2-dev
 </pre></div>
 </div>
 <p>If database support is needed <em>mysql-dev</em> or <em>postgresql-dev</em> should be
@@ -144,8 +178,16 @@ installed. Run the following command to install these packages.</p>
 </div>
 <div class="section" id="redhat">
 <h2>RedHat<a class="headerlink" href="#redhat" title="Permalink to this headline">¶</a></h2>
-<p>RedHat should have all packages needed by default, but if database
-support is needed the package mysql-devel and/or postgresql-devel will
+<p>RedHat should have most of the packages needed by default. The zlib development package
+should be installed:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> yum install zlib-devel
+</pre></div>
+</div>
+<p>To use the system&#8217;s pcre2 libraries, add the pcre2 development package:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> yum install pcre2-devel
+</pre></div>
+</div>
+<p>If database support is needed the package mysql-devel and/or postgresql-devel will
 need to be installed.</p>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> yum install mysql-devel postgresql-devel
 </pre></div>
@@ -158,8 +200,29 @@ need to be installed.</p>
 </pre></div>
 </div>
 </div>
+<div class="section" id="opensuse">
+<h2>OpenSuse<a class="headerlink" href="#opensuse" title="Permalink to this headline">¶</a></h2>
+<p>The zlib development package should be installed:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> zypper install zlib-devel
+</pre></div>
+</div>
+<p>To use the system&#8217;s pcre2 libraries, add the pcre2 development package:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> zypper install pcre2-devel
+</pre></div>
+</div>
+<p>If database support is needed the package mysql-devel and/or postgresql-devel will
+need to be installed.</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> zypper install postgresql-devel mysql-devel
+</pre></div>
+</div>
+</div>
 <div class="section" id="debian">
 <h2>Debian<a class="headerlink" href="#debian" title="Permalink to this headline">¶</a></h2>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">The Debian instructions are probably out of date. Contributions updating this section
+would be appreciated.</p>
+</div>
 <p>Debian has replaced bash with dash, and this may cause issues during
 installation. Dash does not appear to support all of the features
 available in other shells, and may display an error when trying to set
@@ -196,7 +259,7 @@ the agent&#8217;s ossec.conf:</p>
       
     </p>
     <p>
-        &copy; Copyright 2010-2018, OSSEC Project Team.<br/>
+        &copy; Copyright 2010-2019, OSSEC Project Team.<br/>
     OSSEC <b>ossec.net</b> domain owned and maintained by <a href="https://www.ossec.net" target="_blank">OSSEC Foundation</a><br/>
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.5.2 - 
     Home page graphics courtesy of <a href="https://pixabay.com" target="_blank">pixabay</a>
