@@ -160,6 +160,37 @@ Links to the packages can be found on the OSSEC <a class="reference external" hr
 </pre></div>
 </div>
 </div>
+<div class="section" id="pkg-installation">
+<h2>pkg Installation<a class="headerlink" href="#pkg-installation" title="Permalink to this headline">¶</a></h2>
+<p>Some of the BSD operating systems offer OSSEC packages you can use. Here you have
+FreeBSD and OpenBSD as example.</p>
+<ul class="simple">
+<li><strong>FreeBSD</strong></li>
+</ul>
+<p>You are going to work together with <code class="docutils literal"><span class="pre">pkg</span></code> here. Just choose which type of setup you need
+(agent, local monitoring, or server/manager) and install the respective OSSEC package.</p>
+<p>Should you opt to install an OSSEC Server/Manager:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> pkg install ossec-hids-server
+</pre></div>
+</div>
+<p>If you want to install an OSSEC Agent:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> pkg install ossec-hids-agent
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">These steps also work for <strong>DragonFlyBSD</strong>. It also uses <code class="docutils literal"><span class="pre">pkg</span></code>, just like FreeBSD. You can
+read more about it <a class="reference external" href="https://www.dragonflybsd.org/docs/howtos/HowToDPorts/">here</a>.</p>
+</div>
+<ul class="simple">
+<li><strong>OpenBSD</strong></li>
+</ul>
+<p>Here you must work with <code class="docutils literal"><span class="pre">pkg_add</span></code> instead of <cite>pkg</cite>, but no worries it&#8217;s the same concept.</p>
+<p>As it only offers one package, here is how to install OSSEC HIDS on OpenBSD:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> pkg_add ossec-hids
+</pre></div>
+</div>
+</div>
 </div>
 
   <div class="section">
