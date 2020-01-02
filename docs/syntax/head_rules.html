@@ -119,6 +119,12 @@
 <span id="rules-rules"></span><h1>Rules Syntax<a class="headerlink" href="#rules-syntax" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="order-of-execution">
+<h3>Order of execution<a class="headerlink" href="#order-of-execution" title="Permalink to this headline">¶</a></h3>
+<p>First, the rules with 0 levels are tried, and then all the other rules in a decreasing order by their level.
+If the level is the same, the order will be decided based on the rules list in /var/ossec/etc/ossec.conf file.
+Note, for rules which have some requirement (for example if_sid), the requirement is tried first.</p>
+</div>
 </div>
 <div class="section" id="options">
 <h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
@@ -169,6 +175,15 @@
 <p class="first admonition-title">Note</p>
 <p class="last">More information about how frequency is counted can be found <a class="reference external" href="http://marc.info/?l=ossec-list&amp;m=129736702512080&amp;w=2">in this thread.</a></p>
 </div>
+</div></blockquote>
+</li>
+<li><p class="first"><em>noalert</em></p>
+<blockquote>
+<div><ul class="simple">
+<li>Specifies whether the rule generates an alert or not in a sense, that if it does, no new rules are tried, except the rules which specify this in their if_sid. Setting this to 1 is useful if trying other rules are the sensible thing to do if this one matches, but it&#8217;s child rules (rules which specify this in their if_sid) do not.</li>
+<li><strong>Allowed:</strong> 0 or 1</li>
+<li><strong>Default:</strong> 0</li>
+</ul>
 </div></blockquote>
 </li>
 </ul>
