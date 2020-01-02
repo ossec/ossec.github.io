@@ -425,19 +425,15 @@
         <li><a href="docs/programs/ossec-authd.html#cmdoption-ossec-authd-i">ossec-authd command line option</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     -i &lt;agent_id&gt;
 
       <ul>
         <li><a href="docs/programs/agent_control.html#cmdoption-agent-control-i">agent_control command line option</a>
 </li>
-        <li><a href="docs/programs/rootcheck_control.html#cmdoption-rootcheck-control-i">rootcheck_control command line option</a>
-</li>
-        <li><a href="docs/programs/syscheck_control.html#cmdoption-syscheck-control-i">syscheck_control command line option</a>
-</li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     -i &lt;key&gt;
 
@@ -446,10 +442,12 @@
 </li>
       </ul></li>
       <li>
-    -k &lt;/path/to/private_key&gt;
+    -i AGENT_ID
 
       <ul>
-        <li><a href="docs/programs/agent-auth.html#id5">agent-auth command line option</a>
+        <li><a href="docs/programs/rootcheck_control.html#cmdoption-rootcheck-control-i">rootcheck_control command line option</a>
+</li>
+        <li><a href="docs/programs/syscheck_control.html#cmdoption-syscheck-control-i">syscheck_control command line option</a>
 </li>
       </ul></li>
       <li>
@@ -465,7 +463,7 @@
     -L
 
       <ul>
-        <li><a href="docs/programs/rootcheck_control.html#id3">rootcheck_control command line option</a>
+        <li><a href="docs/programs/rootcheck_control.html#id2">rootcheck_control command line option</a>
 </li>
       </ul></li>
       <li>
@@ -627,8 +625,6 @@
       <ul>
         <li><a href="docs/programs/agent_control.html#cmdoption-agent-control-u">agent_control command line option</a>
 </li>
-        <li><a href="docs/programs/syscheck_control.html#cmdoption-syscheck-control-u">syscheck_control command line option</a>
-</li>
         <li><a href="docs/programs/syscheck_update.html#cmdoption-syscheck-update-u">syscheck_update command line option</a>
 </li>
       </ul></li>
@@ -666,11 +662,16 @@
 </li>
       </ul></li>
       <li>
+    -u AGENT_ID
+
+      <ul>
+        <li><a href="docs/programs/syscheck_control.html#cmdoption-syscheck-control-u">syscheck_control command line option</a>
+</li>
+      </ul></li>
+      <li>
     -u all
 
       <ul>
-        <li><a href="docs/programs/rootcheck_control.html#id2">rootcheck_control command line option</a>
-</li>
         <li><a href="docs/programs/syscheck_control.html#id2">syscheck_control command line option</a>
 </li>
       </ul></li>
@@ -728,13 +729,6 @@
 </li>
       </ul></li>
       <li>
-    -v &lt;/path/to/CA_certificate&gt;
-
-      <ul>
-        <li><a href="docs/programs/agent-auth.html#id6">agent-auth command line option</a>
-</li>
-      </ul></li>
-      <li>
     -v &lt;path&gt;
 
       <ul>
@@ -748,13 +742,6 @@
 
       <ul>
         <li><a href="docs/programs/clear_stats.html#cmdoption-clear-stats-w">clear_stats command line option</a>
-</li>
-      </ul></li>
-      <li>
-    -x &lt;/path/to/certificate&gt;
-
-      <ul>
-        <li><a href="docs/programs/agent-auth.html#id4">agent-auth command line option</a>
 </li>
       </ul></li>
       <li>
@@ -818,19 +805,13 @@
 </li>
         <li><a href="docs/programs/agent-auth.html#cmdoption-agent-auth-h">-h</a>
 </li>
-        <li><a href="docs/programs/agent-auth.html#id5">-k &lt;/path/to/private_key&gt;</a>
-</li>
         <li><a href="docs/programs/agent-auth.html#cmdoption-agent-auth-k">-k &lt;path&gt;</a>
 </li>
         <li><a href="docs/programs/agent-auth.html#cmdoption-agent-auth-m">-m &lt;manager_ip&gt;</a>
 </li>
         <li><a href="docs/programs/agent-auth.html#cmdoption-agent-auth-p">-p &lt;port&gt;</a>
 </li>
-        <li><a href="docs/programs/agent-auth.html#id6">-v &lt;/path/to/CA_certificate&gt;</a>
-</li>
         <li><a href="docs/programs/agent-auth.html#id3">-v &lt;path&gt;</a>
-</li>
-        <li><a href="docs/programs/agent-auth.html#id4">-x &lt;/path/to/certificate&gt;</a>
 </li>
         <li><a href="docs/programs/agent-auth.html#cmdoption-agent-auth-x">-x &lt;path&gt;</a>
 </li>
@@ -839,10 +820,10 @@
 </li>
       <li><a href="docs/syntax/head_agent_config.html#element-agent_config">agent_config</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="docs/syntax/head_agent_config.html#element-agent_config_options">agent_config_options</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     agent_control command line option
 
@@ -1648,11 +1629,11 @@
     rootcheck_control command line option
 
       <ul>
-        <li><a href="docs/programs/rootcheck_control.html#id3">-L</a>
+        <li><a href="docs/programs/rootcheck_control.html#id2">-L</a>
 </li>
         <li><a href="docs/programs/rootcheck_control.html#cmdoption-rootcheck-control-h">-h</a>
 </li>
-        <li><a href="docs/programs/rootcheck_control.html#cmdoption-rootcheck-control-i">-i &lt;agent_id&gt;</a>
+        <li><a href="docs/programs/rootcheck_control.html#cmdoption-rootcheck-control-i">-i AGENT_ID</a>
 </li>
         <li><a href="docs/programs/rootcheck_control.html#cmdoption-rootcheck-control-l">-l</a>
 </li>
@@ -1665,8 +1646,6 @@
         <li><a href="docs/programs/rootcheck_control.html#cmdoption-rootcheck-control-s">-s</a>
 </li>
         <li><a href="docs/programs/rootcheck_control.html#cmdoption-rootcheck-control-u">-u &lt;id&gt;</a>
-</li>
-        <li><a href="docs/programs/rootcheck_control.html#id2">-u all</a>
 </li>
       </ul></li>
   </ul></td>
@@ -1737,7 +1716,7 @@
 </li>
         <li><a href="docs/programs/syscheck_control.html#cmdoption-syscheck-control-h">-h</a>
 </li>
-        <li><a href="docs/programs/syscheck_control.html#cmdoption-syscheck-control-i">-i &lt;agent_id&gt;</a>
+        <li><a href="docs/programs/syscheck_control.html#cmdoption-syscheck-control-i">-i AGENT_ID</a>
 </li>
         <li><a href="docs/programs/syscheck_control.html#cmdoption-syscheck-control-l">-l</a>
 </li>
@@ -1747,7 +1726,7 @@
 </li>
         <li><a href="docs/programs/syscheck_control.html#cmdoption-syscheck-control-s">-s</a>
 </li>
-        <li><a href="docs/programs/syscheck_control.html#cmdoption-syscheck-control-u">-u &lt;agent_id&gt;</a>
+        <li><a href="docs/programs/syscheck_control.html#cmdoption-syscheck-control-u">-u AGENT_ID</a>
 </li>
         <li><a href="docs/programs/syscheck_control.html#id2">-u all</a>
 </li>

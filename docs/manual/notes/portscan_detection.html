@@ -432,15 +432,13 @@ Nov 14 18:30:30 TCP: Xmas scan detected [ports 636,256,554,389,1723,53,443,21,33
 </div>
 <div class="section" id="id12">
 <h2>a proposed decoder is (not tested):<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div><dl class="docutils">
-<dt>&lt;decoder name=&#8221;iplog-bogustcp&#8221;&gt;</dt>
-<dd>&lt;prematch&gt;Bogus TCP flags set by&lt;/prematch&gt;
-&lt;regex offset=&#8221;after_prematch&#8221;&gt;(S+):d+&lt;/regex&gt;
-&lt;order&gt;srcip&lt;/order&gt;</dd>
-</dl>
-<p>&lt;/decoder&gt;</p>
-</div></blockquote>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">&lt;decoder name=&quot;iplog-bogustcp&quot;&gt;</span>
+<span class="go"> &lt;prematch&gt;Bogus TCP flags set by&lt;/prematch&gt;</span>
+<span class="go"> &lt;regex offset=&quot;after_prematch&quot;&gt;(\S+):\d+&lt;/regex&gt;</span>
+<span class="go"> &lt;order&gt;srcip&lt;/order&gt;</span>
+<span class="go">&lt;/decoder&gt;</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="iplog-rules">
 <h2>iplog rules:<a class="headerlink" href="#iplog-rules" title="Permalink to this headline">¶</a></h2>

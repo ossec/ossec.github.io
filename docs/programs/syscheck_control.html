@@ -140,7 +140,7 @@
 
 <dl class="option">
 <dt id="cmdoption-syscheck-control-u">
-<code class="descname">-u</code><code class="descclassname"> &lt;agent_id&gt;</code><a class="headerlink" href="#cmdoption-syscheck-control-u" title="Permalink to this definition">¶</a></dt>
+<code class="descname">-u</code><code class="descclassname"> AGENT_ID</code><a class="headerlink" href="#cmdoption-syscheck-control-u" title="Permalink to this definition">¶</a></dt>
 <dd><p>Updates (clear) the database for the agent.</p>
 </dd></dl>
 
@@ -152,7 +152,7 @@
 
 <dl class="option">
 <dt id="cmdoption-syscheck-control-i">
-<code class="descname">-i</code><code class="descclassname"> &lt;agent_id&gt;</code><a class="headerlink" href="#cmdoption-syscheck-control-i" title="Permalink to this definition">¶</a></dt>
+<code class="descname">-i</code><code class="descclassname"> AGENT_ID</code><a class="headerlink" href="#cmdoption-syscheck-control-i" title="Permalink to this definition">¶</a></dt>
 <dd><p>Prints database for the agent.</p>
 </dd></dl>
 
@@ -191,7 +191,7 @@
 <h2>syscheck_control example usage<a class="headerlink" href="#syscheck-control-example-usage" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="example-1-getting-a-list-of-modified-files-for-an-agent">
 <h3>Example 1: Getting a list of modified files for an agent<a class="headerlink" href="#example-1-getting-a-list-of-modified-files-for-an-agent" title="Permalink to this headline">¶</a></h3>
-<p>To retrieve information about files that were monitored by OSSEC and modified after OSSEC was deployed, run <code class="xref std std-option docutils literal"><span class="pre">syscheck_control</span> <span class="pre">-i</span></code>.</p>
+<p>To retrieve information about files that were monitored by OSSEC and modified after OSSEC was deployed, run <cite>syscheck_control -i AGENT_ID</cite>.</p>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> /var/ossec/bin/syscheck_control -i <span class="m">002</span>
 
 <span class="go">Integrity changes for agent &#39;ossec-agent (002) - 192.168.1.86&#39;:</span>
@@ -240,7 +240,7 @@
 <li>owner and group id of the file</li>
 <li>MD5 and SHA1 hashes of the file.</li>
 </ul>
-<p>To retrieve this information, run <code class="xref std std-option docutils literal"><span class="pre">syscheck_control</span> <span class="pre">-i</span></code>:</p>
+<p>To retrieve this information, run <cite>syscheck_control -i AGENT_ID -f FILENAME</cite>:</p>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> /var/ossec/bin/syscheck_control -i <span class="m">002</span> -f /etc/authorization
 
 <span class="go">Integrity changes for agent &#39;ossec-agent (002) - 192.168.1.86&#39;:</span>
@@ -276,7 +276,7 @@
 <span class="go">** Integrity check database updated.</span>
 </pre></div>
 </div>
-<p><code class="xref std std-option docutils literal"><span class="pre">syscheck_control</span> <span class="pre">-i</span> <span class="pre">002</span></code> will now show that no modified files for that agent are in the database:</p>
+<p><cite>syscheck_control -i 002</cite> will now show that no modified files for that agent are in the database:</p>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> /var/ossec/bin/syscheck_control -i <span class="m">002</span>
 
 <span class="go">Integrity changes for agent &#39;ossec-agent (002) - 192.168.1.86&#39;:</span>

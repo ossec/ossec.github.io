@@ -343,7 +343,7 @@ generated. Here is an example of a password change on a linux system:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">OSSEC</span> <span class="n">HIDS</span> <span class="n">Notification</span><span class="o">.</span>
 <span class="mi">2009</span> <span class="n">Sep</span> <span class="mi">21</span> <span class="mi">15</span><span class="p">:</span><span class="mi">19</span><span class="p">:</span><span class="mi">00</span>
 
-<span class="n">Received</span> <span class="n">From</span><span class="p">:</span> <span class="p">(</span><span class="n">ssh_integrity_check_linux</span><span class="p">)</span> <span class="n">root</span><span class="nd">@172</span><span class="o">.</span><span class="mf">17.20</span><span class="o">.</span><span class="mi">20</span><span class="o">-&gt;</span><span class="n">syscheck</span>
+<span class="n">Received</span> <span class="n">From</span><span class="p">:</span> <span class="p">(</span><span class="n">ssh_integrity_check_linux</span><span class="p">)</span> <span class="n">root</span><span class="o">@</span><span class="mf">172.17</span><span class="o">.</span><span class="mf">20.20</span><span class="o">-&gt;</span><span class="n">syscheck</span>
 <span class="n">Rule</span><span class="p">:</span> <span class="mi">550</span> <span class="n">fired</span> <span class="p">(</span><span class="n">level</span> <span class="mi">7</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;Integrity checksum changed.&quot;</span>
 <span class="n">Portion</span> <span class="n">of</span> <span class="n">the</span> <span class="n">log</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
 
@@ -611,7 +611,7 @@ command line argument which tells egrep NOT to print any matching items.</p>
 of the sort command with -u argument to remove any duplicates.</p>
 <p>Here is how we would put together both finds, egrep, and sort to locate and
 filter what is needed.</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">( find / -type f \( -perm -4000 -o -perm -2000 \) &amp;&amp; \find / \( -name &quot;.ssh&quot; -o -name &quot;ssh&quot; -o -name &quot;sshd&quot;</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">( find / -type f \( -perm -4000 -o -perm -2000 \)</span> <span class="go">&amp;&amp; \find / \( -name &quot;.ssh&quot; -o -name &quot;ssh&quot; -o -name &quot;sshd&quot;</span>
 <span class="go">-o -name &quot;httpd&quot; -o -name &quot;.htaccess&quot; -o -name &quot;pam.d&quot; \) -exec find {} \; ) 2&gt;/dev/null | egrep</span>
 <span class="go">-v &quot;known_hosts|moduli|var\/log|var\/lock&quot; | sort -u</span>
 </pre></div>

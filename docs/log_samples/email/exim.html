@@ -119,7 +119,7 @@
 <h1>Log Samples from Exim<a class="headerlink" href="#log-samples-from-exim" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="i-ve-included-the-ossec-bad-responses">
 <h2>I&#8217;ve included the ossec bad responses:<a class="headerlink" href="#i-ve-included-the-ossec-bad-responses" title="Permalink to this headline">¶</a></h2>
-<p><a href="#id1"><span class="problematic" id="id2">*</span></a>error 450 (ossec should probably ignore) &#8211; this particular line is blowback from spam delivery attempt elsewhere with one of our addresses spoofed as &#8220;From&#8221;, and occurs many times in the log files</p>
+<p><em>error 450 (ossec should probably ignore) &#8211; this particular line is blowback from spam delivery attempt elsewhere with one of our addresses spoofed as &#8220;From&#8221;, and occurs many times in the log files</em></p>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Received From: (mailserver) 192.168.1.21-&gt;/var/log/mail.log</span>
 <span class="go">Rule: 1002 fired (level 7) -&gt; &quot;Unknown problem somewhere in the system.&quot;</span>
 <span class="go">Portion of the log(s):</span>
@@ -127,7 +127,7 @@
 <span class="go">exim[14700]: 2006-11-21 15:01:33 1Glsgv-0002wv-00 SMTP error from remote mailer after RCPT TO:&lt;xxxxxxxxxxx@some-domain.com&gt;: host gmail-smtp-in.l.google.com [1.1.1.1]: 450-4.2.1 The Gmail user you are trying to contact is receiving\n450-4.2.1 mail at a rate that prevents additional messages from\n450-4.2.1 being delivered. Please resend your message at a later\n450-4.2.1 time; if the user is able to receive mail at that time,\n450 4.2.1 your message will be delivered. 23si8340522nzn</span>
 </pre></div>
 </div>
-<p><a href="#id3"><span class="problematic" id="id4">*</span></a>error 550 (ossec should ignore after the first time)
+<p><em>error 550 (ossec should ignore after the first time)</em>
 .. code-block:: console</p>
 <blockquote>
 <div><p>Received From: (mailserver) 192.168.1.21-&gt;/var/log/mail.log
@@ -135,7 +135,7 @@ Rule: 1002 fired (level 7) -&gt; &#8220;Unknown problem somewhere in the system.
 Portion of the log(s):</p>
 <p>exim[14706]: 2006-11-21 15:01:39 1Gmary-0002iA-00 ** <a class="reference external" href="mailto:xxxxxxxx&#37;&#52;&#48;some-domain&#46;com">xxxxxxxx<span>&#64;</span>some-domain<span>&#46;</span>com</a> R=dnslookup T=remote_smtp: SMTP error from remote mailer after RCPT TO:&lt;<a class="reference external" href="mailto:xxxxxxxx&#37;&#52;&#48;some-domain&#46;com">xxxxxxxx<span>&#64;</span>some-domain<span>&#46;</span>com</a>&gt;: host mx.some-domain.com [1.1.1.1]: 550 Mailbox unavailable &lt;<a class="reference external" href="mailto:xxxxxxxxxxx&#37;&#52;&#48;some-domain&#46;com">xxxxxxxxxxx<span>&#64;</span>some-domain<span>&#46;</span>com</a>&gt;</p>
 </div></blockquote>
-<p><a href="#id5"><span class="problematic" id="id6">*</span></a>frozen (probably okay to ignore)
+<p><em>frozen (probably okay to ignore)</em>
 .. code-block:: console</p>
 <blockquote>
 <div><p>Received From: (mailserver) 192.168.1.21-&gt;/var/log/mail.log
@@ -143,7 +143,7 @@ Rule: 1002 fired (level 7) -&gt; &#8220;Unknown problem somewhere in the system.
 Portion of the log(s):</p>
 <p>exim[15745]: 2006-11-21 15:17:10 1Gmc37-00045w-00 Frozen (delivery error message)</p>
 </div></blockquote>
-<p><a href="#id7"><span class="problematic" id="id8">*</span></a>local delivery error (unknown user most likely, probably okay to ignore) although parsing out the email address and IP could provide a trigger for an active response (e.g. a honeypot email address that triggers the sending IP address to be blocked for 24 hours)
+<p><em>local delivery error (unknown user most likely, probably okay to ignore) although parsing out the email address and IP could provide a trigger for an active response (e.g. a honeypot email address that triggers the sending IP address to be blocked for 24 hours)</em>
 .. code-block:: console</p>
 <blockquote>
 <div><p>Received From: (mailserver) 192.168.1.21-&gt;/var/log/mail.log
@@ -151,7 +151,7 @@ Rule: 1002 fired (level 7) -&gt; &#8220;Unknown problem somewhere in the system.
 Portion of the log(s):</p>
 <p>exim[15740]: 2006-11-21 15:16:57 1Gmc36-00045o-00 ** <a class="reference external" href="mailto:xxxxxxxxxxx&#37;&#52;&#48;some-domain&#46;com">xxxxxxxxxxx<span>&#64;</span>some-domain<span>&#46;</span>com</a> R=local_user_cyrus T=local_delivery_cyrus: Child process of local_delivery_cyrus transport returned 65 (could mean error in input data) from command: /usr/cyrus/bin/deliver</p>
 </div></blockquote>
-<p><a href="#id9"><span class="problematic" id="id10">*</span></a>this error 450 should be a 550 &#8211; ossec could ignore (it&#8217;s a temporary error message for a permanent error, but not much we can do about it)
+<p><em>this error 450 should be a 550 &#8211; ossec could ignore (it&#8217;s a temporary error message for a permanent error, but not much we can do about it)</em>
 .. code-block:: console</p>
 <blockquote>
 <div><p>Received From: (mailserver) 192.168.1.21-&gt;/var/log/mail.log
@@ -159,7 +159,7 @@ Rule: 1002 fired (level 7) -&gt; &#8220;Unknown problem somewhere in the system.
 Portion of the log(s):</p>
 <p>exim[16042]: 2006-11-21 15:24:02 1Gm2od-0001ay-00  <a class="reference external" href="mailto:xxxxxxxxxxx&#37;&#52;&#48;some-domain&#46;com">xxxxxxxxxxx<span>&#64;</span>some-domain<span>&#46;</span>com</a> R=dnslookup T=remote_smtp defer (0): SMTP error from remote mailer after RCPT TO:&lt;<a class="reference external" href="mailto:xxxxxxxxxxx&#37;&#52;&#48;some-domain&#46;com">xxxxxxxxxxx<span>&#64;</span>some-domain<span>&#46;</span>com</a>&gt;: host mail.some-domain.com [66.93.22.101]: 450 &lt;<a class="reference external" href="mailto:xxxxxxxxxxx&#37;&#52;&#48;some-domain&#46;com">xxxxxxxxxxx<span>&#64;</span>some-domain<span>&#46;</span>com</a>&gt;: User unknown in local recipient table</p>
 </div></blockquote>
-<p><a href="#id11"><span class="problematic" id="id12">*</span></a>Connection refused; not much we can do about this error either
+<p><em>Connection refused; not much we can do about this error either</em>
 .. code-block:: console</p>
 <blockquote>
 <div><p>Received From: (mailserver) 192.168.1.21-&gt;/var/log/mail.log
@@ -167,7 +167,7 @@ Rule: 1002 fired (level 7) -&gt; &#8220;Unknown problem somewhere in the system.
 Portion of the log(s):</p>
 <p>exim[14164]: 2006-11-21 14:55:07 1GlKR9-0003x0-00  <a class="reference external" href="mailto:xxxxxxx&#37;&#52;&#48;some-domain&#46;com">xxxxxxx<span>&#64;</span>some-domain<span>&#46;</span>com</a> R=dnslookup T=remote_smtp defer (111): Connection refused</p>
 </div></blockquote>
-<p><a href="#id13"><span class="problematic" id="id14">*</span></a>error 501 &#8211; most likely the recipient&#8217;s DNS is misconfigured; but this is most likely blowback from spam, so it&#8217;s not terribly important
+<p><em>error 501 &#8211; most likely the recipient&#8217;s DNS is misconfigured; but this is most likely blowback from spam, so it&#8217;s not terribly important</em>
 .. code-block:: console</p>
 <blockquote>
 <div><p>Received From: (mailserver) 192.168.1.21-&gt;/var/log/mail.log

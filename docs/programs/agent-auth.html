@@ -160,7 +160,7 @@ this daemon only be run when a new agent is being added.</p>
 <dl class="option">
 <dt id="cmdoption-agent-auth-k">
 <code class="descname">-k</code><code class="descclassname"> &lt;path&gt;</code><a class="headerlink" href="#cmdoption-agent-auth-k" title="Permalink to this definition">¶</a></dt>
-<dd><p>Full path to the agent key.</p>
+<dd><p>Load the certificate&#8217;s corresponding PEM encoded private key.</p>
 </dd></dl>
 
 <dl class="option">
@@ -185,63 +185,19 @@ this daemon only be run when a new agent is being added.</p>
 <dl class="option">
 <dt id="id3">
 <code class="descname">-v</code><code class="descclassname"> &lt;path&gt;</code><a class="headerlink" href="#id3" title="Permalink to this definition">¶</a></dt>
-<dd><blockquote>
-<div>Full path to the CA certificate used to verify the server.</div></blockquote>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">This option was added after 2.8.1.</p>
-</div>
+<dd><p>Load the PEM encoded CA Certificate that will be used to verify <a class="reference internal" href="ossec-authd.html#ossec-authd"><span class="std std-ref">ossec-authd</span></a> if desired. If this option is used then
+<a class="reference internal" href="ossec-authd.html#ossec-authd"><span class="std std-ref">ossec-authd</span></a> must present a valid certificate signed by this CA.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-agent-auth-x">
 <code class="descname">-x</code><code class="descclassname"> &lt;path&gt;</code><a class="headerlink" href="#cmdoption-agent-auth-x" title="Permalink to this definition">¶</a></dt>
-<dd><p>Full path to the agent certificate.</p>
-</dd></dl>
-
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p>The following options are only necessary if verification of server or client certificates is desired. See <a class="reference internal" href="#optional-server-authentication"><span class="std std-ref">Optional Server Authentication</span></a> and
-<a class="reference internal" href="ossec-authd.html#optional-client-authentication"><span class="std std-ref">Optional Client Authentication</span></a> below.</p>
-<div class="last admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">This option was added after 2.8.1.</p>
-</div>
-</div>
-<dl class="option">
-<dt id="id4">
-<code class="descname">-x</code><code class="descclassname"> &lt;/path/to/certificate&gt;</code><a class="headerlink" href="#id4" title="Permalink to this definition">¶</a></dt>
 <dd><p>Load the PEM encoded certificate that will be presented to <a class="reference internal" href="ossec-authd.html#ossec-authd"><span class="std std-ref">ossec-authd</span></a> during establishment of the SSL connection.</p>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">This option was added after 2.8.1.</p>
-</div>
-</dd></dl>
-
-<dl class="option">
-<dt id="id5">
-<code class="descname">-k</code><code class="descclassname"> &lt;/path/to/private_key&gt;</code><a class="headerlink" href="#id5" title="Permalink to this definition">¶</a></dt>
-<dd><p>Load the certificate&#8217;s corresponding PEM encoded private key.</p>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">This option was added after 2.8.1.</p>
-</div>
-</dd></dl>
-
-<dl class="option">
-<dt id="id6">
-<code class="descname">-v</code><code class="descclassname"> &lt;/path/to/CA_certificate&gt;</code><a class="headerlink" href="#id6" title="Permalink to this definition">¶</a></dt>
-<dd><p>Load the PEM encoded CA Certificate that will be used to verify <a class="reference internal" href="ossec-authd.html#ossec-authd"><span class="std std-ref">ossec-authd</span></a> if desired. If this option is used then
-<a class="reference internal" href="ossec-authd.html#ossec-authd"><span class="std std-ref">ossec-authd</span></a> must present a valid certificate signed by this CA.</p>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">This option was added after 2.8.1.</p>
-</div>
 </dd></dl>
 
 </div>
 <div class="section" id="optional-server-authentication">
-<span id="id7"></span><h2>Optional Server Authentication<a class="headerlink" href="#optional-server-authentication" title="Permalink to this headline">¶</a></h2>
+<span id="id4"></span><h2>Optional Server Authentication<a class="headerlink" href="#optional-server-authentication" title="Permalink to this headline">¶</a></h2>
 <p><code class="docutils literal"><span class="pre">agent-auth</span></code> can verify that the server it&#8217;s connecting to presents a valid X.509 certificate when requesting
 a key. This is optional and is only useful if hosts in your environment have access to the root certificate of
 the CA that signed the certificate presented by <a class="reference internal" href="ossec-authd.html#ossec-authd"><span class="std std-ref">ossec-authd</span></a>. If server certificate verification is desired
@@ -258,7 +214,7 @@ subject alternative name extension field.</li>
 and agent-auth.</p>
 </div>
 <div class="section" id="optional-client-authentication">
-<span id="id8"></span><h2>Optional Client Authentication<a class="headerlink" href="#optional-client-authentication" title="Permalink to this headline">¶</a></h2>
+<span id="id5"></span><h2>Optional Client Authentication<a class="headerlink" href="#optional-client-authentication" title="Permalink to this headline">¶</a></h2>
 <p><code class="docutils literal"><span class="pre">agent-auth</span></code> can present its own certificate to the server for verification. This is mandatory if <a class="reference internal" href="ossec-authd.html#ossec-authd"><span class="std std-ref">ossec-authd</span></a>
 was run with the -v option and optional otherwise. This is only useful if hosts in your environment are assigned
 certificates when they&#8217;re provisioned (or at some point before being added to OSSEC). Use the -x and -k options

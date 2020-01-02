@@ -121,8 +121,8 @@
 Each is configured differently on FreeBSD. OSSEC will attempt to check for IPFW and then PF, falling back to IPF if neither of these was found at the time of installation.</p>
 <div class="section" id="how-does-ossec-know-which-firewall-is-being-used">
 <h2>How does OSSEC know which firewall is being used?<a class="headerlink" href="#how-does-ossec-know-which-firewall-is-being-used" title="Permalink to this headline">¶</a></h2>
-<p>The OSSEC install script will check <code class="docutils literal"><span class="pre">rc.conf</span></code> to determine which firewall is currently active.
-It first greps for <code class="docutils literal"><span class="pre">firewall_enable=&quot;YES&quot;</span></code>, and enables IPFW if this is found. IPFW support is enabled by copying the <code class="docutils literal"><span class="pre">ipfw.sh</span></code> to <code class="docutils literal"><span class="pre">/var/ossec/active-response/bin/firewall-drop.sh</span></code>.
+<p>The OSSEC install script will check <cite>rc.conf</cite> to determine which firewall is currently active.
+It first greps for <cite>firewall_enable=&#8221;YES&#8221;</cite>, and enables IPFW if this is found. IPFW support is enabled by copying the <code class="docutils literal"><span class="pre">ipfw.sh</span></code> to <code class="docutils literal"><span class="pre">/var/ossec/active-response/bin/firewall-drop.sh</span></code>.
 The installation script will then look for <a href="#id1"><span class="problematic" id="id2">``</span></a>pf_enable=&#8221;YES&#8221;` in the rc.conf, and will enable PF instead if this is found. The script for pf is pf.sh.
 If neither of these is found, the default firewall-drop.sh script will be installed. This script will use attempt to use IPF to block IPs.</p>
 </div>

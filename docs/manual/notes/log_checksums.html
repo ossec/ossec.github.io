@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>&lt;no title&gt; &#8212; OSSEC</title>
+    <title>Log Checksums &#8212; OSSEC</title>
     
     <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
@@ -115,7 +115,9 @@
   <div class="row">
     <div class="col-md-12">
       
-  <p>How do the log checksums work?</p>
+  <div class="section" id="log-checksums">
+<h1>Log Checksums<a class="headerlink" href="#log-checksums" title="Permalink to this headline">¶</a></h1>
+<p>How do the log checksums work?</p>
 <p><em>by `Daniel B. Cid &lt;http://www.dcid.me&gt;`_</em>
 <em>Taken from `OSSEC blog &lt;http://dcid.me/2007/05/dailychained-checksum-of-ossec-alerts/&gt;`_</em></p>
 <p>Starting with version 1.2, OSSEC will come with support for daily/chained checksums enabled by default.</p>
@@ -143,6 +145,7 @@ currently logs plus the md5/sha1 sum of the checksum from the logs of the previo
 <p>What do we get from that? First, any modification on the old logs will require changing all
 the next checksums. Second, if you e-mail them to you every day (or post somewhere publicly),
 you can have a valid case to prove that they were not tampered.</p>
+</div>
 
   <div class="section">
   

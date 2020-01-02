@@ -125,17 +125,14 @@ The idea would be to generate an ossec alert (by e-mail and possible an active r
 if a specific number of snort rules are fired from the same source IP address (in any order)..</p>
 <p>The easiest way to solve this is by creating a local ossec rule (inside <code class="docutils literal"><span class="pre">local_rules.xml</span></code>) to match
 if any of the desired snort signatures are fired:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">&lt;rule id=&quot;100015&quot; level=&quot;6&quot;&gt;</span>
+<span class="go">  &lt;if_sid&gt;20101&lt;/if_sid&gt;</span>
+<span class="go">  &lt;decoded_as&gt;snort&lt;/decoded_as&gt;</span>
+<span class="go">  &lt;id&gt;1:xx|1:yy|1:zz&lt;/id&gt;</span>
+<span class="go">  &lt;description&gt;Watched snort ids&lt;/description&gt;</span>
+<span class="go">&lt;/rule&gt;</span>
 </pre></div>
 </div>
-<dl class="docutils">
-<dt>&lt;rule id=&#8221;100015&#8221; level=&#8221;6&#8221;&gt;</dt>
-<dd>&lt;if_sid&gt;20101&lt;/if_sid&gt;
-&lt;decoded_as&gt;snort&lt;/decoded_as&gt;
-&lt;id&gt;1:xx|1:yy|1:zz&lt;/id&gt;
-&lt;description&gt;Watched snort ids&lt;/description&gt;</dd>
-</dl>
-<p>&lt;/rule&gt;</p>
 <p>Note that <code class="docutils literal"><span class="pre">1:xx</span></code>, <code class="docutils literal"><span class="pre">1:yy</span></code> are the snort ids that you are interested to watch. We use the <code class="docutils literal"><span class="pre">&lt;if_sid&gt;</span></code> to
 make sure that this rule is only tested if it is an IDS event (see rule 20101).</p>
 <p>Now, we create another ossec rule with a higher severity that will only be fired if the above rule

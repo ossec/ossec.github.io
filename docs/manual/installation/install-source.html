@@ -116,7 +116,7 @@
     <div class="col-md-12">
       
   <div class="section" id="manager-agent-installation">
-<span id="install"></span><h1>Manager/Agent Installation<a class="headerlink" href="#manager-agent-installation" title="Permalink to this headline">¶</a></h1>
+<span id="install-source"></span><h1>Manager/Agent Installation<a class="headerlink" href="#manager-agent-installation" title="Permalink to this headline">¶</a></h1>
 <p>Installation of OSSEC HIDS is very simple, the <code class="docutils literal"><span class="pre">install.sh</span></code> shell script automating most of it.
 There are a few questions to be answered before the installation will occur, one of the most
 important being which type of installation is desired.
@@ -127,30 +127,12 @@ More information on them can be found on the <a class="reference external" href=
 <p class="last">In the following installation the commands follow the <code class="docutils literal"><span class="pre">#</span></code>.
 Everything else is either comments or output.</p>
 </div>
-<ol class="arabic simple">
-<li>Download the latest version and verify its checksum.</li>
-</ol>
-<blockquote>
-<div><div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">On some systems, the command md5, sha1, or wget may not exist. Try md5sum, sha1sum
-or lynx respectively instead.</p>
-</div>
-<div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">wget may not be able to pull files from the OSSEC site. Use the <code class="docutils literal"><span class="pre">-U</span></code> flag to add a UserAgent,
-or obtain the checksum file by some other manner.</p>
-</div>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> wget -U ossec https://bintray.com/artifact/download/ossec/ossec-hids/ossec-hids-2.8.3.tar.gz
-<span class="gp">#</span> wget -U ossec https://raw.githubusercontent.com/ossec/ossec-docs/master/docs/whatsnew/checksums/2.8.3/ossec-hids-2.8.3.tar.gz.sha256
-<span class="gp">#</span> cat ossec-hids-2.8.3.tar.gz.sha256
-<span class="go">SHA256 (ossec-hids-2.8.3.tar.gz) = 917989e23330d18b0d900e8722392cdbe4f17364a547508742c0fd005a1df7dd</span>
-<span class="gp">#</span> sha256sum -c  ossec-hids-2.8.3.tar.gz.sha256 ossec-hids-2.8.3.tar.gz
-<span class="go">(SHA256) ossec-hids-2.8.3.tar.gz: OK</span>
-</pre></div>
-</div>
-</div></blockquote>
-<ol class="arabic" start="2">
+<ol class="arabic">
+<li><p class="first">Download the latest version and verify its signature. Github releases may change the actual
+tarball downloads, so a checksum isn&#8217;t a great way to verify it.</p>
+</li>
+<li><p class="first">Verify the requirements listed in <a class="reference internal" href="installation-requirements.html#install-req"><span class="std std-ref">Installations requirements</span></a> are installed or available.</p>
+</li>
 <li><p class="first">Extract the compressed package and run the <code class="docutils literal"><span class="pre">install.sh</span></code> script. It will guide you
 through the installation and compile the source (not shown).</p>
 <blockquote>
@@ -161,7 +143,7 @@ through the installation and compile the source (not shown).</p>
 </div>
 </div></blockquote>
 </li>
-<li><p class="first">The OSSEC manager listens on UDP port 1514. Any firewall sbetween the agents and
+<li><p class="first">The OSSEC manager listens on UDP port 1514. Any firewalls between the agents and
 the manager will need to allow this traffic.</p>
 </li>
 <li><p class="first">The server, agent, and hybrid installations will require additional configuration.

@@ -135,7 +135,7 @@ There is interest in utilizing the embedded lua.</p>
 <h2>How to run:<a class="headerlink" href="#how-to-run" title="Permalink to this headline">¶</a></h2>
 <p>Running the current tests is as simple as running <code class="docutils literal"><span class="pre">make</span> <span class="pre">test-rules</span></code> in the <code class="docutils literal"><span class="pre">src</span></code> directory.</p>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">[ddpbsd@ossec-build:ossec-hids/src] $</span> more /tmp/ttt
-<span class="go">( cd ../contrib/ossec-testing &amp;&amp; sudo python runtests.py)</span>
+<span class="gp gp-VirtualEnv">( cd ../contrib/ossec-testing &amp;&amp; sudo python runtests.py)</span>
 <span class="go">- [ File = ./tests/named.ini ] ---------</span>
 <span class="go">.....</span>
 <span class="go">- [ File = ./tests/sshd.ini ] ---------</span>
@@ -271,7 +271,7 @@ for the named rules.</p>
 </div>
 <p>The rule and level are correct, but the decoder is not. This triggers the expected failure.</p>
 <p>An unexpected failure will produce output like the following:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">( cd ../contrib/ossec-testing &amp;&amp; sudo python runtests.py)</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">( cd ../contrib/ossec-testing &amp;&amp; sudo python runtests.py)</span>
 <span class="go">- [ File = ./tests/named.ini ] ---------</span>
 
 <span class="go">------------------------------------------------------------</span>

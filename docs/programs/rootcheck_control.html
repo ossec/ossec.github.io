@@ -141,18 +141,13 @@
 <dl class="option">
 <dt id="cmdoption-rootcheck-control-u">
 <code class="descname">-u</code><code class="descclassname"> &lt;id&gt;</code><a class="headerlink" href="#cmdoption-rootcheck-control-u" title="Permalink to this definition">¶</a></dt>
-<dd><p>Updates (clear) the database for the agent.</p>
-</dd></dl>
-
-<dl class="option">
-<dt id="id2">
-<code class="descname">-u</code><code class="descclassname"> all</code><a class="headerlink" href="#id2" title="Permalink to this definition">¶</a></dt>
-<dd><p>Updates (clear) the database for all agents.</p>
+<dd><p>Updates (clear) the database for the agent.
+<cite>&lt;id&gt;</cite> can be an agent ID or <cite>all</cite> to cleare the database for all agents.</p>
 </dd></dl>
 
 <dl class="option">
 <dt id="cmdoption-rootcheck-control-i">
-<code class="descname">-i</code><code class="descclassname"> &lt;agent_id&gt;</code><a class="headerlink" href="#cmdoption-rootcheck-control-i" title="Permalink to this definition">¶</a></dt>
+<code class="descname">-i</code><code class="descclassname"> AGENT_ID</code><a class="headerlink" href="#cmdoption-rootcheck-control-i" title="Permalink to this definition">¶</a></dt>
 <dd><p>Prints database for the agent.</p>
 </dd></dl>
 
@@ -169,8 +164,8 @@
 </dd></dl>
 
 <dl class="option">
-<dt id="id3">
-<code class="descname">-L</code><code class="descclassname"></code><a class="headerlink" href="#id3" title="Permalink to this definition">¶</a></dt>
+<dt id="id2">
+<code class="descname">-L</code><code class="descclassname"></code><a class="headerlink" href="#id2" title="Permalink to this definition">¶</a></dt>
 <dd><p>Used with -i, prints the last scan.</p>
 </dd></dl>
 
@@ -185,7 +180,7 @@
 <h2>rootcheck_control example usage<a class="headerlink" href="#rootcheck-control-example-usage" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="example-1-getting-a-list-of-system-auditing-policy-monitoring-events">
 <h3>Example 1: Getting a list of system auditing/policy monitoring events<a class="headerlink" href="#example-1-getting-a-list-of-system-auditing-policy-monitoring-events" title="Permalink to this headline">¶</a></h3>
-<p>To get a list of all auditing/policy monitoring events for a specific agent, you can run <code class="xref std std-option docutils literal"><span class="pre">rootcheck_control</span> <span class="pre">-i</span></code>. To retrieve the agent id you can use any of the following commands:</p>
+<p>To get a list of all auditing/policy monitoring events for a specific agent, you can run <cite>rootcheck_control -i AGENT_ID</cite>. To retrieve the agent id you can use any of the following commands:</p>
 <ul class="simple">
 <li><a class="reference internal" href="#cmdoption-rootcheck-control-l"><code class="xref std std-option docutils literal"><span class="pre">rootcheck_control</span> <span class="pre">-l</span></code></a>,</li>
 <li><a class="reference internal" href="agent_control.html#cmdoption-agent-control-l"><code class="xref std std-option docutils literal"><span class="pre">agent_control</span> <span class="pre">-l</span></code></a></li>
@@ -215,10 +210,10 @@
 <span class="go">System Audit: System Audit: CIS - Debian Linux 2.3 - SSH Configuration - Root login allowed. File: /etc/ssh/sshd_config. Reference: http://www.ossec.net/wiki/index.php/CIS_DebianLinux .</span>
 </pre></div>
 </div>
-<p>As you can see the detected events are shown in two categories, resolved events and outstanding event. To only show resolved events, run <code class="xref std std-option docutils literal"><span class="pre">rootcheck_control</span> <span class="pre">-ri</span></code>.
-To only show outstanding events, run <code class="xref std std-option docutils literal"><span class="pre">rootcheck_control</span> <span class="pre">-qi</span></code>.
-To only show the results of the last scan and time of that scan, run <code class="xref std std-option docutils literal"><span class="pre">rootcheck_control</span> <span class="pre">-Li</span></code>.</p>
-<p>To gain that kind of information for the OSSEC server, run <code class="xref std std-option docutils literal"><span class="pre">rootcheck_control</span> <span class="pre">-i</span> <span class="pre">000</span></code>.</p>
+<p>As you can see the detected events are shown in two categories, resolved events and outstanding event. To only show resolved events, run <cite>rootcheck_control -ri AGENT_ID</cite>.
+To only show outstanding events, run <cite>rootcheck_control -qi AGENT_ID</cite>.
+To only show the results of the last scan and time of that scan, run <cite>rootcheck_control -Li AGENT_ID</cite>.</p>
+<p>To gain that kind of information for the OSSEC server, run <cite>rootcheck_control -i 000</cite>.</p>
 </div>
 <div class="section" id="example-2-clearing-the-system-auditing-policy-database">
 <h3>Example 2: Clearing the system auditing/policy database<a class="headerlink" href="#example-2-clearing-the-system-auditing-policy-database" title="Permalink to this headline">¶</a></h3>

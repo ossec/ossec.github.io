@@ -220,8 +220,8 @@ this daemon only be run when a new agent is being added.</p>
 <p>If the default locations of /var/ossec/etc/sslmanager.cert and /var/ossec/etc/sslmanager.key are not suitable then the
 -x and -k options can be used to specify alternative locations.</p>
 </div>
-<div class="section" id="optional-client-authentication">
-<span id="id4"></span><h2>Optional Client Authentication<a class="headerlink" href="#optional-client-authentication" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="optional-client-authentication-server-side">
+<span id="optional-client-authentication"></span><h2>Optional Client Authentication - server side<a class="headerlink" href="#optional-client-authentication-server-side" title="Permalink to this headline">¶</a></h2>
 <p><code class="docutils literal"><span class="pre">ossec-authd</span></code> can verify that connecting agents present a valid X.509 certificate when requesting a key. This is optional
 and is only useful if hosts in your environment are assigned certificates when they&#8217;re provisioned (or at some point before
 being added to OSSEC). If agent certificate verification is desired then the relevant CA certificate must be loaded with the

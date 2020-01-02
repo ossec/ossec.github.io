@@ -123,7 +123,7 @@
 <p>It has always been a pain to generate snapshots for Windows because it required me to open up my Windows VM (slow), push the code there, compile, etc. Well, until this week when I started to play with MinGW cross-compilation feature to completely build an Windows agent from Linux.</p>
 <p>How it works? First, you need to install MinGW and <a class="reference external" href="http://nsis.sourceforge.net/Main_Page">nsis</a> (to build the installer). For OpenSSL support, an OpenSSL MinGW package will also be necessary.</p>
 <p>After that, download the source and generate the Windows package directory (replace 2.6 with the latest version or download the latest source from the github <a class="reference external" href="https://github.com/ossec/ossec-hids">repository</a>):</p>
-<blockquote>
+<blockquote id="getossec">
 <div><div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">On some systems, the command md5, sha1, or wget may not exist. Try md5sum, sha1sum
@@ -139,7 +139,7 @@ or obtain the checksum file by some other manner.</p>
 <span class="gp">#</span> cat ossec-hids-2.8.3.tar.gz.sha256
 <span class="go">SHA256 (ossec-hids-2.8.3.tar.gz) = 917989e23330d18b0d900e8722392cdbe4f17364a547508742c0fd005a1df7dd</span>
 <span class="gp">#</span> sha256sum -c  ossec-hids-2.8.3.tar.gz.sha256 ossec-hids-2.8.3.tar.gz
-<span class="go">(SHA256) ossec-hids-2.8.3.tar.gz: OK</span>
+<span class="gp gp-VirtualEnv">(SHA256)</span> <span class="go">ossec-hids-2.8.3.tar.gz: OK</span>
 </pre></div>
 </div>
 </div></blockquote>
