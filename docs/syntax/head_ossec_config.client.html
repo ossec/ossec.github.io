@@ -17,7 +17,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '3.2.0',
+        VERSION:     '3.3.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true,
@@ -34,20 +34,12 @@
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-  
+    <link rel="next" title="ossec.conf: Database Output options" href="head_ossec_config.database_output.html" />
+    <link rel="prev" title="ossec.conf: Alerts Options" href="head_ossec_config.alerts.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
 <meta name="apple-mobile-web-app-capable" content="yes">
-
-  
-  
-  <link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
-  
-  <style type="text/css">
-    ul.ablog-archive {list-style: none; overflow: auto; margin-left: 0px}
-    ul.ablog-archive li {float: left; margin-right: 5px; font-size: 80%}
-  </style>
 
   </head>
   <body role="document">
@@ -70,7 +62,6 @@
           <ul class="nav navbar-nav">
             
                 <li><a href="../../about.html">About <i class="fa fa-info-circle"></i></a></li>
-                <li><a href="../../blog.html">Blog <i class="fa fa-archive"></i></a></li>
                 <li><a href="../">Documentation <i class="fa fa-book"></i></a></li>
                 <li><a href="../../downloads.html">Downloads <i class="fa fa-download"></i></a></li>
             
@@ -83,13 +74,38 @@
      href="../../index.html">Site <b class="caret"></b></a>
   <ul class="dropdown-menu globaltoc"
       role="menu"
-      aria-labelledby="dLabelGlobalToc"></ul>
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../manual/index.html">Manual</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../faq/index.html">Frequently asked questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cookbooks/index.html">User submitted Cookbooks</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../development/build/index.html">Build, compile, and not much more</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/oRFC/index.html">oRFC:</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Syntax and Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../formats/index.html">Output Formats</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../programs/index.html">Man pages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/index.html">Examples</a></li>
+</ul>
+</ul>
 </li>
               
             
             
               
                 
+  <li>
+    <a href="head_ossec_config.alerts.html" title="Previous Chapter: ossec.conf: Alerts Options"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; ossec.conf: A...</span>
+    </a>
+  </li>
+  <li>
+    <a href="head_ossec_config.database_output.html" title="Next Chapter: ossec.conf: Database Output options"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">ossec.conf: D... &raquo;</span>
+    </a>
+  </li>
               
             
             
@@ -144,59 +160,9 @@ and used within the &lt;ossec_config&gt; tag.</p>
 </div>
 <div class="section" id="options">
 <h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
-<dl class="element">
-<dt id="element-server-ip">
-<code class="descname">server-ip</code><a class="headerlink" href="#element-server-ip" title="Permalink to this definition">¶</a></dt>
-<dd><p>Specify the IP address of the analysis server</p>
-<p><strong>Allowed:</strong> Any Valid IP Address</p>
-</dd></dl>
-
-<dl class="element">
-<dt id="element-server-hostname">
-<code class="descname">server-hostname</code><a class="headerlink" href="#element-server-hostname" title="Permalink to this definition">¶</a></dt>
-<dd><p>Specify the hostname of the analysis server</p>
-<p><strong>Allowed:</strong> Any Valid hostname</p>
-</dd></dl>
-
-<dl class="element">
-<dt id="element-port">
-<code class="descname">port</code><a class="headerlink" href="#element-port" title="Permalink to this definition">¶</a></dt>
-<dd><p>Specifies the port to send the events (must be the same to the one used by the analysis server).</p>
-<p><strong>Default:</strong> 1514</p>
-<p><strong>Allowed:</strong> Any port number from 1 to 65535</p>
-</dd></dl>
-
-<dl class="element">
-<dt id="element-config-profile">
-<code class="descname">config-profile</code><a class="headerlink" href="#element-config-profile" title="Permalink to this definition">¶</a></dt>
-<dd><p>Specifies the <code class="docutils literal"><span class="pre">agent.conf</span></code> profiles to be used by the agent. Multiple profiles can be included, separated by a comma and a space.</p>
-<p><strong>Example:</strong></p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">&lt;client&gt;</span>
-<span class="go">  &lt;config-profile&gt;webserver, lowmemory&lt;/config-profile&gt;</span>
-<span class="go">&lt;/client&gt;</span>
-</pre></div>
-</div>
-</dd></dl>
-
-<dl class="element">
-<dt id="element-notify_time">
-<code class="descname">notify_time</code><a class="headerlink" href="#element-notify_time" title="Permalink to this definition">¶</a></dt>
-<dd><p>Specifies the time in seconds between information messages sent by the agents to the server.</p>
-</dd></dl>
-
-<dl class="element">
-<dt id="element-time-reconnect">
-<code class="descname">time-reconnect</code><a class="headerlink" href="#element-time-reconnect" title="Permalink to this definition">¶</a></dt>
-<dd><p>Time in seconds until a reconnection attempt. This should be set to a higher number than notify_time.</p>
-</dd></dl>
-
 </div>
 </div>
 
-  <div class="section">
-  
-  
-  </div>
 
     </div>
       
@@ -209,7 +175,7 @@ and used within the &lt;ossec_config&gt; tag.</p>
       
     </p>
     <p>
-        &copy; Copyright 2010-2019, OSSEC Project Team.<br/>
+        &copy; Copyright 2010-2020, OSSEC Project Team.<br/>
     OSSEC <b>ossec.net</b> domain owned and maintained by <a href="https://www.ossec.net" target="_blank">OSSEC Foundation</a><br/>
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.5.2 - 
     Home page graphics courtesy of <a href="https://pixabay.com" target="_blank">pixabay</a>

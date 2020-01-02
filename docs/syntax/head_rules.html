@@ -17,7 +17,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '3.2.0',
+        VERSION:     '3.3.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true,
@@ -34,20 +34,12 @@
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-  
+    <link rel="next" title="Decoders Syntax" href="head_decoders.html" />
+    <link rel="prev" title="Log Analysis Syntax: Rules and Decoders" href="analysis.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
 <meta name="apple-mobile-web-app-capable" content="yes">
-
-  
-  
-  <link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
-  
-  <style type="text/css">
-    ul.ablog-archive {list-style: none; overflow: auto; margin-left: 0px}
-    ul.ablog-archive li {float: left; margin-right: 5px; font-size: 80%}
-  </style>
 
   </head>
   <body role="document">
@@ -70,7 +62,6 @@
           <ul class="nav navbar-nav">
             
                 <li><a href="../../about.html">About <i class="fa fa-info-circle"></i></a></li>
-                <li><a href="../../blog.html">Blog <i class="fa fa-archive"></i></a></li>
                 <li><a href="../">Documentation <i class="fa fa-book"></i></a></li>
                 <li><a href="../../downloads.html">Downloads <i class="fa fa-download"></i></a></li>
             
@@ -83,13 +74,38 @@
      href="../../index.html">Site <b class="caret"></b></a>
   <ul class="dropdown-menu globaltoc"
       role="menu"
-      aria-labelledby="dLabelGlobalToc"></ul>
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../manual/index.html">Manual</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../faq/index.html">Frequently asked questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cookbooks/index.html">User submitted Cookbooks</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../development/build/index.html">Build, compile, and not much more</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/oRFC/index.html">oRFC:</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Syntax and Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../formats/index.html">Output Formats</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../programs/index.html">Man pages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/index.html">Examples</a></li>
+</ul>
+</ul>
 </li>
               
             
             
               
                 
+  <li>
+    <a href="analysis.html" title="Previous Chapter: Log Analysis Syntax: Rules and Decoders"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; Log Analysis ...</span>
+    </a>
+  </li>
+  <li>
+    <a href="head_decoders.html" title="Next Chapter: Decoders Syntax"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">Decoders Syntax &raquo;</span>
+    </a>
+  </li>
               
             
             
@@ -128,570 +144,9 @@ Note, for rules which have some requirement (for example if_sid), the requiremen
 </div>
 <div class="section" id="options">
 <h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
-<dl class="element">
-<dt id="element-rule">
-<code class="descname">rule</code><a class="headerlink" href="#element-rule" title="Permalink to this definition">¶</a></dt>
-<dd><p>Defines a rule</p>
-<p><strong>Attributes:</strong></p>
-<ul id="level">
-<li><p class="first"><em>level</em></p>
-<blockquote>
-<div><ul class="simple">
-<li>Specifies the level of the rule. Alerts and responses use this value.</li>
-<li><strong>Allowed:</strong> Any number (0 to 16)</li>
-</ul>
-</div></blockquote>
-</li>
-</ul>
-<ul id="id">
-<li><p class="first"><em>id</em></p>
-<blockquote>
-<div><ul class="simple">
-<li>Specifies the ID of the rule.</li>
-<li><strong>Allowed:</strong> Any number from 100 to 99999</li>
-</ul>
-</div></blockquote>
-</li>
-</ul>
-<ul id="maxsize">
-<li><p class="first"><em>maxsize</em></p>
-<blockquote>
-<div><ul class="simple">
-<li>Specifies the maximum size of the event.</li>
-<li><strong>Allowed:</strong> Any number from 1 to 99999</li>
-</ul>
-</div></blockquote>
-</li>
-</ul>
-<ul id="frequency">
-<li><p class="first"><em>frequency</em></p>
-<blockquote>
-<div><ul class="simple">
-<li>Specifies the number of times the rule must have matched before firing. The number that triggers the rule is actually 2 more than this setting.</li>
-<li><strong>Allowed:</strong> Any number from 1 to 999</li>
-<li><strong>Example:</strong> frequency=&#8221;2&#8221; would mean the rule must be matched 4 times</li>
-</ul>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">More information about how frequency is counted can be found <a class="reference external" href="http://marc.info/?l=ossec-list&amp;m=129736702512080&amp;w=2">in this thread.</a></p>
-</div>
-</div></blockquote>
-</li>
-<li><p class="first"><em>noalert</em></p>
-<blockquote>
-<div><ul class="simple">
-<li>Specifies whether the rule generates an alert or not in a sense, that if it does, no new rules are tried, except the rules which specify this in their if_sid. Setting this to 1 is useful if trying other rules are the sensible thing to do if this one matches, but it&#8217;s child rules (rules which specify this in their if_sid) do not.</li>
-<li><strong>Allowed:</strong> 0 or 1</li>
-<li><strong>Default:</strong> 0</li>
-</ul>
-</div></blockquote>
-</li>
-</ul>
-<ul id="timeframe">
-<li><p class="first"><em>timeframe</em></p>
-<blockquote>
-<div><ul class="simple">
-<li>The timeframe in seconds.</li>
-<li>This option is intended to be used with the frequency option.</li>
-<li><strong>Allowed:</strong> Any number from 1 to 9999</li>
-</ul>
-</div></blockquote>
-</li>
-</ul>
-<ul id="ignore">
-<li><p class="first"><em>ignore</em></p>
-<blockquote>
-<div><ul class="simple">
-<li>The time (in seconds) to ignore this rule after firing it (to avoid floods).</li>
-<li><strong>Allowed:</strong> Any number from 1 to 9999</li>
-</ul>
-</div></blockquote>
-</li>
-</ul>
-<ul class="simple" id="overwrite">
-<li><dl class="first docutils">
-<dt><em>overwrite</em></dt>
-<dd><ul class="first last">
-<li>Used to supercede an OSSEC rule with local changes.</li>
-<li>This is useful to change the level or other options of rules included with OSSEC.</li>
-<li><strong>Allowed</strong> yes</li>
-</ul>
-</dd>
-</dl>
-</li>
-</ul>
-</dd></dl>
-
-<dl class="element">
-<dt id="element-match">
-<code class="descname">match</code><a class="headerlink" href="#element-match" title="Permalink to this definition">¶</a></dt>
-<dd><ul class="simple">
-<li>Any string to match against the log event.</li>
-<li><strong>Allowed:</strong> Any <a class="reference internal" href="regex.html#os-match"><span class="std std-ref">OS_Match/sregex Syntax</span></a></li>
-</ul>
-</dd></dl>
-
-<dl class="element">
-<dt id="element-regex">
-<code class="descname">regex</code><a class="headerlink" href="#element-regex" title="Permalink to this definition">¶</a></dt>
-<dd><ul class="simple">
-<li>Any regex to match against the log event.</li>
-<li><strong>Allowed:</strong> Any <a class="reference internal" href="regex.html#os-regex"><span class="std std-ref">OS_Regex/regex Syntax</span></a></li>
-</ul>
-</dd></dl>
-
-<dl class="element">
-<dt id="element-decoded_as">
-<code class="descname">decoded_as</code><a class="headerlink" href="#element-decoded_as" title="Permalink to this definition">¶</a></dt>
-<dd><ul class="simple">
-<li>Any decoder name (see <a class="reference internal" href="head_decoders.html#rules-decoders"><span class="std std-ref">Decoders Syntax</span></a>)</li>
-<li><strong>Allowed:</strong> Any decoder name</li>
-</ul>
-</dd></dl>
-
-<dl class="element">
-<dt id="element-category">
-<code class="descname">category</code><a class="headerlink" href="#element-category" title="Permalink to this definition">¶</a></dt>
-<dd><ul class="simple">
-<li>The decoded category to match (ids, syslog, firewall, web-log, squid or windows).</li>
-<li><strong>Allowed:</strong> Any category <cite>categories</cite></li>
-</ul>
-</dd></dl>
-
-<dl class="element">
-<dt id="element-srcip">
-<code class="descname">srcip</code><a class="headerlink" href="#element-srcip" title="Permalink to this definition">¶</a></dt>
-<dd><ul class="simple">
-<li>Any IP address or CIDR block to be compared to an IP decoded as srcip.</li>
-<li>Use &#8221;!&#8221; to negate it.</li>
-<li><strong>Allowed:</strong> Any srcip</li>
-</ul>
-</dd></dl>
-
-<dl class="element">
-<dt id="element-dstip">
-<code class="descname">dstip</code><a class="headerlink" href="#element-dstip" title="Permalink to this definition">¶</a></dt>
-<dd><ul class="simple">
-<li>Any IP address or CIDR block to be compared to an IP decoded as dstip.</li>
-<li>Use &#8221;!&#8221; to negate it.</li>
-<li><strong>Allowed:</strong> Any dstip</li>
-</ul>
-</dd></dl>
-
-<dl class="element">
-<dt id="element-extra_data">
-<code class="descname">extra_data</code><a class="headerlink" href="#element-extra_data" title="Permalink to this definition">¶</a></dt>
-<dd><ul class="simple">
-<li>Any string that is decoded into the <code class="docutils literal"><span class="pre">extra_data</span></code> field.</li>
-<li><strong>Allowed:</strong> Any string.</li>
-</ul>
-</dd></dl>
-
-<dl class="element">
-<dt id="element-user">
-<code class="descname">user</code><a class="headerlink" href="#element-user" title="Permalink to this definition">¶</a></dt>
-<dd><ul class="simple">
-<li>Any username (decoded as the username).</li>
-<li><strong>Allowed:</strong> any <a class="reference internal" href="regex.html#os-match"><span class="std std-ref">OS_Match/sregex Syntax</span></a></li>
-</ul>
-</dd></dl>
-
-<dl class="element">
-<dt id="element-program_name">
-<code class="descname">program_name</code><a class="headerlink" href="#element-program_name" title="Permalink to this definition">¶</a></dt>
-<dd><ul class="simple">
-<li>Program name is decoded from syslog process name.</li>
-<li><strong>Allowed:</strong> any <a class="reference internal" href="regex.html#os-match"><span class="std std-ref">OS_Match/sregex Syntax</span></a></li>
-</ul>
-</dd></dl>
-
-<dl class="element">
-<dt id="element-hostname">
-<code class="descname">hostname</code><a class="headerlink" href="#element-hostname" title="Permalink to this definition">¶</a></dt>
-<dd><ul class="simple">
-<li>Any hostname (decoded as the syslog hostname) or log file.</li>
-<li><strong>Allowed:</strong> any <a class="reference internal" href="regex.html#os-match"><span class="std std-ref">OS_Match/sregex Syntax</span></a></li>
-</ul>
-</dd></dl>
-
-<dl class="element">
-<dt id="element-time">
-<code class="descname">time</code><a class="headerlink" href="#element-time" title="Permalink to this definition">¶</a></dt>
-<dd><ul class="simple">
-<li>Time that the event was generated.</li>
-<li><strong>Allowed:</strong> Any time range (hh:mm-hh:mm)</li>
-<li><strong>Example:</strong> <code class="docutils literal"><span class="pre">&lt;time&gt;6</span> <span class="pre">am</span> <span class="pre">-</span> <span class="pre">6</span> <span class="pre">pm&lt;/time&gt;</span></code></li>
-</ul>
-</dd></dl>
-
-<dl class="element">
-<dt id="element-weekday">
-<code class="descname">weekday</code><a class="headerlink" href="#element-weekday" title="Permalink to this definition">¶</a></dt>
-<dd><ul class="simple">
-<li>Week day that the event was generated. Multiple entries can be separated by commas.</li>
-<li><strong>Allowed:</strong> monday - sunday, weekdays, weekends</li>
-</ul>
-</dd></dl>
-
-<dl class="element">
-<dt id="element-id">
-<code class="descname">id</code><a class="headerlink" href="#element-id" title="Permalink to this definition">¶</a></dt>
-<dd><ul class="simple">
-<li>Any ID (decoded as the ID).</li>
-<li><strong>Allowed:</strong> any <a class="reference internal" href="regex.html#os-match"><span class="std std-ref">OS_Match/sregex Syntax</span></a></li>
-</ul>
-</dd></dl>
-
-<dl class="element">
-<dt id="element-url">
-<code class="descname">url</code><a class="headerlink" href="#element-url" title="Permalink to this definition">¶</a></dt>
-<dd><ul class="simple">
-<li>Any URL (decoded as the URL).</li>
-<li><strong>Allowed:</strong> any <a class="reference internal" href="regex.html#os-match"><span class="std std-ref">OS_Match/sregex Syntax</span></a></li>
-</ul>
-</dd></dl>
-
-<dl class="element">
-<dt id="element-if_sid">
-<code class="descname">if_sid</code><a class="headerlink" href="#element-if_sid" title="Permalink to this definition">¶</a></dt>
-<dd><ul class="simple">
-<li>Matches if the ID has matched.</li>
-<li><strong>Allowed:</strong> Any rule id</li>
-</ul>
-</dd></dl>
-
-<dl class="element">
-<dt id="element-if_group">
-<code class="descname">if_group</code><a class="headerlink" href="#element-if_group" title="Permalink to this definition">¶</a></dt>
-<dd><ul class="simple">
-<li>Matches if the group has matched before.</li>
-<li><strong>Allowed:</strong> Any Group</li>
-</ul>
-</dd></dl>
-
-<dl class="element">
-<dt id="element-if_level">
-<code class="descname">if_level</code><a class="headerlink" href="#element-if_level" title="Permalink to this definition">¶</a></dt>
-<dd><ul class="simple">
-<li>Matches if the level has matched before.</li>
-<li><strong>Allowed:</strong> Any level from 1 to 16</li>
-</ul>
-</dd></dl>
-
-<dl class="element">
-<dt id="element-if_matched_sid">
-<code class="descname">if_matched_sid</code><a class="headerlink" href="#element-if_matched_sid" title="Permalink to this definition">¶</a></dt>
-<dd><ul class="simple">
-<li>Matches if an alert of the defined ID has been triggered in a set number of seconds.</li>
-<li>This option is used in conjunction with <a class="reference internal" href="#frequency">frequency</a> and <a class="reference internal" href="#timeframe">timeframe</a>.</li>
-</ul>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Rules at level 0 are discarded immediately and will not be used with the <code class="docutils literal"><span class="pre">if_matched_</span></code> rules. The level must be at least <code class="docutils literal"><span class="pre">1</span></code>, but the <code class="docutils literal"><span class="pre">&lt;no_log&gt;</span></code> option can be added to the rule to make sure it does not get logged.</p>
-</div>
-<ul class="simple">
-<li><strong>Allowed:</strong> Any rule id</li>
-</ul>
-</dd></dl>
-
-<dl class="element">
-<dt id="element-if_matched_group">
-<code class="descname">if_matched_group</code><a class="headerlink" href="#element-if_matched_group" title="Permalink to this definition">¶</a></dt>
-<dd><ul class="simple">
-<li>Matches if an alert of the defined group has been triggered in a set number of seconds.</li>
-<li>This option is used in conjunction with <a class="reference internal" href="#frequency">frequency</a> and <a class="reference internal" href="#timeframe">timeframe</a>.</li>
-<li><strong>Allowed:</strong> Any group</li>
-</ul>
-</dd></dl>
-
-<dl class="element">
-<dt id="element-same_id">
-<code class="descname">same_id</code><a class="headerlink" href="#element-same_id" title="Permalink to this definition">¶</a></dt>
-<dd><ul class="simple">
-<li>Specifies that the decoded id must be the same.</li>
-<li>This option is used in conjunction with <a class="reference internal" href="#frequency">frequency</a> and <a class="reference internal" href="#timeframe">timeframe</a>.</li>
-<li><strong>Example:</strong> &lt;same_id /&gt;</li>
-</ul>
-</dd></dl>
-
-<dl class="element">
-<dt id="element-same_source_ip">
-<code class="descname">same_source_ip</code><a class="headerlink" href="#element-same_source_ip" title="Permalink to this definition">¶</a></dt>
-<dd><ul class="simple">
-<li>Specifies that the decoded source ip must be the same.</li>
-<li>This option is used in conjunction with <a class="reference internal" href="#frequency">frequency</a> and <a class="reference internal" href="#timeframe">timeframe</a>.</li>
-<li><strong>Example:</strong> &lt;same_source_ip /&gt;</li>
-</ul>
-</dd></dl>
-
-<dl class="element">
-<dt id="element-same_source_port">
-<code class="descname">same_source_port</code><a class="headerlink" href="#element-same_source_port" title="Permalink to this definition">¶</a></dt>
-<dd><ul class="simple">
-<li>Specifies that the decoded source port must be the same.</li>
-<li>This option is used in conjunction with <a class="reference internal" href="#frequency">frequency</a> and <a class="reference internal" href="#timeframe">timeframe</a>.</li>
-<li><strong>Example:</strong> &lt;same_source_port /&gt;</li>
-</ul>
-</dd></dl>
-
-<dl class="element">
-<dt id="element-same_dst_port">
-<code class="descname">same_dst_port</code><a class="headerlink" href="#element-same_dst_port" title="Permalink to this definition">¶</a></dt>
-<dd><ul class="simple">
-<li>Specifies that the decoded destination port must be the same.</li>
-<li>This option is used in conjunction with <a class="reference internal" href="#frequency">frequency</a> and <a class="reference internal" href="#timeframe">timeframe</a>.</li>
-<li><strong>Example:</strong> &lt;same_source_port /&gt;</li>
-</ul>
-</dd></dl>
-
-<dl class="element">
-<dt id="element-same_location">
-<code class="descname">same_location</code><a class="headerlink" href="#element-same_location" title="Permalink to this definition">¶</a></dt>
-<dd><ul class="simple">
-<li>Specifies that the location must be the same.</li>
-<li>This option is used in conjunction with <a class="reference internal" href="#frequency">frequency</a> and <a class="reference internal" href="#timeframe">timeframe</a>.</li>
-<li><strong>Example:</strong> &lt;same_location /&gt;</li>
-</ul>
-</dd></dl>
-
-<dl class="element">
-<dt id="element-same_user">
-<code class="descname">same_user</code><a class="headerlink" href="#element-same_user" title="Permalink to this definition">¶</a></dt>
-<dd><ul class="simple">
-<li>Specifies that the decoded user must be the same.</li>
-<li>This option is used in conjunction with <a class="reference internal" href="#frequency">frequency</a> an <a class="reference internal" href="#timeframe">timeframe</a>.</li>
-<li><strong>Example:</strong> &lt;same_user /&gt;</li>
-</ul>
-</dd></dl>
-
-<dl class="element">
-<dt id="element-description">
-<code class="descname">description</code><a class="headerlink" href="#element-description" title="Permalink to this definition">¶</a></dt>
-<dd><ul class="simple">
-<li>Rule description.</li>
-<li><strong>Allowed:</strong> Any string</li>
-</ul>
-</dd></dl>
-
-<dl class="element">
-<dt id="element-list">
-<code class="descname">list</code><a class="headerlink" href="#element-list" title="Permalink to this definition">¶</a></dt>
-<dd><p>Preform a CDB lookup using an ossec list.  This is a fast on disk database which will
-always find keys within two seeks of the file.</p>
-<p><strong>Attributes:</strong></p>
-<ul>
-<li><p class="first"><em>field</em></p>
-<blockquote>
-<div><p>Field that is used as the key to look up in the CDB file:</p>
-<ul class="simple">
-<li>Value: srcip</li>
-<li>Value: srcport</li>
-<li>Value: dstip</li>
-<li>Value: dstport</li>
-<li>Value: extra_data</li>
-<li>Value: user</li>
-<li>Value: url</li>
-<li>Value: id</li>
-<li>Value: hostname</li>
-<li>Value: program_name</li>
-<li>Value: status</li>
-<li>Value: action</li>
-</ul>
-</div></blockquote>
-</li>
-</ul>
-<ul>
-<li><p class="first"><em>lookup</em></p>
-<blockquote>
-<div><p>This is the type of lookup that is preformed:</p>
-<ul>
-<li><p class="first">Value: match_key</p>
-<blockquote>
-<div><ul class="simple">
-<li>Positive key match: field is the key to search within the cdb and will match if they key is present.</li>
-<li>This is the default if no lookup is specified.</li>
-</ul>
-</div></blockquote>
-</li>
-<li><p class="first">Value: not_match_key</p>
-<blockquote>
-<div><ul class="simple">
-<li>Negative key match: field is the key to search and will match if it <em>IS NOT</em> present in the database.</li>
-</ul>
-</div></blockquote>
-</li>
-<li><p class="first">Value: match_key_value</p>
-<blockquote>
-<div><ul class="simple">
-<li>Key and Value Match: field is searched for in the cdb and if found the value will be compared with regex from attribute check_value.</li>
-</ul>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">This feature is not yet complete.</p>
-</div>
-</div></blockquote>
-</li>
-<li><p class="first">Value: address_match_key</p>
-<blockquote>
-<div><ul class="simple">
-<li>Positive key match: field is an IP address and the key to search within the cdb and will match if they key is present.</li>
-</ul>
-</div></blockquote>
-</li>
-<li><p class="first">Value: not_address_match_key</p>
-<blockquote>
-<div><ul class="simple">
-<li>Negative key match: field is an IP address the key to search and will match if it <em>IS NOT</em> present in the database.</li>
-</ul>
-</div></blockquote>
-</li>
-<li><p class="first">Value: address_match_key_value</p>
-<blockquote>
-<div><ul class="simple">
-<li>Key and Value Match: field is an IP address searched for in the cdb and if found the value will be compared with regex from attribute check_value.</li>
-</ul>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">This feature is not yet complete.</p>
-</div>
-</div></blockquote>
-</li>
-</ul>
-</div></blockquote>
-</li>
-</ul>
-<ul>
-<li><p class="first"><em>check_value</em></p>
-<blockquote>
-<div><ul class="simple">
-<li>regex pattern for matching on the value pulled out of the cdb when using lookup types: address_match_key_value, match_key_value</li>
-</ul>
-</div></blockquote>
-</li>
-</ul>
-<p><strong>Allowed:</strong></p>
-<blockquote>
-<div>Path to the CDB file to be used for lookup from the OSSEC directory.  This file must also be included in the ossec.conf file.</div></blockquote>
-<p><strong>Example:</strong></p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;rule</span> <span class="na">id=</span><span class="s">&quot;100000&quot;</span> <span class="na">level=</span><span class="s">&quot;7&quot;</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;list</span> <span class="na">lookup=</span><span class="s">&quot;match_key&quot;</span> <span class="na">field=</span><span class="s">&quot;srcip&quot;</span><span class="nt">&gt;</span>path/to/list/file<span class="nt">&lt;/list&gt;</span>
-  <span class="nt">&lt;description&gt;</span>Checking srcip against cdb list file<span class="nt">&lt;/description&gt;</span>
-<span class="nt">&lt;/rule&gt;</span>
-</pre></div>
-</div>
-</dd></dl>
-
-<dl class="element">
-<dt id="element-info">
-<code class="descname">info</code><a class="headerlink" href="#element-info" title="Permalink to this definition">¶</a></dt>
-<dd><p>Extra information may be added through the following attributes:</p>
-<p><strong>Attributes:</strong></p>
-<ul>
-<li><p class="first"><em>type</em></p>
-<blockquote>
-<div><ul>
-<li><p class="first">Value: text</p>
-<blockquote>
-<div><p>This is the default when no type is selected.  Just used for additional
-information about the alert/event.</p>
-</div></blockquote>
-</li>
-<li><p class="first">Value: link</p>
-<blockquote>
-<div><p>Link to more information about the alert/event.</p>
-</div></blockquote>
-</li>
-<li><p class="first">Value: cve</p>
-<blockquote>
-<div><p>The CVE Number related to this alert/event.</p>
-</div></blockquote>
-</li>
-<li><p class="first">Value: ovsdb</p>
-<blockquote>
-<div><p>The osvdb id related to this alert/event.</p>
-</div></blockquote>
-</li>
-</ul>
-</div></blockquote>
-</li>
-</ul>
-<p><strong>Allowed:</strong> String but content is dependent on the type attribute.</p>
-<p><strong>Example:</strong></p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;rule</span> <span class="na">id=</span><span class="s">&quot;502&quot;</span> <span class="na">level=</span><span class="s">&quot;3&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;if_sid&gt;</span>500<span class="nt">&lt;/if_sid&gt;</span>
-    <span class="nt">&lt;options&gt;</span>alert_by_email<span class="nt">&lt;/options&gt;</span>
-    <span class="nt">&lt;match&gt;</span>Ossec started<span class="nt">&lt;/match&gt;</span>
-    <span class="nt">&lt;description&gt;</span>Ossec server started.<span class="nt">&lt;/description&gt;</span>
-    <span class="nt">&lt;info</span> <span class="na">type=</span><span class="s">&quot;link&quot;</span><span class="nt">&gt;</span>http://ossec.net/wiki/Rule:205<span class="nt">&lt;/info&gt;</span>
-    <span class="nt">&lt;info</span> <span class="na">type=</span><span class="s">&quot;cve&quot;</span><span class="nt">&gt;</span>2009-1002<span class="nt">&lt;/info&gt;</span>
-    <span class="nt">&lt;info</span> <span class="na">type=</span><span class="s">&quot;osvdb&quot;</span><span class="nt">&gt;</span> 61509<span class="nt">&lt;/info&gt;</span>
-    <span class="nt">&lt;info</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span><span class="nt">&gt;</span>Internal Why we are running this run in our company<span class="nt">&lt;/info&gt;</span>
-    <span class="nt">&lt;info&gt;</span>Type text is the default<span class="nt">&lt;/info&gt;</span>
-<span class="nt">&lt;/rule&gt;</span>
-</pre></div>
-</div>
-</dd></dl>
-
-<dl class="element">
-<dt id="element-options">
-<code class="descname">options</code><a class="headerlink" href="#element-options" title="Permalink to this definition">¶</a></dt>
-<dd><p>Additional rule options</p>
-<p><strong>Allowed:</strong></p>
-<ul class="simple">
-<li><dl class="first docutils">
-<dt><em>alert_by_email</em></dt>
-<dd><ul class="first last">
-<li>Always alert by email.</li>
-<li><em>Example:</em> &lt;options&gt;alert_by_email&lt;/options&gt;</li>
-</ul>
-</dd>
-</dl>
-</li>
-<li><dl class="first docutils">
-<dt><em>no_email_alert</em></dt>
-<dd><ul class="first last">
-<li>Never alert by email.</li>
-<li><em>Example:</em> &lt;options&gt;no_email_alert&lt;/options&gt;</li>
-</ul>
-</dd>
-</dl>
-</li>
-<li><dl class="first docutils">
-<dt>no_log</dt>
-<dd><ul class="first last">
-<li>Do not log this alert.</li>
-<li><em>Example:</em> &lt;options&gt;no_log&lt;/options&gt;</li>
-</ul>
-</dd>
-</dl>
-</li>
-</ul>
-</dd></dl>
-
-<dl class="element">
-<dt id="element-check_diff">
-<code class="descname">check_diff</code><a class="headerlink" href="#element-check_diff" title="Permalink to this definition">¶</a></dt>
-<dd><p>Used to determine when the output of a command changes.</p>
-<p><strong>Usage:</strong> &lt;check_diff /&gt;</p>
-</dd></dl>
-
-<dl class="element">
-<dt id="element-group">
-<code class="descname">group</code><a class="headerlink" href="#element-group" title="Permalink to this definition">¶</a></dt>
-<dd><ul class="simple">
-<li>Add additional groups to the alert. Groups are optional tags added to alerts. They can be used by other rules by using <code class="docutils literal"><span class="pre">if_group</span></code> or <code class="docutils literal"><span class="pre">if_matched_group</span></code>, or by alert parsing tools to categorize alerts.</li>
-</ul>
-<blockquote>
-<div><em>Example:</em> &lt;group&gt;group1, group2&lt;/group&gt;</div></blockquote>
-</dd></dl>
-
 </div>
 </div>
 
-  <div class="section">
-  
-  
-  </div>
 
     </div>
       
@@ -704,7 +159,7 @@ information about the alert/event.</p>
       
     </p>
     <p>
-        &copy; Copyright 2010-2019, OSSEC Project Team.<br/>
+        &copy; Copyright 2010-2020, OSSEC Project Team.<br/>
     OSSEC <b>ossec.net</b> domain owned and maintained by <a href="https://www.ossec.net" target="_blank">OSSEC Foundation</a><br/>
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.5.2 - 
     Home page graphics courtesy of <a href="https://pixabay.com" target="_blank">pixabay</a>

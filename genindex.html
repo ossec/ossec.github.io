@@ -18,7 +18,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '3.2.0',
+        VERSION:     '3.3.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true,
@@ -61,7 +61,6 @@
           <ul class="nav navbar-nav">
             
                 <li><a href="about.html">About <i class="fa fa-info-circle"></i></a></li>
-                <li><a href="blog.html">Blog <i class="fa fa-archive"></i></a></li>
                 <li><a href="docs/">Documentation <i class="fa fa-book"></i></a></li>
                 <li><a href="downloads.html">Downloads <i class="fa fa-download"></i></a></li>
             
@@ -74,7 +73,24 @@
      href="index.html">Site <b class="caret"></b></a>
   <ul class="dropdown-menu globaltoc"
       role="menu"
-      aria-labelledby="dLabelGlobalToc"></ul>
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="docs/manual/index.html">Manual</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="docs/faq/index.html">Frequently asked questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/cookbooks/index.html">User submitted Cookbooks</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="docs/development/build/index.html">Build, compile, and not much more</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/development/oRFC/index.html">oRFC:</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="docs/syntax/index.html">Syntax and Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/formats/index.html">Output Formats</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/programs/index.html">Man pages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/examples/index.html">Examples</a></li>
+</ul>
+</ul>
 </li>
               
             
@@ -112,27 +128,15 @@
 <div class="genindex-jumpbox">
  <a href="#Symbols"><strong>Symbols</strong></a>
  | <a href="#A"><strong>A</strong></a>
- | <a href="#B"><strong>B</strong></a>
  | <a href="#C"><strong>C</strong></a>
- | <a href="#D"><strong>D</strong></a>
  | <a href="#E"><strong>E</strong></a>
- | <a href="#F"><strong>F</strong></a>
- | <a href="#G"><strong>G</strong></a>
  | <a href="#H"><strong>H</strong></a>
- | <a href="#I"><strong>I</strong></a>
- | <a href="#J"><strong>J</strong></a>
  | <a href="#L"><strong>L</strong></a>
  | <a href="#M"><strong>M</strong></a>
- | <a href="#N"><strong>N</strong></a>
  | <a href="#O"><strong>O</strong></a>
- | <a href="#P"><strong>P</strong></a>
- | <a href="#Q"><strong>Q</strong></a>
  | <a href="#R"><strong>R</strong></a>
  | <a href="#S"><strong>S</strong></a>
- | <a href="#T"><strong>T</strong></a>
  | <a href="#U"><strong>U</strong></a>
- | <a href="#W"><strong>W</strong></a>
- | <a href="#Z"><strong>Z</strong></a>
  
 </div>
 <h2 id="Symbols">Symbols</h2>
@@ -766,8 +770,6 @@
 <h2 id="A">A</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="docs/syntax/head_ossec_config.active-response.html#element-active-response">active-response</a>
-</li>
       <li>
     adddns &lt;domain&gt;
 
@@ -816,12 +818,6 @@
         <li><a href="docs/programs/agent-auth.html#cmdoption-agent-auth-x">-x &lt;path&gt;</a>
 </li>
       </ul></li>
-      <li><a href="docs/syntax/head_internal_options.analysisd.html#intopt-agent.debug">agent.debug</a>
-</li>
-      <li><a href="docs/syntax/head_agent_config.html#element-agent_config">agent_config</a>
-</li>
-      <li><a href="docs/syntax/head_agent_config.html#element-agent_config_options">agent_config_options</a>
-</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li>
@@ -845,78 +841,12 @@
         <li><a href="docs/programs/agent_control.html#cmdoption-agent-control-u">-u &lt;agent_id&gt;</a>
 </li>
       </ul></li>
-      <li><a href="docs/syntax/head_ossec_config.active-response.html#element-agent_id">agent_id</a>
-</li>
-      <li><a href="docs/manual/agent/agentless-monitoring.html#element-agentless">agentless</a>, <a href="docs/syntax/head_ossec_config.agentless.html#element-agentless">[1]</a>
-</li>
-      <li><a href="docs/syntax/head_ossec_config.alerts.html#element-alerts">alerts</a>
-</li>
-      <li><a href="docs/manual/monitoring/index.html#element-alias">alias</a>, <a href="docs/syntax/head_ossec_config.localfile.html#element-alias">[1]</a>
-</li>
-      <li><a href="docs/syntax/head_ossec_config.remote.html#element-allowed-ips">allowed-ips</a>
-</li>
-      <li><a href="docs/syntax/head_internal_options.analysisd.html#intopt-analysisd.debug">analysisd.debug</a>
-</li>
-      <li><a href="docs/syntax/head_internal_options.analysisd.html#intopt-analysisd.default_timeframe">analysisd.default_timeframe</a>
-</li>
-      <li><a href="docs/syntax/head_internal_options.analysisd.html#intopt-analysisd.fts_list_size">analysisd.fts_list_size</a>
-</li>
-      <li><a href="docs/syntax/head_internal_options.analysisd.html#intopt-analysisd.fts_min_size_for_str">analysisd.fts_min_size_for_str</a>
-</li>
-      <li><a href="docs/syntax/head_internal_options.analysisd.html#intopt-analysisd.log_fw">analysisd.log_fw</a>
-</li>
-      <li><a href="docs/syntax/head_internal_options.analysisd.html#intopt-analysisd.stats_maxdiff">analysisd.stats_maxdiff</a>
-</li>
-      <li><a href="docs/syntax/head_internal_options.analysisd.html#intopt-analysisd.stats_mindiff">analysisd.stats_mindiff</a>
-</li>
-      <li><a href="docs/syntax/head_internal_options.analysisd.html#intopt-analysisd.stats_percent_diff">analysisd.stats_percent_diff</a>
-</li>
-      <li><a href="docs/manual/agent/agentless-monitoring.html#element-arguments">arguments</a>, <a href="docs/syntax/head_ossec_config.agentless.html#element-arguments">[1]</a>
-</li>
-  </ul></td>
-</tr></table>
-
-<h2 id="B">B</h2>
-<table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="docs/manual/rootcheck/manual-rootcheck.html#element-base_directory">base_directory</a>, <a href="docs/syntax/head_ossec_config.rootcheck.html#element-base_directory">[1]</a>
-</li>
   </ul></td>
 </tr></table>
 
 <h2 id="C">C</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="docs/manual/output/reports-email-output.html#element-categories">categories</a>, <a href="docs/syntax/head_ossec_config.reports.html#element-categories">[1]</a>
-</li>
-      <li><a href="docs/syntax/head_rules.html#element-category">category</a>
-</li>
-      <li><a href="docs/manual/rootcheck/manual-rootcheck.html#element-check_dev">check_dev</a>, <a href="docs/syntax/head_ossec_config.rootcheck.html#element-check_dev">[1]</a>
-</li>
-      <li><a href="docs/manual/monitoring/index.html#element-check_diff">check_diff</a>, <a href="docs/syntax/head_ossec_config.localfile.html#element-check_diff">[1]</a>, <a href="docs/syntax/head_rules.html#element-check_diff">[2]</a>
-</li>
-      <li><a href="docs/manual/rootcheck/manual-rootcheck.html#element-check_files">check_files</a>, <a href="docs/syntax/head_ossec_config.rootcheck.html#element-check_files">[1]</a>
-</li>
-      <li><a href="docs/manual/rootcheck/manual-rootcheck.html#element-check_if">check_if</a>, <a href="docs/syntax/head_ossec_config.rootcheck.html#element-check_if">[1]</a>
-</li>
-      <li><a href="docs/manual/rootcheck/manual-rootcheck.html#element-check_pids">check_pids</a>, <a href="docs/syntax/head_ossec_config.rootcheck.html#element-check_pids">[1]</a>
-</li>
-      <li><a href="docs/manual/rootcheck/manual-rootcheck.html#element-check_ports">check_ports</a>, <a href="docs/syntax/head_ossec_config.rootcheck.html#element-check_ports">[1]</a>
-</li>
-      <li><a href="docs/manual/rootcheck/manual-rootcheck.html#element-check_sys">check_sys</a>, <a href="docs/syntax/head_ossec_config.rootcheck.html#element-check_sys">[1]</a>
-</li>
-      <li><a href="docs/manual/rootcheck/manual-rootcheck.html#element-check_trojans">check_trojans</a>, <a href="docs/syntax/head_ossec_config.rootcheck.html#element-check_trojans">[1]</a>
-</li>
-      <li><a href="docs/manual/rootcheck/manual-rootcheck.html#element-check_unixaudit">check_unixaudit</a>, <a href="docs/syntax/head_ossec_config.rootcheck.html#element-check_unixaudit">[1]</a>
-</li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="docs/manual/rootcheck/manual-rootcheck.html#element-check_winapps">check_winapps</a>, <a href="docs/syntax/head_ossec_config.rootcheck.html#element-check_winapps">[1]</a>
-</li>
-      <li><a href="docs/manual/rootcheck/manual-rootcheck.html#element-check_winaudit">check_winaudit</a>, <a href="docs/syntax/head_ossec_config.rootcheck.html#element-check_winaudit">[1]</a>
-</li>
-      <li><a href="docs/manual/rootcheck/manual-rootcheck.html#element-check_winmalware">check_winmalware</a>, <a href="docs/syntax/head_ossec_config.rootcheck.html#element-check_winmalware">[1]</a>
-</li>
       <li>
     clear_stats command line option
 
@@ -930,84 +860,12 @@
         <li><a href="docs/programs/clear_stats.html#cmdoption-clear-stats-w">-w</a>
 </li>
       </ul></li>
-      <li><a href="docs/manual/monitoring/index.html#element-command">command</a>, <a href="docs/syntax/head_ossec_config.active-response.html#element-command">[1]</a>, <a href="docs/syntax/head_ossec_config.active-response.html#element-command">[2]</a>, <a href="docs/syntax/head_ossec_config.localfile.html#element-command">[3]</a>
-</li>
-      <li><a href="docs/syntax/head_ossec_config.client.html#element-config-profile">config-profile</a>
-</li>
-      <li><a href="docs/syntax/head_ossec_config.remote.html#element-connection">connection</a>
-</li>
-      <li><a href="docs/syntax/head_ossec_config.global.html#element-custom_alert_output">custom_alert_output</a>
-</li>
-  </ul></td>
-</tr></table>
-
-<h2 id="D">D</h2>
-<table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="docs/manual/output/database-output.html#element-database">database</a>, <a href="docs/syntax/head_ossec_config.database_output.html#element-database">[1]</a>
-</li>
-      <li><a href="docs/manual/output/database-output.html#element-database_output">database_output</a>, <a href="docs/syntax/head_ossec_config.database_output.html#element-database_output">[1]</a>
-</li>
-      <li><a href="docs/syntax/head_internal_options.analysisd.html#intopt-dbd.reconnect_attempts">dbd.reconnect_attempts</a>
-</li>
-      <li><a href="docs/syntax/head_rules.html#element-decoded_as">decoded_as</a>
-</li>
-      <li><a href="docs/syntax/head_decoders.html#element-decoder">decoder</a>, <a href="docs/syntax/head_ossec_config.rules.html#element-decoder">[1]</a>
-</li>
-      <li><a href="docs/syntax/head_decoders.html#element-decoder.accumulate">decoder.accumulate</a>
-</li>
-      <li><a href="docs/syntax/head_decoders.html#element-decoder.fts">decoder.fts</a>
-</li>
-      <li><a href="docs/syntax/head_decoders.html#element-decoder.ftscomment">decoder.ftscomment</a>
-</li>
-      <li><a href="docs/syntax/head_decoders.html#element-decoder.order">decoder.order</a>
-</li>
-      <li><a href="docs/syntax/head_decoders.html#element-decoder.parent">decoder.parent</a>
-</li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="docs/syntax/head_decoders.html#element-decoder.prematch">decoder.prematch</a>
-</li>
-      <li><a href="docs/syntax/head_decoders.html#element-decoder.program_name">decoder.program_name</a>
-</li>
-      <li><a href="docs/syntax/head_decoders.html#element-decoder.regex">decoder.regex</a>
-</li>
-      <li><a href="docs/syntax/head_ossec_config.rules.html#element-decoder_dir">decoder_dir</a>
-</li>
-      <li><a href="docs/syntax/head_ossec_config.remote.html#element-deny-ips">deny-ips</a>
-</li>
-      <li><a href="docs/syntax/head_rules.html#element-description">description</a>
-</li>
-      <li><a href="docs/manual/rootcheck/manual-rootcheck.html#element-disabled">disabled</a>, <a href="docs/syntax/head_ossec_config.active-response.html#element-disabled">[1]</a>, <a href="docs/syntax/head_ossec_config.rootcheck.html#element-disabled">[2]</a>
-</li>
-      <li><a href="docs/syntax/head_ossec_config.email_alerts.html#element-do_not_delay">do_not_delay</a>
-</li>
-      <li><a href="docs/syntax/head_ossec_config.email_alerts.html#element-do_not_group">do_not_group</a>
-</li>
-      <li><a href="docs/syntax/head_rules.html#element-dstip">dstip</a>
-</li>
   </ul></td>
 </tr></table>
 
 <h2 id="E">E</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="docs/syntax/head_ossec_config.alerts.html#element-email_alert_level">email_alert_level</a>
-</li>
-      <li><a href="docs/syntax/head_ossec_config.email_alerts.html#element-email_alerts">email_alerts</a>
-</li>
-      <li><a href="docs/syntax/head_ossec_config.global.html#element-email_from">email_from</a>
-</li>
-      <li><a href="docs/syntax/head_ossec_config.global.html#element-email_idsname">email_idsname</a>
-</li>
-      <li><a href="docs/syntax/head_ossec_config.global.html#element-email_maxperhour">email_maxperhour</a>
-</li>
-      <li><a href="docs/syntax/head_ossec_config.global.html#element-email_notification">email_notification</a>
-</li>
-      <li><a href="docs/syntax/head_ossec_config.global.html#element-email_reply_to">email_reply_to</a>
-</li>
-      <li><a href="docs/manual/output/reports-email-output.html#element-email_to">email_to</a>, <a href="docs/syntax/head_ossec_config.email_alerts.html#element-email_to">[1]</a>, <a href="docs/syntax/head_ossec_config.global.html#element-email_to">[2]</a>, <a href="docs/syntax/head_ossec_config.reports.html#element-email_to">[3]</a>
-</li>
       <li>
     environment variable
 
@@ -1050,42 +908,6 @@
 </li>
       </ul></li>
   </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="docs/syntax/head_ossec_config.email_alerts.html#element-event_location">event_location</a>
-</li>
-      <li><a href="docs/syntax/head_ossec_config.active-response.html#element-executable">executable</a>
-</li>
-      <li><a href="docs/syntax/head_ossec_config.active-response.html#element-expect">expect</a>
-</li>
-      <li><a href="docs/syntax/head_rules.html#element-extra_data">extra_data</a>
-</li>
-  </ul></td>
-</tr></table>
-
-<h2 id="F">F</h2>
-<table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="docs/manual/output/syslog-output.html#element-format">format</a>, <a href="docs/syntax/head_ossec_config.email_alerts.html#element-format">[1]</a>, <a href="docs/syntax/head_ossec_config.syslog_output.html#element-format">[2]</a>
-</li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="docs/manual/agent/agentless-monitoring.html#element-frequency">frequency</a>, <a href="docs/manual/monitoring/index.html#element-frequency">[1]</a>, <a href="docs/manual/rootcheck/manual-rootcheck.html#element-frequency">[2]</a>, <a href="docs/syntax/head_ossec_config.agentless.html#element-frequency">[3]</a>, <a href="docs/syntax/head_ossec_config.localfile.html#element-frequency">[4]</a>, <a href="docs/syntax/head_ossec_config.rootcheck.html#element-frequency">[5]</a>
-</li>
-  </ul></td>
-</tr></table>
-
-<h2 id="G">G</h2>
-<table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="docs/syntax/head_ossec_config.global.html#element-geoip_db_path">geoip_db_path</a>
-</li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="docs/syntax/head_ossec_config.global.html#element-global">global</a>
-</li>
-      <li><a href="docs/manual/output/reports-email-output.html#element-group">group</a>, <a href="docs/manual/output/syslog-output.html#element-group">[1]</a>, <a href="docs/syntax/head_ossec_config.email_alerts.html#element-group">[2]</a>, <a href="docs/syntax/head_ossec_config.reports.html#element-group">[3]</a>, <a href="docs/syntax/head_ossec_config.syslog_output.html#element-group">[4]</a>, <a href="docs/syntax/head_rules.html#element-group">[5]</a>
-</li>
-  </ul></td>
 </tr></table>
 
 <h2 id="H">H</h2>
@@ -1093,79 +915,13 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="glossary.html#term-hids"><strong>HIDS</strong></a>
 </li>
-      <li><a href="docs/manual/agent/agentless-monitoring.html#element-host">host</a>, <a href="docs/syntax/head_ossec_config.agentless.html#element-host">[1]</a>
-</li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="docs/syntax/head_ossec_config.global.html#element-host_information">host_information</a>
-</li>
-      <li><a href="docs/manual/output/database-output.html#element-hostname">hostname</a>, <a href="docs/syntax/head_ossec_config.database_output.html#element-hostname">[1]</a>, <a href="docs/syntax/head_rules.html#element-hostname">[2]</a>
-</li>
-  </ul></td>
-</tr></table>
-
-<h2 id="I">I</h2>
-<table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="docs/syntax/head_rules.html#element-id">id</a>
-</li>
-      <li><a href="docs/syntax/head_rules.html#element-if_group">if_group</a>
-</li>
-      <li><a href="docs/syntax/head_rules.html#element-if_level">if_level</a>
-</li>
-      <li><a href="docs/syntax/head_rules.html#element-if_matched_group">if_matched_group</a>
-</li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="docs/syntax/head_rules.html#element-if_matched_sid">if_matched_sid</a>
-</li>
-      <li><a href="docs/syntax/head_rules.html#element-if_sid">if_sid</a>
-</li>
-      <li><a href="docs/syntax/head_ossec_config.rules.html#element-include">include</a>
-</li>
-      <li><a href="docs/syntax/head_rules.html#element-info">info</a>
-</li>
-      <li><a href="docs/syntax/head_ossec_config.remote.html#element-ipv6">ipv6</a>
-</li>
-  </ul></td>
-</tr></table>
-
-<h2 id="J">J</h2>
-<table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="docs/syntax/head_ossec_config.global.html#element-jsonout_output">jsonout_output</a>
-</li>
   </ul></td>
 </tr></table>
 
 <h2 id="L">L</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="docs/manual/output/reports-email-output.html#element-level">level</a>, <a href="docs/manual/output/syslog-output.html#element-level">[1]</a>, <a href="docs/syntax/head_ossec_config.active-response.html#element-level">[2]</a>, <a href="docs/syntax/head_ossec_config.email_alerts.html#element-level">[3]</a>, <a href="docs/syntax/head_ossec_config.reports.html#element-level">[4]</a>, <a href="docs/syntax/head_ossec_config.syslog_output.html#element-level">[5]</a>
-</li>
       <li><a href="glossary.html#term-lids"><strong>LIDS</strong></a>
-</li>
-      <li><a href="docs/syntax/head_ossec_config.rules.html#element-list">list</a>, <a href="docs/syntax/head_rules.html#element-list">[1]</a>
-</li>
-      <li><a href="docs/syntax/head_ossec_config.remote.html#element-local_ip">local_ip</a>
-</li>
-      <li><a href="docs/manual/monitoring/index.html#element-localfile">localfile</a>, <a href="docs/syntax/head_ossec_config.localfile.html#element-localfile">[1]</a>
-</li>
-      <li><a href="docs/manual/monitoring/index.html#element-location">location</a>, <a href="docs/manual/output/reports-email-output.html#element-location">[1]</a>, <a href="docs/manual/output/syslog-output.html#element-location">[2]</a>, <a href="docs/syntax/head_ossec_config.active-response.html#element-location">[3]</a>, <a href="docs/syntax/head_ossec_config.localfile.html#element-location">[4]</a>, <a href="docs/syntax/head_ossec_config.reports.html#element-location">[5]</a>, <a href="docs/syntax/head_ossec_config.syslog_output.html#element-location">[6]</a>
-</li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="docs/syntax/head_ossec_config.alerts.html#element-log_alert_level">log_alert_level</a>
-</li>
-      <li><a href="docs/manual/monitoring/index.html#element-log_format">log_format</a>, <a href="docs/syntax/head_ossec_config.localfile.html#element-log_format">[1]</a>
-</li>
-      <li><a href="docs/syntax/head_ossec_config.global.html#element-logall">logall</a>
-</li>
-      <li><a href="docs/syntax/head_internal_options.analysisd.html#intopt-logcollector.loop_timeout">logcollector.loop_timeout</a>
-</li>
-      <li><a href="docs/syntax/head_internal_options.analysisd.html#intopt-logcollector.open_attempts">logcollector.open_attempts</a>
-</li>
-      <li><a href="docs/syntax/head_internal_options.analysisd.html#intopt-logcollector.remote_commands=0">logcollector.remote_commands=0</a>
 </li>
   </ul></td>
 </tr></table>
@@ -1173,14 +929,6 @@
 <h2 id="M">M</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="docs/syntax/head_internal_options.analysisd.html#intopt-maild.full_subject">maild.full_subject</a>
-</li>
-      <li><a href="docs/syntax/head_internal_options.analysisd.html#intopt-maild.geoip">maild.geoip</a>
-</li>
-      <li><a href="docs/syntax/head_internal_options.analysisd.html#intopt-maild.groupping">maild.groupping</a>
-</li>
-      <li><a href="docs/syntax/head_internal_options.analysisd.html#intopt-maild.strict_checking">maild.strict_checking</a>
-</li>
       <li>
     manage_agents command line option
 
@@ -1207,43 +955,11 @@
 </li>
       </ul></li>
   </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="docs/syntax/head_rules.html#element-match">match</a>
-</li>
-      <li><a href="docs/syntax/head_ossec_config.global.html#element-memory_size">memory_size</a>
-</li>
-      <li><a href="docs/syntax/head_internal_options.analysisd.html#intopt-monitord.compress">monitord.compress</a>
-</li>
-      <li><a href="docs/syntax/head_internal_options.analysisd.html#intopt-monitord.day_wait">monitord.day_wait</a>
-</li>
-      <li><a href="docs/syntax/head_internal_options.analysisd.html#intopt-monitord.monitor_agents">monitord.monitor_agents</a>
-</li>
-      <li><a href="docs/syntax/head_internal_options.analysisd.html#intopt-monitord.sign">monitord.sign</a>
-</li>
-  </ul></td>
-</tr></table>
-
-<h2 id="N">N</h2>
-<table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="docs/syntax/head_agent_config.html#element-name">name</a>, <a href="docs/syntax/head_ossec_config.active-response.html#element-name">[1]</a>
-</li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="docs/syntax/head_ossec_config.client.html#element-notify_time">notify_time</a>
-</li>
-  </ul></td>
 </tr></table>
 
 <h2 id="O">O</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="docs/manual/monitoring/index.html#element-only-future-events">only-future-events</a>, <a href="docs/syntax/head_ossec_config.localfile.html#element-only-future-events">[1]</a>
-</li>
-      <li><a href="docs/syntax/head_rules.html#element-options">options</a>
-</li>
-      <li><a href="docs/syntax/head_agent_config.html#element-os">os</a>
-</li>
       <li>
     ossec-agentd command line option
 
@@ -1405,8 +1121,6 @@
         <li><a href="docs/programs/ossec-execd.html#cmdoption-ossec-execd-t">-t</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     ossec-logcollector command line option
 
@@ -1424,6 +1138,8 @@
         <li><a href="docs/programs/ossec-logcollector.html#cmdoption-ossec-logcollector-t">-t</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     ossec-logtest command line option
 
@@ -1578,53 +1294,9 @@
   </ul></td>
 </tr></table>
 
-<h2 id="P">P</h2>
-<table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="docs/manual/output/database-output.html#element-password">password</a>, <a href="docs/syntax/head_ossec_config.database_output.html#element-password">[1]</a>
-</li>
-      <li><a href="docs/manual/output/syslog-output.html#element-port">port</a>, <a href="docs/syntax/head_ossec_config.client.html#element-port">[1]</a>, <a href="docs/syntax/head_ossec_config.remote.html#element-port">[2]</a>, <a href="docs/syntax/head_ossec_config.syslog_output.html#element-port">[3]</a>
-</li>
-      <li><a href="docs/syntax/head_ossec_config.global.html#element-prelude_output">prelude_output</a>
-</li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="docs/syntax/head_agent_config.html#element-profile">profile</a>
-</li>
-      <li><a href="docs/syntax/head_rules.html#element-program_name">program_name</a>
-</li>
-      <li><a href="docs/syntax/head_ossec_config.remote.html#element-protocol">protocol</a>
-</li>
-  </ul></td>
-</tr></table>
-
-<h2 id="Q">Q</h2>
-<table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="docs/manual/monitoring/index.html#element-query">query</a>, <a href="docs/syntax/head_ossec_config.localfile.html#element-query">[1]</a>
-</li>
-  </ul></td>
-</tr></table>
-
 <h2 id="R">R</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="docs/syntax/head_rules.html#element-regex">regex</a>
-</li>
-      <li><a href="docs/syntax/head_ossec_config.remote.html#element-remote">remote</a>
-</li>
-      <li><a href="docs/syntax/head_internal_options.analysisd.html#intopt-remoted.comp_average_printout">remoted.comp_average_printout</a>
-</li>
-      <li><a href="docs/syntax/head_internal_options.analysisd.html#intopt-remoted.debug">remoted.debug</a>
-</li>
-      <li><a href="docs/syntax/head_internal_options.analysisd.html#intopt-remoted.recv_counter_flush">remoted.recv_counter_flush</a>
-</li>
-      <li><a href="docs/syntax/head_internal_options.analysisd.html#intopt-remoted.verify_msg_id">remoted.verify_msg_id</a>
-</li>
-      <li><a href="docs/syntax/head_ossec_config.active-response.html#element-repeated_offenders">repeated_offenders</a>
-</li>
-      <li><a href="docs/manual/output/reports-email-output.html#element-reports">reports</a>, <a href="docs/syntax/head_ossec_config.reports.html#element-reports">[1]</a>
-</li>
       <li>
     rootcheck_control command line option
 
@@ -1649,63 +1321,11 @@
 </li>
       </ul></li>
   </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="docs/manual/rootcheck/manual-rootcheck.html#element-rootkit_files">rootkit_files</a>, <a href="docs/syntax/head_ossec_config.rootcheck.html#element-rootkit_files">[1]</a>
-</li>
-      <li><a href="docs/manual/rootcheck/manual-rootcheck.html#element-rootkit_trojans">rootkit_trojans</a>, <a href="docs/syntax/head_ossec_config.rootcheck.html#element-rootkit_trojans">[1]</a>
-</li>
-      <li><a href="docs/manual/output/reports-email-output.html#element-rule">rule</a>, <a href="docs/syntax/head_ossec_config.reports.html#element-rule">[1]</a>, <a href="docs/syntax/head_ossec_config.rules.html#element-rule">[2]</a>, <a href="docs/syntax/head_rules.html#element-rule">[3]</a>
-</li>
-      <li><a href="docs/syntax/head_ossec_config.rules.html#element-rule_dir">rule_dir</a>
-</li>
-      <li><a href="docs/manual/output/syslog-output.html#element-rule_id">rule_id</a>, <a href="docs/syntax/head_ossec_config.email_alerts.html#element-rule_id">[1]</a>, <a href="docs/syntax/head_ossec_config.syslog_output.html#element-rule_id">[2]</a>
-</li>
-      <li><a href="docs/syntax/head_ossec_config.active-response.html#element-rules_group">rules_group</a>
-</li>
-      <li><a href="docs/syntax/head_ossec_config.active-response.html#element-rules_id">rules_id</a>
-</li>
-  </ul></td>
 </tr></table>
 
 <h2 id="S">S</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="docs/syntax/head_rules.html#element-same_dst_port">same_dst_port</a>
-</li>
-      <li><a href="docs/syntax/head_rules.html#element-same_id">same_id</a>
-</li>
-      <li><a href="docs/syntax/head_rules.html#element-same_location">same_location</a>
-</li>
-      <li><a href="docs/syntax/head_rules.html#element-same_source_ip">same_source_ip</a>
-</li>
-      <li><a href="docs/syntax/head_rules.html#element-same_source_port">same_source_port</a>
-</li>
-      <li><a href="docs/syntax/head_rules.html#element-same_user">same_user</a>
-</li>
-      <li><a href="docs/manual/rootcheck/manual-rootcheck.html#element-scanall">scanall</a>, <a href="docs/syntax/head_ossec_config.rootcheck.html#element-scanall">[1]</a>
-</li>
-      <li><a href="docs/manual/output/syslog-output.html#element-server">server</a>, <a href="docs/syntax/head_ossec_config.syslog_output.html#element-server">[1]</a>
-</li>
-      <li><a href="docs/syntax/head_ossec_config.client.html#element-server-hostname">server-hostname</a>
-</li>
-      <li><a href="docs/syntax/head_ossec_config.client.html#element-server-ip">server-ip</a>
-</li>
-      <li><a href="docs/manual/output/reports-email-output.html#element-showlogs">showlogs</a>, <a href="docs/syntax/head_ossec_config.reports.html#element-showlogs">[1]</a>
-</li>
-      <li><a href="docs/manual/rootcheck/manual-rootcheck.html#element-skip_nfs">skip_nfs</a>, <a href="docs/syntax/head_ossec_config.rootcheck.html#element-skip_nfs">[1]</a>
-</li>
-      <li><a href="docs/syntax/head_ossec_config.global.html#element-smtp_server">smtp_server</a>
-</li>
-      <li><a href="docs/manual/output/reports-email-output.html#element-srcip">srcip</a>, <a href="docs/syntax/head_ossec_config.reports.html#element-srcip">[1]</a>, <a href="docs/syntax/head_rules.html#element-srcip">[2]</a>
-</li>
-      <li><a href="docs/manual/agent/agentless-monitoring.html#element-state">state</a>, <a href="docs/syntax/head_ossec_config.agentless.html#element-state">[1]</a>
-</li>
-      <li><a href="docs/syntax/head_ossec_config.global.html#element-stats">stats</a>
-</li>
-      <li><a href="docs/syntax/head_internal_options.analysisd.html#intopt-syscheck.sleep">syscheck.sleep</a>
-</li>
-      <li><a href="docs/syntax/head_internal_options.analysisd.html#intopt-syscheck.sleep_after">syscheck.sleep_after</a>
-</li>
       <li>
     syscheck_control command line option
 
@@ -1750,48 +1370,12 @@
         <li><a href="docs/programs/syscheck_update.html#id2">-u local</a>
 </li>
       </ul></li>
-      <li><a href="docs/manual/output/syslog-output.html#element-syslog_output">syslog_output</a>, <a href="docs/syntax/head_ossec_config.syslog_output.html#element-syslog_output">[1]</a>
-</li>
-      <li><a href="docs/manual/rootcheck/manual-rootcheck.html#element-system_audit">system_audit</a>, <a href="docs/syntax/head_ossec_config.rootcheck.html#element-system_audit">[1]</a>
-</li>
-  </ul></td>
-</tr></table>
-
-<h2 id="T">T</h2>
-<table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="docs/syntax/head_rules.html#element-time">time</a>
-</li>
-      <li><a href="docs/syntax/head_ossec_config.client.html#element-time-reconnect">time-reconnect</a>
-</li>
-      <li><a href="docs/syntax/head_ossec_config.active-response.html#element-timeout">timeout</a>
-</li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="docs/syntax/head_ossec_config.active-response.html#element-timeout_allowed">timeout_allowed</a>
-</li>
-      <li><a href="docs/manual/output/reports-email-output.html#element-title">title</a>, <a href="docs/syntax/head_ossec_config.reports.html#element-title">[1]</a>
-</li>
-      <li><a href="docs/manual/agent/agentless-monitoring.html#element-type">type</a>, <a href="docs/manual/output/database-output.html#element-type">[1]</a>, <a href="docs/syntax/head_ossec_config.agentless.html#element-type">[2]</a>, <a href="docs/syntax/head_ossec_config.database_output.html#element-type">[3]</a>
-</li>
   </ul></td>
 </tr></table>
 
 <h2 id="U">U</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="docs/syntax/head_rules.html#element-url">url</a>
-</li>
-      <li><a href="docs/manual/output/syslog-output.html#element-use_fqdn">use_fqdn</a>, <a href="docs/syntax/head_ossec_config.syslog_output.html#element-use_fqdn">[1]</a>
-</li>
-      <li><a href="docs/syntax/head_ossec_config.alerts.html#element-use_geoip">use_geoip</a>
-</li>
-      <li><a href="docs/manual/output/reports-email-output.html#element-user">user</a>, <a href="docs/syntax/head_ossec_config.reports.html#element-user">[1]</a>, <a href="docs/syntax/head_rules.html#element-user">[2]</a>
-</li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="docs/manual/output/database-output.html#element-username">username</a>, <a href="docs/syntax/head_ossec_config.database_output.html#element-username">[1]</a>
-</li>
       <li>
     util.sh command line option
 
@@ -1803,38 +1387,6 @@
         <li><a href="docs/programs/util.sh.html#cmdoption-util-sh-arg-addsite">addsite &lt;domain&gt;</a>
 </li>
       </ul></li>
-  </ul></td>
-</tr></table>
-
-<h2 id="W">W</h2>
-<table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="docs/syntax/head_rules.html#element-weekday">weekday</a>
-</li>
-      <li><a href="docs/syntax/head_ossec_config.global.html#element-white_list">white_list</a>
-</li>
-      <li><a href="docs/syntax/head_internal_options.analysisd.html#intopt-windows.debug">windows.debug</a>
-</li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="docs/manual/rootcheck/manual-rootcheck.html#element-windows_apps">windows_apps</a>, <a href="docs/syntax/head_ossec_config.rootcheck.html#element-windows_apps">[1]</a>
-</li>
-      <li><a href="docs/manual/rootcheck/manual-rootcheck.html#element-windows_audit">windows_audit</a>, <a href="docs/syntax/head_ossec_config.rootcheck.html#element-windows_audit">[1]</a>
-</li>
-      <li><a href="docs/manual/rootcheck/manual-rootcheck.html#element-windows_malware">windows_malware</a>, <a href="docs/syntax/head_ossec_config.rootcheck.html#element-windows_malware">[1]</a>
-</li>
-  </ul></td>
-</tr></table>
-
-<h2 id="Z">Z</h2>
-<table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="docs/syntax/head_ossec_config.global.html#element-zeromq_output">zeromq_output</a>
-</li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="docs/syntax/head_ossec_config.global.html#element-zeromq_uri">zeromq_uri</a>
-</li>
   </ul></td>
 </tr></table>
 
@@ -1851,7 +1403,7 @@
       
     </p>
     <p>
-        &copy; Copyright 2010-2019, OSSEC Project Team.<br/>
+        &copy; Copyright 2010-2020, OSSEC Project Team.<br/>
     OSSEC <b>ossec.net</b> domain owned and maintained by <a href="https://www.ossec.net" target="_blank">OSSEC Foundation</a><br/>
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.5.2 - 
     Home page graphics courtesy of <a href="https://pixabay.com" target="_blank">pixabay</a>

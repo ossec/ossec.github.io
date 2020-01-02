@@ -17,7 +17,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '3.2.0',
+        VERSION:     '3.3.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true,
@@ -34,20 +34,10 @@
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-  
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
 <meta name="apple-mobile-web-app-capable" content="yes">
-
-  
-  
-  <link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
-  
-  <style type="text/css">
-    ul.ablog-archive {list-style: none; overflow: auto; margin-left: 0px}
-    ul.ablog-archive li {float: left; margin-right: 5px; font-size: 80%}
-  </style>
 
   </head>
   <body role="document">
@@ -70,7 +60,6 @@
           <ul class="nav navbar-nav">
             
                 <li><a href="../about.html">About <i class="fa fa-info-circle"></i></a></li>
-                <li><a href="../blog.html">Blog <i class="fa fa-archive"></i></a></li>
                 <li><a href="../docs/">Documentation <i class="fa fa-book"></i></a></li>
                 <li><a href="../downloads.html">Downloads <i class="fa fa-download"></i></a></li>
             
@@ -83,7 +72,24 @@
      href="../index.html">Site <b class="caret"></b></a>
   <ul class="dropdown-menu globaltoc"
       role="menu"
-      aria-labelledby="dLabelGlobalToc"></ul>
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../docs/manual/index.html">Manual</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../docs/faq/index.html">Frequently asked questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../docs/cookbooks/index.html">User submitted Cookbooks</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../docs/development/build/index.html">Build, compile, and not much more</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../docs/development/oRFC/index.html">oRFC:</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../docs/syntax/index.html">Syntax and Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../docs/formats/index.html">Output Formats</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../docs/programs/index.html">Man pages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../docs/examples/index.html">Examples</a></li>
+</ul>
+</ul>
 </li>
               
             
@@ -118,13 +124,10 @@
   <div class="section" id="how-to-start-helping-with-the-project">
 <h1>How to start helping with the project?<a class="headerlink" href="#how-to-start-helping-with-the-project" title="Permalink to this headline">¶</a></h1>
 <p>OSSEC is maintained by a small group of people from around the world. If you wish to
-get involved, there are multiple ways to do so. Check out our list of active contributors:
-<a class="reference external" href="http://www.ossec.net/en/about.html#dev-team">ossec team</a>.</p>
+get involved, there are multiple ways to do so.</p>
 <div class="section" id="testing-ossec">
 <h2>Testing OSSEC:<a class="headerlink" href="#testing-ossec" title="Permalink to this headline">¶</a></h2>
-<p>The easiest way of getting involved with OSSEC is by helping testing it. We always release
-beta versions and we need a good quality control on every supported version before publicly
-releasing it.</p>
+<p>The easiest way of getting involved with OSSEC is by helping testing it.</p>
 </div>
 <div class="section" id="translating-ossec">
 <h2>Translating OSSEC:<a class="headerlink" href="#translating-ossec" title="Permalink to this headline">¶</a></h2>
@@ -149,23 +152,19 @@ directory:</p>
 </div>
 <div class="section" id="documenting-ossec">
 <h2>Documenting OSSEC:<a class="headerlink" href="#documenting-ossec" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="development-of-the-ossec-web-ui">
-<h2>Development of the OSSEC web ui:<a class="headerlink" href="#development-of-the-ossec-web-ui" title="Permalink to this headline">¶</a></h2>
-<p>Requires HTML/PHP knowledge.</p>
+<p>The OSSEC documentation is hosted in a <a class="reference external" href="https://github.com/ossec/ossec-docs">github repository</a>.
+Issues and pull requests can be submitted on the site.
+Emails containing details of issues can also be sent to the <a class="reference external" href="https://groups.google.com/forum/#!forum/ossec-list">ossec-list</a> google group.</p>
 </div>
 <div class="section" id="development-of-ossec">
 <h2>Development of OSSEC:<a class="headerlink" href="#development-of-ossec" title="Permalink to this headline">¶</a></h2>
-<p>The last way to get involved is by actually helping with the development of ossec. You must
-know <strong>C</strong> and be willing to take some time (actually quite some time) to understand how
-the internals work.</p>
+<p>The OSSEC code is hosted in a <a class="reference external" href="https://github.com/ossec/ossec-hids">github repository</a>.
+Issues and pull requests can be submited on the site.</p>
+<p>Contributing to the development of OSSEC&#8217;s code base will most likely require knwoledge of <strong>C</strong>,
+and will take time learning how the internals work.</p>
 </div>
 </div>
 
-  <div class="section">
-  
-  
-  </div>
 
     </div>
       
@@ -178,7 +177,7 @@ the internals work.</p>
       
     </p>
     <p>
-        &copy; Copyright 2010-2019, OSSEC Project Team.<br/>
+        &copy; Copyright 2010-2020, OSSEC Project Team.<br/>
     OSSEC <b>ossec.net</b> domain owned and maintained by <a href="https://www.ossec.net" target="_blank">OSSEC Foundation</a><br/>
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.5.2 - 
     Home page graphics courtesy of <a href="https://pixabay.com" target="_blank">pixabay</a>

@@ -17,7 +17,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '3.2.0',
+        VERSION:     '3.3.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true,
@@ -34,20 +34,12 @@
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-  
+    <link rel="next" title="ossec.conf: syntax and options" href="ossec_config.html" />
+    <link rel="prev" title="Rules Syntax" href="head_rules.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
 <meta name="apple-mobile-web-app-capable" content="yes">
-
-  
-  
-  <link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
-  
-  <style type="text/css">
-    ul.ablog-archive {list-style: none; overflow: auto; margin-left: 0px}
-    ul.ablog-archive li {float: left; margin-right: 5px; font-size: 80%}
-  </style>
 
   </head>
   <body role="document">
@@ -70,7 +62,6 @@
           <ul class="nav navbar-nav">
             
                 <li><a href="../../about.html">About <i class="fa fa-info-circle"></i></a></li>
-                <li><a href="../../blog.html">Blog <i class="fa fa-archive"></i></a></li>
                 <li><a href="../">Documentation <i class="fa fa-book"></i></a></li>
                 <li><a href="../../downloads.html">Downloads <i class="fa fa-download"></i></a></li>
             
@@ -83,13 +74,38 @@
      href="../../index.html">Site <b class="caret"></b></a>
   <ul class="dropdown-menu globaltoc"
       role="menu"
-      aria-labelledby="dLabelGlobalToc"></ul>
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../manual/index.html">Manual</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../faq/index.html">Frequently asked questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cookbooks/index.html">User submitted Cookbooks</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../development/build/index.html">Build, compile, and not much more</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/oRFC/index.html">oRFC:</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Syntax and Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../formats/index.html">Output Formats</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../programs/index.html">Man pages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/index.html">Examples</a></li>
+</ul>
+</ul>
 </li>
               
             
             
               
                 
+  <li>
+    <a href="head_rules.html" title="Previous Chapter: Rules Syntax"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; Rules Syntax</span>
+    </a>
+  </li>
+  <li>
+    <a href="ossec_config.html" title="Next Chapter: ossec.conf: syntax and options"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">ossec.conf: s... &raquo;</span>
+    </a>
+  </li>
               
             
             
@@ -122,107 +138,9 @@
 </div>
 <div class="section" id="options">
 <h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
-<dl class="element">
-<dt id="element-decoder">
-<code class="descname">decoder</code><a class="headerlink" href="#element-decoder" title="Permalink to this definition">¶</a></dt>
-<dd><p><strong>Attributes:</strong></p>
-<ul class="simple">
-<li><em>id:</em>:</li>
-<li><em>name</em>:</li>
-<li><em>type</em>:</li>
-<li><em>status</em>:</li>
-</ul>
-</dd></dl>
-
-<dl class="element">
-<dt id="element-decoder.parent">
-<code class="descname">decoder.parent</code><a class="headerlink" href="#element-decoder.parent" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="element">
-<dt id="element-decoder.accumulate">
-<code class="descname">decoder.accumulate</code><a class="headerlink" href="#element-decoder.accumulate" title="Permalink to this definition">¶</a></dt>
-<dd><div class="versionadded">
-<p><span class="versionmodified">New in version 2.9.0.</span></p>
-</div>
-<p>Allow OSSEC to track events over multiple log messages based on a decoded id.</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;decoder</span> <span class="na">name=</span><span class="s">&quot;example&quot;</span><span class="nt">&gt;</span>
-  ...
-  <span class="nt">&lt;order&gt;</span>id<span class="nt">&lt;/order&gt;</span>
-  <span class="nt">&lt;accumulate/&gt;</span>
-<span class="nt">&lt;/decoder&gt;</span>
-</pre></div>
-</div>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Requires a regex populating the <code class="docutils literal"><span class="pre">id</span></code> field.</p>
-</div>
-<div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">accumulate first appeared in OSSEC 2.9.0</p>
-</div>
-</dd></dl>
-
-<dl class="element">
-<dt id="element-decoder.program_name">
-<code class="descname">decoder.program_name</code><a class="headerlink" href="#element-decoder.program_name" title="Permalink to this definition">¶</a></dt>
-<dd><p><strong>Allowed:</strong> Any <a class="reference internal" href="regex.html#os-match"><span class="std std-ref">OS_Match/sregex Syntax</span></a></p>
-</dd></dl>
-
-<dl class="element">
-<dt id="element-decoder.prematch">
-<code class="descname">decoder.prematch</code><a class="headerlink" href="#element-decoder.prematch" title="Permalink to this definition">¶</a></dt>
-<dd><p><strong>Allowed:</strong> Any <a class="reference internal" href="regex.html#os-match"><span class="std std-ref">OS_Match/sregex Syntax</span></a></p>
-</dd></dl>
-
-<dl class="element">
-<dt id="element-decoder.regex">
-<code class="descname">decoder.regex</code><a class="headerlink" href="#element-decoder.regex" title="Permalink to this definition">¶</a></dt>
-<dd><p><strong>Allowed:</strong> Any <a class="reference internal" href="regex.html#os-regex"><span class="std std-ref">OS_Regex/regex Syntax</span></a></p>
-</dd></dl>
-
-<dl class="element">
-<dt id="element-decoder.order">
-<code class="descname">decoder.order</code><a class="headerlink" href="#element-decoder.order" title="Permalink to this definition">¶</a></dt>
-<dd><p><strong>Allowed:</strong></p>
-<blockquote>
-<div><ul class="simple">
-<li>location - where the log came from (only on FTS)</li>
-<li>srcuser  - extracts the source username</li>
-<li>dstuser  - extracts the destination (target) username</li>
-<li>user     - an alias to dstuser (only one of the two can be used)</li>
-<li>srcip    - source ip</li>
-<li>dstip    - dst ip</li>
-<li>srcport  - source port</li>
-<li>dstport  - destination port</li>
-<li>protocol - protocol</li>
-<li>id       - event id</li>
-<li>url      - url of the event</li>
-<li>action   - event action (deny, drop, accept, etc)</li>
-<li>status   - event status (success, failure, etc)</li>
-<li>extra_data     - Any extra data</li>
-</ul>
-</div></blockquote>
-</dd></dl>
-
-<dl class="element">
-<dt id="element-decoder.fts">
-<code class="descname">decoder.fts</code><a class="headerlink" href="#element-decoder.fts" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="element">
-<dt id="element-decoder.ftscomment">
-<code class="descname">decoder.ftscomment</code><a class="headerlink" href="#element-decoder.ftscomment" title="Permalink to this definition">¶</a></dt>
-<dd><p>Unused at this time.</p>
-</dd></dl>
-
 </div>
 </div>
 
-  <div class="section">
-  
-  
-  </div>
 
     </div>
       
@@ -235,7 +153,7 @@
       
     </p>
     <p>
-        &copy; Copyright 2010-2019, OSSEC Project Team.<br/>
+        &copy; Copyright 2010-2020, OSSEC Project Team.<br/>
     OSSEC <b>ossec.net</b> domain owned and maintained by <a href="https://www.ossec.net" target="_blank">OSSEC Foundation</a><br/>
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.5.2 - 
     Home page graphics courtesy of <a href="https://pixabay.com" target="_blank">pixabay</a>
