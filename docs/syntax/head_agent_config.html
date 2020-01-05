@@ -157,6 +157,39 @@ It should be readable by the ossec user.</p>
 </div>
 <div class="section" id="options">
 <h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<dl class="element">
+<dt id="element-agent_config_options">
+<code class="descname">agent_config_options</code><a class="headerlink" href="#element-agent_config_options" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="element">
+<dt id="element-agent_config">
+<code class="descname">agent_config</code><a class="headerlink" href="#element-agent_config" title="Permalink to this definition">¶</a></dt>
+<dd><p>Defines the beginning or end of an agent configuration block.</p>
+<dl class="element">
+<dt id="element-name">
+<code class="descname">name</code><a class="headerlink" href="#element-name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<p>This option to <code class="docutils literal"><span class="pre">agent_config</span></code> allows you to assign the block the one particular agent by using the agent&#8217;s name.</p>
+<p><strong>Example:</strong> &lt;agent_config name=&#8221;agent007&#8221;&gt;</p>
+<dl class="element">
+<dt id="element-os">
+<code class="descname">os</code><a class="headerlink" href="#element-os" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<p>This option to <code class="docutils literal"><span class="pre">agent_config</span></code> allows you to assign the block to an operating system.</p>
+<p><strong>Example:</strong> &lt;agent_config os=&#8221;Windows&#8221;&gt;</p>
+<p><strong>Allowed:</strong> Any OS family (Windows, Linux, OpenBSD, etc.)</p>
+<dl class="element">
+<dt id="element-profile">
+<code class="descname">profile</code><a class="headerlink" href="#element-profile" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<p>This option to <code class="docutils literal"><span class="pre">agent_config</span></code> allows you to assign a profile name to the the block. Any agent may use this block if it is configured to use the defined profile.</p>
+<p><strong>Example:</strong> &lt;agent_config profile=&#8221;webservers&#8221;&gt;</p>
+</dd></dl>
+
 </div>
 </div>
 

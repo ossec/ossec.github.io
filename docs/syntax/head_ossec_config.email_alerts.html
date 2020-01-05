@@ -165,6 +165,86 @@ and used within the &lt;ossec_config&gt; tag.</p>
 </div>
 <div class="section" id="options">
 <h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<dl class="element">
+<dt id="element-email_alerts">
+<code class="descname">email_alerts</code><a class="headerlink" href="#element-email_alerts" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="element">
+<dt id="element-email_to">
+<code class="descname">email_to</code><a class="headerlink" href="#element-email_to" title="Permalink to this definition">¶</a></dt>
+<dd><p>E-Mail recipients of alerts</p>
+<p><strong>Allowed:</strong> Any valid e-mail address</p>
+</dd></dl>
+
+<dl class="element">
+<dt id="element-level">
+<code class="descname">level</code><a class="headerlink" href="#element-level" title="Permalink to this definition">¶</a></dt>
+<dd><p>Minimum alerting level to forward the e-mails.</p>
+<p><strong>Allowed:</strong> Any alert level 0 to 16</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><code class="docutils literal"><span class="pre">level</span></code> should be set at or above the <a class="reference external" href="./head_ossec_config.alerts.html#element-email_alert_level">email_alert_level</a> in the <code class="docutils literal"><span class="pre">&lt;alerts&gt;</span></code> section of the configuration.</p>
+</div>
+</dd></dl>
+
+<dl class="element">
+<dt id="element-group">
+<code class="descname">group</code><a class="headerlink" href="#element-group" title="Permalink to this definition">¶</a></dt>
+<dd><p>The alert that must match this group to be forwarded. Multiple groups can be separated with a pipe character (&#8220;|&#8221;).</p>
+<p><strong>Allowed:</strong> One or more groups or categories.</p>
+</dd></dl>
+
+<dl class="element">
+<dt id="element-event_location">
+<code class="descname">event_location</code><a class="headerlink" href="#element-event_location" title="Permalink to this definition">¶</a></dt>
+<dd><p>The alert must match this event location to be forwarded. If multiple <code class="docutils literal"><span class="pre">&lt;event_location&gt;</span></code> options are specified, the last will be used.</p>
+<p><strong>Allowed:</strong> Any single agent name, hostname, ip address, or log file</p>
+</dd></dl>
+
+<dl class="element">
+<dt id="element-format">
+<code class="descname">format</code><a class="headerlink" href="#element-format" title="Permalink to this definition">¶</a></dt>
+<dd><p>Specifies the format of the e-mail</p>
+<ul class="simple">
+<li>full: for normal e-mails</li>
+<li>sms: for reduced size suitable for SMS</li>
+</ul>
+<p><strong>Default:</strong> full</p>
+<p><strong>Allowed:</strong> full/sms</p>
+</dd></dl>
+
+<dl class="element">
+<dt id="element-rule_id">
+<code class="descname">rule_id</code><a class="headerlink" href="#element-rule_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Option to send granular emails based on rule id.</p>
+<p><strong>Allowed:</strong>  One or more rule IDs can be used here, separated by a comma and space (<a href="#id1"><span class="problematic" id="id2">``</span></a>, <a href="#id3"><span class="problematic" id="id4">``</span></a>).</p>
+<p><strong>Example:</strong></p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">&lt;rule_id&gt;5701, 5702&lt;/rule_id&gt;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="element">
+<dt id="element-do_not_delay">
+<code class="descname">do_not_delay</code><a class="headerlink" href="#element-do_not_delay" title="Permalink to this definition">¶</a></dt>
+<dd><p>Option to send the e-mail right away (no delay).</p>
+<p><strong>Example:</strong></p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">&lt;do_not_delay /&gt;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="element">
+<dt id="element-do_not_group">
+<code class="descname">do_not_group</code><a class="headerlink" href="#element-do_not_group" title="Permalink to this definition">¶</a></dt>
+<dd><p>Option to do not group alerts for this e-mail.</p>
+<p><strong>Example:</strong></p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">&lt;do_not_group /&gt;</span>
+</pre></div>
+</div>
+</dd></dl>
+
 </div>
 <div class="section" id="examples">
 <h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>

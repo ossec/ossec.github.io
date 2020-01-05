@@ -176,9 +176,141 @@ and used within the &lt;ossec_config&gt; tag.</p>
 </div>
 <div class="section" id="command-options">
 <h2>Command Options<a class="headerlink" href="#command-options" title="Permalink to this headline">¶</a></h2>
+<dl class="element">
+<dt id="element-command">
+<code class="descname">command</code><a class="headerlink" href="#element-command" title="Permalink to this definition">¶</a></dt>
+<dd><p>In the commands configuration you create new &#8220;commands&#8221; to be used as responses.
+You can have as many commands as you want. Each one should be inside their own &#8220;command&#8221; element. <code class="docutils literal"><span class="pre">command</span></code> is required.</p>
+</dd></dl>
+
+<dl class="element">
+<dt id="element-name">
+<code class="descname">name</code><a class="headerlink" href="#element-name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Used to link the command to the response. <code class="docutils literal"><span class="pre">name</span></code> is required.</p>
+</dd></dl>
+
+<dl class="element">
+<dt id="element-executable">
+<code class="descname">executable</code><a class="headerlink" href="#element-executable" title="Permalink to this definition">¶</a></dt>
+<dd><p>It must be a file (with exec permissions) inside <code class="docutils literal"><span class="pre">/var/ossec/active-response/bin</span></code>. <code class="docutils literal"><span class="pre">executable</span></code> is required.</p>
+<p>You don&#8217;t need to provide the whole path.</p>
+</dd></dl>
+
+<dl class="element">
+<dt id="element-expect">
+<code class="descname">expect</code><a class="headerlink" href="#element-expect" title="Permalink to this definition">¶</a></dt>
+<dd><p>The arguments this command is expecting (options are srcip and username). If a field is not within the <code class="docutils literal"><span class="pre">expect</span></code> option it will be passed as a dash (<code class="docutils literal"><span class="pre">-</span></code>) instead of the actual value. For instance, if <code class="docutils literal"><span class="pre">srcip</span></code> is required for an active-response script to work it <strong>must</strong> be inside of an <code class="docutils literal"><span class="pre">expect</span></code> option. <code class="docutils literal"><span class="pre">expect</span></code> is required.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><code class="docutils literal"><span class="pre">expect</span></code> is required, but it is not required to populate it. <code class="docutils literal"><span class="pre">&lt;expect&gt;&lt;/expect&gt;</span></code> is valid if no options need to be passed to the active-response script.</p>
+</div>
+</dd></dl>
+
+<dl class="element">
+<dt id="element-timeout_allowed">
+<code class="descname">timeout_allowed</code><a class="headerlink" href="#element-timeout_allowed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Specifies if this command supports a timeout. This is optional, and defaults to <code class="docutils literal"><span class="pre">yes</span></code>.</p>
+</dd></dl>
+
 </div>
 <div class="section" id="active-response-options">
 <h2>Active-response Options<a class="headerlink" href="#active-response-options" title="Permalink to this headline">¶</a></h2>
+<dl class="element">
+<dt id="element-active-response">
+<code class="descname">active-response</code><a class="headerlink" href="#element-active-response" title="Permalink to this definition">¶</a></dt>
+<dd><p>In the active-response configuration, you bind the commands (created) to events.
+You can have as many responses as you want. Each one should be inside their own
+“active-response” element.</p>
+</dd></dl>
+
+<dl class="element">
+<dt id="element-disabled">
+<code class="descname">disabled</code><a class="headerlink" href="#element-disabled" title="Permalink to this definition">¶</a></dt>
+<dd><p>Disables active response if set to yes. If this is not defined active response is enabled on unix systems, and disabled on Windows systems.
+This option is available on server, local, and agent installations.
+Setting it to <code class="docutils literal"><span class="pre">yes</span></code> on an agent will disable active-response for that agent only,
+while setting it on the server will disable all active-response.</p>
+</dd></dl>
+
+<dl class="element">
+<dt id="element-command">
+<code class="descname">command</code><a class="headerlink" href="#element-command" title="Permalink to this definition">¶</a></dt>
+<dd><p>Used to link the response to the command</p>
+</dd></dl>
+
+<dl class="element">
+<dt id="element-location">
+<code class="descname">location</code><a class="headerlink" href="#element-location" title="Permalink to this definition">¶</a></dt>
+<dd><p>Where the command should be executed. You have four options:</p>
+<p><strong>Allowed:</strong></p>
+<ul class="simple">
+<li><em>local</em>: on the agent that generated the event</li>
+<li><em>server</em>: on the OSSEC server</li>
+<li><em>defined-agent</em>: on a specific agent (when using this option, you need to set the
+agent_id to use)</li>
+<li><em>all</em>: all agents</li>
+</ul>
+</dd></dl>
+
+<dl class="element">
+<dt id="element-agent_id">
+<code class="descname">agent_id</code><a class="headerlink" href="#element-agent_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>The ID of the agent to execute the response (when defined-agent is set).</p>
+</dd></dl>
+
+<dl class="element">
+<dt id="element-level">
+<code class="descname">level</code><a class="headerlink" href="#element-level" title="Permalink to this definition">¶</a></dt>
+<dd><p>The response will be executed on any event with this level or higher.</p>
+</dd></dl>
+
+<dl class="element">
+<dt id="element-rules_group">
+<code class="descname">rules_group</code><a class="headerlink" href="#element-rules_group" title="Permalink to this definition">¶</a></dt>
+<dd><p>The response will be executed on any event in the defined group. Multiple groups can be defined if separated by a pipe (<cite>|</cite>).</p>
+</dd></dl>
+
+<dl class="element">
+<dt id="element-rules_id">
+<code class="descname">rules_id</code><a class="headerlink" href="#element-rules_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>The response will be executed on any event with the defined ID. Multiple IDs can be specified if separated by a comma.</p>
+</dd></dl>
+
+<dl class="element">
+<dt id="element-timeout">
+<code class="descname">timeout</code><a class="headerlink" href="#element-timeout" title="Permalink to this definition">¶</a></dt>
+<dd><p>How long in seconds until the response command is executed (IP unblocked, for example).</p>
+</dd></dl>
+
+<dl class="element">
+<dt id="element-repeated_offenders">
+<code class="descname">repeated_offenders</code><a class="headerlink" href="#element-repeated_offenders" title="Permalink to this definition">¶</a></dt>
+<dd><p>A comma separated list of increasing timeouts in minutes for repeat offenders. There can be a maximum of 5 entries.</p>
+<blockquote>
+<div><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This must be set in the <code class="docutils literal"><span class="pre">ossec.conf</span></code> of the <strong>agent</strong> in an agent/server setup.</p>
+</div>
+</div></blockquote>
+<p><strong>Example of a local/standalone:</strong></p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">&lt;active-response&gt;</span>
+<span class="go">  &lt;command&gt;firewall-block&lt;/command&gt;</span>
+<span class="go">  &lt;location&gt;defined-agent&lt;/location&gt;</span>
+<span class="go">  &lt;agent_id&gt;001&lt;/agent_id&gt;</span>
+<span class="go">  &lt;rules_group&gt;authentication_failed,authentication_failures&lt;/rules_group&gt;</span>
+<span class="go">  &lt;timeout&gt;600&lt;/timeout&gt;</span>
+<span class="go">  &lt;repeated_offenders&gt;30,60,120&lt;/repeated_offenders&gt;</span>
+<span class="go">&lt;/active-response&gt;</span>
+</pre></div>
+</div>
+<p><strong>Example of an agent:</strong></p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">&lt;active-response&gt;</span>
+<span class="go">  &lt;repeated_offenders&gt;30,60,120&lt;/repeated_offenders&gt;</span>
+<span class="go">&lt;/active-response&gt;</span>
+</pre></div>
+</div>
+</dd></dl>
+
 </div>
 <div class="section" id="example-active-response-configurations">
 <span id="example-ar-configuration"></span><h2>Example active response configurations:<a class="headerlink" href="#example-active-response-configurations" title="Permalink to this headline">¶</a></h2>

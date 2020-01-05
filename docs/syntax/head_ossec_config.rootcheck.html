@@ -172,6 +172,185 @@
 </div>
 <div class="section" id="options">
 <h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<dl class="element">
+<dt id="element-base_directory">
+<code class="descname">base_directory</code><a class="headerlink" href="#element-base_directory" title="Permalink to this definition">¶</a></dt>
+<dd><p>The base directory that will be appended to the following options:</p>
+<ul class="simple">
+<li>rootkit_files</li>
+<li>rootkit_trojans</li>
+<li>windows_malware</li>
+<li>windows_audit</li>
+<li>windows_apps</li>
+<li>systems_audit</li>
+</ul>
+<p><strong>Allowed:</strong> Path to a directory
+<strong>Default:</strong> /var/ossec</p>
+</dd></dl>
+
+<dl class="element">
+<dt id="element-rootkit_files">
+<code class="descname">rootkit_files</code><a class="headerlink" href="#element-rootkit_files" title="Permalink to this definition">¶</a></dt>
+<dd><p>This option can be used to change the location of the rootkit files database.</p>
+<p><strong>Allowed:</strong> A file with the rootkit files signatures</p>
+<p><strong>Default:</strong> /etc/shared/rootkit_files.txt</p>
+</dd></dl>
+
+<dl class="element">
+<dt id="element-rootkit_trojans">
+<code class="descname">rootkit_trojans</code><a class="headerlink" href="#element-rootkit_trojans" title="Permalink to this definition">¶</a></dt>
+<dd><p>This option can be used to change the location of the rootkit trojans database.</p>
+<p><strong>Default:</strong> /etc/shared/rootkit_trojans.txt</p>
+<p><strong>Allowed:</strong> A file with the trojans signatures</p>
+</dd></dl>
+
+<dl class="element">
+<dt id="element-windows_audit">
+<code class="descname">windows_audit</code><a class="headerlink" href="#element-windows_audit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="element">
+<dt id="element-system_audit">
+<code class="descname">system_audit</code><a class="headerlink" href="#element-system_audit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="element">
+<dt id="element-windows_apps">
+<code class="descname">windows_apps</code><a class="headerlink" href="#element-windows_apps" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="element">
+<dt id="element-windows_malware">
+<code class="descname">windows_malware</code><a class="headerlink" href="#element-windows_malware" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="element">
+<dt id="element-scanall">
+<code class="descname">scanall</code><a class="headerlink" href="#element-scanall" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tells rootcheck to scan the whole system (may lead to some false positives).</p>
+<p><strong>Default:</strong> no</p>
+<p><strong>Allowed:</strong> yes/no</p>
+</dd></dl>
+
+<dl class="element">
+<dt id="element-frequency">
+<code class="descname">frequency</code><a class="headerlink" href="#element-frequency" title="Permalink to this definition">¶</a></dt>
+<dd><p>Frequency that the rootcheck is going to be executed (in seconds).</p>
+<p><strong>Defaults:</strong> 36000 (10 hours)</p>
+<p><strong>Allowed:</strong> Time (in seconds)</p>
+</dd></dl>
+
+<dl class="element">
+<dt id="element-disabled">
+<code class="descname">disabled</code><a class="headerlink" href="#element-disabled" title="Permalink to this definition">¶</a></dt>
+<dd><p>Disables the execution of rootcheck.</p>
+<p><strong>Default:</strong> no</p>
+<p><strong>Allowed:</strong> yes/no</p>
+</dd></dl>
+
+<dl class="element">
+<dt id="element-check_dev">
+<code class="descname">check_dev</code><a class="headerlink" href="#element-check_dev" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Enable or disable the checking for files in the `/dev` filesystem</strong></p>
+<p><strong>Default:</strong> yes</p>
+<p><strong>Allowed:</strong> yes or no</p>
+</dd></dl>
+
+<dl class="element">
+<dt id="element-check_files">
+<code class="descname">check_files</code><a class="headerlink" href="#element-check_files" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Enable or disable the checking based on the rootkit files</strong></p>
+<p><strong>Default:</strong> yes</p>
+<p><strong>Allowed:</strong> yes or no</p>
+</dd></dl>
+
+<dl class="element">
+<dt id="element-check_if">
+<code class="descname">check_if</code><a class="headerlink" href="#element-check_if" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Enable or disable the checking the network interfaces</strong></p>
+<p><strong>Default:</strong> yes</p>
+<p><strong>Allowed:</strong> yes or no</p>
+</dd></dl>
+
+<dl class="element">
+<dt id="element-check_pids">
+<code class="descname">check_pids</code><a class="headerlink" href="#element-check_pids" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Enable or disable the checking of process IDs</strong></p>
+<p><strong>Default:</strong> yes</p>
+<p><strong>Allowed:</strong> yes or no</p>
+</dd></dl>
+
+<dl class="element">
+<dt id="element-check_ports">
+<code class="descname">check_ports</code><a class="headerlink" href="#element-check_ports" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enable or disable the checking of network ports.</p>
+<p><strong>Default:</strong> yes</p>
+<p><strong>Allowed:</strong> yes or no</p>
+</dd></dl>
+
+<dl class="element">
+<dt id="element-check_sys">
+<code class="descname">check_sys</code><a class="headerlink" href="#element-check_sys" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Enable or disable the checking the filesystem looking for possible issues</strong></p>
+<p><strong>Default:</strong> yes</p>
+<p><strong>Allowed:</strong> yes or no</p>
+</dd></dl>
+
+<dl class="element">
+<dt id="element-check_trojans">
+<code class="descname">check_trojans</code><a class="headerlink" href="#element-check_trojans" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enable or disable the checking of trojans.</p>
+<p><strong>Default:</strong> yes</p>
+<p><strong>Allowed:</strong> yes or no</p>
+</dd></dl>
+
+<dl class="element">
+<dt id="element-check_unixaudit">
+<code class="descname">check_unixaudit</code><a class="headerlink" href="#element-check_unixaudit" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Enable or disable the checking of unix issues</strong></p>
+<p><strong>Default:</strong> yes</p>
+<p><strong>Allowed:</strong> yes or no</p>
+</dd></dl>
+
+<dl class="element">
+<dt id="element-check_winapps">
+<code class="descname">check_winapps</code><a class="headerlink" href="#element-check_winapps" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Enable or disable the checking of Windows apps</strong></p>
+<p><strong>Default:</strong> yes</p>
+<p><strong>Allowed:</strong> yes or no</p>
+</dd></dl>
+
+<dl class="element">
+<dt id="element-check_winaudit">
+<code class="descname">check_winaudit</code><a class="headerlink" href="#element-check_winaudit" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Enable or disable the checking of Windows issues</strong></p>
+<p><strong>Default:</strong> 1</p>
+<p><strong>Allowed:</strong> 1 or 0</p>
+</dd></dl>
+
+<dl class="element">
+<dt id="element-check_winmalware">
+<code class="descname">check_winmalware</code><a class="headerlink" href="#element-check_winmalware" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enable or disable the checking of Windows malware.</p>
+<p><strong>Default:</strong> yes</p>
+<p><strong>Allowed:</strong> yes or no</p>
+</dd></dl>
+
+<dl class="element">
+<dt id="element-skip_nfs">
+<code class="descname">skip_nfs</code><a class="headerlink" href="#element-skip_nfs" title="Permalink to this definition">¶</a></dt>
+<dd><div class="versionadded">
+<p><span class="versionmodified">New in version 2.9.0.</span></p>
+</div>
+<p>Specifies if rootcheck should scan network mounted filesystems.  Works on Linux and FreeBSD.  Currently skip_nfs will abort checks running against CIFS or NFS mounts.</p>
+<p><strong>Default:</strong> no</p>
+<p><strong>Allowed:</strong> yes/no</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This option was added in OSSEC 2.9.0.</p>
+</div>
+</dd></dl>
+
 </div>
 </div>
 

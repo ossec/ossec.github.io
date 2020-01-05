@@ -161,6 +161,43 @@ and used within the &lt;ossec_config&gt; tag.</p>
 </div>
 <div class="section" id="options">
 <h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<dl class="element">
+<dt id="element-alerts">
+<code class="descname">alerts</code><a class="headerlink" href="#element-alerts" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="element">
+<dt id="element-email_alert_level">
+<code class="descname">email_alert_level</code><a class="headerlink" href="#element-email_alert_level" title="Permalink to this definition">¶</a></dt>
+<dd><p>Minimum alert level to send e-mail notifications.</p>
+<p><strong>Default:</strong> 7</p>
+<p><strong>Allowed:</strong> Any level from 1 to 16</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This is the minimum level for an alert to trigger an email.
+This overrides granular email alert levels.
+Setting this to 10 would prevent emails for alerts at levels
+lower than 10 to be sent despite settings in the granular email configuration.
+Individual rules can override this with the <a class="reference external" href="head_rules.html#element-options">alert_by_email</a> option.</p>
+</div>
+</dd></dl>
+
+<dl class="element">
+<dt id="element-log_alert_level">
+<code class="descname">log_alert_level</code><a class="headerlink" href="#element-log_alert_level" title="Permalink to this definition">¶</a></dt>
+<dd><p>Minimum alert level to store the log messages.</p>
+<p><strong>Default:</strong> 1</p>
+<p><strong>Allowed:</strong> Any level from 1 to 16</p>
+</dd></dl>
+
+<dl class="element">
+<dt id="element-use_geoip">
+<code class="descname">use_geoip</code><a class="headerlink" href="#element-use_geoip" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enable or disable GeoIP lookups.</p>
+<p><strong>Default:</strong> Disabled</p>
+<p><strong>Allowed:</strong> yes/no</p>
+</dd></dl>
+
 </div>
 </div>
 

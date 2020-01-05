@@ -160,6 +160,52 @@ and used within the &lt;ossec_config&gt; tag.</p>
 </div>
 <div class="section" id="options">
 <h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<dl class="element">
+<dt id="element-server-ip">
+<code class="descname">server-ip</code><a class="headerlink" href="#element-server-ip" title="Permalink to this definition">¶</a></dt>
+<dd><p>Specify the IP address of the analysis server</p>
+<p><strong>Allowed:</strong> Any Valid IP Address</p>
+</dd></dl>
+
+<dl class="element">
+<dt id="element-server-hostname">
+<code class="descname">server-hostname</code><a class="headerlink" href="#element-server-hostname" title="Permalink to this definition">¶</a></dt>
+<dd><p>Specify the hostname of the analysis server</p>
+<p><strong>Allowed:</strong> Any Valid hostname</p>
+</dd></dl>
+
+<dl class="element">
+<dt id="element-port">
+<code class="descname">port</code><a class="headerlink" href="#element-port" title="Permalink to this definition">¶</a></dt>
+<dd><p>Specifies the port to send the events (must be the same to the one used by the analysis server).</p>
+<p><strong>Default:</strong> 1514</p>
+<p><strong>Allowed:</strong> Any port number from 1 to 65535</p>
+</dd></dl>
+
+<dl class="element">
+<dt id="element-config-profile">
+<code class="descname">config-profile</code><a class="headerlink" href="#element-config-profile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Specifies the <code class="docutils literal"><span class="pre">agent.conf</span></code> profiles to be used by the agent. Multiple profiles can be included, separated by a comma and a space.</p>
+<p><strong>Example:</strong></p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">&lt;client&gt;</span>
+<span class="go">  &lt;config-profile&gt;webserver, lowmemory&lt;/config-profile&gt;</span>
+<span class="go">&lt;/client&gt;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="element">
+<dt id="element-notify_time">
+<code class="descname">notify_time</code><a class="headerlink" href="#element-notify_time" title="Permalink to this definition">¶</a></dt>
+<dd><p>Specifies the time in seconds between information messages sent by the agents to the server.</p>
+</dd></dl>
+
+<dl class="element">
+<dt id="element-time-reconnect">
+<code class="descname">time-reconnect</code><a class="headerlink" href="#element-time-reconnect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Time in seconds until a reconnection attempt. This should be set to a higher number than notify_time.</p>
+</dd></dl>
+
 </div>
 </div>
 

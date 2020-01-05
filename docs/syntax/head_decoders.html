@@ -138,6 +138,100 @@
 </div>
 <div class="section" id="options">
 <h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<dl class="element">
+<dt id="element-decoder">
+<code class="descname">decoder</code><a class="headerlink" href="#element-decoder" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Attributes:</strong></p>
+<ul class="simple">
+<li><em>id</em>:</li>
+<li><em>name</em>:</li>
+<li><em>type</em>:</li>
+<li><em>status</em>:</li>
+</ul>
+</dd></dl>
+
+<dl class="element">
+<dt id="element-decoder.parent">
+<code class="descname">decoder.parent</code><a class="headerlink" href="#element-decoder.parent" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="element">
+<dt id="element-decoder.accumulate">
+<code class="descname">decoder.accumulate</code><a class="headerlink" href="#element-decoder.accumulate" title="Permalink to this definition">¶</a></dt>
+<dd><div class="versionadded">
+<p><span class="versionmodified">New in version 2.9.0.</span></p>
+</div>
+<p>Allow OSSEC to track events over multiple log messages based on a decoded id.</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;decoder</span> <span class="na">name=</span><span class="s">&quot;example&quot;</span><span class="nt">&gt;</span>
+  ...
+  <span class="nt">&lt;order&gt;</span>id<span class="nt">&lt;/order&gt;</span>
+  <span class="nt">&lt;accumulate/&gt;</span>
+<span class="nt">&lt;/decoder&gt;</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Requires a regex populating the <code class="docutils literal"><span class="pre">id</span></code> field.</p>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">accumulate first appeared in OSSEC 2.9.0</p>
+</div>
+</dd></dl>
+
+<dl class="element">
+<dt id="element-decoder.program_name">
+<code class="descname">decoder.program_name</code><a class="headerlink" href="#element-decoder.program_name" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Allowed:</strong> Any <a class="reference internal" href="regex.html#os-match"><span class="std std-ref">OS_Match/sregex Syntax</span></a></p>
+</dd></dl>
+
+<dl class="element">
+<dt id="element-decoder.prematch">
+<code class="descname">decoder.prematch</code><a class="headerlink" href="#element-decoder.prematch" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Allowed:</strong> Any <a class="reference internal" href="regex.html#os-match"><span class="std std-ref">OS_Match/sregex Syntax</span></a></p>
+</dd></dl>
+
+<dl class="element">
+<dt id="element-decoder.regex">
+<code class="descname">decoder.regex</code><a class="headerlink" href="#element-decoder.regex" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Allowed:</strong> Any <a class="reference internal" href="regex.html#os-regex"><span class="std std-ref">OS_Regex/regex Syntax</span></a></p>
+</dd></dl>
+
+<dl class="element">
+<dt id="element-decoder.order">
+<code class="descname">decoder.order</code><a class="headerlink" href="#element-decoder.order" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Allowed:</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li>location - where the log came from (only on FTS)</li>
+<li>srcuser  - extracts the source username</li>
+<li>dstuser  - extracts the destination (target) username</li>
+<li>user     - an alias to dstuser (only one of the two can be used)</li>
+<li>srcip    - source ip</li>
+<li>dstip    - dst ip</li>
+<li>srcport  - source port</li>
+<li>dstport  - destination port</li>
+<li>protocol - protocol</li>
+<li>id       - event id</li>
+<li>url      - url of the event</li>
+<li>action   - event action (deny, drop, accept, etc)</li>
+<li>status   - event status (success, failure, etc)</li>
+<li>extra_data     - Any extra data</li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+<dl class="element">
+<dt id="element-decoder.fts">
+<code class="descname">decoder.fts</code><a class="headerlink" href="#element-decoder.fts" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="element">
+<dt id="element-decoder.ftscomment">
+<code class="descname">decoder.ftscomment</code><a class="headerlink" href="#element-decoder.ftscomment" title="Permalink to this definition">¶</a></dt>
+<dd><p>Unused at this time.</p>
+</dd></dl>
+
 </div>
 </div>
 

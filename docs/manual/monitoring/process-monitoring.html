@@ -242,7 +242,7 @@ changes.</p>
 <h3>Detecting USB Storage Usage<a class="headerlink" href="#detecting-usb-storage-usage" title="Permalink to this headline">¶</a></h3>
 <p><a class="reference external" href="http://blog.rootshell.be/2010/03/15/detecting-usb-storage-usage-with-ossec/">Xavier Mertens</a> wrote a very interesting article on Detecting USB Storage Usage with
 OSSEC. He used our policy auditing module for that, but I think USB monitoring
-can be done in a much easier way with our new <a href="#id1"><span class="problematic" id="id2">:xml:`check_diff`</span></a> feature.</p>
+can be done in a much easier way with our new <a class="reference internal" href="../../syntax/head_rules.html#element-check_diff"><code class="xref std std-xml docutils literal"><span class="pre">check_diff</span></code></a> feature.</p>
 <p>To get started, first configure your Windows agents to monitor the USBSTOR
 registry entry using the reg command:</p>
 <div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;agent_config</span> <span class="na">os=</span><span class="s">&quot;windows&quot;</span><span class="nt">&gt;</span>
