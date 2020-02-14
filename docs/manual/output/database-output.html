@@ -55,15 +55,15 @@
         </button>
         <a class="navbar-brand" href="../../../index.html"><img src="../../../_static/ossec_logo_bare_small.png">
           OSSEC</a>
-        <span class="navbar-text navbar-version pull-left"><b>3.3</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>3.6.0</b></span>
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
           <ul class="nav navbar-nav">
             
-                <li><a href="../../../about.html">About <i class="fa fa-info-circle"></i></a></li>
-                <li><a href="../../">Documentation <i class="fa fa-book"></i></a></li>
-                <li><a href="../../../downloads.html">Downloads <i class="fa fa-download"></i></a></li>
+                <li><a href="https://www.ossec.net/about/">About <i class="fa fa-info-circle"></i></a></li>
+                <li><a href="https://www.ossec.net/docs/">Documentation <i class="fa fa-book"></i></a></li>
+                <li><a href="https://www.ossec.net/downloads/">Downloads <i class="fa fa-download"></i></a></li>
             
             
               <li class="dropdown globaltoc-container">
@@ -197,6 +197,12 @@
 </pre></div>
 </div>
 <p>You then need to set the DATABASE environment variable and run the &#8221;./install.sh&#8221; script, to compile OSSEC with the appropriate database support.</p>
+<p>If OSSEC had been previously compiled without database support the files created during the previous build should be removed from the <cite>src</cite> directory.</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> <span class="nb">cd</span> src
+<span class="gp">#</span> make clean
+</pre></div>
+</div>
+<p>Once the old files have been removed, the installation can be performed.</p>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> <span class="nv">DATABASE</span><span class="o">=</span>mysql ./install.sh
 <span class="go">  or</span>
 <span class="gp">#</span> <span class="nv">DATABASE</span><span class="o">=</span>pgsql ./install.sh
