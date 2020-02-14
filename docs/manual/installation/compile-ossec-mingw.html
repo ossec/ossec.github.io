@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Compiling OSSEC 2.9 with MinGW: &#8212; OSSEC</title>
+    <title>Requirements &#8212; OSSEC</title>
     
     <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
@@ -136,33 +136,24 @@
 <p class="first admonition-title">Note</p>
 <p class="last">This documentation assumes you have MinGW installed, and it is usable. An example of installing MinGW on CentOS is available <a class="reference external" href="install-mingw.html">here</a>.</p>
 </div>
-<p>It has always been a pain to generate snapshots for Windows because it required me to open up my Windows VM (slow), push the code there, compile, etc. Well, until this week when I started to play with MinGW cross-compilation feature to completely build an Windows agent from Linux.</p>
-<p>How it works? First, you need to install MinGW and <a class="reference external" href="http://nsis.sourceforge.net/Main_Page">nsis</a> (to build the installer). For OpenSSL support, an OpenSSL MinGW package will also be necessary.</p>
-<p>After that, download the source and generate the Windows package directory (replace 2.6 with the latest version or download the latest source from the github <a class="reference external" href="https://github.com/ossec/ossec-hids">repository</a>):</p>
-<blockquote id="getossec">
-<div><div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">On some systems, the command md5, sha1, or wget may not exist. Try md5sum, sha1sum
-or lynx respectively instead.</p>
+<div class="section" id="requirements">
+<h1>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><a class="reference external" href="http://www.mingw.org/">MinGW</a></li>
+<li><a class="reference external" href="http://nsis.sourceforge.net/Main_Page">nsis</a></li>
+<li><a class="reference external" href="https://www.openssl.org/">OpenSSL</a>/<a class="reference external" href="https://www.libressl.org/">LibreSSL</a> (optional)</li>
+</ul>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 3.3.</span></p>
 </div>
-<div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">wget may not be able to pull files from the OSSEC site. Use the <code class="docutils literal"><span class="pre">-U</span></code> flag to add a UserAgent,
-or obtain the checksum file by some other manner.</p>
+<ul class="simple">
+<li>PCRE2 source tree in <cite>src/external</cite></li>
+</ul>
 </div>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> wget -U ossec https://bintray.com/artifact/download/ossec/ossec-hids/ossec-hids-2.8.3.tar.gz
-<span class="gp">#</span> wget -U ossec https://raw.githubusercontent.com/ossec/ossec-docs/master/docs/whatsnew/checksums/2.8.3/ossec-hids-2.8.3.tar.gz.sha256
-<span class="gp">#</span> cat ossec-hids-2.8.3.tar.gz.sha256
-<span class="go">SHA256 (ossec-hids-2.8.3.tar.gz) = 917989e23330d18b0d900e8722392cdbe4f17364a547508742c0fd005a1df7dd</span>
-<span class="gp">#</span> sha256sum -c  ossec-hids-2.8.3.tar.gz.sha256 ossec-hids-2.8.3.tar.gz
-<span class="gp gp-VirtualEnv">(SHA256)</span> <span class="go">ossec-hids-2.8.3.tar.gz: OK</span>
-</pre></div>
-</div>
-</div></blockquote>
-<div class="section" id="compiling-ossec-2-9-with-mingw">
-<h1>Compiling OSSEC 2.9 with MinGW:<a class="headerlink" href="#compiling-ossec-2-9-with-mingw" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="compilation">
+<h1>Compilation<a class="headerlink" href="#compilation" title="Permalink to this headline">¶</a></h1>
 <p>Change directory to the src directory:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> <span class="nb">cd</span> ossec-hids-2.9.0/src
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> <span class="nb">cd</span> ossec-hids-XXX/src
 </pre></div>
 </div>
 <p>Now run <code class="docutils literal"><span class="pre">make</span> <span class="pre">TARGET=winagent</span></code>:</p>
@@ -230,38 +221,6 @@ or obtain the checksum file by some other manner.</p>
 </pre></div>
 </div>
 <p>The final output will be saved to <code class="docutils literal"><span class="pre">./win32/ossec-win32-agent.exe</span></code>.</p>
-</div>
-<div class="section" id="compiling-ossec-2-8-x-with-mingw">
-<h1>Compiling OSSEC 2.8.x with MinGW:<a class="headerlink" href="#compiling-ossec-2-8-x-with-mingw" title="Permalink to this headline">¶</a></h1>
-<p>Generate the Windows package directory:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> <span class="nb">cd</span> ossec-hids-2.8.3/src/win32
-<span class="gp">#</span> ./gen-win.sh
-</pre></div>
-</div>
-<p>Now, you will have the win-pkg directory under src. Just go there and run make.sh. Your Windows agent package should be created in a few minutes:</p>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">The <code class="docutils literal"><span class="pre">make.sh</span></code> script may require modification depending on the Linux distribution used.</p>
-</div>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> <span class="nb">cd</span> ../win-pkg
-<span class="gp">#</span> sh ./make.sh
-</pre></div>
-</div>
-<p>You will see the following in the screen:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Making windows agent</span>
-<span class="go">rootcheck/win-common.c: In function &quot;__os_winreg_querykey&quot;:</span>
-<span class="go">rootcheck/win-common.c:279: warning: pointer targets in passing argument 7 of &quot;RegEnumValueA&quot; differ in signedness</span>
-<span class="go">win-registry.c: In function &quot;os_winreg_querykey&quot;:</span>
-<span class="go">...</span>
-
-<span class="go">Output: &quot;ossec-win32-agent.exe&quot;</span>
-<span class="go">Install: 7 pages (448 bytes), 3 sections (3144 bytes), 379 instructions (10612 bytes), 247 strings (42580 bytes), 1 language table (346 bytes).</span>
-<span class="go">Uninstall: 5 pages (320 bytes),</span>
-<span class="go">1 section (1048 bytes), 301 instructions (8428 bytes), 166 strings (2646 bytes), 1 language table (290 bytes).</span>
-<span class="go">Datablock optimizer saved 8371 bytes (~0.7%).</span>
-</pre></div>
-</div>
-<p>Which means that your agent executable ossec-win32-agent.exe has been created properly.</p>
 </div>
 
 

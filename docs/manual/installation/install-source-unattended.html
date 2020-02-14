@@ -143,133 +143,133 @@ made in the configuration file.</p>
 <p class="last">If <code class="docutils literal"><span class="pre">USER_NO_STOP=&quot;y&quot;</span></code> is not set, install.sh may prompt for confirmation.</p>
 </div>
 <p>Example preloaded-vars.conf:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span># preloaded-vars.conf, Daniel B. Cid (dcid @ ossec.net).
-#
-# Use this file to customize your installations.
-# It will make the install.sh script pre-load some
-# specific options to make it run automatically
-# or with less questions.
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># preloaded-vars.conf, Daniel B. Cid (dcid @ ossec.net).</span>
+<span class="c1">#</span>
+<span class="c1"># Use this file to customize your installations.</span>
+<span class="c1"># It will make the install.sh script pre-load some</span>
+<span class="c1"># specific options to make it run automatically</span>
+<span class="c1"># or with less questions.</span>
 
-# PLEASE NOTE:
-# When we use &quot;n&quot; or &quot;y&quot; in here, it should be changed
-# to &quot;n&quot; or &quot;y&quot; in the language your are doing the
-# installation. For example, in portuguese it would
-# be &quot;s&quot; or &quot;n&quot;.
-
-
-# USER_LANGUAGE defines to language to be used.
-# It can be &quot;en&quot;, &quot;br&quot;, &quot;tr&quot;, &quot;it&quot;, &quot;de&quot; or &quot;pl&quot;.
-# In case of an invalid language, it will default
-# to English &quot;en&quot;
-#USER_LANGUAGE=&quot;en&quot;     # For english
-#USER_LANGUAGE=&quot;br&quot;     # For portuguese
+<span class="c1"># PLEASE NOTE:</span>
+<span class="c1"># When we use &quot;n&quot; or &quot;y&quot; in here, it should be changed</span>
+<span class="c1"># to &quot;n&quot; or &quot;y&quot; in the language your are doing the</span>
+<span class="c1"># installation. For example, in portuguese it would</span>
+<span class="c1"># be &quot;s&quot; or &quot;n&quot;.</span>
 
 
-# If USER_NO_STOP is set to anything, the confirmation
-# messages are not going to be asked.
-#USER_NO_STOP=&quot;y&quot;
+<span class="c1"># USER_LANGUAGE defines to language to be used.</span>
+<span class="c1"># It can be &quot;en&quot;, &quot;br&quot;, &quot;tr&quot;, &quot;it&quot;, &quot;de&quot; or &quot;pl&quot;.</span>
+<span class="c1"># In case of an invalid language, it will default</span>
+<span class="c1"># to English &quot;en&quot;</span>
+<span class="c1">#USER_LANGUAGE=&quot;en&quot;     # For english</span>
+<span class="c1">#USER_LANGUAGE=&quot;br&quot;     # For portuguese</span>
 
 
-# USER_INSTALL_TYPE defines the installation type to
-# be used during install. It can only be &quot;local&quot;,
-# &quot;agent&quot; or &quot;server&quot;.
-#USER_INSTALL_TYPE=&quot;local&quot;
-#USER_INSTALL_TYPE=&quot;agent&quot;
-#USER_INSTALL_TYPE=&quot;server&quot;
+<span class="c1"># If USER_NO_STOP is set to anything, the confirmation</span>
+<span class="c1"># messages are not going to be asked.</span>
+<span class="c1">#USER_NO_STOP=&quot;y&quot;</span>
 
 
-# USER_DIR defines the location to install ossec
-#USER_DIR=&quot;/var/ossec&quot;
+<span class="c1"># USER_INSTALL_TYPE defines the installation type to</span>
+<span class="c1"># be used during install. It can only be &quot;local&quot;,</span>
+<span class="c1"># &quot;agent&quot; or &quot;server&quot;.</span>
+<span class="c1">#USER_INSTALL_TYPE=&quot;local&quot;</span>
+<span class="c1">#USER_INSTALL_TYPE=&quot;agent&quot;</span>
+<span class="c1">#USER_INSTALL_TYPE=&quot;server&quot;</span>
 
 
-# If USER_DELETE_DIR is set to &quot;y&quot;, the directory
-# to install OSSEC will be removed if present.
-#USER_DELETE_DIR=&quot;y&quot;
+<span class="c1"># USER_DIR defines the location to install ossec</span>
+<span class="c1">#USER_DIR=&quot;/var/ossec&quot;</span>
 
 
-# If USER_ENABLE_ACTIVE_RESPONSE is set to &quot;n&quot;,
-# active response will be disabled.
-#USER_ENABLE_ACTIVE_RESPONSE=&quot;y&quot;
+<span class="c1"># If USER_DELETE_DIR is set to &quot;y&quot;, the directory</span>
+<span class="c1"># to install OSSEC will be removed if present.</span>
+<span class="c1">#USER_DELETE_DIR=&quot;y&quot;</span>
 
 
-# If USER_ENABLE_SYSCHECK is set to &quot;y&quot;,
-# syscheck will be enabled. Set to &quot;n&quot; to
-# disable it.
-#USER_ENABLE_SYSCHECK=&quot;y&quot;
+<span class="c1"># If USER_ENABLE_ACTIVE_RESPONSE is set to &quot;n&quot;,</span>
+<span class="c1"># active response will be disabled.</span>
+<span class="c1">#USER_ENABLE_ACTIVE_RESPONSE=&quot;y&quot;</span>
 
 
-# If USER_ENABLE_ROOTCHECK is set to &quot;y&quot;,
-# rootcheck will be enabled. Set to &quot;n&quot; to
-# disable it.
-#USER_ENABLE_ROOTCHECK=&quot;y&quot;
+<span class="c1"># If USER_ENABLE_SYSCHECK is set to &quot;y&quot;,</span>
+<span class="c1"># syscheck will be enabled. Set to &quot;n&quot; to</span>
+<span class="c1"># disable it.</span>
+<span class="c1">#USER_ENABLE_SYSCHECK=&quot;y&quot;</span>
 
 
-# If USER_UPDATE is set to anything, the update
-# installation will be done.
-#USER_UPDATE=&quot;y&quot;
-
-# If USER_UPDATE_RULES is set to anything, the
-# rules will also be updated.
-#USER_UPDATE_RULES=&quot;y&quot;
-
-# If USER_BINARYINSTALL is set, the installation
-# is not going to compile the code, but use the
-# binaries from ./bin/
-#USER_BINARYINSTALL=&quot;x&quot;
+<span class="c1"># If USER_ENABLE_ROOTCHECK is set to &quot;y&quot;,</span>
+<span class="c1"># rootcheck will be enabled. Set to &quot;n&quot; to</span>
+<span class="c1"># disable it.</span>
+<span class="c1">#USER_ENABLE_ROOTCHECK=&quot;y&quot;</span>
 
 
-### Agent Installation variables. ###
+<span class="c1"># If USER_UPDATE is set to anything, the update</span>
+<span class="c1"># installation will be done.</span>
+<span class="c1">#USER_UPDATE=&quot;y&quot;</span>
 
-# Specifies the IP address or hostname of the
-# ossec server. Only used on agent installations.
-# Choose only one, not both.
-# USER_AGENT_SERVER_IP=&quot;1.2.3.4&quot;
-# USER_AGENT_SERVER_NAME
+<span class="c1"># If USER_UPDATE_RULES is set to anything, the</span>
+<span class="c1"># rules will also be updated.</span>
+<span class="c1">#USER_UPDATE_RULES=&quot;y&quot;</span>
 
-
-# USER_AGENT_CONFIG_PROFILE specifies the agent&#39;s config profile
-# name. This is used to create agent.conf configuration profiles
-# for this particular profile name. Only used on agent installations.
-# Can be any string. E.g. LinuxDBServer or WindowsDomainController
-#USER_AGENT_CONFIG_PROFILE=&quot;generic&quot;
+<span class="c1"># If USER_BINARYINSTALL is set, the installation</span>
+<span class="c1"># is not going to compile the code, but use the</span>
+<span class="c1"># binaries from ./bin/</span>
+<span class="c1">#USER_BINARYINSTALL=&quot;x&quot;</span>
 
 
+<span class="c1">### Agent Installation variables. ###</span>
 
-### Server/Local Installation variables. ###
-
-# USER_ENABLE_EMAIL enables or disables email alerting.
-#USER_ENABLE_EMAIL=&quot;y&quot;
-
-# USER_EMAIL_ADDRESS defines the destination e-mail of the alerts.
-#USER_EMAIL_ADDRESS=&quot;dcid@test.ossec.net&quot;
-
-# USER_EMAIL_SMTP defines the SMTP server to send the e-mails.
-#USER_EMAIL_SMTP=&quot;test.ossec.net&quot;
+<span class="c1"># Specifies the IP address or hostname of the</span>
+<span class="c1"># ossec server. Only used on agent installations.</span>
+<span class="c1"># Choose only one, not both.</span>
+<span class="c1"># USER_AGENT_SERVER_IP=&quot;1.2.3.4&quot;</span>
+<span class="c1"># USER_AGENT_SERVER_NAME</span>
 
 
-# USER_ENABLE_SYSLOG enables or disables remote syslog.
-#USER_ENABLE_SYSLOG=&quot;y&quot;
+<span class="c1"># USER_AGENT_CONFIG_PROFILE specifies the agent&#39;s config profile</span>
+<span class="c1"># name. This is used to create agent.conf configuration profiles</span>
+<span class="c1"># for this particular profile name. Only used on agent installations.</span>
+<span class="c1"># Can be any string. E.g. LinuxDBServer or WindowsDomainController</span>
+<span class="c1">#USER_AGENT_CONFIG_PROFILE=&quot;generic&quot;</span>
 
 
-# USER_ENABLE_FIREWALL_RESPONSE enables or disables
-# the firewall response.
-#USER_ENABLE_FIREWALL_RESPONSE=&quot;y&quot;
+
+<span class="c1">### Server/Local Installation variables. ###</span>
+
+<span class="c1"># USER_ENABLE_EMAIL enables or disables email alerting.</span>
+<span class="c1">#USER_ENABLE_EMAIL=&quot;y&quot;</span>
+
+<span class="c1"># USER_EMAIL_ADDRESS defines the destination e-mail of the alerts.</span>
+<span class="c1">#USER_EMAIL_ADDRESS=&quot;dcid@test.ossec.net&quot;</span>
+
+<span class="c1"># USER_EMAIL_SMTP defines the SMTP server to send the e-mails.</span>
+<span class="c1">#USER_EMAIL_SMTP=&quot;test.ossec.net&quot;</span>
 
 
-# Enable PF firewall (OpenBSD and FreeBSD only)
-#USER_ENABLE_PF=&quot;y&quot;
+<span class="c1"># USER_ENABLE_SYSLOG enables or disables remote syslog.</span>
+<span class="c1">#USER_ENABLE_SYSLOG=&quot;y&quot;</span>
 
 
-# PF table to use (OpenBSD and FreeBSD only).
-#USER_PF_TABLE=&quot;ossec_fwtable&quot;
+<span class="c1"># USER_ENABLE_FIREWALL_RESPONSE enables or disables</span>
+<span class="c1"># the firewall response.</span>
+<span class="c1">#USER_ENABLE_FIREWALL_RESPONSE=&quot;y&quot;</span>
 
 
-# USER_WHITE_LIST is a list of IPs or networks
-# that are going to be set to never be blocked.
-#USER_WHITE_LIST=&quot;192.168.2.1 192.168.1.0/24&quot;
+<span class="c1"># Enable PF firewall (OpenBSD and FreeBSD only)</span>
+<span class="c1">#USER_ENABLE_PF=&quot;y&quot;</span>
 
 
-#### exit ? ###
+<span class="c1"># PF table to use (OpenBSD and FreeBSD only).</span>
+<span class="c1">#USER_PF_TABLE=&quot;ossec_fwtable&quot;</span>
+
+
+<span class="c1"># USER_WHITE_LIST is a list of IPs or networks</span>
+<span class="c1"># that are going to be set to never be blocked.</span>
+<span class="c1">#USER_WHITE_LIST=&quot;192.168.2.1 192.168.1.0/24&quot;</span>
+
+
+<span class="c1">#### exit ? ###</span>
 </pre></div>
 </div>
 </div>

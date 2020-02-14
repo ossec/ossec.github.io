@@ -224,16 +224,15 @@ Note, for rules which have some requirement (for example if_sid), the requiremen
 </div></blockquote>
 </li>
 </ul>
-<ul class="simple" id="overwrite">
-<li><dl class="first docutils">
-<dt><em>overwrite</em></dt>
-<dd><ul class="first last">
+<ul id="overwrite">
+<li><p class="first"><em>overwrite</em></p>
+<blockquote>
+<div><ul class="simple">
 <li>Used to supercede an OSSEC rule with local changes.</li>
 <li>This is useful to change the level or other options of rules included with OSSEC.</li>
 <li><strong>Allowed</strong> yes</li>
 </ul>
-</dd>
-</dl>
+</div></blockquote>
 </li>
 </ul>
 </dd></dl>
@@ -253,6 +252,15 @@ Note, for rules which have some requirement (for example if_sid), the requiremen
 <dd><ul class="simple">
 <li>Any regex to match against the log event.</li>
 <li><strong>Allowed:</strong> Any <a class="reference internal" href="regex.html#os-regex"><span class="std std-ref">OS_Regex/regex Syntax</span></a></li>
+</ul>
+</dd></dl>
+
+<dl class="element">
+<dt id="element-pcre2">
+<code class="descname">pcre2</code><a class="headerlink" href="#element-pcre2" title="Permalink to this definition">¶</a></dt>
+<dd><ul class="simple">
+<li>A string using the pcre2 syntax to match a log message.</li>
+<li><strong>Allowed:</strong> Any pcre2 valid string</li>
 </ul>
 </dd></dl>
 
@@ -697,8 +705,7 @@ information about the alert/event.</p>
 <dd><ul class="simple">
 <li>Add additional groups to the alert. Groups are optional tags added to alerts. They can be used by other rules by using <code class="docutils literal"><span class="pre">if_group</span></code> or <code class="docutils literal"><span class="pre">if_matched_group</span></code>, or by alert parsing tools to categorize alerts.</li>
 </ul>
-<blockquote>
-<div><em>Example:</em> &lt;group&gt;group1, group2&lt;/group&gt;</div></blockquote>
+<p><em>Example:</em> &lt;group&gt;group1, group2&lt;/group&gt;</p>
 </dd></dl>
 
 </div>

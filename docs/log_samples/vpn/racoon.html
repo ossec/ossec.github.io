@@ -126,31 +126,19 @@
 <p><a href="#id1"><span class="problematic" id="id2">*</span></a>submited by Charles (kef_list &lt;<a class="reference external" href="mailto:kef_list&#37;&#52;&#48;ibacom&#46;es">kef_list<span>&#64;</span>ibacom<span>&#46;</span>es</a>&gt;) to the Ossec List.</p>
 <div class="section" id="good-login">
 <h2>Good login:<a class="headerlink" href="#good-login" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">2006-08-10 19:22:40: INFO: respond new phase 1 negotiation:</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">2006-08-10 19:22:40: INFO: respond new phase 1 negotiation: 111.111.111.194[500]&lt;=&gt;83.36.51.44[500]</span>
+<span class="go">2006-08-10 19:22:40: INFO: begin Aggressive mode.</span>
+<span class="go">2006-08-10 19:22:40: INFO: received Vendor ID: draft-ietf-ipsec-nat-t-ike-02</span>
+<span class="go">2006-08-10 19:22:41: INFO: ISAKMP-SA established 111.111.111.114[500]-83.36.51.44[500] spi:3ac2d5023f433d3e:e2d682b6f4fc4830</span>
+<span class="go">2006-08-10 19:22:42: INFO: respond new phase 2 negotiation: 111.111.111.194[0]&lt;=&gt;83.36.51.44[0]</span>
+<span class="go">2006-08-10 19:22:42: INFO: no policy found, try to generate the policy : 10.0.1.5/32[0] 10.15.13.224/27[0] proto=any dir=in</span>
+<span class="go">2006-08-10 19:22:42: INFO: IPsec-SA established: ESP/Tunnel 83.36.51.44-&gt;111.111.111.194 spi=188599340(0xb3dcc2c)</span>
+<span class="go">2006-08-10 19:22:42: INFO: IPsec-SA established: ESP/Tunnel 111.111.111.194-&gt;83.36.51.44 spi=19221256(0x1254b08)</span>
+<span class="go">2006-08-10 19:22:42: ERROR: such policy does not already exist: 10.0.1.5/32[0] 10.15.13.224/27[0] proto=any dir=in</span>
+<span class="go">2006-08-10 19:22:42: ERROR: such policy does not already exist: 10.0.1.5/32[0] 10.15.13.224/27[0] proto=any dir=fwd</span>
+<span class="go">2006-08-10 19:22:42: ERROR: such policy does not already exist: 10.15.13.224/27[0] 10.0.1.5/32[0] proto=any dir=out</span>
 </pre></div>
 </div>
-<dl class="docutils">
-<dt>111.111.111.194[500]&lt;=&gt;83.36.51.44[500]</dt>
-<dd>2006-08-10 19:22:40: INFO: begin Aggressive mode.
-2006-08-10 19:22:40: INFO: received Vendor ID: draft-ietf-ipsec-nat-t-</dd>
-<dt>ike-02</dt>
-<dd>2006-08-10 19:22:41: INFO: ISAKMP-SA established 111.111.111.194</dd>
-<dt>[500]-83.36.51.44[500] spi:3ac2d5023f433d3e:e2d682b6f4fc4830</dt>
-<dd>2006-08-10 19:22:42: INFO: respond new phase 2 negotiation:</dd>
-<dt>111.111.111.194[0]&lt;=&gt;83.36.51.44[0]</dt>
-<dd>2006-08-10 19:22:42: INFO: no policy found, try to generate the</dd>
-<dt>policy <span class="classifier-delimiter">:</span> <span class="classifier">10.0.1.5/32[0] 10.15.13.224/27[0] proto=any dir=in</span></dt>
-<dd>2006-08-10 19:22:42: INFO: IPsec-SA established: ESP/Tunnel</dd>
-<dt>83.36.51.44-&gt;111.111.111.194 spi=188599340(0xb3dcc2c)</dt>
-<dd>2006-08-10 19:22:42: INFO: IPsec-SA established: ESP/Tunnel</dd>
-<dt>111.111.111.194-&gt;83.36.51.44 spi=19221256(0x1254b08)</dt>
-<dd>2006-08-10 19:22:42: ERROR: such policy does not already exist:</dd>
-<dt>10.0.1.5/32[0] 10.15.13.224/27[0] proto=any dir=in</dt>
-<dd>2006-08-10 19:22:42: ERROR: such policy does not already exist:</dd>
-<dt>10.0.1.5/32[0] 10.15.13.224/27[0] proto=any dir=fwd</dt>
-<dd>2006-08-10 19:22:42: ERROR: such policy does not already exist:</dd>
-</dl>
-<p>10.15.13.224/27[0] 10.0.1.5/32[0] proto=any dir=out</p>
 </div>
 <div class="section" id="this-line-indicates-that-the-initial-phase-1-auth-pskeys-or-certificates-have-been-exchanged-correctly">
 <h2>This line indicates that the initial phase 1 auth (pskeys or certificates) have been exchanged correctly:<a class="headerlink" href="#this-line-indicates-that-the-initial-phase-1-auth-pskeys-or-certificates-have-been-exchanged-correctly" title="Permalink to this headline">¶</a></h2>

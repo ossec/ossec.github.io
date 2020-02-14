@@ -212,8 +212,8 @@ this daemon only be run when a new agent is being added.</p>
 </dd></dl>
 
 </div>
-<div class="section" id="optional-server-authentication">
-<span id="id4"></span><h2>Optional Server Authentication<a class="headerlink" href="#optional-server-authentication" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="optional-server-authentication-client-side">
+<span id="optional-server-authentication"></span><h2>Optional Server Authentication - client side<a class="headerlink" href="#optional-server-authentication-client-side" title="Permalink to this headline">¶</a></h2>
 <p><code class="docutils literal"><span class="pre">agent-auth</span></code> can verify that the server it&#8217;s connecting to presents a valid X.509 certificate when requesting
 a key. This is optional and is only useful if hosts in your environment have access to the root certificate of
 the CA that signed the certificate presented by <a class="reference internal" href="ossec-authd.html#ossec-authd"><span class="std std-ref">ossec-authd</span></a>. If server certificate verification is desired
@@ -230,7 +230,7 @@ subject alternative name extension field.</li>
 and agent-auth.</p>
 </div>
 <div class="section" id="optional-client-authentication">
-<span id="id5"></span><h2>Optional Client Authentication<a class="headerlink" href="#optional-client-authentication" title="Permalink to this headline">¶</a></h2>
+<span id="id4"></span><h2>Optional Client Authentication<a class="headerlink" href="#optional-client-authentication" title="Permalink to this headline">¶</a></h2>
 <p><code class="docutils literal"><span class="pre">agent-auth</span></code> can present its own certificate to the server for verification. This is mandatory if <a class="reference internal" href="ossec-authd.html#ossec-authd"><span class="std std-ref">ossec-authd</span></a>
 was run with the -v option and optional otherwise. This is only useful if hosts in your environment are assigned
 certificates when they&#8217;re provisioned (or at some point before being added to OSSEC). Use the -x and -k options

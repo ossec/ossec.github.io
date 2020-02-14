@@ -267,8 +267,8 @@ Nov 18 19:12:30 ICMP/UDP: smurf attack detected from 201.223.41.0</p>
 <p>==&#8217;&#8216;&#8217;Another interesting logs&#8217;&#8216;&#8217;==</p>
 <p>&#8216;&#8217;&#8216;bogus TCP flags&#8217;&#8216;&#8217;</p>
 <p>&lt;font color=&#8221;red&#8221;&gt;Nov 14 15:57:56 TCP: Bogus TCP flags set by 10.10.160.2:60873 (dest port 25)&lt;/font&gt;</p>
-<p>=&#8217;&#8216;&#8217;OSSEC (HIDS) + iplog (sensor) implementation&#8217;&#8216;&#8217;=
-<a href="#id1"><span class="problematic" id="id2">*</span></a>Work in progress
+<p>=&#8217;&#8216;&#8217;OSSEC (HIDS) + iplog (sensor) implementation&#8217;&#8216;&#8217;=</p>
+<p><a href="#id1"><span class="problematic" id="id2">*</span></a>Work in progress
 <a href="#id3"><span class="problematic" id="id4">*</span></a>TODO: improve regex, decoders and rules. p0f complementation?
 <a href="#id5"><span class="problematic" id="id6">*</span></a>Configuration tested in FreeBSD 6.1 and archlinux gimmick
 <a href="#id7"><span class="problematic" id="id8">*</span></a>Last modification 14/Nov/2006</p>
@@ -280,116 +280,105 @@ Nov 18 19:12:30 ICMP/UDP: smurf attack detected from 201.223.41.0</p>
 <p>Nov 14 18:26:58 TCP: null scan detected [ports 636,53,23,3389,1723,443,113,554,25,21,...] from 10.10.150.1 [port 35444]</p>
 <p>Nov 14 18:30:30 TCP: Xmas scan detected [ports 636,256,554,389,1723,53,443,21,3389,22,...] from 10.10.150.1 [port 42399]</p>
 <p>&#8216;&#8217;&#8216;a working decoder is:&#8217;&#8216;&#8217;</p>
-<blockquote>
-<div><dl class="docutils">
-<dt>&lt;decoder name=&#8221;iplog-scan&#8221;&gt;</dt>
-<dd>&lt;prematch&gt;S+ scan detected&lt;/prematch&gt;
-&lt;regex offset=&#8221;after_prematch&#8221;&gt;S+ S+ from (S+)&lt;/regex&gt;
-&lt;order&gt;srcip&lt;/order&gt;</dd>
-</dl>
-<p>&lt;/decoder&gt;</p>
-</div></blockquote>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;decoder</span> <span class="na">name=</span><span class="s">&quot;iplog-scan&quot;</span><span class="nt">&gt;</span>
+ <span class="nt">&lt;prematch&gt;</span>\S+ scan detected<span class="nt">&lt;/prematch&gt;</span>
+ <span class="nt">&lt;regex</span> <span class="na">offset=</span><span class="s">&quot;after_prematch&quot;</span><span class="nt">&gt;</span>\S+ \S+ from (\S+)<span class="nt">&lt;/regex&gt;</span>
+ <span class="nt">&lt;order&gt;</span>srcip<span class="nt">&lt;/order&gt;</span>
+<span class="nt">&lt;/decoder&gt;</span>
+</pre></div>
+</div>
 <p>&#8216;&#8217;&#8216;For this log:&#8217;&#8216;&#8217;</p>
 <p>Nov 14 18:35:00 UDP: scan/flood detected [ports 33161,41107,63571,48714,25271,...] from 10.10.150.1 [ports 60362]</p>
 <p>&#8216;&#8217;&#8216;a proppossed decoder is (not tested):&#8217;&#8216;&#8217;</p>
-<blockquote>
-<div><dl class="docutils">
-<dt>&lt;decoder name=&#8221;iplog-flood&#8221;&gt;</dt>
-<dd>&lt;prematch&gt;scan/flood detected&lt;/prematch&gt;
-&lt;regex offset=&#8221;after_prematch&#8221;&gt;S+ S+ from (S+)&lt;/regex&gt;
-&lt;order&gt;srcip&lt;/order&gt;</dd>
-</dl>
-<p>&lt;/decoder&gt;</p>
-</div></blockquote>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;decoder</span> <span class="na">name=</span><span class="s">&quot;iplog-flood&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;prematch&gt;</span>scan/flood detected<span class="nt">&lt;/prematch&gt;</span>
+  <span class="nt">&lt;regex</span> <span class="na">offset=</span><span class="s">&quot;after_prematch&quot;</span><span class="nt">&gt;</span>\S+ \S+ from (\S+)<span class="nt">&lt;/regex&gt;</span>
+  <span class="nt">&lt;order&gt;</span>srcip<span class="nt">&lt;/order&gt;</span>
+<span class="nt">&lt;/decoder&gt;</span>
+</pre></div>
+</div>
 <p>&#8216;&#8217;&#8216;For this log:&#8217;&#8216;&#8217;</p>
 <p>Nov 14 19:09:33 ICMP: ping flood detected from 10.10.150.1</p>
 <p>&#8216;&#8217;&#8216;a proppossed decoder is (not tested):&#8217;&#8216;&#8217;</p>
-<blockquote>
-<div><dl class="docutils">
-<dt>&lt;decoder name=&#8221;iplog-pingflood&#8221;&gt;</dt>
-<dd>&lt;prematch&gt;ping flood detected from&lt;/prematch&gt;
-&lt;regex offset=&#8221;after_prematch&#8221;&gt;(S+)&lt;/regex&gt;
-&lt;order&gt;srcip&lt;/order&gt;</dd>
-</dl>
-<p>&lt;/decoder&gt;</p>
-</div></blockquote>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;decoder</span> <span class="na">name=</span><span class="s">&quot;iplog-pingflood&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;prematch&gt;</span>ping flood detected from<span class="nt">&lt;/prematch&gt;</span>
+  <span class="nt">&lt;regex</span> <span class="na">offset=</span><span class="s">&quot;after_prematch&quot;</span><span class="nt">&gt;</span>(\S+)<span class="nt">&lt;/regex&gt;</span>
+  <span class="nt">&lt;order&gt;</span>srcip<span class="nt">&lt;/order&gt;</span>
+<span class="nt">&lt;/decoder&gt;</span>
+</pre></div>
+</div>
 <p>&#8216;&#8217;&#8216;For this log:&#8217;&#8216;&#8217;
 (necesary to include???????) i Think no (very paranoic)</p>
 <p>Nov 14 18:57:18 UDP: traceroute from 10.10.150.2</p>
 <p>&#8216;&#8217;&#8216;a proppossed decoder is (not tested):&#8217;&#8216;&#8217;</p>
-<blockquote>
-<div><dl class="docutils">
-<dt>&lt;decoder name=&#8221;iplog-traceroute&#8221;&gt;</dt>
-<dd>&lt;prematch&gt;pingtraceroute from&lt;/prematch&gt;
-&lt;regex offset=&#8221;after_prematch&#8221;&gt;(S+)&lt;/regex&gt;
-&lt;order&gt;srcip&lt;/order&gt;</dd>
-</dl>
-<p>&lt;/decoder&gt;</p>
-</div></blockquote>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;decoder</span> <span class="na">name=</span><span class="s">&quot;iplog-traceroute&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;prematch&gt;</span>pingtraceroute from<span class="nt">&lt;/prematch&gt;</span>
+  <span class="nt">&lt;regex</span> <span class="na">offset=</span><span class="s">&quot;after_prematch&quot;</span><span class="nt">&gt;</span>(\S+)<span class="nt">&lt;/regex&gt;</span>
+  <span class="nt">&lt;order&gt;</span>srcip<span class="nt">&lt;/order&gt;</span>
+<span class="nt">&lt;/decoder&gt;</span>
+</pre></div>
+</div>
 <p>&#8216;&#8217;&#8216;For this log:&#8217;&#8216;&#8217;
 (necesary to include???????) i Think no (very paranoic)</p>
 <p>Nov 14 15:57:56 TCP: Bogus TCP flags set by 10.10.160.2:60873 (dest port 25)</p>
 <p>&#8216;&#8217;&#8216;a proppossed decoder is (not tested):&#8217;&#8216;&#8217;</p>
-<blockquote>
-<div><dl class="docutils">
-<dt>&lt;decoder name=&#8221;iplog-bogustcp&#8221;&gt;</dt>
-<dd>&lt;prematch&gt;Bogus TCP flags set by&lt;/prematch&gt;
-&lt;regex offset=&#8221;after_prematch&#8221;&gt;(S+):d+&lt;/regex&gt;
-&lt;order&gt;srcip&lt;/order&gt;</dd>
-</dl>
-<p>&lt;/decoder&gt;</p>
-</div></blockquote>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;decoder</span> <span class="na">name=</span><span class="s">&quot;iplog-bogustcp&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;prematch&gt;</span>Bogus TCP flags set by<span class="nt">&lt;/prematch&gt;</span>
+  <span class="nt">&lt;regex</span> <span class="na">offset=</span><span class="s">&quot;after_prematch&quot;</span><span class="nt">&gt;</span>(\S+):\d+<span class="nt">&lt;/regex&gt;</span>
+  <span class="nt">&lt;order&gt;</span>srcip<span class="nt">&lt;/order&gt;</span>
+<span class="nt">&lt;/decoder&gt;</span>
+</pre></div>
+</div>
 <p>==&#8217;&#8216;&#8217;iplog rules&#8217;&#8216;&#8217;==</p>
 <p>Only for working decoders</p>
-<blockquote>
-<div>cd ~/ossec/rules
-touch iplog_rules.xml
-chown root:ossec iplog_rules.xml
-chmod 550 iplog_rules.xml</div></blockquote>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">cd ~/ossec/rules</span>
+<span class="go">touch iplog_rules.xml</span>
+<span class="go">chown root:ossec iplog_rules.xml</span>
+<span class="go">chmod 550 iplog_rules.xml</span>
+</pre></div>
+</div>
 <p>in iplog_rules.xml include:</p>
-<blockquote>
-<div><dl class="docutils">
-<dt>&lt;group name=&#8221;syslog,errors,&#8221;&gt;</dt>
-<dd><dl class="first docutils">
-<dt>&lt;rule id=&#8221;99990&#8221; level=&#8221;6&#8221;&gt;</dt>
-<dd>&lt;decoded_as&gt;iplog-scan&lt;/decoded_as&gt;
-&lt;description&gt;iplog scan detect&lt;/description&gt;</dd>
-</dl>
-<p class="last">&lt;/rule&gt;</p>
-</dd>
-</dl>
-<p>&lt;/group&gt;</p>
-</div></blockquote>
+<div class="highlight-xml"><div class="highlight"><pre><span></span>  <span class="nt">&lt;group</span> <span class="na">name=</span><span class="s">&quot;syslog,errors,&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;rule</span> <span class="na">id=</span><span class="s">&quot;99990&quot;</span> <span class="na">level=</span><span class="s">&quot;6&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;decoded_as&gt;</span>iplog-scan<span class="nt">&lt;/decoded_as&gt;</span>
+    <span class="nt">&lt;description&gt;</span>iplog scan detect<span class="nt">&lt;/description&gt;</span>
+  <span class="nt">&lt;/rule&gt;</span>
+<span class="nt">&lt;/group&gt;</span>
+</pre></div>
+</div>
 <p>==&#8217;&#8216;&#8217;ossec.conf&#8217;&#8216;&#8217;==</p>
-<blockquote>
-<div>cd ~/ossec/etc
-vi  ossec.conf</div></blockquote>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">cd ~/ossec/etc</span>
+<span class="go">vi  ossec.conf</span>
+</pre></div>
+</div>
 <p>include in the correct place:</p>
-<blockquote>
-<div>&lt;include&gt;iplog_rules.xml&lt;/include&gt;</div></blockquote>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;include&gt;</span>iplog_rules.xml<span class="nt">&lt;/include&gt;</span>
+</pre></div>
+</div>
 <p>and</p>
-<blockquote>
-<div><dl class="docutils">
-<dt>&lt;localfile&gt;</dt>
-<dd>&lt;log_format&gt;syslog&lt;/log_format&gt;
-&lt;location&gt;/var/log/iplog&lt;/location&gt;</dd>
-</dl>
-<p>&lt;/localfile&gt;</p>
-</div></blockquote>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;localfile&gt;</span>
+  <span class="nt">&lt;log_format&gt;</span>syslog<span class="nt">&lt;/log_format&gt;</span>
+  <span class="nt">&lt;location&gt;</span>/var/log/iplog<span class="nt">&lt;/location&gt;</span>
+<span class="nt">&lt;/localfile&gt;</span>
+</pre></div>
+</div>
 <p>or wherever you put your iplog logs</p>
 <p>start iplog</p>
-<blockquote>
-<div>iplog -d</div></blockquote>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">iplog -d</span>
+</pre></div>
+</div>
 <p>restart ossec</p>
-<blockquote>
-<div>~/ossec/bin/ossec-control restart</div></blockquote>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">~/ossec/bin/ossec-control restart</span>
+</pre></div>
+</div>
 <p>test with nmap (see before)</p>
 <p>=&#8217;&#8216;&#8217;OSSEC active-response&#8217;&#8216;&#8217;=</p>
 <p>==&#8217;&#8216;&#8217;Firewall Drop: FreeBSD-IPFW&#8217;&#8216;&#8217;==
 add to your ipfw script the follow lines, if you are using the 00001 rule number disoccupying:</p>
-<blockquote>
-<div>/sbin/ipfw add 00001 deny ip from table(00002) to any
-/sbin/ipfw add 00001 deny ip from any to table(00002)</div></blockquote>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">/sbin/ipfw add 00001 deny ip from table\(00002\) to any</span>
+<span class="go">/sbin/ipfw add 00001 deny ip from any to table\(00002\)</span>
+</pre></div>
+</div>
 <p>Change  ~/ossec/active-response/bin/firewall-drop.sh to adjust to the red lines</p>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">&lt;nowiki&gt;#!/bin/sh&lt;/nowiki&gt;</span>
 <span class="go">&lt;nowiki&gt;# Adds an IP to the IPFW drop list.&lt;/nowiki&gt;</span>

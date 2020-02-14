@@ -133,13 +133,23 @@
       
   <div class="section" id="regular-expression-syntax">
 <span id="regex"></span><h1>Regular Expression Syntax<a class="headerlink" href="#regular-expression-syntax" title="Permalink to this headline">¶</a></h1>
-<p>Currently OSSEC supports two regex syntaxes:</p>
+<p>Currently OSSEC supports three regex syntaxes:</p>
 <ul class="simple">
+<li><a class="reference external" href="http://www.pcre.org">pcre2</a></li>
 <li>OS_Regex or regex</li>
 <li>OS_Match or sregex</li>
 </ul>
+<div class="section" id="regex-pcre2">
+<span id="id1"></span><h2>pcre2<a class="headerlink" href="#regex-pcre2" title="Permalink to this headline">¶</a></h2>
+<p>Information onthe syntax for pcre2 can be found in the <a class="reference external" href="http://www.pcre.org/current/doc/html/">pcre</a>
+documentation.</p>
+</div>
 <div class="section" id="os-regex-regex-syntax">
 <span id="os-regex"></span><h2>OS_Regex/regex Syntax<a class="headerlink" href="#os-regex-regex-syntax" title="Permalink to this headline">¶</a></h2>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">The OSSEC regex syntax is legacy. The preferred method is pcre2 where available.</p>
+</div>
 <p>Fast and simple library for regular expressions in C.</p>
 <p>This library is designed to be simple, but support the most common regular
 expressions. It was designed with intrusion detection systems in mind, where

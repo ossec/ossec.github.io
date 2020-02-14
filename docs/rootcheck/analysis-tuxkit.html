@@ -340,14 +340,14 @@ IP that netstat is supposed to hide.</p>
 </div>
 <div class="section" id="detecting-tuxkit-trojans">
 <h2>Detecting tuxkit - trojans<a class="headerlink" href="#detecting-tuxkit-trojans" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span>#  md5sums - if you&#39;ve keep an md5sum of the virgin state of your
-   installation, detecting trojans should be a walk in the park. Every
-   system administrator should use file integrity checker to monitor
-   critical file change.
-#  Look for /usr/bin/xsf and /usr/bin/xchk
-#  Look for extra lines in /etc/rc.sysinit
-#  cd /etc/ssh; ls -l. The trojaned ls will return nothing, when in
-   fact your ssh config files are still there.
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1">#  md5sums - if you&#39;ve keep an md5sum of the virgin state of your</span>
+   <span class="n">installation</span><span class="p">,</span> <span class="n">detecting</span> <span class="n">trojans</span> <span class="n">should</span> <span class="n">be</span> <span class="n">a</span> <span class="n">walk</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">park</span><span class="o">.</span> <span class="n">Every</span>
+   <span class="n">system</span> <span class="n">administrator</span> <span class="n">should</span> <span class="n">use</span> <span class="n">file</span> <span class="n">integrity</span> <span class="n">checker</span> <span class="n">to</span> <span class="n">monitor</span>
+   <span class="n">critical</span> <span class="n">file</span> <span class="n">change</span><span class="o">.</span>
+<span class="c1">#  Look for /usr/bin/xsf and /usr/bin/xchk</span>
+<span class="c1">#  Look for extra lines in /etc/rc.sysinit</span>
+<span class="c1">#  cd /etc/ssh; ls -l. The trojaned ls will return nothing, when in</span>
+   <span class="n">fact</span> <span class="n">your</span> <span class="n">ssh</span> <span class="n">config</span> <span class="n">files</span> <span class="n">are</span> <span class="n">still</span> <span class="n">there</span><span class="o">.</span>
 </pre></div>
 </div>
 <p>The following are the size difference between tuxkit and Redhat 7.1 binaries.

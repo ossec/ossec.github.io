@@ -124,18 +124,17 @@
   <p>OSSEC and Splunk</p>
 <p>Here&#8217;s how I configured OSSEC to send alerts to Splunk:</p>
 <p>In ossec.conf add a syslog_output block specifying your Splunk system IP address and the port your network input is listening on:</p>
-<blockquote>
-<div><dl class="docutils">
-<dt>&lt;syslog_output&gt;</dt>
-<dd>&lt;server&gt;172.10.2.3&lt;/server&gt;
-&lt;port&gt;10002&lt;/port&gt;</dd>
-</dl>
-<p>&lt;/syslog_output&gt;</p>
-</div></blockquote>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;syslog_output&gt;</span>
+  <span class="nt">&lt;server&gt;</span>172.10.2.3<span class="nt">&lt;/server&gt;</span>
+  <span class="nt">&lt;port&gt;</span>10002<span class="nt">&lt;/port&gt;</span>
+<span class="nt">&lt;/syslog_output&gt;</span>
+</pre></div>
+</div>
 <p>Now you need to enable the syslog_output module and restart OSSEC:</p>
-<blockquote>
-<div>#/var/ossec/bin/ossec-control enable client-syslog
-#/var/ossec/bin/ossec-control restart</div></blockquote>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span>/var/ossec/bin/ossec-control <span class="nb">enable</span> client-syslog
+<span class="gp">#</span>/var/ossec/bin/ossec-control restart
+</pre></div>
+</div>
 <p>On restart you&#8217;ll see ossec-csyslogd starting up. Now for the Splunk side.</p>
 <p>You have a few options on how to receive OSSEC alerts. The two options I&#8217;ve looked at are a standard Splunk network input or syslog-ng. I would suggest using syslog-ng and either the FIFO or file destination method. This way when you need to restart Splunk, which can be rather frequent, you won&#8217;t lose events like you would with the Splunk network input. The Splunk for OSSEC application uses the network input method for simplicity.</p>
 <p>Grab the Splunk for OSSEC app which can be found here: <a class="reference external" href="http://www.splunkbase.com/apps/All/Security/app">http://www.splunkbase.com/apps/All/Security/app</a>:Splunk+for+OSSEC#.</p>
@@ -143,16 +142,19 @@
 <p>One other addition:</p>
 <p>When you edit the opt/splunk/etc/system/local/inputs.conf  file
 Splunk is happier when you add the host listing on line 3 of the file below, else it thinks you have two ossec servers...</p>
-<p>[default]</p>
-<p>host = mymachine</p>
-<p>mymachine=10.1.100.141</p>
-<p>[udp://10.1.100.141:10002]</p>
-<p>disabled=false</p>
-<p>sourcetype=ossec</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">[default]</span>
+<span class="go">host = mymachine</span>
+<span class="go">mymachine=10.1.100.141</span>
+<span class="go">[udp://10.1.100.141:10002]</span>
+<span class="go">disabled=false</span>
+<span class="go">sourcetype=ossec</span>
+</pre></div>
+</div>
 <p>The .spl is actually just a .tgz so all you need to do is extract it to $SPLUNK_HOME/etc/apps/.</p>
 <p>Make sure you update any local or network firewalls that this communication is traversing and then restart Splunk.</p>
-<blockquote>
-<div>#$SPLUNK_HOME/bin/splunk restart</div></blockquote>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span><span class="nv">$SPLUNK_HOME</span>/bin/splunk restart
+</pre></div>
+</div>
 <p>If you have any tweaks or improvements to configuration or the Splunk for OSSEC app please let me know! (canuck.eh[at]gmail[dot]com)</p>
 
 
