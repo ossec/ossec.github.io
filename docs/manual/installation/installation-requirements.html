@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Installations requirements &#8212; OSSEC</title>
+    <title>Installation requirements &#8212; OSSEC</title>
     
     <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
@@ -131,8 +131,8 @@
   <div class="row">
     <div class="col-md-12">
       
-  <div class="section" id="installations-requirements">
-<span id="install-req"></span><h1>Installations requirements<a class="headerlink" href="#installations-requirements" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="installation-requirements">
+<span id="install-req"></span><h1>Installation requirements<a class="headerlink" href="#installation-requirements" title="Permalink to this headline">¶</a></h1>
 <p>For UNIX systems, OSSEC only requires gnu make, gcc, and libc.
 OpenSSL is a suggested, but optional, prerequisite.
 However, you always have the option to pre-compile
@@ -173,8 +173,23 @@ using the system zlib. Ensure the correct zlib development packages are installe
 </pre></div>
 </div>
 </div>
-<div class="section" id="ubuntu">
-<h2>Ubuntu<a class="headerlink" href="#ubuntu" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="redhat-centos-fedora-amazon-linux">
+<h2>RedHat / Centos / Fedora / Amazon Linux<a class="headerlink" href="#redhat-centos-fedora-amazon-linux" title="Permalink to this headline">¶</a></h2>
+<p>Step 1) At a minimum, the following packages should be installed:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">yum install zlib-devel pcre2-devel make gcc zlib-devel pcre2-devel sqlite-devel openssl-devel</span>
+</pre></div>
+</div>
+<p>Step 2) For optional database support add thepackage mysql-devel and/or postgresql-devel packages</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">yum install mysql-devel postgresql-devel</span>
+</pre></div>
+</div>
+<p>Step 3) Run the installation script</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">./install.sh</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="ubuntu-debian">
+<h2>Ubuntu / Debian<a class="headerlink" href="#ubuntu-debian" title="Permalink to this headline">¶</a></h2>
 <p>At a minimum, the following packages should be installed:</p>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">apt-get install build-essential make zlib1g-dev libpcre2-dev</span>
 </pre></div>
@@ -182,67 +197,39 @@ using the system zlib. Ensure the correct zlib development packages are installe
 <p>On Ubuntu you will need the <em>build-essential</em> package in order to
 compile and install OSSEC.</p>
 <p>To install the package run the following command.</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> apt-get install build-essential zlib1g-dev
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">apt-get install build-essential zlib1g-dev</span>
 </pre></div>
 </div>
 <p>To use the system&#8217;s pcre2 libraries, install the libpcre2 development package:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> apt-get install libpcre2-dev
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">apt-get install libpcre2-dev</span>
 </pre></div>
 </div>
 <p>If database support is needed <em>mysql-dev</em> or <em>postgresql-dev</em> should be
 installed. Run the following command to install these packages.</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> apt-get install mysql-dev postgresql-dev
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">apt-get install mysql-dev postgresql-dev</span>
 </pre></div>
 </div>
 <p>To use the SQLite features, the <cite>libsqlite3-dev</cite> package is necessary.</p>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 3.0.</span></p>
 </div>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> apt-get install libsqlite3-dev
-</pre></div>
-</div>
-</div>
-<div class="section" id="redhat">
-<h2>RedHat<a class="headerlink" href="#redhat" title="Permalink to this headline">¶</a></h2>
-<p>At a minimum, the following packages should be installed:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">yum install zlib-devel pcre2-devel make gcc</span>
-</pre></div>
-</div>
-<p>RedHat should have most of the packages needed by default. The zlib development package
-should be installed:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> yum install zlib-devel
-</pre></div>
-</div>
-<p>To use the system&#8217;s pcre2 libraries, add the pcre2 development package:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> yum install pcre2-devel
-</pre></div>
-</div>
-<p>If database support is needed the package mysql-devel and/or postgresql-devel will
-need to be installed.</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> yum install mysql-devel postgresql-devel
-</pre></div>
-</div>
-<p>To use the SQLite features, the <cite>sqlite-devel</cite> package is necessary.</p>
-<div class="versionadded">
-<p><span class="versionmodified">New in version 3.0.</span></p>
-</div>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> yum install sqlite-devel
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">apt-get install libsqlite3-dev</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="opensuse">
 <h2>OpenSuse<a class="headerlink" href="#opensuse" title="Permalink to this headline">¶</a></h2>
 <p>The zlib development package should be installed:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> zypper install zlib-devel
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">zypper install zlib-devel</span>
 </pre></div>
 </div>
 <p>To use the system&#8217;s pcre2 libraries, add the pcre2 development package:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> zypper install pcre2-devel
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">zypper install pcre2-devel</span>
 </pre></div>
 </div>
 <p>If database support is needed the package mysql-devel and/or postgresql-devel will
 need to be installed.</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> zypper install postgresql-devel mysql-devel
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">zypper install postgresql-devel mysql-devel</span>
 </pre></div>
 </div>
 </div>
@@ -268,8 +255,8 @@ want to install them you must work with
 <p>As OpenBSD also has its own <a class="reference external" href="https://www.openbsd.org/faq/ports/ports.html">OpenBSD Ports Collection</a>,
 you can build and install OSSEC using it if you want.</p>
 <p>It only offers <strong>security/ossec-hids</strong>, so:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> <span class="nb">cd</span> /usr/ports/security/ossec-hids
-<span class="gp">#</span> make
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">cd /usr/ports/security/ossec-hids</span>
+<span class="go">make</span>
 </pre></div>
 </div>
 <p>Just like the previous example with FreeBSD, if you want to install it all (not just the
@@ -297,7 +284,7 @@ the agent&#8217;s ossec.conf:</p>
 </pre></div>
 </div>
 <p>This can also be avoided by using bash to run <code class="docutils literal"><span class="pre">install.sh</span></code>:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> bash ./install.sh
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">bash ./install.sh</span>
 </pre></div>
 </div>
 </div>

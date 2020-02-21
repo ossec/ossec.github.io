@@ -153,17 +153,9 @@ Links to the packages can be found on the OSSEC <a class="reference external" hr
 </div>
 <div class="section" id="deb-installation">
 <h2>Deb Installation<a class="headerlink" href="#deb-installation" title="Permalink to this headline">¶</a></h2>
-<p>OSSEC&#8217;s deb packages are available in the Wazuh repository.</p>
-<p>Install the apt-get repository key:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> apt-key adv --fetch-keys http://ossec.wazuh.com/repos/apt/conf/ossec-key.gpg.key
-</pre></div>
-</div>
-<p>Add the repository for Debian (available distributions are Sid, Jessie and Wheezy):</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> <span class="nb">echo</span> <span class="s1">&#39;deb http://ossec.wazuh.com/repos/apt/debian wheezy main&#39;</span> &gt;&gt; /etc/apt/sources.list
-</pre></div>
-</div>
-<p>Or add the repository for Ubuntu (available distributions are Precise, Trusty and Utopic):</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> <span class="nb">echo</span> <span class="s1">&#39;deb http://ossec.wazuh.com/repos/apt/ubuntu precise main&#39;</span> &gt;&gt; /etc/apt/sources.list
+<p>OSSEC&#8217;s DEB packages are made available by <a class="reference external" href="http://www.atomicorp.com">Atomicorp</a>.</p>
+<p>Run the Repo installer:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> wget -q -O - https://updates.atomicorp.com/installers/atomic <span class="p">|</span> sudo bash
 </pre></div>
 </div>
 <p>Update the repository:</p>
