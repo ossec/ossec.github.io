@@ -537,7 +537,7 @@ The database should contain the hashes, file names, and an optional date.</p>
 <div class="highlight-sql"><div class="highlight"><pre><span></span><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">files</span> <span class="p">(</span>
     <span class="n">md5sum</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">32</span><span class="p">),</span>
     <span class="n">file</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">256</span><span class="p">),</span>
-    <span class="n">time</span> <span class="n">DATETIME</span>
+    <span class="k">time</span> <span class="n">DATETIME</span>
 <span class="p">);</span>
 <span class="k">CREATE</span> <span class="k">UNIQUE</span> <span class="k">INDEX</span> <span class="n">files_idx</span> <span class="k">ON</span> <span class="n">files</span><span class="p">(</span><span class="n">md5sum</span><span class="p">);</span>
 </pre></div>

@@ -191,7 +191,11 @@ using the system zlib. Ensure the correct zlib development packages are installe
 <div class="section" id="ubuntu-debian">
 <h2>Ubuntu / Debian<a class="headerlink" href="#ubuntu-debian" title="Permalink to this headline">¶</a></h2>
 <p>At a minimum, the following packages should be installed:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">apt-get install build-essential make zlib1g-dev libpcre2-dev</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">apt-get install build-essential make zlib1g-dev libpcre2-dev libevent-dev libssl-dev</span>
+</pre></div>
+</div>
+<p>On Debian 10 Buster, <cite>zlib</cite> could be <cite>libz</cite>.</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">apt-get install libz-dev</span>
 </pre></div>
 </div>
 <p>On Ubuntu you will need the <em>build-essential</em> package in order to
@@ -207,6 +211,10 @@ compile and install OSSEC.</p>
 <p>If database support is needed <em>mysql-dev</em> or <em>postgresql-dev</em> should be
 installed. Run the following command to install these packages.</p>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">apt-get install mysql-dev postgresql-dev</span>
+</pre></div>
+</div>
+<p>On Debian 10 Buster the following packages may be installed for MySQL/MariaDB support:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">apt-get install default-libmysqlclient-dev libmariadb-dev-compat</span>
 </pre></div>
 </div>
 <p>To use the SQLite features, the <cite>libsqlite3-dev</cite> package is necessary.</p>
@@ -262,31 +270,6 @@ you can build and install OSSEC using it if you want.</p>
 <p>Just like the previous example with FreeBSD, if you want to install it all (not just the
 dependencies) you must run <code class="docutils literal"><span class="pre">make</span> <span class="pre">install</span></code> instead. Another option would be using
 <a class="reference external" href="https://www.openbsd.org/faq/faq15.html">pkg_add</a>.</p>
-</div>
-<div class="section" id="debian">
-<h2>Debian<a class="headerlink" href="#debian" title="Permalink to this headline">¶</a></h2>
-<div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">The Debian instructions are probably out of date. Contributions updating this section
-would be appreciated.</p>
-</div>
-<p>Debian has replaced bash with dash, and this may cause issues during
-installation. Dash does not appear to support all of the features
-available in other shells, and may display an error when trying to set
-the server&#8217;s IP address on an agent system. The error can be ignored,
-but the server ip address will need to be set.</p>
-<p>Do this by making sure something like the following information is in
-the agent&#8217;s ossec.conf:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">&lt;ossec_config&gt;</span>
-<span class="go">  &lt;client&gt;</span>
-<span class="go">    &lt;server-ip&gt;SERVER&#39;S IP&lt;/server-ip&gt;</span>
-<span class="go">  &lt;/client&gt;</span>
-</pre></div>
-</div>
-<p>This can also be avoided by using bash to run <code class="docutils literal"><span class="pre">install.sh</span></code>:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">bash ./install.sh</span>
-</pre></div>
-</div>
 </div>
 </div>
 
