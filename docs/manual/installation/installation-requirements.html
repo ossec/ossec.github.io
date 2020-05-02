@@ -151,9 +151,14 @@ or the necessary bits can be built as part of the installation process.</p>
 On many Linux systems the necessary packages would be <cite>dev</cite> or <cite>devel</cite> packages specifically.</p>
 <p>Alternatively, OSSEC can build and use pcre2 without installing the packages.
 To do this the <cite>pcre2-10.32</cite> sources must be installed in <cite>src/external</cite>:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> <span class="nb">cd</span> ossec-hids-*/src
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> <span class="nb">cd</span> ossec-hids-*
 <span class="gp">$</span> wget https://ftp.pcre.org/pub/pcre/pcre2-10.32.tar.gz
 <span class="gp">$</span> tar xzf pcre2-10.32.tar.gz -C src/external
+</pre></div>
+</div>
+<p>If you use the <cite>pcre2-10.32</cite> sources, set the <cite>PCRE2_SYSTEM</cite> variable to no:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> <span class="nb">cd</span> ossec-hids-*
+<span class="gp">#</span> <span class="nv">PCRE2_SYSTEM</span><span class="o">=</span>no ./install.sh
 </pre></div>
 </div>
 <p>To use the system&#8217;s PCRE2, set the <cite>PCRE2_SYSTEM</cite> variable to yes:</p>
