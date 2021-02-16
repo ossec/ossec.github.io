@@ -136,7 +136,7 @@
 <div class="section" id="database-setup">
 <h2>Database Setup<a class="headerlink" href="#database-setup" title="Permalink to this headline">¶</a></h2>
 <p>Create a user for OSSEC within PgSQL</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> sudo -u postgres createuser -D -A -P ossec_user
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$ </span>sudo -u postgres createuser -D -A -P ossec_user
 <span class="go">Enter password for new role:</span>
 <span class="go">Enter it again:</span>
 <span class="go">Shall the new role be allowed to create more new roles? (y/n) n</span>
@@ -144,12 +144,12 @@
 </pre></div>
 </div>
 <p>Create a database for OSSEC</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> sudo -u postgres createdb -O ossec_user ossecdb
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$ </span>sudo -u postgres createdb -O ossec_user ossecdb
 <span class="go">CREATE DATABASE</span>
 </pre></div>
 </div>
 <p>Create the necessary tables from the PostgreSQL schema located in the <code class="docutils literal"><span class="pre">src/os_dbd</span></code> directory of the distribution.</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> psql -h <span class="m">127</span>.0.0.1 -U ossec_user -d ossecdb -f postgresql.schema
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$ </span>psql -h <span class="m">127</span>.0.0.1 -U ossec_user -d ossecdb -f postgresql.schema
 </pre></div>
 </div>
 </div>
@@ -175,8 +175,8 @@ database.</p>
 <div class="section" id="complete-pgsql-output">
 <h2>Complete PgSQL Output<a class="headerlink" href="#complete-pgsql-output" title="Permalink to this headline">¶</a></h2>
 <p>All that is left is to enable the database daemon and restart ossec for the changes to take effect.</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> /var/ossec/bin/ossec-control <span class="nb">enable</span> database
-<span class="gp">#</span> /var/ossec/bin/ossec-control restart
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp"># </span>/var/ossec/bin/ossec-control <span class="nb">enable</span> database
+<span class="gp"># </span>/var/ossec/bin/ossec-control restart
 </pre></div>
 </div>
 </div>

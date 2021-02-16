@@ -186,26 +186,26 @@
 <h2>Enabling Database Support<a class="headerlink" href="#enabling-database-support" title="Permalink to this headline">¶</a></h2>
 <p>You must have the MySQL or PgSQL Client libraries installed on the OSSEC server. Typically something like</p>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Ubuntu</span>
-<span class="gp">#</span> apt install mysql-server libmysqld-dev
+<span class="gp"># </span>apt install mysql-server libmysqld-dev
 <span class="go">  or</span>
-<span class="gp">#</span> apt install postgresql libpq-dev
+<span class="gp"># </span>apt install postgresql libpq-dev
 
 <span class="go">RedHat / CentOS</span>
-<span class="gp">#</span> yum install mysql-devel
+<span class="gp"># </span>yum install mysql-devel
 <span class="go">  or</span>
-<span class="gp">#</span> yum install postgresql-devel
+<span class="gp"># </span>yum install postgresql-devel
 </pre></div>
 </div>
 <p>You then need to set the DATABASE environment variable and run the &#8221;./install.sh&#8221; script, to compile OSSEC with the appropriate database support.</p>
 <p>If OSSEC had been previously compiled without database support the files created during the previous build should be removed from the <cite>src</cite> directory.</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> <span class="nb">cd</span> src
-<span class="gp">#</span> make clean
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp"># </span><span class="nb">cd</span> src
+<span class="gp"># </span>make clean
 </pre></div>
 </div>
 <p>Once the old files have been removed, the installation can be performed.</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> <span class="nv">DATABASE</span><span class="o">=</span>mysql ./install.sh
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp"># </span><span class="nv">DATABASE</span><span class="o">=</span>mysql ./install.sh
 <span class="go">  or</span>
-<span class="gp">#</span> <span class="nv">DATABASE</span><span class="o">=</span>pgsql ./install.sh
+<span class="gp"># </span><span class="nv">DATABASE</span><span class="o">=</span>pgsql ./install.sh
 </pre></div>
 </div>
 </div>
@@ -213,7 +213,7 @@
 <h2>Enable Database output in the configuration<a class="headerlink" href="#enable-database-output-in-the-configuration" title="Permalink to this headline">¶</a></h2>
 <p>After installation is complete database support needs to be enabled.
 The following command will enable the database daemon on the next restart.</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> /var/ossec/bin/ossec-control <span class="nb">enable</span> database
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp"># </span>/var/ossec/bin/ossec-control <span class="nb">enable</span> database
 </pre></div>
 </div>
 </div>

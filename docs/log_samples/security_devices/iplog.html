@@ -422,7 +422,7 @@ add to your ipfw script the follow lines, if you are using the 00001 rule number
 <span class="go">  &lt;nowiki&gt; # Check if our table is set&lt;/nowiki&gt;</span>
 <span class="go">  &lt;font color=&quot;red&quot;&gt; ${IPFW} show | grep &quot;^00001&quot; | grep &quot;table(2)&quot; &gt;/dev/null 2&gt;&amp;1&lt;/font&gt;</span>
 <span class="go">  if [ ! $? = 0 ]; then</span>
-<span class="gp">      #</span> We need to add the table
+<span class="gp">      # </span>We need to add the table
 <span class="gp">      $</span><span class="o">{</span>IPFW<span class="o">}</span> -q <span class="m">00001</span> add deny ip from table<span class="se">\(</span><span class="si">${</span><span class="nv">TABLE_ID</span><span class="si">}</span><span class="se">\)</span> to any
 <span class="gp">      $</span><span class="o">{</span>IPFW<span class="o">}</span> -q <span class="m">00001</span> add deny ip from any to table<span class="se">\(</span><span class="si">${</span><span class="nv">TABLE_ID</span><span class="si">}</span><span class="se">\)</span>
 <span class="go">  fi</span>

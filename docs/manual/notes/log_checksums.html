@@ -130,9 +130,9 @@
 <p>Basically, what it means is that at the end of each day, ossec will generate the md5/sha1 sum of the
 currently logs plus the md5/sha1 sum of the checksum from the logs of the previous day.</p>
 <p>To exemplify, at the end of Apr 23, ossec will create the following file:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> <span class="nb">pwd</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp"># </span><span class="nb">pwd</span>
 <span class="go">/var/ossec/logs/alerts/2007/Apr</span>
-<span class="gp">#</span> cat ossec-alerts-23.log.sum
+<span class="gp"># </span>cat ossec-alerts-23.log.sum
 <span class="go">Current checksum:</span>
 <span class="go">MD5  (/logs/alerts/2007/Apr/ossec-alerts-23.log) =</span>
 <span class="go">7a275b2d07a5aac500c78c7af51de457</span>

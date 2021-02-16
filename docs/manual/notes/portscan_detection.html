@@ -503,14 +503,14 @@ Nov 14 18:30:30 TCP: Xmas scan detected [ports 636,256,554,389,1723,53,443,21,33
 </div>
 <p>Change  /var/ossec/active-response/bin/firewall-drop.sh to adjust to the red lines</p>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span>!/bin/sh
-<span class="gp">#</span> Adds an IP to the IPFW drop list.
-<span class="gp">#</span> Only works with IPFW.
-<span class="gp">#</span> We use TABLE <span class="m">00001</span>. If you use this table <span class="k">for</span> anything <span class="k">else</span>,
-<span class="gp">#</span> please change it here.
-<span class="gp">#</span> Expect: srcip
-<span class="gp">#</span> Author: Rafael Capovilla - under @ <span class="o">(</span> at <span class="o">)</span> underlinux.com.br
-<span class="gp">#</span> Author: Daniel B. Cid - dcid @ <span class="o">(</span> at <span class="o">)</span> ossec.net
-<span class="gp">#</span> Last modified: May <span class="m">07</span>, <span class="m">2006</span>
+<span class="gp"># </span>Adds an IP to the IPFW drop list.
+<span class="gp"># </span>Only works with IPFW.
+<span class="gp"># </span>We use TABLE <span class="m">00001</span>. If you use this table <span class="k">for</span> anything <span class="k">else</span>,
+<span class="gp"># </span>please change it here.
+<span class="gp"># </span>Expect: srcip
+<span class="gp"># </span>Author: Rafael Capovilla - under @ <span class="o">(</span> at <span class="o">)</span> underlinux.com.br
+<span class="gp"># </span>Author: Daniel B. Cid - dcid @ <span class="o">(</span> at <span class="o">)</span> ossec.net
+<span class="gp"># </span>Last modified: May <span class="m">07</span>, <span class="m">2006</span>
 <span class="go">UNAME=`uname`</span>
 <span class="go">IPFW=&quot;/sbin/ipfw&quot;</span>
 <span class="go">ARG1=&quot;&quot;</span>
@@ -524,35 +524,35 @@ Nov 14 18:30:30 TCP: Xmas scan detected [ports 636,256,554,389,1723,53,443,21,33
 <span class="go">cd ../</span>
 <span class="go">PWD=`pwd`</span>
 <span class="go">echo &quot;`date` $0 $1 $2 $3&quot; &gt;&gt; ${PWD}/ossec-hids-responses.log</span>
-<span class="gp">#</span> Checking <span class="k">for</span> an IP
+<span class="gp"># </span>Checking <span class="k">for</span> an IP
 <span class="go">if [ &quot;x${IP}&quot; = &quot;x&quot; ]; then</span>
 <span class="go">  echo &quot;$0: &lt;action&gt; &lt;username&gt; &lt;ip&gt;&quot;</span>
 <span class="go">  exit 1;</span>
 <span class="go">fi</span>
-<span class="gp">#</span>  Blocking IP
+<span class="gp">#  </span>Blocking IP
 <span class="go">if [ &quot;x${ACTION}&quot; != &quot;xadd&quot; -a &quot;x${ACTION}&quot; != &quot;xdelete&quot; ]; then</span>
 <span class="go">   echo &quot;$0: Invalid action: ${ACTION}&quot;</span>
 <span class="go">   exit 1;</span>
 <span class="go">fi</span>
-<span class="gp">#</span> We should run on FreeBSD
-<span class="gp">#</span> We always use table <span class="m">00001</span> and rule id <span class="m">00001</span>.
+<span class="gp"># </span>We should run on FreeBSD
+<span class="gp"># </span>We always use table <span class="m">00001</span> and rule id <span class="m">00001</span>.
 <span class="go">if [ &quot;X${UNAME}&quot; = &quot;XFreeBSD&quot; ]; then</span>
 <span class="go">  ls ${IPFW} &gt;&gt; /dev/null 2&gt;&amp;1</span>
 <span class="go">  if [ $? != 0 ]; then</span>
 <span class="go">      exit 0;</span>
 <span class="go">  fi</span>
-<span class="gp">  #</span> Check <span class="k">if</span> our table is <span class="nb">set</span>
+<span class="gp">  # </span>Check <span class="k">if</span> our table is <span class="nb">set</span>
 <span class="go">  &lt;font color=&quot;red&quot;&gt; ${IPFW} show | grep &quot;^00001&quot; | grep &quot;table(2)&quot; &gt;/dev/null 2&gt;&amp;1&lt;/font&gt;</span>
 <span class="go">  if [ ! $? = 0 ]; then</span>
-<span class="gp">       #</span> We need to add the table
+<span class="gp">       # </span>We need to add the table
 <span class="gp">       $</span><span class="o">{</span>IPFW<span class="o">}</span> -q <span class="m">00001</span> add deny ip from table<span class="se">\(</span><span class="si">${</span><span class="nv">TABLE_ID</span><span class="si">}</span><span class="se">\)</span> to any
 <span class="gp">       $</span><span class="o">{</span>IPFW<span class="o">}</span> -q <span class="m">00001</span> add deny ip from any to table<span class="se">\(</span><span class="si">${</span><span class="nv">TABLE_ID</span><span class="si">}</span><span class="se">\)</span>
 <span class="go">  fi</span>
-<span class="gp">  #</span> Executing and exiting
+<span class="gp">  # </span>Executing and exiting
 <span class="gp">  $</span><span class="o">{</span>IPFW<span class="o">}</span> -q table <span class="si">${</span><span class="nv">TABLE_ID</span><span class="si">}</span> <span class="si">${</span><span class="nv">ACTION</span><span class="si">}</span> <span class="si">${</span><span class="nv">IP</span><span class="si">}</span>
 <span class="go">  exit 0;</span>
 <span class="go">fi</span>
-<span class="gp">#</span> Not FreeBSD
+<span class="gp"># </span>Not FreeBSD
 <span class="go">exit 1;</span>
 </pre></div>
 </div>

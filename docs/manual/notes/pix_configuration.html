@@ -154,7 +154,7 @@
 <ol class="arabic simple" start="2">
 <li>Ensure your OSSEC host is seeing the PIX syslog messages</li>
 </ol>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> tcpdump -i eth0 -A -s <span class="m">0</span> udp port <span class="m">514</span> and host &lt;pix_ip&gt;
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp"># </span>tcpdump -i eth0 -A -s <span class="m">0</span> udp port <span class="m">514</span> and host &lt;pix_ip&gt;
 </pre></div>
 </div>
 <ol class="arabic simple" start="3">
@@ -171,7 +171,7 @@
 <ol class="arabic simple" start="4">
 <li>Restart the ossec service to begin listening</li>
 </ol>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> /var/ossec/bin/ossec-control restart
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp"># </span>/var/ossec/bin/ossec-control restart
 </pre></div>
 </div>
 </div>

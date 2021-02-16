@@ -203,7 +203,7 @@ If <cite>all</cite> is used as the <cite>AGENT_ID</cite>, the syscheck databases
 <div class="section" id="example-1-getting-a-list-of-modified-files-for-an-agent">
 <h3>Example 1: Getting a list of modified files for an agent<a class="headerlink" href="#example-1-getting-a-list-of-modified-files-for-an-agent" title="Permalink to this headline">¶</a></h3>
 <p>To retrieve information about files that were monitored by OSSEC and modified after OSSEC was deployed, run <cite>syscheck_control -i AGENT_ID</cite>.</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> /var/ossec/bin/syscheck_control -i <span class="m">002</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp"># </span>/var/ossec/bin/syscheck_control -i <span class="m">002</span>
 
 <span class="go">Integrity changes for agent &#39;ossec-agent (002) - 192.168.1.86&#39;:</span>
 
@@ -252,7 +252,7 @@ If <cite>all</cite> is used as the <cite>AGENT_ID</cite>, the syscheck databases
 <li>MD5 and SHA1 hashes of the file.</li>
 </ul>
 <p>To retrieve this information, run <cite>syscheck_control -i AGENT_ID -f FILENAME</cite>:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> /var/ossec/bin/syscheck_control -i <span class="m">002</span> -f /etc/authorization
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp"># </span>/var/ossec/bin/syscheck_control -i <span class="m">002</span> -f /etc/authorization
 
 <span class="go">Integrity changes for agent &#39;ossec-agent (002) - 192.168.1.86&#39;:</span>
 <span class="go">Detailed information for entries matching: &#39;/etc/authorization&#39;</span>
@@ -282,13 +282,13 @@ If <cite>all</cite> is used as the <cite>AGENT_ID</cite>, the syscheck databases
 <div class="section" id="example-3-clearing-the-syscheck-database">
 <h3>Example 3: Clearing the syscheck database<a class="headerlink" href="#example-3-clearing-the-syscheck-database" title="Permalink to this headline">¶</a></h3>
 <p>To clear the syscheck database for a certain agent run the following command:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> /var/ossec/bin/syscheck_control -u <span class="m">002</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp"># </span>/var/ossec/bin/syscheck_control -u <span class="m">002</span>
 
 <span class="go">** Integrity check database updated.</span>
 </pre></div>
 </div>
 <p><cite>syscheck_control -i 002</cite> will now show that no modified files for that agent are in the database:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> /var/ossec/bin/syscheck_control -i <span class="m">002</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp"># </span>/var/ossec/bin/syscheck_control -i <span class="m">002</span>
 
 <span class="go">Integrity changes for agent &#39;ossec-agent (002) - 192.168.1.86&#39;:</span>
 
@@ -296,7 +296,7 @@ If <cite>all</cite> is used as the <cite>AGENT_ID</cite>, the syscheck databases
 </pre></div>
 </div>
 <p>To clear the database for all agents and the server run the following command:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> /var/ossec/bin/syscheck_control -u all
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp"># </span>/var/ossec/bin/syscheck_control -u all
 
 <span class="go">** Integrity check database updated.</span>
 </pre></div>

@@ -169,9 +169,9 @@ the level or different locations.</p>
 <li>Agent name/host/filename</li>
 </ul>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span>!/bin/sh
-<span class="gp">#</span> E-mails an alert - copy at /var/ossec/active-response/bin/mail-test.sh
-<span class="gp">#</span> Change e-mail ADDRESSS
-<span class="gp">#</span> Author: Daniel Cid
+<span class="gp"># </span>E-mails an alert - copy at /var/ossec/active-response/bin/mail-test.sh
+<span class="gp"># </span>Change e-mail ADDRESSS
+<span class="gp"># </span>Author: Daniel Cid
 
 <span class="go">MAILADDRESS=&quot;xx@ossec.net&quot;</span>
 <span class="go">ACTION=$1</span>
@@ -186,17 +186,17 @@ the level or different locations.</p>
 <span class="go">PWD=`pwd`</span>
 
 
-<span class="gp">#</span> Logging the call
+<span class="gp"># </span>Logging the call
 <span class="go">echo &quot;`date` $0 $1 $2 $3 $4 $5 $6 $7 $8&quot; &gt;&gt; ${PWD}/../logs/active-responses.log</span>
 
 
-<span class="gp">#</span> Getting alert <span class="nb">time</span>
+<span class="gp"># </span>Getting alert <span class="nb">time</span>
 <span class="go">ALERTTIME=`echo &quot;$ALERTID&quot; | cut -d  &quot;.&quot; -f 1`</span>
 
-<span class="gp">#</span> Getting end of alert
+<span class="gp"># </span>Getting end of alert
 <span class="go">ALERTLAST=`echo &quot;$ALERTID&quot; | cut -d  &quot;.&quot; -f 2`</span>
 
-<span class="gp">#</span> Getting full alert
+<span class="gp"># </span>Getting full alert
 <span class="go">grep -A 10 &quot;$ALERTTIME&quot; ${PWD}/../logs/alerts/alerts.log | grep -v &quot;.$ALERTLAST: &quot; -A 10 | mail $MAILADDRESS -s &quot;OSSEC Alert&quot;</span>
 </pre></div>
 </div>
@@ -205,8 +205,8 @@ the level or different locations.</p>
 <h2>Restart OSSEC and test it:<a class="headerlink" href="#restart-ossec-and-test-it" title="Permalink to this headline">¶</a></h2>
 <p>After the configuration is done, you can restart OSSEC and test the configuration. For the above example,
 I can run the logger command to simular a segmentation fault message.</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> /var/ossec/bin/ossec-control restart
-<span class="gp">#</span> logger <span class="s2">&quot;Segmentation Fault&quot;</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp"># </span>/var/ossec/bin/ossec-control restart
+<span class="gp"># </span>logger <span class="s2">&quot;Segmentation Fault&quot;</span>
 </pre></div>
 </div>
 <p>You should get in the /var/ossec/logs/active-response.log, the following:</p>

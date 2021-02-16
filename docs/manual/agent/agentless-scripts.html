@@ -211,16 +211,16 @@ to function correctly.)</p>
 <span class="go">STORE: now</span>
 <span class="go">no pager</span>
 <span class="go">             ^</span>
-<span class="gp">%</span> Invalid input detected at <span class="s1">&#39;^&#39;</span> marker.
+<span class="gp">% </span>Invalid input detected at <span class="s1">&#39;^&#39;</span> marker.
 
 <span class="go">a.zfw.tss#term len 0</span>
 <span class="go">a.zfw.tss#terminal pager 0</span>
 <span class="go">                     ^</span>
-<span class="gp">%</span> Invalid input detected at <span class="s1">&#39;^&#39;</span> marker.
+<span class="gp">% </span>Invalid input detected at <span class="s1">&#39;^&#39;</span> marker.
 
 <span class="go">a.zfw.tss#show version | grep -v Configuration last| up</span>
 <span class="go">                         ^</span>
-<span class="gp">%</span> Invalid input detected at <span class="s1">&#39;^&#39;</span> marker.
+<span class="gp">% </span>Invalid input detected at <span class="s1">&#39;^&#39;</span> marker.
 
 <span class="go">a.zfw.tss#show running-config</span>
 <span class="go">Building configuration...</span>
@@ -384,23 +384,23 @@ what is going on.</p>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">obsd46# cat /var/ossec/agentless/ssh_integrity_check_linux</span>
 <span class="gp"> #</span>!/usr/bin/env expect
 
-<span class="gp"> #</span> @<span class="o">(</span><span class="c1">#) $Id: ssh_integrity_check_linux,v 1.11 2009/06/24 17:06:21 dcid Exp $</span>
-<span class="gp"> #</span> Agentless monitoring
+<span class="gp"> # </span>@<span class="o">(</span><span class="c1">#) $Id: ssh_integrity_check_linux,v 1.11 2009/06/24 17:06:21 dcid Exp $</span>
+<span class="gp"> # </span>Agentless monitoring
 <span class="gp"> #</span>
-<span class="gp"> #</span> Copyright <span class="o">(</span>C<span class="o">)</span> <span class="m">2009</span> Trend Micro Inc.
-<span class="gp"> #</span> All rights reserved.
+<span class="gp"> # </span>Copyright <span class="o">(</span>C<span class="o">)</span> <span class="m">2009</span> Trend Micro Inc.
+<span class="gp"> # </span>All rights reserved.
 <span class="gp"> #</span>
-<span class="gp"> #</span> This program is a free software<span class="p">;</span> you can redistribute it
-<span class="gp"> #</span> and/or modify it under the terms of the GNU General Public
-<span class="gp"> #</span> License <span class="o">(</span>version <span class="m">3</span><span class="o">)</span> as published by the FSF - Free Software
-<span class="gp"> #</span> Foundation.
+<span class="gp"> # </span>This program is a free software<span class="p">;</span> you can redistribute it
+<span class="gp"> # </span>and/or modify it under the terms of the GNU General Public
+<span class="gp"> # </span>License <span class="o">(</span>version <span class="m">3</span><span class="o">)</span> as published by the FSF - Free Software
+<span class="gp"> # </span>Foundation.
 
 
-<span class="gp"> #</span> Main script.
+<span class="gp"> # </span>Main script.
 <span class="go">source &quot;agentless/main.exp&quot;</span>
 
 
-<span class="gp"> #</span> SSHing to the box and passing the directories to check.
+<span class="gp"> # </span>SSHing to the box and passing the directories to check.
 <span class="go">if [catch {</span>
 <span class="go">    spawn ssh $hostname</span>
 <span class="go">} loc_error] {</span>
@@ -466,7 +466,7 @@ passed to the script by the OSSEC agentless process. If we specified the followi
 </div>
 <p>Back to the commands that get run. Once expect has completed replacement we are
 left with this command.</p>
-<div class="highlight-sh"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;INFO: Starting.&quot;</span><span class="p">;</span> <span class="k">for</span> i in <span class="sb">`</span>find /bin /etc /sbin <span class="m">2</span>&gt;/dev/null<span class="sb">`</span><span class="p">;</span><span class="k">do</span> tail <span class="nv">$i</span> &gt;/dev/null <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="o">&amp;&amp;</span>
+<div class="highlight-sh"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;INFO: Starting.&quot;</span><span class="p">;</span> <span class="k">for</span> i <span class="k">in</span> <span class="sb">`</span>find /bin /etc /sbin <span class="m">2</span>&gt;/dev/null<span class="sb">`</span><span class="p">;</span><span class="k">do</span> tail <span class="nv">$i</span> &gt;/dev/null <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="o">&amp;&amp;</span>
 <span class="nv">md5</span><span class="o">=</span><span class="sb">`</span>md5sum <span class="nv">$i</span> <span class="p">|</span> cut -d <span class="s2">&quot; &quot;</span> -f <span class="m">1</span><span class="sb">`</span> <span class="o">&amp;&amp;</span> <span class="nv">sha1</span><span class="o">=</span><span class="sb">`</span>sha1sum <span class="nv">$i</span> <span class="p">|</span> cut -d <span class="s2">&quot; &quot;</span> -f
  <span class="m">1</span><span class="sb">`</span> <span class="o">&amp;&amp;</span> <span class="nb">echo</span> FWD: <span class="sb">`</span>stat --printf <span class="s2">&quot;%s:%a:%u:%g&quot;</span> <span class="nv">$i</span><span class="sb">`</span>:<span class="nv">$md5</span>:<span class="nv">$sha1</span> <span class="nv">$i</span><span class="p">;</span> <span class="k">done</span><span class="p">;</span> <span class="nb">exit</span>
     <span class="nb">exit</span>
@@ -563,7 +563,7 @@ and use find to locate the files.</p>
 authentication is more involved. This of course will vary from system to system, but
 this should be good starting point.</p>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">obsd46# sudo -u ossec ssh root@172.17.20.20</span>
-<span class="gp">[linux26 ~]#</span> find / <span class="se">\(</span> -name <span class="s2">&quot;.ssh&quot;</span> -o -name <span class="s2">&quot;ssh&quot;</span> -o -name <span class="s2">&quot;sshd&quot;</span> -o -name <span class="s2">&quot;httpd&quot;</span> -o -name <span class="s2">&quot;.htaccess&quot;</span>
+<span class="gp">[linux26 ~]# </span>find / <span class="se">\(</span> -name <span class="s2">&quot;.ssh&quot;</span> -o -name <span class="s2">&quot;ssh&quot;</span> -o -name <span class="s2">&quot;sshd&quot;</span> -o -name <span class="s2">&quot;httpd&quot;</span> -o -name <span class="s2">&quot;.htaccess&quot;</span>
 <span class="go">-o -name &quot;pam.d&quot; \) -exec find {} \;</span>
 <span class="go">/var/www/html/admin/modules/framework/var/www/html/admin/modules/.htaccess</span>
 <span class="go">/etc/httpd</span>
@@ -648,23 +648,23 @@ our new line in place of find $args 2&gt;/dev/null in our new file.</p>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">obsd56# cat /var/ossec/agentless/ssh_dmz_linux</span>
 <span class="gp"> #</span>!/usr/bin/env expect
 
-<span class="gp"> #</span> @<span class="o">(</span><span class="c1">#) $Id: ssh_integrity_check_linux,v 1.11 2009/06/24 17:06:21 dcid Exp $</span>
-<span class="gp"> #</span> Agentless monitoring
+<span class="gp"> # </span>@<span class="o">(</span><span class="c1">#) $Id: ssh_integrity_check_linux,v 1.11 2009/06/24 17:06:21 dcid Exp $</span>
+<span class="gp"> # </span>Agentless monitoring
 <span class="gp"> #</span>
-<span class="gp"> #</span> Copyright <span class="o">(</span>C<span class="o">)</span> <span class="m">2009</span> Trend Micro Inc.
-<span class="gp"> #</span> All rights reserved.
+<span class="gp"> # </span>Copyright <span class="o">(</span>C<span class="o">)</span> <span class="m">2009</span> Trend Micro Inc.
+<span class="gp"> # </span>All rights reserved.
 <span class="gp"> #</span>
-<span class="gp"> #</span> This program is a free software<span class="p">;</span> you can redistribute it
-<span class="gp"> #</span> and/or modify it under the terms of the GNU General Public
-<span class="gp"> #</span> License <span class="o">(</span>version <span class="m">3</span><span class="o">)</span> as published by the FSF - Free Software
-<span class="gp"> #</span> Foundation.
+<span class="gp"> # </span>This program is a free software<span class="p">;</span> you can redistribute it
+<span class="gp"> # </span>and/or modify it under the terms of the GNU General Public
+<span class="gp"> # </span>License <span class="o">(</span>version <span class="m">3</span><span class="o">)</span> as published by the FSF - Free Software
+<span class="gp"> # </span>Foundation.
 
 
-<span class="gp"> #</span> Main script.
+<span class="gp"> # </span>Main script.
 <span class="go">source &quot;agentless/main.exp&quot;</span>
 
 
-<span class="gp"> #</span> SSHing to the box and passing the directories to check.
+<span class="gp"> # </span>SSHing to the box and passing the directories to check.
 <span class="go">if [catch {</span>
 <span class="go">    spawn ssh $hostname</span>
 <span class="go">} loc_error] {</span>

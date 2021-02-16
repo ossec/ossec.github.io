@@ -222,8 +222,8 @@ this daemon only be run when a new agent is being added.</p>
 <div class="section" id="creating-ssl-keys">
 <h2>Creating SSL keys<a class="headerlink" href="#creating-ssl-keys" title="Permalink to this headline">¶</a></h2>
 <p><code class="docutils literal"><span class="pre">ossec-authd</span></code> requires SSL keys to run. This process will create the necessary keys in <code class="docutils literal"><span class="pre">/var/ossec/etc</span></code> and allow <code class="docutils literal"><span class="pre">ossec-authd</span></code> to start:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> openssl genrsa -out /var/ossec/etc/sslmanager.key <span class="m">2048</span>
-<span class="gp">#</span> openssl req -new -x509 -key /var/ossec/etc/sslmanager.key -out /var/ossec/etc/sslmanager.cert -days <span class="m">365</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp"># </span>openssl genrsa -out /var/ossec/etc/sslmanager.key <span class="m">2048</span>
+<span class="gp"># </span>openssl req -new -x509 -key /var/ossec/etc/sslmanager.key -out /var/ossec/etc/sslmanager.cert -days <span class="m">365</span>
 </pre></div>
 </div>
 <p>Without the key <code class="docutils literal"><span class="pre">ossec-authd</span></code> will give the following error:</p>
@@ -253,7 +253,7 @@ agent does not present a certificate or presents an invalid certificate then the
 <h2>ossec-authd example usage<a class="headerlink" href="#ossec-authd-example-usage" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="example-running-ossec-authd">
 <h3>Example: Running ossec-authd<a class="headerlink" href="#example-running-ossec-authd" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> /var/ossec/bin/ossec-authd -p <span class="m">1515</span> &gt;/dev/null <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="p">&amp;</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp"># </span>/var/ossec/bin/ossec-authd -p <span class="m">1515</span> &gt;/dev/null <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="p">&amp;</span>
 </pre></div>
 </div>
 <p>And the logs when an agent is added:</p>
@@ -266,7 +266,7 @@ agent does not present a certificate or presents an invalid certificate then the
 </div>
 <div class="section" id="example-running-ossec-authd-with-client-authentication">
 <h3>Example: Running ossec-authd with client authentication<a class="headerlink" href="#example-running-ossec-authd-with-client-authentication" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> /var/ossec/bin/ossec-authd -v /var/ossec/etc/CA.cert -d
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp"># </span>/var/ossec/bin/ossec-authd -v /var/ossec/etc/CA.cert -d
 </pre></div>
 </div>
 <p>If debug output is enabled then &#8220;Peer verification requested&#8221; will be displayed when starting.</p>

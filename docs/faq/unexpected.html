@@ -167,7 +167,7 @@ e-mail to one of our mailing lists with the following information:</p>
 <li><p class="first">OSSEC version number.</p>
 <blockquote>
 <div><p>Run the following to get the version installation.</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> /var/ossec/bin/ossec-analysisd -V
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp"># </span>/var/ossec/bin/ossec-analysisd -V
 </pre></div>
 </div>
 </div></blockquote>
@@ -202,32 +202,32 @@ C:\Program Files\ossec-agent\internal_options.conf on Windows) and change
 the debug level from the default &#8220;0&#8221; to &#8220;1&#8221; or &#8220;2&#8221;.</p>
 <p>For example, if you wish to debug your windows agent, just change the option
 windows.debug from 0 to 2. Bellow is the list of all the debug options:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> Debug options.
-<span class="gp">#</span> Debug <span class="m">0</span> -&gt; no debug
-<span class="gp">#</span> Debug <span class="m">1</span> -&gt; first level of debug
-<span class="gp">#</span> Debug <span class="m">2</span> -&gt; full debugging
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp"># </span>Debug options.
+<span class="gp"># </span>Debug <span class="m">0</span> -&gt; no debug
+<span class="gp"># </span>Debug <span class="m">1</span> -&gt; first level of debug
+<span class="gp"># </span>Debug <span class="m">2</span> -&gt; full debugging
 
-<span class="gp">#</span> Windows debug <span class="o">(</span>used by the windows agent<span class="o">)</span>
+<span class="gp"># </span>Windows debug <span class="o">(</span>used by the windows agent<span class="o">)</span>
 <span class="go">windows.debug=0</span>
 
-<span class="gp">#</span> Syscheck <span class="o">(</span>local, server and unix agent<span class="o">)</span>
+<span class="gp"># </span>Syscheck <span class="o">(</span>local, server and unix agent<span class="o">)</span>
 <span class="go">syscheck.debug=0</span>
 
-<span class="gp">#</span> Remoted <span class="o">(</span>server debug<span class="o">)</span>
+<span class="gp"># </span>Remoted <span class="o">(</span>server debug<span class="o">)</span>
 <span class="go">remoted.debug=0</span>
 
-<span class="gp">#</span> Analysisd <span class="o">(</span>server or <span class="nb">local</span><span class="o">)</span>
+<span class="gp"># </span>Analysisd <span class="o">(</span>server or <span class="nb">local</span><span class="o">)</span>
 <span class="go">analysisd.debug=0</span>
 
-<span class="gp">#</span> Log collector <span class="o">(</span>server, <span class="nb">local</span> or unix agent<span class="o">)</span>
+<span class="gp"># </span>Log collector <span class="o">(</span>server, <span class="nb">local</span> or unix agent<span class="o">)</span>
 <span class="go">logcollector.debug=0</span>
 
-<span class="gp">#</span> Unix agentd
+<span class="gp"># </span>Unix agentd
 <span class="go">agent.debug=0</span>
 </pre></div>
 </div>
 <p>If this is on an OSSEC server you can enable debug by running:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> /var/ossec/bin/ossec-control <span class="nb">enable</span> debug
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp"># </span>/var/ossec/bin/ossec-control <span class="nb">enable</span> debug
 </pre></div>
 </div>
 <p>Enable debug mode and restart the OSSEC processes to view more verbose logs.</p>
@@ -355,9 +355,9 @@ to fix it).</li>
 </ul>
 <p><strong>How to fix it:</strong></p>
 <p>Stop OSSEC and start it back again:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> /var/ossec/bin/ossec-control stop
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp"># </span>/var/ossec/bin/ossec-control stop
 <span class="gp gp-VirtualEnv">(you can also check at /var/ossec/var/run that there is not PID file in there)</span>
-<span class="gp">#</span> /var/ossec/bin/ossec-control start
+<span class="gp"># </span>/var/ossec/bin/ossec-control start
 </pre></div>
 </div>
 <p>If there is any configuration error, fix it.</p>
@@ -407,8 +407,8 @@ properly by default. There are a few changes that you will need to do:</p>
 <p><strong>Increase your system&#8217;s limits</strong></p>
 <p>Most systems have limits regarding the maximum number of files you can have.
 A few commands you should try are (to increase to 2048):</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> <span class="nb">ulimit</span> -n <span class="m">2048</span>
-<span class="gp">#</span> sysctl -w kern.maxfiles<span class="o">=</span><span class="m">2048</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp"># </span><span class="nb">ulimit</span> -n <span class="m">2048</span>
+<span class="gp"># </span>sysctl -w kern.maxfiles<span class="o">=</span><span class="m">2048</span>
 </pre></div>
 </div>
 </div>

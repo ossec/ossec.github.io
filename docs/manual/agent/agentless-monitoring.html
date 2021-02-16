@@ -190,7 +190,7 @@ exactly what has changed.</p>
 <div class="section" id="getting-started-with-agentless">
 <h2>Getting started with agentless<a class="headerlink" href="#getting-started-with-agentless" title="Permalink to this headline">¶</a></h2>
 <p>After you installed OSSEC, you need to enable the agentless monitoring:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> /var/ossec/bin/ossec-control <span class="nb">enable</span> agentless
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp"># </span>/var/ossec/bin/ossec-control <span class="nb">enable</span> agentless
 </pre></div>
 </div>
 <p>And provide the SSH authentication to the host you want to access. For Cisco devices
@@ -198,12 +198,12 @@ exactly what has changed.</p>
 The same thing applies if you want to add support for “su”, it must be the additional
 parameter. In this example, I am adding a Linux box (example.net) and a PIX firewall
 (pix.fw.local):</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> /var/ossec/agentless/register_host.sh add root@example.net mypass1
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp"># </span>/var/ossec/agentless/register_host.sh add root@example.net mypass1
 <span class="go">  *Host root@example.netl added.</span>
-<span class="gp">#</span> /var/ossec/agentless/register_host.sh add pix@pix.fw.local pixpass enablepass
+<span class="gp"># </span>/var/ossec/agentless/register_host.sh add pix@pix.fw.local pixpass enablepass
 <span class="go">  *Host pix@pix.fw.local added.</span>
 
-<span class="gp">#</span> /var/ossec/agentless/register_host.sh list
+<span class="gp"># </span>/var/ossec/agentless/register_host.sh list
 <span class="go">  *Available hosts:</span>
 <span class="go">pix@pix.fw.local</span>
 <span class="go">root@example.net</span>
@@ -216,7 +216,7 @@ parameter. In this example, I am adding a Linux box (example.net) and a PIX fire
 <p>If you want to use public key authentication instead of
 passwords, you need to provide NOPASS as the password and
 create the public key:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> sudo -u ossec ssh-keygen
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp"># </span>sudo -u ossec ssh-keygen
 </pre></div>
 </div>
 <p>It will create the public keys inside /var/ossec/.ssh .  After that, just scp the
@@ -287,7 +287,7 @@ everything is fine. Look at /var/ossec/logs/ossec.log for any error. If you see:
 <p>It means that you don’t have the expect library installed on the server (it is
 not necessary to install anything on the agentless systems to monitor). On
 Ubuntu you can do the following to install:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> apt-get install expect
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp"># </span>apt-get install expect
 </pre></div>
 </div>
 <p>After installing expect, you can restart OSSEC and you should see:</p>

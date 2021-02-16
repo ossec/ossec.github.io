@@ -196,11 +196,11 @@ this argument may not provide the desired results.</p>
 <p class="last">This ossec-logtest code requires access to all ossec configuration files.
 This is a bug and will be corrected. It is documented in issue #`61 &lt;<a class="reference external" href="https://bitbucket.org/jbcheng/ossec-hids/issue/61/ossec-logtest-must-be-used-with-a-full">https://bitbucket.org/jbcheng/ossec-hids/issue/61/ossec-logtest-must-be-used-with-a-full</a>&gt;`_</p>
 </div>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">%</span> <span class="nb">echo</span> <span class="s2">&quot;Aug 29 15:33:13 ns3 named[464]: client 217.148.39.3#1036: query (cache) denied&quot;</span> <span class="p">|</span> sudo /var/ossec/bin/ossec-logtest -U <span class="m">12108</span>:0:named <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span> &gt; /dev/null
-<span class="gp">%</span> <span class="nb">echo</span> <span class="nv">$?</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">% </span><span class="nb">echo</span> <span class="s2">&quot;Aug 29 15:33:13 ns3 named[464]: client 217.148.39.3#1036: query (cache) denied&quot;</span> <span class="p">|</span> sudo /var/ossec/bin/ossec-logtest -U <span class="m">12108</span>:0:named <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span> &gt; /dev/null
+<span class="gp">% </span><span class="nb">echo</span> <span class="nv">$?</span>
 <span class="go">0</span>
-<span class="gp">%</span> <span class="nb">echo</span> <span class="s2">&quot;Aug 29 15:33:13 ns3 XXXXXX[464]: client 217.148.39.3#1036: query (cache) denied&quot;</span> <span class="p">|</span> sudo /var/ossec/bin/ossec-logtest -U <span class="m">12108</span>:0:named <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span> &gt; /dev/null
-<span class="gp">%</span> <span class="nb">echo</span> <span class="nv">$?</span>
+<span class="gp">% </span><span class="nb">echo</span> <span class="s2">&quot;Aug 29 15:33:13 ns3 XXXXXX[464]: client 217.148.39.3#1036: query (cache) denied&quot;</span> <span class="p">|</span> sudo /var/ossec/bin/ossec-logtest -U <span class="m">12108</span>:0:named <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span> &gt; /dev/null
+<span class="gp">% </span><span class="nb">echo</span> <span class="nv">$?</span>
 <span class="go">3</span>
 </pre></div>
 </div>
@@ -245,7 +245,7 @@ in all version before version 2.5</p>
 <h2>ossec-logtest example usage<a class="headerlink" href="#ossec-logtest-example-usage" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="example-1-testing-standard-rules">
 <h3>Example 1: Testing standard rules<a class="headerlink" href="#example-1-testing-standard-rules" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> <span class="nb">echo</span> <span class="s2">&quot;Aug 29 15:33:13 ns3 named[464]: client 217.148.39.3#1036: query (cache) denied&quot;</span> <span class="p">|</span> /var/ossec/bin/ossec-logtest -f
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp"># </span><span class="nb">echo</span> <span class="s2">&quot;Aug 29 15:33:13 ns3 named[464]: client 217.148.39.3#1036: query (cache) denied&quot;</span> <span class="p">|</span> /var/ossec/bin/ossec-logtest -f
 <span class="go">2010/08/10 06:57:06 ossec-testrule: INFO: Reading decoder file loadables/decoders/00_decoders.xml.</span>
 <span class="go">2010/08/10 06:57:06 ossec-testrule: INFO: Reading decoder file loadables/decoders/50_named.xml.</span>
 <span class="go">2010/08/10 06:57:06 ossec-testrule: INFO: Reading decoder file loadables/decoders/50_pam.xml.</span>
@@ -317,7 +317,7 @@ now have a solution too.</p>
 <p>Let’s say you have a file /var/log/secure that you want to analyze with OSSEC.
 You need to use the ossec-logtest tool with the “<code class="docutils literal"><span class="pre">-a</span></code>” flag to reproduce
 the alerts:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> cat /var/log/secure <span class="p">|</span> /var/ossec/bin/ossec-logtest -a
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp"># </span>cat /var/log/secure <span class="p">|</span> /var/ossec/bin/ossec-logtest -a
 
 <span class="go">** Alert 1264788284.11: - syslog,sshd,authentication_success,</span>
 <span class="go">2010 Jan 29 14:04:44 enigma-&gt;stdin</span>
@@ -337,7 +337,7 @@ the alerts:</p>
 <p>You will get the alerts just like you would at /var/ossec/logs/alerts.log. The
 benefit now is that you can pipe this output to <cite>ossec-reported</cite> to get a
 better view of what is going on:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> cat /var/log/secure <span class="p">|</span> /var/ossec/bin/ossec-logtest -a <span class="p">|</span>/var/ossec/bin/ossec-reported
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp"># </span>cat /var/log/secure <span class="p">|</span> /var/ossec/bin/ossec-logtest -a <span class="p">|</span>/var/ossec/bin/ossec-reported
 <span class="go">Report completed. ==</span>
 <span class="go">————————————————</span>
 <span class="go">-&gt;Processed alerts: 522</span>
@@ -378,7 +378,7 @@ better view of what is going on:</p>
 </div>
 <p>To get a report of all brute force attacks (for example) that scanned my
 box:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> cat /var/log/secure <span class="p">|</span> /var/ossec/bin/ossec-logtest -a <span class="p">|</span>/var/ossec/bin/ossec-reported -f group authentication_failures
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp"># </span>cat /var/log/secure <span class="p">|</span> /var/ossec/bin/ossec-logtest -a <span class="p">|</span>/var/ossec/bin/ossec-reported -f group authentication_failures
 
 <span class="go">Report completed. ==</span>
 <span class="go">————————————————</span>

@@ -202,7 +202,7 @@ with <a class="reference internal" href="#cmdoption-agent-control-a"><code class
 <h3>Example 1: Listing all active agents<a class="headerlink" href="#example-1-listing-all-active-agents" title="Permalink to this headline">¶</a></h3>
 <p>The first interesting argument is <a class="reference internal" href="#cmdoption-agent-control-lc"><code class="xref std std-option docutils literal"><span class="pre">agent_control</span> <span class="pre">-lc</span></code></a>, to list the connected (active agents). To list
 all of them, use <a class="reference internal" href="#cmdoption-agent-control-l"><code class="xref std std-option docutils literal"><span class="pre">agent_control</span> <span class="pre">-l</span></code></a> only.</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> /var/ossec/bin/agent_control -lc
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp"># </span>/var/ossec/bin/agent_control -lc
 <span class="go">OSSEC HIDS agent_control. List of available agents:</span>
 <span class="go">ID: 000, Name: enigma.ossec.net (server), IP: 127.0.0.1, Active/Local</span>
 <span class="go">ID: 002, Name: winhome, IP: 192.168.2.190, Active</span>
@@ -215,7 +215,7 @@ all of them, use <a class="reference internal" href="#cmdoption-agent-control-l"
 <div class="section" id="example-2-querying-information-from-agent-002">
 <h3>Example 2: Querying information from agent 002<a class="headerlink" href="#example-2-querying-information-from-agent-002" title="Permalink to this headline">¶</a></h3>
 <p>To query an agent, just use the <a class="reference internal" href="#cmdoption-agent-control-i"><code class="xref std std-option docutils literal"><span class="pre">agent_control</span> <span class="pre">-i</span></code></a> option followed by the agent id.</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> /var/ossec/bin/agent_control -i <span class="m">002</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp"># </span>/var/ossec/bin/agent_control -i <span class="m">002</span>
 
 <span class="go">OSSEC HIDS agent_control. Agent information:</span>
 <span class="go">Agent ID: 002</span>
@@ -236,7 +236,7 @@ all of them, use <a class="reference internal" href="#cmdoption-agent-control-l"
 <h3>Example 3: Executing syscheck and rootcheck scan immediately<a class="headerlink" href="#example-3-executing-syscheck-and-rootcheck-scan-immediately" title="Permalink to this headline">¶</a></h3>
 <p>To execute the syscheck/rootcheck scan immediately, use the <a class="reference internal" href="#id2"><code class="xref std std-option docutils literal"><span class="pre">agent_control</span> <span class="pre">-r</span></code></a>
 option followed by the <a class="reference internal" href="#cmdoption-agent-control-u"><code class="xref std std-option docutils literal"><span class="pre">agent_control</span> <span class="pre">-u</span></code></a> with the agent id.</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> /var/ossec/bin/agent_control -r -u <span class="m">000</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp"># </span>/var/ossec/bin/agent_control -r -u <span class="m">000</span>
 
 <span class="go">OSSEC HIDS agent_control: Restarting Syscheck/Rootcheck locally.</span>
 </pre></div>

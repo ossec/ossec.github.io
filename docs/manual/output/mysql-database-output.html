@@ -137,7 +137,7 @@
 <h2>Database Setup<a class="headerlink" href="#database-setup" title="Permalink to this headline">¶</a></h2>
 <p>Create a database, setup the database user, and add the schema (located in the
 <code class="docutils literal"><span class="pre">src/os_dbd</span></code> directory of the distribution) with the following commands.</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> mysql -u root -p
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp"># </span>mysql -u root -p
 
 <span class="go">mysql&gt; create database ossec;</span>
 
@@ -152,7 +152,7 @@
 
 <span class="go">mysql&gt; quit</span>
 
-<span class="gp">#</span> mysql -u root -p ossec &lt; mysql.schema
+<span class="gp"># </span>mysql -u root -p ossec &lt; mysql.schema
 </pre></div>
 </div>
 </div>
@@ -178,8 +178,8 @@ database.</p>
 <div class="section" id="complete-mysql-output">
 <h2>Complete MySQL Output<a class="headerlink" href="#complete-mysql-output" title="Permalink to this headline">¶</a></h2>
 <p>All that is left is to enable the database daemon and restart ossec for the changes to take effect.</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> /var/ossec/bin/ossec-control <span class="nb">enable</span> database
-<span class="gp">#</span> /var/ossec/bin/ossec-control restart
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp"># </span>/var/ossec/bin/ossec-control <span class="nb">enable</span> database
+<span class="gp"># </span>/var/ossec/bin/ossec-control restart
 </pre></div>
 </div>
 </div>

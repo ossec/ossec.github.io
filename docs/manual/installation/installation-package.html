@@ -139,15 +139,15 @@ Links to the packages can be found on the OSSEC <a class="reference external" hr
 <h2>RPM Installation<a class="headerlink" href="#rpm-installation" title="Permalink to this headline">¶</a></h2>
 <p>OSSEC&#8217;s RPMs are made available by <a class="reference external" href="http://www.atomicorp.com">AtomiCorp</a>.</p>
 <p>The RPMs can be installed by adding the AtomiCorp yum repository:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> wget -q -O - https://updates.atomicorp.com/installers/atomic <span class="p">|</span> sh
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp"># </span>wget -q -O - https://updates.atomicorp.com/installers/atomic <span class="p">|</span> sh
 </pre></div>
 </div>
 <p>Next use <code class="docutils literal"><span class="pre">yum</span></code> to install the specific packages. For an OSSEC server run:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> yum install ossec-hids ossec-hids-server
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp"># </span>yum install ossec-hids ossec-hids-server
 </pre></div>
 </div>
 <p>And for an agent run:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> yum install ossec-hids ossec-hids-agent
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp"># </span>yum install ossec-hids ossec-hids-agent
 </pre></div>
 </div>
 </div>
@@ -155,16 +155,19 @@ Links to the packages can be found on the OSSEC <a class="reference external" hr
 <h2>Deb Installation<a class="headerlink" href="#deb-installation" title="Permalink to this headline">¶</a></h2>
 <p>OSSEC&#8217;s DEB packages are made available by <a class="reference external" href="http://www.atomicorp.com">Atomicorp</a>.</p>
 <p>Run the Repo installer:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> wget -q -O - https://updates.atomicorp.com/installers/atomic <span class="p">|</span> sudo bash
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp"># </span>wget -q -O - https://updates.atomicorp.com/installers/atomic <span class="p">|</span> sudo bash
 </pre></div>
 </div>
 <p>Update the repository:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp"># </span>apt-get update
+</pre></div>
+</div>
 <p>Install OSSEC HIDS server/manager:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> apt-get install ossec-hids
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp"># </span>apt-get install ossec-hids-server
 </pre></div>
 </div>
 <p>Or install OSSEC HIDS agent:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> apt-get install ossec-hids-agent
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp"># </span>apt-get install ossec-hids-agent
 </pre></div>
 </div>
 </div>
@@ -178,11 +181,11 @@ FreeBSD and OpenBSD as example.</p>
 <p>You are going to work together with <code class="docutils literal"><span class="pre">pkg</span></code> here. Just choose which type of setup you need
 (agent, local monitoring, or server/manager) and install the respective OSSEC package.</p>
 <p>Should you opt to install an OSSEC Server/Manager:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> pkg install ossec-hids-server
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp"># </span>pkg install ossec-hids-server
 </pre></div>
 </div>
 <p>If you want to install an OSSEC Agent:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> pkg install ossec-hids-agent
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp"># </span>pkg install ossec-hids-agent
 </pre></div>
 </div>
 <div class="admonition note">
@@ -195,7 +198,7 @@ read more about it <a class="reference external" href="https://www.dragonflybsd.
 </ul>
 <p>Here you must work with <code class="docutils literal"><span class="pre">pkg_add</span></code> instead of <cite>pkg</cite>, but no worries it&#8217;s the same concept.</p>
 <p>As it only offers one package, here is how to install OSSEC HIDS on OpenBSD:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> pkg_add ossec-hids
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp"># </span>pkg_add ossec-hids
 </pre></div>
 </div>
 </div>

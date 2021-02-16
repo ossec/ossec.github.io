@@ -260,11 +260,11 @@ above are also sent to 10.1.1.1:</p>
 </pre></div>
 </div>
 <p>After this change is made, the client-syslog process should be enabled:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> /var/ossec/bin/ossec-control <span class="nb">enable</span> client-syslog
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp"># </span>/var/ossec/bin/ossec-control <span class="nb">enable</span> client-syslog
 </pre></div>
 </div>
 <p>And finally restart the OSSEC processes:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> /var/ossec/bin/ossec-control restart
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp"># </span>/var/ossec/bin/ossec-control restart
 </pre></div>
 </div>
 <p>ossec-csyslog should start along with the other OSSEC processes:</p>
@@ -275,7 +275,7 @@ above are also sent to 10.1.1.1:</p>
 </pre></div>
 </div>
 <p>And in the logs:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> tail -n <span class="m">1000</span> /var/ossec/logs/ossec.log <span class="p">|</span> grep csyslog
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp"># </span>tail -n <span class="m">1000</span> /var/ossec/logs/ossec.log <span class="p">|</span> grep csyslog
 <span class="go">2008/07/25 12:55:16 ossec-csyslogd: INFO: Started (pid: 19412).</span>
 <span class="go">2008/07/25 12:55:16 ossec-csyslogd: INFO: Forwarding alerts via syslog to: ‘192.168.4.1:514′.</span>
 <span class="go">2008/07/25 12:55:16 ossec-csyslogd: INFO: Forwarding alerts via syslog to: ‘10.1.1.1:514′.</span>

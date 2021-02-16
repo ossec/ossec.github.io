@@ -161,7 +161,7 @@ level 6:</p>
 <p>With the configuration completed (and the manager restarted), you can test the
 active response by running the agent-control script (in this case, I am running
 it on agent id 185 to block ip 2.3.4.5):</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> /var/ossec/bin/agent_control -L
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp"># </span>/var/ossec/bin/agent_control -L
 
 <span class="go">OSSEC HIDS agent_control. Available active responses:</span>
 
@@ -169,7 +169,7 @@ it on agent id 185 to block ip 2.3.4.5):</p>
 <span class="go">Response name: firewall-drop600, command: firewall-drop.sh</span>
 <span class="go">Response name: win_nullroute600, command: route-null.cmd</span>
 
-<span class="gp">#</span> /var/ossec/bin/agent_control -b <span class="m">2</span>.3.4.5 -f win_nullroute600 -u <span class="m">185</span>
+<span class="gp"># </span>/var/ossec/bin/agent_control -b <span class="m">2</span>.3.4.5 -f win_nullroute600 -u <span class="m">185</span>
 
 <span class="go">OSSEC HIDS agent_control: Running active response &quot;win_nullroute600′ &quot;n: 185</span>
 </pre></div>

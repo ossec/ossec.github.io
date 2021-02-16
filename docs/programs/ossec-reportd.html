@@ -201,25 +201,25 @@ End the ossec-reportd with <code class="docutils literal"><span class="pre">2&gt
 <h2>ossec-reportd example usage<a class="headerlink" href="#ossec-reportd-example-usage" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="example-1-show-successful-logins">
 <h3>Example 1: Show Successful Logins<a class="headerlink" href="#example-1-show-successful-logins" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> cat /var/ossec/logs/alerts/alerts.log <span class="p">|</span> /var/ossec/bin/ossec-reportd -f group authentication_success
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp"># </span>cat /var/ossec/logs/alerts/alerts.log <span class="p">|</span> /var/ossec/bin/ossec-reportd -f group authentication_success
 </pre></div>
 </div>
 </div>
 <div class="section" id="example-2-show-alerts-level-10-and-greater">
 <h3>Example 2: Show Alerts Level 10 and Greater<a class="headerlink" href="#example-2-show-alerts-level-10-and-greater" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> cat /var/ossec/logs/alerts/alerts.log <span class="p">|</span> /var/ossec/bin/ossec-reportd -f level <span class="m">10</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp"># </span>cat /var/ossec/logs/alerts/alerts.log <span class="p">|</span> /var/ossec/bin/ossec-reportd -f level <span class="m">10</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="example-3-show-the-srcip-for-all-users">
 <h3>Example 3: Show the srcip for all users<a class="headerlink" href="#example-3-show-the-srcip-for-all-users" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> cat /var/ossec/logs/alerts/alerts.log <span class="p">|</span> /var/ossec/bin/ossec-reportd -f group authentication -r user srcip
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp"># </span>cat /var/ossec/logs/alerts/alerts.log <span class="p">|</span> /var/ossec/bin/ossec-reportd -f group authentication -r user srcip
 </pre></div>
 </div>
 </div>
 <div class="section" id="example-4-show-changed-files-as-reported-by-syscheck">
 <h3>Example 4: Show Changed files as reported by Syscheck<a class="headerlink" href="#example-4-show-changed-files-as-reported-by-syscheck" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> cat /var/ossec/logs/alerts/alerts.log <span class="p">|</span> /var/ossec/bin/ossec-reportd -f group syscheck -r location filename
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp"># </span>cat /var/ossec/logs/alerts/alerts.log <span class="p">|</span> /var/ossec/bin/ossec-reportd -f group syscheck -r location filename
 </pre></div>
 </div>
 </div>
