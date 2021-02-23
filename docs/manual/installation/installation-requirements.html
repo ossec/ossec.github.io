@@ -1,36 +1,24 @@
 <!DOCTYPE html>
 
-
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Installation requirements &#8212; OSSEC</title>
-    
-    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/parallax.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../../',
-        VERSION:     '3.3.0',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
-    <script type="text/javascript" src="../../../_static/jquery.js"></script>
-    <script type="text/javascript" src="../../../_static/underscore.js"></script>
-    <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="../../../_static/js/jquery-fix.js"></script>
-    <script type="text/javascript" src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../../../_static/bootstrap-sphinx.js"></script>
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script src="../../../_static/js/jquery-fix.js"></script>
+    <script src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script src="../../../_static/bootstrap-sphinx.js"></script>
     <link rel="author" title="About these documents" href="../../../about.html" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -41,8 +29,37 @@
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
 <meta name="apple-mobile-web-app-capable" content="yes">
 
-  </head>
-  <body role="document">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-138780766-1"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'UA-138780766-1');
+</script>
+
+<script type="text/javascript">
+  var _ss = _ss || [];
+  _ss.push(['_setDomain', 'https://koi-3QNN51VTHS.marketingautomation.services/net']);
+  _ss.push(['_setAccount', 'KOI-4APYNOYP8O']);
+  _ss.push(['_trackPageView']);
+  window._pa = window._pa || {};
+  // _pa.orderId = "myOrderId"; // OPTIONAL: attach unique conversion identifier to conversions
+  // _pa.revenue = "19.99"; // OPTIONAL: attach dynamic purchase values to conversions
+  // _pa.productId = "myProductId"; // OPTIONAL: Include product ID for use with dynamic ads
+  (function() {
+  var ss = document.createElement('script');
+  ss.type = 'text/javascript'; ss.async = true;
+  ss.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'koi-3QNN51VTHS.marketingautomation.services/client/ss.js?ver=2.4.0';
+  var scr = document.getElementsByTagName('script')[0];
+  scr.parentNode.insertBefore(ss, scr);
+  })();
+  </script>
+
+
+
+  </head><body>
 
   <div id="navbar" class="navbar navbar-inverse navbar-default ">
     <div class="container">
@@ -61,9 +78,10 @@
         <div class="collapse navbar-collapse nav-collapse">
           <ul class="nav navbar-nav">
             
-                <li><a href="https://www.ossec.net/about/">About <i class="fa fa-info-circle"></i></a></li>
-                <li><a href="https://www.ossec.net/docs/">Documentation <i class="fa fa-book"></i></a></li>
-                <li><a href="https://www.ossec.net/downloads/">Downloads <i class="fa fa-download"></i></a></li>
+                <li><a href="https://www.ossec.net/about/">About</a></li>
+                <li><a href="https://www.ossec.net/docs/">Documentation</a></li>
+                <li><a href="https://www.ossec.net/register-for-ossec/">Get OSSEC+</a></li>
+                <li><a href="https://www.ossec.net/downloads/">Downloads</a></li>
             
             
               <li class="dropdown globaltoc-container">
@@ -140,29 +158,29 @@ it on one system and move the binaries to the final box.</p>
 <div class="section" id="pcre2">
 <h2>PCRE2<a class="headerlink" href="#pcre2" title="Permalink to this headline">¶</a></h2>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 3.3.</span></p>
+<p><span class="versionmodified added">New in version 3.3.</span></p>
 </div>
-<p>PCRE2 support has been added to OSSEC v3.3. The build system can either use the system&#8217;s PCRE2 libraries,
+<p>PCRE2 support has been added to OSSEC v3.3. The build system can either use the system’s PCRE2 libraries,
 or the necessary bits can be built as part of the installation process.</p>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 3.4.</span></p>
+<p><span class="versionmodified added">New in version 3.4.</span></p>
 </div>
 <p>As of v3.4 the default build process has set <cite>PCRE2_SYSTEM</cite>, and expects pcre2 to be installed on the system.
 On many Linux systems the necessary packages would be <cite>dev</cite> or <cite>devel</cite> packages specifically.</p>
 <p>Alternatively, OSSEC can build and use pcre2 without installing the packages.
 To do this the <cite>pcre2-10.32</cite> sources must be installed in <cite>src/external</cite>:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">cd</span> ossec-hids-*
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">cd</span> ossec-hids-*
 <span class="gp">$ </span>wget https://ftp.pcre.org/pub/pcre/pcre2-10.32.tar.gz
 <span class="gp">$ </span>tar xzf pcre2-10.32.tar.gz -C src/external
 </pre></div>
 </div>
 <p>If you use the <cite>pcre2-10.32</cite> sources, set the <cite>PCRE2_SYSTEM</cite> variable to no:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp"># </span><span class="nb">cd</span> ossec-hids-*
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"># </span><span class="nb">cd</span> ossec-hids-*
 <span class="gp"># </span><span class="nv">PCRE2_SYSTEM</span><span class="o">=</span>no ./install.sh
 </pre></div>
 </div>
-<p>To use the system&#8217;s PCRE2, set the <cite>PCRE2_SYSTEM</cite> variable to yes:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp"># </span><span class="nb">cd</span> ossec-hids-*
+<p>To use the system’s PCRE2, set the <cite>PCRE2_SYSTEM</cite> variable to yes:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"># </span><span class="nb">cd</span> ossec-hids-*
 <span class="gp"># </span><span class="nv">PCRE2_SYSTEM</span><span class="o">=</span>yes ./install.sh
 </pre></div>
 </div>
@@ -173,7 +191,7 @@ To do this the <cite>pcre2-10.32</cite> sources must be installed in <cite>src/e
 versions this included version was used by default during the build process, but this changed to
 using the system zlib. Ensure the correct zlib development packages are installed.</p>
 <p>To use the included version of zlib, simply set <cite>ZLIB_SYSTEM</cite> to <cite>no</cite>:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp"># </span><span class="nb">cd</span> ossec-hids-*
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"># </span><span class="nb">cd</span> ossec-hids-*
 <span class="gp"># </span><span class="nv">ZLIB_SYSTEM</span><span class="o">=</span>no ./install.sh
 </pre></div>
 </div>
@@ -181,7 +199,7 @@ using the system zlib. Ensure the correct zlib development packages are installe
 <div class="section" id="libevent">
 <h2>libevent<a class="headerlink" href="#libevent" title="Permalink to this headline">¶</a></h2>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 3.5.</span></p>
+<p><span class="versionmodified added">New in version 3.5.</span></p>
 </div>
 <p><a class="reference external" href="http://libevent.org/">libevent</a> was added for <cite>ossec-agentd</cite> and <cite>ossec-maild</cite>. A development package
 for this should be installed on the system.</p>
@@ -189,68 +207,68 @@ for this should be installed on the system.</p>
 <div class="section" id="redhat-centos-fedora-amazon-linux">
 <h2>RedHat / Centos / Fedora / Amazon Linux<a class="headerlink" href="#redhat-centos-fedora-amazon-linux" title="Permalink to this headline">¶</a></h2>
 <p>Step 1) At a minimum, the following packages should be installed:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">yum install zlib-devel pcre2-devel make gcc sqlite-devel openssl-devel libevent-devel systemd-devel</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">yum install zlib-devel pcre2-devel make gcc sqlite-devel openssl-devel libevent-devel systemd-devel</span>
 </pre></div>
 </div>
 <p>Step 2) For optional database support add thepackage mysql-devel and/or postgresql-devel packages</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">yum install mysql-devel postgresql-devel</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">yum install mysql-devel postgresql-devel</span>
 </pre></div>
 </div>
 <p>Step 3) Run the installation script</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">./install.sh</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">./install.sh</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="ubuntu-debian">
 <h2>Ubuntu / Debian<a class="headerlink" href="#ubuntu-debian" title="Permalink to this headline">¶</a></h2>
 <p>At a minimum, the following packages should be installed:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">apt-get install build-essential make zlib1g-dev libpcre2-dev libevent-dev libssl-dev</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">apt-get install build-essential make zlib1g-dev libpcre2-dev libevent-dev libssl-dev</span>
 </pre></div>
 </div>
 <p>On Debian 10 Buster, <cite>zlib</cite> could be <cite>libz</cite>.</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">apt-get install libz-dev</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">apt-get install libz-dev</span>
 </pre></div>
 </div>
 <p>On Ubuntu you will need the <em>build-essential</em> package in order to
 compile and install OSSEC.</p>
 <p>To install the package run the following command.</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">apt-get install build-essential zlib1g-dev</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">apt-get install build-essential zlib1g-dev</span>
 </pre></div>
 </div>
-<p>To use the system&#8217;s pcre2 libraries, install the libpcre2 development package:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">apt-get install libpcre2-dev</span>
+<p>To use the system’s pcre2 libraries, install the libpcre2 development package:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">apt-get install libpcre2-dev</span>
 </pre></div>
 </div>
 <p>If database support is needed <em>mysql-dev</em> or <em>postgresql-dev</em> should be
 installed. Run the following command to install these packages.</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">apt-get install mysql-dev postgresql-dev</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">apt-get install mysql-dev postgresql-dev</span>
 </pre></div>
 </div>
 <p>On Debian 10 Buster the following packages may be installed for MySQL/MariaDB support:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">apt-get install default-libmysqlclient-dev libmariadb-dev-compat</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">apt-get install default-libmysqlclient-dev libmariadb-dev-compat</span>
 </pre></div>
 </div>
 <p>To use the SQLite features, the <cite>libsqlite3-dev</cite> package is necessary.</p>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 3.0.</span></p>
+<p><span class="versionmodified added">New in version 3.0.</span></p>
 </div>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">apt-get install libsqlite3-dev</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">apt-get install libsqlite3-dev</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="opensuse">
 <h2>OpenSuse<a class="headerlink" href="#opensuse" title="Permalink to this headline">¶</a></h2>
 <p>The zlib development package should be installed:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">zypper install zlib-devel</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">zypper install zlib-devel</span>
 </pre></div>
 </div>
-<p>To use the system&#8217;s pcre2 libraries, add the pcre2 development package:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">zypper install pcre2-devel</span>
+<p>To use the system’s pcre2 libraries, add the pcre2 development package:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">zypper install pcre2-devel</span>
 </pre></div>
 </div>
 <p>If database support is needed the package mysql-devel and/or postgresql-devel will
 need to be installed.</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">zypper install postgresql-devel mysql-devel</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">zypper install postgresql-devel mysql-devel</span>
 </pre></div>
 </div>
 </div>
@@ -262,11 +280,11 @@ its <a class="reference external" href="https://www.freebsd.org/ports">FreeBSD P
 <strong>ossec-hids-server</strong>.</p>
 <p>If you want to build and install only the the required dependencies to run an
 OSSEC server/manager, without installing it:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp"># </span><span class="nb">cd</span> /usr/ports/security/ossec-hids-server
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"># </span><span class="nb">cd</span> /usr/ports/security/ossec-hids-server
 <span class="gp"># </span>make
 </pre></div>
 </div>
-<p>If you want to install this particular port, you should run <code class="docutils literal"><span class="pre">make</span> <span class="pre">install</span></code>.</p>
+<p>If you want to install this particular port, you should run <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">install</span></code>.</p>
 <p>FreeBSD also offers pre-compiled packages for OSSEC and all its dependencies. If you
 want to install them you must work with
 <a class="reference external" href="https://www.freebsd.org/doc/handbook/pkgng-intro.html">pkg</a>.</p>
@@ -276,12 +294,12 @@ want to install them you must work with
 <p>As OpenBSD also has its own <a class="reference external" href="https://www.openbsd.org/faq/ports/ports.html">OpenBSD Ports Collection</a>,
 you can build and install OSSEC using it if you want.</p>
 <p>It only offers <strong>security/ossec-hids</strong>, so:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">cd /usr/ports/security/ossec-hids</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cd /usr/ports/security/ossec-hids</span>
 <span class="go">make</span>
 </pre></div>
 </div>
 <p>Just like the previous example with FreeBSD, if you want to install it all (not just the
-dependencies) you must run <code class="docutils literal"><span class="pre">make</span> <span class="pre">install</span></code> instead. Another option would be using
+dependencies) you must run <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">install</span></code> instead. Another option would be using
 <a class="reference external" href="https://www.openbsd.org/faq/faq15.html">pkg_add</a>.</p>
 </div>
 </div>
@@ -298,9 +316,8 @@ dependencies) you must run <code class="docutils literal"><span class="pre">make
       
     </p>
     <p>
-        &copy; Copyright 2010-2020, OSSEC Project Team.<br/>
+        &copy; Copyright 2010-2021, OSSEC Project Team.<br/>
     OSSEC <b>ossec.net</b> domain owned and maintained by <a href="https://www.ossec.net" target="_blank">OSSEC Foundation</a><br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.5.2 - 
     Home page graphics courtesy of <a href="https://pixabay.com" target="_blank">pixabay</a>
     </p>
   </div>

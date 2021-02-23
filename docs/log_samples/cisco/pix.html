@@ -1,36 +1,24 @@
 <!DOCTYPE html>
 
-
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cisco PIX Logs &#8212; OSSEC</title>
-    
-    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/parallax.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../../',
-        VERSION:     '3.3.0',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
-    <script type="text/javascript" src="../../../_static/jquery.js"></script>
-    <script type="text/javascript" src="../../../_static/underscore.js"></script>
-    <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="../../../_static/js/jquery-fix.js"></script>
-    <script type="text/javascript" src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../../../_static/bootstrap-sphinx.js"></script>
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script src="../../../_static/js/jquery-fix.js"></script>
+    <script src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script src="../../../_static/bootstrap-sphinx.js"></script>
     <link rel="author" title="About these documents" href="../../../about.html" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -39,8 +27,37 @@
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
 <meta name="apple-mobile-web-app-capable" content="yes">
 
-  </head>
-  <body role="document">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-138780766-1"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'UA-138780766-1');
+</script>
+
+<script type="text/javascript">
+  var _ss = _ss || [];
+  _ss.push(['_setDomain', 'https://koi-3QNN51VTHS.marketingautomation.services/net']);
+  _ss.push(['_setAccount', 'KOI-4APYNOYP8O']);
+  _ss.push(['_trackPageView']);
+  window._pa = window._pa || {};
+  // _pa.orderId = "myOrderId"; // OPTIONAL: attach unique conversion identifier to conversions
+  // _pa.revenue = "19.99"; // OPTIONAL: attach dynamic purchase values to conversions
+  // _pa.productId = "myProductId"; // OPTIONAL: Include product ID for use with dynamic ads
+  (function() {
+  var ss = document.createElement('script');
+  ss.type = 'text/javascript'; ss.async = true;
+  ss.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'koi-3QNN51VTHS.marketingautomation.services/client/ss.js?ver=2.4.0';
+  var scr = document.getElementsByTagName('script')[0];
+  scr.parentNode.insertBefore(ss, scr);
+  })();
+  </script>
+
+
+
+  </head><body>
 
   <div id="navbar" class="navbar navbar-inverse navbar-default ">
     <div class="container">
@@ -59,9 +76,10 @@
         <div class="collapse navbar-collapse nav-collapse">
           <ul class="nav navbar-nav">
             
-                <li><a href="https://www.ossec.net/about/">About <i class="fa fa-info-circle"></i></a></li>
-                <li><a href="https://www.ossec.net/docs/">Documentation <i class="fa fa-book"></i></a></li>
-                <li><a href="https://www.ossec.net/downloads/">Downloads <i class="fa fa-download"></i></a></li>
+                <li><a href="https://www.ossec.net/about/">About</a></li>
+                <li><a href="https://www.ossec.net/docs/">Documentation</a></li>
+                <li><a href="https://www.ossec.net/register-for-ossec/">Get OSSEC+</a></li>
+                <li><a href="https://www.ossec.net/downloads/">Downloads</a></li>
             
             
               <li class="dropdown globaltoc-container">
@@ -133,7 +151,7 @@ list with all event IDS can be found at the :
 </div>
 <div class="section" id="full-log-samples">
 <h2>Full log samples:<a class="headerlink" href="#full-log-samples" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Sep  7 06:25:17 PIXName %PIX-7-710005: UDP request discarded from 0.0.0.0/68 to outside:255.255.255.255/67</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Sep  7 06:25:17 PIXName %PIX-7-710005: UDP request discarded from 0.0.0.0/68 to outside:255.255.255.255/67</span>
 <span class="go">Sep  7 06:25:23 PIXName %PIX-7-710005: UDP request discarded from 1.1.1.1/137 to outside:1.1.1.255/137</span>
 <span class="go">Sep  7 06:25:23 PIXName %PIX-7-710005: UDP request discarded from 1.1.1.1/137 to outside:1.1.1.255/137</span>
 <span class="go">Sep  7 06:25:23 PIXName %PIX-7-710005: UDP request discarded from 1.1.1.1/137 to outside:1.1.1.255/137</span>
@@ -239,7 +257,7 @@ list with all event IDS can be found at the :
 </div>
 <div class="section" id="critical-messages-severity-2">
 <h2>Critical Messages, Severity 2:<a class="headerlink" href="#critical-messages-severity-2" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">%</span>PIX-2-106006: Deny inbound UDP from ***/20031 to ***/20031 on  interface vpn
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">%</span>PIX-2-106006: Deny inbound UDP from ***/20031 to ***/20031 on  interface vpn
 <span class="gp">%</span>PIX-2-106006: Deny inbound UDP from ***/20031 to ***/20031 on  interface vpn
 <span class="gp">%</span>PIX-2-106006: Deny inbound UDP from ***/54481 to ***/1026 on  interface vpn
 <span class="gp">%</span>PIX-2-106006: Deny inbound UDP from ***9/20031 to ***/20031 on interface vpn
@@ -249,32 +267,32 @@ list with all event IDS can be found at the :
 </div>
 <div class="section" id="error-messages-severity-3">
 <h2>Error Messages, Severity 3:<a class="headerlink" href="#error-messages-severity-3" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">%</span>PIX-3-313001: Denied ICMP <span class="nv">type</span><span class="o">=</span><span class="m">11</span>, <span class="nv">code</span><span class="o">=</span><span class="m">0</span> from <span class="m">192</span>.168.30.2 on interface <span class="m">2</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">%</span>PIX-3-313001: Denied ICMP <span class="nv">type</span><span class="o">=</span><span class="m">11</span>, <span class="nv">code</span><span class="o">=</span><span class="m">0</span> from <span class="m">192</span>.168.30.2 on interface <span class="m">2</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="warning-messages-severity-4">
 <h2>Warning Messages, Severity 4:<a class="headerlink" href="#warning-messages-severity-4" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">%</span>PIX-4-410001: Dropped UDP DNS reply from os-to-dmz:192.168.30.2 to outside:192.168.100.2/53<span class="p">;</span> packet length <span class="m">560</span> bytes exceeds configured limit of <span class="m">512</span> bytes
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">%</span>PIX-4-410001: Dropped UDP DNS reply from os-to-dmz:192.168.30.2 to outside:192.168.100.2/53<span class="p">;</span> packet length <span class="m">560</span> bytes exceeds configured limit of <span class="m">512</span> bytes
 </pre></div>
 </div>
 </div>
 <div class="section" id="notification-messages-severity-5">
 <h2>Notification Messages, Severity 5:<a class="headerlink" href="#notification-messages-severity-5" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">%</span>PIX-5-304001: <span class="m">192</span>.168.20.50 Accessed URL x.y.z.a:/test/xx/yy.html
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">%</span>PIX-5-304001: <span class="m">192</span>.168.20.50 Accessed URL x.y.z.a:/test/xx/yy.html
 </pre></div>
 </div>
 </div>
 <div class="section" id="informational-messages-severity-6">
 <h2>Informational Messages, Severity 6:<a class="headerlink" href="#informational-messages-severity-6" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">%</span>PIX-6-302016: Teardown UDP connection <span class="m">1042068</span> <span class="k">for</span> outside:192.168.20.45/53 to inside:192.168.20.208/37989 duration <span class="m">0</span>:02:10 bytes <span class="m">185</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">%</span>PIX-6-302016: Teardown UDP connection <span class="m">1042068</span> <span class="k">for</span> outside:192.168.20.45/53 to inside:192.168.20.208/37989 duration <span class="m">0</span>:02:10 bytes <span class="m">185</span>
 <span class="gp">%</span>PIX-6-106015: Deny TCP <span class="o">(</span>no connection<span class="o">)</span> from <span class="m">192</span>.168.2.50/443 to <span class="m">192</span>.168.20/65 flags RST on interface outside
 </pre></div>
 </div>
 </div>
 <div class="section" id="debugging-messages-severity-7">
 <h2>Debugging Messages, Severity 7:<a class="headerlink" href="#debugging-messages-severity-7" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">%</span>PIX-7-710005: UDP request discarded from  <span class="m">192</span>.168.20.45/53 to outside:192.168.20.208/37989
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">%</span>PIX-7-710005: UDP request discarded from  <span class="m">192</span>.168.20.45/53 to outside:192.168.20.208/37989
 </pre></div>
 </div>
 </div>
@@ -292,9 +310,8 @@ list with all event IDS can be found at the :
       
     </p>
     <p>
-        &copy; Copyright 2010-2020, OSSEC Project Team.<br/>
+        &copy; Copyright 2010-2021, OSSEC Project Team.<br/>
     OSSEC <b>ossec.net</b> domain owned and maintained by <a href="https://www.ossec.net" target="_blank">OSSEC Foundation</a><br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.5.2 - 
     Home page graphics courtesy of <a href="https://pixabay.com" target="_blank">pixabay</a>
     </p>
   </div>

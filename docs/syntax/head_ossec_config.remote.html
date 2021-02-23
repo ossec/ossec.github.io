@@ -1,36 +1,24 @@
 <!DOCTYPE html>
 
-
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ossec.conf: Remote Options &#8212; OSSEC</title>
-    
-    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/parallax.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../',
-        VERSION:     '3.3.0',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
-    <script type="text/javascript" src="../../_static/jquery.js"></script>
-    <script type="text/javascript" src="../../_static/underscore.js"></script>
-    <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
-    <script type="text/javascript" src="../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script src="../../_static/js/jquery-fix.js"></script>
+    <script src="../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script src="../../_static/bootstrap-sphinx.js"></script>
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -41,8 +29,37 @@
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
 <meta name="apple-mobile-web-app-capable" content="yes">
 
-  </head>
-  <body role="document">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-138780766-1"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'UA-138780766-1');
+</script>
+
+<script type="text/javascript">
+  var _ss = _ss || [];
+  _ss.push(['_setDomain', 'https://koi-3QNN51VTHS.marketingautomation.services/net']);
+  _ss.push(['_setAccount', 'KOI-4APYNOYP8O']);
+  _ss.push(['_trackPageView']);
+  window._pa = window._pa || {};
+  // _pa.orderId = "myOrderId"; // OPTIONAL: attach unique conversion identifier to conversions
+  // _pa.revenue = "19.99"; // OPTIONAL: attach dynamic purchase values to conversions
+  // _pa.productId = "myProductId"; // OPTIONAL: Include product ID for use with dynamic ads
+  (function() {
+  var ss = document.createElement('script');
+  ss.type = 'text/javascript'; ss.async = true;
+  ss.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'koi-3QNN51VTHS.marketingautomation.services/client/ss.js?ver=2.4.0';
+  var scr = document.getElementsByTagName('script')[0];
+  scr.parentNode.insertBefore(ss, scr);
+  })();
+  </script>
+
+
+
+  </head><body>
 
   <div id="navbar" class="navbar navbar-inverse navbar-default ">
     <div class="container">
@@ -61,9 +78,10 @@
         <div class="collapse navbar-collapse nav-collapse">
           <ul class="nav navbar-nav">
             
-                <li><a href="https://www.ossec.net/about/">About <i class="fa fa-info-circle"></i></a></li>
-                <li><a href="https://www.ossec.net/docs/">Documentation <i class="fa fa-book"></i></a></li>
-                <li><a href="https://www.ossec.net/downloads/">Downloads <i class="fa fa-download"></i></a></li>
+                <li><a href="https://www.ossec.net/about/">About</a></li>
+                <li><a href="https://www.ossec.net/docs/">Documentation</a></li>
+                <li><a href="https://www.ossec.net/register-for-ossec/">Get OSSEC+</a></li>
+                <li><a href="https://www.ossec.net/downloads/">Downloads</a></li>
             
             
               <li class="dropdown globaltoc-container">
@@ -139,7 +157,7 @@
 <h3>Supported types<a class="headerlink" href="#supported-types" title="Permalink to this headline">¶</a></h3>
 <p>remote options are available in the the following installation types:</p>
 <ul class="simple">
-<li>server</li>
+<li><p>server</p></li>
 </ul>
 </div>
 <div class="section" id="location">
@@ -147,7 +165,7 @@
 <p>All remote options must be configured in the /var/ossec/etc/ossec.conf
 and used within the &lt;ossec_config&gt; tag.</p>
 <p>XML excerpt to show location:</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;ossec_config&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;ossec_config&gt;</span>
     <span class="nt">&lt;remote&gt;</span>
         <span class="c">&lt;!--</span>
 <span class="c">        remote options here</span>
@@ -160,77 +178,6 @@ and used within the &lt;ossec_config&gt; tag.</p>
 </div>
 <div class="section" id="options">
 <h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
-<dl class="element">
-<dt id="element-remote">
-<code class="descname">remote</code><a class="headerlink" href="#element-remote" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="element">
-<dt id="element-connection">
-<code class="descname">connection</code><a class="headerlink" href="#element-connection" title="Permalink to this definition">¶</a></dt>
-<dd><p>Specify the type of connection being enabled: secure or using syslog.</p>
-<p><strong>Default:</strong> secure</p>
-<p><strong>Allowed:</strong> secure/syslog</p>
-</dd></dl>
-
-<dl class="element">
-<dt id="element-port">
-<code class="descname">port</code><a class="headerlink" href="#element-port" title="Permalink to this definition">¶</a></dt>
-<dd><p>Specifies the port to listen for events.</p>
-<p><strong>Default:</strong></p>
-<ul class="simple">
-<li>1514: if connection is set to <cite>secure</cite></li>
-<li>514: if connection is set to <cite>syslog</cite></li>
-</ul>
-<p><strong>Allowed:</strong> Any port number from 1 to 65535</p>
-</dd></dl>
-
-<dl class="element">
-<dt id="element-protocol">
-<code class="descname">protocol</code><a class="headerlink" href="#element-protocol" title="Permalink to this definition">¶</a></dt>
-<dd><p>Specifies the protocol to use for syslog events.</p>
-<p><strong>Default:</strong> udp</p>
-<p><strong>Allowed:</strong> udp or tcp</p>
-</dd></dl>
-
-<dl class="element">
-<dt id="element-allowed-ips">
-<code class="descname">allowed-ips</code><a class="headerlink" href="#element-allowed-ips" title="Permalink to this definition">¶</a></dt>
-<dd><p>List of IP addresses that are allowed to send syslog messages to the server (one per element).</p>
-<p><strong>Allowed:</strong> Any IP address or network</p>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">It is necessary to allow at least one IP address when using the syslog connection type.</p>
-</div>
-</dd></dl>
-
-<dl class="element">
-<dt id="element-deny-ips">
-<code class="descname">deny-ips</code><a class="headerlink" href="#element-deny-ips" title="Permalink to this definition">¶</a></dt>
-<dd><p>List of IP addresses that are not allowed to send syslog messages to the server(one per element).</p>
-<p><strong>Allowed:</strong> Any IP address or network</p>
-</dd></dl>
-
-<dl class="element">
-<dt id="element-local_ip">
-<code class="descname">local_ip</code><a class="headerlink" href="#element-local_ip" title="Permalink to this definition">¶</a></dt>
-<dd><p>Local ip address to listen for connections.</p>
-<p><strong>Default:</strong> all interfaces</p>
-<p><strong>Allowed:</strong> Any internal ip address</p>
-</dd></dl>
-
-<dl class="element">
-<dt id="element-ipv6">
-<code class="descname">ipv6</code><a class="headerlink" href="#element-ipv6" title="Permalink to this definition">¶</a></dt>
-<dd><p>Local ipv6 address to listen for connections.</p>
-<p><strong>Default:</strong> None</p>
-<p><strong>Allowed:</strong> Any IPv6 address.</p>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">This is not well tested. For the time being I recommend using the full IPv6 address instead of one of the many shortcuts.</p>
-</div>
-</dd></dl>
-
 </div>
 </div>
 
@@ -246,9 +193,8 @@ and used within the &lt;ossec_config&gt; tag.</p>
       
     </p>
     <p>
-        &copy; Copyright 2010-2020, OSSEC Project Team.<br/>
+        &copy; Copyright 2010-2021, OSSEC Project Team.<br/>
     OSSEC <b>ossec.net</b> domain owned and maintained by <a href="https://www.ossec.net" target="_blank">OSSEC Foundation</a><br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.5.2 - 
     Home page graphics courtesy of <a href="https://pixabay.com" target="_blank">pixabay</a>
     </p>
   </div>

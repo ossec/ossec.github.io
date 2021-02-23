@@ -1,36 +1,24 @@
 <!DOCTYPE html>
 
-
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Decoders Syntax &#8212; OSSEC</title>
-    
-    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/parallax.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../',
-        VERSION:     '3.3.0',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
-    <script type="text/javascript" src="../../_static/jquery.js"></script>
-    <script type="text/javascript" src="../../_static/underscore.js"></script>
-    <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
-    <script type="text/javascript" src="../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script src="../../_static/js/jquery-fix.js"></script>
+    <script src="../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script src="../../_static/bootstrap-sphinx.js"></script>
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -41,8 +29,37 @@
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
 <meta name="apple-mobile-web-app-capable" content="yes">
 
-  </head>
-  <body role="document">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-138780766-1"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'UA-138780766-1');
+</script>
+
+<script type="text/javascript">
+  var _ss = _ss || [];
+  _ss.push(['_setDomain', 'https://koi-3QNN51VTHS.marketingautomation.services/net']);
+  _ss.push(['_setAccount', 'KOI-4APYNOYP8O']);
+  _ss.push(['_trackPageView']);
+  window._pa = window._pa || {};
+  // _pa.orderId = "myOrderId"; // OPTIONAL: attach unique conversion identifier to conversions
+  // _pa.revenue = "19.99"; // OPTIONAL: attach dynamic purchase values to conversions
+  // _pa.productId = "myProductId"; // OPTIONAL: Include product ID for use with dynamic ads
+  (function() {
+  var ss = document.createElement('script');
+  ss.type = 'text/javascript'; ss.async = true;
+  ss.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'koi-3QNN51VTHS.marketingautomation.services/client/ss.js?ver=2.4.0';
+  var scr = document.getElementsByTagName('script')[0];
+  scr.parentNode.insertBefore(ss, scr);
+  })();
+  </script>
+
+
+
+  </head><body>
 
   <div id="navbar" class="navbar navbar-inverse navbar-default ">
     <div class="container">
@@ -61,9 +78,10 @@
         <div class="collapse navbar-collapse nav-collapse">
           <ul class="nav navbar-nav">
             
-                <li><a href="https://www.ossec.net/about/">About <i class="fa fa-info-circle"></i></a></li>
-                <li><a href="https://www.ossec.net/docs/">Documentation <i class="fa fa-book"></i></a></li>
-                <li><a href="https://www.ossec.net/downloads/">Downloads <i class="fa fa-download"></i></a></li>
+                <li><a href="https://www.ossec.net/about/">About</a></li>
+                <li><a href="https://www.ossec.net/docs/">Documentation</a></li>
+                <li><a href="https://www.ossec.net/register-for-ossec/">Get OSSEC+</a></li>
+                <li><a href="https://www.ossec.net/downloads/">Downloads</a></li>
             
             
               <li class="dropdown globaltoc-container">
@@ -138,160 +156,6 @@
 </div>
 <div class="section" id="options">
 <h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
-<dl class="element">
-<dt id="element-decoder">
-<code class="descname">decoder</code><a class="headerlink" href="#element-decoder" title="Permalink to this definition">¶</a></dt>
-<dd><p>Each decoder must have its name defined for reference by rules and other decoders.</p>
-<p><strong>Attributes:</strong></p>
-<ul class="simple">
-<li><em>name</em>:</li>
-</ul>
-<p><strong>Example:</strong></p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;decoder</span> <span class="na">name=</span><span class="s">&quot;atomic-widget&quot;</span><span class="nt">&gt;</span>
-</pre></div>
-</div>
-</dd></dl>
-
-<dl class="element">
-<dt id="element-decoder.parent">
-<code class="descname">decoder.parent</code><a class="headerlink" href="#element-decoder.parent" title="Permalink to this definition">¶</a></dt>
-<dd><p>A decoder may be the child of another decoder, offering further parsing.
-The child decoders will not be checked if the parent does not match the log message.</p>
-<p><strong>Example:</strong></p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;decoder</span> <span class="na">name=</span><span class="s">&quot;atomic-widget-login&quot;</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;parent&gt;</span>atomic-widget<span class="nt">&lt;/parent&gt;</span>
-</pre></div>
-</div>
-</dd></dl>
-
-<dl class="element">
-<dt id="element-decoder.accumulate">
-<code class="descname">decoder.accumulate</code><a class="headerlink" href="#element-decoder.accumulate" title="Permalink to this definition">¶</a></dt>
-<dd><div class="versionadded">
-<p><span class="versionmodified">New in version 2.9.0.</span></p>
-</div>
-<p>Allow OSSEC to track events over multiple log messages based on a decoded id.</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;decoder</span> <span class="na">name=</span><span class="s">&quot;example&quot;</span><span class="nt">&gt;</span>
-  ...
-  <span class="nt">&lt;order&gt;</span>id<span class="nt">&lt;/order&gt;</span>
-  <span class="nt">&lt;accumulate/&gt;</span>
-<span class="nt">&lt;/decoder&gt;</span>
-</pre></div>
-</div>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Requires a regex populating the <code class="docutils literal"><span class="pre">id</span></code> field using <cite>regex</cite> or <cite>pcre2</cite>.</p>
-</div>
-</dd></dl>
-
-<dl class="element">
-<dt id="element-decoder.program_name">
-<code class="descname">decoder.program_name</code><a class="headerlink" href="#element-decoder.program_name" title="Permalink to this definition">¶</a></dt>
-<dd><p>For many log messages a program name can be extracted automatically.
-This option compares the value with the decoded <cite>program_name</cite> value.</p>
-<p><strong>Allowed:</strong> Any <a class="reference internal" href="regex.html#os-match"><span class="std std-ref">OS_Match/sregex Syntax</span></a></p>
-<p><strong>Example:</strong></p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;decoder</span> <span class="na">name=</span><span class="s">&quot;atomic-widget&quot;</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;program_name&gt;</span>atomic-widget<span class="nt">&lt;/program_name&gt;</span>
-</pre></div>
-</div>
-</dd></dl>
-
-<dl class="element">
-<dt id="element-decoder.program_name_pcre2">
-<code class="descname">decoder.program_name_pcre2</code><a class="headerlink" href="#element-decoder.program_name_pcre2" title="Permalink to this definition">¶</a></dt>
-<dd><p>For many log messages a program name can be extracted automatically.
-This option compares the value with the decoded <cite>program_name</cite> value.</p>
-<p><strong>Allowed:</strong> A pcre2 compliant string to match the <cite>program_name</cite>.</p>
-</dd></dl>
-
-<dl class="element">
-<dt id="element-decoder.prematch">
-<code class="descname">decoder.prematch</code><a class="headerlink" href="#element-decoder.prematch" title="Permalink to this definition">¶</a></dt>
-<dd><p><cite>prematch</cite> looks for a string to determine whether the decoder is applicable.</p>
-<p><strong>Allowed:</strong> Any <a class="reference internal" href="regex.html#os-match"><span class="std std-ref">OS_Match/sregex Syntax</span></a></p>
-</dd></dl>
-
-<dl class="element">
-<dt id="element-decoder.prematch_pcre2">
-<code class="descname">decoder.prematch_pcre2</code><a class="headerlink" href="#element-decoder.prematch_pcre2" title="Permalink to this definition">¶</a></dt>
-<dd><p><cite>prematch</cite> uses pcre2 to look for a string to determine whether the decoder is applicable.</p>
-<p><strong>Allowed:</strong> A pcre2 compliant string.</p>
-</dd></dl>
-
-<dl class="element">
-<dt id="element-decoder.regex">
-<code class="descname">decoder.regex</code><a class="headerlink" href="#element-decoder.regex" title="Permalink to this definition">¶</a></dt>
-<dd><p>This option will allow parts of the log messages to be extracted into fields defined in the <cite>order</cite> option,
-using the OSSEC regex syntax.</p>
-<p><strong>Allowed:</strong> Any <a class="reference internal" href="regex.html#os-regex"><span class="std std-ref">OS_Regex/regex Syntax</span></a></p>
-</dd></dl>
-
-<dl class="element">
-<dt id="element-decoder.pcre2">
-<code class="descname">decoder.pcre2</code><a class="headerlink" href="#element-decoder.pcre2" title="Permalink to this definition">¶</a></dt>
-<dd><p>This option will allow parts of the log messages to be extracted into fields defined in the <cite>order</cite> option,
-using the PCRE2 syntax.</p>
-<p><strong>Allowed:</strong> A pcre2 compliant search string.</p>
-</dd></dl>
-
-<dl class="element">
-<dt id="element-decoder.order">
-<code class="descname">decoder.order</code><a class="headerlink" href="#element-decoder.order" title="Permalink to this definition">¶</a></dt>
-<dd><p>This option names the fields used by the <cite>regex</cite> or <cite>pcre2</cite> options.
-The field names are comma separated.</p>
-<p><strong>Field Name List:</strong></p>
-<blockquote>
-<div><ul class="simple">
-<li>location - where the log came from (only on FTS)</li>
-<li>srcuser  - extracts the source username</li>
-<li>dstuser  - extracts the destination (target) username</li>
-<li>user     - an alias to dstuser (only one of the two can be used)</li>
-<li>srcip    - source ip</li>
-<li>dstip    - dst ip</li>
-<li>srcport  - source port</li>
-<li>dstport  - destination port</li>
-<li>protocol - protocol</li>
-<li>id       - event id</li>
-<li>url      - url of the event</li>
-<li>action   - event action (deny, drop, accept, etc)</li>
-<li>status   - event status (success, failure, etc)</li>
-<li>extra_data     - Any extra data</li>
-</ul>
-</div></blockquote>
-<p><strong>Active Response fields:</strong></p>
-<blockquote>
-<div><p>The following fields may be used for active responses.</p>
-<ul class="simple">
-<li>user</li>
-<li>srcip</li>
-<li>filename</li>
-</ul>
-</div></blockquote>
-</dd></dl>
-
-<dl class="element">
-<dt id="element-decoder.fts">
-<code class="descname">decoder.fts</code><a class="headerlink" href="#element-decoder.fts" title="Permalink to this definition">¶</a></dt>
-<dd><p><cite>fts</cite> is the First Time Seen option inside of analysisd.
-It will alert the first time any defined decoded field is populated with a new value.</p>
-<p><strong>Allowed:</strong> Field names as listed in <cite>order</cite> above.</p>
-<p><strong>Example:</strong></p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;decoder</span> <span class="na">name=</span><span class="s">&quot;atomic-widget-login&quot;</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;parent&gt;</span>atomic-widget<span class="nt">&lt;/parent&gt;</span>
-  <span class="nt">&lt;regex&gt;</span>user=(\S+)<span class="nt">&lt;/regex&gt;</span>
-  <span class="nt">&lt;order&gt;</span>srcuser<span class="nt">&lt;/order&gt;</span>
-  <span class="nt">&lt;fts&gt;</span>srcuser<span class="nt">&lt;/fts&gt;</span>
-</pre></div>
-</div>
-</dd></dl>
-
-<dl class="element">
-<dt id="element-decoder.ftscomment">
-<code class="descname">decoder.ftscomment</code><a class="headerlink" href="#element-decoder.ftscomment" title="Permalink to this definition">¶</a></dt>
-<dd><p>Unused at this time.</p>
-</dd></dl>
-
 </div>
 </div>
 
@@ -307,9 +171,8 @@ It will alert the first time any defined decoded field is populated with a new v
       
     </p>
     <p>
-        &copy; Copyright 2010-2020, OSSEC Project Team.<br/>
+        &copy; Copyright 2010-2021, OSSEC Project Team.<br/>
     OSSEC <b>ossec.net</b> domain owned and maintained by <a href="https://www.ossec.net" target="_blank">OSSEC Foundation</a><br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.5.2 - 
     Home page graphics courtesy of <a href="https://pixabay.com" target="_blank">pixabay</a>
     </p>
   </div>

@@ -1,36 +1,24 @@
 <!DOCTYPE html>
 
-
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>test-rules: &#8212; OSSEC</title>
-    
-    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/parallax.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../../',
-        VERSION:     '3.3.0',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
-    <script type="text/javascript" src="../../../_static/jquery.js"></script>
-    <script type="text/javascript" src="../../../_static/underscore.js"></script>
-    <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="../../../_static/js/jquery-fix.js"></script>
-    <script type="text/javascript" src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../../../_static/bootstrap-sphinx.js"></script>
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script src="../../../_static/js/jquery-fix.js"></script>
+    <script src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script src="../../../_static/bootstrap-sphinx.js"></script>
     <link rel="author" title="About these documents" href="../../../about.html" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -41,8 +29,37 @@
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
 <meta name="apple-mobile-web-app-capable" content="yes">
 
-  </head>
-  <body role="document">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-138780766-1"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'UA-138780766-1');
+</script>
+
+<script type="text/javascript">
+  var _ss = _ss || [];
+  _ss.push(['_setDomain', 'https://koi-3QNN51VTHS.marketingautomation.services/net']);
+  _ss.push(['_setAccount', 'KOI-4APYNOYP8O']);
+  _ss.push(['_trackPageView']);
+  window._pa = window._pa || {};
+  // _pa.orderId = "myOrderId"; // OPTIONAL: attach unique conversion identifier to conversions
+  // _pa.revenue = "19.99"; // OPTIONAL: attach dynamic purchase values to conversions
+  // _pa.productId = "myProductId"; // OPTIONAL: Include product ID for use with dynamic ads
+  (function() {
+  var ss = document.createElement('script');
+  ss.type = 'text/javascript'; ss.async = true;
+  ss.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'koi-3QNN51VTHS.marketingautomation.services/client/ss.js?ver=2.4.0';
+  var scr = document.getElementsByTagName('script')[0];
+  scr.parentNode.insertBefore(ss, scr);
+  })();
+  </script>
+
+
+
+  </head><body>
 
   <div id="navbar" class="navbar navbar-inverse navbar-default ">
     <div class="container">
@@ -61,9 +78,10 @@
         <div class="collapse navbar-collapse nav-collapse">
           <ul class="nav navbar-nav">
             
-                <li><a href="https://www.ossec.net/about/">About <i class="fa fa-info-circle"></i></a></li>
-                <li><a href="https://www.ossec.net/docs/">Documentation <i class="fa fa-book"></i></a></li>
-                <li><a href="https://www.ossec.net/downloads/">Downloads <i class="fa fa-download"></i></a></li>
+                <li><a href="https://www.ossec.net/about/">About</a></li>
+                <li><a href="https://www.ossec.net/docs/">Documentation</a></li>
+                <li><a href="https://www.ossec.net/register-for-ossec/">Get OSSEC+</a></li>
+                <li><a href="https://www.ossec.net/downloads/">Downloads</a></li>
             
             
               <li class="dropdown globaltoc-container">
@@ -135,22 +153,22 @@
 <span id="id1"></span><h1>test-rules:<a class="headerlink" href="#test-rules" title="Permalink to this headline">¶</a></h1>
 <p>OSSEC includes the facilities to test rules in bulk.
 These checks should ensure there are no regressions after changes have been made.
-<code class="docutils literal"><span class="pre">ossec-logtest</span> <span class="pre">-U</span></code> is used to test the outcome of rules. If <code class="docutils literal"><span class="pre">ossec-logtest</span></code>
+<code class="docutils literal notranslate"><span class="pre">ossec-logtest</span> <span class="pre">-U</span></code> is used to test the outcome of rules. If <code class="docutils literal notranslate"><span class="pre">ossec-logtest</span></code>
 exits with any code but 0 it is considered a failure.</p>
 <div class="section" id="requirements">
 <h2>Requirements:<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
 <p>This feature currently requires python, a copy of the OSSEC source code,
 and the tools required to build OSSEC.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">This requirement may change in the future.
+<p class="admonition-title">Note</p>
+<p>This requirement may change in the future.
 There is interest in utilizing the embedded lua.</p>
 </div>
 </div>
 <div class="section" id="how-to-run">
 <h2>How to run:<a class="headerlink" href="#how-to-run" title="Permalink to this headline">¶</a></h2>
-<p>Running the current tests is as simple as running <code class="docutils literal"><span class="pre">make</span> <span class="pre">test-rules</span></code> in the <code class="docutils literal"><span class="pre">src</span></code> directory.</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">[ddpbsd@ossec-build:ossec-hids/src] $ </span>more /tmp/ttt
+<p>Running the current tests is as simple as running <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">test-rules</span></code> in the <code class="docutils literal notranslate"><span class="pre">src</span></code> directory.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">[ddpbsd@ossec-build:ossec-hids/src] $ </span>more /tmp/ttt
 <span class="gp gp-VirtualEnv">( cd ../contrib/ossec-testing &amp;&amp; sudo python runtests.py)</span>
 <span class="go">- [ File = ./tests/named.ini ] ---------</span>
 <span class="go">.....</span>
@@ -188,11 +206,11 @@ There is interest in utilizing the embedded lua.</p>
 </div>
 <div class="section" id="file-format">
 <h2>File format:<a class="headerlink" href="#file-format" title="Permalink to this headline">¶</a></h2>
-<p>The rule checks are configured in <code class="docutils literal"><span class="pre">ini</span></code> files. These files are in the <code class="docutils literal"><span class="pre">contrib/ossec-testing/tests</span></code> directory.
-Each file contains the configuration to check the rules for one program, for example <code class="docutils literal"><span class="pre">named.ini</span></code> contains checks
+<p>The rule checks are configured in <code class="docutils literal notranslate"><span class="pre">ini</span></code> files. These files are in the <code class="docutils literal notranslate"><span class="pre">contrib/ossec-testing/tests</span></code> directory.
+Each file contains the configuration to check the rules for one program, for example <code class="docutils literal notranslate"><span class="pre">named.ini</span></code> contains checks
 for the named rules.</p>
 <p>Example:</p>
-<div class="highlight-ini"><div class="highlight"><pre><span></span><span class="k">[su: failed ]</span>
+<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="k">[su: failed ]</span>
 <span class="na">log 1 pass</span> <span class="o">=</span> <span class="s">Apr 27 15:22:23 niban su[2921936]: failed: ttyq4 changing from ldap to root</span>
 <span class="na">rule</span> <span class="o">=</span> <span class="s">5302</span>
 <span class="na">alert</span> <span class="o">=</span> <span class="s">9</span>
@@ -221,16 +239,16 @@ for the named rules.</p>
 <p>Each entry has a number of configuration elements:</p>
 <blockquote>
 <div><ul class="simple">
-<li><code class="docutils literal"><span class="pre">[su:</span> <span class="pre">-</span> <span class="pre">bad</span> <span class="pre">pass]</span></code> - This is a heading, it usually contains the rule description.</li>
-<li><code class="docutils literal"><span class="pre">log</span> <span class="pre">1</span> <span class="pre">pass</span> <span class="pre">=</span></code> - This is the first log, and the <code class="docutils literal"><span class="pre">ossec-logtest</span></code> should pass. Noting failures is also possible by using <code class="docutils literal"><span class="pre">fail</span></code> instead of <code class="docutils literal"><span class="pre">pass</span></code>.</li>
-<li><code class="docutils literal"><span class="pre">Apr</span> <span class="pre">27</span> <span class="pre">15:22:23</span> <span class="pre">niban</span> <span class="pre">su[234]:</span> <span class="pre">BAD</span> <span class="pre">SU</span> <span class="pre">ger</span> <span class="pre">to</span> <span class="pre">fwmaster</span> <span class="pre">on</span> <span class="pre">/dev/ttyp0</span></code> - This is the log message to be checked.</li>
-<li><code class="docutils literal"><span class="pre">rule</span> <span class="pre">=</span> <span class="pre">5301</span></code> - This is the expected rule, if the log message triggers a different rule the test will return a failure.</li>
-<li><code class="docutils literal"><span class="pre">alert</span> <span class="pre">=</span> <span class="pre">5</span></code> - This is the expected rule level. A failure to match this level will result in a failure.</li>
-<li><code class="docutils literal"><span class="pre">decoder</span> <span class="pre">=</span> <span class="pre">su</span></code> - This is the expected decoder. A failure to match this decoder will result in a failure.</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[su:</span> <span class="pre">-</span> <span class="pre">bad</span> <span class="pre">pass]</span></code> - This is a heading, it usually contains the rule description.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">log</span> <span class="pre">1</span> <span class="pre">pass</span> <span class="pre">=</span></code> - This is the first log, and the <code class="docutils literal notranslate"><span class="pre">ossec-logtest</span></code> should pass. Noting failures is also possible by using <code class="docutils literal notranslate"><span class="pre">fail</span></code> instead of <code class="docutils literal notranslate"><span class="pre">pass</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Apr</span> <span class="pre">27</span> <span class="pre">15:22:23</span> <span class="pre">niban</span> <span class="pre">su[234]:</span> <span class="pre">BAD</span> <span class="pre">SU</span> <span class="pre">ger</span> <span class="pre">to</span> <span class="pre">fwmaster</span> <span class="pre">on</span> <span class="pre">/dev/ttyp0</span></code> - This is the log message to be checked.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">rule</span> <span class="pre">=</span> <span class="pre">5301</span></code> - This is the expected rule, if the log message triggers a different rule the test will return a failure.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">alert</span> <span class="pre">=</span> <span class="pre">5</span></code> - This is the expected rule level. A failure to match this level will result in a failure.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">decoder</span> <span class="pre">=</span> <span class="pre">su</span></code> - This is the expected decoder. A failure to match this decoder will result in a failure.</p></li>
 </ul>
 </div></blockquote>
 <p>The above entry can be verified by running the log message through ossec-logtest:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go"> [ddpbsd@ossec-build:/var/ossec] $ sudo /var/ossec/bin/ossec-logtest</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go"> [ddpbsd@ossec-build:/var/ossec] $ sudo /var/ossec/bin/ossec-logtest</span>
 <span class="go"> 2014/10/31 10:37:38 ossec-testrule: INFO: Reading local decoder file.</span>
 <span class="go"> 2014/10/31 10:37:38 ossec-testrule: INFO: Started (pid: 25545).</span>
 <span class="go"> ossec-testrule: Type one log per line.</span>
@@ -258,7 +276,7 @@ for the named rules.</p>
 </div>
 <p>The rule triggered is indeed 5301, it is a level 5 alert, and the decoder was su.</p>
 <p>Here is an example of a planned failure:</p>
-<div class="highlight-ini"><div class="highlight"><pre><span></span><span class="k">[su: pam - auth fail]</span>
+<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="k">[su: pam - auth fail]</span>
 <span class="na">log 1 fail</span> <span class="o">=</span> <span class="s">Apr 27 15:22:23 niban su(pam_unix)[23164]: authentication failure; logname= uid=1342 euid=0 tty= ruser=dcid rhost=  user=osaudit</span>
 <span class="na">rule</span> <span class="o">=</span> <span class="s">5503</span>
 <span class="na">alert</span> <span class="o">=</span> <span class="s">5</span>
@@ -266,7 +284,7 @@ for the named rules.</p>
 </pre></div>
 </div>
 <p>Running the above log message through ossec-logtest:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Apr 27 15:22:23 niban su(pam_unix)[23164]: authentication failure; logname= uid=1342 euid=0 tty= ruser=dcid rhost=  user=osaudit</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Apr 27 15:22:23 niban su(pam_unix)[23164]: authentication failure; logname= uid=1342 euid=0 tty= ruser=dcid rhost=  user=osaudit</span>
 
 <span class="go">**Phase 1: Completed pre-decoding.</span>
 <span class="go">       full event: &#39;Apr 27 15:22:23 niban su(pam_unix)[23164]: authentication failure; logname= uid=1342 euid=0 tty= ruser=dcid rhost=  user=osaudit&#39;</span>
@@ -287,7 +305,7 @@ for the named rules.</p>
 </div>
 <p>The rule and level are correct, but the decoder is not. This triggers the expected failure.</p>
 <p>An unexpected failure will produce output like the following:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">( cd ../contrib/ossec-testing &amp;&amp; sudo python runtests.py)</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">( cd ../contrib/ossec-testing &amp;&amp; sudo python runtests.py)</span>
 <span class="go">- [ File = ./tests/named.ini ] ---------</span>
 
 <span class="go">------------------------------------------------------------</span>
@@ -342,9 +360,8 @@ for the named rules.</p>
       
     </p>
     <p>
-        &copy; Copyright 2010-2020, OSSEC Project Team.<br/>
+        &copy; Copyright 2010-2021, OSSEC Project Team.<br/>
     OSSEC <b>ossec.net</b> domain owned and maintained by <a href="https://www.ossec.net" target="_blank">OSSEC Foundation</a><br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.5.2 - 
     Home page graphics courtesy of <a href="https://pixabay.com" target="_blank">pixabay</a>
     </p>
   </div>

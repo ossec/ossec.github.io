@@ -1,36 +1,24 @@
 <!DOCTYPE html>
 
-
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Syscheck &#8212; OSSEC</title>
-    
-    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/parallax.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../../',
-        VERSION:     '3.3.0',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
-    <script type="text/javascript" src="../../../_static/jquery.js"></script>
-    <script type="text/javascript" src="../../../_static/underscore.js"></script>
-    <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="../../../_static/js/jquery-fix.js"></script>
-    <script type="text/javascript" src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../../../_static/bootstrap-sphinx.js"></script>
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script src="../../../_static/js/jquery-fix.js"></script>
+    <script src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script src="../../../_static/bootstrap-sphinx.js"></script>
     <link rel="author" title="About these documents" href="../../../about.html" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -41,8 +29,37 @@
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
 <meta name="apple-mobile-web-app-capable" content="yes">
 
-  </head>
-  <body role="document">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-138780766-1"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'UA-138780766-1');
+</script>
+
+<script type="text/javascript">
+  var _ss = _ss || [];
+  _ss.push(['_setDomain', 'https://koi-3QNN51VTHS.marketingautomation.services/net']);
+  _ss.push(['_setAccount', 'KOI-4APYNOYP8O']);
+  _ss.push(['_trackPageView']);
+  window._pa = window._pa || {};
+  // _pa.orderId = "myOrderId"; // OPTIONAL: attach unique conversion identifier to conversions
+  // _pa.revenue = "19.99"; // OPTIONAL: attach dynamic purchase values to conversions
+  // _pa.productId = "myProductId"; // OPTIONAL: Include product ID for use with dynamic ads
+  (function() {
+  var ss = document.createElement('script');
+  ss.type = 'text/javascript'; ss.async = true;
+  ss.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'koi-3QNN51VTHS.marketingautomation.services/client/ss.js?ver=2.4.0';
+  var scr = document.getElementsByTagName('script')[0];
+  scr.parentNode.insertBefore(ss, scr);
+  })();
+  </script>
+
+
+
+  </head><body>
 
   <div id="navbar" class="navbar navbar-inverse navbar-default ">
     <div class="container">
@@ -61,9 +78,10 @@
         <div class="collapse navbar-collapse nav-collapse">
           <ul class="nav navbar-nav">
             
-                <li><a href="https://www.ossec.net/about/">About <i class="fa fa-info-circle"></i></a></li>
-                <li><a href="https://www.ossec.net/docs/">Documentation <i class="fa fa-book"></i></a></li>
-                <li><a href="https://www.ossec.net/downloads/">Downloads <i class="fa fa-download"></i></a></li>
+                <li><a href="https://www.ossec.net/about/">About</a></li>
+                <li><a href="https://www.ossec.net/docs/">Documentation</a></li>
+                <li><a href="https://www.ossec.net/register-for-ossec/">Get OSSEC+</a></li>
+                <li><a href="https://www.ossec.net/downloads/">Downloads</a></li>
             
             
               <li class="dropdown globaltoc-container">
@@ -157,138 +175,143 @@ is sent if anything changes.</p>
 <div class="section" id="quick-facts">
 <h2>Quick facts<a class="headerlink" href="#quick-facts" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>How often does it run?<ul>
-<li>By default every 6 hours, but the frequency or time/day are configurable.</li>
+<li><p>How often does it run?</p>
+<ul>
+<li><p>By default every 6 hours, but the frequency or time/day are configurable.</p></li>
 </ul>
 </li>
-<li>Where is the database stored?<ul>
-<li>On the manager in <code class="docutils literal"><span class="pre">/var/ossec/queue/syscheck</span></code>.</li>
+<li><p>Where is the database stored?</p>
+<ul>
+<li><p>On the manager in <code class="docutils literal notranslate"><span class="pre">/var/ossec/queue/syscheck</span></code>.</p></li>
 </ul>
 </li>
-<li>How does it help with compliance? (PCI DSS, etc)<ul>
-<li>It helps with sections 11.5 (install FIM software) and 10.5 (integrity checking of log files) of PCI.</li>
+<li><p>How does it help with compliance? (PCI DSS, etc)</p>
+<ul>
+<li><p>It helps with sections 11.5 (install FIM software) and 10.5 (integrity checking of log files) of PCI.</p></li>
 </ul>
 </li>
-<li>How much CPU does it use?<ul>
-<li>The scans are performed slowly to avoid using too much CPU/memory.</li>
+<li><p>How much CPU does it use?</p>
+<ul>
+<li><p>The scans are performed slowly to avoid using too much CPU/memory.</p></li>
 </ul>
 </li>
-<li>How are false positives handled?<ul>
-<li>Files can be ignored manually in the configuration or using rules. By default when a file has changed 3 times further changes are automatically ignored.</li>
+<li><p>How are false positives handled?</p>
+<ul>
+<li><p>Files can be ignored manually in the configuration or using rules. By default when a file has changed 3 times further changes are automatically ignored.</p></li>
 </ul>
 </li>
 </ul>
 </div>
 <div class="section" id="realtime-options">
 <h2>Realtime options<a class="headerlink" href="#realtime-options" title="Permalink to this headline">¶</a></h2>
-<p><code class="docutils literal"><span class="pre">ossec-syscheckd</span></code> is able to check file integrity in near realtime on Windows and modern Linux distros. Windows comes with support out of the box, but on Linux systems inotify packages may need to be installed. Check for inotify dev packages, and possibly an inotify-tools package.</p>
+<p><code class="docutils literal notranslate"><span class="pre">ossec-syscheckd</span></code> is able to check file integrity in near realtime on Windows and modern Linux distros. Windows comes with support out of the box, but on Linux systems inotify packages may need to be installed. Check for inotify dev packages, and possibly an inotify-tools package.</p>
 </div>
 <div class="section" id="configuration-options">
 <h2>Configuration options<a class="headerlink" href="#configuration-options" title="Permalink to this headline">¶</a></h2>
-<p>These configuration options can be specified in each agent&#8217;s ossec.conf file, except
-for the <code class="docutils literal"><span class="pre">auto_ignore</span></code> and <code class="docutils literal"><span class="pre">alert_new_file</span></code> which apply to manager and local installs. The
-<code class="docutils literal"><span class="pre">ignore</span></code> option applies to all agents if specified on the manager.</p>
+<p>These configuration options can be specified in each agent’s ossec.conf file, except
+for the <code class="docutils literal notranslate"><span class="pre">auto_ignore</span></code> and <code class="docutils literal notranslate"><span class="pre">alert_new_file</span></code> which apply to manager and local installs. The
+<code class="docutils literal notranslate"><span class="pre">ignore</span></code> option applies to all agents if specified on the manager.</p>
 <dl class="object">
 <dt>
-<code class="descname">directories</code></dt>
+<code class="sig-name descname"><span class="pre">directories</span></code></dt>
 <dd><p>Use this option to add or remove directories to be monitored (they must be comma separated). All files and subdirectories will also be monitored.
-Drive letters without directories are not valid. At a minimum the &#8216;.&#8217; should be included (<code class="docutils literal"><span class="pre">D:\.</span></code>). This should be set on the system you wish to
+Drive letters without directories are not valid. At a minimum the ‘.’ should be included (<code class="docutils literal notranslate"><span class="pre">D:\.</span></code>). This should be set on the system you wish to
 monitor (or in the agent.conf if appropriate).</p>
 <p><strong>Default:</strong> /etc,/usr/bin,/usr/sbin,/bin,/sbin</p>
 <p><strong>Attributes:</strong></p>
 <ul>
-<li><p class="first"><strong>realtime</strong>: Value=yes</p>
+<li><p><strong>realtime</strong>: Value=yes</p>
 <blockquote>
 <div><ul class="simple">
-<li>This will enable realtime/continuous monitoring on Linux (using the inotify system calls) and Windows systems.</li>
+<li><p>This will enable realtime/continuous monitoring on Linux (using the inotify system calls) and Windows systems.</p></li>
 </ul>
 </div></blockquote>
 </li>
-<li><p class="first"><strong>report_changes</strong>: Value=yes</p>
+<li><p><strong>report_changes</strong>: Value=yes</p>
 <blockquote>
 <div><ul class="simple">
-<li>Report diffs of file changes.  This is limited to text files at this time.</li>
+<li><p>Report diffs of file changes.  This is limited to text files at this time.</p></li>
 </ul>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">This option is only available on Unix-like systems.</p>
+<p class="admonition-title">Note</p>
+<p>This option is only available on Unix-like systems.</p>
 </div>
 </div></blockquote>
 </li>
-<li><p class="first"><strong>check_all</strong>: Value=yes</p>
+<li><p><strong>check_all</strong>: Value=yes</p>
 <blockquote>
 <div><ul class="simple">
-<li>All the following check_* options are used together unless a specific option is explicitly overridden with &#8220;no&#8221;.</li>
+<li><p>All the following check_* options are used together unless a specific option is explicitly overridden with “no”.</p></li>
 </ul>
 </div></blockquote>
 </li>
-<li><p class="first"><strong>check_sum</strong>: Value=yes</p>
+<li><p><strong>check_sum</strong>: Value=yes</p>
 <blockquote>
 <div><ul>
-<li><p class="first">Check the md5 and sha1 hashes of the  of the files will be checked.</p>
-<p>This is the same as using both check_sha1sum=&#8221;yes&#8221; and check_md5sum=&#8221;yes&#8221;</p>
+<li><p>Check the md5 and sha1 hashes of the  of the files will be checked.</p>
+<p>This is the same as using both check_sha1sum=”yes” and check_md5sum=”yes”</p>
 </li>
 </ul>
 </div></blockquote>
 </li>
-<li><p class="first"><strong>check_sha1sum</strong>: Value=yes</p>
+<li><p><strong>check_sha1sum</strong>: Value=yes</p>
 <blockquote>
 <div><ul class="simple">
-<li>When used only the sha1 hash of the files will be checked.</li>
+<li><p>When used only the sha1 hash of the files will be checked.</p></li>
 </ul>
 </div></blockquote>
 </li>
-<li><p class="first"><strong>check_md5sum</strong>: Value=yes</p>
+<li><p><strong>check_md5sum</strong>: Value=yes</p>
 <blockquote>
 <div><ul class="simple">
-<li>The md5 hash of the files will be checked.</li>
+<li><p>The md5 hash of the files will be checked.</p></li>
 </ul>
 </div></blockquote>
 </li>
-<li><p class="first"><strong>check_size</strong>: Value=yes</p>
+<li><p><strong>check_size</strong>: Value=yes</p>
 <blockquote>
 <div><ul class="simple">
-<li>The size of the files will be checked.</li>
+<li><p>The size of the files will be checked.</p></li>
 </ul>
 </div></blockquote>
 </li>
-<li><p class="first"><strong>check_owner</strong>: Value=yes</p>
+<li><p><strong>check_owner</strong>: Value=yes</p>
 <blockquote>
 <div><ul class="simple">
-<li>Check the owner of the files selected.</li>
+<li><p>Check the owner of the files selected.</p></li>
 </ul>
 </div></blockquote>
 </li>
-<li><p class="first"><strong>check_group</strong>: Value=yes</p>
+<li><p><strong>check_group</strong>: Value=yes</p>
 <blockquote>
 <div><ul class="simple">
-<li>Check the group owner of the files/directories selected.</li>
+<li><p>Check the group owner of the files/directories selected.</p></li>
 </ul>
 </div></blockquote>
 </li>
-<li><p class="first"><strong>check_perm</strong>: Value=yes</p>
+<li><p><strong>check_perm</strong>: Value=yes</p>
 <blockquote>
 <div><ul class="simple">
-<li>Check the UNIX permission of the files/directories selected.
-On windows this will only check the POSIX permissions.</li>
+<li><p>Check the UNIX permission of the files/directories selected.
+On windows this will only check the POSIX permissions.</p></li>
 </ul>
 </div></blockquote>
 </li>
-<li><p class="first"><strong>restrict</strong>: Value=string</p>
+<li><p><strong>restrict</strong>: Value=string</p>
 <blockquote>
 <div><ul class="simple">
-<li>A string that will limit checks to files containing that string in the file name.</li>
+<li><p>A string that will limit checks to files containing that string in the file name.</p></li>
 </ul>
 <p><strong>Allowed:</strong> Any directory or file name (but not a path)</p>
 </div></blockquote>
 </li>
-<li><p class="first"><strong>no_recurse</strong>: Value=no</p>
+<li><p><strong>no_recurse</strong>: Value=no</p>
 <blockquote>
 <div><div class="versionadded">
-<p><span class="versionmodified">New in version 3.2.</span></p>
+<p><span class="versionmodified added">New in version 3.2.</span></p>
 </div>
 <ul class="simple">
-<li>Do not recurse into the defined directory.</li>
+<li><p>Do not recurse into the defined directory.</p></li>
 </ul>
 <p><strong>Allowed:</strong> yes/no</p>
 </div></blockquote>
@@ -298,15 +321,15 @@ On windows this will only check the POSIX permissions.</li>
 
 <dl class="object">
 <dt>
-<code class="descname">ignore</code></dt>
+<code class="sig-name descname"><span class="pre">ignore</span></code></dt>
 <dd><p>List of files or directories to be ignored (one entry per element). The files and directories are still checked, but the results are ignored.</p>
 <p><strong>Default:</strong> /etc/mtab</p>
 <p><strong>Attributes:</strong></p>
 <ul>
-<li><p class="first"><strong>type</strong>: Value=sregex</p>
+<li><p><strong>type</strong>: Value=sregex</p>
 <blockquote>
 <div><ul class="simple">
-<li>This is a simple regex pattern to filter out files so alerts are not generated.</li>
+<li><p>This is a simple regex pattern to filter out files so alerts are not generated.</p></li>
 </ul>
 </div></blockquote>
 </li>
@@ -316,17 +339,17 @@ On windows this will only check the POSIX permissions.</li>
 
 <dl class="object">
 <dt>
-<code class="descname">nodiff</code></dt>
+<code class="sig-name descname"><span class="pre">nodiff</span></code></dt>
 <dd><div class="versionadded">
-<p><span class="versionmodified">New in version 3.0.</span></p>
+<p><span class="versionmodified added">New in version 3.0.</span></p>
 </div>
 <p>List of files to not attach a diff. The files are still checked, but no diff is computed. This allows to monitor sensitive files like private key or database configuration without leaking sensitive data through alerts.</p>
 <p><strong>Attributes:</strong></p>
 <ul>
-<li><p class="first"><strong>type</strong>: Value=sregex</p>
+<li><p><strong>type</strong>: Value=sregex</p>
 <blockquote>
 <div><ul class="simple">
-<li>This is a simple regex pattern to filter out files so alerts are not generated.</li>
+<li><p>This is a simple regex pattern to filter out files so alerts are not generated.</p></li>
 </ul>
 </div></blockquote>
 </li>
@@ -336,7 +359,7 @@ On windows this will only check the POSIX permissions.</li>
 
 <dl class="object">
 <dt>
-<code class="descname">frequency</code></dt>
+<code class="sig-name descname"><span class="pre">frequency</span></code></dt>
 <dd><p>Frequency that the syscheck is going to be executed (in seconds).</p>
 <p>The default is 6 hours or 21600 seconds</p>
 <p><strong>Default:</strong> 21600</p>
@@ -345,25 +368,25 @@ On windows this will only check the POSIX permissions.</li>
 
 <dl class="object">
 <dt>
-<code class="descname">scan_time</code></dt>
+<code class="sig-name descname"><span class="pre">scan_time</span></code></dt>
 <dd><p>Time to run the scans (can be in the formats of 21pm, 8:30, 12am, etc).</p>
 <p><strong>Allowed:</strong> Time to run scan</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">This may delay the initialization of realtime scans.</p>
+<p class="admonition-title">Note</p>
+<p>This may delay the initialization of realtime scans.</p>
 </div>
 </dd></dl>
 
 <dl class="object">
 <dt>
-<code class="descname">scan_day</code></dt>
+<code class="sig-name descname"><span class="pre">scan_day</span></code></dt>
 <dd><p>Day of the week to run the scans (can be in the format of sunday, saturday, monday, etc)</p>
 <p><strong>Allowed:</strong> Day of the week</p>
 </dd></dl>
 
 <span class="target" id="auto-ignore"></span><dl class="object">
 <dt>
-<code class="descname">auto_ignore</code></dt>
+<code class="sig-name descname"><span class="pre">auto_ignore</span></code></dt>
 <dd><p>Specifies if syscheck will ignore files that change too often (after the third change)</p>
 <p><strong>Default:</strong> yes</p>
 <p><strong>Allowed:</strong> yes/no</p>
@@ -372,20 +395,20 @@ On windows this will only check the POSIX permissions.</li>
 
 <span class="target" id="alert-new-files"></span><dl class="object">
 <dt>
-<code class="descname">alert_new_files</code></dt>
+<code class="sig-name descname"><span class="pre">alert_new_files</span></code></dt>
 <dd><p>Specifies if syscheck should alert on new files created.</p>
 <p><strong>Default:</strong> no</p>
 <p><strong>Allowed:</strong> yes/no</p>
 <p><strong>Valid:</strong> server, local</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">New files will only be detected on a full scan, this option does not work in realtime.</p>
+<p class="admonition-title">Note</p>
+<p>New files will only be detected on a full scan, this option does not work in realtime.</p>
 </div>
 </dd></dl>
 
 <dl class="object">
 <dt>
-<code class="descname">scan_on_start</code></dt>
+<code class="sig-name descname"><span class="pre">scan_on_start</span></code></dt>
 <dd><p>Specifies if syscheck should do the first scan as soon as it is started.</p>
 <p><strong>Default:</strong> yes</p>
 <p><strong>Allowed:</strong> yes/no</p>
@@ -393,19 +416,19 @@ On windows this will only check the POSIX permissions.</li>
 
 <dl class="object">
 <dt>
-<code class="descname">windows_registry</code></dt>
+<code class="sig-name descname"><span class="pre">windows_registry</span></code></dt>
 <dd><p>Use this option to add Windows registry entries to be monitored (Windows-only).</p>
 <p><strong>Default:</strong> HKEY_LOCAL_MACHINESoftware</p>
 <p><strong>Allowed:</strong> Any registry entry (one per element)</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">New entries will not trigger alerts, only changes to existing entries.</p>
+<p class="admonition-title">Note</p>
+<p>New entries will not trigger alerts, only changes to existing entries.</p>
 </div>
 </dd></dl>
 
 <dl class="object">
 <dt>
-<code class="descname">registry_ignore</code></dt>
+<code class="sig-name descname"><span class="pre">registry_ignore</span></code></dt>
 <dd><p>List of registry entries to be ignored.</p>
 <p><strong>Default:</strong> ..CryptographyRNG</p>
 <p><strong>Allowed:</strong> Any registry entry (one per element)</p>
@@ -413,30 +436,30 @@ On windows this will only check the POSIX permissions.</li>
 
 <dl class="object">
 <dt>
-<code class="descname">prefilter_cmd</code></dt>
+<code class="sig-name descname"><span class="pre">prefilter_cmd</span></code></dt>
 <dd><p>Command to run to prevent prelinking from creating false positives.</p>
 <p><strong>Example:</strong></p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;prefilter_cmd&gt;</span>/usr/sbin/prelink -y<span class="nt">&lt;/prefilter_cmd&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;prefilter_cmd&gt;</span>/usr/sbin/prelink -y<span class="nt">&lt;/prefilter_cmd&gt;</span>
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">This option can potentially impact performance negatively. The configured command will be run for each and every file checked.</p>
+<p class="admonition-title">Note</p>
+<p>This option can potentially impact performance negatively. The configured command will be run for each and every file checked.</p>
 </div>
 </dd></dl>
 
 <dl class="object">
 <dt>
-<code class="descname">skip_nfs</code></dt>
+<code class="sig-name descname"><span class="pre">skip_nfs</span></code></dt>
 <dd><div class="versionadded">
-<p><span class="versionmodified">New in version 2.9.0.</span></p>
+<p><span class="versionmodified added">New in version 2.9.0.</span></p>
 </div>
 <p>Specifies if syscheck should scan network mounted filesystems.  Works on Linux and FreeBSD.  Currently skip_nfs will abort checks running against CIFS or NFS mounts.</p>
 <p><strong>Default:</strong> no</p>
 <p><strong>Allowed:</strong> yes/no</p>
 <div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">This option was added in OSSEC 2.9.</p>
+<p class="admonition-title">Warning</p>
+<p>This option was added in OSSEC 2.9.</p>
 </div>
 </dd></dl>
 
@@ -445,28 +468,28 @@ On windows this will only check the POSIX permissions.</li>
 <h2>Configuration Examples<a class="headerlink" href="#configuration-examples" title="Permalink to this headline">¶</a></h2>
 <p>To configure syscheck, a list of files and directories must be provided. The check_all option checks md5, sha1, owner, and permissions of the file.</p>
 <p>Example:</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;syscheck&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;syscheck&gt;</span>
     <span class="nt">&lt;directories</span> <span class="na">check_all=</span><span class="s">&quot;yes&quot;</span><span class="nt">&gt;</span>/etc,/usr/bin,/usr/sbin<span class="nt">&lt;/directories&gt;</span>
     <span class="nt">&lt;directories</span> <span class="na">check_all=</span><span class="s">&quot;yes&quot;</span><span class="nt">&gt;</span>/root/users.txt,/bsd,/root/db.html<span class="nt">&lt;/directories&gt;</span>
 <span class="nt">&lt;/syscheck&gt;</span>
 </pre></div>
 </div>
-<p>Files and directories can be ignored using the <code class="docutils literal"><span class="pre">ignore</span></code> option (or <code class="docutils literal"><span class="pre">registry_ignore</span></code> for Windows registry entries):</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;syscheck&gt;</span>
+<p>Files and directories can be ignored using the <code class="docutils literal notranslate"><span class="pre">ignore</span></code> option (or <code class="docutils literal notranslate"><span class="pre">registry_ignore</span></code> for Windows registry entries):</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;syscheck&gt;</span>
     <span class="nt">&lt;ignore&gt;</span>/etc/random-seed<span class="nt">&lt;/ignore&gt;</span>
     <span class="nt">&lt;ignore&gt;</span>/root/dir<span class="nt">&lt;/ignore&gt;</span>
     <span class="nt">&lt;ignore</span> <span class="na">type=</span><span class="s">&quot;sregex&quot;</span><span class="nt">&gt;</span>.log$|.tmp<span class="nt">&lt;/ignore&gt;</span>
 <span class="nt">&lt;/syscheck&gt;</span>
 </pre></div>
 </div>
-<p>The <code class="docutils literal"><span class="pre">type</span></code> attribute can be set to sregex to specify a <a class="reference internal" href="../../syntax/regex.html#regex"><span class="std std-ref">Regular Expression Syntax</span></a> in the ignore option.</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;syscheck&gt;</span>
+<p>The <code class="docutils literal notranslate"><span class="pre">type</span></code> attribute can be set to sregex to specify a <a class="reference internal" href="../../syntax/regex.html#regex"><span class="std std-ref">Regular Expression Syntax</span></a> in the ignore option.</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;syscheck&gt;</span>
     <span class="nt">&lt;ignore</span> <span class="na">type=</span><span class="s">&quot;sregex&quot;</span><span class="nt">&gt;</span>^/opt/application/log<span class="nt">&lt;/ignore&gt;</span>
 <span class="nt">&lt;/syscheck&gt;</span>
 </pre></div>
 </div>
 <p>A local rule can be used to modify the severity for changes to specific files or directories:</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;rule</span> <span class="na">id=</span><span class="s">&quot;100345&quot;</span> <span class="na">level=</span><span class="s">&quot;12&quot;</span><span class="nt">&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;rule</span> <span class="na">id=</span><span class="s">&quot;100345&quot;</span> <span class="na">level=</span><span class="s">&quot;12&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;if_matched_group&gt;</span>syscheck<span class="nt">&lt;/if_matched_group&gt;</span>
     <span class="nt">&lt;match&gt;</span>/var/www/htdocs<span class="nt">&lt;/match&gt;</span>
     <span class="nt">&lt;description&gt;</span>Changes to /var/www/htdocs - Critical file!<span class="nt">&lt;/description&gt;</span>
@@ -478,9 +501,9 @@ On windows this will only check the POSIX permissions.</li>
 <div class="section" id="real-time-monitoring">
 <h2>Real time Monitoring<a class="headerlink" href="#real-time-monitoring" title="Permalink to this headline">¶</a></h2>
 <p>OSSEC supports realtime (continuous) file integrity monitoring on Linux (support was added kernel version 2.6.13) and Windows systems.</p>
-<p>The configuration is very simple. In the <code class="docutils literal"><span class="pre">&lt;directories&gt;</span></code> option where you specify what directories to monitor, adding <code class="docutils literal"><span class="pre">realtime=&quot;yes&quot;</span></code> will enable it.
+<p>The configuration is very simple. In the <code class="docutils literal notranslate"><span class="pre">&lt;directories&gt;</span></code> option where you specify what directories to monitor, adding <code class="docutils literal notranslate"><span class="pre">realtime=&quot;yes&quot;</span></code> will enable it.
 For example:</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;syscheck&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;syscheck&gt;</span>
     <span class="nt">&lt;directories</span> <span class="na">realtime=</span><span class="s">&quot;yes&quot;</span> <span class="na">check_all=</span><span class="s">&quot;yes&quot;</span><span class="nt">&gt;</span>/etc,/usr/bin,/usr/sbin<span class="nt">&lt;/directories&gt;</span>
     <span class="nt">&lt;directories</span> <span class="na">check_all=</span><span class="s">&quot;yes&quot;</span><span class="nt">&gt;</span>/bin,/sbin<span class="nt">&lt;/directories&gt;</span>
 <span class="nt">&lt;/syscheck&gt;</span>
@@ -488,36 +511,36 @@ For example:</p>
 </div>
 <p>In this case, the directories /etc, /usr/bin and /usr/sbin will be monitored in real time. The same applies to Windows too.</p>
 <div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">The real time monitoring will not start immediately. First ossec-syscheckd needs to scan the file system and add each sub-directory to the realtime queue.
-It can take a while for this to finish (wait for the log &#8220;ossec-syscheckd: INFO: Starting real time file monitoring&#8221; ).</p>
+<p class="admonition-title">Warning</p>
+<p>The real time monitoring will not start immediately. First ossec-syscheckd needs to scan the file system and add each sub-directory to the realtime queue.
+It can take a while for this to finish (wait for the log “ossec-syscheckd: INFO: Starting real time file monitoring” ).</p>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Real time only works with directories, not individual files. So you can monitor the /etc
+<p class="admonition-title">Note</p>
+<p>Real time only works with directories, not individual files. So you can monitor the /etc
 or C:\program files directory, but not an individual file like /etc/file.txt.</p>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Both rootcheck and syscheck runs on the same thread, so when rootcheck is running, the inotify events would get queued until it finishes.</p>
+<p class="admonition-title">Note</p>
+<p>Both rootcheck and syscheck runs on the same thread, so when rootcheck is running, the inotify events would get queued until it finishes.</p>
 </div>
 </div>
 <div class="section" id="report-changes">
 <h2>Report Changes<a class="headerlink" href="#report-changes" title="Permalink to this headline">¶</a></h2>
 <p>OSSEC supports sending diffs when changes are made to text files on Linux and unix systems.</p>
-<p>Configuring syscheck to show diffs is simple, add <code class="docutils literal"><span class="pre">report_changes=&quot;yes&quot;</span></code> to the <code class="docutils literal"><span class="pre">&lt;directories</span></code> option.
+<p>Configuring syscheck to show diffs is simple, add <code class="docutils literal notranslate"><span class="pre">report_changes=&quot;yes&quot;</span></code> to the <code class="docutils literal notranslate"><span class="pre">&lt;directories</span></code> option.
 For example:</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;syscheck&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;syscheck&gt;</span>
     <span class="nt">&lt;directories</span> <span class="na">report_changes=</span><span class="s">&quot;yes&quot;</span> <span class="na">check_all=</span><span class="s">&quot;yes&quot;</span><span class="nt">&gt;</span>/etc<span class="nt">&lt;/directories&gt;</span>
     <span class="nt">&lt;directories</span> <span class="na">check_all=</span><span class="s">&quot;yes&quot;</span><span class="nt">&gt;</span>/bin,/sbin<span class="nt">&lt;/directories&gt;</span>
 <span class="nt">&lt;/syscheck&gt;</span>
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
+<p class="admonition-title">Note</p>
 <p>Report Changes can only work with text files, and the changes are stored on the agent
-inside <code class="docutils literal"><span class="pre">/var/ossec/queue/diff/local/dir/file</span></code>.</p>
-<p class="last">If OSSEC has not been compiled with libmagic support, report_changes will copy any file
+inside <code class="docutils literal notranslate"><span class="pre">/var/ossec/queue/diff/local/dir/file</span></code>.</p>
+<p>If OSSEC has not been compiled with libmagic support, report_changes will copy any file
 designated, e.g. mp3, iso, executable, /chroot/dev/urandom (which would fill your hard drive).
 So unless libmagic is used, be very carefull on which directory you enable report_changes.</p>
 </div>
@@ -528,13 +551,13 @@ So unless libmagic is used, be very carefull on which directory you enable repor
 The database should contain the hashes, file names, and an optional date.</p>
 <p>This feature uses code from <a class="reference external" href="https://blog.rootshell.be/2013/05/13/improving-file-integrity-monitoring-with-ossec/">Xavier Mertens.</a></p>
 <p>Configure the database in <cite>ossec.conf</cite>:</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;/global&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;/global&gt;</span>
   <span class="nt">&lt;md5_whitelist&gt;</span>/rules/lists/md5whitelist.db<span class="nt">&lt;/md5_whitelist&gt;</span>
 <span class="nt">&lt;/global&gt;</span>
 </pre></div>
 </div>
 <p>Schema:</p>
-<div class="highlight-sql"><div class="highlight"><pre><span></span><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">files</span> <span class="p">(</span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">files</span> <span class="p">(</span>
     <span class="n">md5sum</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">32</span><span class="p">),</span>
     <span class="n">file</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">256</span><span class="p">),</span>
     <span class="k">time</span> <span class="n">DATETIME</span>
@@ -547,16 +570,16 @@ The database should contain the hashes, file names, and an optional date.</p>
 <h2>Syscheck: FAQ<a class="headerlink" href="#syscheck-faq" title="Permalink to this headline">¶</a></h2>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><a class="reference internal" href="#how-to-force-an-immediate-syscheck-scan" id="id1">How to force an immediate syscheck scan?</a></li>
-<li><a class="reference internal" href="#how-to-tell-syscheck-not-to-scan-the-system-when-ossec-starts" id="id2">How to tell syscheck not to scan the system when OSSEC starts?</a></li>
-<li><a class="reference internal" href="#how-to-ignore-a-file-that-changes-too-often" id="id3">How to ignore a file that changes too often?</a></li>
-<li><a class="reference internal" href="#why-does-ossec-still-scan-a-file-even-though-it-s-been-ignored" id="id4">Why does OSSEC still scan a file even though it&#8217;s been ignored?</a></li>
-<li><a class="reference internal" href="#how-to-know-when-the-syscheck-scan-ran" id="id5">How to know when the syscheck scan ran?</a></li>
-<li><a class="reference internal" href="#how-to-get-detailed-reporting-on-the-changes" id="id6">How to get detailed reporting on the changes?</a></li>
-<li><a class="reference internal" href="#syscheck-not-sending-any-file-data-to-the-server" id="id7">Syscheck not sending any file data to the server?</a></li>
-<li><a class="reference internal" href="#why-aren-t-new-files-creating-an-alert" id="id8">Why aren&#8217;t new files creating an alert?</a></li>
-<li><a class="reference internal" href="#can-ossec-include-information-on-who-changed-a-file-in-the-alert" id="id9">Can OSSEC include information on who changed a file in the alert?</a></li>
-<li><a class="reference internal" href="#how-do-i-stop-syscheck-alerts-during-system-updates" id="id10">How do I stop syscheck alerts during system updates?</a></li>
+<li><p><a class="reference internal" href="#how-to-force-an-immediate-syscheck-scan" id="id1">How to force an immediate syscheck scan?</a></p></li>
+<li><p><a class="reference internal" href="#how-to-tell-syscheck-not-to-scan-the-system-when-ossec-starts" id="id2">How to tell syscheck not to scan the system when OSSEC starts?</a></p></li>
+<li><p><a class="reference internal" href="#how-to-ignore-a-file-that-changes-too-often" id="id3">How to ignore a file that changes too often?</a></p></li>
+<li><p><a class="reference internal" href="#why-does-ossec-still-scan-a-file-even-though-it-s-been-ignored" id="id4">Why does OSSEC still scan a file even though it’s been ignored?</a></p></li>
+<li><p><a class="reference internal" href="#how-to-know-when-the-syscheck-scan-ran" id="id5">How to know when the syscheck scan ran?</a></p></li>
+<li><p><a class="reference internal" href="#how-to-get-detailed-reporting-on-the-changes" id="id6">How to get detailed reporting on the changes?</a></p></li>
+<li><p><a class="reference internal" href="#syscheck-not-sending-any-file-data-to-the-server" id="id7">Syscheck not sending any file data to the server?</a></p></li>
+<li><p><a class="reference internal" href="#why-aren-t-new-files-creating-an-alert" id="id8">Why aren’t new files creating an alert?</a></p></li>
+<li><p><a class="reference internal" href="#can-ossec-include-information-on-who-changed-a-file-in-the-alert" id="id9">Can OSSEC include information on who changed a file in the alert?</a></p></li>
+<li><p><a class="reference internal" href="#how-do-i-stop-syscheck-alerts-during-system-updates" id="id10">How do I stop syscheck alerts during system updates?</a></p></li>
 </ul>
 </div>
 <div class="section" id="how-to-force-an-immediate-syscheck-scan">
@@ -564,7 +587,7 @@ The database should contain the hashes, file names, and an optional date.</p>
 <blockquote>
 <div><p>Run agent control tool to perform a integrity checking immediately (option
 -a to run on all the agents and -u to specify an agent id)</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp"># </span>/var/ossec/bin/agent_control -r -a
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"># </span>/var/ossec/bin/agent_control -r -a
 <span class="gp"># </span>/var/ossec/bin/agent_control -r -u &lt;agent_id&gt;
 </pre></div>
 </div>
@@ -574,7 +597,8 @@ The database should contain the hashes, file names, and an optional date.</p>
 <div class="section" id="how-to-tell-syscheck-not-to-scan-the-system-when-ossec-starts">
 <h3><a class="toc-backref" href="#id2">How to tell syscheck not to scan the system when OSSEC starts?</a><a class="headerlink" href="#how-to-tell-syscheck-not-to-scan-the-system-when-ossec-starts" title="Permalink to this headline">¶</a></h3>
 <blockquote>
-<div>Set the option &lt;scan_on_start&gt; to “no” on ossec.conf</div></blockquote>
+<div><p>Set the option &lt;scan_on_start&gt; to “no” on ossec.conf</p>
+</div></blockquote>
 </div>
 <div class="section" id="how-to-ignore-a-file-that-changes-too-often">
 <h3><a class="toc-backref" href="#id3">How to ignore a file that changes too often?</a><a class="headerlink" href="#how-to-ignore-a-file-that-changes-too-often" title="Permalink to this headline">¶</a></h3>
@@ -582,7 +606,7 @@ The database should contain the hashes, file names, and an optional date.</p>
 <div><p>Set the file/directory name in the &lt;ignore&gt; option or create a simple local rule.</p>
 <p>The following one will ignore files /etc/a and /etc/b and the directory /etc/dir
 for agents mswin1 and ubuntu-dns:</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;rule</span> <span class="na">id=</span><span class="s">&quot;100345&quot;</span> <span class="na">level=</span><span class="s">&quot;0&quot;</span> <span class="nt">&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;rule</span> <span class="na">id=</span><span class="s">&quot;100345&quot;</span> <span class="na">level=</span><span class="s">&quot;0&quot;</span> <span class="nt">&gt;</span>
     <span class="nt">&lt;if_group&gt;</span>syscheck<span class="nt">&lt;/if_group&gt;</span>
     <span class="nt">&lt;description&gt;</span>Changes ignored.<span class="nt">&lt;/description&gt;</span>
     <span class="nt">&lt;match&gt;</span>/etc/a|/etc/b|/etc/dir<span class="nt">&lt;/match&gt;</span>
@@ -593,9 +617,10 @@ for agents mswin1 and ubuntu-dns:</p>
 </div></blockquote>
 </div>
 <div class="section" id="why-does-ossec-still-scan-a-file-even-though-it-s-been-ignored">
-<h3><a class="toc-backref" href="#id4">Why does OSSEC still scan a file even though it&#8217;s been ignored?</a><a class="headerlink" href="#why-does-ossec-still-scan-a-file-even-though-it-s-been-ignored" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id4">Why does OSSEC still scan a file even though it’s been ignored?</a><a class="headerlink" href="#why-does-ossec-still-scan-a-file-even-though-it-s-been-ignored" title="Permalink to this headline">¶</a></h3>
 <blockquote>
-<div>No idea. So if there are some directories you do not want scanned at all, make sure they are not included in a <code class="docutils literal"><span class="pre">&lt;directories&gt;</span></code> configuration.</div></blockquote>
+<div><p>No idea. So if there are some directories you do not want scanned at all, make sure they are not included in a <code class="docutils literal notranslate"><span class="pre">&lt;directories&gt;</span></code> configuration.</p>
+</div></blockquote>
 </div>
 <div class="section" id="how-to-know-when-the-syscheck-scan-ran">
 <h3><a class="toc-backref" href="#id5">How to know when the syscheck scan ran?</a><a class="headerlink" href="#how-to-know-when-the-syscheck-scan-ran" title="Permalink to this headline">¶</a></h3>
@@ -614,13 +639,13 @@ for agents mswin1 and ubuntu-dns:</p>
 <div class="section" id="syscheck-not-sending-any-file-data-to-the-server">
 <h3><a class="toc-backref" href="#id7">Syscheck not sending any file data to the server?</a><a class="headerlink" href="#syscheck-not-sending-any-file-data-to-the-server" title="Permalink to this headline">¶</a></h3>
 <p>With ossec 1.3 and Fedora you may run into this problem:</p>
-<p>You have named files you&#8217;d like ossec to monitor so you add:</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;ossec_config&gt;</span>
+<p>You have named files you’d like ossec to monitor so you add:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;ossec_config&gt;</span>
     <span class="nt">&lt;syscheck&gt;</span>
         <span class="nt">&lt;directories</span> <span class="na">check_all=</span><span class="s">&quot;yes&quot;</span><span class="nt">&gt;</span>/var/named<span class="nt">&lt;/directories&gt;</span>
 </pre></div>
 </div>
-<p>to ossec.conf on the client. Fedora &#8211; at least as of version 7 &#8211;
+<p>to ossec.conf on the client. Fedora – at least as of version 7 –
 runs named in a chroot jail under /var/named/chroot. However, part of
 that chroot jail includes /var/named/chroot/proc. The contents of
 that directory are purely ephemeral; there is no value to checking
@@ -628,26 +653,26 @@ their integrity. And, at least in ossec 1.3, your syscheck may stall
 trying to read those files.</p>
 <p>The symptom is a syscheck database on the server that never grows
 beyond a file or two per restart of the client. The log monitoring continues
-to work, so you know it&#8217;s not a communication issue, and you will often
+to work, so you know it’s not a communication issue, and you will often
 see a slight increase in syscheck database file size after the client has
 restarted (in one case about 20 minutes after). But the database will never be
 completely built; there will only be a couple files listed in database.</p>
 <p>The solution is to add an ignore clause to ossec.conf on the client:</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;ossec_config&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;ossec_config&gt;</span>
     <span class="nt">&lt;syscheck&gt;</span>
         <span class="nt">&lt;ignore&gt;</span>/var/named/chroot/proc<span class="nt">&lt;/ignore&gt;</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="why-aren-t-new-files-creating-an-alert">
-<h3><a class="toc-backref" href="#id8">Why aren&#8217;t new files creating an alert?</a><a class="headerlink" href="#why-aren-t-new-files-creating-an-alert" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id8">Why aren’t new files creating an alert?</a><a class="headerlink" href="#why-aren-t-new-files-creating-an-alert" title="Permalink to this headline">¶</a></h3>
 <p>By default OSSEC does not alert on new files.
-To enable this functionality, &lt;alert_new_files&gt; must be set to yes inside the &lt;syscheck&gt; section of the manager&#8217;s ossec.conf.
+To enable this functionality, &lt;alert_new_files&gt; must be set to yes inside the &lt;syscheck&gt; section of the manager’s ossec.conf.
 Also, the rule to alert on new files (rule 554) is set to level 0 by default.
 The alert level will need to be raised in order to see the alert.
 Alerting on new files does not work in realtime, a full scan will be necessary to detect them.</p>
 <p>Add the following to local_rules.xml:</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;rule</span> <span class="na">id=</span><span class="s">&quot;554&quot;</span> <span class="na">level=</span><span class="s">&quot;10&quot;</span> <span class="na">overwrite=</span><span class="s">&quot;yes&quot;</span><span class="nt">&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;rule</span> <span class="na">id=</span><span class="s">&quot;554&quot;</span> <span class="na">level=</span><span class="s">&quot;10&quot;</span> <span class="na">overwrite=</span><span class="s">&quot;yes&quot;</span><span class="nt">&gt;</span>
   <span class="nt">&lt;category&gt;</span>ossec<span class="nt">&lt;/category&gt;</span>
   <span class="nt">&lt;decoded_as&gt;</span>syscheck_new_entry<span class="nt">&lt;/decoded_as&gt;</span>
   <span class="nt">&lt;description&gt;</span>File added to the system.<span class="nt">&lt;/description&gt;</span>
@@ -655,8 +680,8 @@ Alerting on new files does not work in realtime, a full scan will be necessary t
 <span class="nt">&lt;/rule&gt;</span>
 </pre></div>
 </div>
-<p>The <code class="docutils literal"><span class="pre">&lt;alert_new_files&gt;</span></code> entry should look something like this:</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;syscheck&gt;</span>
+<p>The <code class="docutils literal notranslate"><span class="pre">&lt;alert_new_files&gt;</span></code> entry should look something like this:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;syscheck&gt;</span>
   <span class="nt">&lt;frequency&gt;</span>7200<span class="nt">&lt;/frequency&gt;</span>
   <span class="nt">&lt;alert_new_files&gt;</span>yes<span class="nt">&lt;/alert_new_files&gt;</span>
   <span class="nt">&lt;directories</span> <span class="na">check_all=</span><span class="s">&quot;yes&quot;</span><span class="nt">&gt;</span>/etc,/bin,/sbin<span class="nt">&lt;/directories&gt;</span>
@@ -667,18 +692,18 @@ Alerting on new files does not work in realtime, a full scan will be necessary t
 <div class="section" id="can-ossec-include-information-on-who-changed-a-file-in-the-alert">
 <h3><a class="toc-backref" href="#id9">Can OSSEC include information on who changed a file in the alert?</a><a class="headerlink" href="#can-ossec-include-information-on-who-changed-a-file-in-the-alert" title="Permalink to this headline">¶</a></h3>
 <p>In short, no. OSSEC does not track this information.
-You could use your OS&#8217;s auditing facilities to track this information,
+You could use your OS’s auditing facilities to track this information,
 and create a rule to alert when an appropriate log is created.</p>
 </div>
 <div class="section" id="how-do-i-stop-syscheck-alerts-during-system-updates">
 <h3><a class="toc-backref" href="#id10">How do I stop syscheck alerts during system updates?</a><a class="headerlink" href="#how-do-i-stop-syscheck-alerts-during-system-updates" title="Permalink to this headline">¶</a></h3>
 <p>There is no easy way to do this, but there are work-arounds.
-Stop the OSSEC processes on the manager, and run <code class="docutils literal"><span class="pre">/var/ossec/bin/syscheck_control</span> <span class="pre">-u</span> <span class="pre">AGENT_ID</span></code>.
+Stop the OSSEC processes on the manager, and run <code class="docutils literal notranslate"><span class="pre">/var/ossec/bin/syscheck_control</span> <span class="pre">-u</span> <span class="pre">AGENT_ID</span></code>.
 This will clear the syscheck database for the agent,
 and the next time syscheck runs it will create a new baseline.
 Next, start the OSSEC processes on the manager.
 Once the system update is complete, run a syscheck scan on that agent.
-The database will be populated with new values, and should not trigger &#8220;file modified&#8221; alarms.</p>
+The database will be populated with new values, and should not trigger “file modified” alarms.</p>
 </div>
 </div>
 </div>
@@ -695,9 +720,8 @@ The database will be populated with new values, and should not trigger &#8220;fi
       
     </p>
     <p>
-        &copy; Copyright 2010-2020, OSSEC Project Team.<br/>
+        &copy; Copyright 2010-2021, OSSEC Project Team.<br/>
     OSSEC <b>ossec.net</b> domain owned and maintained by <a href="https://www.ossec.net" target="_blank">OSSEC Foundation</a><br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.5.2 - 
     Home page graphics courtesy of <a href="https://pixabay.com" target="_blank">pixabay</a>
     </p>
   </div>

@@ -1,36 +1,24 @@
 <!DOCTYPE html>
 
-
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Understanding the Unix policy auditing on OSSEC &#8212; OSSEC</title>
-    
-    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/parallax.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../../',
-        VERSION:     '3.3.0',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
-    <script type="text/javascript" src="../../../_static/jquery.js"></script>
-    <script type="text/javascript" src="../../../_static/underscore.js"></script>
-    <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="../../../_static/js/jquery-fix.js"></script>
-    <script type="text/javascript" src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../../../_static/bootstrap-sphinx.js"></script>
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script src="../../../_static/js/jquery-fix.js"></script>
+    <script src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script src="../../../_static/bootstrap-sphinx.js"></script>
     <link rel="author" title="About these documents" href="../../../about.html" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -41,8 +29,37 @@
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
 <meta name="apple-mobile-web-app-capable" content="yes">
 
-  </head>
-  <body role="document">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-138780766-1"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'UA-138780766-1');
+</script>
+
+<script type="text/javascript">
+  var _ss = _ss || [];
+  _ss.push(['_setDomain', 'https://koi-3QNN51VTHS.marketingautomation.services/net']);
+  _ss.push(['_setAccount', 'KOI-4APYNOYP8O']);
+  _ss.push(['_trackPageView']);
+  window._pa = window._pa || {};
+  // _pa.orderId = "myOrderId"; // OPTIONAL: attach unique conversion identifier to conversions
+  // _pa.revenue = "19.99"; // OPTIONAL: attach dynamic purchase values to conversions
+  // _pa.productId = "myProductId"; // OPTIONAL: Include product ID for use with dynamic ads
+  (function() {
+  var ss = document.createElement('script');
+  ss.type = 'text/javascript'; ss.async = true;
+  ss.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'koi-3QNN51VTHS.marketingautomation.services/client/ss.js?ver=2.4.0';
+  var scr = document.getElementsByTagName('script')[0];
+  scr.parentNode.insertBefore(ss, scr);
+  })();
+  </script>
+
+
+
+  </head><body>
 
   <div id="navbar" class="navbar navbar-inverse navbar-default ">
     <div class="container">
@@ -61,9 +78,10 @@
         <div class="collapse navbar-collapse nav-collapse">
           <ul class="nav navbar-nav">
             
-                <li><a href="https://www.ossec.net/about/">About <i class="fa fa-info-circle"></i></a></li>
-                <li><a href="https://www.ossec.net/docs/">Documentation <i class="fa fa-book"></i></a></li>
-                <li><a href="https://www.ossec.net/downloads/">Downloads <i class="fa fa-download"></i></a></li>
+                <li><a href="https://www.ossec.net/about/">About</a></li>
+                <li><a href="https://www.ossec.net/docs/">Documentation</a></li>
+                <li><a href="https://www.ossec.net/register-for-ossec/">Get OSSEC+</a></li>
+                <li><a href="https://www.ossec.net/downloads/">Downloads</a></li>
             
             
               <li class="dropdown globaltoc-container">
@@ -133,28 +151,28 @@
       
   <div class="section" id="understanding-the-unix-policy-auditing-on-ossec">
 <span id="rootcheck-unix-policy-audit"></span><h1>Understanding the Unix policy auditing on OSSEC<a class="headerlink" href="#understanding-the-unix-policy-auditing-on-ossec" title="Permalink to this headline">¶</a></h1>
-<p>OSSEC&#8217;s policy monitor allows you to verify that all your systems conform to a set of policies regarding configuration settings and applications usage.
+<p>OSSEC’s policy monitor allows you to verify that all your systems conform to a set of policies regarding configuration settings and applications usage.
 They are configured centrally on the ossec server
 and pushed down to the agents. It also checks if a system in in compliance with the CIS Security Benchmarks
 and VMware security hardening guidelines.</p>
 <p>The following systems are tested for the CIS and VMware guidelines:</p>
 <ul class="simple">
-<li><a class="reference external" href="audit/CIS_debian.html">Debian and Ubuntu</a></li>
-<li><a class="reference external" href="audit/CIS_rhel.html">Red Hat and Fedora</a></li>
-<li><a class="reference external" href="audit/CIS_rhel5.html">Red Hat Enterprise Linux 5</a></li>
-<li><a class="reference external" href="audit/vmware_hardening.html">VMWare ESX 3.0 and 3.5</a></li>
+<li><p><a class="reference external" href="audit/CIS_debian.html">Debian and Ubuntu</a></p></li>
+<li><p><a class="reference external" href="audit/CIS_rhel.html">Red Hat and Fedora</a></p></li>
+<li><p><a class="reference external" href="audit/CIS_rhel5.html">Red Hat Enterprise Linux 5</a></p></li>
+<li><p><a class="reference external" href="audit/vmware_hardening.html">VMWare ESX 3.0 and 3.5</a></p></li>
 </ul>
 <div class="section" id="receiving-audit-and-application-alerts-via-email">
 <h2>Receiving Audit and Application alerts via Email<a class="headerlink" href="#receiving-audit-and-application-alerts-via-email" title="Permalink to this headline">¶</a></h2>
-<p>By default, both the policy auditing and application checks are logged as level <code class="docutils literal"><span class="pre">3</span></code>, so you will not
+<p>By default, both the policy auditing and application checks are logged as level <code class="docutils literal notranslate"><span class="pre">3</span></code>, so you will not
 receive any e-mail alerts with the original configuration.</p>
 <p>If you wish to receive e-mail alerts for any (or both of the two) types of events, you need to create
-local rules with a higher severity or with the <code class="docutils literal"><span class="pre">alert_by_email</span></code> option set.</p>
+local rules with a higher severity or with the <code class="docutils literal notranslate"><span class="pre">alert_by_email</span></code> option set.</p>
 </div>
 <div class="section" id="example1-sending-e-mail-for-every-audit-event">
 <h2>Example1: Sending e-mail for every Audit event<a class="headerlink" href="#example1-sending-e-mail-for-every-audit-event" title="Permalink to this headline">¶</a></h2>
 <p>Add to your local_rules.xml the following:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">&lt;pre&gt;</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&lt;pre&gt;</span>
 <span class="go">  &lt;rule id=&quot;512&quot; level=&quot;9&quot; overwrite=&quot;yes&quot;&gt;</span>
 <span class="go">    &lt;if_sid&gt;510&lt;/if_sid&gt;</span>
 <span class="go">    &lt;match&gt;^System Audit&lt;/match&gt;</span>
@@ -167,7 +185,7 @@ local rules with a higher severity or with the <code class="docutils literal"><s
 </div>
 <div class="section" id="listing-entries-per-agent">
 <h2>Listing entries per agent<a class="headerlink" href="#listing-entries-per-agent" title="Permalink to this headline">¶</a></h2>
-<p>To control the policy database, use the &#8216;&#8217;&#8216;rootcheck_control&#8217;&#8216;&#8217; tool.</p>
+<p>To control the policy database, use the ‘’’rootcheck_control’’’ tool.</p>
 <p>This page was originally authored by Daniel Cid for the OSSEC wiki.</p>
 </div>
 </div>
@@ -184,9 +202,8 @@ local rules with a higher severity or with the <code class="docutils literal"><s
       
     </p>
     <p>
-        &copy; Copyright 2010-2020, OSSEC Project Team.<br/>
+        &copy; Copyright 2010-2021, OSSEC Project Team.<br/>
     OSSEC <b>ossec.net</b> domain owned and maintained by <a href="https://www.ossec.net" target="_blank">OSSEC Foundation</a><br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.5.2 - 
     Home page graphics courtesy of <a href="https://pixabay.com" target="_blank">pixabay</a>
     </p>
   </div>

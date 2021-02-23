@@ -1,36 +1,24 @@
 <!DOCTYPE html>
 
-
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Windows Agent Installation &#8212; OSSEC</title>
-    
-    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/parallax.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../../',
-        VERSION:     '3.3.0',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
-    <script type="text/javascript" src="../../../_static/jquery.js"></script>
-    <script type="text/javascript" src="../../../_static/underscore.js"></script>
-    <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="../../../_static/js/jquery-fix.js"></script>
-    <script type="text/javascript" src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../../../_static/bootstrap-sphinx.js"></script>
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script src="../../../_static/js/jquery-fix.js"></script>
+    <script src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script src="../../../_static/bootstrap-sphinx.js"></script>
     <link rel="author" title="About these documents" href="../../../about.html" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -41,8 +29,37 @@
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
 <meta name="apple-mobile-web-app-capable" content="yes">
 
-  </head>
-  <body role="document">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-138780766-1"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'UA-138780766-1');
+</script>
+
+<script type="text/javascript">
+  var _ss = _ss || [];
+  _ss.push(['_setDomain', 'https://koi-3QNN51VTHS.marketingautomation.services/net']);
+  _ss.push(['_setAccount', 'KOI-4APYNOYP8O']);
+  _ss.push(['_trackPageView']);
+  window._pa = window._pa || {};
+  // _pa.orderId = "myOrderId"; // OPTIONAL: attach unique conversion identifier to conversions
+  // _pa.revenue = "19.99"; // OPTIONAL: attach dynamic purchase values to conversions
+  // _pa.productId = "myProductId"; // OPTIONAL: Include product ID for use with dynamic ads
+  (function() {
+  var ss = document.createElement('script');
+  ss.type = 'text/javascript'; ss.async = true;
+  ss.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'koi-3QNN51VTHS.marketingautomation.services/client/ss.js?ver=2.4.0';
+  var scr = document.getElementsByTagName('script')[0];
+  scr.parentNode.insertBefore(ss, scr);
+  })();
+  </script>
+
+
+
+  </head><body>
 
   <div id="navbar" class="navbar navbar-inverse navbar-default ">
     <div class="container">
@@ -61,9 +78,10 @@
         <div class="collapse navbar-collapse nav-collapse">
           <ul class="nav navbar-nav">
             
-                <li><a href="https://www.ossec.net/about/">About <i class="fa fa-info-circle"></i></a></li>
-                <li><a href="https://www.ossec.net/docs/">Documentation <i class="fa fa-book"></i></a></li>
-                <li><a href="https://www.ossec.net/downloads/">Downloads <i class="fa fa-download"></i></a></li>
+                <li><a href="https://www.ossec.net/about/">About</a></li>
+                <li><a href="https://www.ossec.net/docs/">Documentation</a></li>
+                <li><a href="https://www.ossec.net/register-for-ossec/">Get OSSEC+</a></li>
+                <li><a href="https://www.ossec.net/downloads/">Downloads</a></li>
             
             
               <li class="dropdown globaltoc-container">
@@ -134,8 +152,8 @@
   <div class="section" id="windows-agent-installation">
 <span id="manual-win-install"></span><h1>Windows Agent Installation<a class="headerlink" href="#windows-agent-installation" title="Permalink to this headline">¶</a></h1>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">OSSEC only supports Windows systems as agents, and they
+<p class="admonition-title">Note</p>
+<p>OSSEC only supports Windows systems as agents, and they
 will require an OSSEC server to function.</p>
 </div>
 <div class="section" id="step-1-opening-the-agent-manager-menu">
@@ -143,7 +161,7 @@ will require an OSSEC server to function.</p>
 <p>The first step of this process is to get into the Agent Manager menu. From the ossec server, type the following command:</p>
 <p><cite>/var/ossec/bin/manage_agents</cite></p>
 <p>The menu should look like this:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">****************************************</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">****************************************</span>
 <span class="go">* OSSEC HIDS v2.5-SNP-100809 Agent manager.*</span>
 <span class="go">* The following options are available:*</span>
 <span class="go">***************************************</span>
@@ -159,37 +177,37 @@ will require an OSSEC server to function.</p>
 </div>
 <div class="section" id="step-2-adding-an-agent">
 <h2>Step 2: Adding an Agent<a class="headerlink" href="#step-2-adding-an-agent" title="Permalink to this headline">¶</a></h2>
-<p>Adding an agent is the first thing that needs to be done. Choose action &#8220;A&#8221;.</p>
+<p>Adding an agent is the first thing that needs to be done. Choose action “A”.</p>
 <p>The agent manager first asks for a name. This can be named anything.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Adding</span> <span class="n">a</span> <span class="n">new</span> <span class="n">agent</span> <span class="p">(</span><span class="n">use</span> <span class="s1">&#39;\q&#39;</span> <span class="n">to</span> <span class="k">return</span> <span class="n">to</span> <span class="n">the</span> <span class="n">main</span> <span class="n">menu</span><span class="p">)</span><span class="o">.</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Adding</span> <span class="n">a</span> <span class="n">new</span> <span class="n">agent</span> <span class="p">(</span><span class="n">use</span> <span class="s1">&#39;\q&#39;</span> <span class="n">to</span> <span class="k">return</span> <span class="n">to</span> <span class="n">the</span> <span class="n">main</span> <span class="n">menu</span><span class="p">)</span><span class="o">.</span>
 <span class="n">Please</span> <span class="n">provide</span> <span class="n">the</span> <span class="n">following</span><span class="p">:</span>   <span class="o">*</span> <span class="n">A</span> <span class="n">name</span> <span class="k">for</span> <span class="n">the</span> <span class="n">new</span> <span class="n">agent</span><span class="p">:</span>
 </pre></div>
 </div>
 <p>Next, it asks for the IP address of the windows client.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">IP</span> <span class="n">Address</span> <span class="n">of</span> <span class="n">the</span> <span class="n">new</span> <span class="n">agent</span><span class="p">:</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">IP</span> <span class="n">Address</span> <span class="n">of</span> <span class="n">the</span> <span class="n">new</span> <span class="n">agent</span><span class="p">:</span>
 </pre></div>
 </div>
-<p>After that, it asks for a unique ID to assign to the client. The ID must be all numerical with a maximum of eight digits. The agent manager also suggests ID&#8217;s for new agents.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">An</span> <span class="n">ID</span> <span class="k">for</span> <span class="n">the</span> <span class="n">new</span> <span class="n">agent</span><span class="p">[</span><span class="mi">001</span><span class="p">]:</span>
+<p>After that, it asks for a unique ID to assign to the client. The ID must be all numerical with a maximum of eight digits. The agent manager also suggests ID’s for new agents.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">An</span> <span class="n">ID</span> <span class="k">for</span> <span class="n">the</span> <span class="n">new</span> <span class="n">agent</span><span class="p">[</span><span class="mi">001</span><span class="p">]:</span>
 </pre></div>
 </div>
 <p>Lastly, it asks for confirmation of all the information provided. Then it appends all of the agent information to /var/ossec/etc/client.keys and returns to the main menu.</p>
 </div>
 <div class="section" id="step-3-extracting-a-key">
 <h2>Step 3: Extracting a Key<a class="headerlink" href="#step-3-extracting-a-key" title="Permalink to this headline">¶</a></h2>
-<p>Now, the client key needs to be extracted. From the main menu, choose action &#8220;E&#8221;. A list of agents will be displayed:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Available</span> <span class="n">agents</span><span class="p">:</span>   <span class="n">ID</span><span class="p">:</span> <span class="mi">001</span><span class="p">,</span> <span class="n">Name</span><span class="p">:</span> <span class="n">agent1</span><span class="p">,</span> <span class="n">IP</span><span class="p">:</span> <span class="mf">10.10</span><span class="o">.</span><span class="mf">50.2</span>
+<p>Now, the client key needs to be extracted. From the main menu, choose action “E”. A list of agents will be displayed:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Available</span> <span class="n">agents</span><span class="p">:</span>   <span class="n">ID</span><span class="p">:</span> <span class="mi">001</span><span class="p">,</span> <span class="n">Name</span><span class="p">:</span> <span class="n">agent1</span><span class="p">,</span> <span class="n">IP</span><span class="p">:</span> <span class="mf">10.10</span><span class="o">.</span><span class="mf">50.2</span>
 <span class="n">Provide</span> <span class="n">the</span> <span class="n">ID</span> <span class="n">of</span> <span class="n">the</span> <span class="n">agent</span> <span class="n">to</span> <span class="n">extract</span> <span class="n">the</span> <span class="n">key</span> <span class="p">(</span><span class="ow">or</span> <span class="s1">&#39;\q&#39;</span> <span class="n">to</span> <span class="n">quit</span><span class="p">):</span>
 </pre></div>
 </div>
 <p>Enter the full ID of the agent to extract the key for. It will display the entire key. Copy that to the clipboard, for it will be needed later.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Agent</span> <span class="n">key</span> <span class="n">information</span> <span class="k">for</span> <span class="s1">&#39;001&#39;</span> <span class="ow">is</span><span class="p">:</span><span class="n">MDAyIGFnZW50MSAxOTIuMTY4LjIuMC8yNCBlNmY3N2RiMTdmMTJjZGRmZjg5YzA4ZDk5m</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Agent</span> <span class="n">key</span> <span class="n">information</span> <span class="k">for</span> <span class="s1">&#39;001&#39;</span> <span class="ow">is</span><span class="p">:</span><span class="n">MDAyIGFnZW50MSAxOTIuMTY4LjIuMC8yNCBlNmY3N2RiMTdmMTJjZGRmZjg5YzA4ZDk5m</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="step-4-the-windows-side">
 <h2>Step 4: The Windows Side<a class="headerlink" href="#step-4-the-windows-side" title="Permalink to this headline">¶</a></h2>
-<p>Next up, download the executable named Agent Windows from <a class="reference external" href="https://ossec.github.io/downloads.html">https://ossec.github.io/downloads.html</a>. Run through the install wizard with all defaults. It should launch the Ossec Agent Manager when it&#8217;s done. The Ossec Agent Manager looks like this:</p>
+<p>Next up, download the executable named Agent Windows from <a class="reference external" href="https://ossec.github.io/downloads.html">https://ossec.github.io/downloads.html</a>. Run through the install wizard with all defaults. It should launch the Ossec Agent Manager when it’s done. The Ossec Agent Manager looks like this:</p>
 <p><img alt="image0" src="https://github.com/Vendetta547/ossec-docs/blob/patch-1/OSSEC-Agent-Manager-Windows.png" /></p>
 <p>Enter the IP address of your ossec server in the first text field, and enter the extracted key that was copied to the clipboard earlier to the second textfield. Finally, click on the manage tab and hit restart.</p>
 </div>
@@ -207,9 +225,8 @@ will require an OSSEC server to function.</p>
       
     </p>
     <p>
-        &copy; Copyright 2010-2020, OSSEC Project Team.<br/>
+        &copy; Copyright 2010-2021, OSSEC Project Team.<br/>
     OSSEC <b>ossec.net</b> domain owned and maintained by <a href="https://www.ossec.net" target="_blank">OSSEC Foundation</a><br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.5.2 - 
     Home page graphics courtesy of <a href="https://pixabay.com" target="_blank">pixabay</a>
     </p>
   </div>

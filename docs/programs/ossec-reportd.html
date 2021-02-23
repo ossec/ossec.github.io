@@ -1,36 +1,24 @@
 <!DOCTYPE html>
 
-
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ossec-reportd &#8212; OSSEC</title>
-    
-    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/parallax.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../',
-        VERSION:     '3.3.0',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
-    <script type="text/javascript" src="../../_static/jquery.js"></script>
-    <script type="text/javascript" src="../../_static/underscore.js"></script>
-    <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
-    <script type="text/javascript" src="../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script src="../../_static/js/jquery-fix.js"></script>
+    <script src="../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script src="../../_static/bootstrap-sphinx.js"></script>
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -41,8 +29,37 @@
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
 <meta name="apple-mobile-web-app-capable" content="yes">
 
-  </head>
-  <body role="document">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-138780766-1"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'UA-138780766-1');
+</script>
+
+<script type="text/javascript">
+  var _ss = _ss || [];
+  _ss.push(['_setDomain', 'https://koi-3QNN51VTHS.marketingautomation.services/net']);
+  _ss.push(['_setAccount', 'KOI-4APYNOYP8O']);
+  _ss.push(['_trackPageView']);
+  window._pa = window._pa || {};
+  // _pa.orderId = "myOrderId"; // OPTIONAL: attach unique conversion identifier to conversions
+  // _pa.revenue = "19.99"; // OPTIONAL: attach dynamic purchase values to conversions
+  // _pa.productId = "myProductId"; // OPTIONAL: Include product ID for use with dynamic ads
+  (function() {
+  var ss = document.createElement('script');
+  ss.type = 'text/javascript'; ss.async = true;
+  ss.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'koi-3QNN51VTHS.marketingautomation.services/client/ss.js?ver=2.4.0';
+  var scr = document.getElementsByTagName('script')[0];
+  scr.parentNode.insertBefore(ss, scr);
+  })();
+  </script>
+
+
+
+  </head><body>
 
   <div id="navbar" class="navbar navbar-inverse navbar-default ">
     <div class="container">
@@ -61,9 +78,10 @@
         <div class="collapse navbar-collapse nav-collapse">
           <ul class="nav navbar-nav">
             
-                <li><a href="https://www.ossec.net/about/">About <i class="fa fa-info-circle"></i></a></li>
-                <li><a href="https://www.ossec.net/docs/">Documentation <i class="fa fa-book"></i></a></li>
-                <li><a href="https://www.ossec.net/downloads/">Downloads <i class="fa fa-download"></i></a></li>
+                <li><a href="https://www.ossec.net/about/">About</a></li>
+                <li><a href="https://www.ossec.net/docs/">Documentation</a></li>
+                <li><a href="https://www.ossec.net/register-for-ossec/">Get OSSEC+</a></li>
+                <li><a href="https://www.ossec.net/downloads/">Downloads</a></li>
             
             
               <li class="dropdown globaltoc-container">
@@ -134,65 +152,65 @@
   <div class="section" id="ossec-reportd">
 <span id="id1"></span><h1>ossec-reportd<a class="headerlink" href="#ossec-reportd" title="Permalink to this headline">¶</a></h1>
 <blockquote>
-<div><p><code class="docutils literal"><span class="pre">ossec-reportd</span></code> is a program to create reports from OSSEC alerts.
-<code class="docutils literal"><span class="pre">ossec-reportd</span></code> accepts alerts on <code class="docutils literal"><span class="pre">stdin</span></code>, and outputs a report on <code class="docutils literal"><span class="pre">stderr</span></code>.</p>
+<div><p><code class="docutils literal notranslate"><span class="pre">ossec-reportd</span></code> is a program to create reports from OSSEC alerts.
+<code class="docutils literal notranslate"><span class="pre">ossec-reportd</span></code> accepts alerts on <code class="docutils literal notranslate"><span class="pre">stdin</span></code>, and outputs a report on <code class="docutils literal notranslate"><span class="pre">stderr</span></code>.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Since <code class="docutils literal"><span class="pre">ossec-reportd</span></code> outputs to stderr some utilities like <code class="docutils literal"><span class="pre">less</span></code> will not work if you do not redirect the output.
-End the ossec-reportd with <code class="docutils literal"><span class="pre">2&gt;&amp;1</span></code> to redirect stderr to stdout. <code class="docutils literal"><span class="pre">more</span></code> or <code class="docutils literal"><span class="pre">less</span></code> can be easily used after the stderr redirect.</p>
+<p class="admonition-title">Note</p>
+<p>Since <code class="docutils literal notranslate"><span class="pre">ossec-reportd</span></code> outputs to stderr some utilities like <code class="docutils literal notranslate"><span class="pre">less</span></code> will not work if you do not redirect the output.
+End the ossec-reportd with <code class="docutils literal notranslate"><span class="pre">2&gt;&amp;1</span></code> to redirect stderr to stdout. <code class="docutils literal notranslate"><span class="pre">more</span></code> or <code class="docutils literal notranslate"><span class="pre">less</span></code> can be easily used after the stderr redirect.</p>
 </div>
 </div></blockquote>
 <div class="section" id="ossec-reportd-argument-options">
 <h2>ossec-reportd argument options<a class="headerlink" href="#ossec-reportd-argument-options" title="Permalink to this headline">¶</a></h2>
-<dl class="option">
-<dt id="cmdoption-ossec-reportd-d">
-<code class="descname">-D</code><code class="descclassname"> &lt;dir&gt;</code><a class="headerlink" href="#cmdoption-ossec-reportd-d" title="Permalink to this definition">¶</a></dt>
-<dd><p>chroot to <code class="docutils literal"><span class="pre">&lt;dir&gt;</span></code>.</p>
+<dl class="std option">
+<dt id="cmdoption-ossec-reportd-D">
+<span id="cmdoption-ossec-reportd-d"></span><code class="sig-name descname"><span class="pre">-D</span></code><code class="sig-prename descclassname"> <span class="pre">&lt;dir&gt;</span></code><a class="headerlink" href="#cmdoption-ossec-reportd-D" title="Permalink to this definition">¶</a></dt>
+<dd><p>chroot to <code class="docutils literal notranslate"><span class="pre">&lt;dir&gt;</span></code>.</p>
 </dd></dl>
 
-<dl class="option">
-<dt id="id2">
-<code class="descname">-d</code><code class="descclassname"></code><a class="headerlink" href="#id2" title="Permalink to this definition">¶</a></dt>
+<dl class="std option">
+<dt id="cmdoption-ossec-reportd-0">
+<code class="sig-name descname"><span class="pre">-d</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-ossec-reportd-0" title="Permalink to this definition">¶</a></dt>
 <dd><p>Execute ossec-reportd in debug mode. This option can be used multiple times to increase the verbosity of the debug messages.</p>
 </dd></dl>
 
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-ossec-reportd-f">
-<code class="descname">-f</code><code class="descclassname"> &lt;filter&gt; &lt;value&gt;</code><a class="headerlink" href="#cmdoption-ossec-reportd-f" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">-f</span></code><code class="sig-prename descclassname"> <span class="pre">&lt;filter&gt;</span> <span class="pre">&lt;value&gt;</span></code><a class="headerlink" href="#cmdoption-ossec-reportd-f" title="Permalink to this definition">¶</a></dt>
 <dd><p>Filter the results.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Allowed filters: group, rule, level, location, user, srcip, and filename.</p>
+<p class="admonition-title">Note</p>
+<p>Allowed filters: group, rule, level, location, user, srcip, and filename.</p>
 </div>
 </dd></dl>
 
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-ossec-reportd-h">
-<code class="descname">-h</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ossec-reportd-h" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">-h</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-ossec-reportd-h" title="Permalink to this definition">¶</a></dt>
 <dd><p>Display the help message</p>
 </dd></dl>
 
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-ossec-reportd-n">
-<code class="descname">-n</code><code class="descclassname"> &lt;string&gt;</code><a class="headerlink" href="#cmdoption-ossec-reportd-n" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">-n</span></code><code class="sig-prename descclassname"> <span class="pre">&lt;string&gt;</span></code><a class="headerlink" href="#cmdoption-ossec-reportd-n" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a description for the report.</p>
 </dd></dl>
 
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-ossec-reportd-r">
-<code class="descname">-r</code><code class="descclassname"> &lt;filter&gt; &lt;value&gt;</code><a class="headerlink" href="#cmdoption-ossec-reportd-r" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">-r</span></code><code class="sig-prename descclassname"> <span class="pre">&lt;filter&gt;</span> <span class="pre">&lt;value&gt;</span></code><a class="headerlink" href="#cmdoption-ossec-reportd-r" title="Permalink to this definition">¶</a></dt>
 <dd><p>Show related entries.</p>
 </dd></dl>
 
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-ossec-reportd-s">
-<code class="descname">-s</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ossec-reportd-s" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">-s</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-ossec-reportd-s" title="Permalink to this definition">¶</a></dt>
 <dd><p>Show the alerts related to the summary.</p>
 </dd></dl>
 
-<dl class="option">
-<dt id="cmdoption-ossec-reportd-v">
-<code class="descname">-V</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ossec-reportd-v" title="Permalink to this definition">¶</a></dt>
+<dl class="std option">
+<dt id="cmdoption-ossec-reportd-V">
+<span id="cmdoption-ossec-reportd-v"></span><code class="sig-name descname"><span class="pre">-V</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-ossec-reportd-V" title="Permalink to this definition">¶</a></dt>
 <dd><p>Display OSSEC Version and license information.</p>
 </dd></dl>
 
@@ -201,32 +219,32 @@ End the ossec-reportd with <code class="docutils literal"><span class="pre">2&gt
 <h2>ossec-reportd example usage<a class="headerlink" href="#ossec-reportd-example-usage" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="example-1-show-successful-logins">
 <h3>Example 1: Show Successful Logins<a class="headerlink" href="#example-1-show-successful-logins" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp"># </span>cat /var/ossec/logs/alerts/alerts.log <span class="p">|</span> /var/ossec/bin/ossec-reportd -f group authentication_success
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"># </span>cat /var/ossec/logs/alerts/alerts.log <span class="p">|</span> /var/ossec/bin/ossec-reportd -f group authentication_success
 </pre></div>
 </div>
 </div>
 <div class="section" id="example-2-show-alerts-level-10-and-greater">
 <h3>Example 2: Show Alerts Level 10 and Greater<a class="headerlink" href="#example-2-show-alerts-level-10-and-greater" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp"># </span>cat /var/ossec/logs/alerts/alerts.log <span class="p">|</span> /var/ossec/bin/ossec-reportd -f level <span class="m">10</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"># </span>cat /var/ossec/logs/alerts/alerts.log <span class="p">|</span> /var/ossec/bin/ossec-reportd -f level <span class="m">10</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="example-3-show-the-srcip-for-all-users">
 <h3>Example 3: Show the srcip for all users<a class="headerlink" href="#example-3-show-the-srcip-for-all-users" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp"># </span>cat /var/ossec/logs/alerts/alerts.log <span class="p">|</span> /var/ossec/bin/ossec-reportd -f group authentication -r user srcip
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"># </span>cat /var/ossec/logs/alerts/alerts.log <span class="p">|</span> /var/ossec/bin/ossec-reportd -f group authentication -r user srcip
 </pre></div>
 </div>
 </div>
 <div class="section" id="example-4-show-changed-files-as-reported-by-syscheck">
 <h3>Example 4: Show Changed files as reported by Syscheck<a class="headerlink" href="#example-4-show-changed-files-as-reported-by-syscheck" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp"># </span>cat /var/ossec/logs/alerts/alerts.log <span class="p">|</span> /var/ossec/bin/ossec-reportd -f group syscheck -r location filename
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"># </span>cat /var/ossec/logs/alerts/alerts.log <span class="p">|</span> /var/ossec/bin/ossec-reportd -f group syscheck -r location filename
 </pre></div>
 </div>
 </div>
 </div>
 <div class="section" id="example-output">
 <h2>Example output<a class="headerlink" href="#example-output" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-none"><div class="highlight"><pre><span></span># cat /var/ossec/logs/alerts/alerts.log | /var/ossec/bin/ossec-reportd 2&gt;&amp;1 | more
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span># cat /var/ossec/logs/alerts/alerts.log | /var/ossec/bin/ossec-reportd 2&gt;&amp;1 | more
 2011/07/11 21:01:36 ossec-reportd: INFO: Started (pid: 1444).
 2011/07/11 21:01:41 ossec-reportd: INFO: Report completed. Creating output...
 
@@ -301,9 +319,8 @@ Top entries for &#39;Rule&#39;:
       
     </p>
     <p>
-        &copy; Copyright 2010-2020, OSSEC Project Team.<br/>
+        &copy; Copyright 2010-2021, OSSEC Project Team.<br/>
     OSSEC <b>ossec.net</b> domain owned and maintained by <a href="https://www.ossec.net" target="_blank">OSSEC Foundation</a><br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.5.2 - 
     Home page graphics courtesy of <a href="https://pixabay.com" target="_blank">pixabay</a>
     </p>
   </div>

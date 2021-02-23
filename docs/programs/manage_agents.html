@@ -1,36 +1,24 @@
 <!DOCTYPE html>
 
-
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>manage_agents &#8212; OSSEC</title>
-    
-    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/parallax.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../',
-        VERSION:     '3.3.0',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
-    <script type="text/javascript" src="../../_static/jquery.js"></script>
-    <script type="text/javascript" src="../../_static/underscore.js"></script>
-    <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
-    <script type="text/javascript" src="../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script src="../../_static/js/jquery-fix.js"></script>
+    <script src="../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script src="../../_static/bootstrap-sphinx.js"></script>
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -41,8 +29,37 @@
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
 <meta name="apple-mobile-web-app-capable" content="yes">
 
-  </head>
-  <body role="document">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-138780766-1"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'UA-138780766-1');
+</script>
+
+<script type="text/javascript">
+  var _ss = _ss || [];
+  _ss.push(['_setDomain', 'https://koi-3QNN51VTHS.marketingautomation.services/net']);
+  _ss.push(['_setAccount', 'KOI-4APYNOYP8O']);
+  _ss.push(['_trackPageView']);
+  window._pa = window._pa || {};
+  // _pa.orderId = "myOrderId"; // OPTIONAL: attach unique conversion identifier to conversions
+  // _pa.revenue = "19.99"; // OPTIONAL: attach dynamic purchase values to conversions
+  // _pa.productId = "myProductId"; // OPTIONAL: Include product ID for use with dynamic ads
+  (function() {
+  var ss = document.createElement('script');
+  ss.type = 'text/javascript'; ss.async = true;
+  ss.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'koi-3QNN51VTHS.marketingautomation.services/client/ss.js?ver=2.4.0';
+  var scr = document.getElementsByTagName('script')[0];
+  scr.parentNode.insertBefore(ss, scr);
+  })();
+  </script>
+
+
+
+  </head><body>
 
   <div id="navbar" class="navbar navbar-inverse navbar-default ">
     <div class="container">
@@ -61,9 +78,10 @@
         <div class="collapse navbar-collapse nav-collapse">
           <ul class="nav navbar-nav">
             
-                <li><a href="https://www.ossec.net/about/">About <i class="fa fa-info-circle"></i></a></li>
-                <li><a href="https://www.ossec.net/docs/">Documentation <i class="fa fa-book"></i></a></li>
-                <li><a href="https://www.ossec.net/downloads/">Downloads <i class="fa fa-download"></i></a></li>
+                <li><a href="https://www.ossec.net/about/">About</a></li>
+                <li><a href="https://www.ossec.net/docs/">Documentation</a></li>
+                <li><a href="https://www.ossec.net/register-for-ossec/">Get OSSEC+</a></li>
+                <li><a href="https://www.ossec.net/downloads/">Downloads</a></li>
             
             
               <li class="dropdown globaltoc-container">
@@ -135,59 +153,59 @@
 <span id="id1"></span><h1>manage_agents<a class="headerlink" href="#manage-agents" title="Permalink to this headline">¶</a></h1>
 <p>manage_agents is available in two versions:</p>
 <ul class="simple">
-<li>a version for OSSEC server installations</li>
-<li>a version for OSSEC agent installations</li>
+<li><p>a version for OSSEC server installations</p></li>
+<li><p>a version for OSSEC agent installations</p></li>
 </ul>
 <p>The purpose of manage_agents is to provide an easy-to-use interface to handle authentication
 keys for OSSEC agents. These authentication keys are required for secure (encrypted and
 authenticated) communication between the OSSEC server and its affiliated agent instances.</p>
 <div class="section" id="manage-agents-argument-options">
 <h2>manage_agents argument options<a class="headerlink" href="#manage-agents-argument-options" title="Permalink to this headline">¶</a></h2>
-<dl class="option">
-<dt id="cmdoption-manage-agents-v">
-<code class="descname">-V</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-manage-agents-v" title="Permalink to this definition">¶</a></dt>
+<dl class="std option">
+<dt id="cmdoption-manage_agents-V">
+<span id="cmdoption-manage-agents-v"></span><code class="sig-name descname"><span class="pre">-V</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-manage_agents-V" title="Permalink to this definition">¶</a></dt>
 <dd><p>Display OSSEC Version.</p>
 </dd></dl>
 
-<dl class="option">
-<dt id="cmdoption-manage-agents-h">
-<code class="descname">-h</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-manage-agents-h" title="Permalink to this definition">¶</a></dt>
+<dl class="std option">
+<dt id="cmdoption-manage_agents-h">
+<span id="cmdoption-manage-agents-h"></span><code class="sig-name descname"><span class="pre">-h</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-manage_agents-h" title="Permalink to this definition">¶</a></dt>
 <dd><p>Display the help message.</p>
 </dd></dl>
 
-<dl class="option">
-<dt id="cmdoption-manage-agents-l">
-<code class="descname">-l</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-manage-agents-l" title="Permalink to this definition">¶</a></dt>
+<dl class="std option">
+<dt id="cmdoption-manage_agents-l">
+<span id="cmdoption-manage-agents-l"></span><code class="sig-name descname"><span class="pre">-l</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-manage_agents-l" title="Permalink to this definition">¶</a></dt>
 <dd><p>List available agents.</p>
 </dd></dl>
 
-<dl class="option">
-<dt id="cmdoption-manage-agents-e">
-<code class="descname">-e</code><code class="descclassname"> &lt;agent_id&gt;</code><a class="headerlink" href="#cmdoption-manage-agents-e" title="Permalink to this definition">¶</a></dt>
+<dl class="std option">
+<dt id="cmdoption-manage_agents-e">
+<span id="cmdoption-manage-agents-e"></span><code class="sig-name descname"><span class="pre">-e</span></code><code class="sig-prename descclassname"> <span class="pre">&lt;agent_id&gt;</span></code><a class="headerlink" href="#cmdoption-manage_agents-e" title="Permalink to this definition">¶</a></dt>
 <dd><p>Extracts key for an agent (Manager only).</p>
 </dd></dl>
 
-<dl class="option">
-<dt id="cmdoption-manage-agents-r">
-<code class="descname">-r</code><code class="descclassname"> &lt;agent_id&gt;</code><a class="headerlink" href="#cmdoption-manage-agents-r" title="Permalink to this definition">¶</a></dt>
+<dl class="std option">
+<dt id="cmdoption-manage_agents-r">
+<span id="cmdoption-manage-agents-r"></span><code class="sig-name descname"><span class="pre">-r</span></code><code class="sig-prename descclassname"> <span class="pre">&lt;agent_id&gt;</span></code><a class="headerlink" href="#cmdoption-manage_agents-r" title="Permalink to this definition">¶</a></dt>
 <dd><p>Remove an agent (Manager only).</p>
 </dd></dl>
 
-<dl class="option">
-<dt id="cmdoption-manage-agents-i">
-<code class="descname">-i</code><code class="descclassname"> &lt;key&gt;</code><a class="headerlink" href="#cmdoption-manage-agents-i" title="Permalink to this definition">¶</a></dt>
+<dl class="std option">
+<dt id="cmdoption-manage_agents-i">
+<span id="cmdoption-manage-agents-i"></span><code class="sig-name descname"><span class="pre">-i</span></code><code class="sig-prename descclassname"> <span class="pre">&lt;key&gt;</span></code><a class="headerlink" href="#cmdoption-manage_agents-i" title="Permalink to this definition">¶</a></dt>
 <dd><p>Import authentication key (Agent only).</p>
 </dd></dl>
 
-<dl class="option">
-<dt id="cmdoption-manage-agents-f">
-<code class="descname">-f</code><code class="descclassname">  &lt;file&gt;</code><a class="headerlink" href="#cmdoption-manage-agents-f" title="Permalink to this definition">¶</a></dt>
+<dl class="std option">
+<dt id="cmdoption-manage_agents-f">
+<span id="cmdoption-manage-agents-f"></span><code class="sig-name descname"><span class="pre">-f</span></code><code class="sig-prename descclassname">&#160; <span class="pre">&lt;file&gt;</span></code><a class="headerlink" href="#cmdoption-manage_agents-f" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate clients in bulk from &lt;file&gt; (Manager only). The file is a comma delimited file containing the IP addresses and agent names to be added.
-This file should be located within <code class="docutils literal"><span class="pre">/var/ossec</span></code>, and referenced by its path relative to <code class="docutils literal"><span class="pre">/var/ossec</span></code>.</p>
+This file should be located within <code class="docutils literal notranslate"><span class="pre">/var/ossec</span></code>, and referenced by its path relative to <code class="docutils literal notranslate"><span class="pre">/var/ossec</span></code>.</p>
 </dd></dl>
 
 <p><strong>Example:</strong></p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp"># </span>cat /var/ossec/k
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"># </span>cat /var/ossec/k
 <span class="go">192.168.1.2,host02</span>
 <span class="go">192.168.1.3,host03</span>
 
@@ -227,9 +245,8 @@ This file should be located within <code class="docutils literal"><span class="p
       
     </p>
     <p>
-        &copy; Copyright 2010-2020, OSSEC Project Team.<br/>
+        &copy; Copyright 2010-2021, OSSEC Project Team.<br/>
     OSSEC <b>ossec.net</b> domain owned and maintained by <a href="https://www.ossec.net" target="_blank">OSSEC Foundation</a><br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.5.2 - 
     Home page graphics courtesy of <a href="https://pixabay.com" target="_blank">pixabay</a>
     </p>
   </div>

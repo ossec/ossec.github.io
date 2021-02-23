@@ -1,36 +1,24 @@
 <!DOCTYPE html>
 
-
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Web Scan sample 2 &#8212; OSSEC</title>
-    
-    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/parallax.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../../',
-        VERSION:     '3.3.0',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
-    <script type="text/javascript" src="../../../_static/jquery.js"></script>
-    <script type="text/javascript" src="../../../_static/underscore.js"></script>
-    <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="../../../_static/js/jquery-fix.js"></script>
-    <script type="text/javascript" src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../../../_static/bootstrap-sphinx.js"></script>
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script src="../../../_static/js/jquery-fix.js"></script>
+    <script src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script src="../../../_static/bootstrap-sphinx.js"></script>
     <link rel="author" title="About these documents" href="../../../about.html" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -39,8 +27,37 @@
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
 <meta name="apple-mobile-web-app-capable" content="yes">
 
-  </head>
-  <body role="document">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-138780766-1"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'UA-138780766-1');
+</script>
+
+<script type="text/javascript">
+  var _ss = _ss || [];
+  _ss.push(['_setDomain', 'https://koi-3QNN51VTHS.marketingautomation.services/net']);
+  _ss.push(['_setAccount', 'KOI-4APYNOYP8O']);
+  _ss.push(['_trackPageView']);
+  window._pa = window._pa || {};
+  // _pa.orderId = "myOrderId"; // OPTIONAL: attach unique conversion identifier to conversions
+  // _pa.revenue = "19.99"; // OPTIONAL: attach dynamic purchase values to conversions
+  // _pa.productId = "myProductId"; // OPTIONAL: Include product ID for use with dynamic ads
+  (function() {
+  var ss = document.createElement('script');
+  ss.type = 'text/javascript'; ss.async = true;
+  ss.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'koi-3QNN51VTHS.marketingautomation.services/client/ss.js?ver=2.4.0';
+  var scr = document.getElementsByTagName('script')[0];
+  scr.parentNode.insertBefore(ss, scr);
+  })();
+  </script>
+
+
+
+  </head><body>
 
   <div id="navbar" class="navbar navbar-inverse navbar-default ">
     <div class="container">
@@ -59,9 +76,10 @@
         <div class="collapse navbar-collapse nav-collapse">
           <ul class="nav navbar-nav">
             
-                <li><a href="https://www.ossec.net/about/">About <i class="fa fa-info-circle"></i></a></li>
-                <li><a href="https://www.ossec.net/docs/">Documentation <i class="fa fa-book"></i></a></li>
-                <li><a href="https://www.ossec.net/downloads/">Downloads <i class="fa fa-download"></i></a></li>
+                <li><a href="https://www.ossec.net/about/">About</a></li>
+                <li><a href="https://www.ossec.net/docs/">Documentation</a></li>
+                <li><a href="https://www.ossec.net/register-for-ossec/">Get OSSEC+</a></li>
+                <li><a href="https://www.ossec.net/downloads/">Downloads</a></li>
             
             
               <li class="dropdown globaltoc-container">
@@ -125,7 +143,7 @@
 <h1>Web Scan sample 2<a class="headerlink" href="#web-scan-sample-2" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="example-of-web-scan-detected-by-ossec-looking-for-wordpress-xmlrpc-and-awstats">
 <h2>Example of web scan detected by ossec (looking for Wordpress, xmlrpc and awstats):<a class="headerlink" href="#example-of-web-scan-detected-by-ossec-looking-for-wordpress-xmlrpc-and-awstats" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go"> OSSEC HIDS Notification.</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go"> OSSEC HIDS Notification.</span>
 <span class="go"> 2007 Mar 23 19:57:38</span>
 
 <span class="go"> Received From: teletubbies-&gt;/var/log/httpd/error_log</span>
@@ -199,7 +217,7 @@
 </div>
 <div class="section" id="web-scan-sample-4">
 <h2>Web scan sample 4:<a class="headerlink" href="#web-scan-sample-4" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go"> OSSEC HIDS Notification.</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go"> OSSEC HIDS Notification.</span>
 <span class="go"> 2007 Aug 15 15:50:43</span>
 
 <span class="go"> Received From: xx-&gt;/var/log/httpd/error_log</span>
@@ -246,7 +264,7 @@
 <div class="section" id="sshd-brute-force">
 <h2>SSHD brute force:<a class="headerlink" href="#sshd-brute-force" title="Permalink to this headline">¶</a></h2>
 <p>Example of a SSHD brute force attack.</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">OSSEC HIDS Notification.</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">OSSEC HIDS Notification.</span>
 <span class="go">2007 Jun 26 17:40:29</span>
 
 <span class="go">Received From: xx-&gt;/var/log/secure</span>
@@ -282,7 +300,7 @@
 <div class="section" id="ftp-scan">
 <h2>FTP Scan:<a class="headerlink" href="#ftp-scan" title="Permalink to this headline">¶</a></h2>
 <p>Example of FTP scan detected by monitoring MS FTP logs.</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go"> OSSEC HIDS Notification.</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go"> OSSEC HIDS Notification.</span>
 <span class="go"> 2006 Oct 19 04:57:59</span>
 
 <span class="go"> Received From: (ftp-server-1) 172.16.1.99-&gt;\WINNT\System32\LogFiles\MSFTPSVC1\ex061019.log</span>
@@ -349,7 +367,7 @@
 .. code-block:: console</p>
 <blockquote>
 <div><p>Received From: (ossec64) 192.168.2.25-&gt;Windowspfirewall.log
-Rule: 4151 fired (level 10) -&gt; &#8220;Multiple Firewall drop events from same source.&#8221;
+Rule: 4151 fired (level 10) -&gt; “Multiple Firewall drop events from same source.”
 Portion of the log(s):</p>
 <p>2006-10-17 09:25:03 DROP UDP 192.168.2.190 192.168.2.255 137 137 78 - - - - - - - RECEIVE
 2006-10-17 09:25:01 DROP UDP 192.168.2.190 192.168.2.255 138 138 229 - - - - - - - RECEIVE
@@ -361,13 +379,13 @@ Portion of the log(s):</p>
 2006-10-17 09:24:59 DROP UDP 192.168.2.190 192.168.2.255 137 137 96 - - - - - - - RECEIVE
 2006-10-17 09:24:58 DROP UDP 192.168.2.190 192.168.2.255 137 137 96 - - - - - - - RECEIVE
 2006-10-17 09:24:58 DROP UDP 192.168.2.190 192.168.2.255 137 137 96 - - - - - - - RECEIVE</p>
-<p class="attribution">&mdash;END OF NOTIFICATION</p>
+<p class="attribution">—END OF NOTIFICATION</p>
 </div></blockquote>
 </div>
 <div class="section" id="multiple-spam-attempts">
 <h2>Multiple spam attempts:<a class="headerlink" href="#multiple-spam-attempts" title="Permalink to this headline">¶</a></h2>
 <p>Example of spam attempts detected (postix log analysis)</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">OSSEC HIDS Notification.</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">OSSEC HIDS Notification.</span>
 <span class="go">2006 Oct 24 18:46:29</span>
 
 <span class="go">Received From: (xx) 200.1.2.a-&gt;/var/log/maillog</span>
@@ -386,7 +404,7 @@ postfix/smtpd[6741]: NOQUEUE: reject: RCPT from unknown[201.82.55.24]: 503 &lt;<
 <div class="section" id="sql-injection-attempt-detected">
 <h2>SQL Injection attempt detected:<a class="headerlink" href="#sql-injection-attempt-detected" title="Permalink to this headline">¶</a></h2>
 <p>Example of an SQL injection detected by ossec:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go"> OSSEC HIDS Notification.</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go"> OSSEC HIDS Notification.</span>
 <span class="go"> 2006 Sep 12 09:45:56</span>
 
 <span class="go"> Received From: (spongebob) 1.2.3.4-&gt;/usr/pages/xx/logs/access_log</span>
@@ -404,7 +422,7 @@ postfix/smtpd[6741]: NOQUEUE: reject: RCPT from unknown[201.82.55.24]: 503 &lt;<
 <div class="section" id="internal-system-possibly-compromised-with-irnbot">
 <h2>Internal system possibly compromised with IrnBot:<a class="headerlink" href="#internal-system-possibly-compromised-with-irnbot" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference external" href="http://www.offensivecomputing.net/?q=node/378">http://www.offensivecomputing.net/?q=node/378</a></p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go"> OSSEC HIDS Notification.</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go"> OSSEC HIDS Notification.</span>
 <span class="go"> 2007 Jan 30 04:38:37</span>
 
 <span class="go"> Received From: (xxx) 2.2.3.4-&gt;/usr/local/squid/var/logs/access.log</span>
@@ -425,7 +443,7 @@ postfix/smtpd[6741]: NOQUEUE: reject: RCPT from unknown[201.82.55.24]: 503 &lt;<
 </div>
 <p>==Multiple WordPress (blog) comment spam attempts==</p>
 <p>Attempts to submit spammer comments to the ossec blog:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">OSSEC HIDS Notification.</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">OSSEC HIDS Notification.</span>
 <span class="go">2007 Jun 22 09:02:41</span>
 
 <span class="go">Received From: xx-&gt;/var/log/httpd/xx.access.log</span>
@@ -447,7 +465,7 @@ postfix/smtpd[6741]: NOQUEUE: reject: RCPT from unknown[201.82.55.24]: 503 &lt;<
 </div>
 <div class="section" id="e-mail-scan-vpopmail">
 <h2>E-mail scan (vpopmail):<a class="headerlink" href="#e-mail-scan-vpopmail" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">OSSEC HIDS Notification.</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">OSSEC HIDS Notification.</span>
 <span class="go">2007 Aug 15 21:22:53</span>
 
 <span class="go">Received From: mail-&gt;/var/log/messages</span>
@@ -469,7 +487,7 @@ postfix/smtpd[6741]: NOQUEUE: reject: RCPT from unknown[201.82.55.24]: 503 &lt;<
 <div class="section" id="file-system-full">
 <h2>File system full:<a class="headerlink" href="#file-system-full" title="Permalink to this headline">¶</a></h2>
 <p>Not really an attack, but a serious issue if your web server is out of space.</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go"> OSSEC HIDS Notification.</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go"> OSSEC HIDS Notification.</span>
 <span class="go"> 2007 Aug 16 22:49:38</span>
 
 <span class="go"> Received From: enigma-&gt;/var/log/messages</span>
@@ -486,9 +504,9 @@ postfix/smtpd[6741]: NOQUEUE: reject: RCPT from unknown[201.82.55.24]: 503 &lt;<
 </div>
 <div class="section" id="custom-sql-injection-against-ossec-net">
 <h2>Custom SQL injection against ossec.net:<a class="headerlink" href="#custom-sql-injection-against-ossec-net" title="Permalink to this headline">¶</a></h2>
-<p>Someone trying our web application to display the latest rules. Of course, it didn&#8217;t work&lt;br /&gt;
+<p>Someone trying our web application to display the latest rules. Of course, it didn’t work&lt;br /&gt;
 (but we return code 200 on all cases).</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go"> OSSEC HIDS Notification.</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go"> OSSEC HIDS Notification.</span>
 <span class="go"> 2007 Aug 27 21:43:48</span>
 
 <span class="go"> Received From: teletubbies-&gt;/var/log/httpd/ossec.access.log</span>
@@ -507,7 +525,7 @@ postfix/smtpd[6741]: NOQUEUE: reject: RCPT from unknown[201.82.55.24]: 503 &lt;<
 <h2>Application being installed:<a class="headerlink" href="#application-being-installed" title="Permalink to this headline">¶</a></h2>
 <p>An alert when an application is installed on Windows. Not always an attack, but may indicate
 a computer misuse.</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">OSSEC HIDS Notification.</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">OSSEC HIDS Notification.</span>
 <span class="go">2008 Aug 27 14:37:36</span>
 
 <span class="go">Received From: (lili3win) 192.168.2.0-&gt;WinEvtLog</span>
@@ -521,7 +539,7 @@ a computer misuse.</p>
 <div class="section" id="virtual-machine-being-shut-down">
 <h2>Virtual machine being shut down:<a class="headerlink" href="#virtual-machine-being-shut-down" title="Permalink to this headline">¶</a></h2>
 <p>By monitoring VMware ESX logs, you can get alerts when a virtual machine is stopped:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">OSSEC HIDS Notification.</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">OSSEC HIDS Notification.</span>
 <span class="go">2008 Aug 28 15:53:11</span>
 
 <span class="go">Received From: enigma-&gt;/var/log/messages</span>
@@ -547,9 +565,8 @@ a computer misuse.</p>
       
     </p>
     <p>
-        &copy; Copyright 2010-2020, OSSEC Project Team.<br/>
+        &copy; Copyright 2010-2021, OSSEC Project Team.<br/>
     OSSEC <b>ossec.net</b> domain owned and maintained by <a href="https://www.ossec.net" target="_blank">OSSEC Foundation</a><br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.5.2 - 
     Home page graphics courtesy of <a href="https://pixabay.com" target="_blank">pixabay</a>
     </p>
   </div>

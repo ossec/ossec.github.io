@@ -1,36 +1,24 @@
 <!DOCTYPE html>
 
-
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>agent.conf &#8212; OSSEC</title>
-    
-    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/parallax.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../',
-        VERSION:     '3.3.0',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
-    <script type="text/javascript" src="../../_static/jquery.js"></script>
-    <script type="text/javascript" src="../../_static/underscore.js"></script>
-    <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
-    <script type="text/javascript" src="../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script src="../../_static/js/jquery-fix.js"></script>
+    <script src="../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script src="../../_static/bootstrap-sphinx.js"></script>
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -41,8 +29,37 @@
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
 <meta name="apple-mobile-web-app-capable" content="yes">
 
-  </head>
-  <body role="document">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-138780766-1"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'UA-138780766-1');
+</script>
+
+<script type="text/javascript">
+  var _ss = _ss || [];
+  _ss.push(['_setDomain', 'https://koi-3QNN51VTHS.marketingautomation.services/net']);
+  _ss.push(['_setAccount', 'KOI-4APYNOYP8O']);
+  _ss.push(['_trackPageView']);
+  window._pa = window._pa || {};
+  // _pa.orderId = "myOrderId"; // OPTIONAL: attach unique conversion identifier to conversions
+  // _pa.revenue = "19.99"; // OPTIONAL: attach dynamic purchase values to conversions
+  // _pa.productId = "myProductId"; // OPTIONAL: Include product ID for use with dynamic ads
+  (function() {
+  var ss = document.createElement('script');
+  ss.type = 'text/javascript'; ss.async = true;
+  ss.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'koi-3QNN51VTHS.marketingautomation.services/client/ss.js?ver=2.4.0';
+  var scr = document.getElementsByTagName('script')[0];
+  scr.parentNode.insertBefore(ss, scr);
+  })();
+  </script>
+
+
+
+  </head><body>
 
   <div id="navbar" class="navbar navbar-inverse navbar-default ">
     <div class="container">
@@ -61,9 +78,10 @@
         <div class="collapse navbar-collapse nav-collapse">
           <ul class="nav navbar-nav">
             
-                <li><a href="https://www.ossec.net/about/">About <i class="fa fa-info-circle"></i></a></li>
-                <li><a href="https://www.ossec.net/docs/">Documentation <i class="fa fa-book"></i></a></li>
-                <li><a href="https://www.ossec.net/downloads/">Downloads <i class="fa fa-download"></i></a></li>
+                <li><a href="https://www.ossec.net/about/">About</a></li>
+                <li><a href="https://www.ossec.net/docs/">Documentation</a></li>
+                <li><a href="https://www.ossec.net/register-for-ossec/">Get OSSEC+</a></li>
+                <li><a href="https://www.ossec.net/downloads/">Downloads</a></li>
             
             
               <li class="dropdown globaltoc-container">
@@ -142,13 +160,13 @@
 </div>
 <div class="section" id="location">
 <h3>Location<a class="headerlink" href="#location" title="Permalink to this headline">¶</a></h3>
-<p>The <code class="docutils literal"><span class="pre">agent.conf</span></code> exists in <code class="docutils literal"><span class="pre">/var/ossec/etc/shared</span></code>.
+<p>The <code class="docutils literal notranslate"><span class="pre">agent.conf</span></code> exists in <code class="docutils literal notranslate"><span class="pre">/var/ossec/etc/shared</span></code>.
 It should be readable by the ossec user.</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">-r-xr-x---  1 root  ossec  10908 Aug 12 16:06 /var/ossec/etc/shared/agent.conf</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">-r-xr-x---  1 root  ossec  10908 Aug 12 16:06 /var/ossec/etc/shared/agent.conf</span>
 </pre></div>
 </div>
 <p>XML excerpt to show location:</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;agent_config&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;agent_config&gt;</span>
     ...
 <span class="nt">&lt;/agent_config&gt;</span>
 </pre></div>
@@ -157,39 +175,6 @@ It should be readable by the ossec user.</p>
 </div>
 <div class="section" id="options">
 <h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
-<dl class="element">
-<dt id="element-agent_config_options">
-<code class="descname">agent_config_options</code><a class="headerlink" href="#element-agent_config_options" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="element">
-<dt id="element-agent_config">
-<code class="descname">agent_config</code><a class="headerlink" href="#element-agent_config" title="Permalink to this definition">¶</a></dt>
-<dd><p>Defines the beginning or end of an agent configuration block.</p>
-<dl class="element">
-<dt id="element-name">
-<code class="descname">name</code><a class="headerlink" href="#element-name" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<p>This option to <code class="docutils literal"><span class="pre">agent_config</span></code> allows you to assign the block the one particular agent by using the agent&#8217;s name.</p>
-<p><strong>Example:</strong> &lt;agent_config name=&#8221;agent007&#8221;&gt;</p>
-<dl class="element">
-<dt id="element-os">
-<code class="descname">os</code><a class="headerlink" href="#element-os" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<p>This option to <code class="docutils literal"><span class="pre">agent_config</span></code> allows you to assign the block to an operating system.</p>
-<p><strong>Example:</strong> &lt;agent_config os=&#8221;Windows&#8221;&gt;</p>
-<p><strong>Allowed:</strong> Any OS family (Windows, Linux, OpenBSD, etc.)</p>
-<dl class="element">
-<dt id="element-profile">
-<code class="descname">profile</code><a class="headerlink" href="#element-profile" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<p>This option to <code class="docutils literal"><span class="pre">agent_config</span></code> allows you to assign a profile name to the the block. Any agent may use this block if it is configured to use the defined profile.</p>
-<p><strong>Example:</strong> &lt;agent_config profile=&#8221;webservers&#8221;&gt;</p>
-</dd></dl>
-
 </div>
 </div>
 
@@ -205,9 +190,8 @@ It should be readable by the ossec user.</p>
       
     </p>
     <p>
-        &copy; Copyright 2010-2020, OSSEC Project Team.<br/>
+        &copy; Copyright 2010-2021, OSSEC Project Team.<br/>
     OSSEC <b>ossec.net</b> domain owned and maintained by <a href="https://www.ossec.net" target="_blank">OSSEC Foundation</a><br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.5.2 - 
     Home page graphics courtesy of <a href="https://pixabay.com" target="_blank">pixabay</a>
     </p>
   </div>

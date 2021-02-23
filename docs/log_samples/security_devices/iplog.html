@@ -1,36 +1,24 @@
 <!DOCTYPE html>
 
-
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Log samples for Iplog &#8212; OSSEC</title>
-    
-    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/parallax.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../../',
-        VERSION:     '3.3.0',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
-    <script type="text/javascript" src="../../../_static/jquery.js"></script>
-    <script type="text/javascript" src="../../../_static/underscore.js"></script>
-    <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="../../../_static/js/jquery-fix.js"></script>
-    <script type="text/javascript" src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../../../_static/bootstrap-sphinx.js"></script>
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script src="../../../_static/js/jquery-fix.js"></script>
+    <script src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script src="../../../_static/bootstrap-sphinx.js"></script>
     <link rel="author" title="About these documents" href="../../../about.html" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -39,8 +27,37 @@
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
 <meta name="apple-mobile-web-app-capable" content="yes">
 
-  </head>
-  <body role="document">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-138780766-1"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'UA-138780766-1');
+</script>
+
+<script type="text/javascript">
+  var _ss = _ss || [];
+  _ss.push(['_setDomain', 'https://koi-3QNN51VTHS.marketingautomation.services/net']);
+  _ss.push(['_setAccount', 'KOI-4APYNOYP8O']);
+  _ss.push(['_trackPageView']);
+  window._pa = window._pa || {};
+  // _pa.orderId = "myOrderId"; // OPTIONAL: attach unique conversion identifier to conversions
+  // _pa.revenue = "19.99"; // OPTIONAL: attach dynamic purchase values to conversions
+  // _pa.productId = "myProductId"; // OPTIONAL: Include product ID for use with dynamic ads
+  (function() {
+  var ss = document.createElement('script');
+  ss.type = 'text/javascript'; ss.async = true;
+  ss.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'koi-3QNN51VTHS.marketingautomation.services/client/ss.js?ver=2.4.0';
+  var scr = document.getElementsByTagName('script')[0];
+  scr.parentNode.insertBefore(ss, scr);
+  })();
+  </script>
+
+
+
+  </head><body>
 
   <div id="navbar" class="navbar navbar-inverse navbar-default ">
     <div class="container">
@@ -59,9 +76,10 @@
         <div class="collapse navbar-collapse nav-collapse">
           <ul class="nav navbar-nav">
             
-                <li><a href="https://www.ossec.net/about/">About <i class="fa fa-info-circle"></i></a></li>
-                <li><a href="https://www.ossec.net/docs/">Documentation <i class="fa fa-book"></i></a></li>
-                <li><a href="https://www.ossec.net/downloads/">Downloads <i class="fa fa-download"></i></a></li>
+                <li><a href="https://www.ossec.net/about/">About</a></li>
+                <li><a href="https://www.ossec.net/docs/">Documentation</a></li>
+                <li><a href="https://www.ossec.net/register-for-ossec/">Get OSSEC+</a></li>
+                <li><a href="https://www.ossec.net/downloads/">Downloads</a></li>
             
             
               <li class="dropdown globaltoc-container">
@@ -124,11 +142,11 @@
   <div class="section" id="log-samples-for-iplog">
 <h1>Log samples for Iplog<a class="headerlink" href="#log-samples-for-iplog" title="Permalink to this headline">¶</a></h1>
 <div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">This document is extracted directly from the old wiki. It is probably out of date, and definitely not formatted properly.</p>
+<p class="admonition-title">Warning</p>
+<p>This document is extracted directly from the old wiki. It is probably out of date, and definitely not formatted properly.</p>
 </div>
 <p>Some log samples for <a class="reference external" href="http://freshmeat.net/projects/iplog/">iplog</a></p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Nov  9 16:24:47 TCP: ftp connection attempt from mail.derkeiler.com (195.140.232.116):52516</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Nov  9 16:24:47 TCP: ftp connection attempt from mail.derkeiler.com (195.140.232.116):52516</span>
 <span class="go">Nov  9 16:24:47 TCP: pptp connection attempt from mail.derkeiler.com (195.140.232.116):51624</span>
 <span class="go">Nov  9 16:24:47 TCP: domain connection attempt from mail.derkeiler.com (195.140.232.116):56341</span>
 <span class="go">Nov  9 16:24:47 TCP: ldaps connection attempt from mail.derkeiler.com (195.140.232.116):57057</span>
@@ -147,13 +165,14 @@
 </pre></div>
 </div>
 <p>=iplog=
-iplog is a TCP/IP traffic logger. Currently, it is capable of logging TCP, UDP, and ICMP traffic. iplog is able to detect TCP port scans, TCP null scans, FIN scans, UDP and ICMP &#8220;smurf&#8221; attacks, bogus TCP flags, TCP SYN scans, TCP &#8220;Xmas&#8221; scans, ICMP ping floods, UDP scans, and IP fragment attacks. iplog is able to run in promiscuous mode and monitor traffic to all hosts on a network. iplog uses libpcap to read data from the network and can be ported to any system that supports pthreads and on which libpcap will function.</p>
+iplog is a TCP/IP traffic logger. Currently, it is capable of logging TCP, UDP, and ICMP traffic. iplog is able to detect TCP port scans, TCP null scans, FIN scans, UDP and ICMP “smurf” attacks, bogus TCP flags, TCP SYN scans, TCP “Xmas” scans, ICMP ping floods, UDP scans, and IP fragment attacks. iplog is able to run in promiscuous mode and monitor traffic to all hosts on a network. iplog uses libpcap to read data from the network and can be ported to any system that supports pthreads and on which libpcap will function.</p>
 <p>=iplog.conf=</p>
 <blockquote>
-<div>the syslog, user, group and internal network configuration is not show (OS dependient)
+<div><p>the syslog, user, group and internal network configuration is not show (OS dependient)
 iplog can log in diferets ways depending of the configuration parameters (DNS resolv, log_dest, etc), the proposed decoders and rules
 only work with the logs later described, this configuration file extract is functional with this requeriment, please read man iplog
-and man iplog.conf</div></blockquote>
+and man iplog.conf</p>
+</div></blockquote>
 <p>&lt;nowiki&gt;# Log the IP address as well as the hostname of packets.&lt;/nowiki&gt;</p>
 <p>set log_ip true</p>
 <p>&lt;nowiki&gt;# Do not log the destination of packets (more presentable logs)&lt;/nowiki&gt;</p>
@@ -181,9 +200,9 @@ and man iplog.conf</div></blockquote>
 <p>set ping_flood true</p>
 <p>set traceroute true</p>
 <p>=iplog: Scan and attack responses=</p>
-<p>==&#8217;&#8216;&#8217;Connect Scan and SYN scan&#8217;&#8216;&#8217;==
+<p>==’’’Connect Scan and SYN scan’’’==
 nmap -sT -PI -PT 10.10.160.2</p>
-<p>&#8216;&#8217;&#8216;iplog response&#8217;&#8216;&#8217;</p>
+<p>‘’’iplog response’’’</p>
 <p>Nov 14 18:09:08 TCP: domain connection attempt from 10.10.150.1:51239</p>
 <p>Nov 14 18:09:08 TCP: https connection attempt from 10.10.150.1:51240</p>
 <p>Nov 14 18:09:08 TCP: port 1723 connection attempt from 10.10.150.1:51241</p>
@@ -198,31 +217,31 @@ nmap -sT -PI -PT 10.10.160.2</p>
 <p>Nov 14 18:09:08 TCP: port 389 connection attempt from 10.10.150.1:51250</p>
 <p>Nov 14 18:09:08 TCP: ssh connection attempt from 10.10.150.1:51251</p>
 <p>Nov 14 18:09:08 TCP: port 486 connection attempt from 10.10.150.1:51253</p>
-<p>&lt;font color=&#8221;red&#8221;&gt;Nov 14 18:09:08 TCP: port scan detected [ports 53,443,1723,21,25,3389,113,636,256,554,...] from 10.10.150.1 [ports 51242,51243,...]&lt;/font&gt;</p>
+<p>&lt;font color=”red”&gt;Nov 14 18:09:08 TCP: port scan detected [ports 53,443,1723,21,25,3389,113,636,256,554,…] from 10.10.150.1 [ports 51242,51243,…]&lt;/font&gt;</p>
 <p>Nov 14 18:09:08 UDP: dgram to port 1 from 10.10.150.1:34324 (300 data bytes)</p>
-<p>&lt;font color=&#8221;red&#8221;&gt;Nov 14 18:09:12 TCP: SYN scan detected [ports 21,1] from 10.10.150.1 [ports 34333,34335,34325,34326,34327,...]&lt;/font&gt;</p>
+<p>&lt;font color=”red”&gt;Nov 14 18:09:12 TCP: SYN scan detected [ports 21,1] from 10.10.150.1 [ports 34333,34335,34325,34326,34327,…]&lt;/font&gt;</p>
 <p>Nov 14 18:09:12 UDP: dgram to port 1 from 10.10.150.1:34324 (300 data bytes)</p>
 <p>Nov 14 18:10:02 last message repeated 1 times</p>
 <p>Nov 14 18:10:02 TCP: port scan mode expired for 10.10.150.1 - received a total of 1678 packets (47092 bytes).</p>
 <p>Nov 14 18:10:09 TCP: SYN scan mode expired for 10.10.150.1 - received a total of 24 packets (960 bytes).</p>
-<p>==&#8217;&#8216;&#8217;FIN Stealth Scan&#8217;&#8216;&#8217;==
+<p>==’’’FIN Stealth Scan’’’==
 nmap -sF -p- -PI -PT 10.10.150.2</p>
-<p>&#8216;&#8217;&#8216;iplog response&#8217;&#8216;&#8217;</p>
-<p>&lt;font color=&#8221;red&#8221;&gt;Nov 14 18:22:51 TCP: FIN scan detected [ports 3389,1723,256,113,22,389,554,443,21,23,...] from 10.10.150.1 [port 57876]&lt;/font&gt;</p>
+<p>‘’’iplog response’’’</p>
+<p>&lt;font color=”red”&gt;Nov 14 18:22:51 TCP: FIN scan detected [ports 3389,1723,256,113,22,389,554,443,21,23,…] from 10.10.150.1 [port 57876]&lt;/font&gt;</p>
 <p>Nov 14 18:24:05 TCP: FIN scan mode expired for 10.10.150.1 - received a total of 65535 packets (1310700 bytes)</p>
-<p>==&#8217;&#8216;&#8217;NULL Stealth Scan&#8217;&#8216;&#8217;==
+<p>==’’’NULL Stealth Scan’’’==
 nmap -sN -p- -PI -PT 10.10.150.2</p>
-<p>&#8216;&#8217;&#8216;iplog response&#8217;&#8216;&#8217;</p>
-<p>&lt;font color=&#8221;red&#8221;&gt;Nov 14 18:26:58 TCP: null scan detected [ports 636,53,23,3389,1723,443,113,554,25,21,...] from 10.10.150.1 [port 35444]&lt;/font&gt;</p>
+<p>‘’’iplog response’’’</p>
+<p>&lt;font color=”red”&gt;Nov 14 18:26:58 TCP: null scan detected [ports 636,53,23,3389,1723,443,113,554,25,21,…] from 10.10.150.1 [port 35444]&lt;/font&gt;</p>
 <p>Nov 14 18:28:14 TCP: null scan mode expired for 10.10.150.1 - received a total of 65534 packets (1310680 bytes)</p>
-<p>==&#8217;&#8216;&#8217;Xmas Tree Stealth Scan&#8217;&#8216;&#8217;==
+<p>==’’’Xmas Tree Stealth Scan’’’==
 nmap -sX -p- -PI -PT 10.10.150.2</p>
-<p>&#8216;&#8217;&#8216;iplog response&#8217;&#8216;&#8217;</p>
-<p>&lt;font color=&#8221;red&#8221;&gt;Nov 14 18:30:30 TCP: Xmas scan detected [ports 636,256,554,389,1723,53,443,21,3389,22,...] from 10.10.150.1 [port 42399]&lt;/font&gt;</p>
+<p>‘’’iplog response’’’</p>
+<p>&lt;font color=”red”&gt;Nov 14 18:30:30 TCP: Xmas scan detected [ports 636,256,554,389,1723,53,443,21,3389,22,…] from 10.10.150.1 [port 42399]&lt;/font&gt;</p>
 <p>Nov 14 18:31:48 TCP: Xmas scan mode expired for 10.10.150.1 - received a total of 65532 packets (1310640 bytes).</p>
-<p>==&#8217;&#8216;&#8217;UDP port scan&#8217;&#8216;&#8217;==
+<p>==’’’UDP port scan’’’==
 nmap -sU -p- -PI -PT 10.10.150.2</p>
-<p>&#8216;&#8217;&#8216;iplog response&#8217;&#8216;&#8217;</p>
+<p>‘’’iplog response’’’</p>
 <p>Nov 14 18:34:59 UDP: dgram to port 33161 from 10.10.150.1:60362 (0 data bytes)</p>
 <p>Nov 14 18:34:59 UDP: dgram to port 41107 from 10.10.150.1:60362 (0 data bytes)</p>
 <p>Nov 14 18:34:59 UDP: dgram to port 63571 from 10.10.150.1:60362 (0 data bytes)</p>
@@ -247,98 +266,98 @@ nmap -sU -p- -PI -PT 10.10.150.2</p>
 <p>Nov 14 18:34:59 UDP: dgram to port 8041 from 10.10.150.1:60362 (0 data bytes)</p>
 <p>Nov 14 18:35:00 UDP: dgram to port 8041 from 10.10.150.1:60363 (0 data bytes)</p>
 <p>Nov 14 18:35:00 UDP: dgram to port 30519 from 10.10.150.1:60363 (0 data bytes)</p>
-<p>&lt;font color=&#8221;red&#8221;&gt;Nov 14 18:35:00 UDP: scan/flood detected [ports 33161,41107,63571,48714,25271,...] from 10.10.150.1 [ports 60362]&lt;/font&gt;</p>
+<p>&lt;font color=”red”&gt;Nov 14 18:35:00 UDP: scan/flood detected [ports 33161,41107,63571,48714,25271,…] from 10.10.150.1 [ports 60362]&lt;/font&gt;</p>
 <p>Nov 14 18:39:15 UDP: scan/flood mode expired for 10.10.150.1 - received a total of 356 packets (2848 bytes).</p>
-<p>==&#8217;&#8216;&#8217;traceroute&#8217;&#8216;&#8217;==
+<p>==’’’traceroute’’’==
 traceroute 10.10.150.1</p>
-<p>&#8216;&#8217;&#8216;iplog response&#8217;&#8216;&#8217;</p>
-<p>&lt;font color=&#8221;red&#8221;&gt;Nov 14 18:57:18 UDP: traceroute from 10.10.150.2&lt;/font&gt;</p>
-<p>==&#8217;&#8216;&#8217;Flood ping attack&#8217;&#8216;&#8217;==
+<p>‘’’iplog response’’’</p>
+<p>&lt;font color=”red”&gt;Nov 14 18:57:18 UDP: traceroute from 10.10.150.2&lt;/font&gt;</p>
+<p>==’’’Flood ping attack’’’==
 ping -f 10.10.150.2</p>
-<p>&#8216;&#8217;&#8216;iplog response&#8217;&#8216;&#8217;</p>
-<p>&lt;font color=&#8221;red&#8221;&gt;Nov 14 19:09:33 ICMP: ping flood detected from 10.10.150.1&lt;/font&gt;</p>
+<p>‘’’iplog response’’’</p>
+<p>&lt;font color=”red”&gt;Nov 14 19:09:33 ICMP: ping flood detected from 10.10.150.1&lt;/font&gt;</p>
 <p>Nov 14 19:11:29 ICMP: ping flood mode expired for 10.10.150.1 - received a total of 428 packets (8416000 bytes).</p>
-<p>==&#8217;&#8216;&#8217;IP fragment attacks&#8217;&#8216;&#8217;==
+<p>==’’’IP fragment attacks’’’==
 TODO</p>
-<p>==&#8217;&#8216;&#8217;UDP and ICMP &#8220;smurf&#8221; attacks&#8217;&#8216;&#8217;==
+<p>==’’’UDP and ICMP “smurf” attacks’’’==
 Nov 18 19:12:30 ICMP/UDP: smurf attack detected from 201.223.41.0</p>
-<p>&lt;font color=&#8221;red&#8221;&gt;Nov 18 19:23:30 ICMP/UDP: smurf attack detected from 201.223.41.0&lt;/font&gt;</p>
+<p>&lt;font color=”red”&gt;Nov 18 19:23:30 ICMP/UDP: smurf attack detected from 201.223.41.0&lt;/font&gt;</p>
 <p>Nov 18 19:28:07 ICMP/UDP: smurf attack mode expired for 201.223.41.0 - received a total of 337 packets (21568 bytes).</p>
-<p>==&#8217;&#8216;&#8217;Another interesting logs&#8217;&#8216;&#8217;==</p>
-<p>&#8216;&#8217;&#8216;bogus TCP flags&#8217;&#8216;&#8217;</p>
-<p>&lt;font color=&#8221;red&#8221;&gt;Nov 14 15:57:56 TCP: Bogus TCP flags set by 10.10.160.2:60873 (dest port 25)&lt;/font&gt;</p>
-<p>=&#8217;&#8216;&#8217;OSSEC (HIDS) + iplog (sensor) implementation&#8217;&#8216;&#8217;=</p>
+<p>==’’’Another interesting logs’’’==</p>
+<p>‘’’bogus TCP flags’’’</p>
+<p>&lt;font color=”red”&gt;Nov 14 15:57:56 TCP: Bogus TCP flags set by 10.10.160.2:60873 (dest port 25)&lt;/font&gt;</p>
+<p>=’’’OSSEC (HIDS) + iplog (sensor) implementation’’’=</p>
 <p><a href="#id1"><span class="problematic" id="id2">*</span></a>Work in progress
 <a href="#id3"><span class="problematic" id="id4">*</span></a>TODO: improve regex, decoders and rules. p0f complementation?
 <a href="#id5"><span class="problematic" id="id6">*</span></a>Configuration tested in FreeBSD 6.1 and archlinux gimmick
 <a href="#id7"><span class="problematic" id="id8">*</span></a>Last modification 14/Nov/2006</p>
-<p>==&#8217;&#8216;&#8217;iplog decoder&#8217;&#8216;&#8217;==</p>
-<p>&#8216;&#8217;&#8216;For this logs:&#8217;&#8216;&#8217;</p>
-<p>Nov 14 18:09:12 TCP: SYN scan detected [ports 21,1] from 10.10.150.1 [ports 34333,34335,34325,34326,34327,...]</p>
-<p>Nov 14 18:09:08 TCP: port scan detected [ports 53,443,1723,21,25,3389,113,636,256,554,...] from 10.10.150.1 [ports 51242,51243,...]</p>
-<p>Nov 14 18:22:51 TCP: FIN scan detected [ports 3389,1723,256,113,22,389,554,443,21,23,...] from 10.10.150.1 [port 57876]</p>
-<p>Nov 14 18:26:58 TCP: null scan detected [ports 636,53,23,3389,1723,443,113,554,25,21,...] from 10.10.150.1 [port 35444]</p>
-<p>Nov 14 18:30:30 TCP: Xmas scan detected [ports 636,256,554,389,1723,53,443,21,3389,22,...] from 10.10.150.1 [port 42399]</p>
-<p>&#8216;&#8217;&#8216;a working decoder is:&#8217;&#8216;&#8217;</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;decoder</span> <span class="na">name=</span><span class="s">&quot;iplog-scan&quot;</span><span class="nt">&gt;</span>
+<p>==’’’iplog decoder’’’==</p>
+<p>‘’’For this logs:’’’</p>
+<p>Nov 14 18:09:12 TCP: SYN scan detected [ports 21,1] from 10.10.150.1 [ports 34333,34335,34325,34326,34327,…]</p>
+<p>Nov 14 18:09:08 TCP: port scan detected [ports 53,443,1723,21,25,3389,113,636,256,554,…] from 10.10.150.1 [ports 51242,51243,…]</p>
+<p>Nov 14 18:22:51 TCP: FIN scan detected [ports 3389,1723,256,113,22,389,554,443,21,23,…] from 10.10.150.1 [port 57876]</p>
+<p>Nov 14 18:26:58 TCP: null scan detected [ports 636,53,23,3389,1723,443,113,554,25,21,…] from 10.10.150.1 [port 35444]</p>
+<p>Nov 14 18:30:30 TCP: Xmas scan detected [ports 636,256,554,389,1723,53,443,21,3389,22,…] from 10.10.150.1 [port 42399]</p>
+<p>‘’’a working decoder is:’’’</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;decoder</span> <span class="na">name=</span><span class="s">&quot;iplog-scan&quot;</span><span class="nt">&gt;</span>
  <span class="nt">&lt;prematch&gt;</span>\S+ scan detected<span class="nt">&lt;/prematch&gt;</span>
  <span class="nt">&lt;regex</span> <span class="na">offset=</span><span class="s">&quot;after_prematch&quot;</span><span class="nt">&gt;</span>\S+ \S+ from (\S+)<span class="nt">&lt;/regex&gt;</span>
  <span class="nt">&lt;order&gt;</span>srcip<span class="nt">&lt;/order&gt;</span>
 <span class="nt">&lt;/decoder&gt;</span>
 </pre></div>
 </div>
-<p>&#8216;&#8217;&#8216;For this log:&#8217;&#8216;&#8217;</p>
-<p>Nov 14 18:35:00 UDP: scan/flood detected [ports 33161,41107,63571,48714,25271,...] from 10.10.150.1 [ports 60362]</p>
-<p>&#8216;&#8217;&#8216;a proppossed decoder is (not tested):&#8217;&#8216;&#8217;</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;decoder</span> <span class="na">name=</span><span class="s">&quot;iplog-flood&quot;</span><span class="nt">&gt;</span>
+<p>‘’’For this log:’’’</p>
+<p>Nov 14 18:35:00 UDP: scan/flood detected [ports 33161,41107,63571,48714,25271,…] from 10.10.150.1 [ports 60362]</p>
+<p>‘’’a proppossed decoder is (not tested):’’’</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;decoder</span> <span class="na">name=</span><span class="s">&quot;iplog-flood&quot;</span><span class="nt">&gt;</span>
   <span class="nt">&lt;prematch&gt;</span>scan/flood detected<span class="nt">&lt;/prematch&gt;</span>
   <span class="nt">&lt;regex</span> <span class="na">offset=</span><span class="s">&quot;after_prematch&quot;</span><span class="nt">&gt;</span>\S+ \S+ from (\S+)<span class="nt">&lt;/regex&gt;</span>
   <span class="nt">&lt;order&gt;</span>srcip<span class="nt">&lt;/order&gt;</span>
 <span class="nt">&lt;/decoder&gt;</span>
 </pre></div>
 </div>
-<p>&#8216;&#8217;&#8216;For this log:&#8217;&#8216;&#8217;</p>
+<p>‘’’For this log:’’’</p>
 <p>Nov 14 19:09:33 ICMP: ping flood detected from 10.10.150.1</p>
-<p>&#8216;&#8217;&#8216;a proppossed decoder is (not tested):&#8217;&#8216;&#8217;</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;decoder</span> <span class="na">name=</span><span class="s">&quot;iplog-pingflood&quot;</span><span class="nt">&gt;</span>
+<p>‘’’a proppossed decoder is (not tested):’’’</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;decoder</span> <span class="na">name=</span><span class="s">&quot;iplog-pingflood&quot;</span><span class="nt">&gt;</span>
   <span class="nt">&lt;prematch&gt;</span>ping flood detected from<span class="nt">&lt;/prematch&gt;</span>
   <span class="nt">&lt;regex</span> <span class="na">offset=</span><span class="s">&quot;after_prematch&quot;</span><span class="nt">&gt;</span>(\S+)<span class="nt">&lt;/regex&gt;</span>
   <span class="nt">&lt;order&gt;</span>srcip<span class="nt">&lt;/order&gt;</span>
 <span class="nt">&lt;/decoder&gt;</span>
 </pre></div>
 </div>
-<p>&#8216;&#8217;&#8216;For this log:&#8217;&#8216;&#8217;
+<p>‘’’For this log:’’’
 (necesary to include???????) i Think no (very paranoic)</p>
 <p>Nov 14 18:57:18 UDP: traceroute from 10.10.150.2</p>
-<p>&#8216;&#8217;&#8216;a proppossed decoder is (not tested):&#8217;&#8216;&#8217;</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;decoder</span> <span class="na">name=</span><span class="s">&quot;iplog-traceroute&quot;</span><span class="nt">&gt;</span>
+<p>‘’’a proppossed decoder is (not tested):’’’</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;decoder</span> <span class="na">name=</span><span class="s">&quot;iplog-traceroute&quot;</span><span class="nt">&gt;</span>
   <span class="nt">&lt;prematch&gt;</span>pingtraceroute from<span class="nt">&lt;/prematch&gt;</span>
   <span class="nt">&lt;regex</span> <span class="na">offset=</span><span class="s">&quot;after_prematch&quot;</span><span class="nt">&gt;</span>(\S+)<span class="nt">&lt;/regex&gt;</span>
   <span class="nt">&lt;order&gt;</span>srcip<span class="nt">&lt;/order&gt;</span>
 <span class="nt">&lt;/decoder&gt;</span>
 </pre></div>
 </div>
-<p>&#8216;&#8217;&#8216;For this log:&#8217;&#8216;&#8217;
+<p>‘’’For this log:’’’
 (necesary to include???????) i Think no (very paranoic)</p>
 <p>Nov 14 15:57:56 TCP: Bogus TCP flags set by 10.10.160.2:60873 (dest port 25)</p>
-<p>&#8216;&#8217;&#8216;a proppossed decoder is (not tested):&#8217;&#8216;&#8217;</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;decoder</span> <span class="na">name=</span><span class="s">&quot;iplog-bogustcp&quot;</span><span class="nt">&gt;</span>
+<p>‘’’a proppossed decoder is (not tested):’’’</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;decoder</span> <span class="na">name=</span><span class="s">&quot;iplog-bogustcp&quot;</span><span class="nt">&gt;</span>
   <span class="nt">&lt;prematch&gt;</span>Bogus TCP flags set by<span class="nt">&lt;/prematch&gt;</span>
   <span class="nt">&lt;regex</span> <span class="na">offset=</span><span class="s">&quot;after_prematch&quot;</span><span class="nt">&gt;</span>(\S+):\d+<span class="nt">&lt;/regex&gt;</span>
   <span class="nt">&lt;order&gt;</span>srcip<span class="nt">&lt;/order&gt;</span>
 <span class="nt">&lt;/decoder&gt;</span>
 </pre></div>
 </div>
-<p>==&#8217;&#8216;&#8217;iplog rules&#8217;&#8216;&#8217;==</p>
+<p>==’’’iplog rules’’’==</p>
 <p>Only for working decoders</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">cd ~/ossec/rules</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cd ~/ossec/rules</span>
 <span class="go">touch iplog_rules.xml</span>
 <span class="go">chown root:ossec iplog_rules.xml</span>
 <span class="go">chmod 550 iplog_rules.xml</span>
 </pre></div>
 </div>
 <p>in iplog_rules.xml include:</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span>  <span class="nt">&lt;group</span> <span class="na">name=</span><span class="s">&quot;syslog,errors,&quot;</span><span class="nt">&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span>  <span class="nt">&lt;group</span> <span class="na">name=</span><span class="s">&quot;syslog,errors,&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;rule</span> <span class="na">id=</span><span class="s">&quot;99990&quot;</span> <span class="na">level=</span><span class="s">&quot;6&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;decoded_as&gt;</span>iplog-scan<span class="nt">&lt;/decoded_as&gt;</span>
     <span class="nt">&lt;description&gt;</span>iplog scan detect<span class="nt">&lt;/description&gt;</span>
@@ -346,17 +365,17 @@ Nov 18 19:12:30 ICMP/UDP: smurf attack detected from 201.223.41.0</p>
 <span class="nt">&lt;/group&gt;</span>
 </pre></div>
 </div>
-<p>==&#8217;&#8216;&#8217;ossec.conf&#8217;&#8216;&#8217;==</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">cd ~/ossec/etc</span>
+<p>==’’’ossec.conf’’’==</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cd ~/ossec/etc</span>
 <span class="go">vi  ossec.conf</span>
 </pre></div>
 </div>
 <p>include in the correct place:</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;include&gt;</span>iplog_rules.xml<span class="nt">&lt;/include&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;include&gt;</span>iplog_rules.xml<span class="nt">&lt;/include&gt;</span>
 </pre></div>
 </div>
 <p>and</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;localfile&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;localfile&gt;</span>
   <span class="nt">&lt;log_format&gt;</span>syslog<span class="nt">&lt;/log_format&gt;</span>
   <span class="nt">&lt;location&gt;</span>/var/log/iplog<span class="nt">&lt;/location&gt;</span>
 <span class="nt">&lt;/localfile&gt;</span>
@@ -364,23 +383,23 @@ Nov 18 19:12:30 ICMP/UDP: smurf attack detected from 201.223.41.0</p>
 </div>
 <p>or wherever you put your iplog logs</p>
 <p>start iplog</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">iplog -d</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">iplog -d</span>
 </pre></div>
 </div>
 <p>restart ossec</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">~/ossec/bin/ossec-control restart</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">~/ossec/bin/ossec-control restart</span>
 </pre></div>
 </div>
 <p>test with nmap (see before)</p>
-<p>=&#8217;&#8216;&#8217;OSSEC active-response&#8217;&#8216;&#8217;=</p>
-<p>==&#8217;&#8216;&#8217;Firewall Drop: FreeBSD-IPFW&#8217;&#8216;&#8217;==
+<p>=’’’OSSEC active-response’’’=</p>
+<p>==’’’Firewall Drop: FreeBSD-IPFW’’’==
 add to your ipfw script the follow lines, if you are using the 00001 rule number disoccupying:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">/sbin/ipfw add 00001 deny ip from table\(00002\) to any</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">/sbin/ipfw add 00001 deny ip from table\(00002\) to any</span>
 <span class="go">/sbin/ipfw add 00001 deny ip from any to table\(00002\)</span>
 </pre></div>
 </div>
 <p>Change  ~/ossec/active-response/bin/firewall-drop.sh to adjust to the red lines</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">&lt;nowiki&gt;#!/bin/sh&lt;/nowiki&gt;</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&lt;nowiki&gt;#!/bin/sh&lt;/nowiki&gt;</span>
 <span class="go">&lt;nowiki&gt;# Adds an IP to the IPFW drop list.&lt;/nowiki&gt;</span>
 <span class="go">&lt;nowiki&gt;# Only works with IPFW.&lt;/nowiki&gt;</span>
 <span class="go">&lt;nowiki&gt;# We use TABLE 00001. If you use this table for anything else,&lt;/nowiki&gt;</span>
@@ -435,7 +454,7 @@ add to your ipfw script the follow lines, if you are using the 00001 rule number
 </pre></div>
 </div>
 <p>Include in ~/ossec/etc/ossec.conf:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">&lt;command&gt;</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&lt;command&gt;</span>
 <span class="go">  &lt;name&gt;firewall-drop&lt;/name&gt;</span>
 <span class="go">  &lt;executable&gt;firewall-drop.sh&lt;/executable&gt;</span>
 <span class="go">  &lt;expect&gt;srcip&lt;/expect&gt;</span>
@@ -449,38 +468,41 @@ add to your ipfw script the follow lines, if you are using the 00001 rule number
 <span class="go">&lt;/active-response&gt;</span>
 </pre></div>
 </div>
-<dl class="docutils">
-<dt>restart ossec:</dt>
-<dd><cite>~/ossec/bin/ossec-control restart</cite></dd>
-<dt>Scan your machine (caution OSSEC will block the scanner IP) from online scanner server like: <a class="reference external" href="http://www.derkeiler.com/Service/PortScan/">http://www.derkeiler.com/Service/PortScan/</a>, or from a remote machine with:</dt>
-<dd>nmap -sT -PI -PT 1.2.3.4</dd>
-<dt>look if the active-response works with:</dt>
-<dd>/sbin/ipfw table 2 list</dd>
-<dt>or</dt>
-<dd>tail -f ~/ossec/active-response/ossec-hids-responses.log</dd>
-<dt>if you want to flush the banned IPs in the table</dt>
-<dd>/sbin/ipfw table 2 flush</dd>
-<dt>or want to remove a specific IP in the table</dt>
-<dd>/sbin/ipfw table 2 delete 1.2.3.4</dd>
+<dl class="simple">
+<dt>restart ossec:</dt><dd><p><cite>~/ossec/bin/ossec-control restart</cite></p>
+</dd>
+<dt>Scan your machine (caution OSSEC will block the scanner IP) from online scanner server like: <a class="reference external" href="http://www.derkeiler.com/Service/PortScan/">http://www.derkeiler.com/Service/PortScan/</a>, or from a remote machine with:</dt><dd><p>nmap -sT -PI -PT 1.2.3.4</p>
+</dd>
+<dt>look if the active-response works with:</dt><dd><p>/sbin/ipfw table 2 list</p>
+</dd>
+<dt>or</dt><dd><p>tail -f ~/ossec/active-response/ossec-hids-responses.log</p>
+</dd>
+<dt>if you want to flush the banned IPs in the table</dt><dd><p>/sbin/ipfw table 2 flush</p>
+</dd>
+<dt>or want to remove a specific IP in the table</dt><dd><p>/sbin/ipfw table 2 delete 1.2.3.4</p>
+</dd>
 </dl>
 <p>if you want to flush the table every 24 Hrs:</p>
 <blockquote>
-<div>vi /etc/crontab</div></blockquote>
-<dl class="docutils">
-<dt>and include</dt>
-<dd>0    <a href="#id9"><span class="problematic" id="id10">*</span></a>/24       *       *       *  root /sbin/ipfw table 2 flush &gt; /dev/null 2&gt;&amp;1</dd>
+<div><p>vi /etc/crontab</p>
+</div></blockquote>
+<dl class="simple">
+<dt>and include</dt><dd><p>0    <a href="#id9"><span class="problematic" id="id10">*</span></a>/24       *       *       *  root /sbin/ipfw table 2 flush &gt; /dev/null 2&gt;&amp;1</p>
+</dd>
 </dl>
 <p>=More restrictions=</p>
-<p><a href="#id11"><span class="problematic" id="id12">*</span></a>&#8216;&#8217;&#8216;iplog.conf&#8217;&#8216;&#8217;
+<p><a href="#id11"><span class="problematic" id="id12">*</span></a>’’’iplog.conf’’’
 To Enable  or  disable  a mechanism that attempts to fool programs, such as nmap and queso, that perform remote OS detection, add the follow line to iplog.conf</p>
 <blockquote>
-<div>set fool_nmap true</div></blockquote>
-<p>As  a side effect, enabling this option will also cause most of nmap&#8217;sstealth&#8221; scans to fail.</p>
-<p><a href="#id13"><span class="problematic" id="id14">*</span></a>&#8216;&#8217;&#8216;BSD&#8217;s sysctl (some FreeBSD especific)&#8217;&#8216;&#8217;</p>
+<div><p>set fool_nmap true</p>
+</div></blockquote>
+<p>As  a side effect, enabling this option will also cause most of nmap’sstealth” scans to fail.</p>
+<p><a href="#id13"><span class="problematic" id="id14">*</span></a>’’’BSD’s sysctl (some FreeBSD especific)’’’</p>
 <blockquote>
-<div>tcp_drop_synfin
+<div><p>tcp_drop_synfin
 net.inet.tcp.blackhole
-net.inet.udp.blackhole</div></blockquote>
+net.inet.udp.blackhole</p>
+</div></blockquote>
 <p>More to com.. [<a class="reference external" href="http://zaterio.chilesincables.org">http://zaterio.chilesincables.org</a> Zaterio]</p>
 <p>[[Category:rules]]
 [[Category:decoders]]</p>
@@ -498,9 +520,8 @@ net.inet.udp.blackhole</div></blockquote>
       
     </p>
     <p>
-        &copy; Copyright 2010-2020, OSSEC Project Team.<br/>
+        &copy; Copyright 2010-2021, OSSEC Project Team.<br/>
     OSSEC <b>ossec.net</b> domain owned and maintained by <a href="https://www.ossec.net" target="_blank">OSSEC Foundation</a><br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.5.2 - 
     Home page graphics courtesy of <a href="https://pixabay.com" target="_blank">pixabay</a>
     </p>
   </div>

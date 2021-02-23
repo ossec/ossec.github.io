@@ -1,36 +1,24 @@
 <!DOCTYPE html>
 
-
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Process Monitoring &#8212; OSSEC</title>
-    
-    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/parallax.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../../',
-        VERSION:     '3.3.0',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
-    <script type="text/javascript" src="../../../_static/jquery.js"></script>
-    <script type="text/javascript" src="../../../_static/underscore.js"></script>
-    <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="../../../_static/js/jquery-fix.js"></script>
-    <script type="text/javascript" src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../../../_static/bootstrap-sphinx.js"></script>
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script src="../../../_static/js/jquery-fix.js"></script>
+    <script src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script src="../../../_static/bootstrap-sphinx.js"></script>
     <link rel="author" title="About these documents" href="../../../about.html" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -41,8 +29,37 @@
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
 <meta name="apple-mobile-web-app-capable" content="yes">
 
-  </head>
-  <body role="document">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-138780766-1"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'UA-138780766-1');
+</script>
+
+<script type="text/javascript">
+  var _ss = _ss || [];
+  _ss.push(['_setDomain', 'https://koi-3QNN51VTHS.marketingautomation.services/net']);
+  _ss.push(['_setAccount', 'KOI-4APYNOYP8O']);
+  _ss.push(['_trackPageView']);
+  window._pa = window._pa || {};
+  // _pa.orderId = "myOrderId"; // OPTIONAL: attach unique conversion identifier to conversions
+  // _pa.revenue = "19.99"; // OPTIONAL: attach dynamic purchase values to conversions
+  // _pa.productId = "myProductId"; // OPTIONAL: Include product ID for use with dynamic ads
+  (function() {
+  var ss = document.createElement('script');
+  ss.type = 'text/javascript'; ss.async = true;
+  ss.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'koi-3QNN51VTHS.marketingautomation.services/client/ss.js?ver=2.4.0';
+  var scr = document.getElementsByTagName('script')[0];
+  scr.parentNode.insertBefore(ss, scr);
+  })();
+  </script>
+
+
+
+  </head><body>
 
   <div id="navbar" class="navbar navbar-inverse navbar-default ">
     <div class="container">
@@ -61,9 +78,10 @@
         <div class="collapse navbar-collapse nav-collapse">
           <ul class="nav navbar-nav">
             
-                <li><a href="https://www.ossec.net/about/">About <i class="fa fa-info-circle"></i></a></li>
-                <li><a href="https://www.ossec.net/docs/">Documentation <i class="fa fa-book"></i></a></li>
-                <li><a href="https://www.ossec.net/downloads/">Downloads <i class="fa fa-download"></i></a></li>
+                <li><a href="https://www.ossec.net/about/">About</a></li>
+                <li><a href="https://www.ossec.net/docs/">Documentation</a></li>
+                <li><a href="https://www.ossec.net/register-for-ossec/">Get OSSEC+</a></li>
+                <li><a href="https://www.ossec.net/downloads/">Downloads</a></li>
             
             
               <li class="dropdown globaltoc-container">
@@ -145,11 +163,11 @@ to monitor the output of commands via OSSEC, and treat the output of those comma
 <div class="section" id="disk-space-utilization-df-h-example">
 <h3>Disk space utilization (df -h) example<a class="headerlink" href="#disk-space-utilization-df-h-example" title="Permalink to this headline">¶</a></h3>
 <p>For example, if you wanted to monitor the disk space utilization, you would need
-to setup a cron job to dump the output of <code class="docutils literal"><span class="pre">df</span> <span class="pre">-h</span></code> to a log file (maybe
+to setup a cron job to dump the output of <code class="docutils literal notranslate"><span class="pre">df</span> <span class="pre">-h</span></code> to a log file (maybe
 /var/log/df.log) and configure OSSEC to look at it.</p>
 <p>As of OSSEC version 2.3 you can monitor commands directly in OSSEC
 following configuration (in /var/ossec/etc/ossec.conf):</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;localfile&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;localfile&gt;</span>
     <span class="nt">&lt;log_format&gt;</span>command<span class="nt">&lt;/log_format&gt;</span>
     <span class="nt">&lt;command&gt;</span>df -h<span class="nt">&lt;/command&gt;</span>
 <span class="nt">&lt;/localfile&gt;</span>
@@ -157,7 +175,7 @@ following configuration (in /var/ossec/etc/ossec.conf):</p>
 </div>
 <p>Since we already have a sample rule for df -h included with OSSEC you would see
 the following when any partition reached 100%:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">**</span> <span class="n">Alert</span> <span class="mf">1257451341.28290</span><span class="p">:</span> <span class="n">mail</span> <span class="o">-</span> <span class="n">ossec</span><span class="p">,</span><span class="n">low_diskspace</span><span class="p">,</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">**</span> <span class="n">Alert</span> <span class="mf">1257451341.28290</span><span class="p">:</span> <span class="n">mail</span> <span class="o">-</span> <span class="n">ossec</span><span class="p">,</span><span class="n">low_diskspace</span><span class="p">,</span>
 <span class="mi">2009</span> <span class="n">Nov</span> <span class="mi">05</span> <span class="mi">16</span><span class="p">:</span><span class="mi">02</span><span class="p">:</span><span class="mi">21</span> <span class="p">(</span><span class="n">home</span><span class="o">-</span><span class="n">ubuntu</span><span class="p">)</span> <span class="mf">192.168</span><span class="o">.</span><span class="mf">0.0</span><span class="o">-&gt;</span><span class="n">df</span> <span class="o">-</span><span class="n">h</span>
 
 <span class="n">Rule</span><span class="p">:</span> <span class="mi">531</span> <span class="p">(</span><span class="n">level</span> <span class="mi">7</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;Partition usage reached 100% (disk space monitor).&quot;</span>
@@ -170,16 +188,16 @@ the following when any partition reached 100%:</p>
 <div class="section" id="load-average-uptime-example">
 <h3>Load average (uptime) Example<a class="headerlink" href="#load-average-uptime-example" title="Permalink to this headline">¶</a></h3>
 <p>Another example, if you want to monitor the load average, you can configure
-OSSEC to monitor the &#8220;uptime&#8221; command and alert when it is higher than 2, for
+OSSEC to monitor the “uptime” command and alert when it is higher than 2, for
 example:</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;localfile&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;localfile&gt;</span>
     <span class="nt">&lt;log_format&gt;</span>command<span class="nt">&lt;/log_format&gt;</span>
     <span class="nt">&lt;command&gt;</span>uptime<span class="nt">&lt;/command&gt;</span>
 <span class="nt">&lt;/localfile&gt;</span>
 </pre></div>
 </div>
 <p>And in the rule (in /var/ossec/rules/local_rules.xml):</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;rule</span> <span class="na">id=</span><span class="s">&quot;100101&quot;</span> <span class="na">level=</span><span class="s">&quot;7&quot;</span> <span class="na">ignore=</span><span class="s">&quot;7200&quot;</span><span class="nt">&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;rule</span> <span class="na">id=</span><span class="s">&quot;100101&quot;</span> <span class="na">level=</span><span class="s">&quot;7&quot;</span> <span class="na">ignore=</span><span class="s">&quot;7200&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;if_sid&gt;</span>530<span class="nt">&lt;/if_sid&gt;</span>
     <span class="nt">&lt;match&gt;</span>ossec: output: &#39;uptime&#39;: <span class="nt">&lt;/match&gt;</span>
     <span class="nt">&lt;regex&gt;</span>load averages: 2.<span class="nt">&lt;/regex&gt;</span>
@@ -197,16 +215,16 @@ a look at the new &lt;check_diff /&gt; option in the rules (available on the lat
 snapshot).</p>
 <p>To demonstrate with an example, we will create a rule to alert when there is
 a new port open in listening mode on our server.</p>
-<p>First, we configure OSSEC to run the <code class="docutils literal"><span class="pre">netstat</span> <span class="pre">-tan</span> <span class="pre">|grep</span> <span class="pre">LISTEN</span></code> command
+<p>First, we configure OSSEC to run the <code class="docutils literal notranslate"><span class="pre">netstat</span> <span class="pre">-tan</span> <span class="pre">|grep</span> <span class="pre">LISTEN</span></code> command
 by adding the following to ossec.conf:</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;localfile&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;localfile&gt;</span>
     <span class="nt">&lt;log_format&gt;</span>full_command<span class="nt">&lt;/log_format&gt;</span>
     <span class="nt">&lt;command&gt;</span>netstat -tan |grep LISTEN|grep -v 127.0.0.1<span class="nt">&lt;/command&gt;</span>
 <span class="nt">&lt;/localfile&gt;</span>
 </pre></div>
 </div>
 <p>After that, I add a rule to alert when its output changes:</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;rule</span> <span class="na">id=</span><span class="s">&quot;140123&quot;</span> <span class="na">level=</span><span class="s">&quot;7&quot;</span><span class="nt">&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;rule</span> <span class="na">id=</span><span class="s">&quot;140123&quot;</span> <span class="na">level=</span><span class="s">&quot;7&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;if_sid&gt;</span>530<span class="nt">&lt;/if_sid&gt;</span>
     <span class="nt">&lt;match&gt;</span>ossec: output: &#39;netstat -tan |grep LISTEN<span class="nt">&lt;/match&gt;</span>
     <span class="nt">&lt;check_diff</span> <span class="nt">/&gt;</span>
@@ -214,13 +232,13 @@ by adding the following to ossec.conf:</p>
 <span class="nt">&lt;/rule&gt;</span>
 </pre></div>
 </div>
-<p>Note that we use the <code class="docutils literal"><span class="pre">&lt;check_diff</span> <span class="pre">/&gt;</span></code> option. The first time it receives the
+<p>Note that we use the <code class="docutils literal notranslate"><span class="pre">&lt;check_diff</span> <span class="pre">/&gt;</span></code> option. The first time it receives the
 event, it will store in an internal database. Every time it receives the same
 event, it will compare against what we have store and only alert if the output
 changes.</p>
 <p>In our example, after configuring OSSEC, I started netcat to listen on port
 23456 and that’s the alert I got:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">OSSEC</span> <span class="n">HIDS</span> <span class="n">Notification</span><span class="o">.</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">OSSEC</span> <span class="n">HIDS</span> <span class="n">Notification</span><span class="o">.</span>
 <span class="mi">2010</span> <span class="n">Mar</span> <span class="mi">11</span> <span class="mi">19</span><span class="p">:</span><span class="mi">56</span><span class="p">:</span><span class="mi">30</span>
 
 <span class="n">Received</span> <span class="n">From</span><span class="p">:</span> <span class="n">XYZ</span><span class="o">-&gt;</span><span class="n">netstat</span> <span class="o">-</span><span class="n">tan</span> <span class="o">|</span><span class="n">grep</span> <span class="n">LISTEN</span><span class="o">|</span><span class="n">grep</span> <span class="o">-</span><span class="n">v</span> <span class="mf">127.0</span><span class="o">.</span><span class="mf">0.1</span>
@@ -242,10 +260,10 @@ changes.</p>
 <h3>Detecting USB Storage Usage<a class="headerlink" href="#detecting-usb-storage-usage" title="Permalink to this headline">¶</a></h3>
 <p><a class="reference external" href="http://blog.rootshell.be/2010/03/15/detecting-usb-storage-usage-with-ossec/">Xavier Mertens</a> wrote a very interesting article on Detecting USB Storage Usage with
 OSSEC. He used our policy auditing module for that, but I think USB monitoring
-can be done in a much easier way with our new <a class="reference internal" href="../../syntax/head_rules.html#element-check_diff"><code class="xref std std-xml docutils literal"><span class="pre">check_diff</span></code></a> feature.</p>
+can be done in a much easier way with our new <a href="#id1"><span class="problematic" id="id2">:xml:`check_diff`</span></a> feature.</p>
 <p>To get started, first configure your Windows agents to monitor the USBSTOR
 registry entry using the reg command:</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;agent_config</span> <span class="na">os=</span><span class="s">&quot;windows&quot;</span><span class="nt">&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;agent_config</span> <span class="na">os=</span><span class="s">&quot;windows&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;localfile&gt;</span>
         <span class="nt">&lt;log_format&gt;</span>full_command<span class="nt">&lt;/log_format&gt;</span>
         <span class="nt">&lt;command&gt;</span>reg QUERY HKLM\SYSTEM\CurrentControlSet\Enum\USBSTOR<span class="nt">&lt;/command&gt;</span>
@@ -254,7 +272,7 @@ registry entry using the reg command:</p>
 </pre></div>
 </div>
 <p>Next create a local rule for that command:</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;rule</span> <span class="na">id=</span><span class="s">&quot;140125&quot;</span> <span class="na">level=</span><span class="s">&quot;7&quot;</span><span class="nt">&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;rule</span> <span class="na">id=</span><span class="s">&quot;140125&quot;</span> <span class="na">level=</span><span class="s">&quot;7&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;if_sid&gt;</span>530<span class="nt">&lt;/if_sid&gt;</span>
     <span class="nt">&lt;match&gt;</span>ossec: output: &#39;reg QUERY<span class="nt">&lt;/match&gt;</span>
     <span class="nt">&lt;check_diff</span> <span class="nt">/&gt;</span>
@@ -263,9 +281,9 @@ registry entry using the reg command:</p>
 </pre></div>
 </div>
 <p>Now after a few minutes you will see a directory at
-<code class="docutils literal"><span class="pre">/var/ossec/queue/diff/[agent_name]/[rule_id]</span></code> with the current snapshot of this
+<code class="docutils literal notranslate"><span class="pre">/var/ossec/queue/diff/[agent_name]/[rule_id]</span></code> with the current snapshot of this
 command. Once someone adds a new USB device you will get this alert:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>** Alert 1268687754.35062: mail  - local,syslog,
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>** Alert 1268687754.35062: mail  - local,syslog,
 2010 Mar 15 18:15:54 (xx-netbook) any-&gt;reg QUERY HKLMSYSTEMCurrentControlSetEnumUSBSTOR
 Rule: 140125 (level 7) -&gt; &#39;New USB device connected&#39;
 Src IP: (none)
@@ -312,9 +330,8 @@ HKEY_LOCAL_MACHINESYSTEMCurrentControlSetEnumUSBSTORDisk&amp;Ven_USB_2.0&amp;Pro
       
     </p>
     <p>
-        &copy; Copyright 2010-2020, OSSEC Project Team.<br/>
+        &copy; Copyright 2010-2021, OSSEC Project Team.<br/>
     OSSEC <b>ossec.net</b> domain owned and maintained by <a href="https://www.ossec.net" target="_blank">OSSEC Foundation</a><br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.5.2 - 
     Home page graphics courtesy of <a href="https://pixabay.com" target="_blank">pixabay</a>
     </p>
   </div>

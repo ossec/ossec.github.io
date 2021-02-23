@@ -1,36 +1,24 @@
 <!DOCTYPE html>
 
-
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Log Samples from vpopmail &#8212; OSSEC</title>
-    
-    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/parallax.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../../',
-        VERSION:     '3.3.0',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
-    <script type="text/javascript" src="../../../_static/jquery.js"></script>
-    <script type="text/javascript" src="../../../_static/underscore.js"></script>
-    <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="../../../_static/js/jquery-fix.js"></script>
-    <script type="text/javascript" src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../../../_static/bootstrap-sphinx.js"></script>
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script src="../../../_static/js/jquery-fix.js"></script>
+    <script src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script src="../../../_static/bootstrap-sphinx.js"></script>
     <link rel="author" title="About these documents" href="../../../about.html" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -39,8 +27,37 @@
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
 <meta name="apple-mobile-web-app-capable" content="yes">
 
-  </head>
-  <body role="document">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-138780766-1"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'UA-138780766-1');
+</script>
+
+<script type="text/javascript">
+  var _ss = _ss || [];
+  _ss.push(['_setDomain', 'https://koi-3QNN51VTHS.marketingautomation.services/net']);
+  _ss.push(['_setAccount', 'KOI-4APYNOYP8O']);
+  _ss.push(['_trackPageView']);
+  window._pa = window._pa || {};
+  // _pa.orderId = "myOrderId"; // OPTIONAL: attach unique conversion identifier to conversions
+  // _pa.revenue = "19.99"; // OPTIONAL: attach dynamic purchase values to conversions
+  // _pa.productId = "myProductId"; // OPTIONAL: Include product ID for use with dynamic ads
+  (function() {
+  var ss = document.createElement('script');
+  ss.type = 'text/javascript'; ss.async = true;
+  ss.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'koi-3QNN51VTHS.marketingautomation.services/client/ss.js?ver=2.4.0';
+  var scr = document.getElementsByTagName('script')[0];
+  scr.parentNode.insertBefore(ss, scr);
+  })();
+  </script>
+
+
+
+  </head><body>
 
   <div id="navbar" class="navbar navbar-inverse navbar-default ">
     <div class="container">
@@ -59,9 +76,10 @@
         <div class="collapse navbar-collapse nav-collapse">
           <ul class="nav navbar-nav">
             
-                <li><a href="https://www.ossec.net/about/">About <i class="fa fa-info-circle"></i></a></li>
-                <li><a href="https://www.ossec.net/docs/">Documentation <i class="fa fa-book"></i></a></li>
-                <li><a href="https://www.ossec.net/downloads/">Downloads <i class="fa fa-download"></i></a></li>
+                <li><a href="https://www.ossec.net/about/">About</a></li>
+                <li><a href="https://www.ossec.net/docs/">Documentation</a></li>
+                <li><a href="https://www.ossec.net/register-for-ossec/">Get OSSEC+</a></li>
+                <li><a href="https://www.ossec.net/downloads/">Downloads</a></li>
             
             
               <li class="dropdown globaltoc-container">
@@ -125,7 +143,7 @@
 <h1>Log Samples from vpopmail<a class="headerlink" href="#log-samples-from-vpopmail" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="failed-logins">
 <h2>Failed logins:<a class="headerlink" href="#failed-logins" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Sep 14 07:21:42 iron vpopmail[939]: vchkpw-pop3: password fail user1@xxxx.com:192.168.2.1</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Sep 14 07:21:42 iron vpopmail[939]: vchkpw-pop3: password fail user1@xxxx.com:192.168.2.1</span>
 <span class="go">Sep 14 07:21:42 iron vpopmail[937]: vchkpw-pop3: password fail user2@xxxx.com:192.168.2.1</span>
 <span class="go">Sep 14 07:21:42 iron vpopmail[935]: vchkpw-pop3: password fail user3@xxxx.com:192.168.2.1</span>
 <span class="go">Jun 9 08:56:30 www vpopmail[65827]: vchkpw-smtp: password fail (pass: &#39;&lt;65825.1118321790@mail.xxx.com&gt;&#39;) myuserid@xxx.com:208.210.222.68</span>
@@ -134,14 +152,14 @@
 </div>
 <div class="section" id="invalid-user">
 <h2>Invalid user:<a class="headerlink" href="#invalid-user" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">vpopmail[2100]: vchkpw-pop3: vpopmail user not found abc@xxx.com:x.x.x.x</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">vpopmail[2100]: vchkpw-pop3: vpopmail user not found abc@xxx.com:x.x.x.x</span>
 <span class="go">vpopmail[65851]: vchkpw-pop3: vpopmail user not found myuserid@:208.210.222.68</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="full-samples">
 <h2>Full samples:<a class="headerlink" href="#full-samples" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Jun 9 08:56:03 www vpopmail[65826]: vchkpw-pop3: vpopmail user not found postmaster@:208.210.222.68</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Jun 9 08:56:03 www vpopmail[65826]: vchkpw-pop3: vpopmail user not found postmaster@:208.210.222.68</span>
 <span class="go">Jun 9 08:56:30 www vpopmail[65827]: vchkpw-smtp: password fail (pass: &#39;&lt;65825.1118321790@mail.xxx.com&gt;&#39;) myuserid@xxx.com:208.210.222.68</span>
 <span class="go">Jun 9 09:04:16 www vpopmail[65851]: vchkpw-pop3: vpopmail user not found myuserid@:208.210.222.68</span>
 <span class="go">Jun 9 09:04:23 www vpopmail[65853]: vchkpw-pop3: vpopmail user not found myuserid@:208.210.222.68</span>
@@ -166,7 +184,7 @@
 </div>
 <div class="section" id="brute-force-attack">
 <h2>Brute Force Attack:<a class="headerlink" href="#brute-force-attack" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Aug 12 11:52:52 mail vpopmail[4162]: vchkpw-pop3: vpopmail user not found support@:69.3.64.3</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Aug 12 11:52:52 mail vpopmail[4162]: vchkpw-pop3: vpopmail user not found support@:69.3.64.3</span>
 <span class="go">Aug 12 11:52:52 mail vpopmail[4171]: vchkpw-pop3: vpopmail user not found info@:69.3.64.3</span>
 <span class="go">Aug 12 11:52:53 mail vpopmail[4187]: vchkpw-pop3: vpopmail user not found help@:69.3.64.3</span>
 <span class="go">Aug 12 11:52:53 mail vpopmail[4191]: vchkpw-pop3: vpopmail user not found spam@:69.3.64.3</span>
@@ -193,7 +211,7 @@ Therefore each record can include respectively:
 </div>
 <div class="section" id="succesfull-login">
 <h2>Succesfull login:<a class="headerlink" href="#succesfull-login" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Jul  7 11:23:52 srv vpopmail[20057]: vchkpw-pop3: (PLAIN) login success user@my_domain:1.2.3.4</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Jul  7 11:23:52 srv vpopmail[20057]: vchkpw-pop3: (PLAIN) login success user@my_domain:1.2.3.4</span>
 <span class="go">Jul  7 12:57:06 srv vpopmail[21466]: vchkpw-pop3s: (PLAIN) login success user@my_domain:1.2.3.4</span>
 <span class="go">Jul  5 07:45:29 srv vpopmail[31411]: vchkpw-imaps: (PLAIN) login success user@my_domain:1.2.3.4</span>
 <span class="go">Jul  6 10:21:52 srv vpopmail[18917: vchkpw-smtp: (CRAM-MD5) login success user@my_domain:1.2.3.4</span>
@@ -204,7 +222,7 @@ Therefore each record can include respectively:
 </div>
 <div class="section" id="bad-password">
 <h2>Bad password:<a class="headerlink" href="#bad-password" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Jul  7 07:10:18 srv vpopmail[4800]: vchkpw-pop3: password fail (pass: &#39;test&#39;) user@my_domain:1.2.3.4</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Jul  7 07:10:18 srv vpopmail[4800]: vchkpw-pop3: password fail (pass: &#39;test&#39;) user@my_domain:1.2.3.4</span>
 <span class="go">Jul  7 12:37:11 srv vpopmail[21183]: vchkpw-pop3s: password fail (pass: &#39;test1&#39;) user1@my_domain:1.2.3.4</span>
 <span class="go">Jul  6 10:22:55 srv vpopmail[18934]: vchkpw-imap: password fail (pass: &#39;aaaa&#39;) user@my_domain:192.168.1.19</span>
 <span class="go">Jul  9 15:13:08 srv vpopmail[16542]: vchkpw-webmail: password fail (pass: &#39;test&#39;) user@my_domain:127.0.0.1</span>
@@ -213,14 +231,14 @@ Therefore each record can include respectively:
 </div>
 <div class="section" id="or-if-no-password-given">
 <h2>or if no password given:<a class="headerlink" href="#or-if-no-password-given" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Jul  5 16:02:13 srv vpopmail[4160]: vchkpw-pop3: null password given oneone1:121.243.18.134</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Jul  5 16:02:13 srv vpopmail[4160]: vchkpw-pop3: null password given oneone1:121.243.18.134</span>
 <span class="go">Jul  9 10:19:58 srv vpopmail[5676]: vchkpw-webmail: null password given user@my_domain:127.0.0.1</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="id1">
 <h2>Invalid user:<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Jun 22 16:30:50 srv vpopmail[8581]: vchkpw-smtp: vpopmail user not found webmaster@:58.62.86.10</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Jun 22 16:30:50 srv vpopmail[8581]: vchkpw-smtp: vpopmail user not found webmaster@:58.62.86.10</span>
 <span class="go">Jul  5 15:59:00 srv vpopmail[3840]: vchkpw-pop3: vpopmail user not found done@:121.243.18.134</span>
 <span class="go">Jul 12 16:19:31 srv vpopmail[25240]: vchkpw-webmail: vpopmail user not found a@:127.0.0.1</span>
 </pre></div>
@@ -240,9 +258,8 @@ Therefore each record can include respectively:
       
     </p>
     <p>
-        &copy; Copyright 2010-2020, OSSEC Project Team.<br/>
+        &copy; Copyright 2010-2021, OSSEC Project Team.<br/>
     OSSEC <b>ossec.net</b> domain owned and maintained by <a href="https://www.ossec.net" target="_blank">OSSEC Foundation</a><br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.5.2 - 
     Home page graphics courtesy of <a href="https://pixabay.com" target="_blank">pixabay</a>
     </p>
   </div>

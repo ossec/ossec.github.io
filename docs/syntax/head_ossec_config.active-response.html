@@ -1,36 +1,24 @@
 <!DOCTYPE html>
 
-
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ossec.conf: Active Response Options &#8212; OSSEC</title>
-    
-    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/parallax.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../',
-        VERSION:     '3.3.0',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
-    <script type="text/javascript" src="../../_static/jquery.js"></script>
-    <script type="text/javascript" src="../../_static/underscore.js"></script>
-    <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
-    <script type="text/javascript" src="../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script src="../../_static/js/jquery-fix.js"></script>
+    <script src="../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script src="../../_static/bootstrap-sphinx.js"></script>
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -41,8 +29,37 @@
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
 <meta name="apple-mobile-web-app-capable" content="yes">
 
-  </head>
-  <body role="document">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-138780766-1"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'UA-138780766-1');
+</script>
+
+<script type="text/javascript">
+  var _ss = _ss || [];
+  _ss.push(['_setDomain', 'https://koi-3QNN51VTHS.marketingautomation.services/net']);
+  _ss.push(['_setAccount', 'KOI-4APYNOYP8O']);
+  _ss.push(['_trackPageView']);
+  window._pa = window._pa || {};
+  // _pa.orderId = "myOrderId"; // OPTIONAL: attach unique conversion identifier to conversions
+  // _pa.revenue = "19.99"; // OPTIONAL: attach dynamic purchase values to conversions
+  // _pa.productId = "myProductId"; // OPTIONAL: Include product ID for use with dynamic ads
+  (function() {
+  var ss = document.createElement('script');
+  ss.type = 'text/javascript'; ss.async = true;
+  ss.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'koi-3QNN51VTHS.marketingautomation.services/client/ss.js?ver=2.4.0';
+  var scr = document.getElementsByTagName('script')[0];
+  scr.parentNode.insertBefore(ss, scr);
+  })();
+  </script>
+
+
+
+  </head><body>
 
   <div id="navbar" class="navbar navbar-inverse navbar-default ">
     <div class="container">
@@ -61,9 +78,10 @@
         <div class="collapse navbar-collapse nav-collapse">
           <ul class="nav navbar-nav">
             
-                <li><a href="https://www.ossec.net/about/">About <i class="fa fa-info-circle"></i></a></li>
-                <li><a href="https://www.ossec.net/docs/">Documentation <i class="fa fa-book"></i></a></li>
-                <li><a href="https://www.ossec.net/downloads/">Downloads <i class="fa fa-download"></i></a></li>
+                <li><a href="https://www.ossec.net/about/">About</a></li>
+                <li><a href="https://www.ossec.net/docs/">Documentation</a></li>
+                <li><a href="https://www.ossec.net/register-for-ossec/">Get OSSEC+</a></li>
+                <li><a href="https://www.ossec.net/downloads/">Downloads</a></li>
             
             
               <li class="dropdown globaltoc-container">
@@ -139,18 +157,18 @@
 <h3>Supported types<a class="headerlink" href="#supported-types" title="Permalink to this headline">¶</a></h3>
 <p>Most active-response options are available in the the following installation types:</p>
 <ul class="simple">
-<li>server</li>
-<li>local</li>
+<li><p>server</p></li>
+<li><p>local</p></li>
 </ul>
-<p>The <code class="docutils literal"><span class="pre">disabled</span></code> option is available on all installation types.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">disabled</span></code> option is available on all installation types.</p>
 </div>
 <div class="section" id="configuration-pieces">
 <h3>Configuration pieces<a class="headerlink" href="#configuration-pieces" title="Permalink to this headline">¶</a></h3>
 <p>There are two pieces to an active-response configuration.
-The first is the <code class="docutils literal"><span class="pre">&lt;command&gt;</span></code> section.
+The first is the <code class="docutils literal notranslate"><span class="pre">&lt;command&gt;</span></code> section.
 This details the command to be run, and the options it will use.
 There can be any number of command options.</p>
-<p>The second is the <code class="docutils literal"><span class="pre">&lt;active-response&gt;</span></code> section.
+<p>The second is the <code class="docutils literal notranslate"><span class="pre">&lt;active-response&gt;</span></code> section.
 This section defines when the command will be run.</p>
 </div>
 <div class="section" id="location">
@@ -158,7 +176,7 @@ This section defines when the command will be run.</p>
 <p>All active-response options must be configured in the /var/ossec/etc/ossec.conf
 and used within the &lt;ossec_config&gt; tag.</p>
 <p>XML excerpt to show location:</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;ossec_config&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;ossec_config&gt;</span>
     <span class="nt">&lt;command&gt;</span>
         <span class="c">&lt;!--</span>
 <span class="c">        Command options here</span>
@@ -176,149 +194,17 @@ and used within the &lt;ossec_config&gt; tag.</p>
 </div>
 <div class="section" id="command-options">
 <h2>Command Options<a class="headerlink" href="#command-options" title="Permalink to this headline">¶</a></h2>
-<dl class="element">
-<dt id="element-command">
-<code class="descname">command</code><a class="headerlink" href="#element-command" title="Permalink to this definition">¶</a></dt>
-<dd><p>In the commands configuration you create new &#8220;commands&#8221; to be used as responses.
-You can have as many commands as you want. Each one should be inside their own &#8220;command&#8221; element. <code class="docutils literal"><span class="pre">command</span></code> is required.</p>
-</dd></dl>
-
-<dl class="element">
-<dt id="element-name">
-<code class="descname">name</code><a class="headerlink" href="#element-name" title="Permalink to this definition">¶</a></dt>
-<dd><p>Used to link the command to the response. <code class="docutils literal"><span class="pre">name</span></code> is required.</p>
-</dd></dl>
-
-<dl class="element">
-<dt id="element-executable">
-<code class="descname">executable</code><a class="headerlink" href="#element-executable" title="Permalink to this definition">¶</a></dt>
-<dd><p>It must be a file (with exec permissions) inside <code class="docutils literal"><span class="pre">/var/ossec/active-response/bin</span></code>. <code class="docutils literal"><span class="pre">executable</span></code> is required.</p>
-<p>You don&#8217;t need to provide the whole path.</p>
-</dd></dl>
-
-<dl class="element">
-<dt id="element-expect">
-<code class="descname">expect</code><a class="headerlink" href="#element-expect" title="Permalink to this definition">¶</a></dt>
-<dd><p>The arguments this command is expecting (options are srcip and username). If a field is not within the <code class="docutils literal"><span class="pre">expect</span></code> option it will be passed as a dash (<code class="docutils literal"><span class="pre">-</span></code>) instead of the actual value. For instance, if <code class="docutils literal"><span class="pre">srcip</span></code> is required for an active-response script to work it <strong>must</strong> be inside of an <code class="docutils literal"><span class="pre">expect</span></code> option. <code class="docutils literal"><span class="pre">expect</span></code> is required.</p>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last"><code class="docutils literal"><span class="pre">expect</span></code> is required, but it is not required to populate it. <code class="docutils literal"><span class="pre">&lt;expect&gt;&lt;/expect&gt;</span></code> is valid if no options need to be passed to the active-response script.</p>
-</div>
-</dd></dl>
-
-<dl class="element">
-<dt id="element-timeout_allowed">
-<code class="descname">timeout_allowed</code><a class="headerlink" href="#element-timeout_allowed" title="Permalink to this definition">¶</a></dt>
-<dd><p>Specifies if this command supports a timeout. This is optional, and defaults to <code class="docutils literal"><span class="pre">yes</span></code>.</p>
-</dd></dl>
-
 </div>
 <div class="section" id="active-response-options">
 <h2>Active-response Options<a class="headerlink" href="#active-response-options" title="Permalink to this headline">¶</a></h2>
-<dl class="element">
-<dt id="element-active-response">
-<code class="descname">active-response</code><a class="headerlink" href="#element-active-response" title="Permalink to this definition">¶</a></dt>
-<dd><p>In the active-response configuration, you bind the commands (created) to events.
-You can have as many responses as you want. Each one should be inside their own
-“active-response” element.</p>
-</dd></dl>
-
-<dl class="element">
-<dt id="element-disabled">
-<code class="descname">disabled</code><a class="headerlink" href="#element-disabled" title="Permalink to this definition">¶</a></dt>
-<dd><p>Disables active response if set to yes. If this is not defined active response is enabled on unix systems, and disabled on Windows systems.
-This option is available on server, local, and agent installations.
-Setting it to <code class="docutils literal"><span class="pre">yes</span></code> on an agent will disable active-response for that agent only,
-while setting it on the server will disable all active-response.</p>
-</dd></dl>
-
-<dl class="element">
-<dt id="element-command">
-<code class="descname">command</code><a class="headerlink" href="#element-command" title="Permalink to this definition">¶</a></dt>
-<dd><p>Used to link the response to the command</p>
-</dd></dl>
-
-<dl class="element">
-<dt id="element-location">
-<code class="descname">location</code><a class="headerlink" href="#element-location" title="Permalink to this definition">¶</a></dt>
-<dd><p>Where the command should be executed. You have four options:</p>
-<p><strong>Allowed:</strong></p>
-<ul class="simple">
-<li><em>local</em>: on the agent that generated the event</li>
-<li><em>server</em>: on the OSSEC server</li>
-<li><em>defined-agent</em>: on a specific agent (when using this option, you need to set the
-agent_id to use)</li>
-<li><em>all</em>: all agents</li>
-</ul>
-</dd></dl>
-
-<dl class="element">
-<dt id="element-agent_id">
-<code class="descname">agent_id</code><a class="headerlink" href="#element-agent_id" title="Permalink to this definition">¶</a></dt>
-<dd><p>The ID of the agent to execute the response (when defined-agent is set).</p>
-</dd></dl>
-
-<dl class="element">
-<dt id="element-level">
-<code class="descname">level</code><a class="headerlink" href="#element-level" title="Permalink to this definition">¶</a></dt>
-<dd><p>The response will be executed on any event with this level or higher.</p>
-</dd></dl>
-
-<dl class="element">
-<dt id="element-rules_group">
-<code class="descname">rules_group</code><a class="headerlink" href="#element-rules_group" title="Permalink to this definition">¶</a></dt>
-<dd><p>The response will be executed on any event in the defined group. Multiple groups can be defined if separated by a pipe (<cite>|</cite>).</p>
-</dd></dl>
-
-<dl class="element">
-<dt id="element-rules_id">
-<code class="descname">rules_id</code><a class="headerlink" href="#element-rules_id" title="Permalink to this definition">¶</a></dt>
-<dd><p>The response will be executed on any event with the defined ID. Multiple IDs can be specified if separated by a comma.</p>
-</dd></dl>
-
-<dl class="element">
-<dt id="element-timeout">
-<code class="descname">timeout</code><a class="headerlink" href="#element-timeout" title="Permalink to this definition">¶</a></dt>
-<dd><p>How long in seconds until the response command is executed (IP unblocked, for example).</p>
-</dd></dl>
-
-<dl class="element">
-<dt id="element-repeated_offenders">
-<code class="descname">repeated_offenders</code><a class="headerlink" href="#element-repeated_offenders" title="Permalink to this definition">¶</a></dt>
-<dd><p>A comma separated list of increasing timeouts in minutes for repeat offenders. There can be a maximum of 5 entries.</p>
-<blockquote>
-<div><div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">This must be set in the <code class="docutils literal"><span class="pre">ossec.conf</span></code> of the <strong>agent</strong> in an agent/server setup.</p>
-</div>
-</div></blockquote>
-<p><strong>Example of a local/standalone:</strong></p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">&lt;active-response&gt;</span>
-<span class="go">  &lt;command&gt;firewall-block&lt;/command&gt;</span>
-<span class="go">  &lt;location&gt;defined-agent&lt;/location&gt;</span>
-<span class="go">  &lt;agent_id&gt;001&lt;/agent_id&gt;</span>
-<span class="go">  &lt;rules_group&gt;authentication_failed,authentication_failures&lt;/rules_group&gt;</span>
-<span class="go">  &lt;timeout&gt;600&lt;/timeout&gt;</span>
-<span class="go">  &lt;repeated_offenders&gt;30,60,120&lt;/repeated_offenders&gt;</span>
-<span class="go">&lt;/active-response&gt;</span>
-</pre></div>
-</div>
-<p><strong>Example of an agent:</strong></p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">&lt;active-response&gt;</span>
-<span class="go">  &lt;repeated_offenders&gt;30,60,120&lt;/repeated_offenders&gt;</span>
-<span class="go">&lt;/active-response&gt;</span>
-</pre></div>
-</div>
-</dd></dl>
-
 </div>
 <div class="section" id="example-active-response-configurations">
 <span id="example-ar-configuration"></span><h2>Example active response configurations:<a class="headerlink" href="#example-active-response-configurations" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="command-restart-ossec-on-unix-like-systems">
 <h3>Command: Restart OSSEC on unix-like systems:<a class="headerlink" href="#command-restart-ossec-on-unix-like-systems" title="Permalink to this headline">¶</a></h3>
-<p>This command can be used to restart the OSSEC processes. It&#8217;s commonly used to automatically restart agent processes when an <code class="docutils literal"><span class="pre">agent.conf</span></code> is modified.
-Since no parameters are necessary the <code class="docutils literal"><span class="pre">&lt;expect&gt;</span></code> is empty.</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">&lt;command&gt;</span>
+<p>This command can be used to restart the OSSEC processes. It’s commonly used to automatically restart agent processes when an <code class="docutils literal notranslate"><span class="pre">agent.conf</span></code> is modified.
+Since no parameters are necessary the <code class="docutils literal notranslate"><span class="pre">&lt;expect&gt;</span></code> is empty.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&lt;command&gt;</span>
 <span class="go">  &lt;name&gt;restart-ossec&lt;/name&gt;</span>
 <span class="go">  &lt;executable&gt;restart-ossec.sh&lt;/executable&gt;</span>
 <span class="go">  &lt;expect&gt;&lt;/expect&gt;</span>
@@ -328,16 +214,16 @@ Since no parameters are necessary the <code class="docutils literal"><span class
 </div>
 <div class="section" id="active-response-restart-the-ossec-processes">
 <h3>Active-Response:  Restart the OSSEC processes:<a class="headerlink" href="#active-response-restart-the-ossec-processes" title="Permalink to this headline">¶</a></h3>
-<p>This active response will restart the OSSEC processes using the <code class="docutils literal"><span class="pre">restart-ossec</span></code> command above. It is runs when rule <code class="docutils literal"><span class="pre">510010</span></code> is triggered, and it runs on the system where the rule was triggered.</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">&lt;active-response&gt;</span>
+<p>This active response will restart the OSSEC processes using the <code class="docutils literal notranslate"><span class="pre">restart-ossec</span></code> command above. It is runs when rule <code class="docutils literal notranslate"><span class="pre">510010</span></code> is triggered, and it runs on the system where the rule was triggered.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&lt;active-response&gt;</span>
 <span class="go">  &lt;command&gt;restart-ossec&lt;/command&gt;</span>
 <span class="go">  &lt;location&gt;local&lt;/location&gt;</span>
 <span class="go">  &lt;rules_id&gt;510010&lt;/rules_id&gt;</span>
 <span class="go">&lt;/active-response&gt;</span>
 </pre></div>
 </div>
-<p>Here is an example rule checking for changes to the <code class="docutils literal"><span class="pre">agent.conf</span></code>.</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">&lt;rule id=&quot;510011&quot; level=&quot;10&quot;&gt;</span>
+<p>Here is an example rule checking for changes to the <code class="docutils literal notranslate"><span class="pre">agent.conf</span></code>.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&lt;rule id=&quot;510011&quot; level=&quot;10&quot;&gt;</span>
 <span class="go">  &lt;if_sid&gt;550&lt;/if_sid&gt;</span>
 <span class="go">  &lt;match&gt;/var/ossec/etc/shared/agent.conf&lt;/match&gt;</span>
 <span class="go">  &lt;description&gt;agent.conf has been modified&lt;/description&gt;</span>
@@ -347,26 +233,26 @@ Since no parameters are necessary the <code class="docutils literal"><span class
 </div>
 <div class="section" id="command-block-an-ip-with-pf-sh">
 <h3>Command: Block an IP with pf.sh:<a class="headerlink" href="#command-block-an-ip-with-pf-sh" title="Permalink to this headline">¶</a></h3>
-<p><code class="docutils literal"><span class="pre">pf.sh</span></code> adds an ip (<code class="docutils literal"><span class="pre">srcip</span></code>) to an <code class="docutils literal"><span class="pre">ossec_fwtable</span></code> packet filter table.
+<p><code class="docutils literal notranslate"><span class="pre">pf.sh</span></code> adds an ip (<code class="docutils literal notranslate"><span class="pre">srcip</span></code>) to an <code class="docutils literal notranslate"><span class="pre">ossec_fwtable</span></code> packet filter table.
 Information on pf tables can be found <a class="reference external" href="http://cvs.openbsd.org/faq/pf/tables.html">here</a>.</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">&lt;command&gt;</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&lt;command&gt;</span>
 <span class="go">  &lt;name&gt;pf-block&lt;/name&gt;</span>
 <span class="go">  &lt;executable&gt;pf.sh&lt;/executable&gt;</span>
 <span class="go">  &lt;expect&gt;srcip&lt;/expect&gt;</span>
 <span class="go">&lt;/command&gt;</span>
 </pre></div>
 </div>
-<p>This is the minimum configuration necessary to utilize <code class="docutils literal"><span class="pre">pf.sh</span></code>:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">table &lt;ossec_fwtable&gt; persist #ossec_fwtable</span>
+<p>This is the minimum configuration necessary to utilize <code class="docutils literal notranslate"><span class="pre">pf.sh</span></code>:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">table &lt;ossec_fwtable&gt; persist #ossec_fwtable</span>
 <span class="go">block in log quick from &lt;ossec_fwtable&gt;</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="active-response-block-an-ip-with-pf">
 <h3>Active-Response: Block an IP with pf:<a class="headerlink" href="#active-response-block-an-ip-with-pf" title="Permalink to this headline">¶</a></h3>
-<p>This active-response blocks an IP triggering an <code class="docutils literal"><span class="pre">authentication_failed</span></code> or <code class="docutils literal"><span class="pre">authentication_failures</span></code> alert.
-This active-response will run on agent <code class="docutils literal"><span class="pre">001</span></code> only.</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">&lt;active-response&gt;</span>
+<p>This active-response blocks an IP triggering an <code class="docutils literal notranslate"><span class="pre">authentication_failed</span></code> or <code class="docutils literal notranslate"><span class="pre">authentication_failures</span></code> alert.
+This active-response will run on agent <code class="docutils literal notranslate"><span class="pre">001</span></code> only.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&lt;active-response&gt;</span>
 <span class="go">  &lt;command&gt;pf-block&lt;/command&gt;</span>
 <span class="go">  &lt;location&gt;defined-agent&lt;/location&gt;</span>
 <span class="go">  &lt;agent_id&gt;001&lt;/agent_id&gt;</span>
@@ -375,15 +261,15 @@ This active-response will run on agent <code class="docutils literal"><span clas
 </pre></div>
 </div>
 <div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">This may trigger on a single authentication failure.</p>
+<p class="admonition-title">Warning</p>
+<p>This may trigger on a single authentication failure.</p>
 </div>
 </div>
 <div class="section" id="command-run-the-makelists-sh-script">
 <h3>Command: Run the makelists.sh script:<a class="headerlink" href="#command-run-the-makelists-sh-script" title="Permalink to this headline">¶</a></h3>
-<p>The <code class="docutils literal"><span class="pre">makelists.sh</span></code> script runs <code class="docutils literal"><span class="pre">/var/ossec/bin/ossec-makelists</span></code> to update cdb lists.
+<p>The <code class="docutils literal notranslate"><span class="pre">makelists.sh</span></code> script runs <code class="docutils literal notranslate"><span class="pre">/var/ossec/bin/ossec-makelists</span></code> to update cdb lists.
 This command can be triggered by changes in configured cdb lists.</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">&lt;command&gt;</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&lt;command&gt;</span>
 <span class="go">  &lt;name&gt;makelists&lt;/name&gt;</span>
 <span class="go">  &lt;executable&gt;makelists.sh&lt;/executable&gt;</span>
 <span class="go">  &lt;expect&gt;hostname&lt;/expect&gt;</span>
@@ -393,17 +279,17 @@ This command can be triggered by changes in configured cdb lists.</p>
 </div>
 <div class="section" id="active-response-update-cdb-lists">
 <h3>Active-Response: Update cdb lists:<a class="headerlink" href="#active-response-update-cdb-lists" title="Permalink to this headline">¶</a></h3>
-<p>This active-response will run the <code class="docutils literal"><span class="pre">makelists</span></code> command to update the cdb lists.
+<p>This active-response will run the <code class="docutils literal notranslate"><span class="pre">makelists</span></code> command to update the cdb lists.
 This active-response should run only on the OSSEC server since agents do not have cdb lists.</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">&lt;active-response&gt;</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&lt;active-response&gt;</span>
 <span class="go">  &lt;command&gt;makelists&lt;/command&gt;</span>
 <span class="go">  &lt;location&gt;server&lt;/location&gt;</span>
 <span class="go">  &lt;rules_id&gt;510011&lt;/rules_id&gt;</span>
 <span class="go">&lt;/active-response&gt;</span>
 </pre></div>
 </div>
-<p>Rule 510011: This example rule looks for changes to <code class="docutils literal"><span class="pre">/var/ossec/lists/blocked.txt</span></code> based on syscheck alerts.</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">&lt;rule id=&quot;510011&quot; level=&quot;10&quot;&gt;</span>
+<p>Rule 510011: This example rule looks for changes to <code class="docutils literal notranslate"><span class="pre">/var/ossec/lists/blocked.txt</span></code> based on syscheck alerts.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&lt;rule id=&quot;510011&quot; level=&quot;10&quot;&gt;</span>
 <span class="go">  &lt;if_sid&gt;550&lt;/if_sid&gt;</span>
 <span class="go">  &lt;match&gt;/var/ossec/lists/blocked.txt&lt;/match&gt;</span>
 <span class="go">  &lt;description&gt;blocked.txt has been modified&lt;/description&gt;</span>
@@ -413,8 +299,8 @@ This active-response should run only on the OSSEC server since agents do not hav
 </div>
 <div class="section" id="command-firewall-drop">
 <h3>Command: firewall-drop:<a class="headerlink" href="#command-firewall-drop" title="Permalink to this headline">¶</a></h3>
-<p>This is a command to run the <code class="docutils literal"><span class="pre">firewall-drop.sh</span></code> script to block the <code class="docutils literal"><span class="pre">srcip</span></code>.</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">&lt;command&gt;</span>
+<p>This is a command to run the <code class="docutils literal notranslate"><span class="pre">firewall-drop.sh</span></code> script to block the <code class="docutils literal notranslate"><span class="pre">srcip</span></code>.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&lt;command&gt;</span>
 <span class="go">  &lt;name&gt;firewall-drop&lt;/command&gt;</span>
 <span class="go">  &lt;executable&gt;firewall-drop.sh&lt;/executable&gt;</span>
 <span class="go">  &lt;expect&gt;srcip&lt;/expect&gt;</span>
@@ -424,10 +310,10 @@ This active-response should run only on the OSSEC server since agents do not hav
 </div>
 <div class="section" id="active-response-block-a-srcip">
 <h3>Active-Response: Block a srcip:<a class="headerlink" href="#active-response-block-a-srcip" title="Permalink to this headline">¶</a></h3>
-<p>This active-response will use the <code class="docutils literal"><span class="pre">firewall-drop</span></code> command to block an IP address that has triggered an <code class="docutils literal"><span class="pre">authentication_failed</span></code> or <code class="docutils literal"><span class="pre">authentication_failures</span></code> alert.
+<p>This active-response will use the <code class="docutils literal notranslate"><span class="pre">firewall-drop</span></code> command to block an IP address that has triggered an <code class="docutils literal notranslate"><span class="pre">authentication_failed</span></code> or <code class="docutils literal notranslate"><span class="pre">authentication_failures</span></code> alert.
 It will run on all agents, and has a timeout of 600 seconds.
-It also uses the <code class="docutils literal"><span class="pre">repeated_offenders</span></code> option blocking an IP for 30 minutes on the second infraction, 60 minutes on the third, etc.</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">&lt;active-response&gt;</span>
+It also uses the <code class="docutils literal notranslate"><span class="pre">repeated_offenders</span></code> option blocking an IP for 30 minutes on the second infraction, 60 minutes on the third, etc.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&lt;active-response&gt;</span>
 <span class="go">  &lt;command&gt;firewall-block&lt;/command&gt;</span>
 <span class="go">  &lt;location&gt;all&lt;/location&gt;</span>
 <span class="go">  &lt;rules_group&gt;authentication_failed,authentication_failures&lt;/rules_group&gt;</span>
@@ -437,8 +323,8 @@ It also uses the <code class="docutils literal"><span class="pre">repeated_offen
 </pre></div>
 </div>
 <div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">This may trigger on a single authentication failure.</p>
+<p class="admonition-title">Warning</p>
+<p>This may trigger on a single authentication failure.</p>
 </div>
 </div>
 </div>
@@ -456,9 +342,8 @@ It also uses the <code class="docutils literal"><span class="pre">repeated_offen
       
     </p>
     <p>
-        &copy; Copyright 2010-2020, OSSEC Project Team.<br/>
+        &copy; Copyright 2010-2021, OSSEC Project Team.<br/>
     OSSEC <b>ossec.net</b> domain owned and maintained by <a href="https://www.ossec.net" target="_blank">OSSEC Foundation</a><br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.5.2 - 
     Home page graphics courtesy of <a href="https://pixabay.com" target="_blank">pixabay</a>
     </p>
   </div>

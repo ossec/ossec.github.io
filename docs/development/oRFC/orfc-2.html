@@ -1,36 +1,24 @@
 <!DOCTYPE html>
 
-
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>oRFC: 2 Coding Style Guide &#8212; OSSEC</title>
-    
-    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/parallax.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../../',
-        VERSION:     '3.3.0',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
-    <script type="text/javascript" src="../../../_static/jquery.js"></script>
-    <script type="text/javascript" src="../../../_static/underscore.js"></script>
-    <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="../../../_static/js/jquery-fix.js"></script>
-    <script type="text/javascript" src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../../../_static/bootstrap-sphinx.js"></script>
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script src="../../../_static/js/jquery-fix.js"></script>
+    <script src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script src="../../../_static/bootstrap-sphinx.js"></script>
     <link rel="author" title="About these documents" href="../../../about.html" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -41,8 +29,37 @@
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
 <meta name="apple-mobile-web-app-capable" content="yes">
 
-  </head>
-  <body role="document">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-138780766-1"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'UA-138780766-1');
+</script>
+
+<script type="text/javascript">
+  var _ss = _ss || [];
+  _ss.push(['_setDomain', 'https://koi-3QNN51VTHS.marketingautomation.services/net']);
+  _ss.push(['_setAccount', 'KOI-4APYNOYP8O']);
+  _ss.push(['_trackPageView']);
+  window._pa = window._pa || {};
+  // _pa.orderId = "myOrderId"; // OPTIONAL: attach unique conversion identifier to conversions
+  // _pa.revenue = "19.99"; // OPTIONAL: attach dynamic purchase values to conversions
+  // _pa.productId = "myProductId"; // OPTIONAL: Include product ID for use with dynamic ads
+  (function() {
+  var ss = document.createElement('script');
+  ss.type = 'text/javascript'; ss.async = true;
+  ss.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'koi-3QNN51VTHS.marketingautomation.services/client/ss.js?ver=2.4.0';
+  var scr = document.getElementsByTagName('script')[0];
+  scr.parentNode.insertBefore(ss, scr);
+  })();
+  </script>
+
+
+
+  </head><body>
 
   <div id="navbar" class="navbar navbar-inverse navbar-default ">
     <div class="container">
@@ -61,9 +78,10 @@
         <div class="collapse navbar-collapse nav-collapse">
           <ul class="nav navbar-nav">
             
-                <li><a href="https://www.ossec.net/about/">About <i class="fa fa-info-circle"></i></a></li>
-                <li><a href="https://www.ossec.net/docs/">Documentation <i class="fa fa-book"></i></a></li>
-                <li><a href="https://www.ossec.net/downloads/">Downloads <i class="fa fa-download"></i></a></li>
+                <li><a href="https://www.ossec.net/about/">About</a></li>
+                <li><a href="https://www.ossec.net/docs/">Documentation</a></li>
+                <li><a href="https://www.ossec.net/register-for-ossec/">Get OSSEC+</a></li>
+                <li><a href="https://www.ossec.net/downloads/">Downloads</a></li>
             
             
               <li class="dropdown globaltoc-container">
@@ -134,29 +152,29 @@
   <div class="section" id="orfc-2-coding-style-guide">
 <h1>oRFC: 2 Coding Style Guide<a class="headerlink" href="#orfc-2-coding-style-guide" title="Permalink to this headline">¶</a></h1>
 <p>OSSEC Coding Style Guide</p>
-<table border="1" class="docutils">
+<table class="docutils align-default">
 <colgroup>
-<col width="16%" />
-<col width="84%" />
+<col style="width: 16%" />
+<col style="width: 84%" />
 </colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td>Name</td>
-<td>OSSEC Style Guide</td>
+<tbody>
+<tr class="row-odd"><td><p>Name</p></td>
+<td><p>OSSEC Style Guide</p></td>
 </tr>
-<tr class="row-even"><td>Editor</td>
-<td><ul class="first last simple">
-<li>Jeremy Rossi &lt;jeremy at jeremyrossi dot com&gt;</li>
-<li>Christian Göttsche &lt;cgzones at googlemail dot com&gt;</li>
+<tr class="row-even"><td><p>Editor</p></td>
+<td><ul class="simple">
+<li><p>Jeremy Rossi &lt;jeremy at jeremyrossi dot com&gt;</p></li>
+<li><p>Christian Göttsche &lt;cgzones at googlemail dot com&gt;</p></li>
 </ul>
 </td>
 </tr>
-<tr class="row-odd"><td>State</td>
-<td>Draft</td>
+<tr class="row-odd"><td><p>State</p></td>
+<td><p>Draft</p></td>
 </tr>
-<tr class="row-even"><td>Origin</td>
-<td><ul class="first last simple">
-<li><a class="reference external" href="http://zeromq.org/docs:style">http://zeromq.org/docs:style</a></li>
-<li><a class="reference external" href="https://www.kernel.org/doc/Documentation/CodingStyle">https://www.kernel.org/doc/Documentation/CodingStyle</a></li>
+<tr class="row-even"><td><p>Origin</p></td>
+<td><ul class="simple">
+<li><p><a class="reference external" href="http://zeromq.org/docs:style">http://zeromq.org/docs:style</a></p></li>
+<li><p><a class="reference external" href="https://www.kernel.org/doc/Documentation/CodingStyle">https://www.kernel.org/doc/Documentation/CodingStyle</a></p></li>
 </ul>
 </td>
 </tr>
@@ -164,19 +182,19 @@
 </table>
 <div class="section" id="language">
 <h2>Language<a class="headerlink" href="#language" title="Permalink to this headline">¶</a></h2>
-<p>The key words &#8220;MUST&#8221;, &#8220;MUST NOT&#8221;, &#8220;REQUIRED&#8221;, &#8220;SHALL&#8221;, &#8220;SHALL NOT&#8221;,
-&#8220;SHOULD&#8221;, &#8220;SHOULD NOT&#8221;, &#8220;RECOMMENDED&#8221;,  &#8220;MAY&#8221;, and &#8220;OPTIONAL&#8221; in this
-document are to be interpreted as described in RFC 2119 <a class="footnote-reference" href="#id2" id="id1">[1]</a>.</p>
+<p>The key words “MUST”, “MUST NOT”, “REQUIRED”, “SHALL”, “SHALL NOT”,
+“SHOULD”, “SHOULD NOT”, “RECOMMENDED”,  “MAY”, and “OPTIONAL” in this
+document are to be interpreted as described in RFC 2119 <a class="footnote-reference brackets" href="#id2" id="id1">1</a>.</p>
 </div>
 <div class="section" id="goals">
 <h2>Goals<a class="headerlink" href="#goals" title="Permalink to this headline">¶</a></h2>
 <p>The OSSEC Style Guide is meant to provide framework and guide of formating
 code contributor to OSSEC.  The overall goals are:</p>
 <ul class="simple">
-<li>Maximize Readability of code in OSSEC;</li>
-<li>Reduction in the number of bugs by removing ambiguity in code and logic flow;</li>
-<li>Be as minimally invasive as possible while achieving the stated goals;</li>
-<li>Trust the contributor.</li>
+<li><p>Maximize Readability of code in OSSEC;</p></li>
+<li><p>Reduction in the number of bugs by removing ambiguity in code and logic flow;</p></li>
+<li><p>Be as minimally invasive as possible while achieving the stated goals;</p></li>
+<li><p>Trust the contributor.</p></li>
 </ul>
 </div>
 <div class="section" id="code-style">
@@ -184,23 +202,23 @@ code contributor to OSSEC.  The overall goals are:</p>
 <div class="section" id="formatter">
 <h3>Formatter<a class="headerlink" href="#formatter" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><a class="reference external" href="http://astyle.sourceforge.net/">Artistic Style</a> should be used to format the source code.</li>
-<li>Every code style should be achieved by a astyle command argument.</li>
+<li><p><a class="reference external" href="http://astyle.sourceforge.net/">Artistic Style</a> should be used to format the source code.</p></li>
+<li><p>Every code style should be achieved by a astyle command argument.</p></li>
 </ul>
 </div>
 <div class="section" id="indentation">
 <h3>Indentation<a class="headerlink" href="#indentation" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li>4 spaces shall be used per indentation level. <em>&#8211;indent=spaces=4</em></li>
-<li>Switch and case blocks shall be indented. <em>&#8211;indent-switches</em></li>
-<li>Preprocessor conditional statements shall be indented to the same level as the source code. <em>&#8211;indent-preproc-cond</em></li>
+<li><p>4 spaces shall be used per indentation level. <em>–indent=spaces=4</em></p></li>
+<li><p>Switch and case blocks shall be indented. <em>–indent-switches</em></p></li>
+<li><p>Preprocessor conditional statements shall be indented to the same level as the source code. <em>–indent-preproc-cond</em></p></li>
 </ul>
 </div>
 <div class="section" id="file-endings">
 <h3>File endings<a class="headerlink" href="#file-endings" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li>Every files shall end with a newline.</li>
-<li>Every files shall have linux like line endings (\n). <em>&#8211;lineend=linux</em></li>
+<li><p>Every files shall end with a newline.</p></li>
+<li><p>Every files shall have linux like line endings (\n). <em>–lineend=linux</em></p></li>
 </ul>
 </div>
 <div class="section" id="breaking-long-lines-and-strings">
@@ -209,10 +227,10 @@ code contributor to OSSEC.  The overall goals are:</p>
 <div class="section" id="placing-braces-and-spaces">
 <h3>Placing Braces and Spaces<a class="headerlink" href="#placing-braces-and-spaces" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li>Braces shall be placed according to the stroustrup style. <em>&#8211;style=stroustrup</em></li>
-<li>Operators shall be padded by a space. <em>&#8211;pad-oper</em></li>
-<li>Every branch of conditional statements shall be surrounded by brackets. <em>&#8211;add-brackets</em></li>
-<li>Pointer and reference operators shall be attached to the variable name. <em>&#8211;align-pointer=name</em></li>
+<li><p>Braces shall be placed according to the stroustrup style. <em>–style=stroustrup</em></p></li>
+<li><p>Operators shall be padded by a space. <em>–pad-oper</em></p></li>
+<li><p>Every branch of conditional statements shall be surrounded by brackets. <em>–add-brackets</em></p></li>
+<li><p>Pointer and reference operators shall be attached to the variable name. <em>–align-pointer=name</em></p></li>
 </ul>
 </div>
 <div class="section" id="typedefs-struct">
@@ -221,21 +239,20 @@ code contributor to OSSEC.  The overall goals are:</p>
 <div class="section" id="naming">
 <h3>Naming<a class="headerlink" href="#naming" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li>Variables</li>
-<li>Functions</li>
-<li>Typedefs</li>
-<li>Structs</li>
+<li><p>Variables</p></li>
+<li><p>Functions</p></li>
+<li><p>Typedefs</p></li>
+<li><p>Structs</p></li>
 </ul>
 </div>
 </div>
 <div class="section" id="references">
 <h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
-<table class="docutils footnote" frame="void" id="id2" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>&#8220;Key words for use in RFCs to Indicate Requirement Levels&#8221; - <a class="reference external" href="http://tools.ietf.org/html/rfc2119">http://tools.ietf.org/html/rfc2119</a></td></tr>
-</tbody>
-</table>
+<dl class="footnote brackets">
+<dt class="label" id="id2"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>“Key words for use in RFCs to Indicate Requirement Levels” - <a class="reference external" href="http://tools.ietf.org/html/rfc2119">http://tools.ietf.org/html/rfc2119</a></p>
+</dd>
+</dl>
 </div>
 </div>
 
@@ -251,9 +268,8 @@ code contributor to OSSEC.  The overall goals are:</p>
       
     </p>
     <p>
-        &copy; Copyright 2010-2020, OSSEC Project Team.<br/>
+        &copy; Copyright 2010-2021, OSSEC Project Team.<br/>
     OSSEC <b>ossec.net</b> domain owned and maintained by <a href="https://www.ossec.net" target="_blank">OSSEC Foundation</a><br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.5.2 - 
     Home page graphics courtesy of <a href="https://pixabay.com" target="_blank">pixabay</a>
     </p>
   </div>

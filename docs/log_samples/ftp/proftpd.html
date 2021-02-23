@@ -1,36 +1,24 @@
 <!DOCTYPE html>
 
-
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Log Samples from ProFTPD &#8212; OSSEC</title>
-    
-    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/parallax.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../../',
-        VERSION:     '3.3.0',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
-    <script type="text/javascript" src="../../../_static/jquery.js"></script>
-    <script type="text/javascript" src="../../../_static/underscore.js"></script>
-    <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="../../../_static/js/jquery-fix.js"></script>
-    <script type="text/javascript" src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../../../_static/bootstrap-sphinx.js"></script>
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script src="../../../_static/js/jquery-fix.js"></script>
+    <script src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script src="../../../_static/bootstrap-sphinx.js"></script>
     <link rel="author" title="About these documents" href="../../../about.html" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -39,8 +27,37 @@
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
 <meta name="apple-mobile-web-app-capable" content="yes">
 
-  </head>
-  <body role="document">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-138780766-1"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'UA-138780766-1');
+</script>
+
+<script type="text/javascript">
+  var _ss = _ss || [];
+  _ss.push(['_setDomain', 'https://koi-3QNN51VTHS.marketingautomation.services/net']);
+  _ss.push(['_setAccount', 'KOI-4APYNOYP8O']);
+  _ss.push(['_trackPageView']);
+  window._pa = window._pa || {};
+  // _pa.orderId = "myOrderId"; // OPTIONAL: attach unique conversion identifier to conversions
+  // _pa.revenue = "19.99"; // OPTIONAL: attach dynamic purchase values to conversions
+  // _pa.productId = "myProductId"; // OPTIONAL: Include product ID for use with dynamic ads
+  (function() {
+  var ss = document.createElement('script');
+  ss.type = 'text/javascript'; ss.async = true;
+  ss.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'koi-3QNN51VTHS.marketingautomation.services/client/ss.js?ver=2.4.0';
+  var scr = document.getElementsByTagName('script')[0];
+  scr.parentNode.insertBefore(ss, scr);
+  })();
+  </script>
+
+
+
+  </head><body>
 
   <div id="navbar" class="navbar navbar-inverse navbar-default ">
     <div class="container">
@@ -59,9 +76,10 @@
         <div class="collapse navbar-collapse nav-collapse">
           <ul class="nav navbar-nav">
             
-                <li><a href="https://www.ossec.net/about/">About <i class="fa fa-info-circle"></i></a></li>
-                <li><a href="https://www.ossec.net/docs/">Documentation <i class="fa fa-book"></i></a></li>
-                <li><a href="https://www.ossec.net/downloads/">Downloads <i class="fa fa-download"></i></a></li>
+                <li><a href="https://www.ossec.net/about/">About</a></li>
+                <li><a href="https://www.ossec.net/docs/">Documentation</a></li>
+                <li><a href="https://www.ossec.net/register-for-ossec/">Get OSSEC+</a></li>
+                <li><a href="https://www.ossec.net/downloads/">Downloads</a></li>
             
             
               <li class="dropdown globaltoc-container">
@@ -127,43 +145,48 @@
 <h2>Startup message:<a class="headerlink" href="#startup-message" title="Permalink to this headline">¶</a></h2>
 <p>..code-block:: console</p>
 <blockquote>
-<div>May 21 20:20:44 slacker proftpd[25526] proftpd.lab.ossec.net: ProFTPD 1.2.10 (stable) (built Tue Aug 2 22:33:07 PDT 2005) standalone mode STARTUP</div></blockquote>
+<div><p>May 21 20:20:44 slacker proftpd[25526] proftpd.lab.ossec.net: ProFTPD 1.2.10 (stable) (built Tue Aug 2 22:33:07 PDT 2005) standalone mode STARTUP</p>
+</div></blockquote>
 </div>
 <div class="section" id="connection-attempt">
 <h2>Connection attempt:<a class="headerlink" href="#connection-attempt" title="Permalink to this headline">¶</a></h2>
 <p>..code-block:: console</p>
 <blockquote>
-<div>May 21 20:21:18 slacker proftpd[25530] proftpd.lab.ossec.net (192.168.20.10[192.168.20.10]): FTP session opened.</div></blockquote>
+<div><p>May 21 20:21:18 slacker proftpd[25530] proftpd.lab.ossec.net (192.168.20.10[192.168.20.10]): FTP session opened.</p>
+</div></blockquote>
 </div>
 <div class="section" id="connection-closed">
 <h2>Connection closed:<a class="headerlink" href="#connection-closed" title="Permalink to this headline">¶</a></h2>
 <p>..code-block:: console</p>
 <blockquote>
-<div>May 21 20:22:14 slacker proftpd[25530] proftpd.lab.ossec.net (192.168.20.10[192.168.20.10]): FTP session closed.</div></blockquote>
+<div><p>May 21 20:22:14 slacker proftpd[25530] proftpd.lab.ossec.net (192.168.20.10[192.168.20.10]): FTP session closed.</p>
+</div></blockquote>
 </div>
 <div class="section" id="login-sucessful">
 <h2>Login sucessful:<a class="headerlink" href="#login-sucessful" title="Permalink to this headline">¶</a></h2>
 <p>..code-block:: console</p>
 <blockquote>
-<div>May 21 20:22:28 slacker proftpd[25556] proftpd.lab.ossec.net (192.168.20.10[192.168.20.10]): USER dcid-test: Login successful.</div></blockquote>
+<div><p>May 21 20:22:28 slacker proftpd[25556] proftpd.lab.ossec.net (192.168.20.10[192.168.20.10]): USER dcid-test: Login successful.</p>
+</div></blockquote>
 </div>
 <div class="section" id="login-failed">
 <h2>Login failed:<a class="headerlink" href="#login-failed" title="Permalink to this headline">¶</a></h2>
 <p>..code-block:: console</p>
 <blockquote>
-<div>May 21 20:22:44 slacker proftpd[25557] proftpd.lab.ossec.net (192.168.20.10[192.168.20.10]): USER dcid-test (Login failed): Incorrect password.</div></blockquote>
+<div><p>May 21 20:22:44 slacker proftpd[25557] proftpd.lab.ossec.net (192.168.20.10[192.168.20.10]): USER dcid-test (Login failed): Incorrect password.</p>
+</div></blockquote>
 </div>
 <div class="section" id="invalid-user-login-attempt">
 <h2>Invalid user login attempt:<a class="headerlink" href="#invalid-user-login-attempt" title="Permalink to this headline">¶</a></h2>
 <p>..code-block:: console</p>
 <blockquote>
-<div><p>May 21 20:21:21 slacker proftpd[25530] proftpd.lab.ossec.net (192.168.20.10[192.168.20.10]): no such user &#8216;dcid-inv&#8217;</p>
+<div><p>May 21 20:21:21 slacker proftpd[25530] proftpd.lab.ossec.net (192.168.20.10[192.168.20.10]): no such user ‘dcid-inv’</p>
 <p>May 21 20:21:21 slacker proftpd[31806] proftpd.lab.ossec.net (190.48.150.156[190.48.150.156]): USER abad: no such user found from 190.48.150.156 [190.48.150.156] to proftpd.lab.ossec.net:21</p>
 </div></blockquote>
 </div>
 <div class="section" id="full-samples">
 <h2>Full samples:<a class="headerlink" href="#full-samples" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Jul 14 04:44:46 opala proftpd[30812] opala.xxxxxx.edu.br (sieapp.ufpel.edu.br[200.17.161.73]): mod_delay/0.5: delaying for 14871 usecs</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Jul 14 04:44:46 opala proftpd[30812] opala.xxxxxx.edu.br (sieapp.ufpel.edu.br[200.17.161.73]): mod_delay/0.5: delaying for 14871 usecs</span>
 <span class="go">Jul 14 04:44:46 opala proftpd[30813] opala.xxxxxx.edu.br (sieapp.ufpel.edu.br[200.17.161.73]): no such user &#39;guest&#39;</span>
 <span class="go">Jul 14 04:44:46 opala proftpd[30813] opala.xxxxxx.edu.br (sieapp.ufpel.edu.br[200.17.161.73]): USER guest: no such user found from sieapp.ufpel.edu.br [200.17.161.73] to 192.168.2.5:21</span>
 <span class="go">Jul 14 04:44:46 opala proftpd[30813] opala.xxxxxx.edu.br (sieapp.ufpel.edu.br[200.17.161.73]): mod_delay/0.5: delaying for 86 usecs</span>
@@ -206,9 +229,8 @@
       
     </p>
     <p>
-        &copy; Copyright 2010-2020, OSSEC Project Team.<br/>
+        &copy; Copyright 2010-2021, OSSEC Project Team.<br/>
     OSSEC <b>ossec.net</b> domain owned and maintained by <a href="https://www.ossec.net" target="_blank">OSSEC Foundation</a><br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.5.2 - 
     Home page graphics courtesy of <a href="https://pixabay.com" target="_blank">pixabay</a>
     </p>
   </div>

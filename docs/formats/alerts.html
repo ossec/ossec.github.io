@@ -1,36 +1,24 @@
 <!DOCTYPE html>
 
-
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>OSSEC alert log samples &#8212; OSSEC</title>
-    
-    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/parallax.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../',
-        VERSION:     '3.3.0',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
-    <script type="text/javascript" src="../../_static/jquery.js"></script>
-    <script type="text/javascript" src="../../_static/underscore.js"></script>
-    <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
-    <script type="text/javascript" src="../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script src="../../_static/js/jquery-fix.js"></script>
+    <script src="../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script src="../../_static/bootstrap-sphinx.js"></script>
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -41,8 +29,37 @@
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
 <meta name="apple-mobile-web-app-capable" content="yes">
 
-  </head>
-  <body role="document">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-138780766-1"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'UA-138780766-1');
+</script>
+
+<script type="text/javascript">
+  var _ss = _ss || [];
+  _ss.push(['_setDomain', 'https://koi-3QNN51VTHS.marketingautomation.services/net']);
+  _ss.push(['_setAccount', 'KOI-4APYNOYP8O']);
+  _ss.push(['_trackPageView']);
+  window._pa = window._pa || {};
+  // _pa.orderId = "myOrderId"; // OPTIONAL: attach unique conversion identifier to conversions
+  // _pa.revenue = "19.99"; // OPTIONAL: attach dynamic purchase values to conversions
+  // _pa.productId = "myProductId"; // OPTIONAL: Include product ID for use with dynamic ads
+  (function() {
+  var ss = document.createElement('script');
+  ss.type = 'text/javascript'; ss.async = true;
+  ss.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'koi-3QNN51VTHS.marketingautomation.services/client/ss.js?ver=2.4.0';
+  var scr = document.getElementsByTagName('script')[0];
+  scr.parentNode.insertBefore(ss, scr);
+  })();
+  </script>
+
+
+
+  </head><body>
 
   <div id="navbar" class="navbar navbar-inverse navbar-default ">
     <div class="container">
@@ -61,9 +78,10 @@
         <div class="collapse navbar-collapse nav-collapse">
           <ul class="nav navbar-nav">
             
-                <li><a href="https://www.ossec.net/about/">About <i class="fa fa-info-circle"></i></a></li>
-                <li><a href="https://www.ossec.net/docs/">Documentation <i class="fa fa-book"></i></a></li>
-                <li><a href="https://www.ossec.net/downloads/">Downloads <i class="fa fa-download"></i></a></li>
+                <li><a href="https://www.ossec.net/about/">About</a></li>
+                <li><a href="https://www.ossec.net/docs/">Documentation</a></li>
+                <li><a href="https://www.ossec.net/register-for-ossec/">Get OSSEC+</a></li>
+                <li><a href="https://www.ossec.net/downloads/">Downloads</a></li>
             
             
               <li class="dropdown globaltoc-container">
@@ -135,7 +153,7 @@
 <h1>OSSEC alert log samples<a class="headerlink" href="#ossec-alert-log-samples" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="example-alert-log-messages">
 <h2>Example alert.log messages:<a class="headerlink" href="#example-alert-log-messages" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">** Alert 1510376401.0: - syslog,errors,</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">** Alert 1510376401.0: - syslog,errors,</span>
 <span class="go">2017 Nov 11 00:00:01 ix-&gt;/var/log/messages</span>
 <span class="go">Rule: 1005 (level 5) -&gt; &#39;Syslogd restarted.&#39;</span>
 <span class="go">Nov 11 00:00:01 ix syslogd[72090]: restart</span>
@@ -160,7 +178,7 @@
 </div>
 <div class="section" id="sample-alerts-json-messages">
 <h2>Sample alerts.json messages:<a class="headerlink" href="#sample-alerts-json-messages" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-json"><div class="highlight"><pre><span></span><span class="p">{</span><span class="nt">&quot;rule&quot;</span><span class="p">:{</span><span class="nt">&quot;level&quot;</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span><span class="nt">&quot;comment&quot;</span><span class="p">:</span><span class="s2">&quot;Syslogd restarted.&quot;</span><span class="p">,</span><span class="nt">&quot;sidid&quot;</span><span class="p">:</span><span class="mi">1005</span><span class="p">,</span><span class="nt">&quot;group&quot;</span><span class="p">:</span><span class="s2">&quot;syslog,errors,&quot;</span><span class="p">},</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="s2">&quot;1510376401.0&quot;</span><span class="p">,</span><span class="nt">&quot;TimeStamp&quot;</span><span class="p">:</span><span class="mi">1510376401000</span><span class="p">,</span><span class="nt">&quot;location&quot;</span><span class="p">:</span><span class="s2">&quot;/var/log/messages&quot;</span><span class="p">,</span><span class="nt">&quot;full_log&quot;</span><span class="p">:</span><span class="s2">&quot;Nov 11 00:00:01 ix syslogd[72090]: restart&quot;</span><span class="p">,</span><span class="nt">&quot;hostname&quot;</span><span class="p">:</span><span class="s2">&quot;ix&quot;</span><span class="p">,</span><span class="nt">&quot;program_name&quot;</span><span class="p">:</span><span class="s2">&quot;syslogd&quot;</span><span class="p">}</span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="nt">&quot;rule&quot;</span><span class="p">:{</span><span class="nt">&quot;level&quot;</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span><span class="nt">&quot;comment&quot;</span><span class="p">:</span><span class="s2">&quot;Syslogd restarted.&quot;</span><span class="p">,</span><span class="nt">&quot;sidid&quot;</span><span class="p">:</span><span class="mi">1005</span><span class="p">,</span><span class="nt">&quot;group&quot;</span><span class="p">:</span><span class="s2">&quot;syslog,errors,&quot;</span><span class="p">},</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="s2">&quot;1510376401.0&quot;</span><span class="p">,</span><span class="nt">&quot;TimeStamp&quot;</span><span class="p">:</span><span class="mi">1510376401000</span><span class="p">,</span><span class="nt">&quot;location&quot;</span><span class="p">:</span><span class="s2">&quot;/var/log/messages&quot;</span><span class="p">,</span><span class="nt">&quot;full_log&quot;</span><span class="p">:</span><span class="s2">&quot;Nov 11 00:00:01 ix syslogd[72090]: restart&quot;</span><span class="p">,</span><span class="nt">&quot;hostname&quot;</span><span class="p">:</span><span class="s2">&quot;ix&quot;</span><span class="p">,</span><span class="nt">&quot;program_name&quot;</span><span class="p">:</span><span class="s2">&quot;syslogd&quot;</span><span class="p">}</span>
 <span class="p">{</span><span class="nt">&quot;rule&quot;</span><span class="p">:{</span><span class="nt">&quot;level&quot;</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span><span class="nt">&quot;comment&quot;</span><span class="p">:</span><span class="s2">&quot;Server TLS certificate verification failed.&quot;</span><span class="p">,</span><span class="nt">&quot;sidid&quot;</span><span class="p">:</span><span class="mi">53508</span><span class="p">,</span><span class="nt">&quot;group&quot;</span><span class="p">:</span><span class="s2">&quot;syslog,smtpd,&quot;</span><span class="p">},</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="s2">&quot;1510376417.172&quot;</span><span class="p">,</span><span class="nt">&quot;TimeStamp&quot;</span><span class="p">:</span><span class="mi">1510376417000</span><span class="p">,</span><span class="nt">&quot;decoder&quot;</span><span class="p">:</span><span class="s2">&quot;smtpd&quot;</span><span class="p">,</span><span class="nt">&quot;location&quot;</span><span class="p">:</span><span class="s2">&quot;(junction) 192.168.17.17-&gt;/var/log/maillog&quot;</span><span class="p">,</span><span class="nt">&quot;full_log&quot;</span><span class="p">:</span><span class="s2">&quot;Nov 11 00:00:16 junction smtpd[86532]: smtp-out: Server certificate verification failed on session 99fc1afc58067419&quot;</span><span class="p">,</span><span class="nt">&quot;hostname&quot;</span><span class="p">:</span><span class="s2">&quot;(junction) 192.168.17.17-&gt;/var/log/maillog&quot;</span><span class="p">,</span><span class="nt">&quot;program_name&quot;</span><span class="p">:</span><span class="s2">&quot;smtpd&quot;</span><span class="p">}</span>
 <span class="p">{</span><span class="nt">&quot;rule&quot;</span><span class="p">:{</span><span class="nt">&quot;level&quot;</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span><span class="nt">&quot;comment&quot;</span><span class="p">:</span><span class="s2">&quot;Successful sudo to ROOT executed&quot;</span><span class="p">,</span><span class="nt">&quot;sidid&quot;</span><span class="p">:</span><span class="mi">5402</span><span class="p">,</span><span class="nt">&quot;group&quot;</span><span class="p">:</span><span class="s2">&quot;syslog,sudo&quot;</span><span class="p">},</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="s2">&quot;1510376428.465&quot;</span><span class="p">,</span><span class="nt">&quot;TimeStamp&quot;</span><span class="p">:</span><span class="mi">1510376428000</span><span class="p">,</span><span class="nt">&quot;decoder&quot;</span><span class="p">:</span><span class="s2">&quot;sudo&quot;</span><span class="p">,</span><span class="nt">&quot;srcuser&quot;</span><span class="p">:</span><span class="s2">&quot;root&quot;</span><span class="p">,</span><span class="nt">&quot;dstuser&quot;</span><span class="p">:</span><span class="s2">&quot;root&quot;</span><span class="p">,</span><span class="nt">&quot;location&quot;</span><span class="p">:</span><span class="s2">&quot;/var/log/syslog-ng/messages&quot;</span><span class="p">,</span><span class="nt">&quot;full_log&quot;</span><span class="p">:</span><span class="s2">&quot;Nov  5 15:35:03 ubnt sudo:     root : TTY=unknown ; PWD=/ ; USER=root ; COMMAND=/usr/bin/vtysh.pl -c show ip route summary json&quot;</span><span class="p">,</span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="s2">&quot;/&quot;</span><span class="p">,</span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="s2">&quot;/usr/bin/vtysh.pl -c show ip route summary json&quot;</span><span class="p">,</span><span class="nt">&quot;hostname&quot;</span><span class="p">:</span><span class="s2">&quot;ubnt&quot;</span><span class="p">,</span><span class="nt">&quot;program_name&quot;</span><span class="p">:</span><span class="s2">&quot;sudo&quot;</span><span class="p">}</span>
 <span class="p">{</span><span class="nt">&quot;rule&quot;</span><span class="p">:{</span><span class="nt">&quot;level&quot;</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span><span class="nt">&quot;comment&quot;</span><span class="p">:</span><span class="s2">&quot;Login session opened.&quot;</span><span class="p">,</span><span class="nt">&quot;sidid&quot;</span><span class="p">:</span><span class="mi">5501</span><span class="p">,</span><span class="nt">&quot;group&quot;</span><span class="p">:</span><span class="s2">&quot;pam,syslog,authentication_success,&quot;</span><span class="p">},</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="s2">&quot;1510376428.758&quot;</span><span class="p">,</span><span class="nt">&quot;TimeStamp&quot;</span><span class="p">:</span><span class="mi">1510376428000</span><span class="p">,</span><span class="nt">&quot;decoder&quot;</span><span class="p">:</span><span class="s2">&quot;pam&quot;</span><span class="p">,</span><span class="nt">&quot;location&quot;</span><span class="p">:</span><span class="s2">&quot;/var/log/syslog-ng/messages&quot;</span><span class="p">,</span><span class="nt">&quot;full_log&quot;</span><span class="p">:</span><span class="s2">&quot;Nov  5 15:35:03 ubnt sudo: pam_unix(sudo:session): session opened for user root by (uid=0)&quot;</span><span class="p">,</span><span class="nt">&quot;hostname&quot;</span><span class="p">:</span><span class="s2">&quot;ubnt&quot;</span><span class="p">,</span><span class="nt">&quot;program_name&quot;</span><span class="p">:</span><span class="s2">&quot;sudo&quot;</span><span class="p">}</span>
@@ -187,9 +205,8 @@
       
     </p>
     <p>
-        &copy; Copyright 2010-2020, OSSEC Project Team.<br/>
+        &copy; Copyright 2010-2021, OSSEC Project Team.<br/>
     OSSEC <b>ossec.net</b> domain owned and maintained by <a href="https://www.ossec.net" target="_blank">OSSEC Foundation</a><br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.5.2 - 
     Home page graphics courtesy of <a href="https://pixabay.com" target="_blank">pixabay</a>
     </p>
   </div>

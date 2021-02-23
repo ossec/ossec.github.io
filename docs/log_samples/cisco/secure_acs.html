@@ -1,36 +1,24 @@
 <!DOCTYPE html>
 
-
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cisco Secure ACS &#8212; OSSEC</title>
-    
-    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/parallax.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../../',
-        VERSION:     '3.3.0',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
-    <script type="text/javascript" src="../../../_static/jquery.js"></script>
-    <script type="text/javascript" src="../../../_static/underscore.js"></script>
-    <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="../../../_static/js/jquery-fix.js"></script>
-    <script type="text/javascript" src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../../../_static/bootstrap-sphinx.js"></script>
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script src="../../../_static/js/jquery-fix.js"></script>
+    <script src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script src="../../../_static/bootstrap-sphinx.js"></script>
     <link rel="author" title="About these documents" href="../../../about.html" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -39,8 +27,37 @@
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
 <meta name="apple-mobile-web-app-capable" content="yes">
 
-  </head>
-  <body role="document">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-138780766-1"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'UA-138780766-1');
+</script>
+
+<script type="text/javascript">
+  var _ss = _ss || [];
+  _ss.push(['_setDomain', 'https://koi-3QNN51VTHS.marketingautomation.services/net']);
+  _ss.push(['_setAccount', 'KOI-4APYNOYP8O']);
+  _ss.push(['_trackPageView']);
+  window._pa = window._pa || {};
+  // _pa.orderId = "myOrderId"; // OPTIONAL: attach unique conversion identifier to conversions
+  // _pa.revenue = "19.99"; // OPTIONAL: attach dynamic purchase values to conversions
+  // _pa.productId = "myProductId"; // OPTIONAL: Include product ID for use with dynamic ads
+  (function() {
+  var ss = document.createElement('script');
+  ss.type = 'text/javascript'; ss.async = true;
+  ss.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'koi-3QNN51VTHS.marketingautomation.services/client/ss.js?ver=2.4.0';
+  var scr = document.getElementsByTagName('script')[0];
+  scr.parentNode.insertBefore(ss, scr);
+  })();
+  </script>
+
+
+
+  </head><body>
 
   <div id="navbar" class="navbar navbar-inverse navbar-default ">
     <div class="container">
@@ -59,9 +76,10 @@
         <div class="collapse navbar-collapse nav-collapse">
           <ul class="nav navbar-nav">
             
-                <li><a href="https://www.ossec.net/about/">About <i class="fa fa-info-circle"></i></a></li>
-                <li><a href="https://www.ossec.net/docs/">Documentation <i class="fa fa-book"></i></a></li>
-                <li><a href="https://www.ossec.net/downloads/">Downloads <i class="fa fa-download"></i></a></li>
+                <li><a href="https://www.ossec.net/about/">About</a></li>
+                <li><a href="https://www.ossec.net/docs/">Documentation</a></li>
+                <li><a href="https://www.ossec.net/register-for-ossec/">Get OSSEC+</a></li>
+                <li><a href="https://www.ossec.net/downloads/">Downloads</a></li>
             
             
               <li class="dropdown globaltoc-container">
@@ -127,7 +145,7 @@
 <p>Information about the logging facilities in the Windows version of the product (version 3.2) can be found <a class="reference external" href="http://www.cisco.com/en/US/products/sw/secursw/ps2086/products_user_guide_chapter09186a0080205a5e.html">here</a>.</p>
 <div class="section" id="here-is-a-sample-of-the-log-file-tracking-failed-login-attempts-filename-failed-attempt-2004-05-18-csv">
 <h2>Here is a sample of the log file tracking failed login attempts : filename = Failed Attempt 2004-05-18.csv<a class="headerlink" href="#here-is-a-sample-of-the-log-file-tracking-failed-login-attempts-filename-failed-attempt-2004-05-18-csv" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Date,Time,Message-Type,User-Name,Group-Name,Caller-ID,Authen-Failure-Code,Author-Failure-Code,Author-Data,NAS-Port,NAS-IP-Address</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Date,Time,Message-Type,User-Name,Group-Name,Caller-ID,Authen-Failure-Code,Author-Failure-Code,Author-Data,NAS-Port,NAS-IP-Address</span>
 <span class="go">05/18/2004,02:11:03,Authen failed,bscorpio,punks,122.55.32.13,External DB user invalid or bad password,,,15,10.27.3.1</span>
 <span class="go">05/18/2004,02:11:31,Authen failed,bscorpio,punks,122.55.32.13,External DB user invalid or bad password,,,16,10.27.3.1</span>
 <span class="go">05/18/2004,02:12:40,Authen failed,bscorpio,punks,122.55.32.13,External DB user invalid or bad password,,,17,10.27.3.1</span>
@@ -145,7 +163,7 @@
 <div class="section" id="here-is-a-sample-of-the-log-file-tracking-successful-logins-filename-passed-authentications-2004-07-08-csv">
 <h2>Here is a sample of the log file tracking successful logins : filename = Passed Authentications 2004-07-08.csv<a class="headerlink" href="#here-is-a-sample-of-the-log-file-tracking-successful-logins-filename-passed-authentications-2004-07-08-csv" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div>Date,Time,Message-Type,User-Name,Group-Name,Caller-ID,NAS-Port,NAS-IP-Address
+<div><p>Date,Time,Message-Type,User-Name,Group-Name,Caller-ID,NAS-Port,NAS-IP-Address
 07/08/2004,08:13:54,Authen OK,bplack,punks,198.47.27.99,106,10.27.3.1
 07/08/2004,08:19:17,Authen OK,bplack,punks,198.47.27.99,107,10.27.3.1
 07/08/2004,08:24:21,Authen OK,bplack,punks,198.47.27.99,108,10.27.3.1
@@ -159,7 +177,8 @@
 07/08/2004,13:15:08,Authen OK,bplack,punks,198.47.27.99,117,10.27.3.1
 07/08/2004,14:29:25,Authen OK,bplack,punks,198.47.27.99,118,10.27.3.1
 07/08/2004,14:47:56,Authen OK,bplack,punks,198.47.27.99,119,10.27.3.1
-07/08/2004,14:54:39,Authen OK,bretuwu,punks,198.47.27.99,120,10.27.3.1</div></blockquote>
+07/08/2004,14:54:39,Authen OK,bretuwu,punks,198.47.27.99,120,10.27.3.1</p>
+</div></blockquote>
 <p>The log files are stored in CSV (comma delimited).</p>
 <p>These samples were taken from the Cisco Secure ACS version 3.2 for Windows</p>
 </div>
@@ -177,9 +196,8 @@
       
     </p>
     <p>
-        &copy; Copyright 2010-2020, OSSEC Project Team.<br/>
+        &copy; Copyright 2010-2021, OSSEC Project Team.<br/>
     OSSEC <b>ossec.net</b> domain owned and maintained by <a href="https://www.ossec.net" target="_blank">OSSEC Foundation</a><br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.5.2 - 
     Home page graphics courtesy of <a href="https://pixabay.com" target="_blank">pixabay</a>
     </p>
   </div>

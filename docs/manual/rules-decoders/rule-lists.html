@@ -1,36 +1,24 @@
 <!DOCTYPE html>
 
-
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CDB List lookups from within Rules &#8212; OSSEC</title>
-    
-    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/parallax.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../../',
-        VERSION:     '3.3.0',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
-    <script type="text/javascript" src="../../../_static/jquery.js"></script>
-    <script type="text/javascript" src="../../../_static/underscore.js"></script>
-    <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="../../../_static/js/jquery-fix.js"></script>
-    <script type="text/javascript" src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../../../_static/bootstrap-sphinx.js"></script>
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script src="../../../_static/js/jquery-fix.js"></script>
+    <script src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script src="../../../_static/bootstrap-sphinx.js"></script>
     <link rel="author" title="About these documents" href="../../../about.html" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -41,8 +29,37 @@
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
 <meta name="apple-mobile-web-app-capable" content="yes">
 
-  </head>
-  <body role="document">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-138780766-1"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'UA-138780766-1');
+</script>
+
+<script type="text/javascript">
+  var _ss = _ss || [];
+  _ss.push(['_setDomain', 'https://koi-3QNN51VTHS.marketingautomation.services/net']);
+  _ss.push(['_setAccount', 'KOI-4APYNOYP8O']);
+  _ss.push(['_trackPageView']);
+  window._pa = window._pa || {};
+  // _pa.orderId = "myOrderId"; // OPTIONAL: attach unique conversion identifier to conversions
+  // _pa.revenue = "19.99"; // OPTIONAL: attach dynamic purchase values to conversions
+  // _pa.productId = "myProductId"; // OPTIONAL: Include product ID for use with dynamic ads
+  (function() {
+  var ss = document.createElement('script');
+  ss.type = 'text/javascript'; ss.async = true;
+  ss.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'koi-3QNN51VTHS.marketingautomation.services/client/ss.js?ver=2.4.0';
+  var scr = document.getElementsByTagName('script')[0];
+  scr.parentNode.insertBefore(ss, scr);
+  })();
+  </script>
+
+
+
+  </head><body>
 
   <div id="navbar" class="navbar navbar-inverse navbar-default ">
     <div class="container">
@@ -61,9 +78,10 @@
         <div class="collapse navbar-collapse nav-collapse">
           <ul class="nav navbar-nav">
             
-                <li><a href="https://www.ossec.net/about/">About <i class="fa fa-info-circle"></i></a></li>
-                <li><a href="https://www.ossec.net/docs/">Documentation <i class="fa fa-book"></i></a></li>
-                <li><a href="https://www.ossec.net/downloads/">Downloads <i class="fa fa-download"></i></a></li>
+                <li><a href="https://www.ossec.net/about/">About</a></li>
+                <li><a href="https://www.ossec.net/docs/">Documentation</a></li>
+                <li><a href="https://www.ossec.net/register-for-ossec/">Get OSSEC+</a></li>
+                <li><a href="https://www.ossec.net/downloads/">Downloads</a></li>
             
             
               <li class="dropdown globaltoc-container">
@@ -139,10 +157,10 @@ fields.</p>
 <h2>Use cases<a class="headerlink" href="#use-cases" title="Permalink to this headline">¶</a></h2>
 <p>Anything that has a large number of items. Some examples:</p>
 <ul class="simple">
-<li>named with recursive logs checking the www.malwaredomains.com list for suspicious domains</li>
-<li>lists of approved users by server</li>
-<li>mstark (on irc) originally came up with suggestion for approved software based on a md5 list</li>
-<li>IP address lookups - there are a large number of lists of suspicious or known bad IP addresses to match inside of ossec rules</li>
+<li><p>named with recursive logs checking the www.malwaredomains.com list for suspicious domains</p></li>
+<li><p>lists of approved users by server</p></li>
+<li><p>mstark (on irc) originally came up with suggestion for approved software based on a md5 list</p></li>
+<li><p>IP address lookups - there are a large number of lists of suspicious or known bad IP addresses to match inside of ossec rules</p></li>
 </ul>
 </div>
 <div class="section" id="syntax-for-lists">
@@ -152,13 +170,13 @@ fields.</p>
 <p>A rule would use the following syntax to look up a key within a CDB database.</p>
 <div class="section" id="positive-key-match">
 <h4>Positive key match<a class="headerlink" href="#positive-key-match" title="Permalink to this headline">¶</a></h4>
-<p>This example is a search for the key within the <code class="docutils literal"><span class="pre">rules/cdb_record_file</span></code> and will match
+<p>This example is a search for the key within the <code class="docutils literal notranslate"><span class="pre">rules/cdb_record_file</span></code> and will match
 if they key is present:</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;list</span> <span class="na">field=</span><span class="s">&quot;program_name&quot;</span> <span class="na">lookup=</span><span class="s">&quot;match_key&quot;</span><span class="nt">&gt;</span>rules/records<span class="nt">&lt;/list&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;list</span> <span class="na">field=</span><span class="s">&quot;program_name&quot;</span> <span class="na">lookup=</span><span class="s">&quot;match_key&quot;</span><span class="nt">&gt;</span>rules/records<span class="nt">&lt;/list&gt;</span>
 </pre></div>
 </div>
-<p>The <code class="docutils literal"><span class="pre">lookup=&quot;match_key&quot;</span></code> is the default and can be left out as in this example:</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;list</span> <span class="na">field=</span><span class="s">&quot;program_name&quot;</span><span class="nt">&gt;</span>rules/records<span class="nt">&lt;/list&gt;</span>
+<p>The <code class="docutils literal notranslate"><span class="pre">lookup=&quot;match_key&quot;</span></code> is the default and can be left out as in this example:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;list</span> <span class="na">field=</span><span class="s">&quot;program_name&quot;</span><span class="nt">&gt;</span>rules/records<span class="nt">&lt;/list&gt;</span>
 </pre></div>
 </div>
 </div>
@@ -166,7 +184,7 @@ if they key is present:</p>
 <h4>Negative key match<a class="headerlink" href="#negative-key-match" title="Permalink to this headline">¶</a></h4>
 <p>This example is a search for the key stored in field attribute and will match if
 it <em>IS NOT</em> present in the database:</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;list</span> <span class="na">field=</span><span class="s">&quot;program_name&quot;</span> <span class="na">lookup=</span><span class="s">&quot;not_match_key&quot;</span><span class="nt">&gt;</span>rules/records<span class="nt">&lt;/list&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;list</span> <span class="na">field=</span><span class="s">&quot;program_name&quot;</span> <span class="na">lookup=</span><span class="s">&quot;not_match_key&quot;</span><span class="nt">&gt;</span>rules/records<span class="nt">&lt;/list&gt;</span>
 </pre></div>
 </div>
 </div>
@@ -175,7 +193,7 @@ it <em>IS NOT</em> present in the database:</p>
 <p>This example is a search for a key stored in the field attribute, and on a positive
 match the returned value of the key will be processed using the regex in the
 check_value attribute:</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;list</span> <span class="na">field=</span><span class="s">&quot;program_name&quot;</span> <span class="na">lookup=</span><span class="s">&quot;match_key_value&quot;</span> <span class="na">check_value=</span><span class="s">&quot;^reject&quot;</span><span class="nt">&gt;</span>rules/records<span class="nt">&lt;/list&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;list</span> <span class="na">field=</span><span class="s">&quot;program_name&quot;</span> <span class="na">lookup=</span><span class="s">&quot;match_key_value&quot;</span> <span class="na">check_value=</span><span class="s">&quot;^reject&quot;</span><span class="nt">&gt;</span>rules/records<span class="nt">&lt;/list&gt;</span>
 </pre></div>
 </div>
 </div>
@@ -183,7 +201,7 @@ check_value attribute:</p>
 <h4>Positive IP address match<a class="headerlink" href="#positive-ip-address-match" title="Permalink to this headline">¶</a></h4>
 <p>This example is a search for the IP address stored in the field attribute and
 will match if it <em>IS</em> present in the database.</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;list</span> <span class="na">field=</span><span class="s">&quot;srcip&quot;</span> <span class="na">lookup=</span><span class="s">&quot;address_match_key&quot;</span><span class="nt">&gt;</span>rules/records<span class="nt">&lt;/list&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;list</span> <span class="na">field=</span><span class="s">&quot;srcip&quot;</span> <span class="na">lookup=</span><span class="s">&quot;address_match_key&quot;</span><span class="nt">&gt;</span>rules/records<span class="nt">&lt;/list&gt;</span>
 </pre></div>
 </div>
 </div>
@@ -191,7 +209,7 @@ will match if it <em>IS</em> present in the database.</p>
 <h4>Negative IP address match<a class="headerlink" href="#negative-ip-address-match" title="Permalink to this headline">¶</a></h4>
 <p>This example is a search for the IP address stored in the field attribute and
 will match if it <em>IS NOT</em> present in the database.</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;list</span> <span class="na">field=</span><span class="s">&quot;srcip&quot;</span> <span class="na">lookup=</span><span class="s">&quot;not_address_match_key&quot;</span><span class="nt">&gt;</span>rules/records<span class="nt">&lt;/list&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;list</span> <span class="na">field=</span><span class="s">&quot;srcip&quot;</span> <span class="na">lookup=</span><span class="s">&quot;not_address_match_key&quot;</span><span class="nt">&gt;</span>rules/records<span class="nt">&lt;/list&gt;</span>
 </pre></div>
 </div>
 </div>
@@ -200,7 +218,7 @@ will match if it <em>IS NOT</em> present in the database.</p>
 <p>This example is a search for a key stored in the field attribute, and on a positive
 match the returned value of the key will be processed using the regex in the
 check_value attribute:</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;list</span> <span class="na">field=</span><span class="s">&quot;srcip&quot;</span> <span class="na">lookup=</span><span class="s">&quot;address_match_key_value&quot;</span> <span class="na">check_value=</span><span class="s">&quot;^reject&quot;</span><span class="nt">&gt;</span>rules/records<span class="nt">&lt;/list&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;list</span> <span class="na">field=</span><span class="s">&quot;srcip&quot;</span> <span class="na">lookup=</span><span class="s">&quot;address_match_key_value&quot;</span> <span class="na">check_value=</span><span class="s">&quot;^reject&quot;</span><span class="nt">&gt;</span>rules/records<span class="nt">&lt;/list&gt;</span>
 </pre></div>
 </div>
 </div>
@@ -209,7 +227,7 @@ check_value attribute:</p>
 <h3>ossec.conf<a class="headerlink" href="#ossec-conf" title="Permalink to this headline">¶</a></h3>
 <p>Each list will need to be defined and told to be available using the ossec.conf file.
 Using the following syntax:</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;ossec_config&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;ossec_config&gt;</span>
     <span class="nt">&lt;rules&gt;</span>
         <span class="nt">&lt;list&gt;</span>rules/records<span class="nt">&lt;/list&gt;</span>
 </pre></div>
@@ -222,25 +240,25 @@ to compile lists.</p>
 <p>The command <a class="reference internal" href="../../programs/ossec-makelists.html#ossec-makelists"><span class="std std-ref">ossec-makelists</span></a> will process and compile all lists if the master text
 rules have been changed. Basically logic is as follows:</p>
 <ul class="simple">
-<li>Read ossec.conf for all lists</li>
-<li>Check the mtime of each list and compare it to the mtime of the compiled .cdb file</li>
-<li>if mtime is newer create new database file ending in .tmp</li>
-<li>use atomic rename to change the .tmp to .cdb. This will invalidate all mmap pages
+<li><p>Read ossec.conf for all lists</p></li>
+<li><p>Check the mtime of each list and compare it to the mtime of the compiled .cdb file</p></li>
+<li><p>if mtime is newer create new database file ending in .tmp</p></li>
+<li><p>use atomic rename to change the .tmp to .cdb. This will invalidate all mmap pages
 currently in use by ossec-analysisd and will cause them to be reloaded with the new
-data as needed</li>
+data as needed</p></li>
 </ul>
 </div>
 <div class="section" id="list-text-file-format">
 <h3>List text file format<a class="headerlink" href="#list-text-file-format" title="Permalink to this headline">¶</a></h3>
 <p>Creating cdb lists the following file format is specified:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">key1</span><span class="p">:</span><span class="n">value</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">key1</span><span class="p">:</span><span class="n">value</span>
 <span class="n">key2</span><span class="p">:</span><span class="n">value</span>
 <span class="n">key3</span><span class="p">:</span><span class="n">diff</span> <span class="n">value</span>
 </pre></div>
 </div>
-<p>Each key must be unique and is terminated with a colon <code class="docutils literal"><span class="pre">:</span></code>.</p>
+<p>Each key must be unique and is terminated with a colon <code class="docutils literal notranslate"><span class="pre">:</span></code>.</p>
 <p>For IP addresses the dot notation is used for subnet matches</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">key</span>         <span class="n">CIDR</span>             <span class="n">Possible</span> <span class="n">matches</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">key</span>         <span class="n">CIDR</span>             <span class="n">Possible</span> <span class="n">matches</span>
 <span class="mf">10.1</span><span class="o">.</span><span class="mf">1.1</span>    <span class="mf">10.1</span><span class="o">.</span><span class="mf">1.1</span><span class="o">/</span><span class="mi">32</span>      <span class="mf">10.1</span><span class="o">.</span><span class="mf">1.1</span>
 <span class="mf">192.168</span><span class="o">.</span>    <span class="mf">192.168</span><span class="o">.</span><span class="mf">0.0</span><span class="o">/</span><span class="mi">16</span>   <span class="mf">192.168</span><span class="o">.</span><span class="mf">0.0</span> <span class="o">-</span> <span class="mf">192.168</span><span class="o">.</span><span class="mf">255.255</span>
 <span class="mf">172.16</span><span class="o">.</span><span class="mf">19.</span>  <span class="mf">172.16</span><span class="o">.</span><span class="mf">19.0</span><span class="o">/</span><span class="mi">24</span>   <span class="mf">172.16</span><span class="o">.</span><span class="mf">19.0</span> <span class="o">-</span> <span class="mf">172.16</span><span class="o">.</span><span class="mf">19.255</span>
@@ -248,7 +266,7 @@ data as needed</li>
 </div>
 <p>Due to address lookups being based on the class boundary extra scripts are suggested
 for creating lists that need fine control. Example of IP address list file:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="mf">192.168</span><span class="o">.</span><span class="p">:</span> <span class="n">RFC</span> <span class="mi">1918</span> <span class="n">Address</span> <span class="n">space</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">192.168</span><span class="o">.</span><span class="p">:</span> <span class="n">RFC</span> <span class="mi">1918</span> <span class="n">Address</span> <span class="n">space</span>
 <span class="mf">172.16</span><span class="o">.</span><span class="p">:</span><span class="n">RFC</span> <span class="mi">1918</span> <span class="n">Address</span> <span class="n">space</span>
 <span class="mf">172.17</span><span class="o">.</span><span class="p">:</span><span class="n">RFC</span> <span class="mi">1918</span> <span class="n">Address</span> <span class="n">space</span>
 <span class="mf">172.18</span><span class="o">.</span><span class="p">:</span><span class="n">RFC</span> <span class="mi">1918</span> <span class="n">Address</span> <span class="n">space</span>
@@ -284,9 +302,8 @@ for creating lists that need fine control. Example of IP address list file:</p>
       
     </p>
     <p>
-        &copy; Copyright 2010-2020, OSSEC Project Team.<br/>
+        &copy; Copyright 2010-2021, OSSEC Project Team.<br/>
     OSSEC <b>ossec.net</b> domain owned and maintained by <a href="https://www.ossec.net" target="_blank">OSSEC Foundation</a><br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.5.2 - 
     Home page graphics courtesy of <a href="https://pixabay.com" target="_blank">pixabay</a>
     </p>
   </div>

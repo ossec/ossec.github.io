@@ -1,36 +1,24 @@
 <!DOCTYPE html>
 
-
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Samples of logs that contain information about attacks &#8212; OSSEC</title>
-    
-    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/parallax.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../../',
-        VERSION:     '3.3.0',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
-    <script type="text/javascript" src="../../../_static/jquery.js"></script>
-    <script type="text/javascript" src="../../../_static/underscore.js"></script>
-    <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="../../../_static/js/jquery-fix.js"></script>
-    <script type="text/javascript" src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../../../_static/bootstrap-sphinx.js"></script>
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script src="../../../_static/js/jquery-fix.js"></script>
+    <script src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script src="../../../_static/bootstrap-sphinx.js"></script>
     <link rel="author" title="About these documents" href="../../../about.html" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -39,8 +27,37 @@
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
 <meta name="apple-mobile-web-app-capable" content="yes">
 
-  </head>
-  <body role="document">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-138780766-1"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'UA-138780766-1');
+</script>
+
+<script type="text/javascript">
+  var _ss = _ss || [];
+  _ss.push(['_setDomain', 'https://koi-3QNN51VTHS.marketingautomation.services/net']);
+  _ss.push(['_setAccount', 'KOI-4APYNOYP8O']);
+  _ss.push(['_trackPageView']);
+  window._pa = window._pa || {};
+  // _pa.orderId = "myOrderId"; // OPTIONAL: attach unique conversion identifier to conversions
+  // _pa.revenue = "19.99"; // OPTIONAL: attach dynamic purchase values to conversions
+  // _pa.productId = "myProductId"; // OPTIONAL: Include product ID for use with dynamic ads
+  (function() {
+  var ss = document.createElement('script');
+  ss.type = 'text/javascript'; ss.async = true;
+  ss.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'koi-3QNN51VTHS.marketingautomation.services/client/ss.js?ver=2.4.0';
+  var scr = document.getElementsByTagName('script')[0];
+  scr.parentNode.insertBefore(ss, scr);
+  })();
+  </script>
+
+
+
+  </head><body>
 
   <div id="navbar" class="navbar navbar-inverse navbar-default ">
     <div class="container">
@@ -59,9 +76,10 @@
         <div class="collapse navbar-collapse nav-collapse">
           <ul class="nav navbar-nav">
             
-                <li><a href="https://www.ossec.net/about/">About <i class="fa fa-info-circle"></i></a></li>
-                <li><a href="https://www.ossec.net/docs/">Documentation <i class="fa fa-book"></i></a></li>
-                <li><a href="https://www.ossec.net/downloads/">Downloads <i class="fa fa-download"></i></a></li>
+                <li><a href="https://www.ossec.net/about/">About</a></li>
+                <li><a href="https://www.ossec.net/docs/">Documentation</a></li>
+                <li><a href="https://www.ossec.net/register-for-ossec/">Get OSSEC+</a></li>
+                <li><a href="https://www.ossec.net/downloads/">Downloads</a></li>
             
             
               <li class="dropdown globaltoc-container">
@@ -133,7 +151,7 @@
 </div>
 <div class="section" id="apache-entry-with-command-execution-succeeded">
 <h2>Apache entry with command execution succeeded:<a class="headerlink" href="#apache-entry-with-command-execution-succeeded" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">a.b.c.d - - [13/Jan/2006:01:07:21 -0200] &quot;GET /awstats/awstats.pl?configdir=|echo;echo%20YYY;cd%20%2ftmp%3bwget...;echo%20YYY;echo|HTTP/1.0&quot; 404 291</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">a.b.c.d - - [13/Jan/2006:01:07:21 -0200] &quot;GET /awstats/awstats.pl?configdir=|echo;echo%20YYY;cd%20%2ftmp%3bwget...;echo%20YYY;echo|HTTP/1.0&quot; 404 291</span>
 </pre></div>
 </div>
 </div>
@@ -141,15 +159,15 @@
 <h2>Apache scan (looking for vulnerable applications):<a class="headerlink" href="#apache-scan-looking-for-vulnerable-applications" title="Permalink to this headline">¶</a></h2>
 <p>..code-block:: console</p>
 <blockquote>
-<div><p>100.149.117.1 - - [13/Jan/2006:01:03:30 -0200] &#8220;POST /blog/xmlrpc.php HTTP/1.0&#8221; 404 288</p>
-<p>100.149.117.1 - - [13/Jan/2006:01:03:31 -0200] &#8220;POST /blog/xmlsrv/xmlrpc.php HTTP/1.0&#8221; 404 295</p>
-<p>100.149.117.1 - - [13/Jan/2006:01:03:32 -0200] &#8220;POST /blogs/xmlsrv/xmlrpc.php HTTP/1.0&#8221; 404 296</p>
-<p>100.149.117.1 - - [13/Jan/2006:01:03:33 -0200] &#8220;POST /drupal/xmlrpc.php HTTP/1.0&#8221; 404 290</p>
+<div><p>100.149.117.1 - - [13/Jan/2006:01:03:30 -0200] “POST /blog/xmlrpc.php HTTP/1.0” 404 288</p>
+<p>100.149.117.1 - - [13/Jan/2006:01:03:31 -0200] “POST /blog/xmlsrv/xmlrpc.php HTTP/1.0” 404 295</p>
+<p>100.149.117.1 - - [13/Jan/2006:01:03:32 -0200] “POST /blogs/xmlsrv/xmlrpc.php HTTP/1.0” 404 296</p>
+<p>100.149.117.1 - - [13/Jan/2006:01:03:33 -0200] “POST /drupal/xmlrpc.php HTTP/1.0” 404 290</p>
 </div></blockquote>
 </div>
 <div class="section" id="squid-access-log-worm-scans">
 <h2>Squid access log (worm scans):<a class="headerlink" href="#squid-access-log-worm-scans" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">524 192.168.2.204 TCP_MISS/404 590 GET http://www.ordendeslichts.de/intern/xxx3.php? - DIRECT/81.201.107.6 text/html</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">524 192.168.2.204 TCP_MISS/404 590 GET http://www.ordendeslichts.de/intern/xxx3.php? - DIRECT/81.201.107.6 text/html</span>
 
 <span class="go">3571 192.168.2.204 TCP_MISS/404 470 GET http://www.levada.ru/htmlarea/images/xxx3.php? - DIRECT/62.118.252.213</span>
 
@@ -164,8 +182,8 @@
 </div>
 </div>
 <div class="section" id="squid-proxy-misuse-attempt-to-proxy-smtp-over-the-proxy">
-<h2>Squid proxy misuse &#8211; Attempt to proxy SMTP over the proxy:<a class="headerlink" href="#squid-proxy-misuse-attempt-to-proxy-smtp-over-the-proxy" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">0 192.168.2.135 TCP_DENIED/403 1382 CONNECT 65.54.245.104:25 - NONE/- text/html</span>
+<h2>Squid proxy misuse – Attempt to proxy SMTP over the proxy:<a class="headerlink" href="#squid-proxy-misuse-attempt-to-proxy-smtp-over-the-proxy" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">0 192.168.2.135 TCP_DENIED/403 1382 CONNECT 65.54.245.104:25 - NONE/- text/html</span>
 
 <span class="go">2 192.168.2.135 TCP_DENIED/403 1378 CONNECT 4.79.181.14:25 - NONE/- text/html</span>
 
@@ -179,7 +197,7 @@
 </div>
 <div class="section" id="ssh-bruteforce-login">
 <h2>SSH bruteforce login:<a class="headerlink" href="#ssh-bruteforce-login" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Oct  2 01:13:19 host sshd[19618]: Illegal user test from ::ffff:69.10.144.194&lt;br&gt;</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Oct  2 01:13:19 host sshd[19618]: Illegal user test from ::ffff:69.10.144.194&lt;br&gt;</span>
 <span class="go">Oct  2 01:13:19 host sshd[19618]: Address 69.10.144.194 maps to unknown.rackforce.com, but this does not map back to the address - POSSIBLE BREAKIN ATTEMPT!&lt;br&gt;</span>
 <span class="go">Oct  2 01:13:20 host sshd[19620]: Illegal user test from ::ffff:69.10.144.194&lt;br&gt;</span>
 <span class="go">Oct  2 01:13:20 host sshd[19620]: Address 69.10.144.194 maps to unknown.rackforce.com, but this does not map back to the address - POSSIBLE BREAKIN ATTEMPT!&lt;br&gt;</span>
@@ -192,7 +210,7 @@
 </div>
 <div class="section" id="attempt-to-exploit-frontpage-with-payload-truncated">
 <h2>Attempt to exploit Frontpage with payload truncated:<a class="headerlink" href="#attempt-to-exploit-frontpage-with-payload-truncated" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">74.74.126.250 - - [02/Aug/2007:15:53:46 -0400] &quot;SEARCH /\x90................................................................</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">74.74.126.250 - - [02/Aug/2007:15:53:46 -0400] &quot;SEARCH /\x90................................................................</span>
 <span class="go">............................................................................................................................</span>
 <span class="go">............................................................................................................................</span>
 <span class="go">............................................................................................................................</span>
@@ -245,9 +263,8 @@
       
     </p>
     <p>
-        &copy; Copyright 2010-2020, OSSEC Project Team.<br/>
+        &copy; Copyright 2010-2021, OSSEC Project Team.<br/>
     OSSEC <b>ossec.net</b> domain owned and maintained by <a href="https://www.ossec.net" target="_blank">OSSEC Foundation</a><br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.5.2 - 
     Home page graphics courtesy of <a href="https://pixabay.com" target="_blank">pixabay</a>
     </p>
   </div>

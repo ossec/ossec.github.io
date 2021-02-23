@@ -1,36 +1,24 @@
 <!DOCTYPE html>
 
-
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Stunnel Logs &#8212; OSSEC</title>
-    
-    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/parallax.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../../',
-        VERSION:     '3.3.0',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
-    <script type="text/javascript" src="../../../_static/jquery.js"></script>
-    <script type="text/javascript" src="../../../_static/underscore.js"></script>
-    <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="../../../_static/js/jquery-fix.js"></script>
-    <script type="text/javascript" src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../../../_static/bootstrap-sphinx.js"></script>
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script src="../../../_static/js/jquery-fix.js"></script>
+    <script src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script src="../../../_static/bootstrap-sphinx.js"></script>
     <link rel="author" title="About these documents" href="../../../about.html" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -39,8 +27,37 @@
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
 <meta name="apple-mobile-web-app-capable" content="yes">
 
-  </head>
-  <body role="document">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-138780766-1"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'UA-138780766-1');
+</script>
+
+<script type="text/javascript">
+  var _ss = _ss || [];
+  _ss.push(['_setDomain', 'https://koi-3QNN51VTHS.marketingautomation.services/net']);
+  _ss.push(['_setAccount', 'KOI-4APYNOYP8O']);
+  _ss.push(['_trackPageView']);
+  window._pa = window._pa || {};
+  // _pa.orderId = "myOrderId"; // OPTIONAL: attach unique conversion identifier to conversions
+  // _pa.revenue = "19.99"; // OPTIONAL: attach dynamic purchase values to conversions
+  // _pa.productId = "myProductId"; // OPTIONAL: Include product ID for use with dynamic ads
+  (function() {
+  var ss = document.createElement('script');
+  ss.type = 'text/javascript'; ss.async = true;
+  ss.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'koi-3QNN51VTHS.marketingautomation.services/client/ss.js?ver=2.4.0';
+  var scr = document.getElementsByTagName('script')[0];
+  scr.parentNode.insertBefore(ss, scr);
+  })();
+  </script>
+
+
+
+  </head><body>
 
   <div id="navbar" class="navbar navbar-inverse navbar-default ">
     <div class="container">
@@ -59,9 +76,10 @@
         <div class="collapse navbar-collapse nav-collapse">
           <ul class="nav navbar-nav">
             
-                <li><a href="https://www.ossec.net/about/">About <i class="fa fa-info-circle"></i></a></li>
-                <li><a href="https://www.ossec.net/docs/">Documentation <i class="fa fa-book"></i></a></li>
-                <li><a href="https://www.ossec.net/downloads/">Downloads <i class="fa fa-download"></i></a></li>
+                <li><a href="https://www.ossec.net/about/">About</a></li>
+                <li><a href="https://www.ossec.net/docs/">Documentation</a></li>
+                <li><a href="https://www.ossec.net/register-for-ossec/">Get OSSEC+</a></li>
+                <li><a href="https://www.ossec.net/downloads/">Downloads</a></li>
             
             
               <li class="dropdown globaltoc-container">
@@ -126,7 +144,7 @@
 <p>Here is a log sample from <a class="reference external" href="http://www.stunnel.org/">Stunnel for Windows</a></p>
 <div class="section" id="filename-c-program-filesstunnelstunnel-log">
 <h2>Filename = C:Program FilesStunnelstunnel.log<a class="headerlink" href="#filename-c-program-filesstunnelstunnel-log" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">2006.11.18 23:28:27 LOG5[900:924]: stunnel 4.16 on x86-pc-mingw32-gnu with OpenSSL 0.9.7i 14 Oct 2005</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">2006.11.18 23:28:27 LOG5[900:924]: stunnel 4.16 on x86-pc-mingw32-gnu with OpenSSL 0.9.7i 14 Oct 2005</span>
 <span class="go">2006.11.18 23:28:27 LOG5[900:924]: Threading:WIN32 SSL:ENGINE Sockets:SELECT,IPv6</span>
 <span class="go">2006.11.18 23:28:36 LOG5[900:208]: No limit detected for the number of clients</span>
 <span class="go">2006.11.19 07:11:32 LOG5[856:864]: stunnel 4.16 on x86-pc-mingw32-gnu with OpenSSL 0.9.7i 14 Oct 2005</span>
@@ -166,7 +184,7 @@
 </div>
 <div class="section" id="log-entries-made-while-a-portscan-was-taking-place">
 <h2>Log entries made while a portscan was taking place:<a class="headerlink" href="#log-entries-made-while-a-portscan-was-taking-place" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">2006.11.19 20:36:44 LOG5[856:1540]: TightVNC connected from 10.54.27.5:42557</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">2006.11.19 20:36:44 LOG5[856:1540]: TightVNC connected from 10.54.27.5:42557</span>
 <span class="go">2006.11.19 20:36:44 LOG3[856:1540]: SSL_accept: Peer suddenly disconnected</span>
 <span class="go">2006.11.19 20:36:44 LOG5[856:1540]: Connection reset: 0 bytes sent to SSL, 0 bytes sent to socket</span>
 <span class="go">2006.11.19 20:36:49 LOG5[856:2344]: TightVNC connected from 10.54.27.5:42570</span>
@@ -267,7 +285,7 @@
 </div>
 <div class="section" id="more-log-samples">
 <h2>More log samples:<a class="headerlink" href="#more-log-samples" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">2006.11.19 21:01:29 LOG5[856:3800]: Connection closed: 5567666 bytes sent to SSL, 122583 bytes sent to socket</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">2006.11.19 21:01:29 LOG5[856:3800]: Connection closed: 5567666 bytes sent to SSL, 122583 bytes sent to socket</span>
 <span class="go">2006.11.19 22:55:50 LOG5[856:4052]: TightVNC2 connected from 10.54.27.8:4443</span>
 <span class="go">2006.11.19 22:55:50 LOG3[856:4052]: SSL_read: Connection reset by peer (WSAECONNRESET) (10054)</span>
 <span class="go">2006.11.19 22:55:50 LOG5[856:4052]: Connection reset: 12 bytes sent to SSL, 0 bytes sent to socket</span>
@@ -301,9 +319,8 @@
       
     </p>
     <p>
-        &copy; Copyright 2010-2020, OSSEC Project Team.<br/>
+        &copy; Copyright 2010-2021, OSSEC Project Team.<br/>
     OSSEC <b>ossec.net</b> domain owned and maintained by <a href="https://www.ossec.net" target="_blank">OSSEC Foundation</a><br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.5.2 - 
     Home page graphics courtesy of <a href="https://pixabay.com" target="_blank">pixabay</a>
     </p>
   </div>

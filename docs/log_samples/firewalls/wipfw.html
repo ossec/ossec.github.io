@@ -1,36 +1,24 @@
 <!DOCTYPE html>
 
-
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>WIPFW &#8212; OSSEC</title>
-    
-    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/parallax.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../../',
-        VERSION:     '3.3.0',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
-    <script type="text/javascript" src="../../../_static/jquery.js"></script>
-    <script type="text/javascript" src="../../../_static/underscore.js"></script>
-    <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="../../../_static/js/jquery-fix.js"></script>
-    <script type="text/javascript" src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../../../_static/bootstrap-sphinx.js"></script>
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script src="../../../_static/js/jquery-fix.js"></script>
+    <script src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script src="../../../_static/bootstrap-sphinx.js"></script>
     <link rel="author" title="About these documents" href="../../../about.html" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -39,8 +27,37 @@
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
 <meta name="apple-mobile-web-app-capable" content="yes">
 
-  </head>
-  <body role="document">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-138780766-1"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'UA-138780766-1');
+</script>
+
+<script type="text/javascript">
+  var _ss = _ss || [];
+  _ss.push(['_setDomain', 'https://koi-3QNN51VTHS.marketingautomation.services/net']);
+  _ss.push(['_setAccount', 'KOI-4APYNOYP8O']);
+  _ss.push(['_trackPageView']);
+  window._pa = window._pa || {};
+  // _pa.orderId = "myOrderId"; // OPTIONAL: attach unique conversion identifier to conversions
+  // _pa.revenue = "19.99"; // OPTIONAL: attach dynamic purchase values to conversions
+  // _pa.productId = "myProductId"; // OPTIONAL: Include product ID for use with dynamic ads
+  (function() {
+  var ss = document.createElement('script');
+  ss.type = 'text/javascript'; ss.async = true;
+  ss.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'koi-3QNN51VTHS.marketingautomation.services/client/ss.js?ver=2.4.0';
+  var scr = document.getElementsByTagName('script')[0];
+  scr.parentNode.insertBefore(ss, scr);
+  })();
+  </script>
+
+
+
+  </head><body>
 
   <div id="navbar" class="navbar navbar-inverse navbar-default ">
     <div class="container">
@@ -59,9 +76,10 @@
         <div class="collapse navbar-collapse nav-collapse">
           <ul class="nav navbar-nav">
             
-                <li><a href="https://www.ossec.net/about/">About <i class="fa fa-info-circle"></i></a></li>
-                <li><a href="https://www.ossec.net/docs/">Documentation <i class="fa fa-book"></i></a></li>
-                <li><a href="https://www.ossec.net/downloads/">Downloads <i class="fa fa-download"></i></a></li>
+                <li><a href="https://www.ossec.net/about/">About</a></li>
+                <li><a href="https://www.ossec.net/docs/">Documentation</a></li>
+                <li><a href="https://www.ossec.net/register-for-ossec/">Get OSSEC+</a></li>
+                <li><a href="https://www.ossec.net/downloads/">Downloads</a></li>
             
             
               <li class="dropdown globaltoc-container">
@@ -123,8 +141,8 @@
       
   <div class="section" id="wipfw">
 <h1>WIPFW<a class="headerlink" href="#wipfw" title="Permalink to this headline">¶</a></h1>
-<p>Here is a log sample from the WIPFW firewall for Windows. More information about WIPFW can be found at <a class="reference external" href="http://wipfw.sourceforge.net">http://wipfw.sourceforge.net</a>. If you&#8217;re using Windows, I can&#8217;t recommend WIPFW highly enough. It is Open Source and is the most highly configurable firewall product I&#8217;ve found for Windows to date. (Understand WIPFW is a straight network firewall; it does no application access control or anything along those lines. If that&#8217;s what you need, you&#8217;ll need to use something else like [[Zone_Alarm|Zone Alarm]].)</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">0000000060 2006.12.07 08:49:58.002  ipfw: 1000 Deny TCP 75.126.23.220:80 192.168.47.1:9839 in via eth2</span>
+<p>Here is a log sample from the WIPFW firewall for Windows. More information about WIPFW can be found at <a class="reference external" href="http://wipfw.sourceforge.net">http://wipfw.sourceforge.net</a>. If you’re using Windows, I can’t recommend WIPFW highly enough. It is Open Source and is the most highly configurable firewall product I’ve found for Windows to date. (Understand WIPFW is a straight network firewall; it does no application access control or anything along those lines. If that’s what you need, you’ll need to use something else like [[Zone_Alarm|Zone Alarm]].)</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">0000000060 2006.12.07 08:49:58.002  ipfw: 1000 Deny TCP 75.126.23.220:80 192.168.47.1:9839 in via eth2</span>
 <span class="go">0000000061 2006.12.07 08:50:13.095  ipfw: 1000 Deny TCP 66.135.40.79:80 192.168.47.1:9866 in via eth2</span>
 <span class="go">0000000062 2006.12.07 08:50:32.025  ipfw: 1000 Deny TCP 66.135.40.79:80 192.168.47.1:9904 in via eth2</span>
 <span class="go">0000000063 2006.12.07 08:50:34.018  ipfw: 1000 Deny TCP 66.135.40.79:80 192.168.47.1:9904 in via eth2</span>
@@ -137,7 +155,7 @@
 <span class="go">0000000070 2006.12.07 08:58:43.018  ipfw: 1000 Deny TCP 66.135.40.79:80 192.168.47.1:9986 in via eth2</span>
 </pre></div>
 </div>
-<p>WIPFW puts these logs in your C:Windowssecuritylogs directory. The log format is fairly simple. The first number is the log entry, followed by the date and the time. After &#8220;ipfw:&#8221; is the firewall rule number (1000 in the above example), followed by the action and the protocol. The rest is self-explanatory.</p>
+<p>WIPFW puts these logs in your C:Windowssecuritylogs directory. The log format is fairly simple. The first number is the log entry, followed by the date and the time. After “ipfw:” is the firewall rule number (1000 in the above example), followed by the action and the protocol. The rest is self-explanatory.</p>
 </div>
 
 
@@ -152,9 +170,8 @@
       
     </p>
     <p>
-        &copy; Copyright 2010-2020, OSSEC Project Team.<br/>
+        &copy; Copyright 2010-2021, OSSEC Project Team.<br/>
     OSSEC <b>ossec.net</b> domain owned and maintained by <a href="https://www.ossec.net" target="_blank">OSSEC Foundation</a><br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.5.2 - 
     Home page graphics courtesy of <a href="https://pixabay.com" target="_blank">pixabay</a>
     </p>
   </div>

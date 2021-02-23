@@ -1,36 +1,24 @@
 <!DOCTYPE html>
 
-
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Package Installation &#8212; OSSEC</title>
-    
-    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/parallax.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../../',
-        VERSION:     '3.3.0',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
-    <script type="text/javascript" src="../../../_static/jquery.js"></script>
-    <script type="text/javascript" src="../../../_static/underscore.js"></script>
-    <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="../../../_static/js/jquery-fix.js"></script>
-    <script type="text/javascript" src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../../../_static/bootstrap-sphinx.js"></script>
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script src="../../../_static/js/jquery-fix.js"></script>
+    <script src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script src="../../../_static/bootstrap-sphinx.js"></script>
     <link rel="author" title="About these documents" href="../../../about.html" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -41,8 +29,37 @@
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
 <meta name="apple-mobile-web-app-capable" content="yes">
 
-  </head>
-  <body role="document">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-138780766-1"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'UA-138780766-1');
+</script>
+
+<script type="text/javascript">
+  var _ss = _ss || [];
+  _ss.push(['_setDomain', 'https://koi-3QNN51VTHS.marketingautomation.services/net']);
+  _ss.push(['_setAccount', 'KOI-4APYNOYP8O']);
+  _ss.push(['_trackPageView']);
+  window._pa = window._pa || {};
+  // _pa.orderId = "myOrderId"; // OPTIONAL: attach unique conversion identifier to conversions
+  // _pa.revenue = "19.99"; // OPTIONAL: attach dynamic purchase values to conversions
+  // _pa.productId = "myProductId"; // OPTIONAL: Include product ID for use with dynamic ads
+  (function() {
+  var ss = document.createElement('script');
+  ss.type = 'text/javascript'; ss.async = true;
+  ss.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'koi-3QNN51VTHS.marketingautomation.services/client/ss.js?ver=2.4.0';
+  var scr = document.getElementsByTagName('script')[0];
+  scr.parentNode.insertBefore(ss, scr);
+  })();
+  </script>
+
+
+
+  </head><body>
 
   <div id="navbar" class="navbar navbar-inverse navbar-default ">
     <div class="container">
@@ -61,9 +78,10 @@
         <div class="collapse navbar-collapse nav-collapse">
           <ul class="nav navbar-nav">
             
-                <li><a href="https://www.ossec.net/about/">About <i class="fa fa-info-circle"></i></a></li>
-                <li><a href="https://www.ossec.net/docs/">Documentation <i class="fa fa-book"></i></a></li>
-                <li><a href="https://www.ossec.net/downloads/">Downloads <i class="fa fa-download"></i></a></li>
+                <li><a href="https://www.ossec.net/about/">About</a></li>
+                <li><a href="https://www.ossec.net/docs/">Documentation</a></li>
+                <li><a href="https://www.ossec.net/register-for-ossec/">Get OSSEC+</a></li>
+                <li><a href="https://www.ossec.net/downloads/">Downloads</a></li>
             
             
               <li class="dropdown globaltoc-container">
@@ -137,37 +155,37 @@
 Links to the packages can be found on the OSSEC <a class="reference external" href="http://www.ossec.net/?page_id=19">download page</a></p>
 <div class="section" id="rpm-installation">
 <h2>RPM Installation<a class="headerlink" href="#rpm-installation" title="Permalink to this headline">¶</a></h2>
-<p>OSSEC&#8217;s RPMs are made available by <a class="reference external" href="http://www.atomicorp.com">AtomiCorp</a>.</p>
+<p>OSSEC’s RPMs are made available by <a class="reference external" href="http://www.atomicorp.com">AtomiCorp</a>.</p>
 <p>The RPMs can be installed by adding the AtomiCorp yum repository:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp"># </span>wget -q -O - https://updates.atomicorp.com/installers/atomic <span class="p">|</span> sh
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"># </span>wget -q -O - https://updates.atomicorp.com/installers/atomic <span class="p">|</span> sh
 </pre></div>
 </div>
-<p>Next use <code class="docutils literal"><span class="pre">yum</span></code> to install the specific packages. For an OSSEC server run:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp"># </span>yum install ossec-hids ossec-hids-server
+<p>Next use <code class="docutils literal notranslate"><span class="pre">yum</span></code> to install the specific packages. For an OSSEC server run:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"># </span>yum install ossec-hids ossec-hids-server
 </pre></div>
 </div>
 <p>And for an agent run:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp"># </span>yum install ossec-hids ossec-hids-agent
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"># </span>yum install ossec-hids ossec-hids-agent
 </pre></div>
 </div>
 </div>
 <div class="section" id="deb-installation">
 <h2>Deb Installation<a class="headerlink" href="#deb-installation" title="Permalink to this headline">¶</a></h2>
-<p>OSSEC&#8217;s DEB packages are made available by <a class="reference external" href="http://www.atomicorp.com">Atomicorp</a>.</p>
+<p>OSSEC’s DEB packages are made available by <a class="reference external" href="http://www.atomicorp.com">Atomicorp</a>.</p>
 <p>Run the Repo installer:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp"># </span>wget -q -O - https://updates.atomicorp.com/installers/atomic <span class="p">|</span> sudo bash
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"># </span>wget -q -O - https://updates.atomicorp.com/installers/atomic <span class="p">|</span> sudo bash
 </pre></div>
 </div>
 <p>Update the repository:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp"># </span>apt-get update
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"># </span>apt-get update
 </pre></div>
 </div>
 <p>Install OSSEC HIDS server/manager:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp"># </span>apt-get install ossec-hids-server
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"># </span>apt-get install ossec-hids-server
 </pre></div>
 </div>
 <p>Or install OSSEC HIDS agent:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp"># </span>apt-get install ossec-hids-agent
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"># </span>apt-get install ossec-hids-agent
 </pre></div>
 </div>
 </div>
@@ -176,29 +194,29 @@ Links to the packages can be found on the OSSEC <a class="reference external" hr
 <p>Some of the BSD operating systems offer OSSEC packages you can use. Here you have
 FreeBSD and OpenBSD as example.</p>
 <ul class="simple">
-<li><strong>FreeBSD</strong></li>
+<li><p><strong>FreeBSD</strong></p></li>
 </ul>
-<p>You are going to work together with <code class="docutils literal"><span class="pre">pkg</span></code> here. Just choose which type of setup you need
+<p>You are going to work together with <code class="docutils literal notranslate"><span class="pre">pkg</span></code> here. Just choose which type of setup you need
 (agent, local monitoring, or server/manager) and install the respective OSSEC package.</p>
 <p>Should you opt to install an OSSEC Server/Manager:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp"># </span>pkg install ossec-hids-server
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"># </span>pkg install ossec-hids-server
 </pre></div>
 </div>
 <p>If you want to install an OSSEC Agent:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp"># </span>pkg install ossec-hids-agent
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"># </span>pkg install ossec-hids-agent
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">These steps also work for <strong>DragonFlyBSD</strong>. It also uses <code class="docutils literal"><span class="pre">pkg</span></code>, just like FreeBSD. You can
+<p class="admonition-title">Note</p>
+<p>These steps also work for <strong>DragonFlyBSD</strong>. It also uses <code class="docutils literal notranslate"><span class="pre">pkg</span></code>, just like FreeBSD. You can
 read more about it <a class="reference external" href="https://www.dragonflybsd.org/docs/howtos/HowToDPorts/">here</a>.</p>
 </div>
 <ul class="simple">
-<li><strong>OpenBSD</strong></li>
+<li><p><strong>OpenBSD</strong></p></li>
 </ul>
-<p>Here you must work with <code class="docutils literal"><span class="pre">pkg_add</span></code> instead of <cite>pkg</cite>, but no worries it&#8217;s the same concept.</p>
+<p>Here you must work with <code class="docutils literal notranslate"><span class="pre">pkg_add</span></code> instead of <cite>pkg</cite>, but no worries it’s the same concept.</p>
 <p>As it only offers one package, here is how to install OSSEC HIDS on OpenBSD:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp"># </span>pkg_add ossec-hids
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"># </span>pkg_add ossec-hids
 </pre></div>
 </div>
 </div>
@@ -216,9 +234,8 @@ read more about it <a class="reference external" href="https://www.dragonflybsd.
       
     </p>
     <p>
-        &copy; Copyright 2010-2020, OSSEC Project Team.<br/>
+        &copy; Copyright 2010-2021, OSSEC Project Team.<br/>
     OSSEC <b>ossec.net</b> domain owned and maintained by <a href="https://www.ossec.net" target="_blank">OSSEC Foundation</a><br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.5.2 - 
     Home page graphics courtesy of <a href="https://pixabay.com" target="_blank">pixabay</a>
     </p>
   </div>

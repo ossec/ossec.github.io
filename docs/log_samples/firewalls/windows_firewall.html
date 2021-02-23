@@ -1,36 +1,24 @@
 <!DOCTYPE html>
 
-
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Samples for the Windows firewall &#8212; OSSEC</title>
-    
-    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/parallax.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../../',
-        VERSION:     '3.3.0',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
-    <script type="text/javascript" src="../../../_static/jquery.js"></script>
-    <script type="text/javascript" src="../../../_static/underscore.js"></script>
-    <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="../../../_static/js/jquery-fix.js"></script>
-    <script type="text/javascript" src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../../../_static/bootstrap-sphinx.js"></script>
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script src="../../../_static/js/jquery-fix.js"></script>
+    <script src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script src="../../../_static/bootstrap-sphinx.js"></script>
     <link rel="author" title="About these documents" href="../../../about.html" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -39,8 +27,37 @@
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
 <meta name="apple-mobile-web-app-capable" content="yes">
 
-  </head>
-  <body role="document">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-138780766-1"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'UA-138780766-1');
+</script>
+
+<script type="text/javascript">
+  var _ss = _ss || [];
+  _ss.push(['_setDomain', 'https://koi-3QNN51VTHS.marketingautomation.services/net']);
+  _ss.push(['_setAccount', 'KOI-4APYNOYP8O']);
+  _ss.push(['_trackPageView']);
+  window._pa = window._pa || {};
+  // _pa.orderId = "myOrderId"; // OPTIONAL: attach unique conversion identifier to conversions
+  // _pa.revenue = "19.99"; // OPTIONAL: attach dynamic purchase values to conversions
+  // _pa.productId = "myProductId"; // OPTIONAL: Include product ID for use with dynamic ads
+  (function() {
+  var ss = document.createElement('script');
+  ss.type = 'text/javascript'; ss.async = true;
+  ss.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'koi-3QNN51VTHS.marketingautomation.services/client/ss.js?ver=2.4.0';
+  var scr = document.getElementsByTagName('script')[0];
+  scr.parentNode.insertBefore(ss, scr);
+  })();
+  </script>
+
+
+
+  </head><body>
 
   <div id="navbar" class="navbar navbar-inverse navbar-default ">
     <div class="container">
@@ -59,9 +76,10 @@
         <div class="collapse navbar-collapse nav-collapse">
           <ul class="nav navbar-nav">
             
-                <li><a href="https://www.ossec.net/about/">About <i class="fa fa-info-circle"></i></a></li>
-                <li><a href="https://www.ossec.net/docs/">Documentation <i class="fa fa-book"></i></a></li>
-                <li><a href="https://www.ossec.net/downloads/">Downloads <i class="fa fa-download"></i></a></li>
+                <li><a href="https://www.ossec.net/about/">About</a></li>
+                <li><a href="https://www.ossec.net/docs/">Documentation</a></li>
+                <li><a href="https://www.ossec.net/register-for-ossec/">Get OSSEC+</a></li>
+                <li><a href="https://www.ossec.net/downloads/">Downloads</a></li>
             
             
               <li class="dropdown globaltoc-container">
@@ -126,27 +144,27 @@
 <p>By default the logs are stored at &lt;b&gt;C:Windowspfirewall.log.</p>
 <div class="section" id="fields">
 <h2>Fields:<a class="headerlink" href="#fields" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span>Fields: date <span class="nb">time</span> action protocol src-ip dst-ip src-port dst-port size tcpflags tcpsyn tcpack tcpwin icmptype icmpcode info path
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">#</span>Fields: date <span class="nb">time</span> action protocol src-ip dst-ip src-port dst-port size tcpflags tcpsyn tcpack tcpwin icmptype icmpcode info path
 </pre></div>
 </div>
 </div>
 <div class="section" id="firewall-drop">
 <h2>Firewall drop:<a class="headerlink" href="#firewall-drop" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">2006-09-19 10:48:12 DROP UDP 172.20.73.241 239.255.255.250 2250 1900 250 - - - - - - - RECEIVE</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">2006-09-19 10:48:12 DROP UDP 172.20.73.241 239.255.255.250 2250 1900 250 - - - - - - - RECEIVE</span>
 <span class="go">2006-09-20 10:38:21 DROP TCP 192.168.72.196 10.20.72.12 445 2459 48 SA 4175551841 892874455 17520 - - - RECEIVE</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="firewall-accept">
 <h2>Firewall Accept:<a class="headerlink" href="#firewall-accept" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">2006-09-19 03:04:29 OPEN TCP 192.168.72.12 10.20.72.204 3599 445 - - - - - - - - -</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">2006-09-19 03:04:29 OPEN TCP 192.168.72.12 10.20.72.204 3599 445 - - - - - - - - -</span>
 <span class="go">2006-09-19 03:04:29 OPEN TCP 192.168.72.12 10.20.72.204 3600 139 - - - - - - - - -</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="large-sample">
 <h2>Large sample:<a class="headerlink" href="#large-sample" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">2006-09-19 03:26:26 DROP UDP 172.20.73.241 239.255.255.250 2250 1900 315 - - - - - - - RECEIVE</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">2006-09-19 03:26:26 DROP UDP 172.20.73.241 239.255.255.250 2250 1900 315 - - - - - - - RECEIVE</span>
 <span class="go">2006-09-19 03:26:26 DROP UDP 172.20.73.241 239.255.255.250 2250 1900 305 - - - - - - - RECEIVE</span>
 <span class="go">2006-09-19 03:27:05 CLOSE UDP 192.168.72.12 10.20.72.186 3682 88 - - - - - - - - -</span>
 <span class="go">2006-09-19 03:27:05 CLOSE UDP 192.168.72.12 10.20.72.186 3683 88 - - - - - - - - -</span>
@@ -348,7 +366,7 @@
 </div>
 <div class="section" id="sample-2">
 <h2>Sample 2:<a class="headerlink" href="#sample-2" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">2006-09-20 02:59:03 OPEN TCP x.x.x.79 69.16.211.107 4328 110 - - - - - - - - -</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">2006-09-20 02:59:03 OPEN TCP x.x.x.79 69.16.211.107 4328 110 - - - - - - - - -</span>
 <span class="go">2006-09-20 02:59:03 OPEN TCP x.x.x.79 69.16.211.107 4329 110 - - - - - - - - -</span>
 <span class="go">2006-09-20 02:59:03 OPEN TCP x.x.x.79 207.97.245.100 4336 110 - - - - - - - - -</span>
 <span class="go">2006-09-20 02:59:03 OPEN TCP x.x.x.79 69.16.211.107 4331 110 - - - - - - - - -</span>
@@ -385,9 +403,8 @@
       
     </p>
     <p>
-        &copy; Copyright 2010-2020, OSSEC Project Team.<br/>
+        &copy; Copyright 2010-2021, OSSEC Project Team.<br/>
     OSSEC <b>ossec.net</b> domain owned and maintained by <a href="https://www.ossec.net" target="_blank">OSSEC Foundation</a><br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.5.2 - 
     Home page graphics courtesy of <a href="https://pixabay.com" target="_blank">pixabay</a>
     </p>
   </div>

@@ -1,36 +1,24 @@
 <!DOCTYPE html>
 
-
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Agentless Monitoring &#8212; OSSEC</title>
-    
-    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/parallax.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../../',
-        VERSION:     '3.3.0',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
-    <script type="text/javascript" src="../../../_static/jquery.js"></script>
-    <script type="text/javascript" src="../../../_static/underscore.js"></script>
-    <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="../../../_static/js/jquery-fix.js"></script>
-    <script type="text/javascript" src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../../../_static/bootstrap-sphinx.js"></script>
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script src="../../../_static/js/jquery-fix.js"></script>
+    <script src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script src="../../../_static/bootstrap-sphinx.js"></script>
     <link rel="author" title="About these documents" href="../../../about.html" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -41,8 +29,37 @@
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
 <meta name="apple-mobile-web-app-capable" content="yes">
 
-  </head>
-  <body role="document">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-138780766-1"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'UA-138780766-1');
+</script>
+
+<script type="text/javascript">
+  var _ss = _ss || [];
+  _ss.push(['_setDomain', 'https://koi-3QNN51VTHS.marketingautomation.services/net']);
+  _ss.push(['_setAccount', 'KOI-4APYNOYP8O']);
+  _ss.push(['_trackPageView']);
+  window._pa = window._pa || {};
+  // _pa.orderId = "myOrderId"; // OPTIONAL: attach unique conversion identifier to conversions
+  // _pa.revenue = "19.99"; // OPTIONAL: attach dynamic purchase values to conversions
+  // _pa.productId = "myProductId"; // OPTIONAL: Include product ID for use with dynamic ads
+  (function() {
+  var ss = document.createElement('script');
+  ss.type = 'text/javascript'; ss.async = true;
+  ss.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'koi-3QNN51VTHS.marketingautomation.services/client/ss.js?ver=2.4.0';
+  var scr = document.getElementsByTagName('script')[0];
+  scr.parentNode.insertBefore(ss, scr);
+  })();
+  </script>
+
+
+
+  </head><body>
 
   <div id="navbar" class="navbar navbar-inverse navbar-default ">
     <div class="container">
@@ -61,9 +78,10 @@
         <div class="collapse navbar-collapse nav-collapse">
           <ul class="nav navbar-nav">
             
-                <li><a href="https://www.ossec.net/about/">About <i class="fa fa-info-circle"></i></a></li>
-                <li><a href="https://www.ossec.net/docs/">Documentation <i class="fa fa-book"></i></a></li>
-                <li><a href="https://www.ossec.net/downloads/">Downloads <i class="fa fa-download"></i></a></li>
+                <li><a href="https://www.ossec.net/about/">About</a></li>
+                <li><a href="https://www.ossec.net/docs/">Documentation</a></li>
+                <li><a href="https://www.ossec.net/register-for-ossec/">Get OSSEC+</a></li>
+                <li><a href="https://www.ossec.net/downloads/">Downloads</a></li>
             
             
               <li class="dropdown globaltoc-container">
@@ -140,57 +158,12 @@ integrity checking (alerting of checksum changes) or doing diffs and showing
 exactly what has changed.</p>
 <div class="section" id="agentless-configuration-options">
 <h2>Agentless configuration options<a class="headerlink" href="#agentless-configuration-options" title="Permalink to this headline">¶</a></h2>
-<dl class="element">
-<dt id="element-agentless">
-<code class="descname">agentless</code><a class="headerlink" href="#element-agentless" title="Permalink to this definition">¶</a></dt>
-<dd><p>This is the section that will contain the agentless configuration.</p>
-</dd></dl>
-
-<dl class="element">
-<dt id="element-type">
-<code class="descname">type</code><a class="headerlink" href="#element-type" title="Permalink to this definition">¶</a></dt>
-<dd><p>The type of check to be run on the agentless system.</p>
-<p><strong>Options:</strong> <code class="docutils literal"><span class="pre">ssh_integrity_check_bsd</span></code>, <code class="docutils literal"><span class="pre">ssh_integrity_check_linux</span></code>, <code class="docutils literal"><span class="pre">ssh_generic_diff</span></code>, <code class="docutils literal"><span class="pre">ssh_pixconfig_diff</span></code></p>
-</dd></dl>
-
-<dl class="element">
-<dt id="element-frequency">
-<code class="descname">frequency</code><a class="headerlink" href="#element-frequency" title="Permalink to this definition">¶</a></dt>
-<dd><p>This controls the number of seconds between each run.</p>
-</dd></dl>
-
-<dl class="element">
-<dt id="element-host">
-<code class="descname">host</code><a class="headerlink" href="#element-host" title="Permalink to this definition">¶</a></dt>
-<dd><p>This defines the username and agentless host.</p>
-<p><strong>Example:</strong></p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">&lt;host&gt;root@linux.server.example.com&lt;/host&gt;</span>
-</pre></div>
-</div>
-</dd></dl>
-
-<dl class="element">
-<dt id="element-state">
-<code class="descname">state</code><a class="headerlink" href="#element-state" title="Permalink to this definition">¶</a></dt>
-<dd><p>This determines whether the checks are periodic or periodic_diff.</p>
-<ul class="simple">
-<li>periodic: The output from the scripts is processed by the OSSEC processes.</li>
-<li>periodic_diff: The output from the scripts is compared to the output of previous runs.</li>
-</ul>
-</dd></dl>
-
-<dl class="element">
-<dt id="element-arguments">
-<code class="descname">arguments</code><a class="headerlink" href="#element-arguments" title="Permalink to this definition">¶</a></dt>
-<dd><p>This defines the arguments passed to the script.</p>
-</dd></dl>
-
 <p>Check <cite>manual-agentless-scripts</cite> for more information.</p>
 </div>
 <div class="section" id="getting-started-with-agentless">
 <h2>Getting started with agentless<a class="headerlink" href="#getting-started-with-agentless" title="Permalink to this headline">¶</a></h2>
 <p>After you installed OSSEC, you need to enable the agentless monitoring:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp"># </span>/var/ossec/bin/ossec-control <span class="nb">enable</span> agentless
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"># </span>/var/ossec/bin/ossec-control <span class="nb">enable</span> agentless
 </pre></div>
 </div>
 <p>And provide the SSH authentication to the host you want to access. For Cisco devices
@@ -198,7 +171,7 @@ exactly what has changed.</p>
 The same thing applies if you want to add support for “su”, it must be the additional
 parameter. In this example, I am adding a Linux box (example.net) and a PIX firewall
 (pix.fw.local):</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp"># </span>/var/ossec/agentless/register_host.sh add root@example.net mypass1
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"># </span>/var/ossec/agentless/register_host.sh add root@example.net mypass1
 <span class="go">  *Host root@example.netl added.</span>
 <span class="gp"># </span>/var/ossec/agentless/register_host.sh add pix@pix.fw.local pixpass enablepass
 <span class="go">  *Host pix@pix.fw.local added.</span>
@@ -210,13 +183,13 @@ parameter. In this example, I am adding a Linux box (example.net) and a PIX fire
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last"><code class="docutils literal"><span class="pre">register_host.sh</span></code> is a shell script, special characters may need to be escaped to not be interpreted by the shell.</p>
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">register_host.sh</span></code> is a shell script, special characters may need to be escaped to not be interpreted by the shell.</p>
 </div>
 <p>If you want to use public key authentication instead of
 passwords, you need to provide NOPASS as the password and
 create the public key:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp"># </span>sudo -u ossec ssh-keygen
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"># </span>sudo -u ossec ssh-keygen
 </pre></div>
 </div>
 <p>It will create the public keys inside /var/ossec/.ssh .  After that, just scp the
@@ -228,10 +201,10 @@ public key to the remote box and your password less connection should work.</p>
 OSSEC to monitor them. By default, we have 4 agentless types
 (but we plan to add more soon):</p>
 <ul class="simple">
-<li>ssh_integrity_check_bsd</li>
-<li>ssh_integrity_check_linux</li>
-<li>ssh_generic_diff</li>
-<li>ssh_pixconfig_diff</li>
+<li><p>ssh_integrity_check_bsd</p></li>
+<li><p>ssh_integrity_check_linux</p></li>
+<li><p>ssh_generic_diff</p></li>
+<li><p>ssh_pixconfig_diff</p></li>
 </ul>
 <p>For the first two, you give a list of directories in the configuration and OSSEC
 will do the integrity checking of them on the remote box. On the
@@ -241,7 +214,7 @@ when a Cisco PIX/router configuration changes.</p>
 <p>So, for my first system (<a class="reference external" href="mailto:root&#37;&#52;&#48;example&#46;net">root<span>&#64;</span>example<span>&#46;</span>net</a>), I will monitor the /bin, /etc and /sbin
 directories every 10 hours (if I was using the ssh_integrity_check_bsd, the
 argument would be the directories as well):</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;agentless&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;agentless&gt;</span>
     <span class="nt">&lt;type&gt;</span>ssh_integrity_check_linux<span class="nt">&lt;/type&gt;</span>
     <span class="nt">&lt;frequency&gt;</span>36000<span class="nt">&lt;/frequency&gt;</span>
     <span class="nt">&lt;host&gt;</span>root@example.net<span class="nt">&lt;/host&gt;</span>
@@ -251,7 +224,7 @@ argument would be the directories as well):</p>
 </pre></div>
 </div>
 <p>For my PIX, the configuration looks like:</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;agentless&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;agentless&gt;</span>
     <span class="nt">&lt;type&gt;</span>ssh_pixconfig_diff<span class="nt">&lt;/type&gt;</span>
     <span class="nt">&lt;frequency&gt;</span>36000<span class="nt">&lt;/frequency&gt;</span>
     <span class="nt">&lt;host&gt;</span>pix@pix.fw.local<span class="nt">&lt;/host&gt;</span>
@@ -264,7 +237,7 @@ argument would be the directories as well):</p>
 firewall or switch, you can use the ssh_generic_diff and just specify the
 commands in the arguments option. To use “su”, you need to set the value
 “use_su” before the hostname (eg: &lt;host&gt;use_su <a class="reference external" href="mailto:root&#37;&#52;&#48;example">root<span>&#64;</span>example</a>.net&lt;/host&gt;).</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;agentless&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;agentless&gt;</span>
     <span class="nt">&lt;type&gt;</span>ssh_generic_diff<span class="nt">&lt;/type&gt;</span>
     <span class="nt">&lt;frequency&gt;</span>36000<span class="nt">&lt;/frequency&gt;</span>
     <span class="nt">&lt;host&gt;</span>root@example.net<span class="nt">&lt;/host&gt;</span>
@@ -280,22 +253,22 @@ commands in the arguments option. To use “su”, you need to set the value
 something like “Started ossec-agentlessd” in the output. Before each agentless
 connection is started, OSSEC will do a configuration check to make sure
 everything is fine. Look at /var/ossec/logs/ossec.log for any error. If you see:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">2008/12/12 15:20:06 ossec-agentlessd: ERROR: Expect command not found (or bad arguments) for &#39;ssh_integrity_check_bsd&#39;.</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">2008/12/12 15:20:06 ossec-agentlessd: ERROR: Expect command not found (or bad arguments) for &#39;ssh_integrity_check_bsd&#39;.</span>
 <span class="go">2008/12/12 15:20:06 ossec-agentlessd: ERROR: Test failed for &#39;ssh_integrity_check_bsd&#39; (127). Ignoring.&#39;</span>
 </pre></div>
 </div>
 <p>It means that you don’t have the expect library installed on the server (it is
 not necessary to install anything on the agentless systems to monitor). On
 Ubuntu you can do the following to install:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp"># </span>apt-get install expect
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"># </span>apt-get install expect
 </pre></div>
 </div>
 <p>After installing expect, you can restart OSSEC and you should see:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">2008/12/12 15:24:12 ossec-agentlessd: INFO: Test passed for &#39;ssh_integrity_check_bsd&#39;.&#39;</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">2008/12/12 15:24:12 ossec-agentlessd: INFO: Test passed for &#39;ssh_integrity_check_bsd&#39;.&#39;</span>
 </pre></div>
 </div>
 <p>When it connects to the remote system, you will also see:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">2008/12/12 15:25:19 ossec-agentlessd: INFO: ssh_integrity_check_bsd: root@example.net: Starting.</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">2008/12/12 15:25:19 ossec-agentlessd: INFO: ssh_integrity_check_bsd: root@example.net: Starting.</span>
 <span class="go">2008/12/12 15:25:46 ossec-agentlessd: INFO: ssh_integrity_check_bsd: root@example.net: Finished.</span>
 </pre></div>
 </div>
@@ -304,7 +277,7 @@ Ubuntu you can do the following to install:</p>
 <h2>Alerts<a class="headerlink" href="#alerts" title="Permalink to this headline">¶</a></h2>
 <p>These are some of the alerts you will get:</p>
 <p>For the ssh_generic_diff:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">OSSEC</span> <span class="n">HIDS</span> <span class="n">Notification</span><span class="o">.</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">OSSEC</span> <span class="n">HIDS</span> <span class="n">Notification</span><span class="o">.</span>
 <span class="mi">2008</span> <span class="n">Dec</span> <span class="mi">12</span> <span class="mi">01</span><span class="p">:</span><span class="mi">58</span><span class="p">:</span><span class="mi">30</span>
 
 <span class="n">Received</span> <span class="n">From</span><span class="p">:</span> <span class="p">(</span><span class="n">ssh_generic_diff</span><span class="p">)</span> <span class="n">root</span><span class="nd">@example</span><span class="o">.</span><span class="n">net</span><span class="o">-&gt;</span><span class="n">agentless</span>
@@ -320,7 +293,7 @@ Ubuntu you can do the following to install:</p>
 </pre></div>
 </div>
 <p>For the PIX:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">OSSEC</span> <span class="n">HIDS</span> <span class="n">Notification</span><span class="o">.</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">OSSEC</span> <span class="n">HIDS</span> <span class="n">Notification</span><span class="o">.</span>
 <span class="mi">2008</span> <span class="n">Dec</span> <span class="mi">01</span> <span class="mi">15</span><span class="p">:</span><span class="mi">48</span><span class="p">:</span><span class="mi">03</span>
 
 <span class="n">Received</span> <span class="n">From</span><span class="p">:</span> <span class="p">(</span><span class="n">ssh_pixconfig_diff</span><span class="p">)</span> <span class="n">pix</span><span class="nd">@pix</span><span class="o">.</span><span class="n">fw</span><span class="o">.</span><span class="n">local</span><span class="o">-&gt;</span><span class="n">agentless</span>
@@ -356,9 +329,8 @@ Ubuntu you can do the following to install:</p>
       
     </p>
     <p>
-        &copy; Copyright 2010-2020, OSSEC Project Team.<br/>
+        &copy; Copyright 2010-2021, OSSEC Project Team.<br/>
     OSSEC <b>ossec.net</b> domain owned and maintained by <a href="https://www.ossec.net" target="_blank">OSSEC Foundation</a><br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.5.2 - 
     Home page graphics courtesy of <a href="https://pixabay.com" target="_blank">pixabay</a>
     </p>
   </div>

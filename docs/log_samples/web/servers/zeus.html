@@ -1,36 +1,24 @@
 <!DOCTYPE html>
 
-
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Zeus web server &#8212; OSSEC</title>
-    
-    <link rel="stylesheet" href="../../../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../../../_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../../../../_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
     <link rel="stylesheet" href="../../../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../../../_static/parallax.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../../../',
-        VERSION:     '3.3.0',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
-    <script type="text/javascript" src="../../../../_static/jquery.js"></script>
-    <script type="text/javascript" src="../../../../_static/underscore.js"></script>
-    <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-    <script type="text/javascript" src="../../../../_static/js/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="../../../../_static/js/jquery-fix.js"></script>
-    <script type="text/javascript" src="../../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../../../../_static/bootstrap-sphinx.js"></script>
+    <script id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+    <script src="../../../../_static/jquery.js"></script>
+    <script src="../../../../_static/underscore.js"></script>
+    <script src="../../../../_static/doctools.js"></script>
+    <script src="../../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script src="../../../../_static/js/jquery-fix.js"></script>
+    <script src="../../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script src="../../../../_static/bootstrap-sphinx.js"></script>
     <link rel="author" title="About these documents" href="../../../../about.html" />
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
@@ -39,8 +27,37 @@
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
 <meta name="apple-mobile-web-app-capable" content="yes">
 
-  </head>
-  <body role="document">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-138780766-1"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'UA-138780766-1');
+</script>
+
+<script type="text/javascript">
+  var _ss = _ss || [];
+  _ss.push(['_setDomain', 'https://koi-3QNN51VTHS.marketingautomation.services/net']);
+  _ss.push(['_setAccount', 'KOI-4APYNOYP8O']);
+  _ss.push(['_trackPageView']);
+  window._pa = window._pa || {};
+  // _pa.orderId = "myOrderId"; // OPTIONAL: attach unique conversion identifier to conversions
+  // _pa.revenue = "19.99"; // OPTIONAL: attach dynamic purchase values to conversions
+  // _pa.productId = "myProductId"; // OPTIONAL: Include product ID for use with dynamic ads
+  (function() {
+  var ss = document.createElement('script');
+  ss.type = 'text/javascript'; ss.async = true;
+  ss.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'koi-3QNN51VTHS.marketingautomation.services/client/ss.js?ver=2.4.0';
+  var scr = document.getElementsByTagName('script')[0];
+  scr.parentNode.insertBefore(ss, scr);
+  })();
+  </script>
+
+
+
+  </head><body>
 
   <div id="navbar" class="navbar navbar-inverse navbar-default ">
     <div class="container">
@@ -59,9 +76,10 @@
         <div class="collapse navbar-collapse nav-collapse">
           <ul class="nav navbar-nav">
             
-                <li><a href="https://www.ossec.net/about/">About <i class="fa fa-info-circle"></i></a></li>
-                <li><a href="https://www.ossec.net/docs/">Documentation <i class="fa fa-book"></i></a></li>
-                <li><a href="https://www.ossec.net/downloads/">Downloads <i class="fa fa-download"></i></a></li>
+                <li><a href="https://www.ossec.net/about/">About</a></li>
+                <li><a href="https://www.ossec.net/docs/">Documentation</a></li>
+                <li><a href="https://www.ossec.net/register-for-ossec/">Get OSSEC+</a></li>
+                <li><a href="https://www.ossec.net/downloads/">Downloads</a></li>
             
             
               <li class="dropdown globaltoc-container">
@@ -125,14 +143,14 @@
 <h1>Zeus web server<a class="headerlink" href="#zeus-web-server" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="failed-logins">
 <h2>Failed logins:<a class="headerlink" href="#failed-logins" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">[26/Jun/2006:05:02:57 +0100] WARN:admin:Authentication failure, url=/index.cgi, host=xx.yy.com, user=admin</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">[26/Jun/2006:05:02:57 +0100] WARN:admin:Authentication failure, url=/index.cgi, host=xx.yy.com, user=admin</span>
 <span class="go">[03/Aug/2006:18:43:11 +0100] WARN:admin:Authentication failure, url=/index.cgi, host=1.2.3.4, user=admin</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="informational">
 <h2>Informational:<a class="headerlink" href="#informational" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">[09/Dec/2006:05:04:15 +0000] INFO:https://1.2.3.4:9091</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">[09/Dec/2006:05:04:15 +0000] INFO:https://1.2.3.4:9091</span>
 <span class="go">[09/Dec/2006:05:04:15 +0000] INFO:Child started - pid 5800</span>
 <span class="go">[09/Dec/2006:05:04:15 +0000] INFO:Zeus Admin Server running</span>
 <span class="go">[09/Dec/2006:05:08:39 +0000] INFO:Server shutdown requested</span>
@@ -143,7 +161,7 @@
 </div>
 <div class="section" id="fatal">
 <h2>Fatal:<a class="headerlink" href="#fatal" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">[11/Mar/2007:00:26:18 +0000] FATAL:Zeus Admin Server already running (PID: 13709)</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">[11/Mar/2007:00:26:18 +0000] FATAL:Zeus Admin Server already running (PID: 13709)</span>
 <span class="go">[11/Mar/2007:00:26:52 +0000] FATAL:Zeus Admin Server already running (PID: 26890)</span>
 <span class="go">[14/Mar/2007:14:10:01 +0000] SERIOUS:Node 1.2.3.3 (1.2.3.3:80) has failed - A monitor has detected a failure</span>
 <span class="go">[14/Mar/2007:14:10:01 +0000] SERIOUS:Pool &#39;HTTP&#39; has no back-end nodes responding</span>
@@ -165,9 +183,8 @@
       
     </p>
     <p>
-        &copy; Copyright 2010-2020, OSSEC Project Team.<br/>
+        &copy; Copyright 2010-2021, OSSEC Project Team.<br/>
     OSSEC <b>ossec.net</b> domain owned and maintained by <a href="https://www.ossec.net" target="_blank">OSSEC Foundation</a><br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.5.2 - 
     Home page graphics courtesy of <a href="https://pixabay.com" target="_blank">pixabay</a>
     </p>
   </div>

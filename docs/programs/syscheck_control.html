@@ -1,36 +1,24 @@
 <!DOCTYPE html>
 
-
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>syscheck_control &#8212; OSSEC</title>
-    
-    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/parallax.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../',
-        VERSION:     '3.3.0',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
-    <script type="text/javascript" src="../../_static/jquery.js"></script>
-    <script type="text/javascript" src="../../_static/underscore.js"></script>
-    <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
-    <script type="text/javascript" src="../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script src="../../_static/js/jquery-fix.js"></script>
+    <script src="../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script src="../../_static/bootstrap-sphinx.js"></script>
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -41,8 +29,37 @@
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
 <meta name="apple-mobile-web-app-capable" content="yes">
 
-  </head>
-  <body role="document">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-138780766-1"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'UA-138780766-1');
+</script>
+
+<script type="text/javascript">
+  var _ss = _ss || [];
+  _ss.push(['_setDomain', 'https://koi-3QNN51VTHS.marketingautomation.services/net']);
+  _ss.push(['_setAccount', 'KOI-4APYNOYP8O']);
+  _ss.push(['_trackPageView']);
+  window._pa = window._pa || {};
+  // _pa.orderId = "myOrderId"; // OPTIONAL: attach unique conversion identifier to conversions
+  // _pa.revenue = "19.99"; // OPTIONAL: attach dynamic purchase values to conversions
+  // _pa.productId = "myProductId"; // OPTIONAL: Include product ID for use with dynamic ads
+  (function() {
+  var ss = document.createElement('script');
+  ss.type = 'text/javascript'; ss.async = true;
+  ss.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'koi-3QNN51VTHS.marketingautomation.services/client/ss.js?ver=2.4.0';
+  var scr = document.getElementsByTagName('script')[0];
+  scr.parentNode.insertBefore(ss, scr);
+  })();
+  </script>
+
+
+
+  </head><body>
 
   <div id="navbar" class="navbar navbar-inverse navbar-default ">
     <div class="container">
@@ -61,9 +78,10 @@
         <div class="collapse navbar-collapse nav-collapse">
           <ul class="nav navbar-nav">
             
-                <li><a href="https://www.ossec.net/about/">About <i class="fa fa-info-circle"></i></a></li>
-                <li><a href="https://www.ossec.net/docs/">Documentation <i class="fa fa-book"></i></a></li>
-                <li><a href="https://www.ossec.net/downloads/">Downloads <i class="fa fa-download"></i></a></li>
+                <li><a href="https://www.ossec.net/about/">About</a></li>
+                <li><a href="https://www.ossec.net/docs/">Documentation</a></li>
+                <li><a href="https://www.ossec.net/register-for-ossec/">Get OSSEC+</a></li>
+                <li><a href="https://www.ossec.net/downloads/">Downloads</a></li>
             
             
               <li class="dropdown globaltoc-container">
@@ -136,64 +154,64 @@
 <p>syscheck_control provides an interface for managing and viewing the integrity checking database.</p>
 <div class="section" id="syscheck-control-argument-options">
 <h2>syscheck_control argument options<a class="headerlink" href="#syscheck-control-argument-options" title="Permalink to this headline">¶</a></h2>
-<dl class="option">
-<dt id="cmdoption-syscheck-control-h">
-<code class="descname">-h</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-syscheck-control-h" title="Permalink to this definition">¶</a></dt>
+<dl class="std option">
+<dt id="cmdoption-syscheck_control-h">
+<span id="cmdoption-syscheck-control-h"></span><code class="sig-name descname"><span class="pre">-h</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-syscheck_control-h" title="Permalink to this definition">¶</a></dt>
 <dd><p>Display the help message.</p>
 </dd></dl>
 
-<dl class="option">
-<dt id="cmdoption-syscheck-control-l">
-<code class="descname">-l</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-syscheck-control-l" title="Permalink to this definition">¶</a></dt>
+<dl class="std option">
+<dt id="cmdoption-syscheck_control-l">
+<span id="cmdoption-syscheck-control-l"></span><code class="sig-name descname"><span class="pre">-l</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-syscheck_control-l" title="Permalink to this definition">¶</a></dt>
 <dd><p>List available agents.</p>
 </dd></dl>
 
-<dl class="option">
-<dt id="cmdoption-syscheck-control-lc">
-<code class="descname">-lc</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-syscheck-control-lc" title="Permalink to this definition">¶</a></dt>
+<dl class="std option">
+<dt id="cmdoption-syscheck_control-lc">
+<span id="cmdoption-syscheck-control-lc"></span><code class="sig-name descname"><span class="pre">-lc</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-syscheck_control-lc" title="Permalink to this definition">¶</a></dt>
 <dd><p>List only currently connected agents.</p>
 </dd></dl>
 
-<dl class="option">
-<dt id="cmdoption-syscheck-control-u">
-<code class="descname">-u</code><code class="descclassname"> AGENT_ID</code><a class="headerlink" href="#cmdoption-syscheck-control-u" title="Permalink to this definition">¶</a></dt>
+<dl class="std option">
+<dt id="cmdoption-syscheck_control-u">
+<span id="cmdoption-syscheck-control-u"></span><code class="sig-name descname"><span class="pre">-u</span></code><code class="sig-prename descclassname"> <span class="pre">AGENT_ID</span></code><a class="headerlink" href="#cmdoption-syscheck_control-u" title="Permalink to this definition">¶</a></dt>
 <dd><p>Updates (clear) the database for the agent.
 If <cite>all</cite> is used as the <cite>AGENT_ID</cite>, the syscheck databases for all agents are cleared.</p>
 </dd></dl>
 
-<dl class="option">
-<dt id="cmdoption-syscheck-control-i">
-<code class="descname">-i</code><code class="descclassname"> AGENT_ID</code><a class="headerlink" href="#cmdoption-syscheck-control-i" title="Permalink to this definition">¶</a></dt>
+<dl class="std option">
+<dt id="cmdoption-syscheck_control-i">
+<span id="cmdoption-syscheck-control-i"></span><code class="sig-name descname"><span class="pre">-i</span></code><code class="sig-prename descclassname"> <span class="pre">AGENT_ID</span></code><a class="headerlink" href="#cmdoption-syscheck_control-i" title="Permalink to this definition">¶</a></dt>
 <dd><p>Prints database for the agent.</p>
 </dd></dl>
 
-<dl class="option">
-<dt id="cmdoption-syscheck-control-r">
-<code class="descname">-r</code><code class="descclassname"> -i</code><a class="headerlink" href="#cmdoption-syscheck-control-r" title="Permalink to this definition">¶</a></dt>
+<dl class="std option">
+<dt id="cmdoption-syscheck_control-r">
+<span id="cmdoption-syscheck-control-r"></span><code class="sig-name descname"><span class="pre">-r</span></code><code class="sig-prename descclassname"> <span class="pre">-i</span></code><a class="headerlink" href="#cmdoption-syscheck_control-r" title="Permalink to this definition">¶</a></dt>
 <dd><p>List modified registry entries for the agent (Windows only).</p>
 </dd></dl>
 
-<dl class="option">
-<dt id="cmdoption-syscheck-control-f">
-<code class="descname">-f</code><code class="descclassname"> &lt;file&gt;</code><a class="headerlink" href="#cmdoption-syscheck-control-f" title="Permalink to this definition">¶</a></dt>
+<dl class="std option">
+<dt id="cmdoption-syscheck_control-f">
+<span id="cmdoption-syscheck-control-f"></span><code class="sig-name descname"><span class="pre">-f</span></code><code class="sig-prename descclassname"> <span class="pre">&lt;file&gt;</span></code><a class="headerlink" href="#cmdoption-syscheck_control-f" title="Permalink to this definition">¶</a></dt>
 <dd><p>Used with -i. Prints information about a modified file.</p>
 </dd></dl>
 
-<dl class="option">
-<dt id="cmdoption-syscheck-control-z">
-<code class="descname">-z</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-syscheck-control-z" title="Permalink to this definition">¶</a></dt>
+<dl class="std option">
+<dt id="cmdoption-syscheck_control-z">
+<span id="cmdoption-syscheck-control-z"></span><code class="sig-name descname"><span class="pre">-z</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-syscheck_control-z" title="Permalink to this definition">¶</a></dt>
 <dd><p>Used with -f, zeroes the auto-ignore counter.</p>
 </dd></dl>
 
-<dl class="option">
-<dt id="cmdoption-syscheck-control-d">
-<code class="descname">-d</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-syscheck-control-d" title="Permalink to this definition">¶</a></dt>
+<dl class="std option">
+<dt id="cmdoption-syscheck_control-d">
+<span id="cmdoption-syscheck-control-d"></span><code class="sig-name descname"><span class="pre">-d</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-syscheck_control-d" title="Permalink to this definition">¶</a></dt>
 <dd><p>Used with -f, ignores that file.</p>
 </dd></dl>
 
-<dl class="option">
-<dt id="cmdoption-syscheck-control-s">
-<code class="descname">-s</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-syscheck-control-s" title="Permalink to this definition">¶</a></dt>
+<dl class="std option">
+<dt id="cmdoption-syscheck_control-s">
+<span id="cmdoption-syscheck-control-s"></span><code class="sig-name descname"><span class="pre">-s</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-syscheck_control-s" title="Permalink to this definition">¶</a></dt>
 <dd><p>Changes the output to CSV (comma delimited).</p>
 </dd></dl>
 
@@ -203,7 +221,7 @@ If <cite>all</cite> is used as the <cite>AGENT_ID</cite>, the syscheck databases
 <div class="section" id="example-1-getting-a-list-of-modified-files-for-an-agent">
 <h3>Example 1: Getting a list of modified files for an agent<a class="headerlink" href="#example-1-getting-a-list-of-modified-files-for-an-agent" title="Permalink to this headline">¶</a></h3>
 <p>To retrieve information about files that were monitored by OSSEC and modified after OSSEC was deployed, run <cite>syscheck_control -i AGENT_ID</cite>.</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp"># </span>/var/ossec/bin/syscheck_control -i <span class="m">002</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"># </span>/var/ossec/bin/syscheck_control -i <span class="m">002</span>
 
 <span class="go">Integrity changes for agent &#39;ossec-agent (002) - 192.168.1.86&#39;:</span>
 
@@ -238,21 +256,21 @@ If <cite>all</cite> is used as the <cite>AGENT_ID</cite>, the syscheck databases
 <h3>Example 2: Getting more detailed information about a modified file<a class="headerlink" href="#example-2-getting-more-detailed-information-about-a-modified-file" title="Permalink to this headline">¶</a></h3>
 <p>If you need to get more detailed information about a file that was modified you can use syscheck_control to view</p>
 <ul class="simple">
-<li>the time stamp when the file was added to the syscheck database</li>
-<li>the integrity checking values when the file was added to the syscheck database</li>
-<li>the time stamps when OSSEC detected a modification</li>
-<li>the integrity checking values for every time OSSEC detected a modification.</li>
+<li><p>the time stamp when the file was added to the syscheck database</p></li>
+<li><p>the integrity checking values when the file was added to the syscheck database</p></li>
+<li><p>the time stamps when OSSEC detected a modification</p></li>
+<li><p>the integrity checking values for every time OSSEC detected a modification.</p></li>
 </ul>
 <p>The integrity checking values include</p>
 <ul class="simple">
-<li>how often the file has changed</li>
-<li>file size</li>
-<li>file permissions</li>
-<li>owner and group id of the file</li>
-<li>MD5 and SHA1 hashes of the file.</li>
+<li><p>how often the file has changed</p></li>
+<li><p>file size</p></li>
+<li><p>file permissions</p></li>
+<li><p>owner and group id of the file</p></li>
+<li><p>MD5 and SHA1 hashes of the file.</p></li>
 </ul>
 <p>To retrieve this information, run <cite>syscheck_control -i AGENT_ID -f FILENAME</cite>:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp"># </span>/var/ossec/bin/syscheck_control -i <span class="m">002</span> -f /etc/authorization
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"># </span>/var/ossec/bin/syscheck_control -i <span class="m">002</span> -f /etc/authorization
 
 <span class="go">Integrity changes for agent &#39;ossec-agent (002) - 192.168.1.86&#39;:</span>
 <span class="go">Detailed information for entries matching: &#39;/etc/authorization&#39;</span>
@@ -282,13 +300,13 @@ If <cite>all</cite> is used as the <cite>AGENT_ID</cite>, the syscheck databases
 <div class="section" id="example-3-clearing-the-syscheck-database">
 <h3>Example 3: Clearing the syscheck database<a class="headerlink" href="#example-3-clearing-the-syscheck-database" title="Permalink to this headline">¶</a></h3>
 <p>To clear the syscheck database for a certain agent run the following command:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp"># </span>/var/ossec/bin/syscheck_control -u <span class="m">002</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"># </span>/var/ossec/bin/syscheck_control -u <span class="m">002</span>
 
 <span class="go">** Integrity check database updated.</span>
 </pre></div>
 </div>
 <p><cite>syscheck_control -i 002</cite> will now show that no modified files for that agent are in the database:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp"># </span>/var/ossec/bin/syscheck_control -i <span class="m">002</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"># </span>/var/ossec/bin/syscheck_control -i <span class="m">002</span>
 
 <span class="go">Integrity changes for agent &#39;ossec-agent (002) - 192.168.1.86&#39;:</span>
 
@@ -296,7 +314,7 @@ If <cite>all</cite> is used as the <cite>AGENT_ID</cite>, the syscheck databases
 </pre></div>
 </div>
 <p>To clear the database for all agents and the server run the following command:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp"># </span>/var/ossec/bin/syscheck_control -u all
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"># </span>/var/ossec/bin/syscheck_control -u all
 
 <span class="go">** Integrity check database updated.</span>
 </pre></div>
@@ -318,9 +336,8 @@ If <cite>all</cite> is used as the <cite>AGENT_ID</cite>, the syscheck databases
       
     </p>
     <p>
-        &copy; Copyright 2010-2020, OSSEC Project Team.<br/>
+        &copy; Copyright 2010-2021, OSSEC Project Team.<br/>
     OSSEC <b>ossec.net</b> domain owned and maintained by <a href="https://www.ossec.net" target="_blank">OSSEC Foundation</a><br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.5.2 - 
     Home page graphics courtesy of <a href="https://pixabay.com" target="_blank">pixabay</a>
     </p>
   </div>

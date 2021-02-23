@@ -1,36 +1,24 @@
 <!DOCTYPE html>
 
-
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Log Samples from AIX &#8212; OSSEC</title>
-    
-    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/parallax.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../../',
-        VERSION:     '3.3.0',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
-    <script type="text/javascript" src="../../../_static/jquery.js"></script>
-    <script type="text/javascript" src="../../../_static/underscore.js"></script>
-    <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="../../../_static/js/jquery-fix.js"></script>
-    <script type="text/javascript" src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../../../_static/bootstrap-sphinx.js"></script>
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script src="../../../_static/js/jquery-fix.js"></script>
+    <script src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script src="../../../_static/bootstrap-sphinx.js"></script>
     <link rel="author" title="About these documents" href="../../../about.html" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -39,8 +27,37 @@
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
 <meta name="apple-mobile-web-app-capable" content="yes">
 
-  </head>
-  <body role="document">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-138780766-1"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'UA-138780766-1');
+</script>
+
+<script type="text/javascript">
+  var _ss = _ss || [];
+  _ss.push(['_setDomain', 'https://koi-3QNN51VTHS.marketingautomation.services/net']);
+  _ss.push(['_setAccount', 'KOI-4APYNOYP8O']);
+  _ss.push(['_trackPageView']);
+  window._pa = window._pa || {};
+  // _pa.orderId = "myOrderId"; // OPTIONAL: attach unique conversion identifier to conversions
+  // _pa.revenue = "19.99"; // OPTIONAL: attach dynamic purchase values to conversions
+  // _pa.productId = "myProductId"; // OPTIONAL: Include product ID for use with dynamic ads
+  (function() {
+  var ss = document.createElement('script');
+  ss.type = 'text/javascript'; ss.async = true;
+  ss.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'koi-3QNN51VTHS.marketingautomation.services/client/ss.js?ver=2.4.0';
+  var scr = document.getElementsByTagName('script')[0];
+  scr.parentNode.insertBefore(ss, scr);
+  })();
+  </script>
+
+
+
+  </head><body>
 
   <div id="navbar" class="navbar navbar-inverse navbar-default ">
     <div class="container">
@@ -59,9 +76,10 @@
         <div class="collapse navbar-collapse nav-collapse">
           <ul class="nav navbar-nav">
             
-                <li><a href="https://www.ossec.net/about/">About <i class="fa fa-info-circle"></i></a></li>
-                <li><a href="https://www.ossec.net/docs/">Documentation <i class="fa fa-book"></i></a></li>
-                <li><a href="https://www.ossec.net/downloads/">Downloads <i class="fa fa-download"></i></a></li>
+                <li><a href="https://www.ossec.net/about/">About</a></li>
+                <li><a href="https://www.ossec.net/docs/">Documentation</a></li>
+                <li><a href="https://www.ossec.net/register-for-ossec/">Get OSSEC+</a></li>
+                <li><a href="https://www.ossec.net/downloads/">Downloads</a></li>
             
             
               <li class="dropdown globaltoc-container">
@@ -125,20 +143,20 @@
 <h1>Log Samples from AIX<a class="headerlink" href="#log-samples-from-aix" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="aix-su">
 <h2>AIX SU:<a class="headerlink" href="#aix-su" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Mar  2 15:14:36 WebServer1 su: BAD SU from 1.2.3.4 to root at /dev/pts/1</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Mar  2 15:14:36 WebServer1 su: BAD SU from 1.2.3.4 to root at /dev/pts/1</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="examples-aix-messages-log">
 <h2>Examples AIX messages log:<a class="headerlink" href="#examples-aix-messages-log" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Mar  6 11:09:27 webserver1 librmad[12906]: librmad Tue Mar  6 11:09:27 2007 /project/rm410/build/rm410/src/rm/rmeif/lib/rmad.c Line: 371, rmad_send_message, HRMRM0017E Message formatting failed with a return code of -1.</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Mar  6 11:09:27 webserver1 librmad[12906]: librmad Tue Mar  6 11:09:27 2007 /project/rm410/build/rm410/src/rm/rmeif/lib/rmad.c Line: 371, rmad_send_message, HRMRM0017E Message formatting failed with a return code of -1.</span>
 <span class="go">Mar  6 11:14:43 epopws1 xntpd[5676]: time reset (step) -0.199116 s</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="examples-aix-ibm-accessmanager-request-log-weblog">
 <h2>Examples AIX/IBM AccessManager request.log (weblog):<a class="headerlink" href="#examples-aix-ibm-accessmanager-request-log-weblog" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">1.2.3.4 - Unauth [04/Mar/2007:00:03:11 +0100] &quot;HEAD / HTTP/1.0&quot; 200 0</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">1.2.3.4 - Unauth [04/Mar/2007:00:03:11 +0100] &quot;HEAD / HTTP/1.0&quot; 200 0</span>
 <span class="go">2.3.4.5 - jMeter@is [04/Mar/2007:00:03:11 +0100] &quot;GET /pkmslogout HTTP/1.1&quot; 200 6691</span>
 <span class="go">3.4.5.6 - Unauth [04/Mar/2007:00:03:11 +0100] &quot;GET /cin HTTP/1.1&quot; 200 12272</span>
 </pre></div>
@@ -146,12 +164,13 @@
 <p><em>Examples of AIX ipsec logs:</em>
 .. code-block:: console</p>
 <blockquote>
-<div>ipsec_logd: #:3 R:p  I:10.0.0.99 S:10.0.0.82 D:10.0.0.99     P:tcp/ack SP:50349 DP:22 R:l I:en0 F:n T:0 L:88
-ipsec_logd: #:1 R:p  O:10.0.0.99. S:10.0.0.99 D:10.0.0.25     P:udp SP:2063 DP:53 R:l I:en0 F:n T:0 L:81</div></blockquote>
+<div><p>ipsec_logd: #:3 R:p  I:10.0.0.99 S:10.0.0.82 D:10.0.0.99     P:tcp/ack SP:50349 DP:22 R:l I:en0 F:n T:0 L:88
+ipsec_logd: #:1 R:p  O:10.0.0.99. S:10.0.0.99 D:10.0.0.25     P:udp SP:2063 DP:53 R:l I:en0 F:n T:0 L:81</p>
+</div></blockquote>
 </div>
 <div class="section" id="examples-of-aix-sshd-logins">
 <h2>Examples of AIX sshd logins:<a class="headerlink" href="#examples-of-aix-sshd-logins" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Apr  3 04:46:53 aixhostname sshd[21174]: Accepted publickey for user1 from 2.3.4.5 port 59663 ssh2</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Apr  3 04:46:53 aixhostname sshd[21174]: Accepted publickey for user1 from 2.3.4.5 port 59663 ssh2</span>
 <span class="go">May 21 20:22:28 aixhostname sshd[21487]: Failed password for user2 from 2.3.4.5 port 1045 ssh2</span>
 <span class="go">May 21 20:22:29 aixhostname sshd[21489]: Invalid user admin from 2.3.4.5</span>
 <span class="go">Apr  6 08:11:12 &lt;host&gt; sshd[21900]: User &lt;user&gt; not allowed because not listed in AllowUsers</span>
@@ -162,7 +181,7 @@ ipsec_logd: #:1 R:p  O:10.0.0.99. S:10.0.0.99 D:10.0.0.25     P:udp SP:2063 DP:5
 </div>
 <div class="section" id="aix-5-3">
 <h2>AIX 5.3:<a class="headerlink" href="#aix-5-3" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Apr 24 10:40:38 aix03srv auth|security:info sshd[475526]: Login restricted for tesu: You entered an invalid login name or password.</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Apr 24 10:40:38 aix03srv auth|security:info sshd[475526]: Login restricted for tesu: You entered an invalid login name or password.</span>
 <span class="go">Apr 24 10:40:38 aix03srv auth|security:info sshd[475526]: Failed none for invalid user user1a from 127.0.0.1 port 58997 ssh2</span>
 <span class="go">Apr 24 10:40:43 aix03srv auth|security:info sshd[475526]: Failed password for invalid user usa1 from 127.0.0.1 port 58997 ssh2</span>
 <span class="go">Apr 24 10:40:43 aix03srv auth|security:info syslog: ssh: failed login attempt for UNKNOWN_USER from loopback</span>
@@ -194,9 +213,8 @@ ipsec_logd: #:1 R:p  O:10.0.0.99. S:10.0.0.99 D:10.0.0.25     P:udp SP:2063 DP:5
       
     </p>
     <p>
-        &copy; Copyright 2010-2020, OSSEC Project Team.<br/>
+        &copy; Copyright 2010-2021, OSSEC Project Team.<br/>
     OSSEC <b>ossec.net</b> domain owned and maintained by <a href="https://www.ossec.net" target="_blank">OSSEC Foundation</a><br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.5.2 - 
     Home page graphics courtesy of <a href="https://pixabay.com" target="_blank">pixabay</a>
     </p>
   </div>

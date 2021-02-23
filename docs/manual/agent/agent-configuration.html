@@ -1,36 +1,24 @@
 <!DOCTYPE html>
 
-
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Centralized agent configuration &#8212; OSSEC</title>
-    
-    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/parallax.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../../',
-        VERSION:     '3.3.0',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
-    <script type="text/javascript" src="../../../_static/jquery.js"></script>
-    <script type="text/javascript" src="../../../_static/underscore.js"></script>
-    <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="../../../_static/js/jquery-fix.js"></script>
-    <script type="text/javascript" src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../../../_static/bootstrap-sphinx.js"></script>
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script src="../../../_static/js/jquery-fix.js"></script>
+    <script src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script src="../../../_static/bootstrap-sphinx.js"></script>
     <link rel="author" title="About these documents" href="../../../about.html" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -41,8 +29,37 @@
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
 <meta name="apple-mobile-web-app-capable" content="yes">
 
-  </head>
-  <body role="document">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-138780766-1"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'UA-138780766-1');
+</script>
+
+<script type="text/javascript">
+  var _ss = _ss || [];
+  _ss.push(['_setDomain', 'https://koi-3QNN51VTHS.marketingautomation.services/net']);
+  _ss.push(['_setAccount', 'KOI-4APYNOYP8O']);
+  _ss.push(['_trackPageView']);
+  window._pa = window._pa || {};
+  // _pa.orderId = "myOrderId"; // OPTIONAL: attach unique conversion identifier to conversions
+  // _pa.revenue = "19.99"; // OPTIONAL: attach dynamic purchase values to conversions
+  // _pa.productId = "myProductId"; // OPTIONAL: Include product ID for use with dynamic ads
+  (function() {
+  var ss = document.createElement('script');
+  ss.type = 'text/javascript'; ss.async = true;
+  ss.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'koi-3QNN51VTHS.marketingautomation.services/client/ss.js?ver=2.4.0';
+  var scr = document.getElementsByTagName('script')[0];
+  scr.parentNode.insertBefore(ss, scr);
+  })();
+  </script>
+
+
+
+  </head><body>
 
   <div id="navbar" class="navbar navbar-inverse navbar-default ">
     <div class="container">
@@ -61,9 +78,10 @@
         <div class="collapse navbar-collapse nav-collapse">
           <ul class="nav navbar-nav">
             
-                <li><a href="https://www.ossec.net/about/">About <i class="fa fa-info-circle"></i></a></li>
-                <li><a href="https://www.ossec.net/docs/">Documentation <i class="fa fa-book"></i></a></li>
-                <li><a href="https://www.ossec.net/downloads/">Downloads <i class="fa fa-download"></i></a></li>
+                <li><a href="https://www.ossec.net/about/">About</a></li>
+                <li><a href="https://www.ossec.net/docs/">Documentation</a></li>
+                <li><a href="https://www.ossec.net/register-for-ossec/">Get OSSEC+</a></li>
+                <li><a href="https://www.ossec.net/downloads/">Downloads</a></li>
             
             
               <li class="dropdown globaltoc-container">
@@ -143,7 +161,7 @@ detection (rootcheck) and log analysis.</p>
 <p>First Create the file /var/ossec/etc/shared/agent.conf.</p>
 <p>Inside the file you can configure the agent just as you would normally at
 ossec.conf</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;agent_config&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;agent_config&gt;</span>
     <span class="nt">&lt;localfile&gt;</span>
         <span class="nt">&lt;location&gt;</span>/var/log/my.log<span class="nt">&lt;/location&gt;</span>
         <span class="nt">&lt;log_format&gt;</span>syslog<span class="nt">&lt;/log_format&gt;</span>
@@ -153,7 +171,7 @@ ossec.conf</p>
 </div>
 <p>But you have a few more options. You can restrict the config by agent name,
 operating system, or profile:</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;agent_config</span> <span class="na">name=</span><span class="s">&quot;agent1&quot;</span><span class="nt">&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;agent_config</span> <span class="na">name=</span><span class="s">&quot;agent1&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;localfile&gt;</span>
         <span class="nt">&lt;location&gt;</span>/var/log/my.log<span class="nt">&lt;/location&gt;</span>
         <span class="nt">&lt;log_format&gt;</span>syslog<span class="nt">&lt;/log_format&gt;</span>
@@ -186,7 +204,7 @@ configuration will be pushed much quicker.</p>
 <h2>Restart the agent<a class="headerlink" href="#restart-the-agent" title="Permalink to this headline">¶</a></h2>
 <p>Once the configuration file is pushed, you can run the command <a class="reference internal" href="../../programs/agent_control.html#agent-control"><span class="std std-ref">agent_control</span></a> to
 see if the agent received the config and restart the agent remotely.</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp"># </span>md5sum /var/ossec/etc/shared/agent.conf
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"># </span>md5sum /var/ossec/etc/shared/agent.conf
 <span class="go">MD5 (/var/ossec/etc/shared/agent.conf) = ee1882236893df851bd9e4842007e7e7</span>
 <span class="gp"># </span>/var/ossec/bin/agent_control -i <span class="m">200</span>
 
@@ -207,11 +225,11 @@ see if the agent received the config and restart the agent remotely.</p>
 <p>When the agent received the configuration, the “Client Version” field will have
 the md5sum of the agent.conf file.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Linux systems generally use <code class="docutils literal"><span class="pre">md5sum</span></code>, but other systems may use <code class="docutils literal"><span class="pre">md5</span></code> as the name of the application to check the hash of the file.</p>
+<p class="admonition-title">Note</p>
+<p>Linux systems generally use <code class="docutils literal notranslate"><span class="pre">md5sum</span></code>, but other systems may use <code class="docutils literal notranslate"><span class="pre">md5</span></code> as the name of the application to check the hash of the file.</p>
 </div>
 <p>To restart the agent:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp"># </span>/var/ossec/bin/agent_control -R <span class="m">200</span> <span class="o">(</span>where <span class="m">200</span> is the agent id<span class="o">)</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"># </span>/var/ossec/bin/agent_control -R <span class="m">200</span> <span class="o">(</span>where <span class="m">200</span> is the agent id<span class="o">)</span>
 
 <span class="go">OSSEC HIDS agent_control: Restarting agent: 200</span>
 </pre></div>
@@ -231,9 +249,8 @@ the md5sum of the agent.conf file.</p>
       
     </p>
     <p>
-        &copy; Copyright 2010-2020, OSSEC Project Team.<br/>
+        &copy; Copyright 2010-2021, OSSEC Project Team.<br/>
     OSSEC <b>ossec.net</b> domain owned and maintained by <a href="https://www.ossec.net" target="_blank">OSSEC Foundation</a><br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.5.2 - 
     Home page graphics courtesy of <a href="https://pixabay.com" target="_blank">pixabay</a>
     </p>
   </div>

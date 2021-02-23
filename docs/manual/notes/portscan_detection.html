@@ -1,36 +1,24 @@
 <!DOCTYPE html>
 
-
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Detecting portscans with OSSEC and iplog &#8212; OSSEC</title>
-    
-    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/parallax.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../../',
-        VERSION:     '3.3.0',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
-    <script type="text/javascript" src="../../../_static/jquery.js"></script>
-    <script type="text/javascript" src="../../../_static/underscore.js"></script>
-    <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="../../../_static/js/jquery-fix.js"></script>
-    <script type="text/javascript" src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../../../_static/bootstrap-sphinx.js"></script>
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script src="../../../_static/js/jquery-fix.js"></script>
+    <script src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script src="../../../_static/bootstrap-sphinx.js"></script>
     <link rel="author" title="About these documents" href="../../../about.html" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -39,8 +27,37 @@
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
 <meta name="apple-mobile-web-app-capable" content="yes">
 
-  </head>
-  <body role="document">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-138780766-1"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'UA-138780766-1');
+</script>
+
+<script type="text/javascript">
+  var _ss = _ss || [];
+  _ss.push(['_setDomain', 'https://koi-3QNN51VTHS.marketingautomation.services/net']);
+  _ss.push(['_setAccount', 'KOI-4APYNOYP8O']);
+  _ss.push(['_trackPageView']);
+  window._pa = window._pa || {};
+  // _pa.orderId = "myOrderId"; // OPTIONAL: attach unique conversion identifier to conversions
+  // _pa.revenue = "19.99"; // OPTIONAL: attach dynamic purchase values to conversions
+  // _pa.productId = "myProductId"; // OPTIONAL: Include product ID for use with dynamic ads
+  (function() {
+  var ss = document.createElement('script');
+  ss.type = 'text/javascript'; ss.async = true;
+  ss.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'koi-3QNN51VTHS.marketingautomation.services/client/ss.js?ver=2.4.0';
+  var scr = document.getElementsByTagName('script')[0];
+  scr.parentNode.insertBefore(ss, scr);
+  })();
+  </script>
+
+
+
+  </head><body>
 
   <div id="navbar" class="navbar navbar-inverse navbar-default ">
     <div class="container">
@@ -59,9 +76,10 @@
         <div class="collapse navbar-collapse nav-collapse">
           <ul class="nav navbar-nav">
             
-                <li><a href="https://www.ossec.net/about/">About <i class="fa fa-info-circle"></i></a></li>
-                <li><a href="https://www.ossec.net/docs/">Documentation <i class="fa fa-book"></i></a></li>
-                <li><a href="https://www.ossec.net/downloads/">Downloads <i class="fa fa-download"></i></a></li>
+                <li><a href="https://www.ossec.net/about/">About</a></li>
+                <li><a href="https://www.ossec.net/docs/">Documentation</a></li>
+                <li><a href="https://www.ossec.net/register-for-ossec/">Get OSSEC+</a></li>
+                <li><a href="https://www.ossec.net/downloads/">Downloads</a></li>
             
             
               <li class="dropdown globaltoc-container">
@@ -123,36 +141,37 @@
       
   <div class="section" id="detecting-portscans-with-ossec-and-iplog">
 <h1>Detecting portscans with OSSEC and iplog<a class="headerlink" href="#detecting-portscans-with-ossec-and-iplog" title="Permalink to this headline">¶</a></h1>
-<p>iplog is a TCP/IP traffic logger. Currently, it is capable of logging TCP, UDP, and ICMP traffic. iplog is able to detect TCP port scans, TCP null scans, FIN scans, UDP and ICMP &#8220;smurf&#8221; attacks, bogus TCP flags, TCP SYN scans, TCP &#8220;Xmas&#8221; scans, ICMP ping floods, UDP scans, and IP fragment attacks. iplog is able to run in promiscuous mode and monitor traffic to all hosts on a network. iplog uses libpcap to read data from the network and can be ported to any system that supports pthreads and on which libpcap will function.</p>
+<p>iplog is a TCP/IP traffic logger. Currently, it is capable of logging TCP, UDP, and ICMP traffic. iplog is able to detect TCP port scans, TCP null scans, FIN scans, UDP and ICMP “smurf” attacks, bogus TCP flags, TCP SYN scans, TCP “Xmas” scans, ICMP ping floods, UDP scans, and IP fragment attacks. iplog is able to run in promiscuous mode and monitor traffic to all hosts on a network. iplog uses libpcap to read data from the network and can be ported to any system that supports pthreads and on which libpcap will function.</p>
 <div class="section" id="iplog-conf">
 <h2>iplog.conf:<a class="headerlink" href="#iplog-conf" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div>The syslog, user, group and internal network configuration is not show (OS dependent)
+<div><p>The syslog, user, group and internal network configuration is not show (OS dependent)
 iplog can log in different ways depending of the configuration parameters (DNS resolv, log_dest, etc), the proposed decoders and rules
 only work with the logs later described, this configuration file extract is functional with this requirement, please read man iplog
-and man iplog.conf</div></blockquote>
+and man iplog.conf</p>
+</div></blockquote>
 <ol class="arabic simple">
-<li>Log the IP address as well as the hostname of packets.</li>
+<li><p>Log the IP address as well as the hostname of packets.</p></li>
 </ol>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">set log_ip true</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">set log_ip true</span>
 </pre></div>
 </div>
 <ol class="arabic simple">
-<li>Do not log the destination of packets (more presentable logs)</li>
+<li><p>Do not log the destination of packets (more presentable logs)</p></li>
 </ol>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">set log_dest false</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">set log_dest false</span>
 </pre></div>
 </div>
 <ol class="arabic simple">
-<li>Ignore DNS traffic from nameservers in /etc/resolv.conf.</li>
+<li><p>Ignore DNS traffic from nameservers in /etc/resolv.conf.</p></li>
 </ol>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">set ignore_dns true</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">set ignore_dns true</span>
 </pre></div>
 </div>
 <ol class="arabic simple">
-<li>I dont want too many logs: ignore www, netbios, microsoft-ds loc-srv, 5900 tcp/port connections, not all the OS recognize the port alias, replace with the OS recognize the port alias, replace with the port number</li>
+<li><p>I dont want too many logs: ignore www, netbios, microsoft-ds loc-srv, 5900 tcp/port connections, not all the OS recognize the port alias, replace with the OS recognize the port alias, replace with the port number</p></li>
 </ol>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">ignore tcp dport 80</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">ignore tcp dport 80</span>
 
 <span class="go">ignore tcp dport netbios-ssn</span>
 
@@ -164,9 +183,9 @@ and man iplog.conf</div></blockquote>
 </pre></div>
 </div>
 <ol class="arabic simple">
-<li>Port Scan Check</li>
+<li><p>Port Scan Check</p></li>
 </ol>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">set portscan true</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">set portscan true</span>
 
 <span class="go">set icmp true</span>
 
@@ -199,13 +218,13 @@ and man iplog.conf</div></blockquote>
 </div>
 <div class="section" id="connect-scan-and-syn-scan">
 <h2>Connect Scan and SYN scan<a class="headerlink" href="#connect-scan-and-syn-scan" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">nmap -sT -PI -PT 10.10.160.2</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">nmap -sT -PI -PT 10.10.160.2</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="iplog-response">
 <h2>iplog response:<a class="headerlink" href="#iplog-response" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Nov 14 18:09:08 TCP: domain connection attempt from 10.10.150.1:51239</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Nov 14 18:09:08 TCP: domain connection attempt from 10.10.150.1:51239</span>
 <span class="go">Nov 14 18:09:08 TCP: https connection attempt from 10.10.150.1:51240</span>
 <span class="go">Nov 14 18:09:08 TCP: port 1723 connection attempt from 10.10.150.1:51241</span>
 <span class="go">Nov 14 18:09:08 TCP: ftp connection attempt from 10.10.150.1:51242</span>
@@ -231,52 +250,52 @@ and man iplog.conf</div></blockquote>
 </div>
 <div class="section" id="fin-stealth-scan">
 <h2>FIN Stealth Scan:<a class="headerlink" href="#fin-stealth-scan" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">nmap -sF -p- -PI -PT 10.10.150.2</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">nmap -sF -p- -PI -PT 10.10.150.2</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="id1">
 <h2>iplog response:<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">&lt;font color=&quot;red&quot;&gt;Nov 14 18:22:51 TCP: FIN scan detected [ports 3389,1723,256,113,22,389,554,443,21,23,...] from 10.10.150.1 [port 57876]&lt;/font&gt;</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&lt;font color=&quot;red&quot;&gt;Nov 14 18:22:51 TCP: FIN scan detected [ports 3389,1723,256,113,22,389,554,443,21,23,...] from 10.10.150.1 [port 57876]&lt;/font&gt;</span>
 <span class="go">Nov 14 18:24:05 TCP: FIN scan mode expired for 10.10.150.1 - received a total of 65535 packets (1310700 bytes)</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="null-stealth-scan">
 <h2>NULL Stealth Scan:<a class="headerlink" href="#null-stealth-scan" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">nmap -sN -p- -PI -PT 10.10.150.2</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">nmap -sN -p- -PI -PT 10.10.150.2</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="id2">
 <h2>iplog response:<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">&lt;font color=&quot;red&quot;&gt;Nov 14 18:26:58 TCP: null scan detected [ports 636,53,23,3389,1723,443,113,554,25,21,...] from 10.10.150.1 [port 35444]&lt;/font&gt;</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&lt;font color=&quot;red&quot;&gt;Nov 14 18:26:58 TCP: null scan detected [ports 636,53,23,3389,1723,443,113,554,25,21,...] from 10.10.150.1 [port 35444]&lt;/font&gt;</span>
 <span class="go">Nov 14 18:28:14 TCP: null scan mode expired for 10.10.150.1 - received a total of 65534 packets (1310680 bytes)</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="xmas-tree-stealth-scan">
 <h2>Xmas Tree Stealth Scan:<a class="headerlink" href="#xmas-tree-stealth-scan" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">nmap -sX -p- -PI -PT 10.10.150.2</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">nmap -sX -p- -PI -PT 10.10.150.2</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="id3">
 <h2>iplog response:<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">&lt;font color=&quot;red&quot;&gt;Nov 14 18:30:30 TCP: Xmas scan detected [ports 636,256,554,389,1723,53,443,21,3389,22,...] from 10.10.150.1 [port 42399]&lt;/font&gt;</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&lt;font color=&quot;red&quot;&gt;Nov 14 18:30:30 TCP: Xmas scan detected [ports 636,256,554,389,1723,53,443,21,3389,22,...] from 10.10.150.1 [port 42399]&lt;/font&gt;</span>
 <span class="go">Nov 14 18:31:48 TCP: Xmas scan mode expired for 10.10.150.1 - received a total of 65532 packets (1310640 bytes).</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="udp-port-scan">
 <h2>UDP port scan:<a class="headerlink" href="#udp-port-scan" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">nmap -sU -p- -PI -PT 10.10.150.2</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">nmap -sU -p- -PI -PT 10.10.150.2</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="id4">
 <h2>iplog response:<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Nov 14 18:34:59 UDP: dgram to port 33161 from 10.10.150.1:60362 (0 data bytes)</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Nov 14 18:34:59 UDP: dgram to port 33161 from 10.10.150.1:60362 (0 data bytes)</span>
 <span class="go">Nov 14 18:34:59 UDP: dgram to port 41107 from 10.10.150.1:60362 (0 data bytes)</span>
 <span class="go">Nov 14 18:34:59 UDP: dgram to port 63571 from 10.10.150.1:60362 (0 data bytes)</span>
 <span class="go">Nov 14 18:34:59 UDP: dgram to port 48714 from 10.10.150.1:60362 (0 data bytes)</span>
@@ -307,34 +326,36 @@ and man iplog.conf</div></blockquote>
 </div>
 <div class="section" id="traceroute">
 <h2>traceroute:<a class="headerlink" href="#traceroute" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">traceroute 10.10.150.1</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">traceroute 10.10.150.1</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="id5">
 <h2>iplog response:<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div>&lt;font color=&#8221;red&#8221;&gt;Nov 14 18:57:18 UDP: traceroute from 10.10.150.2&lt;/font&gt;</div></blockquote>
+<div><p>&lt;font color=”red”&gt;Nov 14 18:57:18 UDP: traceroute from 10.10.150.2&lt;/font&gt;</p>
+</div></blockquote>
 </div>
 <div class="section" id="flood-ping-attack">
 <h2>Flood ping attack:<a class="headerlink" href="#flood-ping-attack" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">ping -f 10.10.150.2</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">ping -f 10.10.150.2</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="id6">
 <h2>iplog response:<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div>&lt;font color=&#8221;red&#8221;&gt;Nov 14 19:09:33 ICMP: ping flood detected from 10.10.150.1&lt;/font&gt;
-Nov 14 19:11:29 ICMP: ping flood mode expired for 10.10.150.1 - received a total of 428 packets (8416000 bytes).</div></blockquote>
+<div><p>&lt;font color=”red”&gt;Nov 14 19:09:33 ICMP: ping flood detected from 10.10.150.1&lt;/font&gt;
+Nov 14 19:11:29 ICMP: ping flood mode expired for 10.10.150.1 - received a total of 428 packets (8416000 bytes).</p>
+</div></blockquote>
 </div>
 <div class="section" id="ip-fragment-attacks">
 <h2>IP fragment attacks:<a class="headerlink" href="#ip-fragment-attacks" title="Permalink to this headline">¶</a></h2>
 <p>TODO</p>
 </div>
 <div class="section" id="udp-and-icmp-smurf-attacks">
-<h2>UDP and ICMP &#8220;smurf&#8221; attacks:<a class="headerlink" href="#udp-and-icmp-smurf-attacks" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Nov 18 19:12:30 ICMP/UDP: smurf attack detected from 201.223.41.0</span>
+<h2>UDP and ICMP “smurf” attacks:<a class="headerlink" href="#udp-and-icmp-smurf-attacks" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Nov 18 19:12:30 ICMP/UDP: smurf attack detected from 201.223.41.0</span>
 <span class="go">&lt;font color=&quot;red&quot;&gt;Nov 18 19:23:30 ICMP/UDP: smurf attack detected from 201.223.41.0&lt;/font&gt;</span>
 <span class="go">Nov 18 19:28:07 ICMP/UDP: smurf attack mode expired for 201.223.41.0 - received a total of 337 packets (21568 bytes).</span>
 </pre></div>
@@ -345,17 +366,17 @@ Nov 14 19:11:29 ICMP: ping flood mode expired for 10.10.150.1 - received a total
 </div>
 <div class="section" id="bogus-tcp-flags">
 <h2>bogus TCP flags:<a class="headerlink" href="#bogus-tcp-flags" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">&lt;font color=&quot;red&quot;&gt;Nov 14 15:57:56 TCP: Bogus TCP flags set by 10.10.160.2:60873 (dest port 25)&lt;/font&gt;</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&lt;font color=&quot;red&quot;&gt;Nov 14 15:57:56 TCP: Bogus TCP flags set by 10.10.160.2:60873 (dest port 25)&lt;/font&gt;</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="ossec-hids-iplog-sensor-implementation">
 <h2>OSSEC (HIDS) + iplog (sensor) implementation:<a class="headerlink" href="#ossec-hids-iplog-sensor-implementation" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Work in progress</li>
-<li>TODO: improve regex, decoders and rules. p0f complementation?</li>
-<li>Configuration tested in FreeBSD 6.1 and archlinux gimmick</li>
-<li>Last modification 14/Nov/2006</li>
+<li><p>Work in progress</p></li>
+<li><p>TODO: improve regex, decoders and rules. p0f complementation?</p></li>
+<li><p>Configuration tested in FreeBSD 6.1 and archlinux gimmick</p></li>
+<li><p>Last modification 14/Nov/2006</p></li>
 </ul>
 </div>
 <div class="section" id="iplog-decoder">
@@ -364,15 +385,16 @@ Nov 14 19:11:29 ICMP: ping flood mode expired for 10.10.150.1 - received a total
 <div class="section" id="for-this-logs">
 <h2>For this logs:<a class="headerlink" href="#for-this-logs" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div>Nov 14 18:09:12 TCP: SYN scan detected [ports 21,1] from 10.10.150.1 [ports 34333,34335,34325,34326,34327,...]
-Nov 14 18:09:08 TCP: port scan detected [ports 53,443,1723,21,25,3389,113,636,256,554,...] from 10.10.150.1 [ports 51242,51243,...]
-Nov 14 18:22:51 TCP: FIN scan detected [ports 3389,1723,256,113,22,389,554,443,21,23,...] from 10.10.150.1 [port 57876]
-Nov 14 18:26:58 TCP: null scan detected [ports 636,53,23,3389,1723,443,113,554,25,21,...] from 10.10.150.1 [port 35444]
-Nov 14 18:30:30 TCP: Xmas scan detected [ports 636,256,554,389,1723,53,443,21,3389,22,...] from 10.10.150.1 [port 42399]</div></blockquote>
+<div><p>Nov 14 18:09:12 TCP: SYN scan detected [ports 21,1] from 10.10.150.1 [ports 34333,34335,34325,34326,34327,…]
+Nov 14 18:09:08 TCP: port scan detected [ports 53,443,1723,21,25,3389,113,636,256,554,…] from 10.10.150.1 [ports 51242,51243,…]
+Nov 14 18:22:51 TCP: FIN scan detected [ports 3389,1723,256,113,22,389,554,443,21,23,…] from 10.10.150.1 [port 57876]
+Nov 14 18:26:58 TCP: null scan detected [ports 636,53,23,3389,1723,443,113,554,25,21,…] from 10.10.150.1 [port 35444]
+Nov 14 18:30:30 TCP: Xmas scan detected [ports 636,256,554,389,1723,53,443,21,3389,22,…] from 10.10.150.1 [port 42399]</p>
+</div></blockquote>
 </div>
 <div class="section" id="a-working-decoder-is">
 <h2>a working decoder is:<a class="headerlink" href="#a-working-decoder-is" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">&lt;decoder name=&quot;iplog-scan&quot;&gt;</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&lt;decoder name=&quot;iplog-scan&quot;&gt;</span>
 <span class="go"> &lt;prematch&gt;\S+ scan detected&lt;/prematch&gt;</span>
 <span class="go"> &lt;regex offset=&quot;after_prematch&quot;&gt;\S+ \S+ from (\S+)&lt;/regex&gt;</span>
 <span class="go"> &lt;order&gt;srcip&lt;/order&gt;</span>
@@ -382,13 +404,13 @@ Nov 14 18:30:30 TCP: Xmas scan detected [ports 636,256,554,389,1723,53,443,21,33
 </div>
 <div class="section" id="for-this-log">
 <h2>For this log:<a class="headerlink" href="#for-this-log" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Nov 14 18:35:00 UDP: scan/flood detected [ports 33161,41107,63571,48714,25271,...] from 10.10.150.1 [ports 60362]</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Nov 14 18:35:00 UDP: scan/flood detected [ports 33161,41107,63571,48714,25271,...] from 10.10.150.1 [ports 60362]</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="a-proposed-decoder-is-not-tested">
 <h2>a proposed decoder is (not tested):<a class="headerlink" href="#a-proposed-decoder-is-not-tested" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">&lt;decoder name=&quot;iplog-flood&quot;&gt;</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&lt;decoder name=&quot;iplog-flood&quot;&gt;</span>
 <span class="go"> &lt;prematch&gt;scan/flood detected&lt;/prematch&gt;</span>
 <span class="go"> &lt;regex offset=&quot;after_prematch&quot;&gt;\S+ \S+ from (\S+)&lt;/regex&gt;</span>
 <span class="go"> &lt;order&gt;srcip&lt;/order&gt;</span>
@@ -398,13 +420,13 @@ Nov 14 18:30:30 TCP: Xmas scan detected [ports 636,256,554,389,1723,53,443,21,33
 </div>
 <div class="section" id="id7">
 <h2>For this log:<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Nov 14 19:09:33 ICMP: ping flood detected from 10.10.150.1</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Nov 14 19:09:33 ICMP: ping flood detected from 10.10.150.1</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="id8">
 <h2>a proposed decoder is (not tested):<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">&lt;decoder name=&quot;iplog-pingflood&quot;&gt;</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&lt;decoder name=&quot;iplog-pingflood&quot;&gt;</span>
 <span class="go"> &lt;prematch&gt;ping flood detected from&lt;/prematch&gt;</span>
 <span class="go"> &lt;regex offset=&quot;after_prematch&quot;&gt;(\S+)&lt;/regex&gt;</span>
 <span class="go"> &lt;order&gt;srcip&lt;/order&gt;</span>
@@ -415,13 +437,13 @@ Nov 14 18:30:30 TCP: Xmas scan detected [ports 636,256,554,389,1723,53,443,21,33
 <div class="section" id="id9">
 <h2>For this log:<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
 <p>(necesary to include???????) i Think no (very paranoid)</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Nov 14 18:57:18 UDP: traceroute from 10.10.150.2</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Nov 14 18:57:18 UDP: traceroute from 10.10.150.2</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="id10">
 <h2>a proposed decoder is (not tested):<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">&lt;decoder name=&quot;iplog-traceroute&quot;&gt;</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&lt;decoder name=&quot;iplog-traceroute&quot;&gt;</span>
 <span class="go"> &lt;prematch&gt;pingtraceroute from&lt;/prematch&gt;</span>
 <span class="go"> &lt;regex offset=&quot;after_prematch&quot;&gt;(\S+)&lt;/regex&gt;</span>
 <span class="go"> &lt;order&gt;srcip&lt;/order&gt;</span>
@@ -432,13 +454,13 @@ Nov 14 18:30:30 TCP: Xmas scan detected [ports 636,256,554,389,1723,53,443,21,33
 <div class="section" id="id11">
 <h2>For this log:<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h2>
 <p>(necesary to include???????) i Think no (very paranoic)</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Nov 14 15:57:56 TCP: Bogus TCP flags set by 10.10.160.2:60873 (dest port 25)</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Nov 14 15:57:56 TCP: Bogus TCP flags set by 10.10.160.2:60873 (dest port 25)</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="id12">
 <h2>a proposed decoder is (not tested):<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">&lt;decoder name=&quot;iplog-bogustcp&quot;&gt;</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&lt;decoder name=&quot;iplog-bogustcp&quot;&gt;</span>
 <span class="go"> &lt;prematch&gt;Bogus TCP flags set by&lt;/prematch&gt;</span>
 <span class="go"> &lt;regex offset=&quot;after_prematch&quot;&gt;(\S+):\d+&lt;/regex&gt;</span>
 <span class="go"> &lt;order&gt;srcip&lt;/order&gt;</span>
@@ -449,14 +471,14 @@ Nov 14 18:30:30 TCP: Xmas scan detected [ports 636,256,554,389,1723,53,443,21,33
 <div class="section" id="iplog-rules">
 <h2>iplog rules:<a class="headerlink" href="#iplog-rules" title="Permalink to this headline">¶</a></h2>
 <p>Only for working decoders:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">cd /var/ossec/rules</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cd /var/ossec/rules</span>
 <span class="go">touch iplog_rules.xml</span>
 <span class="go">chown root:ossec iplog_rules.xml</span>
 <span class="go">chmod 550 iplog_rules.xml</span>
 </pre></div>
 </div>
 <p>in iplog_rules.xml include:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">&lt;group name=&quot;syslog,errors,&quot;&gt;</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&lt;group name=&quot;syslog,errors,&quot;&gt;</span>
 <span class="go"> &lt;rule id=&quot;99990&quot; level=&quot;6&quot;&gt;</span>
 <span class="go">   &lt;decoded_as&gt;iplog-scan&lt;/decoded_as&gt;</span>
 <span class="go">   &lt;description&gt;iplog scan detect&lt;/description&gt;</span>
@@ -464,17 +486,17 @@ Nov 14 18:30:30 TCP: Xmas scan detected [ports 636,256,554,389,1723,53,443,21,33
 <span class="go">&lt;/group&gt;</span>
 </pre></div>
 </div>
-<p>ossec.conf&#8217;</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">cd /var/ossec/etc</span>
+<p>ossec.conf’</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cd /var/ossec/etc</span>
 <span class="go">vi  ossec.conf</span>
 </pre></div>
 </div>
 <p>include in the correct place:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">&lt;include&gt;iplog_rules.xml&lt;/include&gt;</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&lt;include&gt;iplog_rules.xml&lt;/include&gt;</span>
 </pre></div>
 </div>
 <p>and</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">&lt;localfile&gt;</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&lt;localfile&gt;</span>
 <span class="go">  &lt;log_format&gt;syslog&lt;/log_format&gt;</span>
 <span class="go">  &lt;location&gt;/var/log/iplog&lt;/location&gt;</span>
 <span class="go">&lt;/localfile&gt;</span>
@@ -482,13 +504,14 @@ Nov 14 18:30:30 TCP: Xmas scan detected [ports 636,256,554,389,1723,53,443,21,33
 </div>
 <p>or wherever you put your iplog logs</p>
 <p>start iplog</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">iplog -d</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">iplog -d</span>
 </pre></div>
 </div>
 <p>restart ossec
 .. code-block:: console</p>
 <blockquote>
-<div>/var/ossec/bin/ossec-control restart</div></blockquote>
+<div><p>/var/ossec/bin/ossec-control restart</p>
+</div></blockquote>
 <p>test with nmap (see before)</p>
 </div>
 <div class="section" id="ossec-active-response">
@@ -497,12 +520,12 @@ Nov 14 18:30:30 TCP: Xmas scan detected [ports 636,256,554,389,1723,53,443,21,33
 <div class="section" id="firewall-drop-freebsd-ipfw">
 <h2>Firewall Drop: FreeBSD-IPFW:<a class="headerlink" href="#firewall-drop-freebsd-ipfw" title="Permalink to this headline">¶</a></h2>
 <p>Add to your ipfw script the follow lines, if you are using the 00001 rule number disoccupying:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">/sbin/ipfw add 00001 deny ip from table\(00002\) to any</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">/sbin/ipfw add 00001 deny ip from table\(00002\) to any</span>
 <span class="go">/sbin/ipfw add 00001 deny ip from any to table\(00002\)</span>
 </pre></div>
 </div>
 <p>Change  /var/ossec/active-response/bin/firewall-drop.sh to adjust to the red lines</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span>!/bin/sh
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">#</span>!/bin/sh
 <span class="gp"># </span>Adds an IP to the IPFW drop list.
 <span class="gp"># </span>Only works with IPFW.
 <span class="gp"># </span>We use TABLE <span class="m">00001</span>. If you use this table <span class="k">for</span> anything <span class="k">else</span>,
@@ -556,8 +579,8 @@ Nov 14 18:30:30 TCP: Xmas scan detected [ports 636,256,554,389,1723,53,443,21,33
 <span class="go">exit 1;</span>
 </pre></div>
 </div>
-<p>Include in <code class="docutils literal"><span class="pre">/var/ossec/etc/ossec.conf</span></code>:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">&lt;command&gt;</span>
+<p>Include in <code class="docutils literal notranslate"><span class="pre">/var/ossec/etc/ossec.conf</span></code>:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&lt;command&gt;</span>
 <span class="go">  &lt;name&gt;firewall-drop&lt;/name&gt;</span>
 <span class="go">  &lt;executable&gt;firewall-drop.sh&lt;/executable&gt;</span>
 <span class="go">  &lt;expect&gt;srcip&lt;/expect&gt;</span>
@@ -572,37 +595,38 @@ Nov 14 18:30:30 TCP: Xmas scan detected [ports 636,256,554,389,1723,53,443,21,33
 </pre></div>
 </div>
 <p>restart ossec:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">/var/ossec/bin/ossec-control restart</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">/var/ossec/bin/ossec-control restart</span>
 </pre></div>
 </div>
 <p>Scan your machine (caution OSSEC will block the scanner IP) from online scanner server like: <a class="reference external" href="http://www.derkeiler.com/Service/PortScan/">http://www.derkeiler.com/Service/PortScan/</a>, or from a remote machine with:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">nmap -sT -PI -PT 1.2.3.4</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">nmap -sT -PI -PT 1.2.3.4</span>
 </pre></div>
 </div>
 <p>look if the active-response works with:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">/sbin/ipfw table 2 list</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">/sbin/ipfw table 2 list</span>
 </pre></div>
 </div>
 <p>or</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">tail -f /var/ossec/active-response/ossec-hids-responses.log</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">tail -f /var/ossec/active-response/ossec-hids-responses.log</span>
 </pre></div>
 </div>
 <p>if you want to flush the banned IPs in the table</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">/sbin/ipfw table 2 flush</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">/sbin/ipfw table 2 flush</span>
 </pre></div>
 </div>
 <p>or want to remove a specific IP in the table</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">/sbin/ipfw table 2 delete 1.2.3.4</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">/sbin/ipfw table 2 delete 1.2.3.4</span>
 </pre></div>
 </div>
 <p>if you want to flush the table every 24 Hrs:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">vi /etc/crontab</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">vi /etc/crontab</span>
 </pre></div>
 </div>
 <p>and include
 .. code-block:: console</p>
 <blockquote>
-<div>0    <a href="#id13"><span class="problematic" id="id14">*</span></a>/24       *       *       *  root /sbin/ipfw table 2 flush &gt; /dev/null 2&gt;&amp;1</div></blockquote>
+<div><p>0    <a href="#id13"><span class="problematic" id="id14">*</span></a>/24       *       *       *  root /sbin/ipfw table 2 flush &gt; /dev/null 2&gt;&amp;1</p>
+</div></blockquote>
 </div>
 <div class="section" id="more-restrictions">
 <h2>More restrictions:<a class="headerlink" href="#more-restrictions" title="Permalink to this headline">¶</a></h2>
@@ -610,13 +634,13 @@ Nov 14 18:30:30 TCP: Xmas scan detected [ports 636,256,554,389,1723,53,443,21,33
 <div class="section" id="id15">
 <h2>iplog.conf:<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h2>
 <p>To Enable or disable a mechanism that attempts to fool programs, such as nmap and queso, that perform remote OS detection, add the follow line to iplog.conf</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">set fool_nmap true</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">set fool_nmap true</span>
 </pre></div>
 </div>
-<p>As a side effect, enabling this option will also cause most of nmap&#8217;s stealth&#8221; scans to fail.</p>
-<p>BSD&#8217;s sysctl (some FreeBSD specific):
+<p>As a side effect, enabling this option will also cause most of nmap’s stealth” scans to fail.</p>
+<p>BSD’s sysctl (some FreeBSD specific):
 ^^^^^^^^^^^^^^^^^%^^^^^^^^^^^^^^^^^^^</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">tcp_drop_synfin</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">tcp_drop_synfin</span>
 <span class="go">net.inet.tcp.blackhole</span>
 <span class="go">net.inet.udp.blackhole</span>
 </pre></div>
@@ -636,9 +660,8 @@ Nov 14 18:30:30 TCP: Xmas scan detected [ports 636,256,554,389,1723,53,443,21,33
       
     </p>
     <p>
-        &copy; Copyright 2010-2020, OSSEC Project Team.<br/>
+        &copy; Copyright 2010-2021, OSSEC Project Team.<br/>
     OSSEC <b>ossec.net</b> domain owned and maintained by <a href="https://www.ossec.net" target="_blank">OSSEC Foundation</a><br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.5.2 - 
     Home page graphics courtesy of <a href="https://pixabay.com" target="_blank">pixabay</a>
     </p>
   </div>

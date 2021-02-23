@@ -1,36 +1,24 @@
 <!DOCTYPE html>
 
-
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Windows: Active Response Configuration &#8212; OSSEC</title>
-    
-    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/parallax.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../../',
-        VERSION:     '3.3.0',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
-    <script type="text/javascript" src="../../../_static/jquery.js"></script>
-    <script type="text/javascript" src="../../../_static/underscore.js"></script>
-    <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="../../../_static/js/jquery-fix.js"></script>
-    <script type="text/javascript" src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../../../_static/bootstrap-sphinx.js"></script>
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script src="../../../_static/js/jquery-fix.js"></script>
+    <script src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script src="../../../_static/bootstrap-sphinx.js"></script>
     <link rel="author" title="About these documents" href="../../../about.html" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -41,8 +29,37 @@
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
 <meta name="apple-mobile-web-app-capable" content="yes">
 
-  </head>
-  <body role="document">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-138780766-1"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'UA-138780766-1');
+</script>
+
+<script type="text/javascript">
+  var _ss = _ss || [];
+  _ss.push(['_setDomain', 'https://koi-3QNN51VTHS.marketingautomation.services/net']);
+  _ss.push(['_setAccount', 'KOI-4APYNOYP8O']);
+  _ss.push(['_trackPageView']);
+  window._pa = window._pa || {};
+  // _pa.orderId = "myOrderId"; // OPTIONAL: attach unique conversion identifier to conversions
+  // _pa.revenue = "19.99"; // OPTIONAL: attach dynamic purchase values to conversions
+  // _pa.productId = "myProductId"; // OPTIONAL: Include product ID for use with dynamic ads
+  (function() {
+  var ss = document.createElement('script');
+  ss.type = 'text/javascript'; ss.async = true;
+  ss.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'koi-3QNN51VTHS.marketingautomation.services/client/ss.js?ver=2.4.0';
+  var scr = document.getElementsByTagName('script')[0];
+  scr.parentNode.insertBefore(ss, scr);
+  })();
+  </script>
+
+
+
+  </head><body>
 
   <div id="navbar" class="navbar navbar-inverse navbar-default ">
     <div class="container">
@@ -61,9 +78,10 @@
         <div class="collapse navbar-collapse nav-collapse">
           <ul class="nav navbar-nav">
             
-                <li><a href="https://www.ossec.net/about/">About <i class="fa fa-info-circle"></i></a></li>
-                <li><a href="https://www.ossec.net/docs/">Documentation <i class="fa fa-book"></i></a></li>
-                <li><a href="https://www.ossec.net/downloads/">Downloads <i class="fa fa-download"></i></a></li>
+                <li><a href="https://www.ossec.net/about/">About</a></li>
+                <li><a href="https://www.ossec.net/docs/">Documentation</a></li>
+                <li><a href="https://www.ossec.net/register-for-ossec/">Get OSSEC+</a></li>
+                <li><a href="https://www.ossec.net/downloads/">Downloads</a></li>
             
             
               <li class="dropdown globaltoc-container">
@@ -135,7 +153,7 @@
 <span id="manual-ar-windows"></span><h1>Windows: Active Response Configuration<a class="headerlink" href="#windows-active-response-configuration" title="Permalink to this headline">¶</a></h1>
 <p>To start, you need to enable active response on Windows (disabled by default).
 To do that, just add the following to the agent’s ossec.conf:</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;active-response&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;active-response&gt;</span>
     <span class="nt">&lt;disabled&gt;</span>no<span class="nt">&lt;/disabled&gt;</span>
 <span class="nt">&lt;/active-response&gt;</span>
 </pre></div>
@@ -143,7 +161,7 @@ To do that, just add the following to the agent’s ossec.conf:</p>
 <p>After that, you need to go to the manager and specify when to run the response.
 Adding the following to ossec.conf will enable the responses for alerts above
 level 6:</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;command&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;command&gt;</span>
     <span class="nt">&lt;name&gt;</span>win_nullroute<span class="nt">&lt;/name&gt;</span>
     <span class="nt">&lt;executable&gt;</span>route-null.cmd<span class="nt">&lt;/executable&gt;</span>
     <span class="nt">&lt;expect&gt;</span>srcip<span class="nt">&lt;/expect&gt;</span>
@@ -161,7 +179,7 @@ level 6:</p>
 <p>With the configuration completed (and the manager restarted), you can test the
 active response by running the agent-control script (in this case, I am running
 it on agent id 185 to block ip 2.3.4.5):</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp"># </span>/var/ossec/bin/agent_control -L
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"># </span>/var/ossec/bin/agent_control -L
 
 <span class="go">OSSEC HIDS agent_control. Available active responses:</span>
 
@@ -175,7 +193,7 @@ it on agent id 185 to block ip 2.3.4.5):</p>
 </pre></div>
 </div>
 <p>And looking at the agent you should see the new entry in the route table:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">C:\&gt;route print</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">C:\&gt;route print</span>
 <span class="go">..</span>
 <span class="go">Active Routes:</span>
 <span class="go">Network Destination Netmask Gateway Interface Metric</span>
@@ -185,7 +203,7 @@ it on agent id 185 to block ip 2.3.4.5):</p>
 </div>
 <p>If you run into any issues, look at the ossec.log file (on the agent) for any
 entry for ossec-execd. If you enabled it correctly, you will see:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">2008/08/20 11:53:49 ossec-execd: INFO: Started (pid: 3896).</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">2008/08/20 11:53:49 ossec-execd: INFO: Started (pid: 3896).</span>
 </pre></div>
 </div>
 </div>
@@ -202,9 +220,8 @@ entry for ossec-execd. If you enabled it correctly, you will see:</p>
       
     </p>
     <p>
-        &copy; Copyright 2010-2020, OSSEC Project Team.<br/>
+        &copy; Copyright 2010-2021, OSSEC Project Team.<br/>
     OSSEC <b>ossec.net</b> domain owned and maintained by <a href="https://www.ossec.net" target="_blank">OSSEC Foundation</a><br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.5.2 - 
     Home page graphics courtesy of <a href="https://pixabay.com" target="_blank">pixabay</a>
     </p>
   </div>

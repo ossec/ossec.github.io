@@ -1,36 +1,24 @@
 <!DOCTYPE html>
 
-
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Log Samples from Exim &#8212; OSSEC</title>
-    
-    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/parallax.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../../',
-        VERSION:     '3.3.0',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
-    <script type="text/javascript" src="../../../_static/jquery.js"></script>
-    <script type="text/javascript" src="../../../_static/underscore.js"></script>
-    <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="../../../_static/js/jquery-fix.js"></script>
-    <script type="text/javascript" src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../../../_static/bootstrap-sphinx.js"></script>
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script src="../../../_static/js/jquery-fix.js"></script>
+    <script src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script src="../../../_static/bootstrap-sphinx.js"></script>
     <link rel="author" title="About these documents" href="../../../about.html" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -39,8 +27,37 @@
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
 <meta name="apple-mobile-web-app-capable" content="yes">
 
-  </head>
-  <body role="document">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-138780766-1"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'UA-138780766-1');
+</script>
+
+<script type="text/javascript">
+  var _ss = _ss || [];
+  _ss.push(['_setDomain', 'https://koi-3QNN51VTHS.marketingautomation.services/net']);
+  _ss.push(['_setAccount', 'KOI-4APYNOYP8O']);
+  _ss.push(['_trackPageView']);
+  window._pa = window._pa || {};
+  // _pa.orderId = "myOrderId"; // OPTIONAL: attach unique conversion identifier to conversions
+  // _pa.revenue = "19.99"; // OPTIONAL: attach dynamic purchase values to conversions
+  // _pa.productId = "myProductId"; // OPTIONAL: Include product ID for use with dynamic ads
+  (function() {
+  var ss = document.createElement('script');
+  ss.type = 'text/javascript'; ss.async = true;
+  ss.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'koi-3QNN51VTHS.marketingautomation.services/client/ss.js?ver=2.4.0';
+  var scr = document.getElementsByTagName('script')[0];
+  scr.parentNode.insertBefore(ss, scr);
+  })();
+  </script>
+
+
+
+  </head><body>
 
   <div id="navbar" class="navbar navbar-inverse navbar-default ">
     <div class="container">
@@ -59,9 +76,10 @@
         <div class="collapse navbar-collapse nav-collapse">
           <ul class="nav navbar-nav">
             
-                <li><a href="https://www.ossec.net/about/">About <i class="fa fa-info-circle"></i></a></li>
-                <li><a href="https://www.ossec.net/docs/">Documentation <i class="fa fa-book"></i></a></li>
-                <li><a href="https://www.ossec.net/downloads/">Downloads <i class="fa fa-download"></i></a></li>
+                <li><a href="https://www.ossec.net/about/">About</a></li>
+                <li><a href="https://www.ossec.net/docs/">Documentation</a></li>
+                <li><a href="https://www.ossec.net/register-for-ossec/">Get OSSEC+</a></li>
+                <li><a href="https://www.ossec.net/downloads/">Downloads</a></li>
             
             
               <li class="dropdown globaltoc-container">
@@ -124,9 +142,9 @@
   <div class="section" id="log-samples-from-exim">
 <h1>Log Samples from Exim<a class="headerlink" href="#log-samples-from-exim" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="i-ve-included-the-ossec-bad-responses">
-<h2>I&#8217;ve included the ossec bad responses:<a class="headerlink" href="#i-ve-included-the-ossec-bad-responses" title="Permalink to this headline">¶</a></h2>
-<p><em>error 450 (ossec should probably ignore) &#8211; this particular line is blowback from spam delivery attempt elsewhere with one of our addresses spoofed as &#8220;From&#8221;, and occurs many times in the log files</em></p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Received From: (mailserver) 192.168.1.21-&gt;/var/log/mail.log</span>
+<h2>I’ve included the ossec bad responses:<a class="headerlink" href="#i-ve-included-the-ossec-bad-responses" title="Permalink to this headline">¶</a></h2>
+<p><em>error 450 (ossec should probably ignore) – this particular line is blowback from spam delivery attempt elsewhere with one of our addresses spoofed as “From”, and occurs many times in the log files</em></p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Received From: (mailserver) 192.168.1.21-&gt;/var/log/mail.log</span>
 <span class="go">Rule: 1002 fired (level 7) -&gt; &quot;Unknown problem somewhere in the system.&quot;</span>
 <span class="go">Portion of the log(s):</span>
 
@@ -137,7 +155,7 @@
 .. code-block:: console</p>
 <blockquote>
 <div><p>Received From: (mailserver) 192.168.1.21-&gt;/var/log/mail.log
-Rule: 1002 fired (level 7) -&gt; &#8220;Unknown problem somewhere in the system.&#8221;
+Rule: 1002 fired (level 7) -&gt; “Unknown problem somewhere in the system.”
 Portion of the log(s):</p>
 <p>exim[14706]: 2006-11-21 15:01:39 1Gmary-0002iA-00 ** <a class="reference external" href="mailto:xxxxxxxx&#37;&#52;&#48;some-domain&#46;com">xxxxxxxx<span>&#64;</span>some-domain<span>&#46;</span>com</a> R=dnslookup T=remote_smtp: SMTP error from remote mailer after RCPT TO:&lt;<a class="reference external" href="mailto:xxxxxxxx&#37;&#52;&#48;some-domain&#46;com">xxxxxxxx<span>&#64;</span>some-domain<span>&#46;</span>com</a>&gt;: host mx.some-domain.com [1.1.1.1]: 550 Mailbox unavailable &lt;<a class="reference external" href="mailto:xxxxxxxxxxx&#37;&#52;&#48;some-domain&#46;com">xxxxxxxxxxx<span>&#64;</span>some-domain<span>&#46;</span>com</a>&gt;</p>
 </div></blockquote>
@@ -145,7 +163,7 @@ Portion of the log(s):</p>
 .. code-block:: console</p>
 <blockquote>
 <div><p>Received From: (mailserver) 192.168.1.21-&gt;/var/log/mail.log
-Rule: 1002 fired (level 7) -&gt; &#8220;Unknown problem somewhere in the system.&#8221;
+Rule: 1002 fired (level 7) -&gt; “Unknown problem somewhere in the system.”
 Portion of the log(s):</p>
 <p>exim[15745]: 2006-11-21 15:17:10 1Gmc37-00045w-00 Frozen (delivery error message)</p>
 </div></blockquote>
@@ -153,15 +171,15 @@ Portion of the log(s):</p>
 .. code-block:: console</p>
 <blockquote>
 <div><p>Received From: (mailserver) 192.168.1.21-&gt;/var/log/mail.log
-Rule: 1002 fired (level 7) -&gt; &#8220;Unknown problem somewhere in the system.&#8221;
+Rule: 1002 fired (level 7) -&gt; “Unknown problem somewhere in the system.”
 Portion of the log(s):</p>
 <p>exim[15740]: 2006-11-21 15:16:57 1Gmc36-00045o-00 ** <a class="reference external" href="mailto:xxxxxxxxxxx&#37;&#52;&#48;some-domain&#46;com">xxxxxxxxxxx<span>&#64;</span>some-domain<span>&#46;</span>com</a> R=local_user_cyrus T=local_delivery_cyrus: Child process of local_delivery_cyrus transport returned 65 (could mean error in input data) from command: /usr/cyrus/bin/deliver</p>
 </div></blockquote>
-<p><em>this error 450 should be a 550 &#8211; ossec could ignore (it&#8217;s a temporary error message for a permanent error, but not much we can do about it)</em>
+<p><em>this error 450 should be a 550 – ossec could ignore (it’s a temporary error message for a permanent error, but not much we can do about it)</em>
 .. code-block:: console</p>
 <blockquote>
 <div><p>Received From: (mailserver) 192.168.1.21-&gt;/var/log/mail.log
-Rule: 1002 fired (level 7) -&gt; &#8220;Unknown problem somewhere in the system.&#8221;
+Rule: 1002 fired (level 7) -&gt; “Unknown problem somewhere in the system.”
 Portion of the log(s):</p>
 <p>exim[16042]: 2006-11-21 15:24:02 1Gm2od-0001ay-00  <a class="reference external" href="mailto:xxxxxxxxxxx&#37;&#52;&#48;some-domain&#46;com">xxxxxxxxxxx<span>&#64;</span>some-domain<span>&#46;</span>com</a> R=dnslookup T=remote_smtp defer (0): SMTP error from remote mailer after RCPT TO:&lt;<a class="reference external" href="mailto:xxxxxxxxxxx&#37;&#52;&#48;some-domain&#46;com">xxxxxxxxxxx<span>&#64;</span>some-domain<span>&#46;</span>com</a>&gt;: host mail.some-domain.com [66.93.22.101]: 450 &lt;<a class="reference external" href="mailto:xxxxxxxxxxx&#37;&#52;&#48;some-domain&#46;com">xxxxxxxxxxx<span>&#64;</span>some-domain<span>&#46;</span>com</a>&gt;: User unknown in local recipient table</p>
 </div></blockquote>
@@ -169,15 +187,15 @@ Portion of the log(s):</p>
 .. code-block:: console</p>
 <blockquote>
 <div><p>Received From: (mailserver) 192.168.1.21-&gt;/var/log/mail.log
-Rule: 1002 fired (level 7) -&gt; &#8220;Unknown problem somewhere in the system.&#8221;
+Rule: 1002 fired (level 7) -&gt; “Unknown problem somewhere in the system.”
 Portion of the log(s):</p>
 <p>exim[14164]: 2006-11-21 14:55:07 1GlKR9-0003x0-00  <a class="reference external" href="mailto:xxxxxxx&#37;&#52;&#48;some-domain&#46;com">xxxxxxx<span>&#64;</span>some-domain<span>&#46;</span>com</a> R=dnslookup T=remote_smtp defer (111): Connection refused</p>
 </div></blockquote>
-<p><em>error 501 &#8211; most likely the recipient&#8217;s DNS is misconfigured; but this is most likely blowback from spam, so it&#8217;s not terribly important</em>
+<p><em>error 501 – most likely the recipient’s DNS is misconfigured; but this is most likely blowback from spam, so it’s not terribly important</em>
 .. code-block:: console</p>
 <blockquote>
 <div><p>Received From: (mailserver) 192.168.1.21-&gt;/var/log/mail.log
-Rule: 1002 fired (level 7) -&gt; &#8220;Unknown problem somewhere in the system.&#8221;
+Rule: 1002 fired (level 7) -&gt; “Unknown problem somewhere in the system.”
 Portion of the log(s):</p>
 <p>exim[13428]: 2006-11-21 14:39:59 1GmbTK-0003UZ-00 ** <a class="reference external" href="mailto:xxxxxxxx&#37;&#52;&#48;somedomain&#46;com">xxxxxxxx<span>&#64;</span>somedomain<span>&#46;</span>com</a> R=dnslookup T=remote_smtp: SMTP error from remote mailer after RCPT TO:&lt;<a class="reference external" href="mailto:xxxxxxxx&#37;&#52;&#48;somedomain&#46;com">xxxxxxxx<span>&#64;</span>somedomain<span>&#46;</span>com</a>&gt;: host mail.somedomain.com [1.1.3.1]: 501 This system is not configured to relay mail (r) to &lt;somedomain.com&gt; for 2.2.1.5</p>
 </div></blockquote>
@@ -196,9 +214,8 @@ Portion of the log(s):</p>
       
     </p>
     <p>
-        &copy; Copyright 2010-2020, OSSEC Project Team.<br/>
+        &copy; Copyright 2010-2021, OSSEC Project Team.<br/>
     OSSEC <b>ossec.net</b> domain owned and maintained by <a href="https://www.ossec.net" target="_blank">OSSEC Foundation</a><br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.5.2 - 
     Home page graphics courtesy of <a href="https://pixabay.com" target="_blank">pixabay</a>
     </p>
   </div>

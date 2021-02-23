@@ -1,36 +1,24 @@
 <!DOCTYPE html>
 
-
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Why is OSSEC not seeing my iptables messages? &#8212; OSSEC</title>
-    
-    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/parallax.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../../',
-        VERSION:     '3.3.0',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
-    <script type="text/javascript" src="../../../_static/jquery.js"></script>
-    <script type="text/javascript" src="../../../_static/underscore.js"></script>
-    <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="../../../_static/js/jquery-fix.js"></script>
-    <script type="text/javascript" src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../../../_static/bootstrap-sphinx.js"></script>
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script src="../../../_static/js/jquery-fix.js"></script>
+    <script src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script src="../../../_static/bootstrap-sphinx.js"></script>
     <link rel="author" title="About these documents" href="../../../about.html" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -39,8 +27,37 @@
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
 <meta name="apple-mobile-web-app-capable" content="yes">
 
-  </head>
-  <body role="document">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-138780766-1"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'UA-138780766-1');
+</script>
+
+<script type="text/javascript">
+  var _ss = _ss || [];
+  _ss.push(['_setDomain', 'https://koi-3QNN51VTHS.marketingautomation.services/net']);
+  _ss.push(['_setAccount', 'KOI-4APYNOYP8O']);
+  _ss.push(['_trackPageView']);
+  window._pa = window._pa || {};
+  // _pa.orderId = "myOrderId"; // OPTIONAL: attach unique conversion identifier to conversions
+  // _pa.revenue = "19.99"; // OPTIONAL: attach dynamic purchase values to conversions
+  // _pa.productId = "myProductId"; // OPTIONAL: Include product ID for use with dynamic ads
+  (function() {
+  var ss = document.createElement('script');
+  ss.type = 'text/javascript'; ss.async = true;
+  ss.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'koi-3QNN51VTHS.marketingautomation.services/client/ss.js?ver=2.4.0';
+  var scr = document.getElementsByTagName('script')[0];
+  scr.parentNode.insertBefore(ss, scr);
+  })();
+  </script>
+
+
+
+  </head><body>
 
   <div id="navbar" class="navbar navbar-inverse navbar-default ">
     <div class="container">
@@ -59,9 +76,10 @@
         <div class="collapse navbar-collapse nav-collapse">
           <ul class="nav navbar-nav">
             
-                <li><a href="https://www.ossec.net/about/">About <i class="fa fa-info-circle"></i></a></li>
-                <li><a href="https://www.ossec.net/docs/">Documentation <i class="fa fa-book"></i></a></li>
-                <li><a href="https://www.ossec.net/downloads/">Downloads <i class="fa fa-download"></i></a></li>
+                <li><a href="https://www.ossec.net/about/">About</a></li>
+                <li><a href="https://www.ossec.net/docs/">Documentation</a></li>
+                <li><a href="https://www.ossec.net/register-for-ossec/">Get OSSEC+</a></li>
+                <li><a href="https://www.ossec.net/downloads/">Downloads</a></li>
             
             
               <li class="dropdown globaltoc-container">
@@ -124,30 +142,31 @@
   <div class="section" id="why-is-ossec-not-seeing-my-iptables-messages">
 <h1>Why is OSSEC not seeing my iptables messages?<a class="headerlink" href="#why-is-ossec-not-seeing-my-iptables-messages" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
-<li>By <a class="reference external" href="http://www.dcid.me/">Daniel B. Cid</a></li>
+<li><p>By <a class="reference external" href="http://www.dcid.me/">Daniel B. Cid</a></p></li>
 </ul>
 <p>The most common reason why ossec would not see your <a class="reference external" href="http://www.iptables.org/">iptables</a> logs is
-because you didn&#8217;t configure it properly to log. By default iptables will <code class="docutils literal"><span class="pre">NOT</span> <span class="pre">log</span> <span class="pre">anything</span></code>.</p>
+because you didn’t configure it properly to log. By default iptables will <code class="docutils literal notranslate"><span class="pre">NOT</span> <span class="pre">log</span> <span class="pre">anything</span></code>.</p>
 <p>There is some <a class="reference external" href="http://iptables-tutorial.frozentux.net/iptables-tutorial.html">good</a> <a class="reference external" href="http://www.iptables.org/documentation/index.html">documents</a> online on how to configure iptables, but for ossec to understand
-them, you need to set the <code class="docutils literal"><span class="pre">log-prefix</span></code> option in addition to the <code class="docutils literal"><span class="pre">log</span></code> action.</p>
+them, you need to set the <code class="docutils literal notranslate"><span class="pre">log-prefix</span></code> option in addition to the <code class="docutils literal notranslate"><span class="pre">log</span></code> action.</p>
 <p>For accept rules, the following action (with prefix) should be set:
 .. code-block:: console</p>
 <blockquote>
-<div>-j LOG &#8211;log-prefix=&#8221;ACCEPT &#8220;</div></blockquote>
+<div><p>-j LOG –log-prefix=”ACCEPT “</p>
+</div></blockquote>
 <p>They will generate the following log (or similar):</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Jan 11 20:44:49 hostname kernel: [89463.101343] ACCEPT IN=lo OUT= MAC=00:00:00:00:00:00:00:00:00:00:00:00:08:00 SRC=127.0.0.1 DST=127.0.0.1 LEN=60 TOS=0x10 PREC=0x00 TTL=64 ID=33772 DF PROTO=TCP SPT=43961 DPT=81 WINDOW=32767 RES=0x00 SYN URGP=0</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Jan 11 20:44:49 hostname kernel: [89463.101343] ACCEPT IN=lo OUT= MAC=00:00:00:00:00:00:00:00:00:00:00:00:08:00 SRC=127.0.0.1 DST=127.0.0.1 LEN=60 TOS=0x10 PREC=0x00 TTL=64 ID=33772 DF PROTO=TCP SPT=43961 DPT=81 WINDOW=32767 RES=0x00 SYN URGP=0</span>
 </pre></div>
 </div>
 <p>For deny rules, the following action should be set:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">-j LOG --log-prefix=&quot;DROP &quot;</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">-j LOG --log-prefix=&quot;DROP &quot;</span>
 </pre></div>
 </div>
 <p>They will generate the following log (or similar):</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 <p>Jan 11 20:44:49 xxx kernel: [89463.101343] DROP IN=lo OUT= MAC=00:00:00:00:00:00:00:00:00:00:00:00:08:00 SRC=127.0.0.1 DST=127.0.0.1 LEN=60 TOS=0x10 PREC=0x00 TTL=64 ID=33772 DF PROTO=TCP SPT=43961 DPT=81 WINDOW=32767 RES=0x00 SYN URGP=0</p>
-<p>Note that ossec will based its action based on the &#8220;DROP&#8221; or ALLOW that you configured.
+<p>Note that ossec will based its action based on the “DROP” or ALLOW that you configured.
 For more information about iptables log, take a look <a class="reference external" href="http://logi.cc/linux/netfilter-log-format.php3">here</a> .</p>
 </div>
 
@@ -163,9 +182,8 @@ For more information about iptables log, take a look <a class="reference externa
       
     </p>
     <p>
-        &copy; Copyright 2010-2020, OSSEC Project Team.<br/>
+        &copy; Copyright 2010-2021, OSSEC Project Team.<br/>
     OSSEC <b>ossec.net</b> domain owned and maintained by <a href="https://www.ossec.net" target="_blank">OSSEC Foundation</a><br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.5.2 - 
     Home page graphics courtesy of <a href="https://pixabay.com" target="_blank">pixabay</a>
     </p>
   </div>

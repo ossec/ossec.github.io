@@ -1,36 +1,24 @@
 <!DOCTYPE html>
 
-
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Microsoft ISA Server &#8212; OSSEC</title>
-    
-    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/parallax.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../../',
-        VERSION:     '3.3.0',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
-    <script type="text/javascript" src="../../../_static/jquery.js"></script>
-    <script type="text/javascript" src="../../../_static/underscore.js"></script>
-    <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="../../../_static/js/jquery-fix.js"></script>
-    <script type="text/javascript" src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../../../_static/bootstrap-sphinx.js"></script>
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script src="../../../_static/js/jquery-fix.js"></script>
+    <script src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script src="../../../_static/bootstrap-sphinx.js"></script>
     <link rel="author" title="About these documents" href="../../../about.html" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -39,8 +27,37 @@
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
 <meta name="apple-mobile-web-app-capable" content="yes">
 
-  </head>
-  <body role="document">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-138780766-1"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'UA-138780766-1');
+</script>
+
+<script type="text/javascript">
+  var _ss = _ss || [];
+  _ss.push(['_setDomain', 'https://koi-3QNN51VTHS.marketingautomation.services/net']);
+  _ss.push(['_setAccount', 'KOI-4APYNOYP8O']);
+  _ss.push(['_trackPageView']);
+  window._pa = window._pa || {};
+  // _pa.orderId = "myOrderId"; // OPTIONAL: attach unique conversion identifier to conversions
+  // _pa.revenue = "19.99"; // OPTIONAL: attach dynamic purchase values to conversions
+  // _pa.productId = "myProductId"; // OPTIONAL: Include product ID for use with dynamic ads
+  (function() {
+  var ss = document.createElement('script');
+  ss.type = 'text/javascript'; ss.async = true;
+  ss.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'koi-3QNN51VTHS.marketingautomation.services/client/ss.js?ver=2.4.0';
+  var scr = document.getElementsByTagName('script')[0];
+  scr.parentNode.insertBefore(ss, scr);
+  })();
+  </script>
+
+
+
+  </head><body>
 
   <div id="navbar" class="navbar navbar-inverse navbar-default ">
     <div class="container">
@@ -59,9 +76,10 @@
         <div class="collapse navbar-collapse nav-collapse">
           <ul class="nav navbar-nav">
             
-                <li><a href="https://www.ossec.net/about/">About <i class="fa fa-info-circle"></i></a></li>
-                <li><a href="https://www.ossec.net/docs/">Documentation <i class="fa fa-book"></i></a></li>
-                <li><a href="https://www.ossec.net/downloads/">Downloads <i class="fa fa-download"></i></a></li>
+                <li><a href="https://www.ossec.net/about/">About</a></li>
+                <li><a href="https://www.ossec.net/docs/">Documentation</a></li>
+                <li><a href="https://www.ossec.net/register-for-ossec/">Get OSSEC+</a></li>
+                <li><a href="https://www.ossec.net/downloads/">Downloads</a></li>
             
             
               <li class="dropdown globaltoc-container">
@@ -128,7 +146,7 @@
 is used, the times stamped on events are in Coordinated Universal Time
 (UTC) otherwise known as Greenwich Mean Time. So adjustments would have
 to be made during analysis for the particular time zone you are in.</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span>Software: Microsoft Internet Security and Acceleration Server <span class="m">2004</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">#</span>Software: Microsoft Internet Security and Acceleration Server <span class="m">2004</span>
 <span class="gp">#</span>Version: <span class="m">2</span>.0
 <span class="gp">#</span>Date: <span class="m">2006</span>-10-27 <span class="m">00</span>:00:00
 <span class="gp">#</span>Fields: computer     date    <span class="nb">time</span>    IP protocol     <span class="nb">source</span>  destination     original client IP      <span class="nb">source</span> network  destination network     action  status  rule    application protocol    bytes sent      bytes sent intermediate bytes received  bytes received intermediate     connection <span class="nb">time</span> connection <span class="nb">time</span> intermediate    <span class="nb">source</span> name     destination name        username        agent   session ID      connection ID   interface       IP header       protocol payload
@@ -168,7 +186,7 @@ to be made during analysis for the particular time zone you are in.</p>
 </pre></div>
 </div>
 <p>Here is a sample of the web proxy log from ISA Server 2004. It is in W3C extended format.</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span>Software: Microsoft Internet Security and Acceleration Server <span class="m">2004</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">#</span>Software: Microsoft Internet Security and Acceleration Server <span class="m">2004</span>
 <span class="gp">#</span>Version: <span class="m">2</span>.0
 <span class="gp">#</span>Date: <span class="m">2006</span>-11-12 <span class="m">00</span>:00:00
 <span class="gp">#</span>Fields: c-ip cs-username     c-agent sc-authenticated        date    <span class="nb">time</span>    s-svcname       s-computername  cs-referred     r-host  r-ip    r-port  time-taken      cs-bytes        sc-bytes        cs-protocol     cs-transport    s-operation     cs-uri  cs-mime-type    s-object-source sc-status       s-cache-info    rule    FilterInfo      cs-Network      sc-Network      error-info      action
@@ -214,7 +232,7 @@ to be made during analysis for the particular time zone you are in.</p>
 </div>
 <p>Here are log samples from ISA Server 2000</p>
 <p>IP Packet Filter log in W3C Extended format</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span>Software: Microsoft<span class="o">(</span>R<span class="o">)</span> Internet Security and Acceleration Server <span class="m">2000</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">#</span>Software: Microsoft<span class="o">(</span>R<span class="o">)</span> Internet Security and Acceleration Server <span class="m">2000</span>
 <span class="gp">#</span>Version: <span class="m">1</span>.0
 <span class="gp">#</span>Date: <span class="m">2006</span>-11-16 <span class="m">00</span>:04:45
 <span class="gp">#</span>Fields: date <span class="nb">time</span>    source-ip       destination-ip  protocol        param#1 param#2 tcp-flags       filter-rule     interface       ip-header       payload
@@ -253,7 +271,7 @@ to be made during analysis for the particular time zone you are in.</p>
 </pre></div>
 </div>
 <p>Here is the ISA Server 2000 Firewall Log in ISA Server format</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">10.45.100.201, -, -, N, 11/8/2006, 0:00:05, fwsrv, ACME-PROXY, -, -, 172.16.2.2, 1169, 12515, 814, 22813, 25, TCP, Accept, -, -, -, 20000, 0, Publish Internal SMTP Email Server, -, -, -</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">10.45.100.201, -, -, N, 11/8/2006, 0:00:05, fwsrv, ACME-PROXY, -, -, 172.16.2.2, 1169, 12515, 814, 22813, 25, TCP, Accept, -, -, -, 20000, 0, Publish Internal SMTP Email Server, -, -, -</span>
 <span class="go">10.45.100.201, -, -, N, 11/8/2006, 0:00:13, fwsrv, ACME-PROXY, -, -, 172.16.2.2, 1172, 16, 0, 0, 25, TCP, Accept, -, -, -, 0, 0, Publish Internal SMTP Email Server, -, -, -</span>
 <span class="go">10.45.100.201, -, -, N, 11/8/2006, 0:00:16, fwsrv, ACME-PROXY, -, -, 172.16.2.3, 3962, 15, 0, 0, 25, TCP, Accept, -, -, -, 0, 0, Publish Internal SMTP Email Server, -, -, -</span>
 <span class="go">10.45.100.201, -, -, N, 11/8/2006, 0:00:19, fwsrv, ACME-PROXY, -, -, 172.16.2.2, 1172, 5875, 460, 26032, 25, TCP, Accept, -, -, -, 20000, 0, Publish Internal SMTP Email Server, -, -, -</span>
@@ -284,7 +302,7 @@ to be made during analysis for the particular time zone you are in.</p>
 </pre></div>
 </div>
 <p>Here is a sample of the ISA Server 2000 web proxy log in W3C Extended format</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span>Software: Microsoft<span class="o">(</span>R<span class="o">)</span> Internet Security and Acceleration Server <span class="m">2000</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">#</span>Software: Microsoft<span class="o">(</span>R<span class="o">)</span> Internet Security and Acceleration Server <span class="m">2000</span>
 <span class="gp">#</span>Version: <span class="m">1</span>.0
 <span class="gp">#</span>Date: <span class="m">2006</span>-11-16 <span class="m">00</span>:00:01
 <span class="gp">#</span>Fields: c-ip cs-username     c-agent sc-authenticated        date    <span class="nb">time</span>    s-svcname       s-computername  cs-referred     r-host  r-ip    r-port  time-taken      cs-bytes        sc-bytes        cs-protocol     cs-transport    s-operation     cs-uri  cs-mime-type    s-object-source sc-status       s-cache-info    rule#1  rule#2
@@ -410,9 +428,8 @@ to be made during analysis for the particular time zone you are in.</p>
       
     </p>
     <p>
-        &copy; Copyright 2010-2020, OSSEC Project Team.<br/>
+        &copy; Copyright 2010-2021, OSSEC Project Team.<br/>
     OSSEC <b>ossec.net</b> domain owned and maintained by <a href="https://www.ossec.net" target="_blank">OSSEC Foundation</a><br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.5.2 - 
     Home page graphics courtesy of <a href="https://pixabay.com" target="_blank">pixabay</a>
     </p>
   </div>

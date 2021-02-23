@@ -1,36 +1,24 @@
 <!DOCTYPE html>
 
-
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Agentless Scripts &#8212; OSSEC</title>
-    
-    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/parallax.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../../',
-        VERSION:     '3.3.0',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
-    <script type="text/javascript" src="../../../_static/jquery.js"></script>
-    <script type="text/javascript" src="../../../_static/underscore.js"></script>
-    <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="../../../_static/js/jquery-fix.js"></script>
-    <script type="text/javascript" src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../../../_static/bootstrap-sphinx.js"></script>
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script src="../../../_static/js/jquery-fix.js"></script>
+    <script src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script src="../../../_static/bootstrap-sphinx.js"></script>
     <link rel="author" title="About these documents" href="../../../about.html" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -39,8 +27,37 @@
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
 <meta name="apple-mobile-web-app-capable" content="yes">
 
-  </head>
-  <body role="document">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-138780766-1"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'UA-138780766-1');
+</script>
+
+<script type="text/javascript">
+  var _ss = _ss || [];
+  _ss.push(['_setDomain', 'https://koi-3QNN51VTHS.marketingautomation.services/net']);
+  _ss.push(['_setAccount', 'KOI-4APYNOYP8O']);
+  _ss.push(['_trackPageView']);
+  window._pa = window._pa || {};
+  // _pa.orderId = "myOrderId"; // OPTIONAL: attach unique conversion identifier to conversions
+  // _pa.revenue = "19.99"; // OPTIONAL: attach dynamic purchase values to conversions
+  // _pa.productId = "myProductId"; // OPTIONAL: Include product ID for use with dynamic ads
+  (function() {
+  var ss = document.createElement('script');
+  ss.type = 'text/javascript'; ss.async = true;
+  ss.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'koi-3QNN51VTHS.marketingautomation.services/client/ss.js?ver=2.4.0';
+  var scr = document.getElementsByTagName('script')[0];
+  scr.parentNode.insertBefore(ss, scr);
+  })();
+  </script>
+
+
+
+  </head><body>
 
   <div id="navbar" class="navbar navbar-inverse navbar-default ">
     <div class="container">
@@ -59,9 +76,10 @@
         <div class="collapse navbar-collapse nav-collapse">
           <ul class="nav navbar-nav">
             
-                <li><a href="https://www.ossec.net/about/">About <i class="fa fa-info-circle"></i></a></li>
-                <li><a href="https://www.ossec.net/docs/">Documentation <i class="fa fa-book"></i></a></li>
-                <li><a href="https://www.ossec.net/downloads/">Downloads <i class="fa fa-download"></i></a></li>
+                <li><a href="https://www.ossec.net/about/">About</a></li>
+                <li><a href="https://www.ossec.net/docs/">Documentation</a></li>
+                <li><a href="https://www.ossec.net/register-for-ossec/">Get OSSEC+</a></li>
+                <li><a href="https://www.ossec.net/downloads/">Downloads</a></li>
             
             
               <li class="dropdown globaltoc-container">
@@ -122,27 +140,27 @@
     <div class="col-md-12">
       
   <ul class="simple">
-<li>This page was reproduced here with permission from Jeremy Rossi.  Original post was <a class="reference external" href="http://praetorianprefect.com/archives/2009/11/ossec-agentless-scripts/">Praetorian Prefect: OSSEC: Agentless scripts</a></li>
+<li><p>This page was reproduced here with permission from Jeremy Rossi.  Original post was <a class="reference external" href="http://praetorianprefect.com/archives/2009/11/ossec-agentless-scripts/">Praetorian Prefect: OSSEC: Agentless scripts</a></p></li>
 </ul>
 <div class="section" id="agentless-scripts">
 <h1>Agentless Scripts<a class="headerlink" href="#agentless-scripts" title="Permalink to this headline">¶</a></h1>
 <p>All scripts that work with OSSEC agentless security monitoring use stdout for communication and reporting to the OSSEC server. This makes writing scripts for OSSEC simple as you do not need to do anything more then print or echo to stdout. The format of the output does need to meet the OSSEC specification, but that is a very simple thing to do.</p>
 <p>Before we move to the specification details I need to explain that OSSEC agentless runs to different types of scripts. Namely the following:</p>
-<table border="1" class="docutils">
+<table class="docutils align-default">
 <colgroup>
-<col width="9%" />
-<col width="91%" />
+<col style="width: 9%" />
+<col style="width: 91%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head" colspan="2">Type           | Description</th>
+<thead>
+<tr class="row-odd"><th class="head" colspan="2"><p>Type           | Description</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>periodic_diff</td>
-<td>Scripts output data to the OSSEC agentless process that will then be compared to past runs and if there are differences an OSSEC alert will be generated.</td>
+<tbody>
+<tr class="row-even"><td><p>periodic_diff</p></td>
+<td><p>Scripts output data to the OSSEC agentless process that will then be compared to past runs and if there are differences an OSSEC alert will be generated.</p></td>
 </tr>
-<tr class="row-odd"><td>periodic</td>
-<td>Scripts output controlled messages to the OSSEC agentless process that will then be processed accordingly.</td>
+<tr class="row-odd"><td><p>periodic</p></td>
+<td><p>Scripts output controlled messages to the OSSEC agentless process that will then be processed accordingly.</p></td>
 </tr>
 </tbody>
 </table>
@@ -151,29 +169,29 @@
 <h1>Periodic diff Specification<a class="headerlink" href="#periodic-diff-specification" title="Permalink to this headline">¶</a></h1>
 <p>The output for periodic_diff is very simple, any and all output after the agentless command .STORE: now. and before the next OSSEC Command will be stored and compared for differences. This type of script is mostly used for hardware devices such as Cisco IOS, Juniper JunOS, and other products.</p>
 <p>Scripts that use the periodic_diff make use of the following commands:</p>
-<table border="1" class="docutils">
+<table class="docutils align-default">
 <colgroup>
-<col width="6%" />
-<col width="94%" />
+<col style="width: 6%" />
+<col style="width: 94%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head" colspan="2">Command  | Description</th>
+<thead>
+<tr class="row-odd"><th class="head" colspan="2"><p>Command  | Description</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>INFO:</td>
-<td>The string following INFO will be logged to /var/ossec/logs/ossec.log by OSSEC for debugging.</td>
+<tbody>
+<tr class="row-even"><td><p>INFO:</p></td>
+<td><p>The string following INFO will be logged to /var/ossec/logs/ossec.log by OSSEC for debugging.</p></td>
 </tr>
-<tr class="row-odd"><td>ERROR:</td>
-<td>Error needs to be reported. The string following this command is forwarded to the OSSEC manager, and the OSSEC process closes down the script.</td>
+<tr class="row-odd"><td><p>ERROR:</p></td>
+<td><p>Error needs to be reported. The string following this command is forwarded to the OSSEC manager, and the OSSEC process closes down the script.</p></td>
 </tr>
-<tr class="row-even"><td>STORE:</td>
-<td>All the lines that follows this command will be added stored and compared to previous runs of the script.</td>
+<tr class="row-even"><td><p>STORE:</p></td>
+<td><p>All the lines that follows this command will be added stored and compared to previous runs of the script.</p></td>
 </tr>
 </tbody>
 </table>
 <p>Here is an example of a periodic_diff script that comes with OSSEC. (Please note with all agentless scripts you must be in the root of the OSSEC install for them to function correctly.)</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">obsd46#( cd /var/ossec &amp;&amp; ./agentless/ssh_pixconfig_diff cisco@172.17.0.1 &#39;show hardware&#39; )</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">obsd46#( cd /var/ossec &amp;&amp; ./agentless/ssh_pixconfig_diff cisco@172.17.0.1 &#39;show hardware&#39; )</span>
 <span class="go">spawn ssh -c des cisco@172.17.0.1</span>
 <span class="go">No valid ciphers for protocol version 2 given, using defaults.</span>
 <span class="go">Password:</span>
@@ -256,82 +274,82 @@
 <span class="go">INFO: Finished.</span>
 </pre></div>
 </div>
-<p>In this example above the script would store the contents between <code class="docutils literal"><span class="pre">STORE:</span> <span class="pre">now</span></code> and <code class="docutils literal"><span class="pre">INFO:</span> <span class="pre">Finished.</span></code> If this is the first time that OSSEC agentless has run this command no alerts would be generated and the contents would have been saved for later comparisons. If OSSEC agentless has a stored copy from a previous execution it will compare the files and if there are any differences it will generate an alert.</p>
+<p>In this example above the script would store the contents between <code class="docutils literal notranslate"><span class="pre">STORE:</span> <span class="pre">now</span></code> and <code class="docutils literal notranslate"><span class="pre">INFO:</span> <span class="pre">Finished.</span></code> If this is the first time that OSSEC agentless has run this command no alerts would be generated and the contents would have been saved for later comparisons. If OSSEC agentless has a stored copy from a previous execution it will compare the files and if there are any differences it will generate an alert.</p>
 </div>
 <div class="section" id="periodic-specification">
 <h1>Periodic Specification<a class="headerlink" href="#periodic-specification" title="Permalink to this headline">¶</a></h1>
 <p>The periodic specification has more options and gives more control to the script writer on what actions OSSEC will take. Once again stdout is used for communication so script writing is easy.</p>
-<table border="1" class="docutils">
+<table class="docutils align-default">
 <colgroup>
-<col width="6%" />
-<col width="94%" />
+<col style="width: 6%" />
+<col style="width: 94%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Command</th>
-<th class="head">Description</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>Command</p></th>
+<th class="head"><p>Description</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>INFO:</td>
-<td>The string following INFO will be logged to /var/ossec/logs/ossec.log by OSSEC for debugging.</td>
+<tbody>
+<tr class="row-even"><td><p>INFO:</p></td>
+<td><p>The string following INFO will be logged to /var/ossec/logs/ossec.log by OSSEC for debugging.</p></td>
 </tr>
-<tr class="row-odd"><td>ERROR:</td>
-<td>Error needs to be reported. The string following this command is forwarded to the OSSEC manager, and the OSSEC process closes down the script.</td>
+<tr class="row-odd"><td><p>ERROR:</p></td>
+<td><p>Error needs to be reported. The string following this command is forwarded to the OSSEC manager, and the OSSEC process closes down the script.</p></td>
 </tr>
-<tr class="row-even"><td>FWD:</td>
-<td>The string following FWD is a colon delimited list of stats on a given file.</td>
+<tr class="row-even"><td><p>FWD:</p></td>
+<td><p>The string following FWD is a colon delimited list of stats on a given file.</p></td>
 </tr>
-<tr class="row-odd"><td>LOG:</td>
-<td>The string following LOG: will be passed into ossec-analysisd and processed like all other log messages.</td>
+<tr class="row-odd"><td><p>LOG:</p></td>
+<td><p>The string following LOG: will be passed into ossec-analysisd and processed like all other log messages.</p></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="section" id="example-of-real-fwd-command">
 <h1>Example of real FWD: command.<a class="headerlink" href="#example-of-real-fwd-command" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">FWD: 19419:600:0:0:fb30de5b02029950ae05885a3d407c8c:017cd6118cdc166ee8eba8af1b7fdad6763203d3 ./.bash_history</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">FWD: 19419:600:0:0:fb30de5b02029950ae05885a3d407c8c:017cd6118cdc166ee8eba8af1b7fdad6763203d3 ./.bash_history</span>
 </pre></div>
 </div>
 <p>The Fields break down in to the following</p>
-<table border="1" class="docutils">
+<table class="docutils align-default">
 <colgroup>
-<col width="57%" />
-<col width="43%" />
+<col style="width: 57%" />
+<col style="width: 43%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Field</th>
-<th class="head">Description</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>Field</p></th>
+<th class="head"><p>Description</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>FWD:</td>
-<td>The OSSEC Command</td>
+<tbody>
+<tr class="row-even"><td><p>FWD:</p></td>
+<td><p>The OSSEC Command</p></td>
 </tr>
-<tr class="row-odd"><td>19419</td>
-<td>Total size of file, in bytes</td>
+<tr class="row-odd"><td><p>19419</p></td>
+<td><p>Total size of file, in bytes</p></td>
 </tr>
-<tr class="row-even"><td>600</td>
-<td>Access rights of file in octal</td>
+<tr class="row-even"><td><p>600</p></td>
+<td><p>Access rights of file in octal</p></td>
 </tr>
-<tr class="row-odd"><td>0</td>
-<td>User ID of file owner</td>
+<tr class="row-odd"><td><p>0</p></td>
+<td><p>User ID of file owner</p></td>
 </tr>
-<tr class="row-even"><td>0</td>
-<td>Group ID of file owner</td>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>Group ID of file owner</p></td>
 </tr>
-<tr class="row-odd"><td>fb30de5b02029950ae05885a3d407c8c</td>
-<td>MD5 Hash of file</td>
+<tr class="row-odd"><td><p>fb30de5b02029950ae05885a3d407c8c</p></td>
+<td><p>MD5 Hash of file</p></td>
 </tr>
-<tr class="row-even"><td>017cd6118cdc166ee8eba8af1b7fdad6763203d3</td>
-<td>SHA1 Hash of file</td>
+<tr class="row-even"><td><p>017cd6118cdc166ee8eba8af1b7fdad6763203d3</p></td>
+<td><p>SHA1 Hash of file</p></td>
 </tr>
-<tr class="row-odd"><td>./.bash_history</td>
-<td>Path and name of file</td>
+<tr class="row-odd"><td><p>./.bash_history</p></td>
+<td><p>Path and name of file</p></td>
 </tr>
 </tbody>
 </table>
 <p>Using this format OSSEC can store the information about a file and then in the future run compare that they are the same. If for some reason they are not the same an alert will be generated. Here is an example of a password change on a linux system:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">OSSEC HIDS Notification.</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">OSSEC HIDS Notification.</span>
 <span class="go">2009 Sep 21 15:19:00</span>
 
 <span class="go">Received From: (ssh_integrity_check_linux) root@172.17.20.20-&gt;syscheck</span>
@@ -361,9 +379,8 @@
       
     </p>
     <p>
-        &copy; Copyright 2010-2020, OSSEC Project Team.<br/>
+        &copy; Copyright 2010-2021, OSSEC Project Team.<br/>
     OSSEC <b>ossec.net</b> domain owned and maintained by <a href="https://www.ossec.net" target="_blank">OSSEC Foundation</a><br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.5.2 - 
     Home page graphics courtesy of <a href="https://pixabay.com" target="_blank">pixabay</a>
     </p>
   </div>

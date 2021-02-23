@@ -1,36 +1,24 @@
 <!DOCTYPE html>
 
-
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Question: How does the decoder.xml relate to the rules? &#8212; OSSEC</title>
-    
-    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/parallax.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../../',
-        VERSION:     '3.3.0',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
-    <script type="text/javascript" src="../../../_static/jquery.js"></script>
-    <script type="text/javascript" src="../../../_static/underscore.js"></script>
-    <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="../../../_static/js/jquery-fix.js"></script>
-    <script type="text/javascript" src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../../../_static/bootstrap-sphinx.js"></script>
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script src="../../../_static/js/jquery-fix.js"></script>
+    <script src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script src="../../../_static/bootstrap-sphinx.js"></script>
     <link rel="author" title="About these documents" href="../../../about.html" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -39,8 +27,37 @@
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
 <meta name="apple-mobile-web-app-capable" content="yes">
 
-  </head>
-  <body role="document">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-138780766-1"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'UA-138780766-1');
+</script>
+
+<script type="text/javascript">
+  var _ss = _ss || [];
+  _ss.push(['_setDomain', 'https://koi-3QNN51VTHS.marketingautomation.services/net']);
+  _ss.push(['_setAccount', 'KOI-4APYNOYP8O']);
+  _ss.push(['_trackPageView']);
+  window._pa = window._pa || {};
+  // _pa.orderId = "myOrderId"; // OPTIONAL: attach unique conversion identifier to conversions
+  // _pa.revenue = "19.99"; // OPTIONAL: attach dynamic purchase values to conversions
+  // _pa.productId = "myProductId"; // OPTIONAL: Include product ID for use with dynamic ads
+  (function() {
+  var ss = document.createElement('script');
+  ss.type = 'text/javascript'; ss.async = true;
+  ss.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'koi-3QNN51VTHS.marketingautomation.services/client/ss.js?ver=2.4.0';
+  var scr = document.getElementsByTagName('script')[0];
+  scr.parentNode.insertBefore(ss, scr);
+  })();
+  </script>
+
+
+
+  </head><body>
 
   <div id="navbar" class="navbar navbar-inverse navbar-default ">
     <div class="container">
@@ -59,9 +76,10 @@
         <div class="collapse navbar-collapse nav-collapse">
           <ul class="nav navbar-nav">
             
-                <li><a href="https://www.ossec.net/about/">About <i class="fa fa-info-circle"></i></a></li>
-                <li><a href="https://www.ossec.net/docs/">Documentation <i class="fa fa-book"></i></a></li>
-                <li><a href="https://www.ossec.net/downloads/">Downloads <i class="fa fa-download"></i></a></li>
+                <li><a href="https://www.ossec.net/about/">About</a></li>
+                <li><a href="https://www.ossec.net/docs/">Documentation</a></li>
+                <li><a href="https://www.ossec.net/register-for-ossec/">Get OSSEC+</a></li>
+                <li><a href="https://www.ossec.net/downloads/">Downloads</a></li>
             
             
               <li class="dropdown globaltoc-container">
@@ -126,7 +144,7 @@
 <div class="section" id="answer">
 <h2>Answer:<a class="headerlink" href="#answer" title="Permalink to this headline">¶</a></h2>
 <p>The decoder.xml file can be used to capture certain bits of information from the logs that ossec is monitoring.  These bits of information can be passed to rules as XML objects.  Take for example, the pair of rules below:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">&lt;rule id=&quot;3100&quot; level=&quot;0&quot;&gt;</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&lt;rule id=&quot;3100&quot; level=&quot;0&quot;&gt;</span>
 <span class="go">  &lt;decoded_as&gt;web-accesslog&lt;/decoded_as&gt;</span>
 <span class="go">  &lt;category&gt;web-log&lt;/category&gt;</span>
 <span class="go">  &lt;description&gt;Access log messages grouped.&lt;/description&gt;</span>
@@ -139,8 +157,8 @@
 <span class="go">&lt;/rule&gt;</span>
 </pre></div>
 </div>
-<p>The first rule acts as a &#8220;collector&#8221; for specific log messages.  As part of the rule construct, the <code class="docutils literal"><span class="pre">&lt;decoded_as&gt;&lt;/decoded_as&gt;</span></code> tags are used to determine how the log entry will be decoded, and aspects of it captured.  In this case, it will be a web-accesslog.  The corresponding construct in decoder.xml (shown below) matches the log entry and captures certain parts of the entry to be used later.</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">&lt;decoder name=&quot;web-accesslog&quot;&gt;</span>
+<p>The first rule acts as a “collector” for specific log messages.  As part of the rule construct, the <code class="docutils literal notranslate"><span class="pre">&lt;decoded_as&gt;&lt;/decoded_as&gt;</span></code> tags are used to determine how the log entry will be decoded, and aspects of it captured.  In this case, it will be a web-accesslog.  The corresponding construct in decoder.xml (shown below) matches the log entry and captures certain parts of the entry to be used later.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&lt;decoder name=&quot;web-accesslog&quot;&gt;</span>
 <span class="go">  &lt;type&gt;web-log&lt;/type&gt;</span>
 <span class="go">  &lt;prematch&gt;^\S+ - &lt;/prematch&gt;</span>
 <span class="go">  &lt;regex&gt;^(\S+) - \S+ [\S+ -\d+] &lt;/regex&gt;</span>
@@ -149,9 +167,9 @@
 <span class="go">&lt;/decoder&gt;</span>
 </pre></div>
 </div>
-<p>Looking at the regular expression we can see that the source IP, the URL, and the HTTP Result Code are captured.  The first set of parentheses denotes that this part of the expression is the source IP, the second set denotes the URL, and the last set is the ID code, which for the example is the HTTP result code.  Going back to the second rule above, its construct contains the <code class="docutils literal"><span class="pre">&lt;id&gt;&lt;/id&gt;</span></code> tags, which, in this case (rule #3101), is used to match a 400 HTTP result code.  Something else worth noting is the multiple &lt;regex&gt; tags in this example.  This is simply done to provide enhanced clarity and preventing lines over 80 characters.  The values inside both tags are concatenated before being processed by ossec.</p>
+<p>Looking at the regular expression we can see that the source IP, the URL, and the HTTP Result Code are captured.  The first set of parentheses denotes that this part of the expression is the source IP, the second set denotes the URL, and the last set is the ID code, which for the example is the HTTP result code.  Going back to the second rule above, its construct contains the <code class="docutils literal notranslate"><span class="pre">&lt;id&gt;&lt;/id&gt;</span></code> tags, which, in this case (rule #3101), is used to match a 400 HTTP result code.  Something else worth noting is the multiple &lt;regex&gt; tags in this example.  This is simply done to provide enhanced clarity and preventing lines over 80 characters.  The values inside both tags are concatenated before being processed by ossec.</p>
 <p>These regex variables can also be passed to active-response command constructs like the one show below:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">&lt;command&gt;</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&lt;command&gt;</span>
 <span class="go">  &lt;name&gt;host-deny&lt;/name&gt;</span>
 <span class="go">  &lt;executable&gt;host-deny.sh&lt;/executable&gt;</span>
 <span class="go">  &lt;expect&gt;srcip&lt;/expect&gt;</span>
@@ -159,28 +177,28 @@
 <span class="go">&lt;/command&gt;</span>
 </pre></div>
 </div>
-<p>The <code class="docutils literal"><span class="pre">&lt;expect&gt;&lt;/expect&gt;</span></code> tags are used here to specify which variable is expected as an argument to the executable being used for the active-response action.  A list of available variables is shown below:</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">&lt;expect&gt;&lt;/expect&gt;</span></code> tags are used here to specify which variable is expected as an argument to the executable being used for the active-response action.  A list of available variables is shown below:</p>
 <ul class="simple">
-<li>location</li>
-<li>hostname</li>
-<li>log_tag</li>
-<li>srcip</li>
-<li>dstip</li>
-<li>srcport</li>
-<li>dstport</li>
-<li>protocol</li>
-<li>action</li>
-<li>user</li>
-<li>dstuser</li>
-<li>id</li>
-<li>command</li>
-<li>url</li>
-<li>data</li>
+<li><p>location</p></li>
+<li><p>hostname</p></li>
+<li><p>log_tag</p></li>
+<li><p>srcip</p></li>
+<li><p>dstip</p></li>
+<li><p>srcport</p></li>
+<li><p>dstport</p></li>
+<li><p>protocol</p></li>
+<li><p>action</p></li>
+<li><p>user</p></li>
+<li><p>dstuser</p></li>
+<li><p>id</p></li>
+<li><p>command</p></li>
+<li><p>url</p></li>
+<li><p>data</p></li>
 </ul>
 <p>Not all of these will be available for every decoder type, but you can check the decoder.xml to see which ones are available for which decoders.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">If you are creating custom rules to monitor logs, almost all of your editing will occur in the rules files.  The decoder.xml is just another way to make your rules more powerful, pass specific information to your active-response commands.</p>
+<p class="admonition-title">Note</p>
+<p>If you are creating custom rules to monitor logs, almost all of your editing will occur in the rules files.  The decoder.xml is just another way to make your rules more powerful, pass specific information to your active-response commands.</p>
 </div>
 </div>
 </div>
@@ -197,9 +215,8 @@
       
     </p>
     <p>
-        &copy; Copyright 2010-2020, OSSEC Project Team.<br/>
+        &copy; Copyright 2010-2021, OSSEC Project Team.<br/>
     OSSEC <b>ossec.net</b> domain owned and maintained by <a href="https://www.ossec.net" target="_blank">OSSEC Foundation</a><br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.5.2 - 
     Home page graphics courtesy of <a href="https://pixabay.com" target="_blank">pixabay</a>
     </p>
   </div>

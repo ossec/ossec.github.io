@@ -1,36 +1,24 @@
 <!DOCTYPE html>
 
-
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ossec.conf: Rules options &#8212; OSSEC</title>
-    
-    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/parallax.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../',
-        VERSION:     '3.3.0',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
-    <script type="text/javascript" src="../../_static/jquery.js"></script>
-    <script type="text/javascript" src="../../_static/underscore.js"></script>
-    <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
-    <script type="text/javascript" src="../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script src="../../_static/js/jquery-fix.js"></script>
+    <script src="../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script src="../../_static/bootstrap-sphinx.js"></script>
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -41,8 +29,37 @@
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
 <meta name="apple-mobile-web-app-capable" content="yes">
 
-  </head>
-  <body role="document">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-138780766-1"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'UA-138780766-1');
+</script>
+
+<script type="text/javascript">
+  var _ss = _ss || [];
+  _ss.push(['_setDomain', 'https://koi-3QNN51VTHS.marketingautomation.services/net']);
+  _ss.push(['_setAccount', 'KOI-4APYNOYP8O']);
+  _ss.push(['_trackPageView']);
+  window._pa = window._pa || {};
+  // _pa.orderId = "myOrderId"; // OPTIONAL: attach unique conversion identifier to conversions
+  // _pa.revenue = "19.99"; // OPTIONAL: attach dynamic purchase values to conversions
+  // _pa.productId = "myProductId"; // OPTIONAL: Include product ID for use with dynamic ads
+  (function() {
+  var ss = document.createElement('script');
+  ss.type = 'text/javascript'; ss.async = true;
+  ss.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'koi-3QNN51VTHS.marketingautomation.services/client/ss.js?ver=2.4.0';
+  var scr = document.getElementsByTagName('script')[0];
+  scr.parentNode.insertBefore(ss, scr);
+  })();
+  </script>
+
+
+
+  </head><body>
 
   <div id="navbar" class="navbar navbar-inverse navbar-default ">
     <div class="container">
@@ -61,9 +78,10 @@
         <div class="collapse navbar-collapse nav-collapse">
           <ul class="nav navbar-nav">
             
-                <li><a href="https://www.ossec.net/about/">About <i class="fa fa-info-circle"></i></a></li>
-                <li><a href="https://www.ossec.net/docs/">Documentation <i class="fa fa-book"></i></a></li>
-                <li><a href="https://www.ossec.net/downloads/">Downloads <i class="fa fa-download"></i></a></li>
+                <li><a href="https://www.ossec.net/about/">About</a></li>
+                <li><a href="https://www.ossec.net/docs/">Documentation</a></li>
+                <li><a href="https://www.ossec.net/register-for-ossec/">Get OSSEC+</a></li>
+                <li><a href="https://www.ossec.net/downloads/">Downloads</a></li>
             
             
               <li class="dropdown globaltoc-container">
@@ -139,8 +157,8 @@
 <h3>Supported types<a class="headerlink" href="#supported-types" title="Permalink to this headline">¶</a></h3>
 <p>Rules options are available in the the following installation types:</p>
 <ul class="simple">
-<li>server</li>
-<li>local</li>
+<li><p>server</p></li>
+<li><p>local</p></li>
 </ul>
 </div>
 <div class="section" id="location">
@@ -148,7 +166,7 @@
 <p>All global options must be configured in the /var/ossec/etc/ossec.conf
 and used within the &lt;ossec_config&gt; tag.</p>
 <p>XML excerpt to show location:</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;ossec_config&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;ossec_config&gt;</span>
     <span class="nt">&lt;rules&gt;</span>
         <span class="c">&lt;!--</span>
 <span class="c">        Rules options here</span>
@@ -161,153 +179,6 @@ and used within the &lt;ossec_config&gt; tag.</p>
 </div>
 <div class="section" id="options">
 <h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
-<dl class="element">
-<dt id="element-include">
-<code class="descname">include</code><a class="headerlink" href="#element-include" title="Permalink to this definition">¶</a></dt>
-<dd><p>Load a single rule file.</p>
-<p><strong>Allowed:</strong> Path and file name of rule to load example: rules/config.xml</p>
-</dd></dl>
-
-<dl class="element">
-<dt id="element-rule">
-<code class="descname">rule</code><a class="headerlink" href="#element-rule" title="Permalink to this definition">¶</a></dt>
-<dd><p>Load a single rule file.</p>
-<p><strong>Allowed:</strong> Path and file name of rule to load example: rules/config.xml</p>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">This is the same as include, but created to keep the syntax constant with
-other sections of the rules config.</p>
-</div>
-</dd></dl>
-
-<dl class="element">
-<dt id="element-rule_dir">
-<code class="descname">rule_dir</code><a class="headerlink" href="#element-rule_dir" title="Permalink to this definition">¶</a></dt>
-<dd><p>Load a directory of rules.  The order of loaded files will be in alphabetical order
-and will not load any files that have been loaded before.</p>
-<p><strong>Attributes:</strong></p>
-<ul>
-<li><p class="first"><em>pattern</em>: is a regex match string use to determine if a file needs to be
-loaded.</p>
-<blockquote>
-<div><ul class="simple">
-<li><em>Default</em>: regex &#8220;_rules.xml$&#8221; is used unless another one is specified.</li>
-</ul>
-</div></blockquote>
-</li>
-</ul>
-<p><strong>Allowed:</strong> Path to a directory of rule files</p>
-<p><strong>Example:</strong></p>
-<ol class="arabic">
-<li><p class="first">Loading all rules in directory /var/ossec/rules ending ending with _rules.xml</p>
-<blockquote>
-<div><div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;ossec_config&gt;</span>
-    <span class="nt">&lt;rules&gt;</span>
-        <span class="nt">&lt;rule_dir&gt;</span>rules<span class="nt">&lt;/rule_dir&gt;</span>
-    <span class="nt">&lt;/rules&gt;</span>
-<span class="nt">&lt;/ossec_config&gt;</span>
-</pre></div>
-</div>
-</div></blockquote>
-</li>
-<li><p class="first">Loading all rules in directory /var/ossec/rules/plugins ending with .xml</p>
-<blockquote>
-<div><div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;ossec_config&gt;</span>
-    <span class="nt">&lt;rules&gt;</span>
-        <span class="nt">&lt;rule_dir</span> <span class="na">pattern=</span><span class="s">&quot;.xml$&quot;</span><span class="nt">&gt;</span>rules/plugins<span class="nt">&lt;/rule_dir&gt;</span>
-    <span class="nt">&lt;/rules&gt;</span>
-<span class="nt">&lt;/ossec_config&gt;</span>
-</pre></div>
-</div>
-</div></blockquote>
-</li>
-</ol>
-</dd></dl>
-
-<dl class="element">
-<dt id="element-decoder">
-<code class="descname">decoder</code><a class="headerlink" href="#element-decoder" title="Permalink to this definition">¶</a></dt>
-<dd><p>Load a single decoder file. The path should be relative to the install directory, typically <code class="docutils literal"><span class="pre">/var/ossec</span></code>.</p>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">If no decoders are specified in ossec.conf the legacy <code class="docutils literal"><span class="pre">etc/decoder.xml</span></code> and
-<code class="docutils literal"><span class="pre">etc/local_decoder.xml</span></code> are loaded</p>
-</div>
-<div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">If <code class="docutils literal"><span class="pre">&lt;decoder&gt;</span></code> or <code class="docutils literal"><span class="pre">&lt;decoder_dir&gt;</span></code> are used, the default decoder.xml will not be used. It must be specified explicitly.</p>
-</div>
-<p><strong>Allowed:</strong> Path and file name of decoder to load example: rules/decoder/decoder.xml</p>
-</dd></dl>
-
-<dl class="element">
-<dt id="element-decoder_dir">
-<code class="descname">decoder_dir</code><a class="headerlink" href="#element-decoder_dir" title="Permalink to this definition">¶</a></dt>
-<dd><p>Load a directory of decoders.  The order of loaded files will be in alphabetical order
-and will not load any files that have been loaded before.
-The path should be relative to the install directory, typically <code class="docutils literal"><span class="pre">/var/ossec</span></code>.</p>
-<p><strong>Attributes:</strong></p>
-<ul>
-<li><p class="first"><em>pattern</em>: is a regex match string use to determine if a file needs to be
-loaded.</p>
-<blockquote>
-<div><ul class="simple">
-<li><em>Defaults</em>: regex &#8221;.xml$&#8221; is used unless another one is specified.</li>
-</ul>
-</div></blockquote>
-</li>
-</ul>
-<p><strong>Allowed:</strong> Path to a directory of decoder files</p>
-<p><strong>Example:</strong></p>
-<ol class="arabic">
-<li><p class="first">Loading all decoders in directory /var/ossec/rules ending ending with _decoder.xml</p>
-<blockquote>
-<div><div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;ossec_config&gt;</span>
-    <span class="nt">&lt;rules&gt;</span>
-        <span class="nt">&lt;decoder_dir&gt;</span>rules<span class="nt">&lt;/decoder_dir&gt;</span>
-    <span class="nt">&lt;/rules&gt;</span>
-<span class="nt">&lt;/ossec_config&gt;</span>
-</pre></div>
-</div>
-</div></blockquote>
-</li>
-<li><p class="first">Loading all decoders in directory /var/ossec/rules/plugins/plugins/decoders
-ending with .xml</p>
-<blockquote>
-<div><div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;ossec_config&gt;</span>
-    <span class="nt">&lt;rules&gt;</span>
-        <span class="nt">&lt;decoder_dir</span> <span class="na">pattern=</span><span class="s">&quot;.xml$&quot;</span><span class="nt">&gt;</span>rules/plugins/decoders<span class="nt">&lt;/decoder_dir&gt;</span>
-    <span class="nt">&lt;/rules&gt;</span>
-<span class="nt">&lt;/ossec_config&gt;</span>
-</pre></div>
-</div>
-</div></blockquote>
-</li>
-</ol>
-<div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">If <code class="docutils literal"><span class="pre">&lt;decoder&gt;</span></code> or <code class="docutils literal"><span class="pre">&lt;decoder_dir&gt;</span></code> are used, the default decoder.xml will not be used. It must be specified explicitly.</p>
-</div>
-</dd></dl>
-
-<dl class="element">
-<dt id="element-list">
-<code class="descname">list</code><a class="headerlink" href="#element-list" title="Permalink to this definition">¶</a></dt>
-<dd><p>Load a single cdb references for inclusion by other rules.</p>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Due to the way cdb files are compiled using tmp files by the <cite>ossec-makelists</cite>
-program the file extension should not be include in this directive.  ossec&#8217;s
-tools will correctly append the correct .cdb or .txt extension as needed.</p>
-</div>
-<p><strong>Allowed:</strong> Path to a list file to be loaded and compiled.</p>
-<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;rules&gt;</span>
-   <span class="nt">&lt;list&gt;</span>rules/lists/blocked_hosts<span class="nt">&lt;/list&gt;</span>
-<span class="nt">&lt;/rules&gt;</span>
-</pre></div>
-</div>
-</dd></dl>
-
 </div>
 </div>
 
@@ -323,9 +194,8 @@ tools will correctly append the correct .cdb or .txt extension as needed.</p>
       
     </p>
     <p>
-        &copy; Copyright 2010-2020, OSSEC Project Team.<br/>
+        &copy; Copyright 2010-2021, OSSEC Project Team.<br/>
     OSSEC <b>ossec.net</b> domain owned and maintained by <a href="https://www.ossec.net" target="_blank">OSSEC Foundation</a><br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.5.2 - 
     Home page graphics courtesy of <a href="https://pixabay.com" target="_blank">pixabay</a>
     </p>
   </div>

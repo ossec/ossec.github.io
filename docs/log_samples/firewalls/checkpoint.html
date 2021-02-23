@@ -1,36 +1,24 @@
 <!DOCTYPE html>
 
-
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Log samples for Checkpoint &#8212; OSSEC</title>
-    
-    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/parallax.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../../',
-        VERSION:     '3.3.0',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
-    <script type="text/javascript" src="../../../_static/jquery.js"></script>
-    <script type="text/javascript" src="../../../_static/underscore.js"></script>
-    <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="../../../_static/js/jquery-fix.js"></script>
-    <script type="text/javascript" src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../../../_static/bootstrap-sphinx.js"></script>
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script src="../../../_static/js/jquery-fix.js"></script>
+    <script src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script src="../../../_static/bootstrap-sphinx.js"></script>
     <link rel="author" title="About these documents" href="../../../about.html" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -39,8 +27,37 @@
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
 <meta name="apple-mobile-web-app-capable" content="yes">
 
-  </head>
-  <body role="document">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-138780766-1"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'UA-138780766-1');
+</script>
+
+<script type="text/javascript">
+  var _ss = _ss || [];
+  _ss.push(['_setDomain', 'https://koi-3QNN51VTHS.marketingautomation.services/net']);
+  _ss.push(['_setAccount', 'KOI-4APYNOYP8O']);
+  _ss.push(['_trackPageView']);
+  window._pa = window._pa || {};
+  // _pa.orderId = "myOrderId"; // OPTIONAL: attach unique conversion identifier to conversions
+  // _pa.revenue = "19.99"; // OPTIONAL: attach dynamic purchase values to conversions
+  // _pa.productId = "myProductId"; // OPTIONAL: Include product ID for use with dynamic ads
+  (function() {
+  var ss = document.createElement('script');
+  ss.type = 'text/javascript'; ss.async = true;
+  ss.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'koi-3QNN51VTHS.marketingautomation.services/client/ss.js?ver=2.4.0';
+  var scr = document.getElementsByTagName('script')[0];
+  scr.parentNode.insertBefore(ss, scr);
+  })();
+  </script>
+
+
+
+  </head><body>
 
   <div id="navbar" class="navbar navbar-inverse navbar-default ">
     <div class="container">
@@ -59,9 +76,10 @@
         <div class="collapse navbar-collapse nav-collapse">
           <ul class="nav navbar-nav">
             
-                <li><a href="https://www.ossec.net/about/">About <i class="fa fa-info-circle"></i></a></li>
-                <li><a href="https://www.ossec.net/docs/">Documentation <i class="fa fa-book"></i></a></li>
-                <li><a href="https://www.ossec.net/downloads/">Downloads <i class="fa fa-download"></i></a></li>
+                <li><a href="https://www.ossec.net/about/">About</a></li>
+                <li><a href="https://www.ossec.net/docs/">Documentation</a></li>
+                <li><a href="https://www.ossec.net/register-for-ossec/">Get OSSEC+</a></li>
+                <li><a href="https://www.ossec.net/downloads/">Downloads</a></li>
             
             
               <li class="dropdown globaltoc-container">
@@ -127,12 +145,13 @@
 <h2>Sample 1:<a class="headerlink" href="#sample-1" title="Permalink to this headline">¶</a></h2>
 <p>..code-block:: console</p>
 <blockquote>
-<div>Apr 11 11:04:48 hostng Checkpoint: 21Aug2007 12:00:00 accept 10.10.10.2 &gt;eth0 rule: 100; rule_uid: {00000000-0000-0000-0000-000000000000}; service_id: nbdatagram; src: 10.10.10.3; dst: 10.10.10.255; proto: udp; product: VPN-1 &amp; FireWall-1; service: 138; s_port: 138;</div></blockquote>
+<div><p>Apr 11 11:04:48 hostng Checkpoint: 21Aug2007 12:00:00 accept 10.10.10.2 &gt;eth0 rule: 100; rule_uid: {00000000-0000-0000-0000-000000000000}; service_id: nbdatagram; src: 10.10.10.3; dst: 10.10.10.255; proto: udp; product: VPN-1 &amp; FireWall-1; service: 138; s_port: 138;</p>
+</div></blockquote>
 </div>
 <div class="section" id="sample-2">
 <h2>Sample 2:<a class="headerlink" href="#sample-2" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div>Sep  3 15:10:54 192.168.99.1 Checkpoint:  3Sep2007 15:10:28 accept 192.168.99.1 &gt;eth2 rule: 9; rule_uid: {11111111-2222-3333-8A67-F54CED606693}; service_id: domain-udp; src: 200.14.120.9; dst: 192.168.99.184; proto: udp; product: VPN-1 &amp; FireWall-1; service: 53; s_port: 32769;
+<div><p>Sep  3 15:10:54 192.168.99.1 Checkpoint:  3Sep2007 15:10:28 accept 192.168.99.1 &gt;eth2 rule: 9; rule_uid: {11111111-2222-3333-8A67-F54CED606693}; service_id: domain-udp; src: 200.14.120.9; dst: 192.168.99.184; proto: udp; product: VPN-1 &amp; FireWall-1; service: 53; s_port: 32769;
 Sep  3 15:10:54 192.168.99.1 Checkpoint:  3Sep2007 15:10:28 accept 192.168.99.1 &gt;eth5 rule: 33; rule_uid: {AAAAAAAA-9999-8888-F33256AF77FB}; service_id: lotus; src: 192.168.11.131; dst: 192.168.99.13; proto: tcp; product: VPN-1 &amp; FireWall-1; service: 1352; s_port: 2555;
 Sep  3 15:10:54 192.168.99.1 Checkpoint:  3Sep2007 15:10:28 accept 192.168.99.1 &gt;eth5 rule: 33; rule_uid: {AAAAAAAA-9999-8888-F33256AF77FB}; service_id: lotus; src: 192.168.11.131; dst: 192.168.99.13; proto: tcp; product: VPN-1 &amp; FireWall-1; service: 1352; s_port: 2556;
 Sep  3 15:10:54 192.168.99.1 Checkpoint:  3Sep2007 15:10:29 accept 192.168.99.1 &gt;eth5 rule: 112; rule_uid: {11111111-2222-3333-97BB-2362F0B7F576}; service_id: icmp-proto; ICMP: Echo Request; src: 192.168.11.131; dst: 192.168.99.10; proto: icmp; ICMP Type: 8; ICMP Code: 0; product: VPN-1 &amp; FireWall-1;
@@ -405,7 +424,8 @@ Sep  3 15:17:32 192.168.99.1 Checkpoint:  3Sep2007 15:19:01 accept 192.168.11.7 
 Sep  3 15:17:32 192.168.99.1 Checkpoint:  3Sep2007 15:19:01 accept 192.168.11.7 &gt;eth3 rule: 92; rule_uid: {11111111-2222-3333-2D9FEAB89E67}; rule_name: consultants  API; service_id: consultants_API; src: 192.168.123.240; dst: 192.168.0.254; proto: tcp; product: VPN-1 &amp; FireWall-1; service: 8000; s_port: 41224;
 Sep  3 15:17:52 192.168.99.1 Checkpoint:  3Sep2007 15:19:01 accept 192.168.11.7 &gt;eth3 rule: 92; rule_uid: {11111111-2222-3333-2D9FEAB89E67}; rule_name: consultants  API; service_id: consultants_API; src: 192.168.123.240; dst: 192.168.0.254; proto: tcp; product: VPN-1 &amp; FireWall-1; service: 8000; s_port: 41225;
 Sep  3 15:17:52 192.168.99.1 Checkpoint:  3Sep2007 15:19:01 accept 192.168.11.7 &gt;eth3 rule: 92; rule_uid: {11111111-2222-3333-2D9FEAB89E67}; rule_name: consultants  API; service_id: consultants_API; src: 192.168.123.240; dst: 192.168.0.254; proto: tcp; product: VPN-1 &amp; FireWall-1; service: 8000; s_port: 41226;
-Sep  3 15:17:52 192.168.99.1 Checkpoint:  3Sep2007 15:19:01 accept 192.168.11.7 &gt;eth3 rule: 92; rule_uid: {11111111-2222-3333-2D9FEAB89E67}; rule_name: consultants  API; service_id: consultants_API; src: 192.168.123.240; dst: 192.168.0.254; proto: tcp; product: VPN-1 &amp; FireWall-1; service: 8000; s_port: 41227;</div></blockquote>
+Sep  3 15:17:52 192.168.99.1 Checkpoint:  3Sep2007 15:19:01 accept 192.168.11.7 &gt;eth3 rule: 92; rule_uid: {11111111-2222-3333-2D9FEAB89E67}; rule_name: consultants  API; service_id: consultants_API; src: 192.168.123.240; dst: 192.168.0.254; proto: tcp; product: VPN-1 &amp; FireWall-1; service: 8000; s_port: 41227;</p>
+</div></blockquote>
 </div>
 </div>
 
@@ -421,9 +441,8 @@ Sep  3 15:17:52 192.168.99.1 Checkpoint:  3Sep2007 15:19:01 accept 192.168.11.7 
       
     </p>
     <p>
-        &copy; Copyright 2010-2020, OSSEC Project Team.<br/>
+        &copy; Copyright 2010-2021, OSSEC Project Team.<br/>
     OSSEC <b>ossec.net</b> domain owned and maintained by <a href="https://www.ossec.net" target="_blank">OSSEC Foundation</a><br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.5.2 - 
     Home page graphics courtesy of <a href="https://pixabay.com" target="_blank">pixabay</a>
     </p>
   </div>

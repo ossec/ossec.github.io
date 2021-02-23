@@ -1,36 +1,24 @@
 <!DOCTYPE html>
 
-
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>agent-auth &#8212; OSSEC</title>
-    
-    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/parallax.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../',
-        VERSION:     '3.3.0',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
-    <script type="text/javascript" src="../../_static/jquery.js"></script>
-    <script type="text/javascript" src="../../_static/underscore.js"></script>
-    <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
-    <script type="text/javascript" src="../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script src="../../_static/js/jquery-fix.js"></script>
+    <script src="../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script src="../../_static/bootstrap-sphinx.js"></script>
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -41,8 +29,37 @@
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
 <meta name="apple-mobile-web-app-capable" content="yes">
 
-  </head>
-  <body role="document">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-138780766-1"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'UA-138780766-1');
+</script>
+
+<script type="text/javascript">
+  var _ss = _ss || [];
+  _ss.push(['_setDomain', 'https://koi-3QNN51VTHS.marketingautomation.services/net']);
+  _ss.push(['_setAccount', 'KOI-4APYNOYP8O']);
+  _ss.push(['_trackPageView']);
+  window._pa = window._pa || {};
+  // _pa.orderId = "myOrderId"; // OPTIONAL: attach unique conversion identifier to conversions
+  // _pa.revenue = "19.99"; // OPTIONAL: attach dynamic purchase values to conversions
+  // _pa.productId = "myProductId"; // OPTIONAL: Include product ID for use with dynamic ads
+  (function() {
+  var ss = document.createElement('script');
+  ss.type = 'text/javascript'; ss.async = true;
+  ss.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'koi-3QNN51VTHS.marketingautomation.services/client/ss.js?ver=2.4.0';
+  var scr = document.getElementsByTagName('script')[0];
+  scr.parentNode.insertBefore(ss, scr);
+  })();
+  </script>
+
+
+
+  </head><body>
 
   <div id="navbar" class="navbar navbar-inverse navbar-default ">
     <div class="container">
@@ -61,9 +78,10 @@
         <div class="collapse navbar-collapse nav-collapse">
           <ul class="nav navbar-nav">
             
-                <li><a href="https://www.ossec.net/about/">About <i class="fa fa-info-circle"></i></a></li>
-                <li><a href="https://www.ossec.net/docs/">Documentation <i class="fa fa-book"></i></a></li>
-                <li><a href="https://www.ossec.net/downloads/">Downloads <i class="fa fa-download"></i></a></li>
+                <li><a href="https://www.ossec.net/about/">About</a></li>
+                <li><a href="https://www.ossec.net/docs/">Documentation</a></li>
+                <li><a href="https://www.ossec.net/register-for-ossec/">Get OSSEC+</a></li>
+                <li><a href="https://www.ossec.net/downloads/">Downloads</a></li>
             
             
               <li class="dropdown globaltoc-container">
@@ -135,112 +153,112 @@
 <span id="id1"></span><h1>agent-auth<a class="headerlink" href="#agent-auth" title="Permalink to this headline">¶</a></h1>
 <p>The agent-auth program is the client application used with <a class="reference internal" href="ossec-authd.html#ossec-authd"><span class="std std-ref">ossec-authd</span></a> to automatically add agents to an OSSEC manager.</p>
 <div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">By default there is no authentication or authorization involved in this transaction, so it is recommended that
+<p class="admonition-title">Warning</p>
+<p>By default there is no authentication or authorization involved in this transaction, so it is recommended that
 this daemon only be run when a new agent is being added.</p>
 </div>
 <div class="section" id="agent-auth-argument-options">
 <h2>agent-auth argument options<a class="headerlink" href="#agent-auth-argument-options" title="Permalink to this headline">¶</a></h2>
-<dl class="option">
-<dt id="cmdoption-agent-auth-a">
-<code class="descname">-A</code><code class="descclassname"> &lt;agent_name&gt;</code><a class="headerlink" href="#cmdoption-agent-auth-a" title="Permalink to this definition">¶</a></dt>
+<dl class="std option">
+<dt id="cmdoption-agent-auth-A">
+<span id="cmdoption-agent-auth-a"></span><code class="sig-name descname"><span class="pre">-A</span></code><code class="sig-prename descclassname"> <span class="pre">&lt;agent_name&gt;</span></code><a class="headerlink" href="#cmdoption-agent-auth-A" title="Permalink to this definition">¶</a></dt>
 <dd><p>Agent name to be used.
 <strong>Default</strong> hostname</p>
 </dd></dl>
 
-<dl class="option">
-<dt id="cmdoption-agent-auth-d">
-<code class="descname">-D</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-agent-auth-d" title="Permalink to this definition">¶</a></dt>
+<dl class="std option">
+<dt id="cmdoption-agent-auth-D">
+<span id="cmdoption-agent-auth-d"></span><code class="sig-name descname"><span class="pre">-D</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-agent-auth-D" title="Permalink to this definition">¶</a></dt>
 <dd><p>Directory where OSSEC is installed.
 <strong>Default</strong> /var/ossec</p>
 </dd></dl>
 
-<dl class="option">
-<dt id="id2">
-<code class="descname">-d</code><code class="descclassname"></code><a class="headerlink" href="#id2" title="Permalink to this definition">¶</a></dt>
+<dl class="std option">
+<dt id="cmdoption-agent-auth-0">
+<code class="sig-name descname"><span class="pre">-d</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-agent-auth-0" title="Permalink to this definition">¶</a></dt>
 <dd><p>Execute agent-auth in debug mode. This option can be used multiple times to increase the verbosity of the debug messages.</p>
 </dd></dl>
 
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-agent-auth-g">
-<code class="descname">-g</code><code class="descclassname"> &lt;group&gt;</code><a class="headerlink" href="#cmdoption-agent-auth-g" title="Permalink to this definition">¶</a></dt>
-<dd><p>Run as <code class="docutils literal"><span class="pre">group</span></code>.</p>
+<code class="sig-name descname"><span class="pre">-g</span></code><code class="sig-prename descclassname"> <span class="pre">&lt;group&gt;</span></code><a class="headerlink" href="#cmdoption-agent-auth-g" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run as <code class="docutils literal notranslate"><span class="pre">group</span></code>.</p>
 </dd></dl>
 
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-agent-auth-h">
-<code class="descname">-h</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-agent-auth-h" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">-h</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-agent-auth-h" title="Permalink to this definition">¶</a></dt>
 <dd><p>Display the help message</p>
 </dd></dl>
 
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-agent-auth-k">
-<code class="descname">-k</code><code class="descclassname"> &lt;path&gt;</code><a class="headerlink" href="#cmdoption-agent-auth-k" title="Permalink to this definition">¶</a></dt>
-<dd><p>Load the certificate&#8217;s corresponding PEM encoded private key.</p>
+<code class="sig-name descname"><span class="pre">-k</span></code><code class="sig-prename descclassname"> <span class="pre">&lt;path&gt;</span></code><a class="headerlink" href="#cmdoption-agent-auth-k" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load the certificate’s corresponding PEM encoded private key.</p>
 </dd></dl>
 
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-agent-auth-m">
-<code class="descname">-m</code><code class="descclassname"> &lt;manager_ip&gt;</code><a class="headerlink" href="#cmdoption-agent-auth-m" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">-m</span></code><code class="sig-prename descclassname"> <span class="pre">&lt;manager_ip&gt;</span></code><a class="headerlink" href="#cmdoption-agent-auth-m" title="Permalink to this definition">¶</a></dt>
 <dd><p>IP address of the manager.</p>
 </dd></dl>
 
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-agent-auth-p">
-<code class="descname">-p</code><code class="descclassname"> &lt;port&gt;</code><a class="headerlink" href="#cmdoption-agent-auth-p" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">-p</span></code><code class="sig-prename descclassname"> <span class="pre">&lt;port&gt;</span></code><a class="headerlink" href="#cmdoption-agent-auth-p" title="Permalink to this definition">¶</a></dt>
 <dd><p>Port ossec-authd is running on.</p>
 <p><strong>Default</strong> 1515</p>
 </dd></dl>
 
-<dl class="option">
-<dt id="cmdoption-agent-auth-v">
-<code class="descname">-V</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-agent-auth-v" title="Permalink to this definition">¶</a></dt>
+<dl class="std option">
+<dt id="cmdoption-agent-auth-V">
+<span id="cmdoption-agent-auth-v"></span><code class="sig-name descname"><span class="pre">-V</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-agent-auth-V" title="Permalink to this definition">¶</a></dt>
 <dd><p>Display OSSEC Version and license information.</p>
 </dd></dl>
 
-<dl class="option">
-<dt id="id3">
-<code class="descname">-v</code><code class="descclassname"> &lt;path&gt;</code><a class="headerlink" href="#id3" title="Permalink to this definition">¶</a></dt>
+<dl class="std option">
+<dt id="cmdoption-agent-auth-1">
+<code class="sig-name descname"><span class="pre">-v</span></code><code class="sig-prename descclassname"> <span class="pre">&lt;path&gt;</span></code><a class="headerlink" href="#cmdoption-agent-auth-1" title="Permalink to this definition">¶</a></dt>
 <dd><p>Load the PEM encoded CA Certificate that will be used to verify <a class="reference internal" href="ossec-authd.html#ossec-authd"><span class="std std-ref">ossec-authd</span></a> if desired. If this option is used then
 <a class="reference internal" href="ossec-authd.html#ossec-authd"><span class="std std-ref">ossec-authd</span></a> must present a valid certificate signed by this CA.</p>
 </dd></dl>
 
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-agent-auth-x">
-<code class="descname">-x</code><code class="descclassname"> &lt;path&gt;</code><a class="headerlink" href="#cmdoption-agent-auth-x" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">-x</span></code><code class="sig-prename descclassname"> <span class="pre">&lt;path&gt;</span></code><a class="headerlink" href="#cmdoption-agent-auth-x" title="Permalink to this definition">¶</a></dt>
 <dd><p>Load the PEM encoded certificate that will be presented to <a class="reference internal" href="ossec-authd.html#ossec-authd"><span class="std std-ref">ossec-authd</span></a> during establishment of the SSL connection.</p>
 </dd></dl>
 
 </div>
 <div class="section" id="optional-server-authentication-client-side">
 <span id="optional-server-authentication"></span><h2>Optional Server Authentication - client side<a class="headerlink" href="#optional-server-authentication-client-side" title="Permalink to this headline">¶</a></h2>
-<p><code class="docutils literal"><span class="pre">agent-auth</span></code> can verify that the server it&#8217;s connecting to presents a valid X.509 certificate when requesting
+<p><code class="docutils literal notranslate"><span class="pre">agent-auth</span></code> can verify that the server it’s connecting to presents a valid X.509 certificate when requesting
 a key. This is optional and is only useful if hosts in your environment have access to the root certificate of
 the CA that signed the certificate presented by <a class="reference internal" href="ossec-authd.html#ossec-authd"><span class="std std-ref">ossec-authd</span></a>. If server certificate verification is desired
 then the relevant CA certificate must be loaded with the -v option, then if the server does not present a valid
 certificate the agent will not be allocated a key.</p>
 <p>A certificate presented by the server may be found to be invalid for the following reasons:</p>
 <ul class="simple">
-<li>It was not signed by the specified CA.</li>
-<li>It doesn&#8217;t contain the IP address or hostname given with the -m option in the subject&#8217;s common name field or a
-subject alternative name extension field.</li>
-<li>It is expired.</li>
+<li><p>It was not signed by the specified CA.</p></li>
+<li><p>It doesn’t contain the IP address or hostname given with the -m option in the subject’s common name field or a
+subject alternative name extension field.</p></li>
+<li><p>It is expired.</p></li>
 </ul>
 <p>While server authentication is optional it is highly recommended that it be used if possible when running ossec-authd
 and agent-auth.</p>
 </div>
 <div class="section" id="optional-client-authentication">
-<span id="id4"></span><h2>Optional Client Authentication<a class="headerlink" href="#optional-client-authentication" title="Permalink to this headline">¶</a></h2>
-<p><code class="docutils literal"><span class="pre">agent-auth</span></code> can present its own certificate to the server for verification. This is mandatory if <a class="reference internal" href="ossec-authd.html#ossec-authd"><span class="std std-ref">ossec-authd</span></a>
+<span id="id2"></span><h2>Optional Client Authentication<a class="headerlink" href="#optional-client-authentication" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">agent-auth</span></code> can present its own certificate to the server for verification. This is mandatory if <a class="reference internal" href="ossec-authd.html#ossec-authd"><span class="std std-ref">ossec-authd</span></a>
 was run with the -v option and optional otherwise. This is only useful if hosts in your environment are assigned
-certificates when they&#8217;re provisioned (or at some point before being added to OSSEC). Use the -x and -k options
+certificates when they’re provisioned (or at some point before being added to OSSEC). Use the -x and -k options
 to load a certificate and private key.</p>
 </div>
 <div class="section" id="agent-auth-example-usage">
 <h2>agent-auth example usage<a class="headerlink" href="#agent-auth-example-usage" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="example-adding-an-agent-with-a-hostname">
 <h3>Example: Adding an agent with a hostname<a class="headerlink" href="#example-adding-an-agent-with-a-hostname" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp"># </span>/var/ossec/bin/agent-auth -m <span class="m">192</span>.168.1.1 -p <span class="m">1515</span> -A example-agent
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"># </span>/var/ossec/bin/agent-auth -m <span class="m">192</span>.168.1.1 -p <span class="m">1515</span> -A example-agent
 <span class="go">INFO: Connected to 192.168.1.1:1515</span>
 <span class="go">INFO: Using agent name as: melancia</span>
 <span class="go">INFO: Send request to manager. Waiting for reply.</span>
@@ -252,7 +270,7 @@ to load a certificate and private key.</p>
 </div>
 <div class="section" id="example-adding-an-agent-and-verifying-the-certificate-presented-by-ossec-authd">
 <h3>Example: Adding an agent and verifying the certificate presented by ossec-authd<a class="headerlink" href="#example-adding-an-agent-and-verifying-the-certificate-presented-by-ossec-authd" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp"># </span>/var/ossec/bin/agent-auth -m ossec-manager.localdomain -p <span class="m">1515</span> -v /etc/pki/CA/certs/internal_CA.cert
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"># </span>/var/ossec/bin/agent-auth -m ossec-manager.localdomain -p <span class="m">1515</span> -v /etc/pki/CA/certs/internal_CA.cert
 <span class="go">INFO: Connected to 192.168.1.1:1515</span>
 <span class="go">INFO: Verifying manager&#39;s certificate</span>
 <span class="go">INFO: Using agent name as: melancia</span>
@@ -262,7 +280,7 @@ to load a certificate and private key.</p>
 </div>
 <div class="section" id="example-adding-an-agent-and-presenting-a-certificate-to-ossec-authd">
 <h3>Example: Adding an agent and presenting a certificate to ossec-authd<a class="headerlink" href="#example-adding-an-agent-and-presenting-a-certificate-to-ossec-authd" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp"># </span>/var/ossec/bin/agent-auth -m ossec-manager.localdomain -p <span class="m">1515</span> -x /var/ossec/etc/client.cert -k /var/ossec/etc/client.key
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"># </span>/var/ossec/bin/agent-auth -m ossec-manager.localdomain -p <span class="m">1515</span> -x /var/ossec/etc/client.cert -k /var/ossec/etc/client.key
 <span class="go">INFO: Connected to 192.168.1.1:1515</span>
 <span class="go">INFO: Using agent name as: melancia</span>
 <span class="go">...</span>
@@ -284,9 +302,8 @@ to load a certificate and private key.</p>
       
     </p>
     <p>
-        &copy; Copyright 2010-2020, OSSEC Project Team.<br/>
+        &copy; Copyright 2010-2021, OSSEC Project Team.<br/>
     OSSEC <b>ossec.net</b> domain owned and maintained by <a href="https://www.ossec.net" target="_blank">OSSEC Foundation</a><br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.5.2 - 
     Home page graphics courtesy of <a href="https://pixabay.com" target="_blank">pixabay</a>
     </p>
   </div>

@@ -1,36 +1,24 @@
 <!DOCTYPE html>
 
-
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Managing Agents &#8212; OSSEC</title>
-    
-    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/parallax.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../../',
-        VERSION:     '3.3.0',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
-    <script type="text/javascript" src="../../../_static/jquery.js"></script>
-    <script type="text/javascript" src="../../../_static/underscore.js"></script>
-    <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="../../../_static/js/jquery-fix.js"></script>
-    <script type="text/javascript" src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../../../_static/bootstrap-sphinx.js"></script>
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script src="../../../_static/js/jquery-fix.js"></script>
+    <script src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script src="../../../_static/bootstrap-sphinx.js"></script>
     <link rel="author" title="About these documents" href="../../../about.html" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -41,8 +29,37 @@
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
 <meta name="apple-mobile-web-app-capable" content="yes">
 
-  </head>
-  <body role="document">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-138780766-1"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'UA-138780766-1');
+</script>
+
+<script type="text/javascript">
+  var _ss = _ss || [];
+  _ss.push(['_setDomain', 'https://koi-3QNN51VTHS.marketingautomation.services/net']);
+  _ss.push(['_setAccount', 'KOI-4APYNOYP8O']);
+  _ss.push(['_trackPageView']);
+  window._pa = window._pa || {};
+  // _pa.orderId = "myOrderId"; // OPTIONAL: attach unique conversion identifier to conversions
+  // _pa.revenue = "19.99"; // OPTIONAL: attach dynamic purchase values to conversions
+  // _pa.productId = "myProductId"; // OPTIONAL: Include product ID for use with dynamic ads
+  (function() {
+  var ss = document.createElement('script');
+  ss.type = 'text/javascript'; ss.async = true;
+  ss.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'koi-3QNN51VTHS.marketingautomation.services/client/ss.js?ver=2.4.0';
+  var scr = document.getElementsByTagName('script')[0];
+  scr.parentNode.insertBefore(ss, scr);
+  })();
+  </script>
+
+
+
+  </head><body>
 
   <div id="navbar" class="navbar navbar-inverse navbar-default ">
     <div class="container">
@@ -61,9 +78,10 @@
         <div class="collapse navbar-collapse nav-collapse">
           <ul class="nav navbar-nav">
             
-                <li><a href="https://www.ossec.net/about/">About <i class="fa fa-info-circle"></i></a></li>
-                <li><a href="https://www.ossec.net/docs/">Documentation <i class="fa fa-book"></i></a></li>
-                <li><a href="https://www.ossec.net/downloads/">Downloads <i class="fa fa-download"></i></a></li>
+                <li><a href="https://www.ossec.net/about/">About</a></li>
+                <li><a href="https://www.ossec.net/docs/">Documentation</a></li>
+                <li><a href="https://www.ossec.net/register-for-ossec/">Get OSSEC+</a></li>
+                <li><a href="https://www.ossec.net/downloads/">Downloads</a></li>
             
             
               <li class="dropdown globaltoc-container">
@@ -135,34 +153,34 @@
 <span id="manual-agent-manage"></span><h1>Managing Agents<a class="headerlink" href="#managing-agents" title="Permalink to this headline">¶</a></h1>
 <p>To add an agent to an OSSEC manager with <a class="reference internal" href="../../programs/manage_agents.html#manage-agents"><span class="std std-ref">manage_agents</span></a> you need to follow the steps below.</p>
 <ol class="arabic simple">
-<li>Run manage_agents on the OSSEC server.</li>
-<li>Add an agent.</li>
-<li>Extract the key for the agent.</li>
-<li>Copy that key to the agent.</li>
-<li>Run manage_agents on the agent.</li>
-<li>Import the key copied from the manager.</li>
-<li>Restart the manager&#8217;s OSSEC processes.</li>
-<li>Start the agent.</li>
+<li><p>Run manage_agents on the OSSEC server.</p></li>
+<li><p>Add an agent.</p></li>
+<li><p>Extract the key for the agent.</p></li>
+<li><p>Copy that key to the agent.</p></li>
+<li><p>Run manage_agents on the agent.</p></li>
+<li><p>Import the key copied from the manager.</p></li>
+<li><p>Restart the manager’s OSSEC processes.</p></li>
+<li><p>Start the agent.</p></li>
 </ol>
 <div class="section" id="manage-agents-on-the-ossec-server">
 <h2>manage_agents on the OSSEC server<a class="headerlink" href="#manage-agents-on-the-ossec-server" title="Permalink to this headline">¶</a></h2>
 <p>The server version of manage_agents provides an interface to:</p>
 <ul class="simple">
-<li>add an OSSEC agent to the OSSEC server</li>
-<li>extract the key for an agent already added to the OSSEC server</li>
-<li>remove an agent from the OSSEC server</li>
-<li>list all agents already added to the OSSEC server.</li>
+<li><p>add an OSSEC agent to the OSSEC server</p></li>
+<li><p>extract the key for an agent already added to the OSSEC server</p></li>
+<li><p>remove an agent from the OSSEC server</p></li>
+<li><p>list all agents already added to the OSSEC server.</p></li>
 </ul>
 <div class="section" id="running-manage-agents-and-start-screen">
 <h3>Running manage_agents and start screen<a class="headerlink" href="#running-manage-agents-and-start-screen" title="Permalink to this headline">¶</a></h3>
-<p><code class="docutils literal"><span class="pre">manage_agents</span></code> should be run as a user with
+<p><code class="docutils literal notranslate"><span class="pre">manage_agents</span></code> should be run as a user with
 the appropriate privileges (e.g. root).</p>
-<p>Run <code class="docutils literal"><span class="pre">manage_agents</span></code>:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp"># </span>/var/ossec/bin/manage_agents
+<p>Run <code class="docutils literal notranslate"><span class="pre">manage_agents</span></code>:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"># </span>/var/ossec/bin/manage_agents
 </pre></div>
 </div>
 <p>The manage_agents menu:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">****************************************</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">****************************************</span>
 <span class="go">* OSSEC HIDS v2.5-SNP-100809 Agent manager.     *</span>
 <span class="go">* The following options are available: *</span>
 <span class="go">****************************************</span>
@@ -178,40 +196,40 @@ the appropriate privileges (e.g. root).</p>
 </div>
 <div class="section" id="adding-an-agent">
 <h3>Adding an agent<a class="headerlink" href="#adding-an-agent" title="Permalink to this headline">¶</a></h3>
-<p>To add an agent type <code class="docutils literal"><span class="pre">a</span></code> in the start screen:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Choose your action: A,E,L,R or Q: a</span>
+<p>To add an agent type <code class="docutils literal notranslate"><span class="pre">a</span></code> in the start screen:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Choose your action: A,E,L,R or Q: a</span>
 </pre></div>
 </div>
 <p>You are then prompted to provide a name for the new agent.
 This can be the hostname or another string to identify the system.
 In this example the agent name will be agent1.</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">- Adding a new agent (use &#39;\q&#39; to return to the main menu).</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">- Adding a new agent (use &#39;\q&#39; to return to the main menu).</span>
 <span class="go">  Please provide the following:</span>
 <span class="go">   * A name for the new agent: agent1</span>
 </pre></div>
 </div>
 <p>After that you have to specify the IP address for the agent. This can either be a single
-IP address (e.g. 192.168.1.25), a range of IPs (e.g. 192.168.2.0/24), or <code class="docutils literal"><span class="pre">any</span></code>. Using a
-network range or <code class="docutils literal"><span class="pre">any</span></code> is preferable when the IP of the agent may change frequently
+IP address (e.g. 192.168.1.25), a range of IPs (e.g. 192.168.2.0/24), or <code class="docutils literal notranslate"><span class="pre">any</span></code>. Using a
+network range or <code class="docutils literal notranslate"><span class="pre">any</span></code> is preferable when the IP of the agent may change frequently
 (DHCP), or multiple systems will appear to come from the same IP address (NAT).</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">* The IP Address of the new agent: 192.168.2.0/24</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">* The IP Address of the new agent: 192.168.2.0/24</span>
 </pre></div>
 </div>
 <div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">If you use a specific IP address it <strong>must</strong> be unique. Duplicate IP addresses will cause issues.
-Multiple systems can use the same IP range or <code class="docutils literal"><span class="pre">any</span></code>.</p>
+<p class="admonition-title">Warning</p>
+<p>If you use a specific IP address it <strong>must</strong> be unique. Duplicate IP addresses will cause issues.
+Multiple systems can use the same IP range or <code class="docutils literal notranslate"><span class="pre">any</span></code>.</p>
 </div>
 <p>The last information you will be asked for is the ID you want to assign to the agent.
 <a class="reference internal" href="../../programs/manage_agents.html#manage-agents"><span class="std std-ref">manage_agents</span></a> will suggest a value for the ID. This value should be the lowest positive
 number that is not already assigned to another agent. The ID 000 is assigned to the
 OSSEC server. To accept the suggestion, simply press ENTER. To choose another value,
 type it in and press ENTER.</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">* An ID for the new agent[001]:</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">* An ID for the new agent[001]:</span>
 </pre></div>
 </div>
 <p>As the final step in creating an agent, you have to confirm adding the agent:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Agent information:</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Agent information:</span>
 <span class="go">   ID:002</span>
 <span class="go">   Name:agent1</span>
 <span class="go">   IP Address:192.168.2.0/24</span>
@@ -223,19 +241,19 @@ type it in and press ENTER.</p>
 <p>After that <a class="reference internal" href="../../programs/manage_agents.html#manage-agents"><span class="std std-ref">manage_agents</span></a> appends the agent information to /var/ossec/etc/client.keys
 and goes back to the start screen.</p>
 <div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">If this is the first agent added to this server, the server&#8217;s OSSEC processes should be restarted using <code class="docutils literal"><span class="pre">/var/ossec/bin/ossec-control</span> <span class="pre">restart</span></code>.</p>
+<p class="admonition-title">Warning</p>
+<p>If this is the first agent added to this server, the server’s OSSEC processes should be restarted using <code class="docutils literal notranslate"><span class="pre">/var/ossec/bin/ossec-control</span> <span class="pre">restart</span></code>.</p>
 </div>
 </div>
 </div>
 <div class="section" id="extracting-the-key-for-an-agent">
 <h2>Extracting the key for an agent<a class="headerlink" href="#extracting-the-key-for-an-agent" title="Permalink to this headline">¶</a></h2>
 <p>After adding an agent, a key is created. This key must be copied to the agent.
-To extract the key, use the <code class="docutils literal"><span class="pre">e</span></code> option in the manage_agents start screen. You will be
+To extract the key, use the <code class="docutils literal notranslate"><span class="pre">e</span></code> option in the manage_agents start screen. You will be
 given a list of all agents on the server. To extract the key for an agent,
 simply type in the agent ID. It is important to note that you have
 to enter all digits of the ID.</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Choose your action: A,E,L,R or Q: e</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Choose your action: A,E,L,R or Q: e</span>
 
 <span class="go">Available agents:</span>
 <span class="go">   ID: 001, Name: agent1, IP: 192.168.2.0/24</span>
@@ -248,17 +266,17 @@ to enter all digits of the ID.</p>
 </pre></div>
 </div>
 <p>The key is encoded in the string (shortened for this example)
-<code class="docutils literal"><span class="pre">MDAyIGFnZW50MSAxOTIuMTY4LjIuMC8yNCBlNmY3N2RiMTdmMTJjZGRmZjg5YzA4ZDk5Mm</span></code>
+<code class="docutils literal notranslate"><span class="pre">MDAyIGFnZW50MSAxOTIuMTY4LjIuMC8yNCBlNmY3N2RiMTdmMTJjZGRmZjg5YzA4ZDk5Mm</span></code>
 and includes information about the agent. This string can be added to the agent through the agent version of
-<code class="docutils literal"><span class="pre">manage_agents</span></code>.</p>
+<code class="docutils literal notranslate"><span class="pre">manage_agents</span></code>.</p>
 </div>
 <div class="section" id="removing-an-agent">
 <h2>Removing an agent<a class="headerlink" href="#removing-an-agent" title="Permalink to this headline">¶</a></h2>
-<p>If you want to remove an OSSEC agent from the server, use the <code class="docutils literal"><span class="pre">r</span></code> option in the <a class="reference internal" href="../../programs/manage_agents.html#manage-agents"><span class="std std-ref">manage_agents</span></a>
+<p>If you want to remove an OSSEC agent from the server, use the <code class="docutils literal notranslate"><span class="pre">r</span></code> option in the <a class="reference internal" href="../../programs/manage_agents.html#manage-agents"><span class="std std-ref">manage_agents</span></a>
 start screen. You will be given a list of all agents already added to the server. To remove
 an agent, simply type in the ID of the agent, press enter, and finally confirm the deletion.
 It is important to note that you have to enter all digits of the ID.</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Choose your action: A,E,L,R or Q: r</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Choose your action: A,E,L,R or Q: r</span>
 
 <span class="go">Available agents:</span>
 <span class="go">   ID: 001, Name: agent1, IP: 192.168.2.0/24</span>
@@ -267,15 +285,15 @@ It is important to note that you have to enter all digits of the ID.</p>
 <span class="go">Agent &#39;001&#39; removed.</span>
 </pre></div>
 </div>
-<p><code class="docutils literal"><span class="pre">manage_agents</span></code> then invalidates the agent information in
-<code class="docutils literal"><span class="pre">/var/ossec/etc/client.keys</span></code>. Only the values for ID and the key are kept to
+<p><code class="docutils literal notranslate"><span class="pre">manage_agents</span></code> then invalidates the agent information in
+<code class="docutils literal notranslate"><span class="pre">/var/ossec/etc/client.keys</span></code>. Only the values for ID and the key are kept to
 avoid conflicts when adding agents. The deleted agent can no longer
 communicate with the OSSEC server.</p>
 </div>
 <div class="section" id="manage-agents-on-ossec-agents">
 <h2>manage_agents on OSSEC agents<a class="headerlink" href="#manage-agents-on-ossec-agents" title="Permalink to this headline">¶</a></h2>
 <p>The agent version provides an interface for importing authentication keys.</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">****************************************</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">****************************************</span>
 <span class="go">* OSSEC HIDS v2.5-SNP-100809 Agent manager.     *</span>
 <span class="go">* The following options are available: *</span>
 <span class="go">****************************************</span>
@@ -316,9 +334,8 @@ restart the server and start the agent.</p>
       
     </p>
     <p>
-        &copy; Copyright 2010-2020, OSSEC Project Team.<br/>
+        &copy; Copyright 2010-2021, OSSEC Project Team.<br/>
     OSSEC <b>ossec.net</b> domain owned and maintained by <a href="https://www.ossec.net" target="_blank">OSSEC Foundation</a><br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.5.2 - 
     Home page graphics courtesy of <a href="https://pixabay.com" target="_blank">pixabay</a>
     </p>
   </div>

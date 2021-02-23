@@ -1,36 +1,24 @@
 <!DOCTYPE html>
 
-
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cron/Crontab Log Samples &#8212; OSSEC</title>
-    
-    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/parallax.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../../',
-        VERSION:     '3.3.0',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
-    <script type="text/javascript" src="../../../_static/jquery.js"></script>
-    <script type="text/javascript" src="../../../_static/underscore.js"></script>
-    <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="../../../_static/js/jquery-fix.js"></script>
-    <script type="text/javascript" src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../../../_static/bootstrap-sphinx.js"></script>
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script src="../../../_static/js/jquery-fix.js"></script>
+    <script src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script src="../../../_static/bootstrap-sphinx.js"></script>
     <link rel="author" title="About these documents" href="../../../about.html" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -39,8 +27,37 @@
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
 <meta name="apple-mobile-web-app-capable" content="yes">
 
-  </head>
-  <body role="document">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-138780766-1"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'UA-138780766-1');
+</script>
+
+<script type="text/javascript">
+  var _ss = _ss || [];
+  _ss.push(['_setDomain', 'https://koi-3QNN51VTHS.marketingautomation.services/net']);
+  _ss.push(['_setAccount', 'KOI-4APYNOYP8O']);
+  _ss.push(['_trackPageView']);
+  window._pa = window._pa || {};
+  // _pa.orderId = "myOrderId"; // OPTIONAL: attach unique conversion identifier to conversions
+  // _pa.revenue = "19.99"; // OPTIONAL: attach dynamic purchase values to conversions
+  // _pa.productId = "myProductId"; // OPTIONAL: Include product ID for use with dynamic ads
+  (function() {
+  var ss = document.createElement('script');
+  ss.type = 'text/javascript'; ss.async = true;
+  ss.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'koi-3QNN51VTHS.marketingautomation.services/client/ss.js?ver=2.4.0';
+  var scr = document.getElementsByTagName('script')[0];
+  scr.parentNode.insertBefore(ss, scr);
+  })();
+  </script>
+
+
+
+  </head><body>
 
   <div id="navbar" class="navbar navbar-inverse navbar-default ">
     <div class="container">
@@ -59,9 +76,10 @@
         <div class="collapse navbar-collapse nav-collapse">
           <ul class="nav navbar-nav">
             
-                <li><a href="https://www.ossec.net/about/">About <i class="fa fa-info-circle"></i></a></li>
-                <li><a href="https://www.ossec.net/docs/">Documentation <i class="fa fa-book"></i></a></li>
-                <li><a href="https://www.ossec.net/downloads/">Downloads <i class="fa fa-download"></i></a></li>
+                <li><a href="https://www.ossec.net/about/">About</a></li>
+                <li><a href="https://www.ossec.net/docs/">Documentation</a></li>
+                <li><a href="https://www.ossec.net/register-for-ossec/">Get OSSEC+</a></li>
+                <li><a href="https://www.ossec.net/downloads/">Downloads</a></li>
             
             
               <li class="dropdown globaltoc-container">
@@ -125,15 +143,15 @@
 <h1>Cron/Crontab Log Samples<a class="headerlink" href="#cron-crontab-log-samples" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="crontab-edited-by-root">
 <h2>Crontab edited by root:<a class="headerlink" href="#crontab-edited-by-root" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Sep 11 09:46:33 sys1 crontab[20601]: (root) BEGIN EDIT (root)</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Sep 11 09:46:33 sys1 crontab[20601]: (root) BEGIN EDIT (root)</span>
 <span class="go">Sep 11 09:46:39 sys1 crontab[20601]: (root) REPLACE (root)</span>
 <span class="go">Sep 11 09:46:39 sys1 crontab[20601]: (root) END EDIT (root)</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="this-is-root-editing-another-user-s-crontab">
-<h2>This is root editing another user&#8217;s crontab:<a class="headerlink" href="#this-is-root-editing-another-user-s-crontab" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Sep 11 09:50:42 sys1 crontab[20230]: (root) BEGIN EDIT (user1)</span>
+<h2>This is root editing another user’s crontab:<a class="headerlink" href="#this-is-root-editing-another-user-s-crontab" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Sep 11 09:50:42 sys1 crontab[20230]: (root) BEGIN EDIT (user1)</span>
 <span class="go">Sep 11 09:51:06 sys1 crontab[20230]: (root) REPLACE (user1)</span>
 <span class="go">Sep 11 09:51:06 sys1 crontab[20230]: (root) END EDIT (user1)</span>
 </pre></div>
@@ -141,7 +159,7 @@
 </div>
 <div class="section" id="this-is-a-user-editing-their-own-crontab">
 <h2>This is a user editing their own crontab:<a class="headerlink" href="#this-is-a-user-editing-their-own-crontab" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Sep 11 09:51:39 sys1 crontab[20761]: (user1) BEGIN EDIT (user1)</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Sep 11 09:51:39 sys1 crontab[20761]: (user1) BEGIN EDIT (user1)</span>
 <span class="go">Sep 11 09:51:46 sys1 crontab[20761]: (user1) REPLACE (user1)</span>
 <span class="go">Sep 11 09:51:46 sys1 crontab[20761]: (user1) END EDIT (user1)</span>
 </pre></div>
@@ -149,7 +167,7 @@
 </div>
 <div class="section" id="additional-samples">
 <h2>Additional samples:<a class="headerlink" href="#additional-samples" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Sep 11 15:20:57 copacabana crontab[7972]: (dcid) BEGIN EDIT (dcid)</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Sep 11 15:20:57 copacabana crontab[7972]: (dcid) BEGIN EDIT (dcid)</span>
 <span class="go">Sep 11 15:21:26 copacabana crontab[7972]: (dcid) REPLACE (dcid)</span>
 <span class="go">Sep 11 15:21:26 copacabana crontab[7972]: (dcid) END EDIT (dcid)</span>
 <span class="go">Sep 11 15:22:01 copacabana /USR/SBIN/CRON[7993]: (dcid) CMD (/bin/xx)</span>
@@ -159,7 +177,7 @@
 </div>
 <div class="section" id="crond-samples">
 <h2>crond samples:<a class="headerlink" href="#crond-samples" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">May 28 13:04:20 Lab7 crond[2843]: /usr/sbin/crond 4.4 dillon&#39;s cron daemon, started with loglevel notice</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">May 28 13:04:20 Lab7 crond[2843]: /usr/sbin/crond 4.4 dillon&#39;s cron daemon, started with loglevel notice</span>
 <span class="go">May 28 13:04:20 Lab7 crond[2843]: no timestamp found (user root job sys-hourly)</span>
 <span class="go">May 28 13:04:20 Lab7 crond[2843]: no timestamp found (user root job sys-daily)</span>
 <span class="go">May 28 13:04:20 Lab7 crond[2843]: no timestamp found (user root job sys-weekly)</span>
@@ -182,9 +200,8 @@
       
     </p>
     <p>
-        &copy; Copyright 2010-2020, OSSEC Project Team.<br/>
+        &copy; Copyright 2010-2021, OSSEC Project Team.<br/>
     OSSEC <b>ossec.net</b> domain owned and maintained by <a href="https://www.ossec.net" target="_blank">OSSEC Foundation</a><br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.5.2 - 
     Home page graphics courtesy of <a href="https://pixabay.com" target="_blank">pixabay</a>
     </p>
   </div>

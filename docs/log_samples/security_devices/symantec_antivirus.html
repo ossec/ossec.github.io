@@ -1,36 +1,24 @@
 <!DOCTYPE html>
 
-
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Symantec Antivirus logs &#8212; OSSEC</title>
-    
-    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/parallax.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../../',
-        VERSION:     '3.3.0',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
-    <script type="text/javascript" src="../../../_static/jquery.js"></script>
-    <script type="text/javascript" src="../../../_static/underscore.js"></script>
-    <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="../../../_static/js/jquery-fix.js"></script>
-    <script type="text/javascript" src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../../../_static/bootstrap-sphinx.js"></script>
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script src="../../../_static/js/jquery-fix.js"></script>
+    <script src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script src="../../../_static/bootstrap-sphinx.js"></script>
     <link rel="author" title="About these documents" href="../../../about.html" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -39,8 +27,37 @@
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
 <meta name="apple-mobile-web-app-capable" content="yes">
 
-  </head>
-  <body role="document">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-138780766-1"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'UA-138780766-1');
+</script>
+
+<script type="text/javascript">
+  var _ss = _ss || [];
+  _ss.push(['_setDomain', 'https://koi-3QNN51VTHS.marketingautomation.services/net']);
+  _ss.push(['_setAccount', 'KOI-4APYNOYP8O']);
+  _ss.push(['_trackPageView']);
+  window._pa = window._pa || {};
+  // _pa.orderId = "myOrderId"; // OPTIONAL: attach unique conversion identifier to conversions
+  // _pa.revenue = "19.99"; // OPTIONAL: attach dynamic purchase values to conversions
+  // _pa.productId = "myProductId"; // OPTIONAL: Include product ID for use with dynamic ads
+  (function() {
+  var ss = document.createElement('script');
+  ss.type = 'text/javascript'; ss.async = true;
+  ss.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'koi-3QNN51VTHS.marketingautomation.services/client/ss.js?ver=2.4.0';
+  var scr = document.getElementsByTagName('script')[0];
+  scr.parentNode.insertBefore(ss, scr);
+  })();
+  </script>
+
+
+
+  </head><body>
 
   <div id="navbar" class="navbar navbar-inverse navbar-default ">
     <div class="container">
@@ -59,9 +76,10 @@
         <div class="collapse navbar-collapse nav-collapse">
           <ul class="nav navbar-nav">
             
-                <li><a href="https://www.ossec.net/about/">About <i class="fa fa-info-circle"></i></a></li>
-                <li><a href="https://www.ossec.net/docs/">Documentation <i class="fa fa-book"></i></a></li>
-                <li><a href="https://www.ossec.net/downloads/">Downloads <i class="fa fa-download"></i></a></li>
+                <li><a href="https://www.ossec.net/about/">About</a></li>
+                <li><a href="https://www.ossec.net/docs/">Documentation</a></li>
+                <li><a href="https://www.ossec.net/register-for-ossec/">Get OSSEC+</a></li>
+                <li><a href="https://www.ossec.net/downloads/">Downloads</a></li>
             
             
               <li class="dropdown globaltoc-container">
@@ -126,7 +144,7 @@
 <p>Definition of the logs is available <a class="reference external" href="http://service1.symantec.com/SUPPORT/ent-security.nsf/0/57757c1d149130b788256c760069f7f7?OpenDocument&amp;seg=en&amp;lg=en&amp;ct=us">here</a></p>
 <div class="section" id="general-logs">
 <h2>General logs:<a class="headerlink" href="#general-logs" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">24090D00000A,4,3,7,ACMELABS-SRV2,SYSTEM,,,,,,,16777216,&quot;Update to computer ACMELABS-LU2K3 of virus definition file 81011r succeeded.&quot;,0,,0,,,,,0,,,,,,,,,,,,,(IP)-192.168.49.66,ACMELABSav,ACMELABS,,8.1.825</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">24090D00000A,4,3,7,ACMELABS-SRV2,SYSTEM,,,,,,,16777216,&quot;Update to computer ACMELABS-LU2K3 of virus definition file 81011r succeeded.&quot;,0,,0,,,,,0,,,,,,,,,,,,,(IP)-192.168.49.66,ACMELABSav,ACMELABS,,8.1.825</span>
 <span class="go">24090D00000F,4,3,7,ACMELABS-SRV2,SYSTEM,,,,,,,16777216,&quot;Update to computer ACMELABS-APPS-BOX4 of virus definition file 81011r succeeded.&quot;,0,,0,,,,,0,,,,,,,,,,,,,(IP)-192.168.49.66,ACMELABSav,ACMELABS,,8.1.825</span>
 <span class="go">24090D000018,4,3,7,ACMELABS-SRV2,SYSTEM,,,,,,,16777216,&quot;Update to computer ACMELABS-APPS-BOX5 of virus definition file 81011r succeeded.&quot;,0,,0,,,,,0,,,,,,,,,,,,,(IP)-192.168.49.66,ACMELABSav,ACMELABS,,8.1.825</span>
 <span class="go">24090D00001C,4,3,7,ACMELABS-SRV2,SYSTEM,,,,,,,16777216,&quot;Update to computer ACMELABS-APPS-BOX3 of virus definition file 81011r succeeded.&quot;,0,,0,,,,,0,,,,,,,,,,,,,(IP)-192.168.49.66,ACMELABSav,ACMELABS,,8.1.825</span>
@@ -152,7 +170,7 @@
 </div>
 <div class="section" id="log-samples-of-virus-detection">
 <h2>Log samples of virus detection:<a class="headerlink" href="#log-samples-of-virus-detection" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">240801012128,5,1,720997,RBLWAP,SYSTEM,Trojan.Zlob,C:\WINDOWS\system32\ld100.tmp,5,4,4,256,570441764,&quot;&quot;,0,,0,,0,4254,0,0,0,0,0,0,20060830.022,58100,2,4,0,acme-AVSRV,{579642AA-5A5E-46E1-8613-2289349D1F27},,(IP)-192.168.100.237,acmeav,acme,,8.1.825</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">240801012128,5,1,720997,RBLWAP,SYSTEM,Trojan.Zlob,C:\WINDOWS\system32\ld100.tmp,5,4,4,256,570441764,&quot;&quot;,0,,0,,0,4254,0,0,0,0,0,0,20060830.022,58100,2,4,0,acme-AVSRV,{579642AA-5A5E-46E1-8613-2289349D1F27},,(IP)-192.168.100.237,acmeav,acme,,8.1.825</span>
 <span class="go">240801012128,5,1,720997,RBLWAP,SYSTEM,Trojan.Nebuler,C:\WINDOWS\system32\winvdj32.dll,5,4,4,256,570441764,&quot;&quot;,0,,0,,0,18150,0,0,0,0,0,0,20060830.022,58100,2,4,0,acme-AVSRV,{579642AA-5A5E-46E1-8613-2289349D1F27},,(IP)-192.168.100.237,acmeav,acme,,8.1.825</span>
 <span class="go">240801012128,5,1,720997,RBLWAP,SYSTEM,Trojan Horse,C:\WINDOWS\TEMP\winD51.tmp,5,4,4,256,570441764,&quot;&quot;,0,,0,,0,25464,0,0,0,0,0,0,20060830.022,58100,2,4,0,acme-AVSRV,{579642AA-5A5E-46E1-8613-2289349D1F27},,(IP)-192.168.100.237,acmeav,acme,,8.1.825</span>
 <span class="go">240801012128,5,1,720997,RBLWAP,SYSTEM,Trojan Horse,C:\WINDOWS\TEMP\winDA7.tmp,5,4,4,256,570441764,&quot;&quot;,0,,0,,0,25464,0,0,0,0,0,0,20060830.022,58100,2,4,0,acme-AVSRV,{579642AA-5A5E-46E1-8613-2289349D1F27},,(IP)-192.168.100.237,acmeav,acme,,8.1.825</span>
@@ -192,9 +210,8 @@
       
     </p>
     <p>
-        &copy; Copyright 2010-2020, OSSEC Project Team.<br/>
+        &copy; Copyright 2010-2021, OSSEC Project Team.<br/>
     OSSEC <b>ossec.net</b> domain owned and maintained by <a href="https://www.ossec.net" target="_blank">OSSEC Foundation</a><br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.5.2 - 
     Home page graphics courtesy of <a href="https://pixabay.com" target="_blank">pixabay</a>
     </p>
   </div>

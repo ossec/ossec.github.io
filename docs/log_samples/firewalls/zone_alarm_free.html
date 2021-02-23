@@ -1,36 +1,24 @@
 <!DOCTYPE html>
 
-
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Zone Alarm (free version) Log samples &#8212; OSSEC</title>
-    
-    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/parallax.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../../',
-        VERSION:     '3.3.0',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
-    <script type="text/javascript" src="../../../_static/jquery.js"></script>
-    <script type="text/javascript" src="../../../_static/underscore.js"></script>
-    <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="../../../_static/js/jquery-fix.js"></script>
-    <script type="text/javascript" src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../../../_static/bootstrap-sphinx.js"></script>
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script src="../../../_static/js/jquery-fix.js"></script>
+    <script src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script src="../../../_static/bootstrap-sphinx.js"></script>
     <link rel="author" title="About these documents" href="../../../about.html" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -39,8 +27,37 @@
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
 <meta name="apple-mobile-web-app-capable" content="yes">
 
-  </head>
-  <body role="document">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-138780766-1"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'UA-138780766-1');
+</script>
+
+<script type="text/javascript">
+  var _ss = _ss || [];
+  _ss.push(['_setDomain', 'https://koi-3QNN51VTHS.marketingautomation.services/net']);
+  _ss.push(['_setAccount', 'KOI-4APYNOYP8O']);
+  _ss.push(['_trackPageView']);
+  window._pa = window._pa || {};
+  // _pa.orderId = "myOrderId"; // OPTIONAL: attach unique conversion identifier to conversions
+  // _pa.revenue = "19.99"; // OPTIONAL: attach dynamic purchase values to conversions
+  // _pa.productId = "myProductId"; // OPTIONAL: Include product ID for use with dynamic ads
+  (function() {
+  var ss = document.createElement('script');
+  ss.type = 'text/javascript'; ss.async = true;
+  ss.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'koi-3QNN51VTHS.marketingautomation.services/client/ss.js?ver=2.4.0';
+  var scr = document.getElementsByTagName('script')[0];
+  scr.parentNode.insertBefore(ss, scr);
+  })();
+  </script>
+
+
+
+  </head><body>
 
   <div id="navbar" class="navbar navbar-inverse navbar-default ">
     <div class="container">
@@ -59,9 +76,10 @@
         <div class="collapse navbar-collapse nav-collapse">
           <ul class="nav navbar-nav">
             
-                <li><a href="https://www.ossec.net/about/">About <i class="fa fa-info-circle"></i></a></li>
-                <li><a href="https://www.ossec.net/docs/">Documentation <i class="fa fa-book"></i></a></li>
-                <li><a href="https://www.ossec.net/downloads/">Downloads <i class="fa fa-download"></i></a></li>
+                <li><a href="https://www.ossec.net/about/">About</a></li>
+                <li><a href="https://www.ossec.net/docs/">Documentation</a></li>
+                <li><a href="https://www.ossec.net/register-for-ossec/">Get OSSEC+</a></li>
+                <li><a href="https://www.ossec.net/downloads/">Downloads</a></li>
             
             
               <li class="dropdown globaltoc-container">
@@ -123,12 +141,12 @@
       
   <div class="section" id="zone-alarm-free-version-log-samples">
 <h1>Zone Alarm (free version) Log samples<a class="headerlink" href="#zone-alarm-free-version-log-samples" title="Permalink to this headline">¶</a></h1>
-<p>Details about Zone Alarm and it&#8217;s logging features (including text log field descriptions) can be found in the [<a class="reference external" href="http://download.zonelabs.com/bin/media/pdf/zaclient65_user_manual.pdf">http://download.zonelabs.com/bin/media/pdf/zaclient65_user_manual.pdf</a> ZoneAlarm manual]</p>
+<p>Details about Zone Alarm and it’s logging features (including text log field descriptions) can be found in the [<a class="reference external" href="http://download.zonelabs.com/bin/media/pdf/zaclient65_user_manual.pdf">http://download.zonelabs.com/bin/media/pdf/zaclient65_user_manual.pdf</a> ZoneAlarm manual]</p>
 <p>The logfile can be tab, comma, or semi-colon delimited (user can make the choice).</p>
 <p>Logfile located (on Windows XP) in C:WINDOWSInternet Logs</p>
 <div class="section" id="filename-zalog-txt">
 <h2>Filename = ZALog.txt:<a class="headerlink" href="#filename-zalog-txt" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">ZoneAlarm Logging Client v6.5.737.000</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">ZoneAlarm Logging Client v6.5.737.000</span>
 <span class="go">Windows XP-5.1.2600-Service Pack 2-SMP</span>
 <span class="go">type,date,time,source,destination,transport (Security)</span>
 <span class="go">type,date,time,virus name,file name,mode,e-mail id (Anti-Virus)</span>
@@ -195,7 +213,7 @@
 </div>
 <div class="section" id="more-log-samples-showing-different-kinds-of-entries">
 <h2>More log samples showing different kinds of entries:<a class="headerlink" href="#more-log-samples-showing-different-kinds-of-entries" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">PE,2006/09/09,22:15:42 -5:00 GMT,Cisco Systems VPN Client,C:\Program Files\Cisco Systems\VPN Client\cvpnd.exe,127.0.0.1:62516,N/A</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">PE,2006/09/09,22:15:42 -5:00 GMT,Cisco Systems VPN Client,C:\Program Files\Cisco Systems\VPN Client\cvpnd.exe,127.0.0.1:62516,N/A</span>
 <span class="go">PE,2006/09/09,22:15:46 -5:00 GMT,tcsd_win32.exe,C:\Program Files\NTRU Cryptosystems\NTRU Hybrid TSS v2.0.7\bin\tcsd_win32.exe,0.0.0.0:10001,N/A</span>
 <span class="go">PE,2006/09/09,22:15:58 -5:00 GMT,Symantec AntiVirus,C:\Program Files\Symantec_Client_Security\Symantec AntiVirus\Rtvscan.exe,172.16.100.237:2967,N/A</span>
 <span class="go">PE,2006/09/09,22:20:32 -5:00 GMT,Secure Update,C:\Program Files\Wave Systems Corp\Services Manager\Secure Update\AutoUpdate.exe,172.16.100.85:8080,N/A</span>
@@ -215,11 +233,11 @@
 <span class="go">FWOUT,2006/09/09,22:28:14 -5:00 GMT,172.16.70.135:1155,172.16.100.195:139,TCP (flags:S)</span>
 </pre></div>
 </div>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">ACCESS,2006/09/26,13:14:36 -5:00 GMT,RogueScannerWin32 was unable to obtain permission for connecting to the Internet (169.254.207.118:Port 7000); access was denied.,N/A,N/A</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">ACCESS,2006/09/26,13:14:36 -5:00 GMT,RogueScannerWin32 was unable to obtain permission for connecting to the Internet (169.254.207.118:Port 7000); access was denied.,N/A,N/A</span>
 <span class="go">PE,2006/09/26,13:14:36 -5:00 GMT,RogueScannerWin32,C:\Program Files\Network Chemistry\RogueScanner GUI\RogueScannerGUI.exe,169.254.207.118:7001,N/A</span>
 </pre></div>
 </div>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">FWOUT_OK,2006/09/26,21:05:06 -5:00 GMT,10.57.0.2:68,10.57.0.138:67,UDP</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">FWOUT_OK,2006/09/26,21:05:06 -5:00 GMT,10.57.0.2:68,10.57.0.138:67,UDP</span>
 <span class="go">FWIN_OK,2006/09/27,08:32:14 -5:00 GMT,0.0.0.0:68,255.255.255.255:67,UDP</span>
 <span class="go">FWIN_OK,2006/09/27,09:05:58 -5:00 GMT,172.16.1.64:68,255.255.255.255:67,UDP</span>
 <span class="go">FWIN_OK,2006/09/27,09:07:30 -5:00 GMT,172.16.1.22:68,255.255.255.255:67,UDP</span>
@@ -249,9 +267,8 @@
       
     </p>
     <p>
-        &copy; Copyright 2010-2020, OSSEC Project Team.<br/>
+        &copy; Copyright 2010-2021, OSSEC Project Team.<br/>
     OSSEC <b>ossec.net</b> domain owned and maintained by <a href="https://www.ossec.net" target="_blank">OSSEC Foundation</a><br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.5.2 - 
     Home page graphics courtesy of <a href="https://pixabay.com" target="_blank">pixabay</a>
     </p>
   </div>

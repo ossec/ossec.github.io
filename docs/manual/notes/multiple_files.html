@@ -1,36 +1,24 @@
 <!DOCTYPE html>
 
-
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>How to add multiple log files to be monitored? &#8212; OSSEC</title>
-    
-    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/parallax.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../../',
-        VERSION:     '3.3.0',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
-    <script type="text/javascript" src="../../../_static/jquery.js"></script>
-    <script type="text/javascript" src="../../../_static/underscore.js"></script>
-    <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="../../../_static/js/jquery-fix.js"></script>
-    <script type="text/javascript" src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../../../_static/bootstrap-sphinx.js"></script>
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script src="../../../_static/js/jquery-fix.js"></script>
+    <script src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script src="../../../_static/bootstrap-sphinx.js"></script>
     <link rel="author" title="About these documents" href="../../../about.html" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -39,8 +27,37 @@
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
 <meta name="apple-mobile-web-app-capable" content="yes">
 
-  </head>
-  <body role="document">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-138780766-1"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'UA-138780766-1');
+</script>
+
+<script type="text/javascript">
+  var _ss = _ss || [];
+  _ss.push(['_setDomain', 'https://koi-3QNN51VTHS.marketingautomation.services/net']);
+  _ss.push(['_setAccount', 'KOI-4APYNOYP8O']);
+  _ss.push(['_trackPageView']);
+  window._pa = window._pa || {};
+  // _pa.orderId = "myOrderId"; // OPTIONAL: attach unique conversion identifier to conversions
+  // _pa.revenue = "19.99"; // OPTIONAL: attach dynamic purchase values to conversions
+  // _pa.productId = "myProductId"; // OPTIONAL: Include product ID for use with dynamic ads
+  (function() {
+  var ss = document.createElement('script');
+  ss.type = 'text/javascript'; ss.async = true;
+  ss.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'koi-3QNN51VTHS.marketingautomation.services/client/ss.js?ver=2.4.0';
+  var scr = document.getElementsByTagName('script')[0];
+  scr.parentNode.insertBefore(ss, scr);
+  })();
+  </script>
+
+
+
+  </head><body>
 
   <div id="navbar" class="navbar navbar-inverse navbar-default ">
     <div class="container">
@@ -59,9 +76,10 @@
         <div class="collapse navbar-collapse nav-collapse">
           <ul class="nav navbar-nav">
             
-                <li><a href="https://www.ossec.net/about/">About <i class="fa fa-info-circle"></i></a></li>
-                <li><a href="https://www.ossec.net/docs/">Documentation <i class="fa fa-book"></i></a></li>
-                <li><a href="https://www.ossec.net/downloads/">Downloads <i class="fa fa-download"></i></a></li>
+                <li><a href="https://www.ossec.net/about/">About</a></li>
+                <li><a href="https://www.ossec.net/docs/">Documentation</a></li>
+                <li><a href="https://www.ossec.net/register-for-ossec/">Get OSSEC+</a></li>
+                <li><a href="https://www.ossec.net/downloads/">Downloads</a></li>
             
             
               <li class="dropdown globaltoc-container">
@@ -126,18 +144,18 @@
 <p>By <a class="reference external" href="http://www.dcid.me">Daniel B. Cid</a></p>
 <div class="section" id="for-unix-agents">
 <h2>For Unix Agents<a class="headerlink" href="#for-unix-agents" title="Permalink to this headline">¶</a></h2>
-<p>If you have multiple log files to be monitored by OSSEC and don&#8217;t
+<p>If you have multiple log files to be monitored by OSSEC and don’t
 want to add each one of them manually, you can configure them using
 posix regular expressions.</p>
 <p>For example, if you have a directory structure like this:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">/var/log/host1/xx.log, yy.log, zz.log</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">/var/log/host1/xx.log, yy.log, zz.log</span>
 <span class="go">/var/log/host2/xx.log, aa.log</span>
 <span class="go">/var/log/host3/zz.log, abc.log</span>
 <span class="go">/var/log/hostn/bb.log, xyz.log</span>
 </pre></div>
 </div>
 <p>You can just add one entry in the localfile to monitor all these logs:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">&lt;localfile&gt;</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&lt;localfile&gt;</span>
 <span class="go">  &lt;log_format&gt;syslog&lt;/log_format&gt;</span>
 <span class="go">  &lt;location&gt;/var/log/host*/*.log&lt;/location&gt;</span>
 <span class="go">&lt;/localfile&gt;</span>
@@ -147,11 +165,11 @@ posix regular expressions.</p>
 </div>
 <div class="section" id="for-windows-agents">
 <h2>For Windows Agents<a class="headerlink" href="#for-windows-agents" title="Permalink to this headline">¶</a></h2>
-<p>For the Windows agent, the built-in globing doesn&#8217;t work. At time of writing (OSSEC
-version 1.5) you have to use a script to auto-generate <code class="docutils literal"><span class="pre">ossec.conf</span></code> if you want to
-monitor many log files without having to manually enter them. Here&#8217;s an example
+<p>For the Windows agent, the built-in globing doesn’t work. At time of writing (OSSEC
+version 1.5) you have to use a script to auto-generate <code class="docutils literal notranslate"><span class="pre">ossec.conf</span></code> if you want to
+monitor many log files without having to manually enter them. Here’s an example
 batch file to get you started:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">@echo off</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">@echo off</span>
 
 <span class="go">set targetfile=&quot;C:\Program Files\ossec-agent\ossec.conf&quot;</span>
 
@@ -165,11 +183,11 @@ batch file to get you started:</p>
 <span class="go">net start &quot;OSSEC Hids&quot;</span>
 </pre></div>
 </div>
-<p>Adjust the &#8220;for..in&#8221; globbing line as needed. In this example, I&#8217;m monitoring logs for multiple
+<p>Adjust the “for..in” globbing line as needed. In this example, I’m monitoring logs for multiple
 IIS sites which are all in D:Logs. Save it into a file with a .bat extension and put it
-somewhere on your hard drive. Create a file named <code class="docutils literal"><span class="pre">ossec_template.conf</span></code> in
+somewhere on your hard drive. Create a file named <code class="docutils literal notranslate"><span class="pre">ossec_template.conf</span></code> in
 the <strong>`same directory</strong> as the batch file. You can probably just copy your current
-<code class="docutils literal"><span class="pre">ossec.conf</span></code> for this file, as this script will only append to it. You can then set
+<code class="docutils literal notranslate"><span class="pre">ossec.conf</span></code> for this file, as this script will only append to it. You can then set
 up a scheduled task to run the batch file to automatically keep your ossec.conf up to date.</p>
 </div>
 </div>
@@ -186,9 +204,8 @@ up a scheduled task to run the batch file to automatically keep your ossec.conf 
       
     </p>
     <p>
-        &copy; Copyright 2010-2020, OSSEC Project Team.<br/>
+        &copy; Copyright 2010-2021, OSSEC Project Team.<br/>
     OSSEC <b>ossec.net</b> domain owned and maintained by <a href="https://www.ossec.net" target="_blank">OSSEC Foundation</a><br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.5.2 - 
     Home page graphics courtesy of <a href="https://pixabay.com" target="_blank">pixabay</a>
     </p>
   </div>

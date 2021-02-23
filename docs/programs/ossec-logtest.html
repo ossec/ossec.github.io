@@ -1,36 +1,24 @@
 <!DOCTYPE html>
 
-
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ossec-logtest &#8212; OSSEC</title>
-    
-    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/parallax.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../',
-        VERSION:     '3.3.0',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
-    <script type="text/javascript" src="../../_static/jquery.js"></script>
-    <script type="text/javascript" src="../../_static/underscore.js"></script>
-    <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
-    <script type="text/javascript" src="../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script src="../../_static/js/jquery-fix.js"></script>
+    <script src="../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script src="../../_static/bootstrap-sphinx.js"></script>
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -41,8 +29,37 @@
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
 <meta name="apple-mobile-web-app-capable" content="yes">
 
-  </head>
-  <body role="document">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-138780766-1"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'UA-138780766-1');
+</script>
+
+<script type="text/javascript">
+  var _ss = _ss || [];
+  _ss.push(['_setDomain', 'https://koi-3QNN51VTHS.marketingautomation.services/net']);
+  _ss.push(['_setAccount', 'KOI-4APYNOYP8O']);
+  _ss.push(['_trackPageView']);
+  window._pa = window._pa || {};
+  // _pa.orderId = "myOrderId"; // OPTIONAL: attach unique conversion identifier to conversions
+  // _pa.revenue = "19.99"; // OPTIONAL: attach dynamic purchase values to conversions
+  // _pa.productId = "myProductId"; // OPTIONAL: Include product ID for use with dynamic ads
+  (function() {
+  var ss = document.createElement('script');
+  ss.type = 'text/javascript'; ss.async = true;
+  ss.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'koi-3QNN51VTHS.marketingautomation.services/client/ss.js?ver=2.4.0';
+  var scr = document.getElementsByTagName('script')[0];
+  scr.parentNode.insertBefore(ss, scr);
+  })();
+  </script>
+
+
+
+  </head><body>
 
   <div id="navbar" class="navbar navbar-inverse navbar-default ">
     <div class="container">
@@ -61,9 +78,10 @@
         <div class="collapse navbar-collapse nav-collapse">
           <ul class="nav navbar-nav">
             
-                <li><a href="https://www.ossec.net/about/">About <i class="fa fa-info-circle"></i></a></li>
-                <li><a href="https://www.ossec.net/docs/">Documentation <i class="fa fa-book"></i></a></li>
-                <li><a href="https://www.ossec.net/downloads/">Downloads <i class="fa fa-download"></i></a></li>
+                <li><a href="https://www.ossec.net/about/">About</a></li>
+                <li><a href="https://www.ossec.net/docs/">Documentation</a></li>
+                <li><a href="https://www.ossec.net/register-for-ossec/">Get OSSEC+</a></li>
+                <li><a href="https://www.ossec.net/downloads/">Downloads</a></li>
             
             
               <li class="dropdown globaltoc-container">
@@ -134,69 +152,69 @@
   <div class="section" id="ossec-logtest">
 <span id="id1"></span><h1>ossec-logtest<a class="headerlink" href="#ossec-logtest" title="Permalink to this headline">¶</a></h1>
 <p>ossec-logtest is the single most useful tool when working with ossec.  This tool allows oneself
-to test and verify log files in the exact same way that <code class="docutils literal"><span class="pre">ossec-anaylistd</span></code> does.</p>
+to test and verify log files in the exact same way that <code class="docutils literal notranslate"><span class="pre">ossec-anaylistd</span></code> does.</p>
 <p>Something ossec-logtest can help with:</p>
 <ul class="simple">
-<li>Writing rules (Debugging your custom rules)</li>
-<li>Troubleshooting false positives or false negatives</li>
+<li><p>Writing rules (Debugging your custom rules)</p></li>
+<li><p>Troubleshooting false positives or false negatives</p></li>
 </ul>
 <p>ossec-logtest accepts standard input for all log to test.</p>
 <div class="section" id="osssec-logtest-argument-options">
 <h2>osssec-logtest argument options<a class="headerlink" href="#osssec-logtest-argument-options" title="Permalink to this headline">¶</a></h2>
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-ossec-logtest-a">
-<code class="descname">-a</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ossec-logtest-a" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">-a</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-ossec-logtest-a" title="Permalink to this definition">¶</a></dt>
 <dd><p>Analyze of input lines as if they are live events.</p>
 </dd></dl>
 
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-ossec-logtest-c">
-<code class="descname">-c</code><code class="descclassname"> &lt;config&gt;</code><a class="headerlink" href="#cmdoption-ossec-logtest-c" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">-c</span></code><code class="sig-prename descclassname"> <span class="pre">&lt;config&gt;</span></code><a class="headerlink" href="#cmdoption-ossec-logtest-c" title="Permalink to this definition">¶</a></dt>
 <dd><p>&lt;config&gt; is the path and filename to load in place of the default /var/ossec/etc/ossec.conf.</p>
 </dd></dl>
 
-<dl class="option">
-<dt id="cmdoption-ossec-logtest-d">
-<code class="descname">-D</code><code class="descclassname"> &lt;dir&gt;</code><a class="headerlink" href="#cmdoption-ossec-logtest-d" title="Permalink to this definition">¶</a></dt>
+<dl class="std option">
+<dt id="cmdoption-ossec-logtest-D">
+<span id="cmdoption-ossec-logtest-d"></span><code class="sig-name descname"><span class="pre">-D</span></code><code class="sig-prename descclassname"> <span class="pre">&lt;dir&gt;</span></code><a class="headerlink" href="#cmdoption-ossec-logtest-D" title="Permalink to this definition">¶</a></dt>
 <dd><p>This is the path that ossec-logtest will chroot to before it completes loading all rules,
 decoders, and lists and processing standard input.</p>
 </dd></dl>
 
-<dl class="option">
-<dt id="id2">
-<code class="descname">-d</code><code class="descclassname"></code><a class="headerlink" href="#id2" title="Permalink to this definition">¶</a></dt>
+<dl class="std option">
+<dt id="cmdoption-ossec-logtest-0">
+<code class="sig-name descname"><span class="pre">-d</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-ossec-logtest-0" title="Permalink to this definition">¶</a></dt>
 <dd><p>Print debug output to the terminal. This option can be used multiple times to increase the verbosity of the debug messages.</p>
 </dd></dl>
 
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-ossec-logtest-h">
-<code class="descname">-h</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ossec-logtest-h" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">-h</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-ossec-logtest-h" title="Permalink to this definition">¶</a></dt>
 <dd><p>Print the help message to the console.</p>
 </dd></dl>
 
-<dl class="option">
+<dl class="std option">
 <dt id="cmdoption-ossec-logtest-t">
-<code class="descname">-t</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ossec-logtest-t" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">-t</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-ossec-logtest-t" title="Permalink to this definition">¶</a></dt>
 <dd><p>Test configuration.  This will print file details on the ossec-anaylistd rules,
 decoders, and lists as they are loaded and the order they were processed.</p>
 </dd></dl>
 
-<dl class="option">
-<dt id="cmdoption-ossec-logtest-u">
-<code class="descname">-U</code><code class="descclassname"> &lt;rule-id:alert-level:decoder-name&gt;</code><a class="headerlink" href="#cmdoption-ossec-logtest-u" title="Permalink to this definition">¶</a></dt>
+<dl class="std option">
+<dt id="cmdoption-ossec-logtest-U">
+<span id="cmdoption-ossec-logtest-u"></span><code class="sig-name descname"><span class="pre">-U</span></code><code class="sig-prename descclassname"> <span class="pre">&lt;rule-id:alert-level:decoder-name&gt;</span></code><a class="headerlink" href="#cmdoption-ossec-logtest-U" title="Permalink to this definition">¶</a></dt>
 <dd><p>This option will cause ossec-logtest to return with an exit status other then zero unless
 the last line tested matches the arguments passed.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">This only works for the last, line so passing many lines into ossec-logtest with
+<p class="admonition-title">Note</p>
+<p>This only works for the last, line so passing many lines into ossec-logtest with
 this argument may not provide the desired results.</p>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">This ossec-logtest code requires access to all ossec configuration files.
+<p class="admonition-title">Note</p>
+<p>This ossec-logtest code requires access to all ossec configuration files.
 This is a bug and will be corrected. It is documented in issue #`61 &lt;<a class="reference external" href="https://bitbucket.org/jbcheng/ossec-hids/issue/61/ossec-logtest-must-be-used-with-a-full">https://bitbucket.org/jbcheng/ossec-hids/issue/61/ossec-logtest-must-be-used-with-a-full</a>&gt;`_</p>
 </div>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">% </span><span class="nb">echo</span> <span class="s2">&quot;Aug 29 15:33:13 ns3 named[464]: client 217.148.39.3#1036: query (cache) denied&quot;</span> <span class="p">|</span> sudo /var/ossec/bin/ossec-logtest -U <span class="m">12108</span>:0:named <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span> &gt; /dev/null
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">% </span><span class="nb">echo</span> <span class="s2">&quot;Aug 29 15:33:13 ns3 named[464]: client 217.148.39.3#1036: query (cache) denied&quot;</span> <span class="p">|</span> sudo /var/ossec/bin/ossec-logtest -U <span class="m">12108</span>:0:named <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span> &gt; /dev/null
 <span class="gp">% </span><span class="nb">echo</span> <span class="nv">$?</span>
 <span class="go">0</span>
 <span class="gp">% </span><span class="nb">echo</span> <span class="s2">&quot;Aug 29 15:33:13 ns3 XXXXXX[464]: client 217.148.39.3#1036: query (cache) denied&quot;</span> <span class="p">|</span> sudo /var/ossec/bin/ossec-logtest -U <span class="m">12108</span>:0:named <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span> &gt; /dev/null
@@ -206,23 +224,23 @@ This is a bug and will be corrected. It is documented in issue #`61 &lt;<a class
 </div>
 </dd></dl>
 
-<dl class="option">
-<dt id="cmdoption-ossec-logtest-v">
-<code class="descname">-V</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-ossec-logtest-v" title="Permalink to this definition">¶</a></dt>
+<dl class="std option">
+<dt id="cmdoption-ossec-logtest-V">
+<span id="cmdoption-ossec-logtest-v"></span><code class="sig-name descname"><span class="pre">-V</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-ossec-logtest-V" title="Permalink to this definition">¶</a></dt>
 <dd><p>Print the Version and license message for OSSEC and ossec-logtest.</p>
 </dd></dl>
 
-<dl class="option">
-<dt id="id3">
-<code class="descname">-v</code><code class="descclassname"></code><a class="headerlink" href="#id3" title="Permalink to this definition">¶</a></dt>
+<dl class="std option">
+<dt id="cmdoption-ossec-logtest-1">
+<code class="sig-name descname"><span class="pre">-v</span></code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-ossec-logtest-1" title="Permalink to this definition">¶</a></dt>
 <dd><p>Full output of all details and matches.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">This the key argument to troubleshoot a rule, decoder problem.</p>
+<p class="admonition-title">Note</p>
+<p>This the key argument to troubleshoot a rule, decoder problem.</p>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">This is argument was incorrectly displayed as running in the foreground
+<p class="admonition-title">Note</p>
+<p>This is argument was incorrectly displayed as running in the foreground
 in all version before version 2.5</p>
 </div>
 </dd></dl>
@@ -233,11 +251,11 @@ in all version before version 2.5</p>
 <p>Some log formats will be processed differently than they appear in the log file. MySQL log files for instance will have <cite>MySQL log:</cite> prepended to the log message before analysis. If using ossec-logtest to test MySQL logs, please add this string to the beginning.</p>
 <p>Example:</p>
 <p>Given the following MySQL log message:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">130218 12:07:52 [Warning] Unsafe statement written to the binary log using statement format since BINLOG_FORMAT = STATEMENT. The statement is unsafe because it uses a LIMIT clause. This is unsafe because the set of rows included cannot be predicted. Statement: DELETE FROM `emailQueue` WHERE `emailQueueID` = &#39;12207&#39; LIMIT 1</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">130218 12:07:52 [Warning] Unsafe statement written to the binary log using statement format since BINLOG_FORMAT = STATEMENT. The statement is unsafe because it uses a LIMIT clause. This is unsafe because the set of rows included cannot be predicted. Statement: DELETE FROM `emailQueue` WHERE `emailQueueID` = &#39;12207&#39; LIMIT 1</span>
 </pre></div>
 </div>
 <p>The message that should be pasted into ossec-logtest is:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">MySQL log: 130218 12:07:52 [Warning] Unsafe statement written to the binary log using statement format since BINLOG_FORMAT = STATEMENT. The statement is unsafe because it uses a LIMIT clause. This is unsafe because the set of rows included cannot be predicted. Statement: DELETE FROM `emailQueue` WHERE `emailQueueID` = &#39;12207&#39; LIMIT 1</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">MySQL log: 130218 12:07:52 [Warning] Unsafe statement written to the binary log using statement format since BINLOG_FORMAT = STATEMENT. The statement is unsafe because it uses a LIMIT clause. This is unsafe because the set of rows included cannot be predicted. Statement: DELETE FROM `emailQueue` WHERE `emailQueueID` = &#39;12207&#39; LIMIT 1</span>
 </pre></div>
 </div>
 </div>
@@ -245,7 +263,7 @@ in all version before version 2.5</p>
 <h2>ossec-logtest example usage<a class="headerlink" href="#ossec-logtest-example-usage" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="example-1-testing-standard-rules">
 <h3>Example 1: Testing standard rules<a class="headerlink" href="#example-1-testing-standard-rules" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp"># </span><span class="nb">echo</span> <span class="s2">&quot;Aug 29 15:33:13 ns3 named[464]: client 217.148.39.3#1036: query (cache) denied&quot;</span> <span class="p">|</span> /var/ossec/bin/ossec-logtest -f
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"># </span><span class="nb">echo</span> <span class="s2">&quot;Aug 29 15:33:13 ns3 named[464]: client 217.148.39.3#1036: query (cache) denied&quot;</span> <span class="p">|</span> /var/ossec/bin/ossec-logtest -f
 <span class="go">2010/08/10 06:57:06 ossec-testrule: INFO: Reading decoder file loadables/decoders/00_decoders.xml.</span>
 <span class="go">2010/08/10 06:57:06 ossec-testrule: INFO: Reading decoder file loadables/decoders/50_named.xml.</span>
 <span class="go">2010/08/10 06:57:06 ossec-testrule: INFO: Reading decoder file loadables/decoders/50_pam.xml.</span>
@@ -315,9 +333,9 @@ in all version before version 2.5</p>
 forensics analysis of a box and wants to check the logs with OSSEC, we
 now have a solution too.</p>
 <p>Let’s say you have a file /var/log/secure that you want to analyze with OSSEC.
-You need to use the ossec-logtest tool with the “<code class="docutils literal"><span class="pre">-a</span></code>” flag to reproduce
+You need to use the ossec-logtest tool with the “<code class="docutils literal notranslate"><span class="pre">-a</span></code>” flag to reproduce
 the alerts:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp"># </span>cat /var/log/secure <span class="p">|</span> /var/ossec/bin/ossec-logtest -a
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"># </span>cat /var/log/secure <span class="p">|</span> /var/ossec/bin/ossec-logtest -a
 
 <span class="go">** Alert 1264788284.11: - syslog,sshd,authentication_success,</span>
 <span class="go">2010 Jan 29 14:04:44 enigma-&gt;stdin</span>
@@ -337,7 +355,7 @@ the alerts:</p>
 <p>You will get the alerts just like you would at /var/ossec/logs/alerts.log. The
 benefit now is that you can pipe this output to <cite>ossec-reported</cite> to get a
 better view of what is going on:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp"># </span>cat /var/log/secure <span class="p">|</span> /var/ossec/bin/ossec-logtest -a <span class="p">|</span>/var/ossec/bin/ossec-reported
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"># </span>cat /var/log/secure <span class="p">|</span> /var/ossec/bin/ossec-logtest -a <span class="p">|</span>/var/ossec/bin/ossec-reported
 <span class="go">Report completed. ==</span>
 <span class="go">————————————————</span>
 <span class="go">-&gt;Processed alerts: 522</span>
@@ -378,7 +396,7 @@ better view of what is going on:</p>
 </div>
 <p>To get a report of all brute force attacks (for example) that scanned my
 box:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp"># </span>cat /var/log/secure <span class="p">|</span> /var/ossec/bin/ossec-logtest -a <span class="p">|</span>/var/ossec/bin/ossec-reported -f group authentication_failures
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"># </span>cat /var/log/secure <span class="p">|</span> /var/ossec/bin/ossec-logtest -a <span class="p">|</span>/var/ossec/bin/ossec-reported -f group authentication_failures
 
 <span class="go">Report completed. ==</span>
 <span class="go">————————————————</span>
@@ -451,9 +469,8 @@ box:</p>
       
     </p>
     <p>
-        &copy; Copyright 2010-2020, OSSEC Project Team.<br/>
+        &copy; Copyright 2010-2021, OSSEC Project Team.<br/>
     OSSEC <b>ossec.net</b> domain owned and maintained by <a href="https://www.ossec.net" target="_blank">OSSEC Foundation</a><br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.5.2 - 
     Home page graphics courtesy of <a href="https://pixabay.com" target="_blank">pixabay</a>
     </p>
   </div>

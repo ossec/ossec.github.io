@@ -1,36 +1,24 @@
 <!DOCTYPE html>
 
-
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>OSSEC Processes and Data &#8212; OSSEC</title>
-    
-    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../_static/parallax.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../',
-        VERSION:     '3.3.0',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
-    <script type="text/javascript" src="../_static/jquery.js"></script>
-    <script type="text/javascript" src="../_static/underscore.js"></script>
-    <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
-    <script type="text/javascript" src="../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/jquery-1.11.0.min.js"></script>
+    <script src="../_static/js/jquery-fix.js"></script>
+    <script src="../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script src="../_static/bootstrap-sphinx.js"></script>
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -39,8 +27,37 @@
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
 <meta name="apple-mobile-web-app-capable" content="yes">
 
-  </head>
-  <body role="document">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-138780766-1"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'UA-138780766-1');
+</script>
+
+<script type="text/javascript">
+  var _ss = _ss || [];
+  _ss.push(['_setDomain', 'https://koi-3QNN51VTHS.marketingautomation.services/net']);
+  _ss.push(['_setAccount', 'KOI-4APYNOYP8O']);
+  _ss.push(['_trackPageView']);
+  window._pa = window._pa || {};
+  // _pa.orderId = "myOrderId"; // OPTIONAL: attach unique conversion identifier to conversions
+  // _pa.revenue = "19.99"; // OPTIONAL: attach dynamic purchase values to conversions
+  // _pa.productId = "myProductId"; // OPTIONAL: Include product ID for use with dynamic ads
+  (function() {
+  var ss = document.createElement('script');
+  ss.type = 'text/javascript'; ss.async = true;
+  ss.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'koi-3QNN51VTHS.marketingautomation.services/client/ss.js?ver=2.4.0';
+  var scr = document.getElementsByTagName('script')[0];
+  scr.parentNode.insertBefore(ss, scr);
+  })();
+  </script>
+
+
+
+  </head><body>
 
   <div id="navbar" class="navbar navbar-inverse navbar-default ">
     <div class="container">
@@ -59,9 +76,10 @@
         <div class="collapse navbar-collapse nav-collapse">
           <ul class="nav navbar-nav">
             
-                <li><a href="https://www.ossec.net/about/">About <i class="fa fa-info-circle"></i></a></li>
-                <li><a href="https://www.ossec.net/docs/">Documentation <i class="fa fa-book"></i></a></li>
-                <li><a href="https://www.ossec.net/downloads/">Downloads <i class="fa fa-download"></i></a></li>
+                <li><a href="https://www.ossec.net/about/">About</a></li>
+                <li><a href="https://www.ossec.net/docs/">Documentation</a></li>
+                <li><a href="https://www.ossec.net/register-for-ossec/">Get OSSEC+</a></li>
+                <li><a href="https://www.ossec.net/downloads/">Downloads</a></li>
             
             
               <li class="dropdown globaltoc-container">
@@ -123,67 +141,67 @@
       
   <div class="section" id="ossec-processes-and-data">
 <span id="ossec-logic"></span><h1>OSSEC Processes and Data<a class="headerlink" href="#ossec-processes-and-data" title="Permalink to this headline">¶</a></h1>
-<table border="1" class="docutils">
+<table class="docutils align-default">
 <colgroup>
-<col width="20%" />
-<col width="80%" />
+<col style="width: 20%" />
+<col style="width: 80%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Module</th>
-<th class="head">Supposition</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>Module</p></th>
+<th class="head"><p>Supposition</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>ossec-analysisd</td>
-<td>Master program. Analyzes data from the logs, syscheck,rootcheck, etc.
-Runs as an unprivileged (ossec) user under chroot.</td>
+<tbody>
+<tr class="row-even"><td><p>ossec-analysisd</p></td>
+<td><p>Master program. Analyzes data from the logs, syscheck,rootcheck, etc.
+Runs as an unprivileged (ossec) user under chroot.</p></td>
 </tr>
-<tr class="row-odd"><td>ossec-execd</td>
-<td>Execute active responses by calling the configured scripts. Runs as root.</td>
+<tr class="row-odd"><td><p>ossec-execd</p></td>
+<td><p>Execute active responses by calling the configured scripts. Runs as root.</p></td>
 </tr>
-<tr class="row-even"><td>ossec-maild</td>
-<td>Send e-mail alerts. Runs as an unprivileged user (ossecm) under chroot.</td>
+<tr class="row-even"><td><p>ossec-maild</p></td>
+<td><p>Send e-mail alerts. Runs as an unprivileged user (ossecm) under chroot.</p></td>
 </tr>
-<tr class="row-odd"><td>ossec-remoted</td>
-<td>Server side socket for server/client communications.
-Runs as an unprivileged user (ossecr) under chroot.</td>
+<tr class="row-odd"><td><p>ossec-remoted</p></td>
+<td><p>Server side socket for server/client communications.
+Runs as an unprivileged user (ossecr) under chroot.</p></td>
 </tr>
-<tr class="row-even"><td>ossec-agentd</td>
-<td>Agent side socket for server/client communications.
-Runs as an unprivileged user (ossec) under chroot.</td>
+<tr class="row-even"><td><p>ossec-agentd</p></td>
+<td><p>Agent side socket for server/client communications.
+Runs as an unprivileged user (ossec) under chroot.</p></td>
 </tr>
-<tr class="row-odd"><td>ossec-logcollector</td>
-<td>Monitor log files and windows event logs (do not use tail).</td>
+<tr class="row-odd"><td><p>ossec-logcollector</p></td>
+<td><p>Monitor log files and windows event logs (do not use tail).</p></td>
 </tr>
-<tr class="row-even"><td>ossec-syscheckd</td>
-<td>Does integrity checking and rootkit detection (rootcheck is a module of it).</td>
+<tr class="row-even"><td><p>ossec-syscheckd</p></td>
+<td><p>Does integrity checking and rootkit detection (rootcheck is a module of it).</p></td>
 </tr>
-<tr class="row-odd"><td>ossec-csyslogd</td>
-<td>Client syslog tool to forward OSSEC alerts to remote syslog servers
-(including SIM/SEMs and log management systems).</td>
+<tr class="row-odd"><td><p>ossec-csyslogd</p></td>
+<td><p>Client syslog tool to forward OSSEC alerts to remote syslog servers
+(including SIM/SEMs and log management systems).</p></td>
 </tr>
-<tr class="row-even"><td>ossec-monitord</td>
-<td>Monitor agent connectivity and compress daily log files.</td>
+<tr class="row-even"><td><p>ossec-monitord</p></td>
+<td><p>Monitor agent connectivity and compress daily log files.</p></td>
 </tr>
 </tbody>
 </table>
 <ul class="simple">
-<li>ossec-logcollector on agent machine tails log file &amp; sends to ossec-agent.</li>
-<li>ossec-agent routes the information to the ossec-server (on server system).</li>
-<li>ossec-remoted receives data, uncompress and unencrypt it and sends to analysisd.</li>
-<li>ossec-analysisd detects an actionable issue.</li>
-<li>ossec-analysisd actions:</li>
+<li><p>ossec-logcollector on agent machine tails log file &amp; sends to ossec-agent.</p></li>
+<li><p>ossec-agent routes the information to the ossec-server (on server system).</p></li>
+<li><p>ossec-remoted receives data, uncompress and unencrypt it and sends to analysisd.</p></li>
+<li><p>ossec-analysisd detects an actionable issue.</p></li>
+<li><p>ossec-analysisd actions:</p></li>
 </ul>
 <blockquote>
 <div><ul class="simple">
-<li>ossec-analysisd sends information to ossec-execd (if response is configured to run in the server side).</li>
-<li>ossec-analysisd sends information to ossec-remoted (if response is configured to run in the agent).</li>
+<li><p>ossec-analysisd sends information to ossec-execd (if response is configured to run in the server side).</p></li>
+<li><p>ossec-analysisd sends information to ossec-remoted (if response is configured to run in the agent).</p></li>
 </ul>
 </div></blockquote>
 <ul class="simple">
-<li>ossec-maild monitors analysisd and generate e-mail alert.</li>
-<li>If active response is enabled on the agent, ossec-remoted on the manager sends the active response to ossec-agent on the agent and ossec-agent sends it to ossec-execed.</li>
-<li>ossec-execd calls an active response script</li>
+<li><p>ossec-maild monitors analysisd and generate e-mail alert.</p></li>
+<li><p>If active response is enabled on the agent, ossec-remoted on the manager sends the active response to ossec-agent on the agent and ossec-agent sends it to ossec-execed.</p></li>
+<li><p>ossec-execd calls an active response script</p></li>
 </ul>
 </div>
 
@@ -199,9 +217,8 @@ Runs as an unprivileged user (ossec) under chroot.</td>
       
     </p>
     <p>
-        &copy; Copyright 2010-2020, OSSEC Project Team.<br/>
+        &copy; Copyright 2010-2021, OSSEC Project Team.<br/>
     OSSEC <b>ossec.net</b> domain owned and maintained by <a href="https://www.ossec.net" target="_blank">OSSEC Foundation</a><br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.5.2 - 
     Home page graphics courtesy of <a href="https://pixabay.com" target="_blank">pixabay</a>
     </p>
   </div>

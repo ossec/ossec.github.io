@@ -1,36 +1,24 @@
 <!DOCTYPE html>
 
-
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Knark is a kernel-based rootkit for Linux 2.2. &#8212; OSSEC</title>
-    
-    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/parallax.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../',
-        VERSION:     '3.3.0',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
-    <script type="text/javascript" src="../../_static/jquery.js"></script>
-    <script type="text/javascript" src="../../_static/underscore.js"></script>
-    <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
-    <script type="text/javascript" src="../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script src="../../_static/js/jquery-fix.js"></script>
+    <script src="../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script src="../../_static/bootstrap-sphinx.js"></script>
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -39,8 +27,37 @@
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
 <meta name="apple-mobile-web-app-capable" content="yes">
 
-  </head>
-  <body role="document">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-138780766-1"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'UA-138780766-1');
+</script>
+
+<script type="text/javascript">
+  var _ss = _ss || [];
+  _ss.push(['_setDomain', 'https://koi-3QNN51VTHS.marketingautomation.services/net']);
+  _ss.push(['_setAccount', 'KOI-4APYNOYP8O']);
+  _ss.push(['_trackPageView']);
+  window._pa = window._pa || {};
+  // _pa.orderId = "myOrderId"; // OPTIONAL: attach unique conversion identifier to conversions
+  // _pa.revenue = "19.99"; // OPTIONAL: attach dynamic purchase values to conversions
+  // _pa.productId = "myProductId"; // OPTIONAL: Include product ID for use with dynamic ads
+  (function() {
+  var ss = document.createElement('script');
+  ss.type = 'text/javascript'; ss.async = true;
+  ss.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'koi-3QNN51VTHS.marketingautomation.services/client/ss.js?ver=2.4.0';
+  var scr = document.getElementsByTagName('script')[0];
+  scr.parentNode.insertBefore(ss, scr);
+  })();
+  </script>
+
+
+
+  </head><body>
 
   <div id="navbar" class="navbar navbar-inverse navbar-default ">
     <div class="container">
@@ -59,9 +76,10 @@
         <div class="collapse navbar-collapse nav-collapse">
           <ul class="nav navbar-nav">
             
-                <li><a href="https://www.ossec.net/about/">About <i class="fa fa-info-circle"></i></a></li>
-                <li><a href="https://www.ossec.net/docs/">Documentation <i class="fa fa-book"></i></a></li>
-                <li><a href="https://www.ossec.net/downloads/">Downloads <i class="fa fa-download"></i></a></li>
+                <li><a href="https://www.ossec.net/about/">About</a></li>
+                <li><a href="https://www.ossec.net/docs/">Documentation</a></li>
+                <li><a href="https://www.ossec.net/register-for-ossec/">Get OSSEC+</a></li>
+                <li><a href="https://www.ossec.net/downloads/">Downloads</a></li>
             
             
               <li class="dropdown globaltoc-container">
@@ -122,17 +140,17 @@
     <div class="col-md-12">
       
   <blockquote id="readme-knark">
-<div><dl class="docutils">
-<dt>Knark v0.59 by Creed &#64; #hack.se</dt>
-<dd>email: <a class="reference external" href="mailto:creed&#37;&#52;&#48;sekure&#46;net">creed<span>&#64;</span>sekure<span>&#46;</span>net</a></dd>
+<div><dl class="simple">
+<dt>Knark v0.59 by Creed &#64; #hack.se</dt><dd><p>email: <a class="reference external" href="mailto:creed&#37;&#52;&#48;sekure&#46;net">creed<span>&#64;</span>sekure<span>&#46;</span>net</a></p>
+</dd>
 </dl>
 </div></blockquote>
 <div class="section" id="knark-is-a-kernel-based-rootkit-for-linux-2-2">
 <h1>Knark is a kernel-based rootkit for Linux 2.2.<a class="headerlink" href="#knark-is-a-kernel-based-rootkit-for-linux-2-2" title="Permalink to this headline">¶</a></h1>
 <p>No part of knark may be used to break the law, or to cause damage of any
-kind. And I&#8217;m not responsible for anything you do with it.</p>
+kind. And I’m not responsible for anything you do with it.</p>
 <p>The heart of the package, knark.c, is a Linux lkm (loadable kernel-module).
-Type &#8220;make&#8221; to compile knark and the programs included, and then &#8220;insmod knark&#8221;
+Type “make” to compile knark and the programs included, and then “insmod knark”
 to load the lkm. When knark is loaded, the hidden directory /proc/knark is
 created. The following files are created in this directory:</p>
 <p>author          shameless self-promotion banner :-)
@@ -144,34 +162,33 @@ redirects       list of exec-redirection entries</p>
 Added remote command execution, and added the client-program rexec.</p>
 <p>These are the programs included in the package (they all depend on knark.o
 to be loaded, except for taskhack.c which modifies /dev/kmem directly):</p>
-<dl class="docutils">
-<dt>hidef   Used to hide files on the system.</dt>
-<dd>Create your hax0r-directory /usr/lib/.hax0r, and type:
+<dl class="simple">
+<dt>hidef   Used to hide files on the system.</dt><dd><p>Create your hax0r-directory /usr/lib/.hax0r, and type:
 ./hidef /usr/lib/.hax0r
-Now this directory will be hidden, and won&#8217;t be shown by ls or du.
-Subdirs and files will be hidden as well, so you don&#8217;t have to
-hidef anything you put in this directory.</dd>
-<dt>unhidef Used to unhide hidden files. You can cat /proc/knark/files if you&#8217;ve</dt>
-<dd>forgotten which files you&#8217;ve hidden. Type:
+Now this directory will be hidden, and won’t be shown by ls or du.
+Subdirs and files will be hidden as well, so you don’t have to
+hidef anything you put in this directory.</p>
+</dd>
+<dt>unhidef Used to unhide hidden files. You can cat /proc/knark/files if you’ve</dt><dd><p>forgotten which files you’ve hidden. Type:
 ./unhidef /usr/lib/.hax0r
 to make your previously hidden directory visible again.
 However, there is a bug in the module which makes directory trees
 start from their mount-point. This means, if you have a filesystem
 mounted to /mnt, and you hide the file /mnt/secret, this file will
 show up as /secret in /proc/knark/files. Files in the root-filesystem
-aren&#8217;t affected.</dd>
-<dt>ered    Used to configure exec-redirection.</dt>
-<dd>Copy your sshd trojan to /usr/lib/.hax0r/sshd_trojan, and type:
+aren’t affected.</p>
+</dd>
+<dt>ered    Used to configure exec-redirection.</dt><dd><p>Copy your sshd trojan to /usr/lib/.hax0r/sshd_trojan, and type:
 ./ered /usr/local/sbin/sshd /usr/lib/.hax0r/sshd_trojan
 Now, when /usr/local/sbin/sshd is supposed to be executed, your
 trojan program will be executed instead. To clear all exec-redirection
 entries, type:
-./ered -c</dd>
-<dt>nethide Used to hide strings in /proc/net/tcp and /proc/net/udp. This is</dt>
-<dd>where netstat gets it&#8217;s information. Type:
-./nethide &#8221;:ABCD &#8221;
+./ered -c</p>
+</dd>
+<dt>nethide Used to hide strings in /proc/net/tcp and /proc/net/udp. This is</dt><dd><p>where netstat gets it’s information. Type:
+./nethide “:ABCD ”
 to hide connections to/from port ABCD hex (43981 dec). This will
-&#8220;grep -v&#8221; the line &#8221;:ABCD &#8221; from /proc/net/[tcp|udp].
+“grep -v” the line “:ABCD ” from /proc/net/[tcp|udp].
 You have to understand the output from /proc/net/[tcp|udp] to use
 this program. Lets say that you have sshd running on your box.
 Connect to localhost port 22, and type:
@@ -182,7 +199,7 @@ tcp        0      0 localhost:ssh      localhost:1023   ESTABLISHED
 And now, lets check /proc/net/tcp. Type:
 cat /proc/net/tcp
 One of the lines looks like this:
-local_address rem_address   blablabla...
+local_address rem_address   blablabla…
 0:0100007F:0016 0100007F:03FF 01 00000000:00000000 00:00000000 00000000
 If we want to hide everything about ip-address 127.0.0.1, we have to
 translate it to this format. Start with 127: 7F in hex. Then 0: 00
@@ -190,45 +207,46 @@ in hex, which gives us 007F. And 0 again: 00007F, and at last 1
 which gives us the number 0100007F. Now, if we want to hide
 everything about port 22 and ip-address 127.0.0.1 it looks like this:
 0100007F:0016 (0016 is port 22 in hex). So, typing:
-./nethide &#8220;0100007F:0016&#8221; will hide connections to/from localhost
+./nethide “0100007F:0016” will hide connections to/from localhost
 port 22, and typing:
-./nethide &#8221;:ABCD &#8221; will remove all lines containing &#8221;:ABCD &#8221;. It&#8217;s
-like &#8220;grep -v&#8221;. Do you get it? :-)</dd>
-<dt>rootme  Used to gain root-access without using suid programs. Type:</dt>
-<dd>./rootme /bin/sh
+./nethide “:ABCD ” will remove all lines containing “:ABCD “. It’s
+like “grep -v”. Do you get it? :-)</p>
+</dd>
+<dt>rootme  Used to gain root-access without using suid programs. Type:</dt><dd><p>./rootme /bin/sh
 to execute /bin/sh with root-privs. This will also work:
 ./rootme /bin/ls -l /root
-You have to type the whole path-name of the binary to execute.</dd>
-<dt>taskhack Used to change <a href="#id1"><span class="problematic" id="id2">*</span></a>uid&#8217;s and <a href="#id3"><span class="problematic" id="id4">*</span></a>gid&#8217;s of running processes. Type:</dt>
-<dd>./taskhack -alluid=0 pid
-This will change all <a href="#id5"><span class="problematic" id="id6">*</span></a>uid&#8217;s (uid, euid, suid, fsuid) of process
-&#8220;pid&#8221; to 0 (root). Type:
+You have to type the whole path-name of the binary to execute.</p>
+</dd>
+<dt>taskhack Used to change <a href="#id1"><span class="problematic" id="id2">*</span></a>uid’s and <a href="#id3"><span class="problematic" id="id4">*</span></a>gid’s of running processes. Type:</dt><dd><p>./taskhack -alluid=0 pid
+This will change all <a href="#id5"><span class="problematic" id="id6">*</span></a>uid’s (uid, euid, suid, fsuid) of process
+“pid” to 0 (root). Type:
 ps aux | grep bash
 creed       91  0.0  1.3  1424   824   1 S    15:31   0:00 -bash
 Now, we want to change the euid of this process to 0 (root). Type:
 ./taskhack -euid=0 91
 ps aux | grep bash
 root (!)    91  0.0  1.3  1424   824   1 S    15:31   0:00 -bash
-Isn&#8217;t this just great? :-).</dd>
+Isn’t this just great? :-).</p>
+</dd>
 </dl>
 <p><a href="#id7"><span class="problematic" id="id8">*</span></a>rexec  Used to execute commands remotely on a knark-server. Type:
 *       ./rexec www.microsoft.com haxored.server.nu /bin/touch /LUDER
 *       This will send a spoofed udp packet from www.microsoft.com:53 to
 *       haxored.server.nu:53, which tells haxored.server.nu to /bin/touch
-*       /LUDER. If you want to try this on localhost, don&#8217;t specify a
-*       spoofed address different from your own, since the kernel won&#8217;t
+*       /LUDER. If you want to try this on localhost, don’t specify a
+*       spoofed address different from your own, since the kernel won’t
 *       accept it.
 *       ./rexec localhost localhost /bin/touch /LUDER
 *       will do it for you.</p>
 <p>(* = newly added thing)</p>
 <p>And knark has eaven more features than this:
-sending signal 31 to a process will hide it&#8217;s directory in /proc, making
+sending signal 31 to a process will hide it’s directory in /proc, making
 it invisible to ps and top. Type:
 kill -31 pid
-If this process fork&#8217;s or clone&#8217;s, all childs of the process will be hidden.
+If this process fork’s or clone’s, all childs of the process will be hidden.
 This means, that if you hide your shell with kill -31, all commands you
-issue will be invisible. That&#8217;s neat :-).
-If you want to make a process visible again for some reason, and you&#8217;ve
+issue will be invisible. That’s neat :-).
+If you want to make a process visible again for some reason, and you’ve
 forgotten the pid, just cat /proc/knark/pids. This will give you a ps-like
 output of all hidden processes.</p>
 <p>Sniffers sets the network interface in promiscuous mode, and many simple
@@ -246,14 +264,14 @@ insmod modhide
 lsmod | grep knark
 <em>noting</em></p>
 <p>But be careful, you might have to reboot to get rid of knark if you load
-modhide, since it can&#8217;t be removed with normal methods, like rmmod.
+modhide, since it can’t be removed with normal methods, like rmmod.
 Have fun. And stay out of trouble.</p>
-<p>By the way, I don&#8217;t recommend you to unload the module, there is some kind
+<p>By the way, I don’t recommend you to unload the module, there is some kind
 of bug that can make strange things happen. Sometimes it works fine, sometimes
 a process dies and sometimes your computer will look like a banana.
 This is not a bug-free release. Please let me know if you find things to
 improve.</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">email: creed@sekure.net</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">email: creed@sekure.net</span>
 <span class="go">Ircnet and EFNet: Creed (or Creed_ or something like that) @sekure.net</span>
 </pre></div>
 </div>
@@ -271,9 +289,8 @@ improve.</p>
       
     </p>
     <p>
-        &copy; Copyright 2010-2020, OSSEC Project Team.<br/>
+        &copy; Copyright 2010-2021, OSSEC Project Team.<br/>
     OSSEC <b>ossec.net</b> domain owned and maintained by <a href="https://www.ossec.net" target="_blank">OSSEC Foundation</a><br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.5.2 - 
     Home page graphics courtesy of <a href="https://pixabay.com" target="_blank">pixabay</a>
     </p>
   </div>

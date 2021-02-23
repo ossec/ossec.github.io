@@ -1,36 +1,24 @@
 <!DOCTYPE html>
 
-
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rootcheck &#8212; OSSEC</title>
-    
-    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/parallax.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../../',
-        VERSION:     '3.3.0',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
-    <script type="text/javascript" src="../../../_static/jquery.js"></script>
-    <script type="text/javascript" src="../../../_static/underscore.js"></script>
-    <script type="text/javascript" src="../../../_static/doctools.js"></script>
-    <script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="../../../_static/js/jquery-fix.js"></script>
-    <script type="text/javascript" src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../../../_static/bootstrap-sphinx.js"></script>
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script src="../../../_static/js/jquery-fix.js"></script>
+    <script src="../../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script src="../../../_static/bootstrap-sphinx.js"></script>
     <link rel="author" title="About these documents" href="../../../about.html" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -41,8 +29,37 @@
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
 <meta name="apple-mobile-web-app-capable" content="yes">
 
-  </head>
-  <body role="document">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-138780766-1"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'UA-138780766-1');
+</script>
+
+<script type="text/javascript">
+  var _ss = _ss || [];
+  _ss.push(['_setDomain', 'https://koi-3QNN51VTHS.marketingautomation.services/net']);
+  _ss.push(['_setAccount', 'KOI-4APYNOYP8O']);
+  _ss.push(['_trackPageView']);
+  window._pa = window._pa || {};
+  // _pa.orderId = "myOrderId"; // OPTIONAL: attach unique conversion identifier to conversions
+  // _pa.revenue = "19.99"; // OPTIONAL: attach dynamic purchase values to conversions
+  // _pa.productId = "myProductId"; // OPTIONAL: Include product ID for use with dynamic ads
+  (function() {
+  var ss = document.createElement('script');
+  ss.type = 'text/javascript'; ss.async = true;
+  ss.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'koi-3QNN51VTHS.marketingautomation.services/client/ss.js?ver=2.4.0';
+  var scr = document.getElementsByTagName('script')[0];
+  scr.parentNode.insertBefore(ss, scr);
+  })();
+  </script>
+
+
+
+  </head><body>
 
   <div id="navbar" class="navbar navbar-inverse navbar-default ">
     <div class="container">
@@ -61,9 +78,10 @@
         <div class="collapse navbar-collapse nav-collapse">
           <ul class="nav navbar-nav">
             
-                <li><a href="https://www.ossec.net/about/">About <i class="fa fa-info-circle"></i></a></li>
-                <li><a href="https://www.ossec.net/docs/">Documentation <i class="fa fa-book"></i></a></li>
-                <li><a href="https://www.ossec.net/downloads/">Downloads <i class="fa fa-download"></i></a></li>
+                <li><a href="https://www.ossec.net/about/">About</a></li>
+                <li><a href="https://www.ossec.net/docs/">Documentation</a></li>
+                <li><a href="https://www.ossec.net/register-for-ossec/">Get OSSEC+</a></li>
+                <li><a href="https://www.ossec.net/downloads/">Downloads</a></li>
             
             
               <li class="dropdown globaltoc-container">
@@ -141,220 +159,41 @@ powerful monitoring solution.</p>
 <div class="section" id="checks-that-rootcheck-performs">
 <h2>Checks that rootcheck performs<a class="headerlink" href="#checks-that-rootcheck-performs" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
-<li>Read the rootkit_files.txt which contains a database of rootkits and files commonly
+<li><p>Read the rootkit_files.txt which contains a database of rootkits and files commonly
 used by them. It will try to stats, fopen and opendir each specified file. We
 use all these system calls because some kernel-level rootkits hide files
 from some system calls. The more system calls we try, the better the detection.
 This method is more like an anti-virus rule that needs to be updated constantly.
 The chances of false-positives are small, but false negatives can be produced
-by modifying the rootkits.</li>
-<li>Read the rootkit_trojans.txt which contains a database of signatures of files
+by modifying the rootkits.</p></li>
+<li><p>Read the rootkit_trojans.txt which contains a database of signatures of files
 trojaned by rootkits. This technique of modifying binaries with trojaned versions
 was commonly used by most of the popular rootkits available. This detection
-method will not find any kernel level rootkit or any unknown rootkit.</li>
-<li>Scan the /dev directory looking for anomalies. The /dev should only have device
+method will not find any kernel level rootkit or any unknown rootkit.</p></li>
+<li><p>Scan the /dev directory looking for anomalies. The /dev should only have device
 files and the Makedev script. A lot of rootkits use the /dev to hide files.
-This technique can detect even non-public rootkits.</li>
-<li>Scan the whole filesystem looking for unusual files and permission problems. Files
+This technique can detect even non-public rootkits.</p></li>
+<li><p>Scan the whole filesystem looking for unusual files and permission problems. Files
 owned by root, with write permission to others are very dangerous, and the rootkit
 detection will look for them. Suid files, hidden directories and files will also be
-inspected.</li>
-<li>Look for the presence of hidden processes. We use getsid() and kill() to check if
-any pid is being used or not. If the pid is being used, but &#8220;ps&#8221; can&#8217;t see it, it
-is the indication of kernel-level rootkit or a trojaned version of &#8220;ps&#8221;. We also
-verify that the output of kill and getsid are the same.</li>
-<li>Look for the presence of hidden ports. We use bind() to check every tcp and udp port
-on the system. If we can&#8217;t bind to the port (it&#8217;s being used), but netstat does not
-show it, we probably have a rootkit installed</li>
-<li>Scan all interfaces on the system and look for the ones with &#8220;promisc&#8221; mode enabled.
-If the interface is in promiscuous mode, the output of &#8220;ifconfig&#8221; should show that.
-If not, we probably have a rootkit installed.</li>
+inspected.</p></li>
+<li><p>Look for the presence of hidden processes. We use getsid() and kill() to check if
+any pid is being used or not. If the pid is being used, but “ps” can’t see it, it
+is the indication of kernel-level rootkit or a trojaned version of “ps”. We also
+verify that the output of kill and getsid are the same.</p></li>
+<li><p>Look for the presence of hidden ports. We use bind() to check every tcp and udp port
+on the system. If we can’t bind to the port (it’s being used), but netstat does not
+show it, we probably have a rootkit installed</p></li>
+<li><p>Scan all interfaces on the system and look for the ones with “promisc” mode enabled.
+If the interface is in promiscuous mode, the output of “ifconfig” should show that.
+If not, we probably have a rootkit installed.</p></li>
 </ol>
 </div>
 <div class="section" id="configuration-options">
 <h2>Configuration options<a class="headerlink" href="#configuration-options" title="Permalink to this headline">¶</a></h2>
-<p>These configuration options can be specified in each agent&#8217;s ossec.conf, except
-<code class="docutils literal"><span class="pre">auto_ignore</span></code> and <code class="docutils literal"><span class="pre">alert_new_file</span></code> which are manager side options. If the
-<code class="docutils literal"><span class="pre">ignore</span></code> option is specified on the manager the setting becomes global for all agents.</p>
-<dl class="element">
-<dt id="element-base_directory">
-<code class="descname">base_directory</code><a class="headerlink" href="#element-base_directory" title="Permalink to this definition">¶</a></dt>
-<dd><p>The base directory that will be appended to the following options:</p>
-<ul class="simple">
-<li>rootkit_files</li>
-<li>rootkit_trojans</li>
-<li>windows_malware</li>
-<li>windows_audit</li>
-<li>windows_apps</li>
-<li>systems_audit</li>
-</ul>
-<p><strong>Allowed:</strong> Path to a directory
-<strong>Default:</strong> /var/ossec</p>
-</dd></dl>
-
-<dl class="element">
-<dt id="element-rootkit_files">
-<code class="descname">rootkit_files</code><a class="headerlink" href="#element-rootkit_files" title="Permalink to this definition">¶</a></dt>
-<dd><p>This option can be used to change the location of the rootkit files database.</p>
-<p><strong>Allowed:</strong> A file with the rootkit files signatures</p>
-<p><strong>Default:</strong> /etc/shared/rootkit_files.txt</p>
-</dd></dl>
-
-<dl class="element">
-<dt id="element-rootkit_trojans">
-<code class="descname">rootkit_trojans</code><a class="headerlink" href="#element-rootkit_trojans" title="Permalink to this definition">¶</a></dt>
-<dd><p>This option can be used to change the location of the rootkit trojans database.</p>
-<p><strong>Default:</strong> /etc/shared/rootkit_trojans.txt</p>
-<p><strong>Allowed:</strong> A file with the trojans signatures</p>
-</dd></dl>
-
-<dl class="element">
-<dt id="element-windows_audit">
-<code class="descname">windows_audit</code><a class="headerlink" href="#element-windows_audit" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="element">
-<dt id="element-system_audit">
-<code class="descname">system_audit</code><a class="headerlink" href="#element-system_audit" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="element">
-<dt id="element-windows_apps">
-<code class="descname">windows_apps</code><a class="headerlink" href="#element-windows_apps" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="element">
-<dt id="element-windows_malware">
-<code class="descname">windows_malware</code><a class="headerlink" href="#element-windows_malware" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="element">
-<dt id="element-scanall">
-<code class="descname">scanall</code><a class="headerlink" href="#element-scanall" title="Permalink to this definition">¶</a></dt>
-<dd><p>Tells rootcheck to scan the whole system (may lead to some false positives).</p>
-<p><strong>Default:</strong> no</p>
-<p><strong>Allowed:</strong> yes/no</p>
-</dd></dl>
-
-<dl class="element">
-<dt id="element-frequency">
-<code class="descname">frequency</code><a class="headerlink" href="#element-frequency" title="Permalink to this definition">¶</a></dt>
-<dd><p>Frequency that the rootcheck is going to be executed (in seconds).</p>
-<p><strong>Defaults:</strong> 36000 (10 hours)</p>
-<p><strong>Allowed:</strong> Time (in seconds)</p>
-</dd></dl>
-
-<dl class="element">
-<dt id="element-disabled">
-<code class="descname">disabled</code><a class="headerlink" href="#element-disabled" title="Permalink to this definition">¶</a></dt>
-<dd><p>Disables the execution of rootcheck.</p>
-<p><strong>Default:</strong> no</p>
-<p><strong>Allowed:</strong> yes/no</p>
-</dd></dl>
-
-<dl class="element">
-<dt id="element-check_dev">
-<code class="descname">check_dev</code><a class="headerlink" href="#element-check_dev" title="Permalink to this definition">¶</a></dt>
-<dd><p><strong>Enable or disable the checking for files in the `/dev` filesystem</strong></p>
-<p><strong>Default:</strong> yes</p>
-<p><strong>Allowed:</strong> yes or no</p>
-</dd></dl>
-
-<dl class="element">
-<dt id="element-check_files">
-<code class="descname">check_files</code><a class="headerlink" href="#element-check_files" title="Permalink to this definition">¶</a></dt>
-<dd><p><strong>Enable or disable the checking based on the rootkit files</strong></p>
-<p><strong>Default:</strong> yes</p>
-<p><strong>Allowed:</strong> yes or no</p>
-</dd></dl>
-
-<dl class="element">
-<dt id="element-check_if">
-<code class="descname">check_if</code><a class="headerlink" href="#element-check_if" title="Permalink to this definition">¶</a></dt>
-<dd><p><strong>Enable or disable the checking the network interfaces</strong></p>
-<p><strong>Default:</strong> yes</p>
-<p><strong>Allowed:</strong> yes or no</p>
-</dd></dl>
-
-<dl class="element">
-<dt id="element-check_pids">
-<code class="descname">check_pids</code><a class="headerlink" href="#element-check_pids" title="Permalink to this definition">¶</a></dt>
-<dd><p><strong>Enable or disable the checking of process IDs</strong></p>
-<p><strong>Default:</strong> yes</p>
-<p><strong>Allowed:</strong> yes or no</p>
-</dd></dl>
-
-<dl class="element">
-<dt id="element-check_ports">
-<code class="descname">check_ports</code><a class="headerlink" href="#element-check_ports" title="Permalink to this definition">¶</a></dt>
-<dd><p>Enable or disable the checking of network ports.</p>
-<p><strong>Default:</strong> yes</p>
-<p><strong>Allowed:</strong> yes or no</p>
-</dd></dl>
-
-<dl class="element">
-<dt id="element-check_sys">
-<code class="descname">check_sys</code><a class="headerlink" href="#element-check_sys" title="Permalink to this definition">¶</a></dt>
-<dd><p><strong>Enable or disable the checking the filesystem looking for possible issues</strong></p>
-<p><strong>Default:</strong> yes</p>
-<p><strong>Allowed:</strong> yes or no</p>
-</dd></dl>
-
-<dl class="element">
-<dt id="element-check_trojans">
-<code class="descname">check_trojans</code><a class="headerlink" href="#element-check_trojans" title="Permalink to this definition">¶</a></dt>
-<dd><p>Enable or disable the checking of trojans.</p>
-<p><strong>Default:</strong> yes</p>
-<p><strong>Allowed:</strong> yes or no</p>
-</dd></dl>
-
-<dl class="element">
-<dt id="element-check_unixaudit">
-<code class="descname">check_unixaudit</code><a class="headerlink" href="#element-check_unixaudit" title="Permalink to this definition">¶</a></dt>
-<dd><p><strong>Enable or disable the checking of unix issues</strong></p>
-<p><strong>Default:</strong> yes</p>
-<p><strong>Allowed:</strong> yes or no</p>
-</dd></dl>
-
-<dl class="element">
-<dt id="element-check_winapps">
-<code class="descname">check_winapps</code><a class="headerlink" href="#element-check_winapps" title="Permalink to this definition">¶</a></dt>
-<dd><p><strong>Enable or disable the checking of Windows apps</strong></p>
-<p><strong>Default:</strong> yes</p>
-<p><strong>Allowed:</strong> yes or no</p>
-</dd></dl>
-
-<dl class="element">
-<dt id="element-check_winaudit">
-<code class="descname">check_winaudit</code><a class="headerlink" href="#element-check_winaudit" title="Permalink to this definition">¶</a></dt>
-<dd><p><strong>Enable or disable the checking of Windows issues</strong></p>
-<p><strong>Default:</strong> 1</p>
-<p><strong>Allowed:</strong> 1 or 0</p>
-</dd></dl>
-
-<dl class="element">
-<dt id="element-check_winmalware">
-<code class="descname">check_winmalware</code><a class="headerlink" href="#element-check_winmalware" title="Permalink to this definition">¶</a></dt>
-<dd><p>Enable or disable the checking of Windows malware.</p>
-<p><strong>Default:</strong> yes</p>
-<p><strong>Allowed:</strong> yes or no</p>
-</dd></dl>
-
-<dl class="element">
-<dt id="element-skip_nfs">
-<code class="descname">skip_nfs</code><a class="headerlink" href="#element-skip_nfs" title="Permalink to this definition">¶</a></dt>
-<dd><div class="versionadded">
-<p><span class="versionmodified">New in version 2.9.0.</span></p>
-</div>
-<p>Specifies if rootcheck should scan network mounted filesystems.  Works on Linux and FreeBSD.  Currently skip_nfs will abort checks running against CIFS or NFS mounts.</p>
-<p><strong>Default:</strong> no</p>
-<p><strong>Allowed:</strong> yes/no</p>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">This option was added in OSSEC 2.9.0.</p>
-</div>
-</dd></dl>
-
+<p>These configuration options can be specified in each agent’s ossec.conf, except
+<code class="docutils literal notranslate"><span class="pre">auto_ignore</span></code> and <code class="docutils literal notranslate"><span class="pre">alert_new_file</span></code> which are manager side options. If the
+<code class="docutils literal notranslate"><span class="pre">ignore</span></code> option is specified on the manager the setting becomes global for all agents.</p>
 </div>
 </div>
 
@@ -370,9 +209,8 @@ If not, we probably have a rootkit installed.</li>
       
     </p>
     <p>
-        &copy; Copyright 2010-2020, OSSEC Project Team.<br/>
+        &copy; Copyright 2010-2021, OSSEC Project Team.<br/>
     OSSEC <b>ossec.net</b> domain owned and maintained by <a href="https://www.ossec.net" target="_blank">OSSEC Foundation</a><br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.5.2 - 
     Home page graphics courtesy of <a href="https://pixabay.com" target="_blank">pixabay</a>
     </p>
   </div>

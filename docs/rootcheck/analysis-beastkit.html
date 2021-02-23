@@ -1,36 +1,24 @@
 <!DOCTYPE html>
 
-
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Analysis of a rootkit: Beastkit &#8212; OSSEC</title>
-    
-    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/bootstrap-3.2.0/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/bootstrap-3.2.0/css/bootstrap-theme.min.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/parallax.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../',
-        VERSION:     '3.3.0',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
-    <script type="text/javascript" src="../../_static/jquery.js"></script>
-    <script type="text/javascript" src="../../_static/underscore.js"></script>
-    <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
-    <script type="text/javascript" src="../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script src="../../_static/js/jquery-fix.js"></script>
+    <script src="../../_static/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+    <script src="../../_static/bootstrap-sphinx.js"></script>
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -39,8 +27,37 @@
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
 <meta name="apple-mobile-web-app-capable" content="yes">
 
-  </head>
-  <body role="document">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-138780766-1"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'UA-138780766-1');
+</script>
+
+<script type="text/javascript">
+  var _ss = _ss || [];
+  _ss.push(['_setDomain', 'https://koi-3QNN51VTHS.marketingautomation.services/net']);
+  _ss.push(['_setAccount', 'KOI-4APYNOYP8O']);
+  _ss.push(['_trackPageView']);
+  window._pa = window._pa || {};
+  // _pa.orderId = "myOrderId"; // OPTIONAL: attach unique conversion identifier to conversions
+  // _pa.revenue = "19.99"; // OPTIONAL: attach dynamic purchase values to conversions
+  // _pa.productId = "myProductId"; // OPTIONAL: Include product ID for use with dynamic ads
+  (function() {
+  var ss = document.createElement('script');
+  ss.type = 'text/javascript'; ss.async = true;
+  ss.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'koi-3QNN51VTHS.marketingautomation.services/client/ss.js?ver=2.4.0';
+  var scr = document.getElementsByTagName('script')[0];
+  scr.parentNode.insertBefore(ss, scr);
+  })();
+  </script>
+
+
+
+  </head><body>
 
   <div id="navbar" class="navbar navbar-inverse navbar-default ">
     <div class="container">
@@ -59,9 +76,10 @@
         <div class="collapse navbar-collapse nav-collapse">
           <ul class="nav navbar-nav">
             
-                <li><a href="https://www.ossec.net/about/">About <i class="fa fa-info-circle"></i></a></li>
-                <li><a href="https://www.ossec.net/docs/">Documentation <i class="fa fa-book"></i></a></li>
-                <li><a href="https://www.ossec.net/downloads/">Downloads <i class="fa fa-download"></i></a></li>
+                <li><a href="https://www.ossec.net/about/">About</a></li>
+                <li><a href="https://www.ossec.net/docs/">Documentation</a></li>
+                <li><a href="https://www.ossec.net/register-for-ossec/">Get OSSEC+</a></li>
+                <li><a href="https://www.ossec.net/downloads/">Downloads</a></li>
             
             
               <li class="dropdown globaltoc-container">
@@ -125,15 +143,15 @@
 <span id="analysis-beastkit"></span><h1>Analysis of a rootkit: Beastkit<a class="headerlink" href="#analysis-of-a-rootkit-beastkit" title="Permalink to this headline">¶</a></h1>
 <p>by: unknown</p>
 <p>Analysis of a rootkit found on a RedHat 7.2 System in 01/2002. The rootkit setup
-script includes the line &#8220;#Beastkit 7.0 - X-Org edition&#8221;. Due to this fact, we
-call the rootkit &#8220;Beastkit 7.0&#8221; in this document. The compromise was done
+script includes the line “#Beastkit 7.0 - X-Org edition”. Due to this fact, we
+call the rootkit “Beastkit 7.0” in this document. The compromise was done
 through an crc32 compensation attack against SSH-1.5-1.2.27.</p>
 <div class="section" id="detecting-beastkit">
 <h2>Detecting Beastkit<a class="headerlink" href="#detecting-beastkit" title="Permalink to this headline">¶</a></h2>
 <p>To ensure unmodified results of common programs (like ps) we used a mounted
 Stand-alone shell (sash) and static binaries.</p>
 <p>results of unmodified netstat shows following interesting connections:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Proto Recv-Q Send-Q Local Address           Foreign Address         State</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Proto Recv-Q Send-Q Local Address           Foreign Address         State</span>
 <span class="go">tcp        0      0 0.0.0.0:56493           0.0.0.0:*               LISTEN</span>
 
 <span class="go">results of unmodified ps shows following interesting processes:</span>
@@ -183,7 +201,7 @@ Stand-alone shell (sash) and static binaries.</p>
 <h2>Beastkit properties<a class="headerlink" href="#beastkit-properties" title="Permalink to this headline">¶</a></h2>
 <p>Beastkit 7.0 replaces common binaries that can be used to monitor system operation (like ps).
 List of programs included in the rootkit (bin.tgz):</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">md5sum</span>                            <span class="n">Filename</span>             <span class="n">Size</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">md5sum</span>                            <span class="n">Filename</span>             <span class="n">Size</span>
 <span class="mi">98</span><span class="n">bf3bd30914773e50060a7f56eda4f4</span>  <span class="n">encrypt</span>             <span class="mi">14808</span>
 <span class="n">ae060f54e8f3a8e79dc95867171811ef</span>  <span class="n">pg</span>                   <span class="mi">3552</span>
 <span class="n">f2e3b130a937af92ff507315406589b1</span>  <span class="n">sz</span>                   <span class="mi">1382</span>
@@ -202,11 +220,11 @@ List of programs included in the rootkit (bin.tgz):</p>
 <span class="mi">56</span><span class="n">b863dcfacadf6d66d859e2ee59517e</span>  <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">sbin</span><span class="o">/</span><span class="n">lsof</span>      <span class="mi">82628</span>
 </pre></div>
 </div>
-<p>The original programs got replaced by the rootkit. The timestamps doesn&#8217;t
+<p>The original programs got replaced by the rootkit. The timestamps doesn’t
 change, because the rootkit use touch -acmr to transmit the timestamp to the
 rootkit files.</p>
 <p>Beastkit contains some tools (bktools) (placed at /lib/ldd.so/bktools):</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">md5sum</span>                            <span class="n">Filename</span>             <span class="n">Size</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">md5sum</span>                            <span class="n">Filename</span>             <span class="n">Size</span>
 <span class="n">b0812b62c9c3307161c5400870d7d230</span>  <span class="n">bkget</span>               <span class="mi">25664</span>
 <span class="mi">926784667</span><span class="n">fa921b38fceb124644f6568</span>  <span class="n">bkp</span>                  <span class="mi">7578</span>
 <span class="mi">63</span><span class="n">c6a53e779c06923344b15a0e8f1799</span>  <span class="n">bks</span>                 <span class="mi">16070</span>
@@ -228,14 +246,14 @@ rootkit files.</p>
 <span class="n">prw</span> <span class="o">-</span> <span class="n">SSHd</span><span class="o">-</span><span class="n">Patchscript</span> <span class="p">(</span><span class="n">update</span> <span class="n">to</span> <span class="n">ssh</span><span class="o">-</span><span class="mf">1.2</span><span class="o">.</span><span class="mi">32</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>A SSHd backdoor named &#8220;arobia&#8221; was installed. The config files were
+<p>A SSHd backdoor named “arobia” was installed. The config files were
 found in /usr/lib/elm/arobia/. A new password for the backdoor was generated
-with the command <code class="docutils literal"><span class="pre">sed</span> <span class="pre">s/08e7592e361de6fd59d4d126b29fe6ea/`md5sum</span> <span class="pre">--string=$1|awk</span> <span class="pre">'{print</span> <span class="pre">$1}'`/g</span> <span class="pre">elm\</span> <span class="pre">&gt;</span> <span class="pre">arobia</span></code>,
+with the command <code class="docutils literal notranslate"><span class="pre">sed</span> <span class="pre">s/08e7592e361de6fd59d4d126b29fe6ea/`md5sum</span> <span class="pre">--string=$1|awk</span> <span class="pre">'{print</span> <span class="pre">$1}'`/g</span> <span class="pre">elm\</span> <span class="pre">&gt;</span> <span class="pre">arobia</span></code>,
 which replaces the default password (08e7592e361de6fd59d4d126b29fe6ea=arobia)
-of the original backdoor &#8220;elm&#8221; and generates the new backdoor &#8220;arobia&#8221;.
-After that, &#8220;arobia&#8221; was moved to /usr/sbin. The backdoor start-up is done
-by /usr/sbin/arobia -q -p 56493, whereby &#8220;56493&#8221; is the portnumber.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">md5sum</span>                            <span class="n">Filename</span>                              <span class="n">Size</span>
+of the original backdoor “elm” and generates the new backdoor “arobia”.
+After that, “arobia” was moved to /usr/sbin. The backdoor start-up is done
+by /usr/sbin/arobia -q -p 56493, whereby “56493” is the portnumber.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">md5sum</span>                            <span class="n">Filename</span>                              <span class="n">Size</span>
 <span class="n">f7820a858bceee09246f4454e3c24e95</span>  <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">sbin</span><span class="o">/</span><span class="n">arobia</span>                    <span class="mi">206760</span>
 <span class="n">f78fa4c346287a3af35656a9ac33e733</span>  <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">elm</span><span class="o">/</span><span class="n">arobia</span><span class="o">/</span><span class="n">elm</span>             <span class="mi">206760</span>
 <span class="n">a5d7227117841d0518a6be3510dabb57</span>  <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">elm</span><span class="o">/</span><span class="n">arobia</span><span class="o">/</span><span class="n">elm</span><span class="o">/</span><span class="n">hk</span>             <span class="mi">529</span>
@@ -248,8 +266,8 @@ by /usr/sbin/arobia -q -p 56493, whereby &#8220;56493&#8221; is the portnumber.<
 </div>
 <div class="section" id="more-rootkit-properties">
 <h3>More rootkit properties:<a class="headerlink" href="#more-rootkit-properties" title="Permalink to this headline">¶</a></h3>
-<p>The program bktd was placed at /usr/local/bin/.../, furthermore some libraries at /lib/:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">md5sum</span>                            <span class="n">Filename</span>                      <span class="n">Size</span>
+<p>The program bktd was placed at /usr/local/bin/…/, furthermore some libraries at /lib/:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">md5sum</span>                            <span class="n">Filename</span>                      <span class="n">Size</span>
 <span class="mi">00846</span><span class="n">ffcc2ed7fa23b42089e92273964</span>  <span class="n">bktd</span>                         <span class="mi">93924</span>
 <span class="mi">2</span><span class="n">aed58986303584c96edd16f6195e797</span>  <span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">libproc</span><span class="o">.</span><span class="n">a</span>               <span class="mi">33848</span>
 <span class="mi">8581544643145</span><span class="n">cd159e93df986539ce8</span>  <span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">libproc</span><span class="o">.</span><span class="n">so</span><span class="o">.</span><span class="mf">2.0</span><span class="o">.</span><span class="mi">6</span>        <span class="mi">37984</span>
@@ -262,7 +280,7 @@ by /usr/sbin/arobia -q -p 56493, whereby &#8220;56493&#8221; is the portnumber.<
 </div>
 <p>The following lines were added in /etc/rc.d/rc.sysinit to start a backdoor at
 port 33333 at system startup:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp"># </span>Arobia daemon startup..
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"># </span>Arobia daemon startup..
 <span class="go">/usr/sbin/xntps -q -p 33333</span>
 </pre></div>
 </div>
@@ -282,9 +300,8 @@ port 33333 at system startup:</p>
       
     </p>
     <p>
-        &copy; Copyright 2010-2020, OSSEC Project Team.<br/>
+        &copy; Copyright 2010-2021, OSSEC Project Team.<br/>
     OSSEC <b>ossec.net</b> domain owned and maintained by <a href="https://www.ossec.net" target="_blank">OSSEC Foundation</a><br/>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.5.2 - 
     Home page graphics courtesy of <a href="https://pixabay.com" target="_blank">pixabay</a>
     </p>
   </div>
